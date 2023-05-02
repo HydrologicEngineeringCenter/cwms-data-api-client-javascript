@@ -1,0 +1,35 @@
+{
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "templates": {
+        "logoFile": "",
+        "cleverLinks": true,
+        "monospaceLinks": false,
+        "dateFormat": "ddd MMM Do YYYY",
+        "outputSourceFiles": false,
+        "outputSourcePath": false,
+        "systemName": "cwmsjs",
+        "footer": "<script src=\"cwmsjs.min.js\"></script>\n\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-5PYR6X63G0\"></script>\n<script>\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);\n}\ngtag('js', new Date());\ngtag('config', 'G-5PYR6X63G0');\n</script>\n\nconsole.log('Thank you for reading the CWMSjs documentation!');\n\n</script>",
+        "copyright": "",
+        "navType": "vertical",
+        "theme": "yeti",
+        "linenums": false,
+        "collapseSymbols": false,
+        "inverseNav": false,
+        "protocol": "html://",
+        "methodHeadingReturns": false,
+        "includeDate": false,
+        "syntaxTheme": "dark"
+    },
+    "markdown": {
+        "parser": "gfm",
+        "hardwrap": false
+    },
+    "opts": {
+        "sort": false,
+        "destination": "./doc/",
+        "template": "./node_modules/ink-docstrap/template",
+        "readme": "./README.md"
+    }
+}

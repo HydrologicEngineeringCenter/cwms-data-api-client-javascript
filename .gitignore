@@ -1,0 +1,7 @@
+.eslintcache
+*.workspace
+node_modules
+doc/
+dist/
+coverage/
+*auth*.json

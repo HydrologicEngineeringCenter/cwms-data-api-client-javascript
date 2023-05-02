@@ -1,0 +1,41 @@
+{
+  "name": "cwmsjs",
+  "version": "0.0.0",
+  "description": "The CWMSjs is a JavaScript (TS) package for accessing the CWMS Data API (CDA), a RESTful web service for managing water data. With this SDK, you can easily retrieve and manage water data using the CDA's REST API client-side javascript applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js",
+    "lint": "eslint src/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript.git"
+  },
+  "keywords": [
+    "cda",
+    "sdk",
+    "cda",
+    "cwms",
+    "data",
+    "api",
+    "cwms",
+    "corps",
+    "water",
+    "management",
+    "system",
+    "corps",
+    "water",
+    "management",
+    "hec"
+  ],
+  "author": "Charles Graham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/issues"
+  },
+  "homepage": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript#readme",
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "ink-docstrap": "^1.3.2"
+  }
+}
