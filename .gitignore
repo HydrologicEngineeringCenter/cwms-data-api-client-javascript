@@ -1,7 +1,8 @@
 .eslintcache
-*.workspace
+*.code-workspace
 node_modules
 doc/
 dist/
 coverage/
 *auth*.json
+SCOPE.md
