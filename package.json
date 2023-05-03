@@ -1,44 +1,46 @@
 {
-  "name": "cwmsjs",
-  "version": "0.0.0",
-  "description": "The CWMSjs is a JavaScript wrapper for accessing the CWMS Data API (CDA), a RESTful web service for managing water data.",
-  "main": "index.js",
+  "name": "cwms_radar",
+  "version": "2.5",
+  "description": "CWMS REST API for Data Retrieval",
+  "license": "Unlicense",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "test.js",
-    "lint": "eslint src/js"
+    "build": "babel src -d dist",
+    "prepare": "npm run build",
+    "test": "mocha --require @babel/register --recursive"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript.git"
+  "browser": {
+    "fs": false
   },
-  "keywords": [
-    "cda",
-    "sdk",
-    "cda",
-    "cwms",
-    "data",
-    "api",
-    "cwms",
-    "corps",
-    "water",
-    "management",
-    "system",
-    "corps",
-    "water",
-    "management",
-    "hec"
-  ],
-  "author": "HEC",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/issues"
+  "dependencies": {
+    "@babel/cli": "^7.0.0",
+    "superagent": "^5.3.0"
   },
-  "homepage": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript#readme",
   "devDependencies": {
-    "@types/node": "^18.16.3",
-    "eslint": "^8.39.0",
-    "ink-docstrap": "^1.3.2",
-    "promise-chains": "^0.3.12",
-    "typescript": "^5.0.4"
-  }
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^8.0.1",
+    "sinon": "^7.2.0"
+  },
+  "files": [
+    "dist"
+  ]
 }

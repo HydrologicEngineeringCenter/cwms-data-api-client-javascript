@@ -1,0 +1,12 @@
+# CwmsRadar.Clob
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**office** | **String** |  | 
+**id** | **String** |  | 
+**description** | **String** |  | [optional] 
+**value** | **String** |  | [optional] 
+
+
