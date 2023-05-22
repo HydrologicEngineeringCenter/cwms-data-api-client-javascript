@@ -1,0 +1,249 @@
+{
+    "openapi": "3.0.1",
+    "servers": [
+        {
+            "url": "https://cwms-data.usace.army.mil/cwms-data/",
+            "variables": {
+                "host": {
+                    "default": "cwms-data.usace.army.mil"
+                },
+                "basePath": {
+                    "default": "cwms-data"
+                }
+            }
+        }
+    ],
+    "info": {
+        "title": "CWMS Radar",
+        "description": "CWMS REST API for Data Retrieval",
+        "version": "2.5"
+        
+    },
+    "paths": {
+        "/cwms-data/offices": {
+            "get": {
+                "tags": [
+                    "Offices"
+                ],
+                "summary": "Get cwmsData offices",
+                "operationId": "getCwmsDataOffices",
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "(Deprecated in favor of Accept header) Specifies the encoding format of the response. Valid value for the format field for this URI are:\r\n1. tab\r\n2. csv\r\n 3. xml\r\n4. json (default)",
+                        "deprecated": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "500": {
+                        "description": "Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RadarError"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RadarError"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RadarError"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RadarError"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RadarError"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "A list of offices.",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OfficeFormatV1"
+                                }
+                            },
+                            "application/json;version=2": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Office"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OfficeFormatV1"
+                                }
+                            },
+                            "text/tab-separated-values": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TabV1Office"
+                                }
+                            },
+                            "text/csv": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CsvV1Office"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CsvV1Office"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "RadarError": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "incidentIdentifier": {
+                        "type": "string",
+                        "description": "A randomly generated number to help identify your request in the logs for analysis.."
+                    },
+                    "details": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "Office": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "longName": {
+                        "type": "string",
+                        "xml": {
+                            "name": "long-name"
+                        }
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "unknown",
+                            "corps headquarters",
+                            "division headquarters",
+                            "division regional",
+                            "district",
+                            "filed operating activity"
+                        ]
+                    },
+                    "reportsTo": {
+                        "type": "string",
+                        "description": "Reference to another office, like a division, that this office reports to.",
+                        "xml": {
+                            "name": "reports-to"
+                        }
+                    }
+                },
+                "description": "A representation of a CWMS office",
+                "xml": {
+                    "name": "office"
+                }
+            },
+            "TabV1Office": {
+                "type": "object",
+                "properties": {
+                    "Office": {
+                        "type": "string"
+                    },
+                    "longName": {
+                        "type": "string"
+                    },
+                    "officeType": {
+                        "type": "string"
+                    },
+                    "reportsToOffice": {
+                        "type": "string"
+                    }
+                },
+                "description": "Single Office or List of Offices in tab separated format",
+                "example": "#Office Name<tab>Long Name<tab>Office Type<tab>Reports To Office\r\nCERL\tConstruction Engineering Research Laboratory\tField Operating Activity\tERD\r\nCHL\tCoastal and Hydraulics Laboratory\tField Operating Activity\tERD\r\nNAB\tBaltimore District\tDistrict\tNADNAD\tNorth Atlantic Division\tDivision Headquarters\tHQ"
+            },
+            "CsvV1Office": {
+                "type": "object",
+                "properties": {
+                    "Office": {
+                        "type": "string"
+                    },
+                    "longName": {
+                        "type": "string"
+                    },
+                    "officeType": {
+                        "type": "string"
+                    },
+                    "reportsToOffice": {
+                        "type": "string"
+                    }
+                },
+                "description": "Single Office or List of Offices in comma separated format",
+                "example": "#Office Name,Long Name,Office Type,Reports To Office\r\nCERL,Construction Engineering Research Laboratory,Field Operating Activity\tERD\r\nCHL,Coastal and Hydraulics Laboratory,Field Operating Activity\tERD\r\nNAB,Baltimore District,District,NAD\r\nNAD,North Atlantic Division,Division Headquarters,HQ"
+            },
+            "OfficeFormatV1": {
+                "type": "object",
+                "properties": {
+                    "offices": {
+                        "$ref": "#/components/schemas/OfficesFMT"
+                    }
+                }
+            },
+            "OfficesFMT": {
+                "type": "object",
+                "properties": {
+                    "offices": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Office"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
