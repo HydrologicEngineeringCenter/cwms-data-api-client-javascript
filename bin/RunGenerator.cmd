@@ -1,0 +1,1 @@
+openapi-generator-cli generate -g java -o ./clients/java java
