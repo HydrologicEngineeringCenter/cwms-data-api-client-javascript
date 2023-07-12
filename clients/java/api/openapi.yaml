@@ -1,0 +1,6203 @@
+openapi: 3.0.1
+info:
+  description: CWMS REST API for Data Retrieval
+  title: CWMS Radar
+  version: "2.5"
+servers:
+- url: /
+paths:
+  /cwms-data:
+    get:
+      operationId: getCwmsData
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Get cwmsData
+      x-accepts: application/json
+  /cwms-data/location/category/{category-id}:
+    get:
+      description: Retrieves requested Location Category
+      operationId: getCwmsDataLocationCategoryWithCategoryId
+      parameters:
+      - description: Specifies the Category whose data is to be included in the response.
+        explode: false
+        in: path
+        name: category-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office of the Location Category whose data
+          is to be included in the response.
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationCategory'
+          description: OK
+      summary: Get cwmsData location category with categoryId
+      tags:
+      - Location Categories-Beta
+      x-accepts: application/json
+  /cwms-data/location/category:
+    get:
+      description: Returns CWMS Location Category Data
+      operationId: getCwmsDataLocationCategory
+      parameters:
+      - description: "Specifies the owning office of the location category(ies) whose\
+          \ data is to be included in the response. If this field is not specified,\
+          \ matching location category information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/LocationCategory'
+                type: array
+          description: OK
+      summary: Get cwmsData location category
+      tags:
+      - Location Categories-Beta
+      x-accepts: application/json
+  /cwms-data/location/group/{group-id}:
+    get:
+      description: Retrieves requested Location Group
+      operationId: getCwmsDataLocationGroupWithGroupId
+      parameters:
+      - description: Specifies the location_group whose data is to be included in
+          the response
+        explode: false
+        in: path
+        name: group-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office of the location group whose data
+          is to be included in the response.
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: Specifies the category containing the location group whose data
+          is to be included in the response.
+        explode: true
+        in: query
+        name: category-id
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationGroup'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/CsvV1LocationGroup'
+            application/geo+json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+          description: OK
+      summary: Get cwmsData location group with groupId
+      tags:
+      - Location Groups-Beta
+      x-accepts: application/json
+  /cwms-data/location/group:
+    get:
+      description: Returns CWMS Location Groups Data
+      operationId: getCwmsDataLocationGroup
+      parameters:
+      - description: "Specifies the owning office of the location group(s) whose data\
+          \ is to be included in the response. If this field is not specified, matching\
+          \ location groups information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Include the assigned locations in the returned location groups.\
+          \ (default: false)"
+        explode: true
+        in: query
+        name: include-assigned
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - deprecated: true
+        description: Deprecated. Use include-assigned instead.
+        explode: true
+        in: query
+        name: includeAssigned
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/LocationGroup'
+                type: array
+            text/csv:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CsvV1LocationGroup'
+                type: array
+          description: OK
+      summary: Get cwmsData location group
+      tags:
+      - Location Groups-Beta
+      x-accepts: application/json
+  /cwms-data/locations/{location-id}:
+    delete:
+      description: Delete CWMS Location
+      operationId: deleteCwmsDataLocationsWithLocationId
+      parameters:
+      - explode: false
+        in: path
+        name: location-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "Specifies the owning office of the location whose data is to\
+          \ be deleted. If this field is not specified, matching location information\
+          \ will be deleted from all offices."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Delete cwmsData locations with locationId
+      tags:
+      - Locations
+      x-accepts: application/json
+    get:
+      description: Returns CWMS Location Data
+      operationId: getCwmsDataLocationsWithLocationId
+      parameters:
+      - explode: false
+        in: path
+        name: location-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "Specifies the owning office of the location level(s) whose data\
+          \ is to be included in the response. If this field is not specified, matching\
+          \ location level information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the unit or unit system of the response. Valid values\
+          \ for the unit field are:\r\n 1. EN.   Specifies English unit system.  Location\
+          \ values will be in the default English units for their parameters.\r\n\
+          2. SI.   Specifies the SI unit system.  Location values will be in the default\
+          \ SI units for their parameters.\r\n3. Other. Any unit returned in the response\
+          \ to the units URI request that is appropriate for the requested parameters."
+        explode: true
+        in: query
+        name: unit
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/Location'
+            application/xml;version=2:
+              schema:
+                $ref: '#/components/schemas/Location'
+          description: OK
+      summary: Get cwmsData locations with locationId
+      tags:
+      - Locations
+      x-accepts: application/json
+    patch:
+      description: Update CWMS Location
+      operationId: patchCwmsDataLocationsWithLocationId
+      parameters:
+      - explode: false
+        in: path
+        name: location-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the office in which Location will be updated
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Location'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Location'
+        required: true
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Patch cwmsData locations with locationId
+      tags:
+      - Locations
+      x-content-type: application/json
+      x-accepts: application/json
+  /cwms-data/locations:
+    get:
+      description: Returns CWMS Location Data
+      operationId: getCwmsDataLocations
+      parameters:
+      - description: Specifies the name(s) of the location(s) whose data is to be
+          included in the response
+        explode: true
+        in: query
+        name: names
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the owning office of the location level(s) whose data\
+          \ is to be included in the response. If this field is not specified, matching\
+          \ location level information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the unit or unit system of the response. Valid values\
+          \ for the unit field are:\r\n 1. EN.   Specifies English unit system.  Location\
+          \ level values will be in the default English units for their parameters.\r\
+          \n2. SI.   Specifies the SI unit system.  Location level values will be\
+          \ in the default SI units for their parameters.\r\n3. Other. Any unit returned\
+          \ in the response to the units URI request that is appropriate for the requested\
+          \ parameters."
+        explode: true
+        in: query
+        name: unit
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the elevation datum of the response. This field affects\
+          \ only elevation location levels. Valid values for this field are:\r\n1.\
+          \ NAVD88.  The elevation values will in the specified or default units above\
+          \ the NAVD-88 datum.\r\n2. NGVD29.  The elevation values will be in the\
+          \ specified or default units above the NGVD-29 datum."
+        explode: true
+        in: query
+        name: datum
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the encoding format of the response. Valid values\
+          \ for the format field for this URI are:\r\n1.    tab\r\n2.    csv\r\n3.\
+          \    xml\r\n4.  wml2 (only if name field is specified)\r\n5.    json (default)\n\
+          6.    geojson"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+            text/tab-separated-values:
+              schema:
+                type: string
+            text/csv:
+              schema:
+                type: string
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Unit'
+            application/vnd.opengis.waterml+xml:
+              schema:
+                $ref: '#/components/schemas/Unit'
+            application/geo+json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+          description: OK
+      summary: Get cwmsData locations
+      tags:
+      - Locations
+      x-accepts: application/json
+    post:
+      description: Create new CWMS Location
+      operationId: postCwmsDataLocations
+      parameters:
+      - description: Specifies the office in which Location will be created
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Location'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Location'
+        required: true
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Post cwmsData locations
+      tags:
+      - Locations
+      x-content-type: application/json
+      x-accepts: application/json
+  /cwms-data/offices/{office}:
+    get:
+      operationId: getCwmsDataOfficesWithOffice
+      parameters:
+      - description: The 3 letter office ID you want more information for
+        explode: false
+        in: path
+        name: office
+        required: true
+        schema:
+          type: string
+        style: simple
+      - deprecated: true
+        description: "(Deprecated in favor of Accept header) Specifies the encoding\
+          \ format of the response. Valid value for the format field for this URI\
+          \ are:\r\n1. tab\r\n2. csv\r\n 3. xml\r\n4. json (default)"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            ? ""
+            : schema:
+                $ref: '#/components/schemas/OfficeFormatV1'
+            application/json;version=2:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Office'
+                type: array
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfficeFormatV1'
+            text/tab-separated-values:
+              schema:
+                $ref: '#/components/schemas/TabV1Office'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/CsvV1Office'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CsvV1Office'
+          description: A list of offices.
+      summary: Get cwmsData offices with office
+      tags:
+      - Offices
+      x-accepts: application/json
+  /cwms-data/offices:
+    get:
+      operationId: getCwmsDataOffices
+      parameters:
+      - deprecated: true
+        description: "(Deprecated in favor of Accept header) Specifies the encoding\
+          \ format of the response. Valid value for the format field for this URI\
+          \ are:\r\n1. tab\r\n2. csv\r\n 3. xml\r\n4. json (default)"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            ? ""
+            : schema:
+                $ref: '#/components/schemas/OfficeFormatV1'
+            application/json;version=2:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Office'
+                type: array
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfficeFormatV1'
+            text/tab-separated-values:
+              schema:
+                $ref: '#/components/schemas/TabV1Office'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/CsvV1Office'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CsvV1Office'
+          description: A list of offices.
+      summary: Get cwmsData offices
+      tags:
+      - Offices
+      x-accepts: application/json
+  /cwms-data/units:
+    get:
+      operationId: getCwmsDataUnits
+      parameters:
+      - description: "Specifies the encoding format of the response. Valid value for\
+          \ the format field for this URI are:\r\n1. tab\r\n2. csv\r\n 3. xml\r\n\
+          4. json (default)"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          description: OK
+        "501":
+          description: The format requested is not implemented
+      summary: Get cwmsData units
+      tags:
+      - Units
+      x-accepts: application/json
+  /cwms-data/parameters:
+    get:
+      operationId: getCwmsDataParameters
+      parameters:
+      - description: "Specifies the encoding format of the response. Valid value for\
+          \ the format field for this URI are:\r\n1. tab\r\n2. csv\r\n 3. xml\r\n\
+          4. json (default)"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          description: OK
+      summary: Get cwmsData parameters
+      tags:
+      - Parameters
+      x-accepts: application/json
+  /cwms-data/timezones:
+    get:
+      operationId: getCwmsDataTimezones
+      parameters:
+      - description: "Specifies the encoding format of the response. Valid value for\
+          \ the format field for this URI are:\r\n1. tab\r\n2. csv\r\n 3. xml\r\n\
+          4. json (default)"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          description: OK
+        "501":
+          description: The format requested is not implemented
+      summary: Get cwmsData timezones
+      tags:
+      - TimeZones
+      x-accepts: application/json
+  /cwms-data/levels/{level-id}:
+    delete:
+      description: Delete CWMS Location Level
+      operationId: deleteCwmsDataLevelsWithLevelId
+      parameters:
+      - description: Specifies the location level id of the Location Level to be deleted
+        explode: false
+        in: path
+        name: level-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: cascade-delete
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "Specifies the owning office of the location level whose data\
+          \ is to be deleted. If this field is not specified, matching location level\
+          \ information will be deleted from all offices."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: "Deprecated, use effective-date"
+        explode: true
+        in: query
+        name: date
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies the effective date of the level to be deleted. If not
+          provided will delete all data and reference to the location level.
+        explode: true
+        in: query
+        name: effective-date
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Delete cwmsData levels with levelId
+      tags:
+      - Levels
+      x-accepts: application/json
+    get:
+      description: Retrieves requested Location Level
+      operationId: getCwmsDataLevelsWithLevelId
+      parameters:
+      - description: Specifies the requested location level.
+        explode: false
+        in: path
+        name: level-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the office of the Location Level to be returned
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: "Deprecated, use effective-date"
+        explode: true
+        in: query
+        name: date
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies the effective date of Location Level to be returned
+        explode: true
+        in: query
+        name: effective-date
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/LocationLevel'
+          description: OK
+      summary: Get cwmsData levels with levelId
+      tags:
+      - Levels
+      x-accepts: application/json
+    patch:
+      description: Update CWMS Location Level
+      operationId: patchCwmsDataLevelsWithLevelId
+      parameters:
+      - description: Specifies the location level id of the Location Level to be updated
+        explode: false
+        in: path
+        name: level-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the office in which Location Level will be updated
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: "Deprecated, use effective-date"
+        explode: true
+        in: query
+        name: date
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies the effective date of Location Level that will be updated
+        explode: true
+        in: query
+        name: effective-date
+        required: true
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocationLevel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/LocationLevel'
+        required: true
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Patch cwmsData levels with levelId
+      tags:
+      - Levels
+      x-content-type: application/json
+      x-accepts: application/json
+  /cwms-data/levels:
+    get:
+      operationId: getCwmsDataLevels
+      parameters:
+      - deprecated: true
+        description: "Deprecated, use level-id-mask. "
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies the name(s) of the location level(s) whose data is
+          to be included in the response. Uses * for all.
+        explode: true
+        in: query
+        name: level-id-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the owning office of the location level(s) whose data\
+          \ is to be included in the response. If this field is not specified, matching\
+          \ location level information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the unit or unit system of the response. Valid values\
+          \ for the unit field are:\r\n 1. EN.   Specifies English unit system.  Location\
+          \ level values will be in the default English units for their parameters.\r\
+          \n2. SI.   Specifies the SI unit system.  Location level values will be\
+          \ in the default SI units for their parameters.\r\n3. Other. Any unit returned\
+          \ in the response to the units URI request that is appropriate for the requested\
+          \ parameters."
+        explode: true
+        in: query
+        name: unit
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the elevation datum of the response. This field affects\
+          \ only elevation location levels. Valid values for this field are:\r\n1.\
+          \ NAVD88.  The elevation values will in the specified or default units above\
+          \ the NAVD-88 datum.\r\n2. NGVD29.  The elevation values will be in the\
+          \ specified or default units above the NGVD-29 datum."
+        explode: true
+        in: query
+        name: datum
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the start of the time window for data to be included\
+          \ in the response. If this field is not specified, any required time window\
+          \ begins 24 hours prior to the specified or default end time."
+        explode: true
+        in: query
+        name: begin
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the end of the time window for data to be included\
+          \ in the response. If this field is not specified, any required time window\
+          \ ends at the current time"
+        explode: true
+        in: query
+        name: end
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the time zone of the values of the begin and end fields\
+          \ (unless otherwise specified), as well as the time zone of any times in\
+          \ the response. If this field is not specified, the default time zone of\
+          \ UTC shall be used."
+        explode: true
+        in: query
+        name: timezone
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the encoding format of the response. Requests specifying\
+          \ an Accept header:application/json;version=2 must not include this field.\
+          \ Valid format field values for this URI are:\r\n1.    tab\r\n2.    csv\r\
+          \n3.    xml\r\n4.    wml2 (only if name field is specified)\r\n5.    json\
+          \ (default)\r\n"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "This identifies where in the request you are. This is an opaque\
+          \ value, and can be obtained from the 'next-page' value in the response."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: How many entries per page returned. Default 100.
+        explode: true
+        in: query
+        name: page-size
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/LocationLevels'
+          description: OK
+      summary: Get cwmsData levels
+      tags:
+      - Levels
+      x-accepts: application/json
+    post:
+      description: Create new CWMS Location Level
+      operationId: postCwmsDataLevels
+      parameters:
+      - description: Specifies the office in which Location Level will be created
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocationLevel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/LocationLevel'
+        required: true
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Post cwmsData levels
+      tags:
+      - Levels
+      x-content-type: application/json
+      x-accepts: application/json
+  /cwms-data/timeseries/recent/{group-id}:
+    get:
+      operationId: getCwmsDataTimeseriesRecentWithGroupId
+      parameters:
+      - explode: false
+        in: path
+        name: group-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Get cwmsData timeseries recent with groupId
+      x-accepts: application/json
+  /cwms-data/timeseries/category/{category-id}:
+    get:
+      description: Retrieves requested timeseries category
+      operationId: getCwmsDataTimeseriesCategoryWithCategoryId
+      parameters:
+      - description: Specifies the Category whose data is to be included in the response.
+        explode: false
+        in: path
+        name: category-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office of the timeseries category whose
+          data is to be included in the response.
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Based on the combination of inputs provided the timeseries
+            category was not found.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeSeriesCategory'
+          description: OK
+        "501":
+          description: request format is not implemented
+      summary: Get cwmsData timeseries category with categoryId
+      tags:
+      - TimeSeries Categories-Beta
+      x-accepts: application/json
+  /cwms-data/timeseries/category:
+    get:
+      description: Returns CWMS timeseries category Data
+      operationId: getCwmsDataTimeseriesCategory
+      parameters:
+      - description: "Specifies the owning office of the timeseries category(ies)\
+          \ whose data is to be included in the response. If this field is not specified,\
+          \ matching timeseries category information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Based on the combination of inputs provided the categories
+            were not found.
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TimeSeriesCategory'
+                type: array
+          description: OK
+        "501":
+          description: request format is not implemented
+      summary: Get cwmsData timeseries category
+      tags:
+      - TimeSeries Categories-Beta
+      x-accepts: application/json
+  /cwms-data/timeseries/group/{group-id}:
+    get:
+      description: Retrieves requested timeseries group
+      operationId: getCwmsDataTimeseriesGroupWithGroupId
+      parameters:
+      - description: Specifies the timeseries group whose data is to be included in
+          the response
+        explode: false
+        in: path
+        name: group-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office of the timeseries group whose data
+          is to be included in the response.
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: Specifies the category containing the timeseries group whose
+          data is to be included in the response.
+        explode: true
+        in: query
+        name: category-id
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeSeriesGroup'
+          description: OK
+      summary: Get cwmsData timeseries group with groupId
+      tags:
+      - Timeseries Groups
+      x-accepts: application/json
+  /cwms-data/timeseries/group:
+    get:
+      description: Returns CWMS Timeseries Groups Data
+      operationId: getCwmsDataTimeseriesGroup
+      parameters:
+      - description: "Specifies the owning office of the timeseries group(s) whose\
+          \ data is to be included in the response. If this field is not specified,\
+          \ matching timeseries groups information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Based on the combination of inputs provided the timeseries
+            group(s) were not found.
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TimeSeriesGroup'
+                type: array
+          description: OK
+        "501":
+          description: request format is not implemented
+      summary: Get cwmsData timeseries group
+      tags:
+      - Timeseries Groups-Beta
+      x-accepts: application/json
+  /cwms-data/timeseries:
+    get:
+      operationId: getCwmsDataTimeseries
+      parameters:
+      - description: Specifies the name(s) of the time series whose data is to be
+          included in the response. A case insensitive comparison is used to match
+          names.
+        explode: true
+        in: query
+        name: name
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the owning office of the time series(s) whose data\
+          \ is to be included in the response. If this field is not specified, matching\
+          \ location level information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the unit or unit system of the response. Valid values\
+          \ for the unit field are:\r\n 1. EN.   (default) Specifies English unit\
+          \ system.  Location level values will be in the default English units for\
+          \ their parameters.\r\n2. SI.   Specifies the SI unit system.  Location\
+          \ level values will be in the default SI units for their parameters.\r\n\
+          3. Other. Any unit returned in the response to the units URI request that\
+          \ is appropriate for the requested parameters."
+        explode: true
+        in: query
+        name: unit
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the elevation datum of the response. This field affects\
+          \ only elevation location levels. Valid values for this field are:\r\n1.\
+          \ NAVD88.  The elevation values will in the specified or default units above\
+          \ the NAVD-88 datum.\r\n2. NGVD29.  The elevation values will be in the\
+          \ specified or default units above the NGVD-29 datum."
+        explode: true
+        in: query
+        name: datum
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the start of the time window for data to be included\
+          \ in the response. If this field is not specified, any required time window\
+          \ begins 24 hours prior to the specified or default end time. The format\
+          \ for this field is ISO 8601 extended, with optional offset and timezone,\
+          \ i.e., 'YYYY-MM-dd'T'hh:mm:ss[Z'['VV']']', e.g., '2021-06-10T13:00:00-0700[PST8PDT]'."
+        explode: true
+        in: query
+        name: begin
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the end of the time window for data to be included\
+          \ in the response. If this field is not specified, any required time window\
+          \ ends at the current time. The format for this field is ISO 8601 extended,\
+          \ with optional timezone, i.e., 'YYYY-MM-dd'T'hh:mm:ss[Z'['VV']']', e.g.,\
+          \ '2021-06-10T13:00:00-0700[PST8PDT]'."
+        explode: true
+        in: query
+        name: end
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the time zone of the values of the begin and end fields\
+          \ (unless otherwise specified), as well as the time zone of any times in\
+          \ the response. If this field is not specified, the default time zone of\
+          \ UTC shall be used.\r\nIgnored if begin was specified with offset and timezone."
+        explode: true
+        in: query
+        name: timezone
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the encoding format of the response. Valid values\
+          \ for the format field for this URI are:\r\n1.    tab\r\n2.    csv\r\n3.\
+          \    xml\r\n4.  wml2 (only if name field is specified)\r\n5.    json (default)"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "This end point can return a lot of data, this identifies where\
+          \ in the request you are. This is an opaque value, and can be obtained from\
+          \ the 'next-page' value in the response."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated. Use 'page' instead.
+        explode: true
+        in: query
+        name: cursor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: How many entries per page returned. Default 500.
+        explode: true
+        in: query
+        name: page-size
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - deprecated: true
+        description: Deprecated. Please use page-size instead.
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Invalid parameter combination
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: The provided combination of parameters did not find a timeseries.
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/TimeSeries'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TimeSeries'
+          description: A list of elements of the data set you've selected.
+        "501":
+          description: Requested format is not implemented
+      summary: Get cwmsData timeseries
+      tags:
+      - TimeSeries
+      x-accepts: application/json
+    post:
+      description: "Create new TimeSeries, will store any data provided"
+      operationId: postCwmsDataTimeseries
+      requestBody:
+        content:
+          application/json;version=2:
+            schema:
+              $ref: '#/components/schemas/TimeSeries'
+          application/xml;version=2:
+            schema:
+              $ref: '#/components/schemas/TimeSeries'
+        required: true
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Post cwmsData timeseries
+      tags:
+      - TimeSeries
+      x-content-type: application/json;version=2
+      x-accepts: application/json
+  /cwms-data/timeseries/{timeseries}:
+    delete:
+      operationId: deleteCwmsDataTimeseriesWithTimeseries
+      parameters:
+      - explode: false
+        in: path
+        name: timeseries
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office of the timeseries to be deleted.
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Delete cwmsData timeseries with timeseries
+      tags:
+      - TimeSeries
+      x-accepts: application/json
+    patch:
+      description: Update a TimeSeries with provided values
+      operationId: patchCwmsDataTimeseriesWithTimeseries
+      parameters:
+      - description: Full CWMS Timeseries name
+        explode: false
+        in: path
+        name: timeseries
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;version=2:
+            schema:
+              $ref: '#/components/schemas/TimeSeries'
+          application/xml;version=2:
+            schema:
+              $ref: '#/components/schemas/TimeSeries'
+        required: true
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Patch cwmsData timeseries with timeseries
+      tags:
+      - TimeSeries
+      x-content-type: application/json;version=2
+      x-accepts: application/json
+  /cwms-data/ratings/template/{template-id}:
+    get:
+      operationId: getCwmsDataRatingsTemplateWithTemplateId
+      parameters:
+      - description: Specifies the template whose data is to be included in the response
+        explode: false
+        in: path
+        name: template-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "Specifies the owning office of the Rating Templates whose data\
+          \ is to be included in the response. If this field is not specified, matching\
+          \ rating information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                items:
+                  $ref: '#/components/schemas/RatingTemplate'
+                type: array
+          description: OK
+      summary: Get cwmsData ratings template with templateId
+      tags:
+      - Ratings
+      x-accepts: application/json
+  /cwms-data/ratings/template:
+    get:
+      operationId: getCwmsDataRatingsTemplate
+      parameters:
+      - description: "Specifies the owning office of the Rating Templates whose data\
+          \ is to be included in the response. If this field is not specified, matching\
+          \ rating information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "RegExp that specifies the rating template IDs to be included\
+          \ in the response. If this field is not specified, all rating templates\
+          \ shall be returned."
+        explode: true
+        in: query
+        name: template-id-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "This end point can return a lot of data, this identifies where\
+          \ in the request you are. This is an opaque value, and can be obtained from\
+          \ the 'next-page' value in the response."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: How many entries per page returned. Default 100.
+        explode: true
+        in: query
+        name: page-size
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/RatingTemplates'
+          description: OK
+      summary: Get cwmsData ratings template
+      tags:
+      - Ratings
+      x-accepts: application/json
+  /cwms-data/ratings/spec/{rating-id}:
+    get:
+      operationId: getCwmsDataRatingsSpecWithRatingId
+      parameters:
+      - description: Specifies the rating-id of the Rating Spec to be included in
+          the response
+        explode: false
+        in: path
+        name: rating-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "Specifies the owning office of the Rating Specs whose data is\
+          \ to be included in the response. If this field is not specified, matching\
+          \ rating information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/RatingSpec'
+          description: OK
+      summary: Get cwmsData ratings spec with ratingId
+      tags:
+      - Ratings
+      x-accepts: application/json
+  /cwms-data/ratings/spec:
+    get:
+      operationId: getCwmsDataRatingsSpec
+      parameters:
+      - description: "Specifies the owning office of the Rating Specs whose data is\
+          \ to be included in the response. If this field is not specified, matching\
+          \ rating information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "RegExp that specifies the rating IDs to be included in the response.\
+          \ If this field is not specified, all Rating Specs shall be returned."
+        explode: true
+        in: query
+        name: rating-id-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "This end point can return a lot of data, this identifies where\
+          \ in the request you are. This is an opaque value, and can be obtained from\
+          \ the 'next-page' value in the response."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: How many entries per page returned. Default 100.
+        explode: true
+        in: query
+        name: page-size
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/RatingSpecs'
+          description: OK
+      summary: Get cwmsData ratings spec
+      tags:
+      - Ratings
+      x-accepts: application/json
+  /cwms-data/ratings/metadata:
+    get:
+      operationId: getCwmsDataRatingsMetadata
+      parameters:
+      - description: "Specifies the owning office of the Rating Specs whose data is\
+          \ to be included in the response. If this field is not specified, matching\
+          \ rating information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "RegExp that specifies the rating IDs to be included in the response.\
+          \ If this field is not specified, all Rating Specs shall be returned."
+        explode: true
+        in: query
+        name: rating-id-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies the start of the time window of the effective dates
+          to be included. If this field is not specified no start time will be used.
+        explode: true
+        in: query
+        name: start
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies the end of the time window for effective dates to be
+          included. If this field is not specified no end time will be used.
+        explode: true
+        in: query
+        name: end
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the time zone of the values of the begin and end fields\
+          \ (unless otherwise specified). If this field is not specified, the default\
+          \ time zone of UTC shall be used."
+        explode: true
+        in: query
+        name: timezone
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "This end point can return a lot of data, this identifies where\
+          \ in the request you are. This is an opaque value, and can be obtained from\
+          \ the 'next-page' value in the response."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: How many entries per page returned. Default 50.
+        explode: true
+        in: query
+        name: page-size
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/RatingMetadataList'
+          description: OK
+      summary: Get cwmsData ratings metadata
+      tags:
+      - Ratings
+      x-accepts: application/json
+  /cwms-data/ratings/{rating}:
+    delete:
+      operationId: deleteCwmsDataRatingsWithRating
+      parameters:
+      - explode: false
+        in: path
+        name: rating
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office of the rating to be deleted.
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Delete cwmsData ratings with rating
+      tags:
+      - Ratings
+      x-accepts: application/json
+    get:
+      description: Returns CWMS Rating Data
+      operationId: getCwmsDataRatingsWithRating
+      parameters:
+      - explode: false
+        in: path
+        name: rating
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office of the ratingset to be included in
+          the response.
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: Specifies the start of the time window for data to be included
+          in the response. If this field is not specified no start time will be used.
+        explode: true
+        in: query
+        name: begin
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies the end of the time window for data to be included
+          in the response. If this field is not specified no end time will be used.
+        explode: true
+        in: query
+        name: end
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the time zone of the values of the begin and end fields\
+          \ (unless otherwise specified), as well as the time zone of any times in\
+          \ the response. If this field is not specified, the default time zone of\
+          \ UTC shall be used."
+        explode: true
+        in: query
+        name: timezone
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies the retrieval method used.  If no method is provided
+          EAGER will be used.
+        explode: true
+        in: query
+        name: method
+        required: false
+        schema:
+          $ref: '#/components/schemas/DatabaseLoadMethod'
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/Unit'
+            application/xml;version=2:
+              schema:
+                $ref: '#/components/schemas/Unit'
+          description: OK
+      summary: Get cwmsData ratings with rating
+      tags:
+      - Ratings
+      x-accepts: application/json
+    patch:
+      description: Update a RatingSet
+      operationId: patchCwmsDataRatingsWithRating
+      parameters:
+      - explode: false
+        in: path
+        name: rating
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/xml;version=2:
+            schema:
+              $ref: '#/components/schemas/Unit'
+          application/json;version=2:
+            schema:
+              $ref: '#/components/schemas/Unit'
+        required: true
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Patch cwmsData ratings with rating
+      tags:
+      - Ratings
+      x-content-type: application/xml;version=2
+      x-accepts: application/json
+  /cwms-data/ratings:
+    get:
+      operationId: getCwmsDataRatings
+      parameters:
+      - description: Specifies the name(s) of the rating whose data is to be included
+          in the response. A case insensitive comparison is used to match names.
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the owning office of the Rating(s) whose data is to\
+          \ be included in the response. If this field is not specified, matching\
+          \ rating information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the unit or unit system of the response. Valid values\
+          \ for the unit field are:\r\n1. EN.   Specifies English unit system.  Rating\
+          \ values will be in the default English units for their parameters.\r\n\
+          2. SI.   Specifies the SI unit system.  Rating values will be in the default\
+          \ SI units for their parameters.\r\n3. Other. Any unit returned in the response\
+          \ to the units URI request that is appropriate for the requested parameters."
+        explode: true
+        in: query
+        name: unit
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the elevation datum of the response. This field affects\
+          \ only elevation Ratings. Valid values for this field are:\r\n1. NAVD88.\
+          \  The elevation values will in the specified or default units above the\
+          \ NAVD-88 datum.\r\n2. NGVD29.  The elevation values will be in the specified\
+          \ or default units above the NGVD-29 datum."
+        explode: true
+        in: query
+        name: datum
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the start of the time window for data to be included\
+          \ in the response. If this field is not specified, any required time window\
+          \ begins 24 hours prior to the specified or default end time."
+        explode: true
+        in: query
+        name: at
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the end of the time window for data to be included\
+          \ in the response. If this field is not specified, any required time window\
+          \ ends at the current time"
+        explode: true
+        in: query
+        name: end
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the time zone of the values of the begin and end fields\
+          \ (unless otherwise specified), as well as the time zone of any times in\
+          \ the response. If this field is not specified, the default time zone of\
+          \ UTC shall be used."
+        explode: true
+        in: query
+        name: timezone
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the encoding format of the response. Valid values\
+          \ for the format field for this URI are:\r\n1.    tab\r\n2.    csv\r\n3.\
+          \    xml\r\n4.    json (default)"
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: The provided combination of parameters did not find a rating
+            table.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Unit'
+            text/tab-separated-values:
+              schema:
+                type: string
+            text/csv:
+              schema:
+                type: string
+          description: OK
+        "501":
+          description: Requested format is not implemented
+      summary: Get cwmsData ratings
+      tags:
+      - Ratings
+      x-accepts: application/json
+    post:
+      description: Create new RatingSet
+      operationId: postCwmsDataRatings
+      requestBody:
+        content:
+          application/xml;version=2:
+            schema:
+              $ref: '#/components/schemas/Unit'
+          application/json;version=2:
+            schema:
+              $ref: '#/components/schemas/Unit'
+        required: true
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Post cwmsData ratings
+      tags:
+      - Ratings
+      x-content-type: application/xml;version=2
+      x-accepts: application/json
+  /cwms-data/catalog/{dataset}:
+    get:
+      operationId: getCwmsDataCatalogWithDataset
+      parameters:
+      - description: "A list of what data? E.g. Timeseries, Locations, Ratings, etc"
+        explode: false
+        in: path
+        name: dataset
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogableEndpoint'
+        style: simple
+      - description: "This end point can return a lot of data, this identifies where\
+          \ in the request you are."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated. Use 'page' instead.
+        explode: true
+        in: query
+        name: cursor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: How many entires per page returned. Default 500.
+        explode: true
+        in: query
+        name: page-size
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - deprecated: true
+        description: Deprecated. Use page-size.
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - deprecated: true
+        description: Deprecated. Use unit-system.
+        explode: true
+        in: query
+        name: unitSystem
+        required: false
+        schema:
+          $ref: '#/components/schemas/UnitSystem'
+        style: form
+      - description: "Unit System desired in response. Can be SI (International Scientific)\
+          \ or EN (Imperial.) If unspecified, defaults to SI."
+        explode: true
+        in: query
+        name: unit-system
+        required: false
+        schema:
+          $ref: '#/components/schemas/UnitSystem'
+        style: form
+      - description: 3-4 letter office name representing the district you want to
+          isolate data to.
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Posix regular expression matching against the id
+        explode: true
+        in: query
+        name: like
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Posix regular expression matching against the timeseries category
+          id
+        explode: true
+        in: query
+        name: timeseries-category-like
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated. Use timeseries-category-like.
+        explode: true
+        in: query
+        name: timeseriesCategoryLike
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Posix regular expression matching against the timeseries group
+          id
+        explode: true
+        in: query
+        name: timeseries-group-like
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated. Use timeseries-group-like.
+        explode: true
+        in: query
+        name: timeseriesGroupLike
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Posix regular expression matching against the location category
+          id
+        explode: true
+        in: query
+        name: location-category-like
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated. Use location-category-like.
+        explode: true
+        in: query
+        name: locationCategoryLike
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Posix regular expression matching against the location group
+          id
+        explode: true
+        in: query
+        name: location-group-like
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated. Use location-group-like.
+        explode: true
+        in: query
+        name: locationGroupLike
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+          description: A list of elements the data set you've selected.
+      summary: Get cwmsData catalog with dataset
+      tags:
+      - Catalog-Beta
+      x-accepts: application/json
+  /cwms-data/basins/{basin-id}:
+    get:
+      description: Returns CWMS Basin Data
+      operationId: getCwmsDataBasinsWithBasinId
+      parameters:
+      - explode: false
+        in: path
+        name: basin-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "Specifies the owning office of the basin whose data is to be\
+          \ included in the response. If this field is not specified, matching basin\
+          \ information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the unit or unit system of the response. Valid values\
+          \ for the unit field are:\r\n 1. EN.   Specifies English unit system. Basin\
+          \ values will be in the default English units for their parameters. (This\
+          \ is default if no value is entered)\r\n2. SI.   Specifies the SI unit system.\
+          \ Basin values will be in the default SI units for their parameters."
+        explode: true
+        in: query
+        name: unit
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: The provided combination of parameters did not find a basin.
+        "200":
+          content:
+            application/vnd.named+pg+json:
+              schema:
+                $ref: '#/components/schemas/Basin'
+          description: OK
+        "501":
+          description: Requested format is not implemented
+      summary: Get cwmsData basins with basinId
+      tags:
+      - Basins-Beta
+      x-accepts: application/json
+  /cwms-data/basins:
+    get:
+      description: Returns CWMS Basin Data
+      operationId: getCwmsDataBasins
+      parameters:
+      - description: "Specifies the owning office of the basin whose data is to be\
+          \ included in the response. If this field is not specified, matching basin\
+          \ information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies the unit or unit system of the response. Valid values\
+          \ for the unit field are:\r\n 1. EN.   Specifies English unit system. Basin\
+          \ values will be in the default English units for their parameters. (This\
+          \ is default if no value is entered)\r\n2. SI.   Specifies the SI unit system.\
+          \ Basin values will be in the default SI units for their parameters."
+        explode: true
+        in: query
+        name: unit
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: The provided combination of parameters did not find a basin.
+        "200":
+          content:
+            application/vnd.named+pg+json:
+              schema:
+                $ref: '#/components/schemas/Basin'
+          description: OK
+        "501":
+          description: Requested format is not implemented
+      summary: Get cwmsData basins
+      tags:
+      - Basins-Beta
+      x-accepts: application/json
+  /cwms-data/blobs/{blob-id}:
+    get:
+      operationId: getCwmsDataBlobsWithBlobId
+      parameters:
+      - explode: false
+        in: path
+        name: blob-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office.
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+      summary: Get cwmsData blobs with blobId
+      tags:
+      - Blob
+      x-accepts: application/json
+  /cwms-data/blobs:
+    get:
+      operationId: getCwmsDataBlobs
+      parameters:
+      - description: "Specifies the owning office. If this field is not specified,\
+          \ matching information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "This end point can return a lot of data, this identifies where\
+          \ in the request you are. This is an opaque value, and can be obtained from\
+          \ the 'next-page' value in the response."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated. Use 'page' instead.
+        explode: true
+        in: query
+        name: cursor
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated.  Use page-size instead.
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - description: How many entries per page returned. Default 20.
+        explode: true
+        in: query
+        name: page-size
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - description: Posix regular expression describing the blob id's you want
+        explode: true
+        in: query
+        name: like
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/Blobs'
+            application/xml;version=2:
+              schema:
+                $ref: '#/components/schemas/Blobs'
+          description: A list of blobs.
+      summary: Get cwmsData blobs
+      tags:
+      - Blob
+      x-accepts: application/json
+  /cwms-data/clobs/{clob-id}:
+    get:
+      operationId: getCwmsDataClobsWithClobId
+      parameters:
+      - explode: false
+        in: path
+        name: clob-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office.
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Clob'
+          description: Returns requested clob.
+      summary: Get cwmsData clobs with clobId
+      tags:
+      - Clob
+      x-accepts: application/json
+  /cwms-data/clobs:
+    get:
+      operationId: getCwmsDataClobs
+      parameters:
+      - description: "Specifies the owning office. If this field is not specified,\
+          \ matching information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "This end point can return a lot of data, this identifies where\
+          \ in the request you are. This is an opaque value, and can be obtained from\
+          \ the 'next-page' value in the response."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated. Use 'page' instead.
+        explode: true
+        in: query
+        name: cursor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: How many entries per page returned. Default 20.
+        explode: true
+        in: query
+        name: page-size
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - deprecated: true
+        description: "Deprecated, use 'page-size' instead."
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - description: "Do you want the value associated with this particular clob (default:\
+          \ false)"
+        explode: true
+        in: query
+        name: include-values
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - deprecated: true
+        description: "Deprecated, use 'include-values' instead."
+        explode: true
+        in: query
+        name: includeValues
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: Posix regular expression matching against the id
+        explode: true
+        in: query
+        name: like
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/Clobs'
+            application/xml;version=2:
+              schema:
+                $ref: '#/components/schemas/Clobs'
+          description: A list of clobs.
+      summary: Get cwmsData clobs
+      tags:
+      - Clob
+      x-accepts: application/json
+  /cwms-data/pools/{pool-id}:
+    get:
+      description: Retrieves requested Pool
+      operationId: getCwmsDataPoolsWithPoolId
+      parameters:
+      - description: Specifies the pool whose data is to be included in the response.
+        explode: false
+        in: path
+        name: pool-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Specifies the owning office of the Pool whose data is to be included
+          in the response.
+        explode: true
+        in: query
+        name: office
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: Specifies the project-id of the Pool whose data is to be included
+          in the response.
+        explode: true
+        in: query
+        name: project-id
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: Bottom level mask. Default value:*
+        explode: true
+        in: query
+        name: bottom-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Top level mask. Default value:*
+        explode: true
+        in: query
+        name: top-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies if the results should include explicit Pools. Default
+          value:false
+        explode: true
+        in: query
+        name: include-explicit
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies if the results should include implicit Pools. Default
+          value:true
+        explode: true
+        in: query
+        name: include-implicit
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Based on the combination of inputs provided the Location Category
+            was not found.
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/Pool'
+          description: OK
+        "501":
+          description: request format is not implemented
+      summary: Get cwmsData pools with poolId
+      tags:
+      - Pools
+      x-accepts: application/json
+  /cwms-data/pools:
+    get:
+      description: Returns Pools Data
+      operationId: getCwmsDataPools
+      parameters:
+      - description: "Specifies the owning office of the data in the response. If\
+          \ this field is not specified, matching items from all offices shall be\
+          \ returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Project Id mask. Default value:*
+        explode: true
+        in: query
+        name: id-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Name mask. Default value:*
+        explode: true
+        in: query
+        name: name-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Bottom level mask. Default value:*
+        explode: true
+        in: query
+        name: bottom-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Top level mask. Default value:*
+        explode: true
+        in: query
+        name: top-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies if the results should include explicit Pools. Default
+          value:false
+        explode: true
+        in: query
+        name: include-explicit
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specifies if the results should include implicit Pools. Default
+          value:true
+        explode: true
+        in: query
+        name: include-implicit
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "This end point can return a lot of data, this identifies where\
+          \ in the request you are. This is an opaque value, and can be obtained from\
+          \ the 'next-page' value in the response."
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - deprecated: true
+        description: Deprecated. Use 'page' instead.
+        explode: true
+        in: query
+        name: cursor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: How many entries per page returned. Default 100.
+        explode: true
+        in: query
+        name: page-size
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - deprecated: true
+        description: Deprecated. Use 'page-size' instead.
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Based on the combination of inputs provided the pools were
+            not found.
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/Pools'
+          description: OK
+        "501":
+          description: request format is not implemented
+      summary: Get cwmsData pools
+      tags:
+      - Pools
+      x-accepts: application/json
+  /cwms-data/specified-levels:
+    get:
+      operationId: getCwmsDataSpecifiedLevels
+      parameters:
+      - description: "Specifies the owning office of the Specified Levels whose data\
+          \ is to be included in the response. If this field is not specified, matching\
+          \ rating information from all offices shall be returned."
+        explode: true
+        in: query
+        name: office
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Mask that specifies the IDs to be included in the response.\
+          \ If this field is not specified, all specified levels shall be returned."
+        explode: true
+        in: query
+        name: template-id-mask
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Server Error
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RadarError'
+          description: Not Found
+        "200":
+          content:
+            application/json;version=2:
+              schema:
+                $ref: '#/components/schemas/SpecifiedLevel'
+          description: OK
+      summary: Get cwmsData specifiedLevels
+      tags:
+      - Specified Levels
+      x-accepts: application/json
+components:
+  schemas:
+    RadarError:
+      properties:
+        message:
+          type: string
+        incidentIdentifier:
+          description: A randomly generated number to help identify your request in
+            the logs for analysis..
+          type: string
+        details:
+          additionalProperties:
+            type: object
+          type: object
+      type: object
+    LocationCategory:
+      description: A representation of a location category
+      example:
+        officeId: officeId
+        description: description
+        id: id
+      properties:
+        officeId:
+          type: string
+        id:
+          type: string
+        description:
+          type: string
+      type: object
+      xml:
+        name: location_category
+    AssignedLocation:
+      example:
+        officeId: officeId
+        refLocationId: refLocationId
+        locationId: locationId
+        aliasId: aliasId
+        attribute: 6.027456183070403
+      properties:
+        locationId:
+          type: string
+        officeId:
+          type: string
+        aliasId:
+          type: string
+        attribute:
+          type: number
+        refLocationId:
+          type: string
+      type: object
+    LocationGroup:
+      description: A representation of a location group
+      example:
+        locationCategory:
+          officeId: officeId
+          description: description
+          id: id
+        officeId: officeId
+        sharedRefLocationId: sharedRefLocationId
+        description: description
+        assignedLocations:
+        - officeId: officeId
+          refLocationId: refLocationId
+          locationId: locationId
+          aliasId: aliasId
+          attribute: 6.027456183070403
+        - officeId: officeId
+          refLocationId: refLocationId
+          locationId: locationId
+          aliasId: aliasId
+          attribute: 6.027456183070403
+        id: id
+        locGroupAttribute: 0.8008281904610115
+        sharedLocAliasId: sharedLocAliasId
+      properties:
+        id:
+          type: string
+        locationCategory:
+          $ref: '#/components/schemas/LocationCategory'
+        officeId:
+          type: string
+        description:
+          type: string
+        sharedLocAliasId:
+          type: string
+        sharedRefLocationId:
+          type: string
+        locGroupAttribute:
+          type: number
+        assignedLocations:
+          items:
+            $ref: '#/components/schemas/AssignedLocation'
+          type: array
+      type: object
+      xml:
+        name: location_group
+    LocationGroup_CSV:
+      description: Single LocationGroup or List of LocationGroups in comma separated
+        format
+      example: "#LocationGroup Id, OfficeId, Description, CategoryId, CategoryOfficeId,\
+        \ SharedLocAliasId, SharedRefLocationId, LocGroupAttribute\r\nCERL,Construction\
+        \ Engineering Research Laboratory,Field Operating Activity\tERD\r\nCHL,Coastal\
+        \ and Hydraulics Laboratory,Field Operating Activity\tERD\r\nNAB,Baltimore\
+        \ District,District,NAD\r\nNAD,North Atlantic Division,Division Headquarters,HQ"
+      type: object
+    CsvV1LocationGroup:
+      description: Single LocationGroup or List of LocationGroups in comma separated
+        format
+      example: "#LocationGroup Id, OfficeId, Description, CategoryId, CategoryOfficeId,\
+        \ SharedLocAliasId, SharedRefLocationId, LocGroupAttribute\r\nCERL,Construction\
+        \ Engineering Research Laboratory,Field Operating Activity\tERD\r\nCHL,Coastal\
+        \ and Hydraulics Laboratory,Field Operating Activity\tERD\r\nNAB,Baltimore\
+        \ District,District,NAD\r\nNAD,North Atlantic Division,Division Headquarters,HQ"
+      type: object
+    Unit:
+      type: object
+    Location:
+      example:
+        elevation: 5.637376656633329
+        nearest-city: nearest-city
+        bounding-office-id: bounding-office-id
+        county-name: county-name
+        office-id: office-id
+        long-name: long-name
+        nation: US
+        latitude: 0.8008281904610115
+        active: true
+        description: description
+        location-kind: location-kind
+        published-latitude: 5.962133916683182
+        public-name: public-name
+        horizontal-datum: horizontal-datum
+        vertical-datum: vertical-datum
+        timezone-name: timezone-name
+        state-initial: state-initial
+        published-longitude: 1.4658129805029452
+        name: name
+        location-type: location-type
+        map-label: map-label
+        longitude: 6.027456183070403
+      properties:
+        name:
+          type: string
+        latitude:
+          format: double
+          type: number
+        longitude:
+          format: double
+          type: number
+        active:
+          type: boolean
+        public-name:
+          type: string
+        long-name:
+          type: string
+        description:
+          type: string
+        timezone-name:
+          type: string
+        location-type:
+          type: string
+        location-kind:
+          type: string
+        nation:
+          enum:
+          - US
+          - CANADA
+          - MEXICO
+          type: string
+        state-initial:
+          type: string
+        county-name:
+          type: string
+        nearest-city:
+          type: string
+        horizontal-datum:
+          type: string
+        published-longitude:
+          format: double
+          type: number
+        published-latitude:
+          format: double
+          type: number
+        vertical-datum:
+          type: string
+        elevation:
+          format: double
+          type: number
+        map-label:
+          type: string
+        bounding-office-id:
+          type: string
+        office-id:
+          type: string
+      required:
+      - name
+      type: object
+    Office:
+      description: A representation of a CWMS office
+      example:
+        name: name
+        reportsTo: reportsTo
+        type: unknown
+        longName: longName
+      properties:
+        name:
+          type: string
+        longName:
+          type: string
+          xml:
+            name: long-name
+        type:
+          enum:
+          - unknown
+          - corps headquarters
+          - division headquarters
+          - division regional
+          - district
+          - filed operating activity
+          type: string
+        reportsTo:
+          description: "Reference to another office, like a division, that this office\
+            \ reports to."
+          type: string
+          xml:
+            name: reports-to
+      type: object
+      xml:
+        name: office
+    OfficeFormatV1:
+      example:
+        offices:
+          offices:
+          - name: name
+            reportsTo: reportsTo
+            type: unknown
+            longName: longName
+          - name: name
+            reportsTo: reportsTo
+            type: unknown
+            longName: longName
+      properties:
+        offices:
+          $ref: '#/components/schemas/OfficesFMT'
+      type: object
+    OfficesFMT:
+      example:
+        offices:
+        - name: name
+          reportsTo: reportsTo
+          type: unknown
+          longName: longName
+        - name: name
+          reportsTo: reportsTo
+          type: unknown
+          longName: longName
+      properties:
+        offices:
+          items:
+            $ref: '#/components/schemas/Office'
+          type: array
+      type: object
+    Office_Tabulation:
+      description: Single Office or List of Offices in tab separated format
+      example: "#Office Name<tab>Long Name<tab>Office Type<tab>Reports To Office\r\
+        \nCERL\tConstruction Engineering Research Laboratory\tField Operating Activity\t\
+        ERD\r\nCHL\tCoastal and Hydraulics Laboratory\tField Operating Activity\t\
+        ERD\r\nNAB\tBaltimore District\tDistrict\tNADNAD\tNorth Atlantic Division\t\
+        Division Headquarters\tHQ"
+      properties:
+        Office:
+          type: string
+        longName:
+          type: string
+        officeType:
+          type: string
+        reportsToOffice:
+          type: string
+      type: object
+    TabV1Office:
+      description: Single Office or List of Offices in tab separated format
+      example: "#Office Name<tab>Long Name<tab>Office Type<tab>Reports To Office\r\
+        \nCERL\tConstruction Engineering Research Laboratory\tField Operating Activity\t\
+        ERD\r\nCHL\tCoastal and Hydraulics Laboratory\tField Operating Activity\t\
+        ERD\r\nNAB\tBaltimore District\tDistrict\tNADNAD\tNorth Atlantic Division\t\
+        Division Headquarters\tHQ"
+      properties:
+        Office:
+          type: string
+        longName:
+          type: string
+        officeType:
+          type: string
+        reportsToOffice:
+          type: string
+      type: object
+    Office_CSV:
+      description: Single Office or List of Offices in comma separated format
+      example: "#Office Name,Long Name,Office Type,Reports To Office\r\nCERL,Construction\
+        \ Engineering Research Laboratory,Field Operating Activity\tERD\r\nCHL,Coastal\
+        \ and Hydraulics Laboratory,Field Operating Activity\tERD\r\nNAB,Baltimore\
+        \ District,District,NAD\r\nNAD,North Atlantic Division,Division Headquarters,HQ"
+      properties:
+        Office:
+          type: string
+        longName:
+          type: string
+        officeType:
+          type: string
+        reportsToOffice:
+          type: string
+      type: object
+    CsvV1Office:
+      description: Single Office or List of Offices in comma separated format
+      example: "#Office Name,Long Name,Office Type,Reports To Office\r\nCERL,Construction\
+        \ Engineering Research Laboratory,Field Operating Activity\tERD\r\nCHL,Coastal\
+        \ and Hydraulics Laboratory,Field Operating Activity\tERD\r\nNAB,Baltimore\
+        \ District,District,NAD\r\nNAD,North Atlantic Division,Division Headquarters,HQ"
+      properties:
+        Office:
+          type: string
+        longName:
+          type: string
+        officeType:
+          type: string
+        reportsToOffice:
+          type: string
+      type: object
+    LocationLevel:
+      example:
+        office-id: office-id
+        attribute-value: 7.061401241503109
+        attribute-comment: attribute-comment
+        location-level-id: location-level-id
+        interval-minutes: 2
+        seasonal-values:
+        - offset-months: 6
+          offset-minutes: 1
+          value: 0.8008281904610115
+        - offset-months: 6
+          offset-minutes: 1
+          value: 0.8008281904610115
+        level-date: 2000-01-23T04:56:07.000+00:00
+        attribute-duration-id: attribute-duration-id
+        attribute-parameter-id: attribute-parameter-id
+        level-comment: level-comment
+        specified-level-id: specified-level-id
+        parameter-type-id: Inst
+        constant-value: 5.962133916683182
+        attribute-units-id: attribute-units-id
+        parameter-id: parameter-id
+        interpolate-string: T
+        duration-id: duration-id
+        attribute-parameter-type-id: attribute-parameter-type-id
+        interval-origin: 2000-01-23T04:56:07.000+00:00
+        seasonal-time-series-id: seasonal-time-series-id
+        level-units-id: level-units-id
+        interval-months: 5
+      properties:
+        location-level-id:
+          description: Name of the location level
+          type: string
+        office-id:
+          description: Owning office of the level
+          type: string
+        seasonal-time-series-id:
+          description: Timeseries ID (e.g. from the times series catalog) to use as
+            the location level. Mutually exclusive with seasonalValues and siParameterUnitsConstantValue
+          type: string
+        seasonal-values:
+          description: "List of Repeating seasonal values. The values repeater after\
+            \ the specified interval. A yearly interval seasonable could have 12 different\
+            \ values, one for each month for example. Mutually exclusive with seasonalTimeSeriesId\
+            \ and siParameterUnitsConstantValue"
+          items:
+            $ref: '#/components/schemas/SeasonalValueBean'
+          type: array
+        specified-level-id:
+          description: "Generic name of this location level. Common names are 'Top\
+            \ of Dam', 'Streambed', 'Bottom of Dam'."
+          type: string
+        parameter-type-id:
+          description: To indicate if single or aggregate value
+          enum:
+          - Inst
+          - Ave
+          - Min
+          - Max
+          - Total
+          type: string
+        parameter-id:
+          description: "Data Type such as Stage, Elevation, or others."
+          type: string
+        constant-value:
+          description: Single value for this location level. Mutually exclusive with
+            seasonableTimeSeriesId and seasonValues.
+          format: double
+          type: number
+        level-units-id:
+          description: Units thhe provided levels are in
+          type: string
+        level-date:
+          description: The date/time at which this location level configuration takes
+            effect.
+          format: date-time
+          type: string
+        level-comment:
+          type: string
+        interval-origin:
+          description: The start point of provided seasonal values
+          format: date-time
+          type: string
+        interval-months:
+          format: int32
+          type: integer
+        interval-minutes:
+          format: int32
+          type: integer
+        interpolate-string:
+          description: Indicating whether or not to interpolate between seasonal values.
+          enum:
+          - T
+          - F
+          type: string
+        duration-id:
+          description: 0 if parameterTypeId is Inst. Otherwise duration indicating
+            the time window of the aggregate value.
+          type: string
+        attribute-value:
+          type: number
+        attribute-units-id:
+          type: string
+        attribute-parameter-type-id:
+          type: string
+        attribute-parameter-id:
+          type: string
+        attribute-duration-id:
+          type: string
+        attribute-comment:
+          type: string
+      required:
+      - location-level-id
+      - office-id
+      type: object
+    SeasonalValueBean:
+      description: "List of Repeating seasonal values. The values repeater after the\
+        \ specified interval. A yearly interval seasonable could have 12 different\
+        \ values, one for each month for example. Mutually exclusive with seasonalTimeSeriesId\
+        \ and siParameterUnitsConstantValue"
+      example:
+        offset-months: 6
+        offset-minutes: 1
+        value: 0.8008281904610115
+      properties:
+        value:
+          format: double
+          type: number
+        offset-months:
+          format: int32
+          type: integer
+        offset-minutes:
+          type: integer
+      type: object
+    LocationLevels:
+      properties:
+        page:
+          description: The cursor to the current page of data
+          readOnly: true
+          type: string
+        total:
+          description: The total number of records retrieved; null or not present
+            if not supported or unknown
+          format: int32
+          readOnly: true
+          type: integer
+        levels:
+          description: List of retrieved location levels
+          items:
+            $ref: '#/components/schemas/LocationLevel'
+          type: array
+          xml:
+            wrapped: true
+        next-page:
+          description: The cursor to the next page of data; null if there is no more
+            data
+          readOnly: true
+          type: string
+        page-size:
+          description: The number of records fetched per-page; this may be larger
+            than the number of records actually retrieved
+          format: int32
+          readOnly: true
+          type: integer
+      type: object
+      xml:
+        name: location-levels
+    TimeSeriesCategory:
+      description: A representation of a TimeSeries category
+      example:
+        officeId: officeId
+        description: description
+        id: id
+      properties:
+        officeId:
+          type: string
+        id:
+          type: string
+        description:
+          type: string
+      type: object
+      xml:
+        name: timeseries-category
+    AssignedTimeSeries:
+      example:
+        timeseriesId: timeseriesId
+        aliasId: aliasId
+        refTsId: refTsId
+        tsCode: 0.8008281904610115
+        attribute: 6
+      properties:
+        timeseriesId:
+          type: string
+        tsCode:
+          type: number
+        aliasId:
+          type: string
+        refTsId:
+          type: string
+        attribute:
+          format: int32
+          type: integer
+      type: object
+    TimeSeriesGroup:
+      description: A representation of a timeseries group
+      example:
+        assignedTimeSeries:
+        - timeseriesId: timeseriesId
+          aliasId: aliasId
+          refTsId: refTsId
+          tsCode: 0.8008281904610115
+          attribute: 6
+        - timeseriesId: timeseriesId
+          aliasId: aliasId
+          refTsId: refTsId
+          tsCode: 0.8008281904610115
+          attribute: 6
+        officeId: officeId
+        timeSeriesCategory:
+          officeId: officeId
+          description: description
+          id: id
+        sharedAliasId: sharedAliasId
+        description: description
+        id: id
+        sharedRefTsId: sharedRefTsId
+      properties:
+        id:
+          type: string
+        timeSeriesCategory:
+          $ref: '#/components/schemas/TimeSeriesCategory'
+        officeId:
+          type: string
+        description:
+          type: string
+        sharedAliasId:
+          type: string
+        sharedRefTsId:
+          type: string
+        assignedTimeSeries:
+          items:
+            $ref: '#/components/schemas/AssignedTimeSeries'
+          type: array
+      type: object
+      xml:
+        name: timeseries-group
+    Offset:
+      example:
+        estimate: true
+        toDatum: toDatum
+        value: 2.027123023002322
+      properties:
+        estimate:
+          type: boolean
+          xml:
+            attribute: true
+        toDatum:
+          type: string
+          xml:
+            name: to-datum
+        value:
+          format: double
+          type: number
+      type: object
+    TimeSeries:
+      example:
+        office-id: office-id
+        next-page: next-page
+        values:
+        - - 123
+          - 54.3
+          - 0
+        - - 123
+          - 54.3
+          - 0
+        units: units
+        vertical-datum-info:
+          elevation: 3.616076749251911
+          unit: unit
+          offsets:
+          - estimate: true
+            toDatum: toDatum
+            value: 2.027123023002322
+          - estimate: true
+            toDatum: toDatum
+            value: 2.027123023002322
+          native-datum: native-datum
+          location: location
+          office: office
+        value-columns:
+        - datatype: datatype
+          name: name
+          ordinal: 9
+        - datatype: datatype
+          name: name
+          ordinal: 9
+        page-size: 2
+        total: 7
+        interval-offset: 5
+        name: name
+        end: 2000-01-23T04:56:07.000+00:00
+        interval:
+          zero: true
+          seconds: 0
+          negative: true
+          nano: 5
+          units:
+          - duration:
+              zero: true
+              seconds: 6
+              negative: true
+              nano: 1
+            durationEstimated: true
+            timeBased: true
+            dateBased: true
+          - duration:
+              zero: true
+              seconds: 6
+              negative: true
+              nano: 1
+            durationEstimated: true
+            timeBased: true
+            dateBased: true
+        page: page
+        begin: 2000-01-23T04:56:07.000+00:00
+        time-zone: time-zone
+      properties:
+        begin:
+          description: "The requested start time of the data, in ISO-8601 format with\
+            \ offset and timezone ('yyyy-MM-dd'T'HH:mm:ssZ'['VV']'')"
+          format: date-time
+          readOnly: true
+          type: string
+        end:
+          description: "The requested end time of the data, in ISO-8601 format with\
+            \ offset and timezone ('yyyy-MM-dd'T'HH:mm:ssZ'['VV']'')"
+          format: date-time
+          readOnly: true
+          type: string
+        interval:
+          $ref: '#/components/schemas/TimeSeries_interval'
+        interval-offset:
+          description: Offset from top of interval
+          format: int64
+          readOnly: true
+          type: integer
+        name:
+          description: Time-series name
+          type: string
+        next-page:
+          description: The cursor to the next page of data; null if there is no more
+            data
+          readOnly: true
+          type: string
+        office-id:
+          description: Office ID that owns the time-series
+          type: string
+        page:
+          description: The cursor to the current page of data
+          readOnly: true
+          type: string
+        page-size:
+          description: The number of records fetched per-page; this may be larger
+            than the number of records actually retrieved
+          format: int32
+          readOnly: true
+          type: integer
+        time-zone:
+          description: Only on 21.1.1 Database. The timezone the Interval Offset is
+            from.
+          readOnly: true
+          type: string
+        total:
+          description: The total number of records retrieved; null or not present
+            if not supported or unknown
+          format: int32
+          readOnly: true
+          type: integer
+        units:
+          description: The units of the time series data
+          type: string
+        value-columns:
+          items:
+            $ref: '#/components/schemas/TimeSeries.Column'
+          readOnly: true
+          type: array
+        values:
+          items:
+            example:
+            - 123
+            - 54.3
+            - 0
+            items:
+              $ref: '#/components/schemas/TimeSeries_values_inner_inner'
+            type: array
+          type: array
+          xml:
+            wrapped: true
+        vertical-datum-info:
+          $ref: '#/components/schemas/VerticalDatumInfo'
+      required:
+      - units
+      type: object
+      xml:
+        name: timeseries
+    TimeSeries.Column:
+      example:
+        datatype: datatype
+        name: name
+        ordinal: 9
+      properties:
+        name:
+          type: string
+        ordinal:
+          format: int32
+          type: integer
+        datatype:
+          type: string
+      readOnly: true
+      type: object
+    TimeSeries.Record:
+      description: List of retrieved time-series values
+      properties:
+        date-time:
+          description: "Milliseconds since 1970-01-01 (Unix Epoch), always UTC"
+          format: int64
+          type: integer
+        value:
+          description: Requested time-series data value
+          format: double
+          type: number
+        quality-code:
+          format: int32
+          type: integer
+      type: object
+    VerticalDatumInfo:
+      example:
+        elevation: 3.616076749251911
+        unit: unit
+        offsets:
+        - estimate: true
+          toDatum: toDatum
+          value: 2.027123023002322
+        - estimate: true
+          toDatum: toDatum
+          value: 2.027123023002322
+        native-datum: native-datum
+        location: location
+        office: office
+      properties:
+        office:
+          type: string
+          xml:
+            attribute: true
+        unit:
+          type: string
+          xml:
+            attribute: true
+        location:
+          type: string
+        native-datum:
+          type: string
+        elevation:
+          format: double
+          type: number
+        offsets:
+          items:
+            $ref: '#/components/schemas/Offset'
+          type: array
+          xml:
+            name: offset
+      type: object
+      xml:
+        name: vertical-datum-info
+    ParameterSpec:
+      example:
+        out-range-low-method: out-range-low-method
+        parameter: parameter
+        out-range-high-method: out-range-high-method
+        in-range-method: in-range-method
+      properties:
+        parameter:
+          type: string
+        in-range-method:
+          type: string
+        out-range-low-method:
+          type: string
+        out-range-high-method:
+          type: string
+      type: object
+    RatingTemplate:
+      example:
+        office-id: office-id
+        independent-parameter-specs:
+        - out-range-low-method: out-range-low-method
+          parameter: parameter
+          out-range-high-method: out-range-high-method
+          in-range-method: in-range-method
+        - out-range-low-method: out-range-low-method
+          parameter: parameter
+          out-range-high-method: out-range-high-method
+          in-range-method: in-range-method
+        rating-ids:
+        - rating-ids
+        - rating-ids
+        dependent-parameter: dependent-parameter
+        description: description
+        id: id
+        version: version
+      properties:
+        office-id:
+          type: string
+        id:
+          type: string
+        version:
+          type: string
+        description:
+          type: string
+        dependent-parameter:
+          type: string
+        independent-parameter-specs:
+          items:
+            $ref: '#/components/schemas/ParameterSpec'
+          type: array
+        rating-ids:
+          items:
+            type: string
+          type: array
+      type: object
+    RatingTemplates:
+      example:
+        total: 0
+        page-size: 6
+        next-page: next-page
+        templates:
+        - office-id: office-id
+          independent-parameter-specs:
+          - out-range-low-method: out-range-low-method
+            parameter: parameter
+            out-range-high-method: out-range-high-method
+            in-range-method: in-range-method
+          - out-range-low-method: out-range-low-method
+            parameter: parameter
+            out-range-high-method: out-range-high-method
+            in-range-method: in-range-method
+          rating-ids:
+          - rating-ids
+          - rating-ids
+          dependent-parameter: dependent-parameter
+          description: description
+          id: id
+          version: version
+        - office-id: office-id
+          independent-parameter-specs:
+          - out-range-low-method: out-range-low-method
+            parameter: parameter
+            out-range-high-method: out-range-high-method
+            in-range-method: in-range-method
+          - out-range-low-method: out-range-low-method
+            parameter: parameter
+            out-range-high-method: out-range-high-method
+            in-range-method: in-range-method
+          rating-ids:
+          - rating-ids
+          - rating-ids
+          dependent-parameter: dependent-parameter
+          description: description
+          id: id
+          version: version
+        page: page
+      properties:
+        page:
+          description: The cursor to the current page of data
+          readOnly: true
+          type: string
+        total:
+          description: The total number of records retrieved; null or not present
+            if not supported or unknown
+          format: int32
+          readOnly: true
+          type: integer
+        templates:
+          items:
+            $ref: '#/components/schemas/RatingTemplate'
+          type: array
+        next-page:
+          description: The cursor to the next page of data; null if there is no more
+            data
+          readOnly: true
+          type: string
+        page-size:
+          description: The number of records fetched per-page; this may be larger
+            than the number of records actually retrieved
+          format: int32
+          readOnly: true
+          type: integer
+      type: object
+    IndependentRoundingSpec:
+      example:
+        position: 0
+        value: value
+      properties:
+        position:
+          format: int32
+          type: integer
+        value:
+          type: string
+      type: object
+    RatingSpec:
+      example:
+        office-id: office-id
+        effective-dates:
+        - 2000-01-23T04:56:07.000+00:00
+        - 2000-01-23T04:56:07.000+00:00
+        rating-id: rating-id
+        independent-rounding-specs:
+        - position: 0
+          value: value
+        - position: 0
+          value: value
+        active: true
+        description: description
+        version: version
+        out-range-low-method: out-range-low-method
+        auto-update: true
+        auto-activate: true
+        source-agency: source-agency
+        template-id: template-id
+        location-id: location-id
+        out-range-high-method: out-range-high-method
+        auto-migrate-extension: true
+        dependent-rounding-spec: dependent-rounding-spec
+        in-range-method: in-range-method
+      properties:
+        office-id:
+          type: string
+        rating-id:
+          type: string
+        template-id:
+          type: string
+        location-id:
+          type: string
+        version:
+          type: string
+        source-agency:
+          type: string
+        in-range-method:
+          type: string
+        out-range-low-method:
+          type: string
+        out-range-high-method:
+          type: string
+        active:
+          type: boolean
+        auto-update:
+          type: boolean
+        auto-activate:
+          type: boolean
+        auto-migrate-extension:
+          type: boolean
+        independent-rounding-specs:
+          items:
+            $ref: '#/components/schemas/IndependentRoundingSpec'
+          type: array
+        dependent-rounding-spec:
+          type: string
+        description:
+          type: string
+        effective-dates:
+          items:
+            format: date-time
+            type: string
+          type: array
+      type: object
+    RatingSpecs:
+      example:
+        specs:
+        - office-id: office-id
+          effective-dates:
+          - 2000-01-23T04:56:07.000+00:00
+          - 2000-01-23T04:56:07.000+00:00
+          rating-id: rating-id
+          independent-rounding-specs:
+          - position: 0
+            value: value
+          - position: 0
+            value: value
+          active: true
+          description: description
+          version: version
+          out-range-low-method: out-range-low-method
+          auto-update: true
+          auto-activate: true
+          source-agency: source-agency
+          template-id: template-id
+          location-id: location-id
+          out-range-high-method: out-range-high-method
+          auto-migrate-extension: true
+          dependent-rounding-spec: dependent-rounding-spec
+          in-range-method: in-range-method
+        - office-id: office-id
+          effective-dates:
+          - 2000-01-23T04:56:07.000+00:00
+          - 2000-01-23T04:56:07.000+00:00
+          rating-id: rating-id
+          independent-rounding-specs:
+          - position: 0
+            value: value
+          - position: 0
+            value: value
+          active: true
+          description: description
+          version: version
+          out-range-low-method: out-range-low-method
+          auto-update: true
+          auto-activate: true
+          source-agency: source-agency
+          template-id: template-id
+          location-id: location-id
+          out-range-high-method: out-range-high-method
+          auto-migrate-extension: true
+          dependent-rounding-spec: dependent-rounding-spec
+          in-range-method: in-range-method
+        total: 0
+        page-size: 6
+        next-page: next-page
+        page: page
+      properties:
+        page:
+          description: The cursor to the current page of data
+          readOnly: true
+          type: string
+        total:
+          description: The total number of records retrieved; null or not present
+            if not supported or unknown
+          format: int32
+          readOnly: true
+          type: integer
+        specs:
+          items:
+            $ref: '#/components/schemas/RatingSpec'
+          type: array
+        next-page:
+          description: The cursor to the next page of data; null if there is no more
+            data
+          readOnly: true
+          type: string
+        page-size:
+          description: The number of records fetched per-page; this may be larger
+            than the number of records actually retrieved
+          format: int32
+          readOnly: true
+          type: integer
+      type: object
+    AbstractRatingMetadata:
+      description: Rating Metadata
+      discriminator:
+        mapping:
+          table: '#/components/schemas/TableRating'
+          transitional: '#/components/schemas/TransitionalRating'
+          virtual: '#/components/schemas/VirtualRating'
+          expression-rating: '#/components/schemas/ExpressionRating'
+          usgs: '#/components/schemas/UsgsStreamRating'
+        propertyName: rating-type
+      example:
+        rating-type: rating-type
+        office-id: office-id
+        units-id: units-id
+        create-date: 2000-01-23T04:56:07.000+00:00
+        transition-date: 2000-01-23T04:56:07.000+00:00
+        rating-spec-id: rating-spec-id
+        active: true
+        effective-date: 2000-01-23T04:56:07.000+00:00
+        description: description
+        vertical-datum-info:
+          elevation: 3.616076749251911
+          unit: unit
+          offsets:
+          - estimate: true
+            toDatum: toDatum
+            value: 2.027123023002322
+          - estimate: true
+            toDatum: toDatum
+            value: 2.027123023002322
+          native-datum: native-datum
+          location: location
+          office: office
+      oneOf:
+      - $ref: '#/components/schemas/TableRating'
+      - $ref: '#/components/schemas/TransitionalRating'
+      - $ref: '#/components/schemas/VirtualRating'
+      - $ref: '#/components/schemas/ExpressionRating'
+      - $ref: '#/components/schemas/UsgsStreamRating'
+      properties:
+        office-id:
+          type: string
+        rating-spec-id:
+          type: string
+        units-id:
+          type: string
+        active:
+          type: boolean
+        effective-date:
+          format: date-time
+          type: string
+        create-date:
+          format: date-time
+          type: string
+        transition-date:
+          format: date-time
+          type: string
+        description:
+          type: string
+        vertical-datum-info:
+          $ref: '#/components/schemas/VerticalDatumInfo'
+        rating-type:
+          type: string
+      type: object
+    ExpressionRating:
+      allOf:
+      - $ref: '#/components/schemas/AbstractRatingMetadata'
+      - $ref: '#/components/schemas/ExpressionRating_allOf'
+      type: object
+    RatingMetadata:
+      example:
+        rating-spec:
+          office-id: office-id
+          effective-dates:
+          - 2000-01-23T04:56:07.000+00:00
+          - 2000-01-23T04:56:07.000+00:00
+          rating-id: rating-id
+          independent-rounding-specs:
+          - position: 0
+            value: value
+          - position: 0
+            value: value
+          active: true
+          description: description
+          version: version
+          out-range-low-method: out-range-low-method
+          auto-update: true
+          auto-activate: true
+          source-agency: source-agency
+          template-id: template-id
+          location-id: location-id
+          out-range-high-method: out-range-high-method
+          auto-migrate-extension: true
+          dependent-rounding-spec: dependent-rounding-spec
+          in-range-method: in-range-method
+        ratings:
+        - rating-type: rating-type
+          office-id: office-id
+          units-id: units-id
+          create-date: 2000-01-23T04:56:07.000+00:00
+          transition-date: 2000-01-23T04:56:07.000+00:00
+          rating-spec-id: rating-spec-id
+          active: true
+          effective-date: 2000-01-23T04:56:07.000+00:00
+          description: description
+          vertical-datum-info:
+            elevation: 3.616076749251911
+            unit: unit
+            offsets:
+            - estimate: true
+              toDatum: toDatum
+              value: 2.027123023002322
+            - estimate: true
+              toDatum: toDatum
+              value: 2.027123023002322
+            native-datum: native-datum
+            location: location
+            office: office
+        - rating-type: rating-type
+          office-id: office-id
+          units-id: units-id
+          create-date: 2000-01-23T04:56:07.000+00:00
+          transition-date: 2000-01-23T04:56:07.000+00:00
+          rating-spec-id: rating-spec-id
+          active: true
+          effective-date: 2000-01-23T04:56:07.000+00:00
+          description: description
+          vertical-datum-info:
+            elevation: 3.616076749251911
+            unit: unit
+            offsets:
+            - estimate: true
+              toDatum: toDatum
+              value: 2.027123023002322
+            - estimate: true
+              toDatum: toDatum
+              value: 2.027123023002322
+            native-datum: native-datum
+            location: location
+            office: office
+      properties:
+        rating-spec:
+          $ref: '#/components/schemas/RatingSpec'
+        ratings:
+          items:
+            $ref: '#/components/schemas/AbstractRatingMetadata'
+          type: array
+      type: object
+    RatingMetadataList:
+      example:
+        total: 0
+        page-size: 6
+        next-page: next-page
+        page: page
+        rating-metadata:
+        - rating-spec:
+            office-id: office-id
+            effective-dates:
+            - 2000-01-23T04:56:07.000+00:00
+            - 2000-01-23T04:56:07.000+00:00
+            rating-id: rating-id
+            independent-rounding-specs:
+            - position: 0
+              value: value
+            - position: 0
+              value: value
+            active: true
+            description: description
+            version: version
+            out-range-low-method: out-range-low-method
+            auto-update: true
+            auto-activate: true
+            source-agency: source-agency
+            template-id: template-id
+            location-id: location-id
+            out-range-high-method: out-range-high-method
+            auto-migrate-extension: true
+            dependent-rounding-spec: dependent-rounding-spec
+            in-range-method: in-range-method
+          ratings:
+          - rating-type: rating-type
+            office-id: office-id
+            units-id: units-id
+            create-date: 2000-01-23T04:56:07.000+00:00
+            transition-date: 2000-01-23T04:56:07.000+00:00
+            rating-spec-id: rating-spec-id
+            active: true
+            effective-date: 2000-01-23T04:56:07.000+00:00
+            description: description
+            vertical-datum-info:
+              elevation: 3.616076749251911
+              unit: unit
+              offsets:
+              - estimate: true
+                toDatum: toDatum
+                value: 2.027123023002322
+              - estimate: true
+                toDatum: toDatum
+                value: 2.027123023002322
+              native-datum: native-datum
+              location: location
+              office: office
+          - rating-type: rating-type
+            office-id: office-id
+            units-id: units-id
+            create-date: 2000-01-23T04:56:07.000+00:00
+            transition-date: 2000-01-23T04:56:07.000+00:00
+            rating-spec-id: rating-spec-id
+            active: true
+            effective-date: 2000-01-23T04:56:07.000+00:00
+            description: description
+            vertical-datum-info:
+              elevation: 3.616076749251911
+              unit: unit
+              offsets:
+              - estimate: true
+                toDatum: toDatum
+                value: 2.027123023002322
+              - estimate: true
+                toDatum: toDatum
+                value: 2.027123023002322
+              native-datum: native-datum
+              location: location
+              office: office
+        - rating-spec:
+            office-id: office-id
+            effective-dates:
+            - 2000-01-23T04:56:07.000+00:00
+            - 2000-01-23T04:56:07.000+00:00
+            rating-id: rating-id
+            independent-rounding-specs:
+            - position: 0
+              value: value
+            - position: 0
+              value: value
+            active: true
+            description: description
+            version: version
+            out-range-low-method: out-range-low-method
+            auto-update: true
+            auto-activate: true
+            source-agency: source-agency
+            template-id: template-id
+            location-id: location-id
+            out-range-high-method: out-range-high-method
+            auto-migrate-extension: true
+            dependent-rounding-spec: dependent-rounding-spec
+            in-range-method: in-range-method
+          ratings:
+          - rating-type: rating-type
+            office-id: office-id
+            units-id: units-id
+            create-date: 2000-01-23T04:56:07.000+00:00
+            transition-date: 2000-01-23T04:56:07.000+00:00
+            rating-spec-id: rating-spec-id
+            active: true
+            effective-date: 2000-01-23T04:56:07.000+00:00
+            description: description
+            vertical-datum-info:
+              elevation: 3.616076749251911
+              unit: unit
+              offsets:
+              - estimate: true
+                toDatum: toDatum
+                value: 2.027123023002322
+              - estimate: true
+                toDatum: toDatum
+                value: 2.027123023002322
+              native-datum: native-datum
+              location: location
+              office: office
+          - rating-type: rating-type
+            office-id: office-id
+            units-id: units-id
+            create-date: 2000-01-23T04:56:07.000+00:00
+            transition-date: 2000-01-23T04:56:07.000+00:00
+            rating-spec-id: rating-spec-id
+            active: true
+            effective-date: 2000-01-23T04:56:07.000+00:00
+            description: description
+            vertical-datum-info:
+              elevation: 3.616076749251911
+              unit: unit
+              offsets:
+              - estimate: true
+                toDatum: toDatum
+                value: 2.027123023002322
+              - estimate: true
+                toDatum: toDatum
+                value: 2.027123023002322
+              native-datum: native-datum
+              location: location
+              office: office
+      properties:
+        page:
+          description: The cursor to the current page of data
+          readOnly: true
+          type: string
+        total:
+          description: The total number of records retrieved; null or not present
+            if not supported or unknown
+          format: int32
+          readOnly: true
+          type: integer
+        rating-metadata:
+          items:
+            $ref: '#/components/schemas/RatingMetadata'
+          type: array
+        next-page:
+          description: The cursor to the next page of data; null if there is no more
+            data
+          readOnly: true
+          type: string
+        page-size:
+          description: The number of records fetched per-page; this may be larger
+            than the number of records actually retrieved
+          format: int32
+          readOnly: true
+          type: integer
+      type: object
+    SourceRating:
+      type: object
+    TableRating:
+      allOf:
+      - $ref: '#/components/schemas/AbstractRatingMetadata'
+      - $ref: '#/components/schemas/TableRating_allOf'
+      type: object
+    TransitionalRating:
+      allOf:
+      - $ref: '#/components/schemas/AbstractRatingMetadata'
+      - $ref: '#/components/schemas/TransitionalRating_allOf'
+      type: object
+    UsgsStreamRating:
+      allOf:
+      - $ref: '#/components/schemas/TableRating'
+      type: object
+    VirtualRating:
+      allOf:
+      - $ref: '#/components/schemas/AbstractRatingMetadata'
+      - $ref: '#/components/schemas/VirtualRating_allOf'
+      type: object
+    DatabaseLoadMethod:
+      enum:
+      - EAGER
+      - LAZY
+      - REFERENCE
+      type: string
+    CatalogableEndpoint:
+      description: Set of data for which a larger catalog can be built.
+      enum:
+      - TIMESERIES
+      - LOCATIONS
+      type: string
+    UnitSystem:
+      description: "Unit System desired in response. Can be SI (International Scientific)\
+        \ or EN (Imperial.) If unspecified, defaults to SI."
+      enum:
+      - SI
+      - EN
+      type: string
+    Catalog:
+      example:
+        total: 0
+        entries:
+        - cursor: cursor
+          office: office
+        - cursor: cursor
+          office: office
+        page-size: 6
+        next-page: next-page
+        page: page
+      properties:
+        page:
+          description: The cursor to the current page of data
+          readOnly: true
+          type: string
+        total:
+          description: The total number of records retrieved; null or not present
+            if not supported or unknown
+          format: int32
+          readOnly: true
+          type: integer
+        entries:
+          items:
+            $ref: '#/components/schemas/CatalogEntry'
+          type: array
+          xml:
+            wrapped: true
+        next-page:
+          description: The cursor to the next page of data; null if there is no more
+            data
+          readOnly: true
+          type: string
+        page-size:
+          description: The number of records fetched per-page; this may be larger
+            than the number of records actually retrieved
+          format: int32
+          readOnly: true
+          type: integer
+      type: object
+      xml:
+        name: catalog
+    CatalogEntry:
+      example:
+        cursor: cursor
+        office: office
+      oneOf:
+      - $ref: '#/components/schemas/LocationCatalogEntry'
+      - $ref: '#/components/schemas/TimeseriesCatalogEntry'
+      properties:
+        office:
+          type: string
+          xml:
+            attribute: true
+        cursor:
+          type: string
+      type: object
+      xml:
+        name: entry
+    LocationAlias:
+      properties:
+        name:
+          type: string
+          xml:
+            attribute: true
+        value:
+          type: string
+      type: object
+      xml:
+        name: alias
+    LocationCatalogEntry:
+      properties:
+        office:
+          type: string
+          xml:
+            attribute: true
+        name:
+          type: string
+        nearestCity:
+          type: string
+        publicName:
+          type: string
+        longName:
+          type: string
+        description:
+          type: string
+        kind:
+          type: string
+        type:
+          type: string
+        timeZone:
+          type: string
+        latitude:
+          format: double
+          type: number
+        longitude:
+          format: double
+          type: number
+        publishedLatitude:
+          format: double
+          type: number
+        publishedLongitude:
+          format: double
+          type: number
+        horizontalDatum:
+          type: string
+        elevation:
+          format: double
+          type: number
+        unit:
+          type: string
+        verticalDatum:
+          type: string
+        nation:
+          type: string
+        state:
+          type: string
+        county:
+          type: string
+        boundingOffice:
+          type: string
+        mapLabel:
+          type: string
+        active:
+          type: boolean
+        aliases:
+          items:
+            $ref: '#/components/schemas/LocationAlias'
+          type: array
+          xml:
+            wrapped: true
+        cursor:
+          type: string
+      type: object
+      xml:
+        name: entry
+    TimeSeriesExtents:
+      description: TimeSeries extent information
+      properties:
+        earliest-time:
+          description: Earliest value in the timeseries
+          format: date-time
+          type: string
+        last-update:
+          description: Last update in the timeseries
+          format: date-time
+          type: string
+        latest-time:
+          description: Latest value in the timeseries
+          format: date-time
+          type: string
+        version-time:
+          description: TimeSeries version to which this extent information applies
+          format: date-time
+          type: string
+      type: object
+      xml:
+        name: extents
+    TimeseriesCatalogEntry:
+      properties:
+        office:
+          type: string
+          xml:
+            attribute: true
+        name:
+          type: string
+          xml:
+            attribute: true
+        units:
+          type: string
+        interval:
+          type: string
+        intervalOffset:
+          description: Offset from top of interval
+          format: int64
+          type: integer
+          xml:
+            name: interval-offset
+        timeZone:
+          description: Only on 21.1.1 Database. The timezone the Interval Offset is
+            from.
+          type: string
+          xml:
+            name: time-zone
+        extents:
+          items:
+            $ref: '#/components/schemas/TimeSeriesExtents'
+          type: array
+          xml:
+            wrapped: true
+        cursor:
+          type: string
+      type: object
+      xml:
+        name: entry
+    Basin:
+      example:
+        parentBasinId: parentBasinId
+        primaryStream:
+          tributaries:
+          - null
+          - null
+          streamLength: 0.8008281904610115
+          streamName: streamName
+          diversionStation: 1.4658129805029452
+          divertingStreamId: divertingStreamId
+          averageSlope: 2.027123023002322
+          receivingStreamId: receivingStreamId
+          confluenceStation: 6.027456183070403
+          officeId: officeId
+          streamReaches:
+          - upstreamLocationName: upstreamLocationName
+            reachName: reachName
+            officeId: officeId
+            configuration: configuration
+            comment: comment
+            downstreamLocationName: downstreamLocationName
+            streamName: streamName
+          - upstreamLocationName: upstreamLocationName
+            reachName: reachName
+            officeId: officeId
+            configuration: configuration
+            comment: comment
+            downstreamLocationName: downstreamLocationName
+            streamName: streamName
+          confluenceBank: confluenceBank
+          diversionBank: diversionBank
+          comment: comment
+          streamLocations:
+          - bank: bank
+            locationName: locationName
+            officeId: officeId
+            lowestMeasurableStage: 2.3021358869347655
+            station: 5.962133916683182
+            totalDrainageArea: 7.061401241503109
+            nagivationStation: 3.616076749251911
+            publishedStation: 5.637376656633329
+            ungagedDrainageArea: 9.301444243932576
+            streamName: streamName
+          - bank: bank
+            locationName: locationName
+            officeId: officeId
+            lowestMeasurableStage: 2.3021358869347655
+            station: 5.962133916683182
+            totalDrainageArea: 7.061401241503109
+            nagivationStation: 3.616076749251911
+            publishedStation: 5.637376656633329
+            ungagedDrainageArea: 9.301444243932576
+            streamName: streamName
+        basinName: basinName
+        officeId: officeId
+        sortOrder: 4.145608029883936
+        basinArea: 7.386281948385884
+        contributingArea: 1.2315135367772556
+      properties:
+        basinName:
+          type: string
+        officeId:
+          type: string
+        primaryStream:
+          $ref: '#/components/schemas/Stream'
+        sortOrder:
+          format: double
+          type: number
+        basinArea:
+          format: double
+          type: number
+        contributingArea:
+          format: double
+          type: number
+        parentBasinId:
+          type: string
+      type: object
+    Stream:
+      example:
+        tributaries:
+        - null
+        - null
+        streamLength: 0.8008281904610115
+        streamName: streamName
+        diversionStation: 1.4658129805029452
+        divertingStreamId: divertingStreamId
+        averageSlope: 2.027123023002322
+        receivingStreamId: receivingStreamId
+        confluenceStation: 6.027456183070403
+        officeId: officeId
+        streamReaches:
+        - upstreamLocationName: upstreamLocationName
+          reachName: reachName
+          officeId: officeId
+          configuration: configuration
+          comment: comment
+          downstreamLocationName: downstreamLocationName
+          streamName: streamName
+        - upstreamLocationName: upstreamLocationName
+          reachName: reachName
+          officeId: officeId
+          configuration: configuration
+          comment: comment
+          downstreamLocationName: downstreamLocationName
+          streamName: streamName
+        confluenceBank: confluenceBank
+        diversionBank: diversionBank
+        comment: comment
+        streamLocations:
+        - bank: bank
+          locationName: locationName
+          officeId: officeId
+          lowestMeasurableStage: 2.3021358869347655
+          station: 5.962133916683182
+          totalDrainageArea: 7.061401241503109
+          nagivationStation: 3.616076749251911
+          publishedStation: 5.637376656633329
+          ungagedDrainageArea: 9.301444243932576
+          streamName: streamName
+        - bank: bank
+          locationName: locationName
+          officeId: officeId
+          lowestMeasurableStage: 2.3021358869347655
+          station: 5.962133916683182
+          totalDrainageArea: 7.061401241503109
+          nagivationStation: 3.616076749251911
+          publishedStation: 5.637376656633329
+          ungagedDrainageArea: 9.301444243932576
+          streamName: streamName
+      properties:
+        streamName:
+          type: string
+        tributaries:
+          items:
+            $ref: '#/components/schemas/Stream'
+          type: array
+        streamReaches:
+          items:
+            $ref: '#/components/schemas/StreamReach'
+          type: array
+        divertingStreamId:
+          type: string
+        receivingStreamId:
+          type: string
+        confluenceBank:
+          type: string
+        diversionBank:
+          type: string
+        streamLength:
+          format: double
+          type: number
+        confluenceStation:
+          format: double
+          type: number
+        diversionStation:
+          format: double
+          type: number
+        streamLocations:
+          items:
+            $ref: '#/components/schemas/StreamLocation'
+          type: array
+        officeId:
+          type: string
+        comment:
+          type: string
+        averageSlope:
+          format: double
+          type: number
+      type: object
+    StreamLocation:
+      example:
+        bank: bank
+        locationName: locationName
+        officeId: officeId
+        lowestMeasurableStage: 2.3021358869347655
+        station: 5.962133916683182
+        totalDrainageArea: 7.061401241503109
+        nagivationStation: 3.616076749251911
+        publishedStation: 5.637376656633329
+        ungagedDrainageArea: 9.301444243932576
+        streamName: streamName
+      properties:
+        locationName:
+          type: string
+        streamName:
+          type: string
+        station:
+          format: double
+          type: number
+        bank:
+          type: string
+        officeId:
+          type: string
+        publishedStation:
+          format: double
+          type: number
+        lowestMeasurableStage:
+          format: double
+          type: number
+        totalDrainageArea:
+          format: double
+          type: number
+        ungagedDrainageArea:
+          format: double
+          type: number
+        nagivationStation:
+          format: double
+          type: number
+      type: object
+    StreamReach:
+      example:
+        upstreamLocationName: upstreamLocationName
+        reachName: reachName
+        officeId: officeId
+        configuration: configuration
+        comment: comment
+        downstreamLocationName: downstreamLocationName
+        streamName: streamName
+      properties:
+        upstreamLocationName:
+          type: string
+        downstreamLocationName:
+          type: string
+        streamName:
+          type: string
+        reachName:
+          type: string
+        officeId:
+          type: string
+        comment:
+          type: string
+        configuration:
+          type: string
+      type: object
+    Blob:
+      description: List of retrieved blobs
+      example:
+        mediaTypeId: mediaTypeId
+        description: description
+        office: office
+        id: id
+        value:
+        - value
+        - value
+      properties:
+        office:
+          type: string
+        id:
+          type: string
+        description:
+          type: string
+        mediaTypeId:
+          type: string
+        value:
+          items:
+            format: byte
+            type: string
+          type: array
+      required:
+      - id
+      - office
+      type: object
+    Blobs:
+      example:
+        blobs:
+        - mediaTypeId: mediaTypeId
+          description: description
+          office: office
+          id: id
+          value:
+          - value
+          - value
+        - mediaTypeId: mediaTypeId
+          description: description
+          office: office
+          id: id
+          value:
+          - value
+          - value
+        total: 0
+        page-size: 6
+        next-page: next-page
+        page: page
+      properties:
+        page:
+          description: The cursor to the current page of data
+          readOnly: true
+          type: string
+        total:
+          description: The total number of records retrieved; null or not present
+            if not supported or unknown
+          format: int32
+          readOnly: true
+          type: integer
+        blobs:
+          description: List of retrieved blobs
+          items:
+            $ref: '#/components/schemas/Blob'
+          type: array
+          xml:
+            wrapped: true
+        next-page:
+          description: The cursor to the next page of data; null if there is no more
+            data
+          readOnly: true
+          type: string
+        page-size:
+          description: The number of records fetched per-page; this may be larger
+            than the number of records actually retrieved
+          format: int32
+          readOnly: true
+          type: integer
+      type: object
+      xml:
+        name: blobs
+    Clob:
+      description: List of retrieved clobs
+      example:
+        description: description
+        office: office
+        id: id
+        value: value
+      properties:
+        office:
+          type: string
+        id:
+          type: string
+        description:
+          type: string
+        value:
+          type: string
+      required:
+      - id
+      - office
+      type: object
+      xml:
+        name: clob
+    Clobs:
+      example:
+        total: 0
+        clobs:
+        - description: description
+          office: office
+          id: id
+          value: value
+        - description: description
+          office: office
+          id: id
+          value: value
+        page-size: 6
+        next-page: next-page
+        page: page
+      properties:
+        page:
+          description: The cursor to the current page of data
+          readOnly: true
+          type: string
+        total:
+          description: The total number of records retrieved; null or not present
+            if not supported or unknown
+          format: int32
+          readOnly: true
+          type: integer
+        clobs:
+          description: List of retrieved clobs
+          items:
+            $ref: '#/components/schemas/Clob'
+          type: array
+          xml:
+            wrapped: true
+        next-page:
+          description: The cursor to the next page of data; null if there is no more
+            data
+          readOnly: true
+          type: string
+        page-size:
+          description: The number of records fetched per-page; this may be larger
+            than the number of records actually retrieved
+          format: int32
+          readOnly: true
+          type: integer
+      type: object
+      xml:
+        name: clobs
+    Pool:
+      description: List of retrieved pools
+      example:
+        bottomLevelId: bottomLevelId
+        implicit: true
+        clobText: clobText
+        topLevelId: topLevelId
+        description: description
+        attribute: 0.8008281904610115
+        projectId: projectId
+        poolName:
+          officeId: officeId
+          poolName: poolName
+      properties:
+        attribute:
+          type: number
+        description:
+          type: string
+        clobText:
+          type: string
+        projectId:
+          type: string
+        bottomLevelId:
+          type: string
+        topLevelId:
+          type: string
+        poolName:
+          $ref: '#/components/schemas/PoolNameType'
+        implicit:
+          type: boolean
+      type: object
+    PoolNameType:
+      example:
+        officeId: officeId
+        poolName: poolName
+      properties:
+        officeId:
+          type: string
+        poolName:
+          type: string
+      type: object
+    Pools:
+      example:
+        total: 0
+        page-size: 6
+        next-page: next-page
+        pools:
+        - bottomLevelId: bottomLevelId
+          implicit: true
+          clobText: clobText
+          topLevelId: topLevelId
+          description: description
+          attribute: 0.8008281904610115
+          projectId: projectId
+          poolName:
+            officeId: officeId
+            poolName: poolName
+        - bottomLevelId: bottomLevelId
+          implicit: true
+          clobText: clobText
+          topLevelId: topLevelId
+          description: description
+          attribute: 0.8008281904610115
+          projectId: projectId
+          poolName:
+            officeId: officeId
+            poolName: poolName
+        page: page
+      properties:
+        page:
+          description: The cursor to the current page of data
+          readOnly: true
+          type: string
+        total:
+          description: The total number of records retrieved; null or not present
+            if not supported or unknown
+          format: int32
+          readOnly: true
+          type: integer
+        pools:
+          description: List of retrieved pools
+          items:
+            $ref: '#/components/schemas/Pool'
+          type: array
+          xml:
+            wrapped: true
+        next-page:
+          description: The cursor to the next page of data; null if there is no more
+            data
+          readOnly: true
+          type: string
+        page-size:
+          description: The number of records fetched per-page; this may be larger
+            than the number of records actually retrieved
+          format: int32
+          readOnly: true
+          type: integer
+      type: object
+      xml:
+        name: pools
+    SpecifiedLevel:
+      example:
+        officeId: officeId
+        description: description
+        id: id
+      properties:
+        id:
+          type: string
+        officeId:
+          type: string
+        description:
+          type: string
+      type: object
+    TimeSeries_interval_units_inner_duration:
+      example:
+        zero: true
+        seconds: 6
+        negative: true
+        nano: 1
+      properties:
+        seconds:
+          format: int64
+          type: integer
+        zero:
+          type: boolean
+        nano:
+          format: int32
+          type: integer
+        negative:
+          type: boolean
+      type: object
+    TimeSeries_interval_units_inner:
+      example:
+        duration:
+          zero: true
+          seconds: 6
+          negative: true
+          nano: 1
+        durationEstimated: true
+        timeBased: true
+        dateBased: true
+      properties:
+        duration:
+          $ref: '#/components/schemas/TimeSeries_interval_units_inner_duration'
+        durationEstimated:
+          type: boolean
+        dateBased:
+          type: boolean
+        timeBased:
+          type: boolean
+      type: object
+    TimeSeries_interval:
+      description: "The interval of the time-series, in ISO-8601 duration format"
+      example:
+        zero: true
+        seconds: 0
+        negative: true
+        nano: 5
+        units:
+        - duration:
+            zero: true
+            seconds: 6
+            negative: true
+            nano: 1
+          durationEstimated: true
+          timeBased: true
+          dateBased: true
+        - duration:
+            zero: true
+            seconds: 6
+            negative: true
+            nano: 1
+          durationEstimated: true
+          timeBased: true
+          dateBased: true
+      format: Java Duration
+      properties:
+        seconds:
+          format: int64
+          type: integer
+        zero:
+          type: boolean
+        units:
+          items:
+            $ref: '#/components/schemas/TimeSeries_interval_units_inner'
+          type: array
+        nano:
+          format: int32
+          type: integer
+        negative:
+          type: boolean
+      readOnly: true
+      type: object
+    TimeSeries_values_inner_inner:
+      description: List of retrieved time-series values
+      properties:
+        date-time:
+          description: "Milliseconds since 1970-01-01 (Unix Epoch), always UTC"
+          format: int64
+          type: integer
+        value:
+          description: Requested time-series data value
+          format: double
+          type: number
+        quality-code:
+          format: int32
+          type: integer
+      type: object
+    ExpressionRating_allOf:
+      properties:
+        expression:
+          type: string
+      type: object
+      example: null
+    TableRating_allOf:
+      properties:
+        in-range-method:
+          type: string
+        out-range-low-method:
+          type: string
+        out-range-high-method:
+          type: string
+      type: object
+      example: null
+    TransitionalRating_allOf:
+      properties:
+        source-ratings:
+          items:
+            type: string
+          type: array
+        conditions:
+          items:
+            type: string
+          type: array
+        evaluations:
+          items:
+            type: string
+          type: array
+      type: object
+      example: null
+    VirtualRating_allOf:
+      properties:
+        source-ratings:
+          items:
+            $ref: '#/components/schemas/SourceRating'
+          type: array
+        connections:
+          type: string
+      type: object
+      example: null
+
