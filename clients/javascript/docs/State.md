@@ -1,4 +1,4 @@
-# CwmsDataApi.State
+# Cwmsjs.State
 
 ## Properties
 

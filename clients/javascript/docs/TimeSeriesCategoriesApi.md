@@ -1,4 +1,4 @@
-# CwmsDataApi.TimeSeriesCategoriesApi
+# Cwmsjs.TimeSeriesCategoriesApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,8 +22,8 @@ Deletes requested time series category
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -35,7 +35,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeSeriesCategoriesApi();
+let apiInstance = new Cwmsjs.TimeSeriesCategoriesApi();
 let categoryId = "categoryId_example"; // String | The time series category to be deleted
 let office = "office_example"; // String | Specifies the owning office of the time series category to be deleted
 let opts = {
@@ -84,9 +84,9 @@ Returns CWMS timeseries category Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.TimeSeriesCategoriesApi();
+let apiInstance = new Cwmsjs.TimeSeriesCategoriesApi();
 let opts = {
   'office': "office_example" // String | Specifies the owning office of the timeseries category(ies) whose data is to be included in the response. If this field is not specified, matching timeseries category information from all offices shall be returned.
 };
@@ -131,9 +131,9 @@ Retrieves requested timeseries category
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.TimeSeriesCategoriesApi();
+let apiInstance = new Cwmsjs.TimeSeriesCategoriesApi();
 let categoryId = "categoryId_example"; // String | Specifies the Category whose data is to be included in the response.
 let office = "office_example"; // String | Specifies the owning office of the timeseries category whose data is to be included in the response.
 apiInstance.getCwmsDataTimeseriesCategoryWithCategoryId(categoryId, office, (error, data, response) => {
@@ -178,8 +178,8 @@ Create new TimeSeriesCategory
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -191,8 +191,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeSeriesCategoriesApi();
-let timeSeriesCategory = new CwmsDataApi.TimeSeriesCategory(); // TimeSeriesCategory | 
+let apiInstance = new Cwmsjs.TimeSeriesCategoriesApi();
+let timeSeriesCategory = new Cwmsjs.TimeSeriesCategory(); // TimeSeriesCategory | 
 let opts = {
   'failIfExists': true // Boolean | Create will fail if provided ID already exists. Default: true
 };

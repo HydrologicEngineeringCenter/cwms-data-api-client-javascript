@@ -1,4 +1,4 @@
-# CwmsDataApi.LocationsApi
+# Cwmsjs.LocationsApi
 
 All URIs are relative to *http://localhost*
 
@@ -23,8 +23,8 @@ Delete CWMS Location
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -36,7 +36,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LocationsApi();
+let apiInstance = new Cwmsjs.LocationsApi();
 let locationId = "locationId_example"; // String | 
 let opts = {
   'office': "office_example" // String | Specifies the owning office of the location whose data is to be deleted. If this field is not specified, matching location information will be deleted from all offices.
@@ -83,9 +83,9 @@ Returns CWMS Location Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.LocationsApi();
+let apiInstance = new Cwmsjs.LocationsApi();
 let opts = {
   'names': "names_example", // String | Specifies the name(s) of the location(s) whose data is to be included in the response
   'office': "office_example", // String | Specifies the owning office of the location level(s) whose data is to be included in the response. If this field is not specified, matching location level information from all offices shall be returned.
@@ -138,9 +138,9 @@ Returns CWMS Location Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.LocationsApi();
+let apiInstance = new Cwmsjs.LocationsApi();
 let locationId = "locationId_example"; // String | 
 let office = "office_example"; // String | Specifies the owning office of the location level(s) whose data is to be included in the response. If this field is not specified, matching location level information from all offices shall be returned.
 let opts = {
@@ -175,7 +175,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2, application/xml;version=2
+- **Accept**: application/json;version=2, application/xml;version=2, application/json
 
 
 ## patchCwmsDataLocationsWithLocationId
@@ -189,8 +189,8 @@ Update CWMS Location
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -202,9 +202,9 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LocationsApi();
+let apiInstance = new Cwmsjs.LocationsApi();
 let locationId = "locationId_example"; // String | 
-let location = new CwmsDataApi.Location(); // Location | 
+let location = new Cwmsjs.Location(); // Location | 
 apiInstance.patchCwmsDataLocationsWithLocationId(locationId, location, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -247,8 +247,8 @@ Create new CWMS Location
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -260,8 +260,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LocationsApi();
-let location = new CwmsDataApi.Location(); // Location | 
+let apiInstance = new Cwmsjs.LocationsApi();
+let location = new Cwmsjs.Location(); // Location | 
 apiInstance.postCwmsDataLocations(location, (error, data, response) => {
   if (error) {
     console.error(error);

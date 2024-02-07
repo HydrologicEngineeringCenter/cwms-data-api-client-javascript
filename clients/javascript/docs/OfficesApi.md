@@ -1,4 +1,4 @@
-# CwmsDataApi.OfficesApi
+# Cwmsjs.OfficesApi
 
 All URIs are relative to *http://localhost*
 
@@ -18,9 +18,9 @@ Get cwmsData offices
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.OfficesApi();
+let apiInstance = new Cwmsjs.OfficesApi();
 let opts = {
   'format': "format_example", // String | (Deprecated in favor of Accept header) Specifies the encoding format of the response. Valid value for the format field for this URI are:  1. tab  2. csv   3. xml  4. json (default)
   'hasData': true // Boolean | A flag ('True'/'False') When set to true this returns offices that have operational data. Default value is <b>False</b>,. <a href=\"https://github.com/USACE/cwms-data-api/issues/321\" target=\"_blank\">Feature #321</a>
@@ -53,7 +53,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, , application/json;version=2, text/tab-separated-values, text/csv, application/xml
+- **Accept**: , application/json;version=2, application/json, text/tab-separated-values, text/csv, application/xml
 
 
 ## getCwmsDataOfficesWithOffice
@@ -65,9 +65,9 @@ Get cwmsData offices with office
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.OfficesApi();
+let apiInstance = new Cwmsjs.OfficesApi();
 let office = "office_example"; // String | The 3 letter office ID you want more information for
 let opts = {
   'format': "format_example" // String | (Deprecated in favor of Accept header) Specifies the encoding format of the response. Valid value for the format field for this URI are:  1. tab  2. csv   3. xml  4. json (default)
@@ -100,5 +100,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, , application/json;version=2, text/tab-separated-values, text/csv, application/xml
+- **Accept**: , application/json;version=2, application/json, text/tab-separated-values, text/csv, application/xml
 

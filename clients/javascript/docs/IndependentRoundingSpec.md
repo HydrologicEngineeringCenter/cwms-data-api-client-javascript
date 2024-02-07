@@ -1,4 +1,4 @@
-# CwmsDataApi.IndependentRoundingSpec
+# Cwmsjs.IndependentRoundingSpec
 
 ## Properties
 

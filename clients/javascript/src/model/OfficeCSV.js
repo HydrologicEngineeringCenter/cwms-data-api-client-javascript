@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0

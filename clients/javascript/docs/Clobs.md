@@ -1,4 +1,4 @@
-# CwmsDataApi.Clobs
+# Cwmsjs.Clobs
 
 ## Properties
 

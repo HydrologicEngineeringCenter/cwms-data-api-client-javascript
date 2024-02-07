@@ -1,4 +1,4 @@
-# CwmsDataApi.CdaError
+# Cwmsjs.CdaError
 
 ## Properties
 

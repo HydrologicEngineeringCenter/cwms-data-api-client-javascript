@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0
@@ -123,7 +123,7 @@ export default class ClobApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2', 'application/xml;version=2'];
+      let accepts = ['application/json;version=2', 'application/xml;version=2', 'application/json'];
       let returnType = Clobs;
       return this.apiClient.callApi(
         '/cwms-data/clobs', 'GET',
@@ -169,7 +169,7 @@ export default class ClobApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = Clob;
       return this.apiClient.callApi(
         '/cwms-data/clobs/{clob-id}', 'GET',

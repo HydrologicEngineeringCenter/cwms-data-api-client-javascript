@@ -1,4 +1,4 @@
-# CwmsDataApi.Catalog
+# Cwmsjs.Catalog
 
 ## Properties
 

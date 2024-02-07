@@ -1,4 +1,4 @@
-# CwmsDataApi.SeasonalValueBean
+# Cwmsjs.SeasonalValueBean
 
 ## Properties
 

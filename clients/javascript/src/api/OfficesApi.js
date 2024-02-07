@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0
@@ -71,7 +71,7 @@ export default class OfficesApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', '', 'application/json;version=2', 'text/tab-separated-values', 'text/csv', 'application/xml'];
+      let accepts = ['', 'application/json;version=2', 'application/json', 'text/tab-separated-values', 'text/csv', 'application/xml'];
       let returnType = OfficeFormatV1;
       return this.apiClient.callApi(
         '/cwms-data/offices', 'GET',
@@ -117,7 +117,7 @@ export default class OfficesApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', '', 'application/json;version=2', 'text/tab-separated-values', 'text/csv', 'application/xml'];
+      let accepts = ['', 'application/json;version=2', 'application/json', 'text/tab-separated-values', 'text/csv', 'application/xml'];
       let returnType = OfficeFormatV1;
       return this.apiClient.callApi(
         '/cwms-data/offices/{office}', 'GET',

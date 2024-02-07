@@ -1,4 +1,4 @@
-# CwmsDataApi.TimeSeriesIntervalUnitsInnerDuration
+# Cwmsjs.TimeSeriesIntervalUnitsInnerDuration
 
 ## Properties
 

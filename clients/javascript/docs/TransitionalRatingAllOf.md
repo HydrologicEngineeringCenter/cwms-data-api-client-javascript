@@ -1,4 +1,4 @@
-# CwmsDataApi.TransitionalRatingAllOf
+# Cwmsjs.TransitionalRatingAllOf
 
 ## Properties
 

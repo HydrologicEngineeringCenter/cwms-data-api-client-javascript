@@ -1,4 +1,4 @@
-# CwmsDataApi.TimeseriesGroupsApi
+# Cwmsjs.TimeseriesGroupsApi
 
 All URIs are relative to *http://localhost*
 
@@ -23,8 +23,8 @@ Deletes requested time series group
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -36,7 +36,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeseriesGroupsApi();
+let apiInstance = new Cwmsjs.TimeseriesGroupsApi();
 let groupId = "groupId_example"; // String | The time series group to be deleted
 let categoryId = "categoryId_example"; // String | Specifies the time series category of the time series group to be deleted
 let office = "office_example"; // String | Specifies the owning office of the time series group to be deleted
@@ -83,9 +83,9 @@ Returns CWMS Timeseries Groups Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.TimeseriesGroupsApi();
+let apiInstance = new Cwmsjs.TimeseriesGroupsApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the timeseries group(s) whose data is to be included in the response. If this field is not specified, matching timeseries groups information from all offices shall be returned.
   'includeAssigned': true, // Boolean | Include the assigned timeseries in the returned timeseries groups. (default: true)
@@ -136,9 +136,9 @@ Retrieves requested timeseries group
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.TimeseriesGroupsApi();
+let apiInstance = new Cwmsjs.TimeseriesGroupsApi();
 let groupId = "groupId_example"; // String | Specifies the timeseries group whose data is to be included in the response
 let office = "office_example"; // String | Specifies the owning office of the timeseries group whose data is to be included in the response.
 let categoryId = "categoryId_example"; // String | Specifies the category containing the timeseries group whose data is to be included in the response.
@@ -185,8 +185,8 @@ Update existing TimeSeriesGroup
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -198,10 +198,10 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeseriesGroupsApi();
+let apiInstance = new Cwmsjs.TimeseriesGroupsApi();
 let groupId = "groupId_example"; // String | 
 let office = "office_example"; // String | Specifies the owning office of the time series group to be updated
-let timeSeriesGroup = new CwmsDataApi.TimeSeriesGroup(); // TimeSeriesGroup | 
+let timeSeriesGroup = new Cwmsjs.TimeSeriesGroup(); // TimeSeriesGroup | 
 let opts = {
   'replaceAssignedTs': true // Boolean | Specifies whether to unassign all existing time series before assigning new time series specified in the content body Default: false
 };
@@ -249,8 +249,8 @@ Create new TimeSeriesGroup
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -262,8 +262,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeseriesGroupsApi();
-let timeSeriesGroup = new CwmsDataApi.TimeSeriesGroup(); // TimeSeriesGroup | 
+let apiInstance = new Cwmsjs.TimeseriesGroupsApi();
+let timeSeriesGroup = new Cwmsjs.TimeSeriesGroup(); // TimeSeriesGroup | 
 let opts = {
   'failIfExists': true // Boolean | Create will fail if provided ID already exists. Default: true
 };

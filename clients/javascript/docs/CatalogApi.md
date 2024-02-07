@@ -1,4 +1,4 @@
-# CwmsDataApi.CatalogApi
+# Cwmsjs.CatalogApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,14 +17,14 @@ Get cwmsData catalog with dataset
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.CatalogApi();
-let dataset = new CwmsDataApi.CatalogableEndpoint(); // CatalogableEndpoint | A list of what data? E.g. Timeseries, Locations, Ratings, etc
+let apiInstance = new Cwmsjs.CatalogApi();
+let dataset = new Cwmsjs.CatalogableEndpoint(); // CatalogableEndpoint | A list of what data? E.g. Timeseries, Locations, Ratings, etc
 let opts = {
   'page': "page_example", // String | This end point can return a lot of data, this identifies where in the request you are.
   'pageSize': 56, // Number | How many entires per page returned. Default 500.
-  'unitSystem': new CwmsDataApi.UnitSystem(), // UnitSystem | Unit System desired in response. Can be SI (International Scientific) or EN (Imperial.) If unspecified, defaults to SI.
+  'unitSystem': new Cwmsjs.UnitSystem(), // UnitSystem | Unit System desired in response. Can be SI (International Scientific) or EN (Imperial.) If unspecified, defaults to SI.
   'office': "office_example", // String | 3-4 letter office name representing the district you want to isolate data to.
   'like': "like_example", // String | Posix <a href=\"regexp.html\">regular expression</a> matching against the id
   'timeseriesCategoryLike': "timeseriesCategoryLike_example", // String | Posix <a href=\"regexp.html\">regular expression</a> matching against the timeseries category id
@@ -70,5 +70,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2, application/xml
+- **Accept**: application/json;version=2, application/xml, application/json
 

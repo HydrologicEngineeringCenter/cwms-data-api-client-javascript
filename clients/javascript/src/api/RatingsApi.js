@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0
@@ -309,7 +309,7 @@ export default class RatingsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = RatingMetadataList;
       return this.apiClient.callApi(
         '/cwms-data/ratings/metadata', 'GET',
@@ -355,7 +355,7 @@ export default class RatingsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = RatingSpecs;
       return this.apiClient.callApi(
         '/cwms-data/ratings/spec', 'GET',
@@ -403,7 +403,7 @@ export default class RatingsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = RatingSpec;
       return this.apiClient.callApi(
         '/cwms-data/ratings/spec/{rating-id}', 'GET',
@@ -449,7 +449,7 @@ export default class RatingsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = RatingTemplates;
       return this.apiClient.callApi(
         '/cwms-data/ratings/template', 'GET',
@@ -497,7 +497,7 @@ export default class RatingsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = [RatingTemplate];
       return this.apiClient.callApi(
         '/cwms-data/ratings/template/{template-id}', 'GET',
@@ -556,7 +556,7 @@ export default class RatingsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2', 'application/xml;version=2'];
+      let accepts = ['application/json;version=2', 'application/xml;version=2', 'application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
         '/cwms-data/ratings/{rating-id}', 'GET',

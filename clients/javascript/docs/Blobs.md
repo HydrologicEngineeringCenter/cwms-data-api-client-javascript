@@ -1,4 +1,4 @@
-# CwmsDataApi.Blobs
+# Cwmsjs.Blobs
 
 ## Properties
 

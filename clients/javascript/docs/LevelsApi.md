@@ -1,4 +1,4 @@
-# CwmsDataApi.LevelsApi
+# Cwmsjs.LevelsApi
 
 All URIs are relative to *http://localhost*
 
@@ -27,8 +27,8 @@ Delete CWMS Location Level
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -40,7 +40,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LevelsApi();
+let apiInstance = new Cwmsjs.LevelsApi();
 let levelId = "levelId_example"; // String | Specifies the location level id of the Location Level to be deleted
 let opts = {
   'cascadeDelete': true, // Boolean | 
@@ -91,8 +91,8 @@ Deletes requested specified level id
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -104,7 +104,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LevelsApi();
+let apiInstance = new Cwmsjs.LevelsApi();
 let specifiedLevelId = "specifiedLevelId_example"; // String | The specified level id to be deleted
 let office = "office_example"; // String | Specifies the owning office of the timeseries identifier to be deleted
 apiInstance.deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelId(specifiedLevelId, office, (error, data, response) => {
@@ -147,9 +147,9 @@ Get cwmsData levels
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.LevelsApi();
+let apiInstance = new Cwmsjs.LevelsApi();
 let opts = {
   'levelIdMask': "levelIdMask_example", // String | Specifies the name(s) of the location level(s) whose data is to be included in the response. Uses * for all.
   'office': "office_example", // String | Specifies the owning office of the location level(s) whose data is to be included in the response. If this field is not specified, matching location level information from all offices shall be returned.
@@ -212,9 +212,9 @@ Retrieves requested Location Level
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.LevelsApi();
+let apiInstance = new Cwmsjs.LevelsApi();
 let levelId = "levelId_example"; // String | Specifies the requested location level.
 let office = "office_example"; // String | Specifies the office of the Location Level to be returned
 let effectiveDate = "effectiveDate_example"; // String | Specifies the effective date of Location Level to be returned
@@ -251,7 +251,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## getCwmsDataSpecifiedLevels
@@ -263,9 +263,9 @@ Get cwmsData specifiedLevels
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.LevelsApi();
+let apiInstance = new Cwmsjs.LevelsApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the Specified Levels whose data is to be included in the response. If this field is not specified, matching rating information from all offices shall be returned.
   'templateIdMask': "templateIdMask_example" // String | Mask that specifies the IDs to be included in the response. If this field is not specified, all specified levels shall be returned.
@@ -298,7 +298,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## patchCwmsDataLevelsWithLevelId
@@ -312,8 +312,8 @@ Update CWMS Location Level
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -325,9 +325,9 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LevelsApi();
+let apiInstance = new Cwmsjs.LevelsApi();
 let levelId = "levelId_example"; // String | Specifies the location level id of the Location Level to be updated
-let locationLevel = new CwmsDataApi.LocationLevel(); // LocationLevel | 
+let locationLevel = new Cwmsjs.LocationLevel(); // LocationLevel | 
 let opts = {
   'effectiveDate': "effectiveDate_example" // String | Specifies the effective date of Location Level that will be updated
 };
@@ -374,8 +374,8 @@ Renames the requested specified level id
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -387,7 +387,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LevelsApi();
+let apiInstance = new Cwmsjs.LevelsApi();
 let specifiedLevelId = "specifiedLevelId_example"; // String | 
 let specifiedLevelId2 = "specifiedLevelId_example"; // String | The new specified level id.
 let office = "office_example"; // String | Specifies the owning office of the specified level to be renamed
@@ -434,8 +434,8 @@ Create new CWMS Location Level
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -447,8 +447,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LevelsApi();
-let locationLevel = new CwmsDataApi.LocationLevel(); // LocationLevel | 
+let apiInstance = new Cwmsjs.LevelsApi();
+let locationLevel = new Cwmsjs.LocationLevel(); // LocationLevel | 
 apiInstance.postCwmsDataLevels(locationLevel, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -490,8 +490,8 @@ Create new SpecifiedLevel
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -503,8 +503,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LevelsApi();
-let specifiedLevel = new CwmsDataApi.SpecifiedLevel(); // SpecifiedLevel | 
+let apiInstance = new Cwmsjs.LevelsApi();
+let specifiedLevel = new Cwmsjs.SpecifiedLevel(); // SpecifiedLevel | 
 let opts = {
   'failIfExists': true // Boolean | Create will fail if provided ID already exists. Default: true
 };

@@ -1,4 +1,4 @@
-# CwmsDataApi.TimeSeriesIdentifierApi
+# Cwmsjs.TimeSeriesIdentifierApi
 
 All URIs are relative to *http://localhost*
 
@@ -23,8 +23,8 @@ Deletes requested timeseries identifier
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -36,10 +36,10 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeSeriesIdentifierApi();
+let apiInstance = new Cwmsjs.TimeSeriesIdentifierApi();
 let timeseriesId = "timeseriesId_example"; // String | The timeseries-id of the timeseries to be deleted. 
 let office = "office_example"; // String | Specifies the owning office of the timeseries to be deleted.
-let method = new CwmsDataApi.DeleteMethod(); // DeleteMethod | Specifies the delete method used.
+let method = new Cwmsjs.DeleteMethod(); // DeleteMethod | Specifies the delete method used.
 apiInstance.deleteCwmsDataTimeseriesIdentifierDescriptorWithTimeseriesId(timeseriesId, office, method, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -83,9 +83,9 @@ Returns CWMS timeseries identifier descriptorData
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.TimeSeriesIdentifierApi();
+let apiInstance = new Cwmsjs.TimeSeriesIdentifierApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the timeseries identifier(s) whose data is to be included in the response. If this field is not specified, matching timeseries identifier information from all offices shall be returned.
   'timeseriesIdRegex': "timeseriesIdRegex_example", // String | A case insensitive RegExp that will be applied to the timeseries-id field. If this field is not specified the results will not be constrained by timeseries-id.
@@ -122,7 +122,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## getCwmsDataTimeseriesIdentifierDescriptorWithTimeseriesId
@@ -136,9 +136,9 @@ Retrieves requested timeseries identifier descriptor
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.TimeSeriesIdentifierApi();
+let apiInstance = new Cwmsjs.TimeSeriesIdentifierApi();
 let timeseriesId = "timeseriesId_example"; // String | Specifies the identifier of the timeseries to be included in the response.
 let office = "office_example"; // String | Specifies the owning office of the timeseries identifier to be included in the response.
 apiInstance.getCwmsDataTimeseriesIdentifierDescriptorWithTimeseriesId(timeseriesId, office, (error, data, response) => {
@@ -169,7 +169,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## patchCwmsDataTimeseriesIdentifierDescriptorWithTimeseriesId
@@ -181,8 +181,8 @@ Patch cwmsData timeseries identifierDescriptor with timeseriesId
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -194,7 +194,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeSeriesIdentifierApi();
+let apiInstance = new Cwmsjs.TimeSeriesIdentifierApi();
 let timeseriesId = "timeseriesId_example"; // String | 
 let timeseriesId2 = "timeseriesId_example"; // String | A new timeseries-id.  If specified a rename operation will be performed and snap-forward, snap-backward, and active must not be provided
 let office = "office_example"; // String | Specifies the owning office of the timeseries identifier to be updated
@@ -251,8 +251,8 @@ Create new TimeSeriesIdentifierDescriptor
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -264,8 +264,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeSeriesIdentifierApi();
-let timeSeriesIdentifierDescriptor = new CwmsDataApi.TimeSeriesIdentifierDescriptor(); // TimeSeriesIdentifierDescriptor | 
+let apiInstance = new Cwmsjs.TimeSeriesIdentifierApi();
+let timeSeriesIdentifierDescriptor = new Cwmsjs.TimeSeriesIdentifierDescriptor(); // TimeSeriesIdentifierDescriptor | 
 let opts = {
   'failIfExists': true // Boolean | Create will fail if provided ID already exists. Default: true
 };

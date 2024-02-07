@@ -1,4 +1,4 @@
-# CwmsDataApi.VirtualRating
+# Cwmsjs.VirtualRating
 
 ## Properties
 

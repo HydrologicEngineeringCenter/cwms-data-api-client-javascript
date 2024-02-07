@@ -1,4 +1,4 @@
-# CwmsDataApi.RatingSpec
+# Cwmsjs.RatingSpec
 
 ## Properties
 

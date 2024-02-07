@@ -1,4 +1,4 @@
-# CwmsDataApi.LocationLevel
+# Cwmsjs.LocationLevel
 
 ## Properties
 

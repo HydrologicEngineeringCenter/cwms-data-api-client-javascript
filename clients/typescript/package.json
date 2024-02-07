@@ -22,7 +22,8 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "openapi": "openapi-generator-cli generate -g javascript -o . -i ../cwms-swagger.json --additional-properties=projectName=CWMSTS,npmRepository=CWMSTS,npmName=cwmsts"
   },
   "dependencies": {
     "whatwg-fetch": "^3.0.0",

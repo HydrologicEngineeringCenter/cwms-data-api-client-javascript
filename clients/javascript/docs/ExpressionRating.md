@@ -1,4 +1,4 @@
-# CwmsDataApi.ExpressionRating
+# Cwmsjs.ExpressionRating
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CwmsDataApi.StreamReach
+# Cwmsjs.StreamReach
 
 ## Properties
 

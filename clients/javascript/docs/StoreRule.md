@@ -1,4 +1,4 @@
-# CwmsDataApi.StoreRule
+# Cwmsjs.StoreRule
 
 ## Enum
 

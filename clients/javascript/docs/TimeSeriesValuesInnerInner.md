@@ -1,4 +1,4 @@
-# CwmsDataApi.TimeSeriesValuesInnerInner
+# Cwmsjs.TimeSeriesValuesInnerInner
 
 ## Properties
 

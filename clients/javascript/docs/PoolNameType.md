@@ -1,4 +1,4 @@
-# CwmsDataApi.PoolNameType
+# Cwmsjs.PoolNameType
 
 ## Properties
 

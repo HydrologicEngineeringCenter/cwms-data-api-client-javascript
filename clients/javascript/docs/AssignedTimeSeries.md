@@ -1,4 +1,4 @@
-# CwmsDataApi.AssignedTimeSeries
+# Cwmsjs.AssignedTimeSeries
 
 ## Properties
 

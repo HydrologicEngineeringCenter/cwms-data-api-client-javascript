@@ -1,4 +1,4 @@
-# CwmsDataApi.ClobApi
+# Cwmsjs.ClobApi
 
 All URIs are relative to *http://localhost*
 
@@ -23,8 +23,8 @@ Delete clob
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -36,7 +36,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.ClobApi();
+let apiInstance = new Cwmsjs.ClobApi();
 let clobId = "clobId_example"; // String | Specifies the id of the clob to be deleted
 let office = "office_example"; // String | Specifies the office of the clob.
 apiInstance.deleteCwmsDataClobsWithClobId(clobId, office, (error, data, response) => {
@@ -79,9 +79,9 @@ Get cwmsData clobs
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.ClobApi();
+let apiInstance = new Cwmsjs.ClobApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office. If this field is not specified, matching information from all offices shall be returned.
   'page': "page_example", // String | This end point can return a lot of data, this identifies where in the request you are. This is an opaque value, and can be obtained from the 'next-page' value in the response.
@@ -120,7 +120,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2, application/xml;version=2
+- **Accept**: application/json;version=2, application/xml;version=2, application/json
 
 
 ## getCwmsDataClobsWithClobId
@@ -132,9 +132,9 @@ Get cwmsData clobs with clobId
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.ClobApi();
+let apiInstance = new Cwmsjs.ClobApi();
 let clobId = "clobId_example"; // String | 
 let opts = {
   'office': "office_example" // String | Specifies the owning office.
@@ -167,7 +167,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## patchCwmsDataClobsWithClobId
@@ -181,8 +181,8 @@ Update clob
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -194,9 +194,9 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.ClobApi();
+let apiInstance = new Cwmsjs.ClobApi();
 let clobId = "clobId_example"; // String | Specifies the id of the clob to be updated
-let clob = new CwmsDataApi.Clob(); // Clob | 
+let clob = new Cwmsjs.Clob(); // Clob | 
 let opts = {
   'ignoreNulls': true // Boolean | If true, null and empty fields in the provided clob will be ignored and the existing value of those fields left in place. Default: true
 };
@@ -243,8 +243,8 @@ Create new Clob
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -256,8 +256,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.ClobApi();
-let clob = new CwmsDataApi.Clob(); // Clob | 
+let apiInstance = new Cwmsjs.ClobApi();
+let clob = new Cwmsjs.Clob(); // Clob | 
 let opts = {
   'failIfExists': true // Boolean | Create will fail if provided ID already exists. Default: true
 };

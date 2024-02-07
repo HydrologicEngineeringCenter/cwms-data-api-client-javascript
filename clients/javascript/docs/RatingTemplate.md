@@ -1,4 +1,4 @@
-# CwmsDataApi.RatingTemplate
+# Cwmsjs.RatingTemplate
 
 ## Properties
 

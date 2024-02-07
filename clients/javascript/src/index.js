@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0
@@ -116,9 +116,9 @@ import UnitsApi from './api/UnitsApi';
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var CwmsDataApi = require('index'); // See note below*.
-* var xxxSvc = new CwmsDataApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new CwmsDataApi.Yyy(); // Construct a model instance.
+* var Cwmsjs = require('index'); // See note below*.
+* var xxxSvc = new Cwmsjs.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new Cwmsjs.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -130,8 +130,8 @@ import UnitsApi from './api/UnitsApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new CwmsDataApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new CwmsDataApi.Yyy(); // Construct a model instance.
+* var xxxSvc = new Cwmsjs.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new Cwmsjs.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.

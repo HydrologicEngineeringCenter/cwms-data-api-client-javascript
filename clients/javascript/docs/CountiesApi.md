@@ -1,4 +1,4 @@
-# CwmsDataApi.CountiesApi
+# Cwmsjs.CountiesApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,9 +17,9 @@ Get cwmsData counties
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.CountiesApi();
+let apiInstance = new Cwmsjs.CountiesApi();
 apiInstance.getCwmsDataCounties((error, data, response) => {
   if (error) {
     console.error(error);
@@ -44,5 +44,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 

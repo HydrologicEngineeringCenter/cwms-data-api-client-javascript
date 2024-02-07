@@ -1,4 +1,4 @@
-# CwmsDataApi.LocationGroup
+# Cwmsjs.LocationGroup
 
 ## Properties
 

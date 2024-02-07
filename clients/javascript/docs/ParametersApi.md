@@ -1,4 +1,4 @@
-# CwmsDataApi.ParametersApi
+# Cwmsjs.ParametersApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,9 +17,9 @@ Get cwmsData parameters
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.ParametersApi();
+let apiInstance = new Cwmsjs.ParametersApi();
 let opts = {
   'format': "format_example" // String | Specifies the encoding format of the response. Valid value for the format field for this URI are:  1. tab  2. csv   3. xml  4. json (default)
 };

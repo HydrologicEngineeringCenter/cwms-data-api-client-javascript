@@ -1,4 +1,4 @@
-# CwmsDataApi.LocationGroupsApi
+# Cwmsjs.LocationGroupsApi
 
 All URIs are relative to *http://localhost*
 
@@ -23,8 +23,8 @@ Deletes requested location group
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -36,7 +36,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LocationGroupsApi();
+let apiInstance = new Cwmsjs.LocationGroupsApi();
 let groupId = "groupId_example"; // String | The location group to be deleted
 let categoryId = "categoryId_example"; // String | Specifies the location category of the location group to be deleted
 let office = "office_example"; // String | Specifies the owning office of the location group to be deleted
@@ -87,9 +87,9 @@ Returns CWMS Location Groups Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.LocationGroupsApi();
+let apiInstance = new Cwmsjs.LocationGroupsApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the location group(s) whose data is to be included in the response. If this field is not specified, matching location groups information from all offices shall be returned.
   'includeAssigned': true, // Boolean | Include the assigned locations in the returned location groups. (default: false)
@@ -138,9 +138,9 @@ Retrieves requested Location Group
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.LocationGroupsApi();
+let apiInstance = new Cwmsjs.LocationGroupsApi();
 let groupId = "groupId_example"; // String | Specifies the location_group whose data is to be included in the response
 let office = "office_example"; // String | Specifies the owning office of the location group whose data is to be included in the response.
 let categoryId = "categoryId_example"; // String | Specifies the category containing the location group whose data is to be included in the response.
@@ -187,8 +187,8 @@ Update existing LocationGroup
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -200,10 +200,10 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LocationGroupsApi();
+let apiInstance = new Cwmsjs.LocationGroupsApi();
 let groupId = "groupId_example"; // String | 
 let office = "office_example"; // String | Specifies the owning office of the location group to be updated
-let locationGroup = new CwmsDataApi.LocationGroup(); // LocationGroup | 
+let locationGroup = new Cwmsjs.LocationGroup(); // LocationGroup | 
 let opts = {
   'replaceAssignedLocs': true // Boolean | Specifies whether to unassign all existing locations before assigning new locations specified in the content body Default: false
 };
@@ -251,8 +251,8 @@ Create new LocationGroup
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -264,8 +264,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LocationGroupsApi();
-let locationGroup = new CwmsDataApi.LocationGroup(); // LocationGroup | 
+let apiInstance = new Cwmsjs.LocationGroupsApi();
+let locationGroup = new Cwmsjs.LocationGroup(); // LocationGroup | 
 apiInstance.postCwmsDataLocationGroup(locationGroup, (error, data, response) => {
   if (error) {
     console.error(error);

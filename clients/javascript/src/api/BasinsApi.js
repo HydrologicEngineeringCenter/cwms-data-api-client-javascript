@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0
@@ -69,7 +69,7 @@ export default class BasinsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/vnd.named+pg+json'];
+      let accepts = ['application/vnd.named+pg+json', 'application/json'];
       let returnType = Basin;
       return this.apiClient.callApi(
         '/cwms-data/basins', 'GET',
@@ -118,7 +118,7 @@ export default class BasinsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/vnd.named+pg+json'];
+      let accepts = ['application/vnd.named+pg+json', 'application/json'];
       let returnType = Basin;
       return this.apiClient.callApi(
         '/cwms-data/basins/{basin-id}', 'GET',

@@ -1,4 +1,4 @@
-# CwmsDataApi.Stream
+# Cwmsjs.Stream
 
 ## Properties
 

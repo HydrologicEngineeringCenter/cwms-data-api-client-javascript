@@ -1,4 +1,4 @@
-# CwmsDataApi.DeleteMethod
+# Cwmsjs.DeleteMethod
 
 ## Enum
 

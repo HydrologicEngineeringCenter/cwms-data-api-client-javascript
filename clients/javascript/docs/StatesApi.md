@@ -1,4 +1,4 @@
-# CwmsDataApi.StatesApi
+# Cwmsjs.StatesApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,9 +17,9 @@ Get cwmsData states
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.StatesApi();
+let apiInstance = new Cwmsjs.StatesApi();
 apiInstance.getCwmsDataStates((error, data, response) => {
   if (error) {
     console.error(error);
@@ -44,5 +44,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 

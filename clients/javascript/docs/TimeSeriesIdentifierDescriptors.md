@@ -1,4 +1,4 @@
-# CwmsDataApi.TimeSeriesIdentifierDescriptors
+# Cwmsjs.TimeSeriesIdentifierDescriptors
 
 ## Properties
 

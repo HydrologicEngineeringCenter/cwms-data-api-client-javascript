@@ -1,4 +1,4 @@
-# CwmsDataApi.AssignedLocation
+# Cwmsjs.AssignedLocation
 
 ## Properties
 

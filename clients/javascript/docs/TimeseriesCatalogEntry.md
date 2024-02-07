@@ -1,4 +1,4 @@
-# CwmsDataApi.TimeseriesCatalogEntry
+# Cwmsjs.TimeseriesCatalogEntry
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# CwmsDataApi.AbstractRatingMetadata
+# Cwmsjs.AbstractRatingMetadata
 
 ## Properties
 

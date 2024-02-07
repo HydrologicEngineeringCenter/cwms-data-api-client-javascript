@@ -1,4 +1,4 @@
-# CwmsDataApi.DefaultApi
+# Cwmsjs.DefaultApi
 
 All URIs are relative to *http://localhost*
 
@@ -19,9 +19,9 @@ Get cwmsData
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.DefaultApi();
+let apiInstance = new Cwmsjs.DefaultApi();
 apiInstance.getCwmsData((error, data, response) => {
   if (error) {
     console.error(error);
@@ -58,9 +58,9 @@ Get cwmsData levels with levelId timeseries
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.DefaultApi();
+let apiInstance = new Cwmsjs.DefaultApi();
 let levelId = "levelId_example"; // String | 
 apiInstance.getCwmsDataLevelsWithLevelIdTimeseries(levelId, (error, data, response) => {
   if (error) {
@@ -101,9 +101,9 @@ Get cwmsData timeseries recent with groupId
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.DefaultApi();
+let apiInstance = new Cwmsjs.DefaultApi();
 let groupId = "groupId_example"; // String | 
 apiInstance.getCwmsDataTimeseriesRecentWithGroupId(groupId, (error, data, response) => {
   if (error) {

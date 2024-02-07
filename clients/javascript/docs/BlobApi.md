@@ -1,4 +1,4 @@
-# CwmsDataApi.BlobApi
+# Cwmsjs.BlobApi
 
 All URIs are relative to *http://localhost*
 
@@ -18,9 +18,9 @@ Get cwmsData blobs
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.BlobApi();
+let apiInstance = new Cwmsjs.BlobApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office. If this field is not specified, matching information from all offices shall be returned.
   'page': "page_example", // String | This end point can return a lot of data, this identifies where in the request you are. This is an opaque value, and can be obtained from the 'next-page' value in the response.
@@ -57,7 +57,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2, application/xml;version=2
+- **Accept**: application/json;version=2, application/xml;version=2, application/json
 
 
 ## getCwmsDataBlobsWithBlobId
@@ -69,9 +69,9 @@ Get cwmsData blobs with blobId
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.BlobApi();
+let apiInstance = new Cwmsjs.BlobApi();
 let blobId = "blobId_example"; // String | 
 let opts = {
   'office': "office_example" // String | Specifies the owning office.

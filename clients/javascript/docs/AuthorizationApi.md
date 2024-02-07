@@ -1,4 +1,4 @@
-# CwmsDataApi.AuthorizationApi
+# Cwmsjs.AuthorizationApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,8 +22,8 @@ Delete API key for a user
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -35,10 +35,10 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.AuthorizationApi();
+let apiInstance = new Cwmsjs.AuthorizationApi();
 let keyName = "keyName_example"; // String | 
 let opts = {
-  'apiKey': new CwmsDataApi.ApiKey() // ApiKey | 
+  'apiKey': new Cwmsjs.ApiKey() // ApiKey | 
 };
 apiInstance.deleteCwmsDataAuthKeysWithKeyName(keyName, opts, (error, data, response) => {
   if (error) {
@@ -82,8 +82,8 @@ View all keys for the current user
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -95,7 +95,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.AuthorizationApi();
+let apiInstance = new Cwmsjs.AuthorizationApi();
 apiInstance.getCwmsDataAuthKeys((error, data, response) => {
   if (error) {
     console.error(error);
@@ -134,8 +134,8 @@ View specific key
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -147,7 +147,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.AuthorizationApi();
+let apiInstance = new Cwmsjs.AuthorizationApi();
 let keyName = "keyName_example"; // String | Name of the specific key to get more information for. NOTE: Case-sensitive.
 apiInstance.getCwmsDataAuthKeysWithKeyName(keyName, (error, data, response) => {
   if (error) {
@@ -190,8 +190,8 @@ Create a new API Key for user. The randomly generated key is returned to the cal
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -203,9 +203,9 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.AuthorizationApi();
+let apiInstance = new Cwmsjs.AuthorizationApi();
 let opts = {
-  'apiKey': new CwmsDataApi.ApiKey() // ApiKey | 
+  'apiKey': new Cwmsjs.ApiKey() // ApiKey | 
 };
 apiInstance.postCwmsDataAuthKeys(opts, (error, data, response) => {
   if (error) {

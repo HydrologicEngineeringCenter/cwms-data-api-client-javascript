@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0
@@ -62,7 +62,7 @@ export default class StatesApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = [State];
       return this.apiClient.callApi(
         '/cwms-data/states', 'GET',

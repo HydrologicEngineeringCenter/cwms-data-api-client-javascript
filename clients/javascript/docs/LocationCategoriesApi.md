@@ -1,4 +1,4 @@
-# CwmsDataApi.LocationCategoriesApi
+# Cwmsjs.LocationCategoriesApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,8 +22,8 @@ Deletes requested location category
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -35,7 +35,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LocationCategoriesApi();
+let apiInstance = new Cwmsjs.LocationCategoriesApi();
 let categoryId = "categoryId_example"; // String | The location category to be deleted
 let office = "office_example"; // String | Specifies the owning office of the location category to be deleted
 let opts = {
@@ -84,9 +84,9 @@ Returns CWMS Location Category Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.LocationCategoriesApi();
+let apiInstance = new Cwmsjs.LocationCategoriesApi();
 let opts = {
   'office': "office_example" // String | Specifies the owning office of the location category(ies) whose data is to be included in the response. If this field is not specified, matching location category information from all offices shall be returned.
 };
@@ -131,9 +131,9 @@ Retrieves requested Location Category
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.LocationCategoriesApi();
+let apiInstance = new Cwmsjs.LocationCategoriesApi();
 let categoryId = "categoryId_example"; // String | Specifies the Category whose data is to be included in the response.
 let office = "office_example"; // String | Specifies the owning office of the Location Category whose data is to be included in the response.
 apiInstance.getCwmsDataLocationCategoryWithCategoryId(categoryId, office, (error, data, response) => {
@@ -178,8 +178,8 @@ Create new LocationCategory
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -191,8 +191,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.LocationCategoriesApi();
-let locationCategory = new CwmsDataApi.LocationCategory(); // LocationCategory | 
+let apiInstance = new Cwmsjs.LocationCategoriesApi();
+let locationCategory = new Cwmsjs.LocationCategory(); // LocationCategory | 
 apiInstance.postCwmsDataLocationCategory(locationCategory, (error, data, response) => {
   if (error) {
     console.error(error);

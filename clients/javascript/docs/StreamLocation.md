@@ -1,4 +1,4 @@
-# CwmsDataApi.StreamLocation
+# Cwmsjs.StreamLocation
 
 ## Properties
 

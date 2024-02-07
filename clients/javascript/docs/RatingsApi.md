@@ -1,4 +1,4 @@
-# CwmsDataApi.RatingsApi
+# Cwmsjs.RatingsApi
 
 All URIs are relative to *http://localhost*
 
@@ -32,8 +32,8 @@ Deletes requested rating specification
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -45,10 +45,10 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let ratingId = "ratingId_example"; // String | The rating-spec-id of the ratings data to be deleted.
 let office = "office_example"; // String | Specifies the owning office of the ratings to be deleted.
-let method = new CwmsDataApi.DeleteMethod(); // DeleteMethod | Specifies the delete method used.
+let method = new Cwmsjs.DeleteMethod(); // DeleteMethod | Specifies the delete method used.
 apiInstance.deleteCwmsDataRatingsSpecWithRatingId(ratingId, office, method, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -92,8 +92,8 @@ Deletes requested rating specification
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -105,10 +105,10 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let templateId = "templateId_example"; // String | The rating-template-id of the ratings data to be deleted.
 let office = "office_example"; // String | Specifies the owning office of the ratings to be deleted.
-let method = new CwmsDataApi.DeleteMethod(); // DeleteMethod | Specifies the delete method used.
+let method = new Cwmsjs.DeleteMethod(); // DeleteMethod | Specifies the delete method used.
 apiInstance.deleteCwmsDataRatingsTemplateWithTemplateId(templateId, office, method, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -150,8 +150,8 @@ Delete cwmsData ratings with ratingId
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -163,7 +163,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let ratingId = "ratingId_example"; // String | The rating-id of the effective dates to be deleted. 
 let office = "office_example"; // String | Specifies the office of the ratings to be deleted.
 let begin = "begin_example"; // String | The start of the time window to delete. The format for this field is ISO 8601 extended, with optional offset and timezone, i.e., 'YYYY-MM-dd'T'hh:mm:ss[Z'['VV']']', e.g., '2021-06-10T13:00:00-0700[PST8PDT]'.
@@ -214,9 +214,9 @@ Get cwmsData ratings
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let opts = {
   'name': "name_example", // String | Specifies the name(s) of the rating whose data is to be included in the response. A case insensitive comparison is used to match names.
   'office': "office_example", // String | Specifies the owning office of the Rating(s) whose data is to be included in the response. If this field is not specified, matching rating information from all offices shall be returned.
@@ -273,9 +273,9 @@ Get cwmsData ratings metadata
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the Rating Specs whose data is to be included in the response. If this field is not specified, matching rating information from all offices shall be returned.
   'ratingIdMask': "ratingIdMask_example", // String | RegExp that specifies the rating IDs to be included in the response. If this field is not specified, all Rating Specs shall be returned.
@@ -318,7 +318,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## getCwmsDataRatingsSpec
@@ -330,9 +330,9 @@ Get cwmsData ratings spec
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the Rating Specs whose data is to be included in the response. If this field is not specified, matching rating information from all offices shall be returned.
   'ratingIdMask': "ratingIdMask_example", // String | Posix <a href=\"regexp.html\">regular expression</a>  that specifies the rating IDs to be included in the response. If this field is not specified, all Rating Specs shall be returned.
@@ -369,7 +369,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## getCwmsDataRatingsSpecWithRatingId
@@ -381,9 +381,9 @@ Get cwmsData ratings spec with ratingId
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let ratingId = "ratingId_example"; // String | Specifies the rating-id of the Rating Spec to be included in the response
 let office = "office_example"; // String | Specifies the owning office of the Rating Specs whose data is to be included in the response. If this field is not specified, matching rating information from all offices shall be returned.
 apiInstance.getCwmsDataRatingsSpecWithRatingId(ratingId, office, (error, data, response) => {
@@ -414,7 +414,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## getCwmsDataRatingsTemplate
@@ -426,9 +426,9 @@ Get cwmsData ratings template
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the Rating Templates whose data is to be included in the response. If this field is not specified, matching rating information from all offices shall be returned.
   'templateIdMask': "templateIdMask_example", // String | RegExp that specifies the rating template IDs to be included in the response. If this field is not specified, all rating templates shall be returned.
@@ -465,7 +465,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## getCwmsDataRatingsTemplateWithTemplateId
@@ -477,9 +477,9 @@ Get cwmsData ratings template with templateId
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let templateId = "templateId_example"; // String | Specifies the template whose data is to be included in the response
 let office = "office_example"; // String | Specifies the owning office of the Rating Templates whose data is to be included in the response. If this field is not specified, matching rating information from all offices shall be returned.
 apiInstance.getCwmsDataRatingsTemplateWithTemplateId(templateId, office, (error, data, response) => {
@@ -510,7 +510,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## getCwmsDataRatingsWithRatingId
@@ -524,16 +524,16 @@ Returns CWMS Rating Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let ratingId = "ratingId_example"; // String | The rating-id of the effective dates to be retrieve. 
 let office = "office_example"; // String | Specifies the owning office of the ratingset to be included in the response.
 let opts = {
   'begin': "begin_example", // String | Specifies the start of the time window for data to be included in the response. If this field is not specified no start time will be used.
   'end': "end_example", // String | Specifies the end of the time window for data to be included in the response. If this field is not specified no end time will be used.
   'timezone': "timezone_example", // String | Specifies the time zone of the values of the begin and end fields (unless otherwise specified), as well as the time zone of any times in the response. If this field is not specified, the default time zone of UTC shall be used.
-  'method': new CwmsDataApi.DatabaseLoadMethod() // DatabaseLoadMethod | Specifies the retrieval method used.  If no method is provided EAGER will be used.
+  'method': new Cwmsjs.DatabaseLoadMethod() // DatabaseLoadMethod | Specifies the retrieval method used.  If no method is provided EAGER will be used.
 };
 apiInstance.getCwmsDataRatingsWithRatingId(ratingId, office, opts, (error, data, response) => {
   if (error) {
@@ -567,7 +567,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2, application/xml;version=2
+- **Accept**: application/json;version=2, application/xml;version=2, application/json
 
 
 ## patchCwmsDataRatingsWithRatingId
@@ -581,8 +581,8 @@ Update a RatingSet
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -594,7 +594,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let ratingId = "ratingId_example"; // String | 
 let body = {key: null}; // Object | 
 let opts = {
@@ -643,8 +643,8 @@ Create new RatingSet
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -656,7 +656,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
+let apiInstance = new Cwmsjs.RatingsApi();
 let body = {key: null}; // Object | 
 let opts = {
   'storeTemplate': true // Boolean | Also store updates to the rating template. Default: true
@@ -703,8 +703,8 @@ Create new Rating Specification
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -716,8 +716,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
-let ratingSpec = new CwmsDataApi.RatingSpec(); // RatingSpec | 
+let apiInstance = new Cwmsjs.RatingsApi();
+let ratingSpec = new Cwmsjs.RatingSpec(); // RatingSpec | 
 let opts = {
   'failIfExists': true // Boolean | Create will fail if provided ID already exists. Default: true
 };
@@ -763,8 +763,8 @@ Create new Rating Template
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -776,8 +776,8 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.RatingsApi();
-let ratingTemplate = new CwmsDataApi.RatingTemplate(); // RatingTemplate | 
+let apiInstance = new Cwmsjs.RatingsApi();
+let ratingTemplate = new Cwmsjs.RatingTemplate(); // RatingTemplate | 
 let opts = {
   'failIfExists': true // Boolean | Create will fail if provided ID already exists. Default: true
 };

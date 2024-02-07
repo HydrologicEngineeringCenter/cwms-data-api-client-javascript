@@ -1,4 +1,4 @@
-# CwmsDataApi.LocationCategory
+# Cwmsjs.LocationCategory
 
 ## Properties
 

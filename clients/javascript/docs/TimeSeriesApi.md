@@ -1,4 +1,4 @@
-# CwmsDataApi.TimeSeriesApi
+# Cwmsjs.TimeSeriesApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,8 +20,8 @@ Delete cwmsData timeseries with timeseries
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -33,7 +33,7 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeSeriesApi();
+let apiInstance = new Cwmsjs.TimeSeriesApi();
 let timeseries = "timeseries_example"; // String | The timeseries-id of the timeseries values to be deleted. 
 let office = "office_example"; // String | Specifies the office of the timeseries to be deleted.
 let begin = "begin_example"; // String | The start of the time window to delete. The format for this field is ISO 8601 extended, with optional offset and timezone, i.e., 'YYYY-MM-dd'T'hh:mm:ss[Z'['VV']']', e.g., '2021-06-10T13:00:00-0700[PST8PDT]'.
@@ -94,9 +94,9 @@ Get cwmsData timeseries
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.TimeSeriesApi();
+let apiInstance = new Cwmsjs.TimeSeriesApi();
 let name = "name_example"; // String | Specifies the name(s) of the time series whose data is to be included in the response. A case insensitive comparison is used to match names.
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the time series(s) whose data is to be included in the response. If this field is not specified, matching location level information from all offices shall be returned.
@@ -145,7 +145,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2, application/xml;version=2, application/xml, 
+- **Accept**: application/json;version=2, application/xml;version=2, application/xml, application/json, 
 
 
 ## patchCwmsDataTimeseriesWithTimeseries
@@ -159,8 +159,8 @@ Update a TimeSeries with provided values
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -172,14 +172,14 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeSeriesApi();
+let apiInstance = new Cwmsjs.TimeSeriesApi();
 let timeseries = "timeseries_example"; // String | Full CWMS Timeseries name
-let timeSeries = new CwmsDataApi.TimeSeries(); // TimeSeries | 
+let timeSeries = new Cwmsjs.TimeSeries(); // TimeSeries | 
 let opts = {
   'versionDate': "versionDate_example", // String | Specifies the version date for the timeseries to create. If this field is not specified, a null version date will be used.  The format for this field is ISO 8601 extended, with optional timezone, i.e., 'format', e.g., '2021-06-10T13:00:00-0700[PST8PDT]'.
   'timezone': "timezone_example", // String | Specifies the time zone of the version-date field (unless otherwise specified). If this field is not specified, the default time zone of UTC shall be used.  Ignored if version-date was specified with offset and timezone.
   'createAsLrts': true, // Boolean | 
-  'storeRule': new CwmsDataApi.StoreRule(), // StoreRule | The business rule to use when merging the incoming with existing data
+  'storeRule': new Cwmsjs.StoreRule(), // StoreRule | The business rule to use when merging the incoming with existing data
   'overrideProtection': true // Boolean | A flag to ignore the protected data quality when storing data.  \"'true' or 'false'\"
 };
 apiInstance.patchCwmsDataTimeseriesWithTimeseries(timeseries, timeSeries, opts, (error, data, response) => {
@@ -229,8 +229,8 @@ Create new TimeSeries, will store any data provided
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
-let defaultClient = CwmsDataApi.ApiClient.instance;
+import Cwmsjs from 'CWMSJS';
+let defaultClient = Cwmsjs.ApiClient.instance;
 // Configure API key authorization: ApiKey
 let ApiKey = defaultClient.authentications['ApiKey'];
 ApiKey.apiKey = 'YOUR API KEY';
@@ -242,13 +242,13 @@ CwmsAAACacAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //CwmsAAACacAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new CwmsDataApi.TimeSeriesApi();
-let timeSeries = new CwmsDataApi.TimeSeries(); // TimeSeries | 
+let apiInstance = new Cwmsjs.TimeSeriesApi();
+let timeSeries = new Cwmsjs.TimeSeries(); // TimeSeries | 
 let opts = {
   'versionDate': "versionDate_example", // String | Specifies the version date for the timeseries to create. If this field is not specified, a null version date will be used.  The format for this field is ISO 8601 extended, with optional timezone, i.e., 'format', e.g., '2021-06-10T13:00:00-0700[PST8PDT]'.
   'timezone': "timezone_example", // String | Specifies the time zone of the version-date field (unless otherwise specified). If this field is not specified, the default time zone of UTC shall be used.  Ignored if version-date was specified with offset and timezone.
   'createAsLrts': true, // Boolean | Flag indicating if timeseries should be created as Local Regular Time Series. 'True' or 'False', default is 'False'
-  'storeRule': new CwmsDataApi.StoreRule(), // StoreRule | The business rule to use when merging the incoming with existing data
+  'storeRule': new Cwmsjs.StoreRule(), // StoreRule | The business rule to use when merging the incoming with existing data
   'overrideProtection': true // Boolean | A flag to ignore the protected data quality when storing data. 'True' or 'False'
 };
 apiInstance.postCwmsDataTimeseries(timeSeries, opts, (error, data, response) => {

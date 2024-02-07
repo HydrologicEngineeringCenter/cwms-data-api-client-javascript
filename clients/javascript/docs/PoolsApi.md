@@ -1,4 +1,4 @@
-# CwmsDataApi.PoolsApi
+# Cwmsjs.PoolsApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,9 +20,9 @@ Returns Pools Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.PoolsApi();
+let apiInstance = new Cwmsjs.PoolsApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the data in the response. If this field is not specified, matching items from all offices shall be returned.
   'idMask': "idMask_example", // String | Project Id mask. Default value:*
@@ -69,7 +69,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 
 
 ## getCwmsDataPoolsWithPoolId
@@ -83,9 +83,9 @@ Retrieves requested Pool
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.PoolsApi();
+let apiInstance = new Cwmsjs.PoolsApi();
 let poolId = "poolId_example"; // String | Specifies the pool whose data is to be included in the response.
 let office = "office_example"; // String | Specifies the owning office of the Pool whose data is to be included in the response.
 let projectId = "projectId_example"; // String | Specifies the project-id of the Pool whose data is to be included in the response.
@@ -128,5 +128,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json;version=2, application/json
 

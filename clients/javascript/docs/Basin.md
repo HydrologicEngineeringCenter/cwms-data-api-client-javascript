@@ -1,4 +1,4 @@
-# CwmsDataApi.Basin
+# Cwmsjs.Basin
 
 ## Properties
 

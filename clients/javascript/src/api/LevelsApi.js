@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0
@@ -243,7 +243,7 @@ export default class LevelsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = LocationLevel;
       return this.apiClient.callApi(
         '/cwms-data/levels/{level-id}', 'GET',
@@ -285,7 +285,7 @@ export default class LevelsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = SpecifiedLevel;
       return this.apiClient.callApi(
         '/cwms-data/specified-levels', 'GET',

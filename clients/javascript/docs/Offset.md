@@ -1,4 +1,4 @@
-# CwmsDataApi.Offset
+# Cwmsjs.Offset
 
 ## Properties
 

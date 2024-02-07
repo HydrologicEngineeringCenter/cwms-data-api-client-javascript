@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0
@@ -84,7 +84,7 @@ export default class PoolsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = Pools;
       return this.apiClient.callApi(
         '/cwms-data/pools', 'GET',
@@ -149,7 +149,7 @@ export default class PoolsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
+      let accepts = ['application/json;version=2', 'application/json'];
       let returnType = Pool;
       return this.apiClient.callApi(
         '/cwms-data/pools/{pool-id}', 'GET',

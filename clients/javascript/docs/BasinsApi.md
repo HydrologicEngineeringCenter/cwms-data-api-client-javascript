@@ -1,4 +1,4 @@
-# CwmsDataApi.BasinsApi
+# Cwmsjs.BasinsApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,9 +20,9 @@ Returns CWMS Basin Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.BasinsApi();
+let apiInstance = new Cwmsjs.BasinsApi();
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the basin whose data is to be included in the response. If this field is not specified, matching basin information from all offices shall be returned.
   'unit': "unit_example" // String | Specifies the unit or unit system of the response. Valid values for the unit field are:   1. EN.   Specifies English unit system. Basin values will be in the default English units for their parameters. (This is default if no value is entered)  2. SI.   Specifies the SI unit system. Basin values will be in the default SI units for their parameters.
@@ -55,7 +55,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/vnd.named+pg+json
+- **Accept**: application/vnd.named+pg+json, application/json
 
 
 ## getCwmsDataBasinsWithBasinId
@@ -69,9 +69,9 @@ Returns CWMS Basin Data
 ### Example
 
 ```javascript
-import CwmsDataApi from 'cwms_data_api';
+import Cwmsjs from 'CWMSJS';
 
-let apiInstance = new CwmsDataApi.BasinsApi();
+let apiInstance = new Cwmsjs.BasinsApi();
 let basinId = "basinId_example"; // String | 
 let opts = {
   'office': "office_example", // String | Specifies the owning office of the basin whose data is to be included in the response. If this field is not specified, matching basin information from all offices shall be returned.
@@ -106,5 +106,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/vnd.named+pg+json
+- **Accept**: application/vnd.named+pg+json, application/json
 

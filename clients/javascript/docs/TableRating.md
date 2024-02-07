@@ -1,4 +1,4 @@
-# CwmsDataApi.TableRating
+# Cwmsjs.TableRating
 
 ## Properties
 

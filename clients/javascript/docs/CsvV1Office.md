@@ -1,4 +1,4 @@
-# CwmsDataApi.CsvV1Office
+# Cwmsjs.CsvV1Office
 
 ## Properties
 

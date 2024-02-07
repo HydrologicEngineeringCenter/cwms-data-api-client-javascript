@@ -1,4 +1,4 @@
-# CwmsDataApi.DatabaseLoadMethod
+# Cwmsjs.DatabaseLoadMethod
 
 ## Enum
 

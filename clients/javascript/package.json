@@ -1,29 +1,30 @@
 {
-  "name": "cwms_radar",
-  "version": "2.5",
-  "description": "CWMS REST API for Data Retrieval",
-  "license": "Unlicense",
-  "main": "dist/index.js",
+  "name": "cwms_js",
+  "version": "0.1.0",
+  "description": "Javascript Library for the CWMS REST API for Data Retrieval. This library is generated from the CWMS Swagger definition using OpenAPI Generator. The library is intended to be used in a browser environment.",
+  "license": "MIT License",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "clean": "npx rimraf dist src",
     "dist": "babel src -d dist",
-    "prepare": "npm run build",
+    "prepare": "npm run openapi && npm run dist",
     "test": "mocha --require @babel/register --recursive",
-    "openapi": "openapi-generator-cli generate -g javascript -o . -i ../cwms-swagger.3.0.1.json",
-    "validate": "openapi-generator-cli validate -i ../cwms-swagger.3.0.1.json",
+    "openapi": "npm run clean && openapi-generator-cli generate -g javascript -o . -i ../cwms-swagger.json --additional-properties=projectName=CWMSJS,npmRepository=CWMSJS,npmName=cwms_js",
+    "validate": "openapi-generator-cli validate -i ../cwms-swagger.json",
     "generate": "npm run openapi",
-    "bundle": "browserify dist/index.js -o dist/bundle.js"
+    "bundle": "browserify -t [ babelify --presets [@babel/preset-env] ] src/index.js -o src/bundle.js"
+    
   },
   "browser": {
     "fs": false
   },
   "dependencies": {
-    "@babel/cli": "^7.0.0",
     "superagent": "^5.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
@@ -40,14 +41,19 @@
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-env": "^7.23.9",
     "@babel/register": "^7.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
     "expect.js": "^0.3.1",
     "mocha": "^8.0.1",
     "rimraf": "^5.0.1",
     "sinon": "^7.2.0"
   },
   "files": [
-    "dist"
+    "src",
+    "README.md",
+    "LICENSE",
+    "docs"
   ]
 }

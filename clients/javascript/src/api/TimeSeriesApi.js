@@ -1,5 +1,5 @@
 /**
- * CWMS Data API
+ * CWMS_JS
  * CWMS REST API for Data Retrieval
  *
  * The version of the OpenAPI document: 3.0
@@ -162,7 +162,7 @@ export default class TimeSeriesApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2', 'application/xml;version=2', 'application/xml', ''];
+      let accepts = ['application/json;version=2', 'application/xml;version=2', 'application/xml', 'application/json', ''];
       let returnType = TimeSeries;
       return this.apiClient.callApi(
         '/cwms-data/timeseries', 'GET',

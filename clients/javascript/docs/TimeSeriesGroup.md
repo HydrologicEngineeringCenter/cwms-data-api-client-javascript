@@ -1,4 +1,4 @@
-# CwmsDataApi.TimeSeriesGroup
+# Cwmsjs.TimeSeriesGroup
 
 ## Properties
 

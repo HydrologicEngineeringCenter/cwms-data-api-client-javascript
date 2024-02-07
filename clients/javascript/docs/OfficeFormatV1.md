@@ -1,4 +1,4 @@
-# CwmsDataApi.OfficeFormatV1
+# Cwmsjs.OfficeFormatV1
 
 ## Properties
 
