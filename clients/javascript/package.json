@@ -10,8 +10,8 @@
     "dist": "babel src -d dist",
     "prepare": "npm run build",
     "test": "mocha --require @babel/register --recursive",
-    "openapi": "openapi-generator-cli generate -g javascript -o . -i ../cwms-swagger.OFFICES.json",
-    "validate": "openapi-generator-cli validate -i ../cwms-swagger.OFFICES.json",
+    "openapi": "openapi-generator-cli generate -g javascript -o . -i ../cwms-swagger.3.0.1.json",
+    "validate": "openapi-generator-cli validate -i ../cwms-swagger.3.0.1.json",
     "generate": "npm run openapi",
     "bundle": "browserify dist/index.js -o dist/bundle.js"
   },

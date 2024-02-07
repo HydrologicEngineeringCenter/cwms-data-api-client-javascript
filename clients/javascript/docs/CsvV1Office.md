@@ -1,4 +1,4 @@
-# CwmsRadar.CsvV1Office
+# CwmsDataApi.CsvV1Office
 
 ## Properties
 
