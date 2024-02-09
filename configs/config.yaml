@@ -1,0 +1,10 @@
+inputSpec: spec/cwms-swagger.reduced.json
+# fileContentDataType
+framework: fetch-api
+supportsES6: true
+withInterfaces: true
+withNamespace: false
+platform: browser
+npmName: cda_ts
+# supportES6: true
+npmVersion: 0.0.1
