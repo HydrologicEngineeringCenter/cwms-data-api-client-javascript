@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "version": "",
+  "name": "cwmsjs",
+  "version": "0.0.1",
   "description": "OpenAPI client for ",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
@@ -13,7 +13,7 @@
     "openapi-client",
     "openapi-generator"
   ],
-  "license": "Unlicense",
+  "license": "MIT License",
   "main": "./dist/index.js",
   "type": "commonjs",
   "exports": {
@@ -23,7 +23,7 @@
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
-    "openapi": "openapi-generator-cli generate -g javascript -o . -i ../cwms-swagger.json --additional-properties=projectName=CWMSTS,npmRepository=CWMSTS,npmName=cwmsts"
+    "openapi": "openapi-generator-cli generate -g typescript-axios -o ./src/sdk -i ../cwms-swagger.json --additional-properties=projectName=cwmsjs,npmRepository=cwmsjs,npmName=cwmsjs"
   },
   "dependencies": {
     "whatwg-fetch": "^3.0.0",

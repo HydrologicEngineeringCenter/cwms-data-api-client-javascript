@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "CWMS_JS",
+    "title": "CWMSJS",
     "description": "CWMS REST API for Data Retrieval",
     "version": "3.0"
   },
