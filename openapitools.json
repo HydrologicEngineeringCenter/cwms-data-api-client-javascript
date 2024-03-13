@@ -1,19 +1,7 @@
 {
-    "$schema": "spec/cwms-swagger.reduced.json",
-    "spaces": 2,
-    "generator-cli": {
-        "version": "6.5.0",
-        "generators": {
-            "typescript": {
-                "generatorName": "typescript",
-                "output": "clients/typescript",
-                "glob": "examples/cwms-swagger.reduced.{json,yaml}"
-            },
-            "javascript": {
-                "generatorName": "javascript",
-                "output": "clients/javascript",
-                "glob": "examples/cwms-swagger.reduced.{json,yaml}"
-            }
-        }
-    }
+  "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "7.2.0"
+  }
 }

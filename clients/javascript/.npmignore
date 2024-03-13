@@ -1,7 +1,0 @@
-# Blacklist everything
-*
-# Whitelist only what is needed
-!docs/**
-!src/**/*.js
-!package.json
-!README.md
