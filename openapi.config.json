@@ -1,0 +1,9 @@
+{
+    "projectName": "cwmsjs",
+    "packageName": "cwmsjs",
+    "projectDescription": "test",
+    "moduleName": "cwmsjs",
+    "npmRepository": "https://www.npmjs.com/package/cwmsjs",
+    "npmName": "cwmsjs",
+    "repoUrl": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript"
+}
