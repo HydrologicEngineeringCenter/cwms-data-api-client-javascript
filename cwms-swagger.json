@@ -1,10 +1,28 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "CWMSJS",
+    "title": "CWMS Data API",
     "description": "CWMS REST API for Data Retrieval",
     "version": "3.0"
   },
+  "servers": [
+    {
+      "url": "https://waters.usace.army.mil",
+      "description": "Alias for the PRIMARY production server"
+    },
+    {
+      "url": "https://cwms-data.usace.army.mil",
+      "description": "PRIMARY production server"
+    },
+    {
+      "url": "https://cwms.sec.usace.army.mil",
+      "description": "CWBI Production Server"
+    },
+    {
+      "url": "https://cwms-data.usace.army.mil",
+      "description": "PRIMARY production server"
+    }
+  ],
   "security": [
     {
       "MultipleAccessManager": []
@@ -16,6 +34,16 @@
         "summary": "Get cwmsData",
         "operationId": "getCwmsData",
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -48,16 +76,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -90,12 +108,12 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiKey"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -140,12 +158,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/ApiKey"
                 }
               }
             }
@@ -187,12 +205,12 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "Created",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiKey"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -237,12 +255,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/ApiKey"
                 }
               }
             }
@@ -267,15 +285,12 @@
         "description": "View all keys for the current user",
         "operationId": "getCwmsDataAuthKeys",
         "responses": {
-          "201": {
-            "description": "Created",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ApiKey"
-                  }
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -320,12 +335,15 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiKey"
+                  }
                 }
               }
             }
@@ -357,12 +375,12 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "Created",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiKey"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -407,12 +425,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/ApiKey"
                 }
               }
             }
@@ -457,12 +475,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LocationCategory"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -507,12 +525,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/LocationCategory"
                 }
               }
             }
@@ -556,6 +574,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -588,16 +616,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -636,15 +654,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LocationCategory"
-                  }
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -689,12 +704,15 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LocationCategory"
+                  }
                 }
               }
             }
@@ -720,6 +738,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -752,16 +780,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -819,22 +837,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LocationGroup"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/CsvV1LocationGroup"
-                }
-              },
-              "application/geo+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unit"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -879,12 +887,22 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/LocationGroup"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/CsvV1LocationGroup"
+                }
+              },
+              "application/geo+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
                 }
               }
             }
@@ -937,6 +955,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -969,16 +997,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1042,6 +1060,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1074,16 +1102,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1138,23 +1156,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LocationGroup"
-                  }
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CsvV1LocationGroup"
-                  }
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -1199,12 +1206,23 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LocationGroup"
+                  }
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CsvV1LocationGroup"
+                  }
                 }
               }
             }
@@ -1230,6 +1248,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1262,16 +1290,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1327,17 +1345,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
-                }
-              },
-              "application/xml;version=2": {
-                "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -1382,12 +1395,17 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Location"
+                }
+              },
+              "application/xml;version=2": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
                 }
               }
             }
@@ -1421,6 +1439,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1453,16 +1481,6 @@
           },
           "404": {
             "description": "Based on the combination of inputs provided the location was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1514,6 +1532,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1546,16 +1574,6 @@
           },
           "404": {
             "description": "Based on the combination of inputs provided the location was not found.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1626,6 +1644,56 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "200": {
             "description": "OK",
             "content": {
@@ -1665,56 +1733,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
           }
         },
         "security": []
@@ -1742,6 +1760,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1774,16 +1802,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -1811,15 +1829,12 @@
         "summary": "Get cwmsData states",
         "operationId": "getCwmsDataStates",
         "responses": {
-          "200": {
-            "description": "A list of states.",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/State"
-                  }
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -1864,12 +1879,15 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "A list of states.",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/State"
+                  }
                 }
               }
             }
@@ -1886,15 +1904,12 @@
         "summary": "Get cwmsData counties",
         "operationId": "getCwmsDataCounties",
         "responses": {
-          "200": {
-            "description": "A list of counties.",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/County"
-                  }
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -1939,12 +1954,15 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "A list of counties.",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/County"
+                  }
                 }
               }
             }
@@ -1981,40 +1999,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "A list of offices.",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "": {
-                "schema": {
-                  "$ref": "#/components/schemas/OfficeFormatV1"
-                }
-              },
-              "application/json;version=2": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Office"
-                  }
-                }
-              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OfficeFormatV1"
-                }
-              },
-              "text/tab-separated-values": {
-                "schema": {
-                  "$ref": "#/components/schemas/TabV1Office"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/CsvV1Office"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/CsvV1Office"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -2059,12 +2049,40 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "A list of offices.",
             "content": {
+              "": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfficeFormatV1"
+                }
+              },
+              "application/json;version=2": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Office"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/OfficeFormatV1"
+                }
+              },
+              "text/tab-separated-values": {
+                "schema": {
+                  "$ref": "#/components/schemas/TabV1Office"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/CsvV1Office"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CsvV1Office"
                 }
               }
             }
@@ -2100,6 +2118,56 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "200": {
             "description": "A list of offices.",
             "content": {
@@ -2137,56 +2205,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
           }
         },
         "security": []
@@ -2210,8 +2228,15 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request",
@@ -2253,15 +2278,8 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           },
           "501": {
             "description": "The format requested is not implemented"
@@ -2288,8 +2306,15 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request",
@@ -2331,15 +2356,8 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         },
         "security": []
@@ -2363,8 +2381,15 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request",
@@ -2406,15 +2431,8 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           },
           "501": {
             "description": "The format requested is not implemented"
@@ -2460,6 +2478,14 @@
             }
           },
           {
+            "name": "timezone",
+            "in": "query",
+            "description": "Specifies the time zone of the values of the effective date field (unless otherwise specified), as well as the time zone of any times in the response. If this field is not specified, the default time zone of UTC shall be used.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "unit",
             "in": "query",
             "description": "Desired unit for the values retrieved.",
@@ -2469,12 +2495,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LocationLevel"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -2519,12 +2545,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/LocationLevel"
                 }
               }
             }
@@ -2571,9 +2597,27 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "timezone",
+            "in": "query",
+            "description": "Specifies the time zone of the value of the effective date field (unless otherwise specified).If this field is not specified, the default time zone of UTC shall be used.",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -2606,16 +2650,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2676,6 +2710,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -2708,16 +2752,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -2828,22 +2862,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Unit"
-                }
-              },
-              "": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unit"
-                }
-              },
-              "application/json;version=2": {
-                "schema": {
-                  "$ref": "#/components/schemas/LocationLevels"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -2888,12 +2912,22 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Unit"
+                }
+              },
+              "": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              },
+              "application/json;version=2": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationLevels"
                 }
               }
             }
@@ -2924,6 +2958,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -2956,16 +3000,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3000,6 +3034,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -3032,16 +3076,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3069,6 +3103,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -3101,16 +3145,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3152,12 +3186,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TimeSeriesCategory"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -3202,12 +3236,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/TimeSeriesCategory"
                 }
               }
             }
@@ -3254,6 +3288,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -3293,16 +3337,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
           }
         },
         "security": [
@@ -3334,15 +3368,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TimeSeriesCategory"
-                  }
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -3387,12 +3418,15 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TimeSeriesCategory"
+                  }
                 }
               }
             }
@@ -3431,6 +3465,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -3463,16 +3507,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3521,12 +3555,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -3571,12 +3605,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
                 }
               }
             }
@@ -3624,6 +3658,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -3656,16 +3700,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3754,6 +3788,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -3786,16 +3830,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -3859,12 +3893,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptors"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -3909,12 +3943,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptors"
                 }
               }
             }
@@ -3958,6 +3992,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -3990,16 +4034,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4057,12 +4091,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TimeSeriesGroup"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -4107,12 +4141,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/TimeSeriesGroup"
                 }
               }
             }
@@ -4157,6 +4191,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -4189,16 +4233,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4262,6 +4296,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -4294,16 +4338,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4366,15 +4400,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TimeSeriesGroup"
-                  }
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -4419,12 +4450,15 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TimeSeriesGroup"
+                  }
                 }
               }
             }
@@ -4463,6 +4497,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -4495,16 +4539,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4616,32 +4650,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "A list of elements of the data set you've selected.",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
-                "schema": {
-                  "$ref": "#/components/schemas/TimeSeries"
-                }
-              },
-              "application/xml;version=2": {
-                "schema": {
-                  "$ref": "#/components/schemas/TimeSeries"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TimeSeries"
-                }
-              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TimeSeries"
-                }
-              },
-              "": {
-                "schema": {
-                  "$ref": "#/components/schemas/TimeSeries"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -4686,12 +4700,32 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "A list of elements of the data set you've selected.",
             "content": {
+              "application/json;version=2": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimeSeries"
+                }
+              },
+              "application/xml;version=2": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimeSeries"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimeSeries"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/TimeSeries"
+                }
+              },
+              "": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimeSeries"
                 }
               }
             }
@@ -4707,7 +4741,7 @@
           "TimeSeries"
         ],
         "summary": "Post cwmsData timeseries",
-        "description": "Create new TimeSeries, will store any data provided",
+        "description": "Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds ",
         "operationId": "postCwmsDataTimeseries",
         "parameters": [
           {
@@ -4737,7 +4771,7 @@
           {
             "name": "store-rule",
             "in": "query",
-            "description": "The business rule to use when merging the incoming with existing data",
+            "description": "The business rule to use when merging the incoming with existing data\n<table  border=\"1\" summary=\"\">\n<tr><td colspan=2>Store Rules</td></tr>\n<tr>\n    <td>Delete Insert</td>\n    <td>All existing data in the time window will be deleted and then replaced with the new dataset.</td>\n</tr>\n<tr>\n    <td>Replace All</td>\n    <td>\n        <ul>\n            <li>When the new dataset's date/time exactly matches the date/time of an existing data value, the new data value will replace the existing data.</li>\n        <li>When the new dataset's data/time does not match an existing data/time (i.e., a new data/time - data value pair) then an insert to the database will occur.</li>\n            <li>When there's an existing \"data/time - data value pair\" without a corresponding date/time value pair, no change will happen to the existing date/time value pair.</li>\n        </ul>\n    </td>\n</tr>\n<tr>\n    <td>Replace With Non Missing</td>\n    <td>\n        <ul>\n            <li>New data is always inserted, i.e., an existing date/time-value pair does not already exist for the record.</li>\n            <li>If date/time-value pair does exist, then only non-missing value will replace the existing data value*.</li>\n        </ul>\n    </td>\n<tr>\n    <td>Replace Missing Values Only</td>\n    <td>\n        <ul>\n            <li>New data is always inserted, i.e., an existing date/time-value pair does not already exist for the record.</li>\n            <li>If date/time-value pair does exist, then only replace an existing data/time-value pair whose missing flag was set.</li>\n        </ul>\n    </td>\n<tr>\n    <td>Do Not Replace</td>\n    <td>\n        Only inserts new data values if an existing date/time-value pair does not already exist.\n        Note: an existing date/time-value pair whose missing value quality bit is set will NOT be overwritten.\n    </td>\n</tr>\n</table>",
             "schema": {
               "$ref": "#/components/schemas/StoreRule"
             }
@@ -4767,6 +4801,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -4799,16 +4843,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -4922,6 +4956,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -4954,16 +4998,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5026,7 +5060,7 @@
           {
             "name": "store-rule",
             "in": "query",
-            "description": "The business rule to use when merging the incoming with existing data",
+            "description": "The business rule to use when merging the incoming with existing data\n<table  border=\"1\" summary=\"\">\n<tr><td colspan=2>Store Rules</td></tr>\n<tr>\n    <td>Delete Insert</td>\n    <td>All existing data in the time window will be deleted and then replaced with the new dataset.</td>\n</tr>\n<tr>\n    <td>Replace All</td>\n    <td>\n        <ul>\n            <li>When the new dataset's date/time exactly matches the date/time of an existing data value, the new data value will replace the existing data.</li>\n        <li>When the new dataset's data/time does not match an existing data/time (i.e., a new data/time - data value pair) then an insert to the database will occur.</li>\n            <li>When there's an existing \"data/time - data value pair\" without a corresponding date/time value pair, no change will happen to the existing date/time value pair.</li>\n        </ul>\n    </td>\n</tr>\n<tr>\n    <td>Replace With Non Missing</td>\n    <td>\n        <ul>\n            <li>New data is always inserted, i.e., an existing date/time-value pair does not already exist for the record.</li>\n            <li>If date/time-value pair does exist, then only non-missing value will replace the existing data value*.</li>\n        </ul>\n    </td>\n<tr>\n    <td>Replace Missing Values Only</td>\n    <td>\n        <ul>\n            <li>New data is always inserted, i.e., an existing date/time-value pair does not already exist for the record.</li>\n            <li>If date/time-value pair does exist, then only replace an existing data/time-value pair whose missing flag was set.</li>\n        </ul>\n    </td>\n<tr>\n    <td>Do Not Replace</td>\n    <td>\n        Only inserts new data values if an existing date/time-value pair does not already exist.\n        Note: an existing date/time-value pair whose missing value quality bit is set will NOT be overwritten.\n    </td>\n</tr>\n</table>",
             "schema": {
               "$ref": "#/components/schemas/StoreRule"
             }
@@ -5056,6 +5090,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -5088,16 +5132,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5145,15 +5179,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RatingTemplate"
-                  }
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -5198,12 +5229,15 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RatingTemplate"
+                  }
                 }
               }
             }
@@ -5248,6 +5282,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -5280,16 +5324,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5352,12 +5386,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RatingTemplates"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -5402,12 +5436,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/RatingTemplates"
                 }
               }
             }
@@ -5443,6 +5477,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -5475,16 +5519,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5532,12 +5566,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RatingSpec"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -5582,12 +5616,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/RatingSpec"
                 }
               }
             }
@@ -5632,6 +5666,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -5664,16 +5708,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5736,12 +5770,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RatingSpecs"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -5786,12 +5820,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/RatingSpecs"
                 }
               }
             }
@@ -5827,6 +5861,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -5859,16 +5903,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -5955,12 +5989,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RatingMetadataList"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -6005,12 +6039,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/RatingMetadataList"
                 }
               }
             }
@@ -6080,17 +6114,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Unit"
-                }
-              },
-              "application/xml;version=2": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unit"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -6135,12 +6164,17 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Unit"
+                }
+              },
+              "application/xml;version=2": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
                 }
               }
             }
@@ -6201,6 +6235,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -6233,16 +6277,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6302,6 +6336,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -6334,16 +6378,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6437,27 +6471,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Unit"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unit"
-                }
-              },
-              "text/tab-separated-values": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/csv": {
-                "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -6502,12 +6521,27 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Unit"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              },
+              "text/tab-separated-values": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -6551,6 +6585,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -6583,16 +6627,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -6712,17 +6746,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "A list of elements the data set you've selected.",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Catalog"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Catalog"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -6767,12 +6796,17 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "A list of elements the data set you've selected.",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Catalog"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Catalog"
                 }
               }
             }
@@ -6816,12 +6850,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/vnd.named+pg+json": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Basin"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -6866,12 +6900,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.named+pg+json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Basin"
                 }
               }
             }
@@ -6910,12 +6944,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/vnd.named+pg+json": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Basin"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -6960,12 +6994,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.named+pg+json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Basin"
                 }
               }
             }
@@ -7003,6 +7037,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -7035,16 +7079,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7100,17 +7134,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "A list of blobs.",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Blobs"
-                }
-              },
-              "application/xml;version=2": {
-                "schema": {
-                  "$ref": "#/components/schemas/Blobs"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -7155,6 +7184,57 @@
               }
             }
           },
+          "200": {
+            "description": "A list of blobs.",
+            "content": {
+              "application/json;version=2": {
+                "schema": {
+                  "$ref": "#/components/schemas/Blobs"
+                }
+              },
+              "application/xml;version=2": {
+                "schema": {
+                  "$ref": "#/components/schemas/Blobs"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "tags": [
+          "Blob"
+        ],
+        "summary": "Post cwmsData blobs",
+        "description": "Create new Blob",
+        "operationId": "postCwmsDataBlobs",
+        "parameters": [
+          {
+            "name": "fail-if-exists",
+            "in": "query",
+            "description": "Create will fail if provided ID already exists. Default: true",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;version=2": {
+              "schema": {
+                "$ref": "#/components/schemas/Blob"
+              }
+            },
+            "application/xml;version=2": {
+              "schema": {
+                "$ref": "#/components/schemas/Blob"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
           "500": {
             "description": "Server Error",
             "content": {
@@ -7164,9 +7244,56 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
           }
         },
-        "security": []
+        "security": [
+          {
+            "CwmsAAACacAuth": []
+          },
+          {
+            "ApiKey": []
+          }
+        ]
       }
     },
     "/cwms-data/clobs/{clob-id}": {
@@ -7192,15 +7319,23 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "clob-id",
+            "in": "query",
+            "description": "If this _query_ parameter is provided the id _path_ parameter is ignored and the value of the query parameter is used.   Note: this query parameter is necessary for id's that contain '/' or other special characters.  Because of abuse even properly escaped '/' in url paths are blocked.  When using this query parameter a valid path parameter must still be provided for the request to be properly routed.  If your clob id contains '/' you can't specify the clob-id query parameter and also specify the id path parameter because firewall and/or server rules will deny the request even though you are specifying this override. \"ignored\" is suggested.",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Returns requested clob.",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Clob"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -7245,12 +7380,17 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "Returns requested clob.",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Clob"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -7286,6 +7426,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -7318,16 +7468,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7388,6 +7528,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -7420,16 +7570,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7500,17 +7640,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "A list of clobs.",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Clobs"
-                }
-              },
-              "application/xml;version=2": {
-                "schema": {
-                  "$ref": "#/components/schemas/Clobs"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -7555,12 +7690,17 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "A list of clobs.",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Clobs"
+                }
+              },
+              "application/xml;version=2": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clobs"
                 }
               }
             }
@@ -7601,6 +7741,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -7633,16 +7783,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -7732,12 +7872,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pool"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -7782,12 +7922,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Pool"
                 }
               }
             }
@@ -7883,12 +8023,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pools"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -7933,12 +8073,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/Pools"
                 }
               }
             }
@@ -7976,12 +8116,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "500": {
+            "description": "Server Error",
             "content": {
-              "application/json;version=2": {
+              "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SpecifiedLevel"
+                  "$ref": "#/components/schemas/CdaError"
                 }
               }
             }
@@ -8026,12 +8166,12 @@
               }
             }
           },
-          "500": {
-            "description": "Server Error",
+          "200": {
+            "description": "OK",
             "content": {
-              "application/json": {
+              "application/json;version=2": {
                 "schema": {
-                  "$ref": "#/components/schemas/CdaError"
+                  "$ref": "#/components/schemas/SpecifiedLevel"
                 }
               }
             }
@@ -8067,6 +8207,16 @@
           "required": true
         },
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -8099,16 +8249,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8157,6 +8297,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -8189,16 +8339,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -8253,6 +8393,16 @@
           }
         ],
         "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdaError"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -8285,16 +8435,6 @@
           },
           "404": {
             "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CdaError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -9084,9 +9224,6 @@
               "zero": {
                 "type": "boolean"
               },
-              "negative": {
-                "type": "boolean"
-              },
               "units": {
                 "type": "array",
                 "items": {
@@ -9122,6 +9259,9 @@
                     }
                   }
                 }
+              },
+              "negative": {
+                "type": "boolean"
               }
             },
             "description": "The interval of the time-series, in ISO-8601 duration format",
@@ -9300,11 +9440,11 @@
       "StoreRule": {
         "type": "string",
         "enum": [
-          "REPLACE_ALL",
-          "DO_NOT_REPLACE",
-          "REPLACE_MISSING_VALUES_ONLY",
-          "REPLACE_WITH_NON_MISSING",
-          "DELETE_INSERT"
+          "REPLACE ALL",
+          "DO NOT REPLACE",
+          "REPLACE MISSING VALUES ONLY",
+          "REPLACE WITH NON MISSING",
+          "DELETE INSERT"
         ]
       },
       "ParameterSpec": {
@@ -10194,8 +10334,7 @@
               "format": "byte"
             }
           }
-        },
-        "description": "List of retrieved blobs"
+        }
       },
       "Blobs": {
         "type": "object",
@@ -10317,10 +10456,10 @@
           "projectId": {
             "type": "string"
           },
-          "topLevelId": {
+          "bottomLevelId": {
             "type": "string"
           },
-          "bottomLevelId": {
+          "topLevelId": {
             "type": "string"
           },
           "poolName": {

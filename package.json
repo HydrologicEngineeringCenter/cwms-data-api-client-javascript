@@ -1,29 +1,35 @@
 {
   "name": "cwmsjs",
-  "version": "0.0.1",
-  "description": "OpenAPI client for ",
-  "author": "OpenAPI-Generator Contributors",
+  "version": "0.0.4",
+  "description": "CWMS Data API Library for JavaScript created with OpenAPI generator in TypeScript for use with browser webapps",
+  "author": "USACE,HEC,CWMS,OpenApi Contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+    "url": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript"
   },
   "keywords": [
     "fetch",
     "typescript",
     "openapi-client",
-    "openapi-generator"
+    "cwms",
+    "cwmsjs",
+    "cwms-data-api",
+    "cda",
+    "hec",
+    "usace",
+    "us army corps of engineers"
   ],
   "license": "MIT License",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "type": "commonjs",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./index.js"
   },
-  "typings": "./dist/index.d.ts",
+  "typings": "./index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
-    "openapi": "openapi-generator-cli generate -g typescript-axios -o ./src/sdk -i cwms-swagger.json --additional-properties=projectName=cwmsjs,npmRepository=cwmsjs,npmName=cwmsjs"
+    "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./dist -i cwms-swagger.json -c openapi.config.json"
   },
   "dependencies": {
     "whatwg-fetch": "^3.0.0",
