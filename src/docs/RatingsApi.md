@@ -262,7 +262,7 @@ No authorization required
 
 ## getCwmsDataRatingsMetadata
 
-> RatingMetadataList getCwmsDataRatingsMetadata(opts)
+> getCwmsDataRatingsMetadata(opts)
 
 Get cwmsData ratings metadata
 
@@ -281,8 +281,8 @@ let opts = {
   'page': "page_example", // String | This end point can return a lot of data, this identifies where in the request you are. This is an opaque value, and can be obtained from the 'next-page' value in the response.
   'pageSize': 56 // Number | How many entries per page returned. Default 50.
 };
-apiInstance.getCwmsDataRatingsMetadata(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.getCwmsDataRatingsMetadata(opts).then(() => {
+  console.log('API called successfully.');
 }, (error) => {
   console.error(error);
 });
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RatingMetadataList**](RatingMetadataList.md)
+null (empty response body)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/json;version=2
+- **Accept**: application/json
 
 
 ## getCwmsDataRatingsSpec

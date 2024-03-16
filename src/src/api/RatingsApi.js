@@ -16,7 +16,6 @@ import ApiClient from "../ApiClient";
 import CdaError from '../model/CdaError';
 import DatabaseLoadMethod from '../model/DatabaseLoadMethod';
 import DeleteMethod from '../model/DeleteMethod';
-import RatingMetadataList from '../model/RatingMetadataList';
 import RatingSpec from '../model/RatingSpec';
 import RatingSpecs from '../model/RatingSpecs';
 import RatingTemplate from '../model/RatingTemplate';
@@ -315,7 +314,7 @@ export default class RatingsApi {
      * @param {String} [timezone] Specifies the time zone of the values of the begin and end fields (unless otherwise specified). If this field is not specified, the default time zone of UTC shall be used.
      * @param {String} [page] This end point can return a lot of data, this identifies where in the request you are. This is an opaque value, and can be obtained from the 'next-page' value in the response.
      * @param {Number} [pageSize] How many entries per page returned. Default 50.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RatingMetadataList} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     getCwmsDataRatingsMetadataWithHttpInfo(opts) {
       opts = opts || {};
@@ -339,8 +338,8 @@ export default class RatingsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/json;version=2'];
-      let returnType = RatingMetadataList;
+      let accepts = ['application/json'];
+      let returnType = null;
       return this.apiClient.callApi(
         '/cwms-data/ratings/metadata', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -358,7 +357,7 @@ export default class RatingsApi {
      * @param {String} opts.timezone Specifies the time zone of the values of the begin and end fields (unless otherwise specified). If this field is not specified, the default time zone of UTC shall be used.
      * @param {String} opts.page This end point can return a lot of data, this identifies where in the request you are. This is an opaque value, and can be obtained from the 'next-page' value in the response.
      * @param {Number} opts.pageSize How many entries per page returned. Default 50.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RatingMetadataList}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     getCwmsDataRatingsMetadata(opts) {
       return this.getCwmsDataRatingsMetadataWithHttpInfo(opts)

@@ -13,7 +13,6 @@
 
 
 import ApiClient from './ApiClient';
-import AbstractRatingMetadata from './model/AbstractRatingMetadata';
 import ApiKey from './model/ApiKey';
 import AssignedLocation from './model/AssignedLocation';
 import AssignedTimeSeries from './model/AssignedTimeSeries';
@@ -30,7 +29,6 @@ import County from './model/County';
 import CsvV1Office from './model/CsvV1Office';
 import DatabaseLoadMethod from './model/DatabaseLoadMethod';
 import DeleteMethod from './model/DeleteMethod';
-import ExpressionRating from './model/ExpressionRating';
 import IndependentRoundingSpec from './model/IndependentRoundingSpec';
 import Location from './model/Location';
 import LocationAlias from './model/LocationAlias';
@@ -49,8 +47,6 @@ import ParameterSpec from './model/ParameterSpec';
 import Pool from './model/Pool';
 import PoolNameType from './model/PoolNameType';
 import Pools from './model/Pools';
-import RatingMetadata from './model/RatingMetadata';
-import RatingMetadataList from './model/RatingMetadataList';
 import RatingSpec from './model/RatingSpec';
 import RatingSpecs from './model/RatingSpecs';
 import RatingTemplate from './model/RatingTemplate';
@@ -63,7 +59,6 @@ import Stream from './model/Stream';
 import StreamLocation from './model/StreamLocation';
 import StreamReach from './model/StreamReach';
 import TabV1Office from './model/TabV1Office';
-import TableRating from './model/TableRating';
 import TimeSeries from './model/TimeSeries';
 import TimeSeriesCategory from './model/TimeSeriesCategory';
 import TimeSeriesColumn from './model/TimeSeriesColumn';
@@ -77,11 +72,8 @@ import TimeSeriesIntervalUnitsInnerDuration from './model/TimeSeriesIntervalUnit
 import TimeSeriesRecord from './model/TimeSeriesRecord';
 import TimeSeriesValuesInnerInner from './model/TimeSeriesValuesInnerInner';
 import TimeseriesCatalogEntry from './model/TimeseriesCatalogEntry';
-import TransitionalRating from './model/TransitionalRating';
 import UnitSystem from './model/UnitSystem';
-import UsgsStreamRating from './model/UsgsStreamRating';
 import VerticalDatumInfo from './model/VerticalDatumInfo';
-import VirtualRating from './model/VirtualRating';
 import AuthorizationApi from './api/AuthorizationApi';
 import BasinsApi from './api/BasinsApi';
 import BlobApi from './api/BlobApi';
@@ -143,12 +135,6 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
-
-    /**
-     * The AbstractRatingMetadata model constructor.
-     * @property {module:model/AbstractRatingMetadata}
-     */
-    AbstractRatingMetadata,
 
     /**
      * The ApiKey model constructor.
@@ -245,12 +231,6 @@ export {
      * @property {module:model/DeleteMethod}
      */
     DeleteMethod,
-
-    /**
-     * The ExpressionRating model constructor.
-     * @property {module:model/ExpressionRating}
-     */
-    ExpressionRating,
 
     /**
      * The IndependentRoundingSpec model constructor.
@@ -361,18 +341,6 @@ export {
     Pools,
 
     /**
-     * The RatingMetadata model constructor.
-     * @property {module:model/RatingMetadata}
-     */
-    RatingMetadata,
-
-    /**
-     * The RatingMetadataList model constructor.
-     * @property {module:model/RatingMetadataList}
-     */
-    RatingMetadataList,
-
-    /**
      * The RatingSpec model constructor.
      * @property {module:model/RatingSpec}
      */
@@ -443,12 +411,6 @@ export {
      * @property {module:model/TabV1Office}
      */
     TabV1Office,
-
-    /**
-     * The TableRating model constructor.
-     * @property {module:model/TableRating}
-     */
-    TableRating,
 
     /**
      * The TimeSeries model constructor.
@@ -529,34 +491,16 @@ export {
     TimeseriesCatalogEntry,
 
     /**
-     * The TransitionalRating model constructor.
-     * @property {module:model/TransitionalRating}
-     */
-    TransitionalRating,
-
-    /**
      * The UnitSystem model constructor.
      * @property {module:model/UnitSystem}
      */
     UnitSystem,
 
     /**
-     * The UsgsStreamRating model constructor.
-     * @property {module:model/UsgsStreamRating}
-     */
-    UsgsStreamRating,
-
-    /**
      * The VerticalDatumInfo model constructor.
      * @property {module:model/VerticalDatumInfo}
      */
     VerticalDatumInfo,
-
-    /**
-     * The VirtualRating model constructor.
-     * @property {module:model/VirtualRating}
-     */
-    VirtualRating,
 
     /**
     * The AuthorizationApi service constructor.

@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **outRangeHighMethod** | **String** |  | [optional] 
 **sourceRatings** | **[Object]** |  | [optional] 
 **connections** | **String** |  | [optional] 
-**expression** | **String** |  | [optional] 
 **conditions** | **[String]** |  | [optional] 
 **evaluations** | **[String]** |  | [optional] 
 

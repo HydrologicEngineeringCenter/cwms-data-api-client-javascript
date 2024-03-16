@@ -1,6 +1,6 @@
 {
   "name": "cwmsjs",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript for use with web browsers.",
   "author": "USACE, HEC, CWMS",
   "repository": {
@@ -26,6 +26,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
+    "bundle": "browserify dist/index.js > dist/bundle.js",
     "test": "mocha --require @babel/register --recursive"
   },
   "browser": {

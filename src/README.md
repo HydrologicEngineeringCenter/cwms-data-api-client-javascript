@@ -219,7 +219,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [cwmsjs.AbstractRatingMetadata](docs/AbstractRatingMetadata.md)
  - [cwmsjs.ApiKey](docs/ApiKey.md)
  - [cwmsjs.AssignedLocation](docs/AssignedLocation.md)
  - [cwmsjs.AssignedTimeSeries](docs/AssignedTimeSeries.md)
@@ -236,7 +235,6 @@ Class | Method | HTTP request | Description
  - [cwmsjs.CsvV1Office](docs/CsvV1Office.md)
  - [cwmsjs.DatabaseLoadMethod](docs/DatabaseLoadMethod.md)
  - [cwmsjs.DeleteMethod](docs/DeleteMethod.md)
- - [cwmsjs.ExpressionRating](docs/ExpressionRating.md)
  - [cwmsjs.IndependentRoundingSpec](docs/IndependentRoundingSpec.md)
  - [cwmsjs.Location](docs/Location.md)
  - [cwmsjs.LocationAlias](docs/LocationAlias.md)
@@ -255,8 +253,6 @@ Class | Method | HTTP request | Description
  - [cwmsjs.Pool](docs/Pool.md)
  - [cwmsjs.PoolNameType](docs/PoolNameType.md)
  - [cwmsjs.Pools](docs/Pools.md)
- - [cwmsjs.RatingMetadata](docs/RatingMetadata.md)
- - [cwmsjs.RatingMetadataList](docs/RatingMetadataList.md)
  - [cwmsjs.RatingSpec](docs/RatingSpec.md)
  - [cwmsjs.RatingSpecs](docs/RatingSpecs.md)
  - [cwmsjs.RatingTemplate](docs/RatingTemplate.md)
@@ -269,7 +265,6 @@ Class | Method | HTTP request | Description
  - [cwmsjs.StreamLocation](docs/StreamLocation.md)
  - [cwmsjs.StreamReach](docs/StreamReach.md)
  - [cwmsjs.TabV1Office](docs/TabV1Office.md)
- - [cwmsjs.TableRating](docs/TableRating.md)
  - [cwmsjs.TimeSeries](docs/TimeSeries.md)
  - [cwmsjs.TimeSeriesCategory](docs/TimeSeriesCategory.md)
  - [cwmsjs.TimeSeriesColumn](docs/TimeSeriesColumn.md)
@@ -283,11 +278,8 @@ Class | Method | HTTP request | Description
  - [cwmsjs.TimeSeriesRecord](docs/TimeSeriesRecord.md)
  - [cwmsjs.TimeSeriesValuesInnerInner](docs/TimeSeriesValuesInnerInner.md)
  - [cwmsjs.TimeseriesCatalogEntry](docs/TimeseriesCatalogEntry.md)
- - [cwmsjs.TransitionalRating](docs/TransitionalRating.md)
  - [cwmsjs.UnitSystem](docs/UnitSystem.md)
- - [cwmsjs.UsgsStreamRating](docs/UsgsStreamRating.md)
  - [cwmsjs.VerticalDatumInfo](docs/VerticalDatumInfo.md)
- - [cwmsjs.VirtualRating](docs/VirtualRating.md)
 
 
 ## Documentation for Authorization

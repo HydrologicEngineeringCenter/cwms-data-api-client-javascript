@@ -2,7 +2,6 @@
 .gitignore
 .travis.yml
 README.md
-docs/AbstractRatingMetadata.md
 docs/ApiKey.md
 docs/AssignedLocation.md
 docs/AssignedTimeSeries.md
@@ -26,7 +25,6 @@ docs/CsvV1Office.md
 docs/DatabaseLoadMethod.md
 docs/DefaultApi.md
 docs/DeleteMethod.md
-docs/ExpressionRating.md
 docs/IndependentRoundingSpec.md
 docs/LevelsApi.md
 docs/Location.md
@@ -52,8 +50,6 @@ docs/Pool.md
 docs/PoolNameType.md
 docs/Pools.md
 docs/PoolsApi.md
-docs/RatingMetadata.md
-docs/RatingMetadataList.md
 docs/RatingSpec.md
 docs/RatingSpecs.md
 docs/RatingTemplate.md
@@ -68,7 +64,6 @@ docs/Stream.md
 docs/StreamLocation.md
 docs/StreamReach.md
 docs/TabV1Office.md
-docs/TableRating.md
 docs/TimeSeries.md
 docs/TimeSeriesApi.md
 docs/TimeSeriesCategoriesApi.md
@@ -87,12 +82,9 @@ docs/TimeSeriesValuesInnerInner.md
 docs/TimeZonesApi.md
 docs/TimeseriesCatalogEntry.md
 docs/TimeseriesGroupsApi.md
-docs/TransitionalRating.md
 docs/UnitSystem.md
 docs/UnitsApi.md
-docs/UsgsStreamRating.md
 docs/VerticalDatumInfo.md
-docs/VirtualRating.md
 git_push.sh
 mocha.opts
 src/ApiClient.js
@@ -119,7 +111,6 @@ src/api/TimeZonesApi.js
 src/api/TimeseriesGroupsApi.js
 src/api/UnitsApi.js
 src/index.js
-src/model/AbstractRatingMetadata.js
 src/model/ApiKey.js
 src/model/AssignedLocation.js
 src/model/AssignedTimeSeries.js
@@ -136,7 +127,6 @@ src/model/County.js
 src/model/CsvV1Office.js
 src/model/DatabaseLoadMethod.js
 src/model/DeleteMethod.js
-src/model/ExpressionRating.js
 src/model/IndependentRoundingSpec.js
 src/model/Location.js
 src/model/LocationAlias.js
@@ -155,8 +145,6 @@ src/model/ParameterSpec.js
 src/model/Pool.js
 src/model/PoolNameType.js
 src/model/Pools.js
-src/model/RatingMetadata.js
-src/model/RatingMetadataList.js
 src/model/RatingSpec.js
 src/model/RatingSpecs.js
 src/model/RatingTemplate.js
@@ -169,7 +157,6 @@ src/model/Stream.js
 src/model/StreamLocation.js
 src/model/StreamReach.js
 src/model/TabV1Office.js
-src/model/TableRating.js
 src/model/TimeSeries.js
 src/model/TimeSeriesCategory.js
 src/model/TimeSeriesColumn.js
@@ -183,8 +170,5 @@ src/model/TimeSeriesIntervalUnitsInnerDuration.js
 src/model/TimeSeriesRecord.js
 src/model/TimeSeriesValuesInnerInner.js
 src/model/TimeseriesCatalogEntry.js
-src/model/TransitionalRating.js
 src/model/UnitSystem.js
-src/model/UsgsStreamRating.js
 src/model/VerticalDatumInfo.js
-src/model/VirtualRating.js
