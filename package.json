@@ -20,24 +20,28 @@
     "us army corps of engineers"
   ],
   "license": "MIT License",
-  "main": "./index.js",
+  "main": "./dist/index.js",
   "type": "commonjs",
   "exports": {
-    ".": "./index.js"
+    ".": "./dist/index.js"
   },
-  "typings": "./index.d.ts",
+  "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --noEmitOnError ./src/index.ts",
+    "deploy": "npm run openapi && npm run build && npm publish --access public",
     "prepare": "npm run build",
-    "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./dist -i cwms-swagger.json -c openapi.config.json"
+    "openapi": "npm run clean && openapi-generator-cli generate -g typescript -o ./src -i cwms-swagger.json -c openapi.config.json && npm run build || npm run moveDocs",
+    "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
+    "moveDocs": "shx mkdir -p ./dist/docs && shx mv ./src/*.md ./dist/docs/"
   },
   "dependencies": {
-    "whatwg-fetch": "^3.0.0",
     "es6-promise": "^4.2.4",
-    "url-parse": "^1.4.3"
+    "shx": "^0.3.4",
+    "url-parse": "^1.4.3",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "typescript": "^4.0",
-    "@types/url-parse": "1.4.4"
+    "@types/url-parse": "1.4.4",
+    "typescript": "^4.0"
   }
 }
