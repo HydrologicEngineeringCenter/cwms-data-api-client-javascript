@@ -1,68 +1,34 @@
 {
   "name": "cwmsjs",
-  "version": "1.6.0",
-  "description": "CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript for use with web browsers.",
-  "author": "USACE, HEC, CWMS",
+  "version": "1.11.0",
+  "description": "CWMS Data API Library for JavaScript/TypeScript created with OpenAPI generator in TypeScript for use with browser webapps",
+  "author": "USACE,HEC,CWMS,OpenApi Contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript.git"
+    "url": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript"
   },
   "keywords": [
-    "javascript",
+    "fetch",
     "typescript",
-    "cwmsjs",
+    "openapi-client",
     "cwms",
-    "HEC",
-    "USACE",
-    "CDA",
-    "CWMS Data API",
-    "client",
-    "timeseries",
-    "levels",
-    "water",
-    "reservoir"
+    "cwmsjs",
+    "cwms-data-api",
+    "cda",
+    "hec",
+    "usace",
+    "us army corps of engineers"
   ],
   "license": "MIT License",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
   "scripts": {
-    "build": "babel src -d dist",
-    "bundle": "browserify dist/index.js > dist/bundle.js",
-    "test": "mocha --require @babel/register --recursive"
-  },
-  "browser": {
-    "fs": false
-  },
-  "dependencies": {
-    "@babel/cli": "^7.0.0",
-    "superagent": "^5.3.0"
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "prepare": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-decorators": "^7.0.0",
-    "@babel/plugin-proposal-do-expressions": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
-    "@babel/plugin-proposal-function-bind": "^7.0.0",
-    "@babel/plugin-proposal-function-sent": "^7.0.0",
-    "@babel/plugin-proposal-json-strings": "^7.0.0",
-    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
-    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
-    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "expect.js": "^0.3.1",
-    "mocha": "^8.0.1",
-    "sinon": "^7.2.0"
-  },
-  "files": [
-    "dist",
-    "*.md",
-    "docs/**/*.md"
-  ]
+    "typescript": "^4.0"
+  }
 }

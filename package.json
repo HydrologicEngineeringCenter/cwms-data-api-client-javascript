@@ -1,7 +1,7 @@
 {
   "name": "cwmsjs",
-  "version": "1.6.0",
-  "description": "CWMS Data API Library for JavaScript created with OpenAPI generator in TypeScript for use with browser webapps",
+  "version": "1.11.0",
+  "description": "CWMS Data API Library for JavaScript/TypeScript created with OpenAPI generator in TypeScript for use with browser webapps",
   "author": "USACE,HEC,CWMS,OpenApi Contributors",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "cd src && babel src -d dist",
-    "openapi": "openapi-generator-cli generate -g javascript -o ./src -i cwms-swagger.json -c openapi.config.json",
+    "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./src -i cwms-swagger.json -c openapi.config.json",
     "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
     "moveDocs": "shx mkdir -p ./dist/docs && shx mv ./src/*.md ./dist/docs/"
   },
