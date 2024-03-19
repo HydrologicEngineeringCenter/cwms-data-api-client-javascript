@@ -3,23 +3,23 @@
   "info": {
     "title": "CWMS Data API",
     "description": "CWMS REST API for Data Retrieval",
-    "version": "1.11.0"
+    "version": "1.12.0"
   },
   "servers": [
     {
-      "url": "https://cwms-data.usace.army.mil",
+      "url": "https://cwms-data.usace.army.mil/cwms-data",
       "description": "PRIMARY production server"
     },
     {
-      "url": "https://water.usace.army.mil",
+      "url": "https://water.usace.army.mil/cwms-data",
       "description": "Alias for the PRIMARY production server"
     },
     {
-      "url": "https://cwms.sec.usace.army.mil",
+      "url": "https://cwms.sec.usace.army.mil/cwms-data",
       "description": "CWBI Production Server"
     },
     {
-      "url": "https://cwms-data.usace.army.mil",
+      "url": "https://cwms-data.usace.army.mil/cwms-data",
       "description": "PRIMARY production server"
     }
   ],
@@ -88,7 +88,7 @@
         "security": []
       }
     },
-    "/cwms-data/auth/keys/{key-name}": {
+    "/auth/keys/{key-name}": {
       "get": {
         "tags": [
           "Authorization"
@@ -276,7 +276,7 @@
         ]
       }
     },
-    "/cwms-data/auth/keys": {
+    "/auth/keys": {
       "get": {
         "tags": [
           "Authorization"
@@ -446,7 +446,7 @@
         ]
       }
     },
-    "/cwms-data/location/category/{category-id}": {
+    "/location/category/{category-id}": {
       "get": {
         "tags": [
           "Location Categories"
@@ -635,7 +635,7 @@
         ]
       }
     },
-    "/cwms-data/location/category": {
+    "/location/category": {
       "get": {
         "tags": [
           "Location Categories"
@@ -799,7 +799,7 @@
         ]
       }
     },
-    "/cwms-data/location/group/{group-id}": {
+    "/location/group/{group-id}": {
       "get": {
         "tags": [
           "Location Groups"
@@ -1121,7 +1121,7 @@
         ]
       }
     },
-    "/cwms-data/location/group": {
+    "/location/group": {
       "get": {
         "tags": [
           "Location Groups"
@@ -1309,7 +1309,7 @@
         ]
       }
     },
-    "/cwms-data/locations/{location-id}": {
+    "/locations/{location-id}": {
       "get": {
         "tags": [
           "Locations"
@@ -1593,7 +1593,7 @@
         ]
       }
     },
-    "/cwms-data/locations": {
+    "/locations": {
       "get": {
         "tags": [
           "Locations"
@@ -1821,7 +1821,7 @@
         ]
       }
     },
-    "/cwms-data/states": {
+    "/states": {
       "get": {
         "tags": [
           "States"
@@ -1896,7 +1896,7 @@
         "security": []
       }
     },
-    "/cwms-data/counties": {
+    "/counties": {
       "get": {
         "tags": [
           "Counties"
@@ -1971,7 +1971,7 @@
         "security": []
       }
     },
-    "/cwms-data/offices/{office}": {
+    "/offices/{office}": {
       "get": {
         "tags": [
           "Offices"
@@ -2091,7 +2091,7 @@
         "security": []
       }
     },
-    "/cwms-data/offices": {
+    "/offices": {
       "get": {
         "tags": [
           "Offices"
@@ -2210,7 +2210,7 @@
         "security": []
       }
     },
-    "/cwms-data/units": {
+    "/units": {
       "get": {
         "tags": [
           "Units"
@@ -2288,7 +2288,7 @@
         "security": []
       }
     },
-    "/cwms-data/parameters": {
+    "/parameters": {
       "get": {
         "tags": [
           "Parameters"
@@ -2363,7 +2363,7 @@
         "security": []
       }
     },
-    "/cwms-data/timezones": {
+    "/timezones": {
       "get": {
         "tags": [
           "TimeZones"
@@ -2441,7 +2441,7 @@
         "security": []
       }
     },
-    "/cwms-data/levels/{level-id}": {
+    "/levels/{level-id}": {
       "get": {
         "tags": [
           "Levels"
@@ -2771,7 +2771,7 @@
         ]
       }
     },
-    "/cwms-data/levels": {
+    "/levels": {
       "get": {
         "tags": [
           "Levels"
@@ -3019,7 +3019,7 @@
         ]
       }
     },
-    "/cwms-data/levels/{level-id}/timeseries": {
+    "/levels/{level-id}/timeseries": {
       "get": {
         "summary": "Get cwmsData levels with levelId timeseries",
         "operationId": "getCwmsDataLevelsWithLevelIdTimeseries",
@@ -3088,7 +3088,7 @@
         "security": []
       }
     },
-    "/cwms-data/timeseries/recent/{group-id}": {
+    "/timeseries/recent/{group-id}": {
       "get": {
         "summary": "Get cwmsData timeseries recent with groupId",
         "operationId": "getCwmsDataTimeseriesRecentWithGroupId",
@@ -3157,7 +3157,7 @@
         "security": []
       }
     },
-    "/cwms-data/timeseries/category/{category-id}": {
+    "/timeseries/category/{category-id}": {
       "get": {
         "tags": [
           "TimeSeries Categories"
@@ -3349,7 +3349,7 @@
         ]
       }
     },
-    "/cwms-data/timeseries/category": {
+    "/timeseries/category": {
       "get": {
         "tags": [
           "TimeSeries Categories"
@@ -3526,7 +3526,7 @@
         ]
       }
     },
-    "/cwms-data/timeseries/identifier-descriptor/{timeseries-id}": {
+    "/timeseries/identifier-descriptor/{timeseries-id}": {
       "get": {
         "tags": [
           "TimeSeries Identifier"
@@ -3849,7 +3849,7 @@
         ]
       }
     },
-    "/cwms-data/timeseries/identifier-descriptor": {
+    "/timeseries/identifier-descriptor": {
       "get": {
         "tags": [
           "TimeSeries Identifier"
@@ -4053,7 +4053,7 @@
         ]
       }
     },
-    "/cwms-data/timeseries/group/{group-id}": {
+    "/timeseries/group/{group-id}": {
       "get": {
         "tags": [
           "Timeseries Groups"
@@ -4357,7 +4357,7 @@
         ]
       }
     },
-    "/cwms-data/timeseries/group": {
+    "/timeseries/group": {
       "get": {
         "tags": [
           "Timeseries Groups"
@@ -4558,7 +4558,7 @@
         ]
       }
     },
-    "/cwms-data/timeseries": {
+    "/timeseries": {
       "get": {
         "tags": [
           "TimeSeries"
@@ -4862,7 +4862,7 @@
         ]
       }
     },
-    "/cwms-data/timeseries/{timeseries}": {
+    "/timeseries/{timeseries}": {
       "delete": {
         "tags": [
           "TimeSeries"
@@ -5151,7 +5151,7 @@
         ]
       }
     },
-    "/cwms-data/ratings/template/{template-id}": {
+    "/ratings/template/{template-id}": {
       "get": {
         "tags": [
           "Ratings"
@@ -5343,7 +5343,7 @@
         ]
       }
     },
-    "/cwms-data/ratings/template": {
+    "/ratings/template": {
       "get": {
         "tags": [
           "Ratings"
@@ -5538,7 +5538,7 @@
         ]
       }
     },
-    "/cwms-data/ratings/spec/{rating-id}": {
+    "/ratings/spec/{rating-id}": {
       "get": {
         "tags": [
           "Ratings"
@@ -5727,7 +5727,7 @@
         ]
       }
     },
-    "/cwms-data/ratings/spec": {
+    "/ratings/spec": {
       "get": {
         "tags": [
           "Ratings"
@@ -5922,7 +5922,7 @@
         ]
       }
     },
-    "/cwms-data/ratings/metadata": {
+    "/ratings/metadata": {
       "get": {
         "tags": [
           "Ratings"
@@ -6043,7 +6043,7 @@
         "security": []
       }
     },
-    "/cwms-data/ratings/{rating-id}": {
+    "/ratings/{rating-id}": {
       "get": {
         "tags": [
           "Ratings"
@@ -6387,7 +6387,7 @@
         ]
       }
     },
-    "/cwms-data/ratings": {
+    "/ratings": {
       "get": {
         "tags": [
           "Ratings"
@@ -6636,7 +6636,7 @@
         ]
       }
     },
-    "/cwms-data/catalog/{dataset}": {
+    "/catalog/{dataset}": {
       "get": {
         "tags": [
           "Catalog"
@@ -6805,7 +6805,7 @@
         "security": []
       }
     },
-    "/cwms-data/basins/{basin-id}": {
+    "/basins/{basin-id}": {
       "get": {
         "tags": [
           "Basins"
@@ -6907,7 +6907,7 @@
         "security": []
       }
     },
-    "/cwms-data/basins": {
+    "/basins": {
       "get": {
         "tags": [
           "Basins"
@@ -7001,7 +7001,7 @@
         "security": []
       }
     },
-    "/cwms-data/blobs/{blob-id}": {
+    "/blobs/{blob-id}": {
       "get": {
         "tags": [
           "Blob"
@@ -7081,7 +7081,7 @@
         "security": []
       }
     },
-    "/cwms-data/blobs": {
+    "/blobs": {
       "get": {
         "tags": [
           "Blob"
@@ -7286,7 +7286,7 @@
         ]
       }
     },
-    "/cwms-data/clobs/{clob-id}": {
+    "/clobs/{clob-id}": {
       "get": {
         "tags": [
           "Clob"
@@ -7579,7 +7579,7 @@
         ]
       }
     },
-    "/cwms-data/clobs": {
+    "/clobs": {
       "get": {
         "tags": [
           "Clob"
@@ -7792,7 +7792,7 @@
         ]
       }
     },
-    "/cwms-data/pools/{pool-id}": {
+    "/pools/{pool-id}": {
       "get": {
         "tags": [
           "Pools"
@@ -7929,7 +7929,7 @@
         "security": []
       }
     },
-    "/cwms-data/pools": {
+    "/pools": {
       "get": {
         "tags": [
           "Pools"
@@ -8080,7 +8080,7 @@
         "security": []
       }
     },
-    "/cwms-data/specified-levels": {
+    "/specified-levels": {
       "get": {
         "tags": [
           "Levels"
@@ -8258,7 +8258,7 @@
         ]
       }
     },
-    "/cwms-data/specified-levels/{specified-level-id}": {
+    "/specified-levels/{specified-level-id}": {
       "delete": {
         "tags": [
           "Levels"
