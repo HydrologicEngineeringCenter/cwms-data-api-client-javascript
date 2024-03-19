@@ -1,7 +1,6 @@
 .gitignore
 .npmignore
 README.md
-package.json
 src/apis/AuthorizationApi.ts
 src/apis/BasinsApi.ts
 src/apis/BlobApi.ts
