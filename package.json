@@ -28,6 +28,7 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "cd src && babel src -d dist",
+    "docs": "cd src && npx typedoc",
     "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./src -i cwms-swagger.json -c openapi.config.json",
     "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
     "moveDocs": "shx mkdir -p ./dist/docs && shx mv ./src/*.md ./dist/docs/"
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "@types/url-parse": "1.4.4",
-    "typescript": "^4.0"
+    "typedoc": "^0.25.13",
+    "typescript": "^4.9.5"
   }
 }

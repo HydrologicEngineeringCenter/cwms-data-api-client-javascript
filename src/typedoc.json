@@ -1,0 +1,15 @@
+{
+    "name": "cwmsjs",
+    "out": "../docs",
+    "exclude": [
+        "**/node_modules/**",
+        "**/dist/**",
+        ".openapi-generator"
+    ],
+    "entryPoints": ["src/index.ts"],
+    "includeVersion": true,
+    "excludeExternals": true,
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "theme": "default"
+}
