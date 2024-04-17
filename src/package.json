@@ -26,6 +26,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsc && tsc -p tsconfig.esm.json",
+    "link": "npm link",
     "prepare": "npm run build"
   },
   "devDependencies": {
