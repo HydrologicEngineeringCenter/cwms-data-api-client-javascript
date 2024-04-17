@@ -30,20 +30,3 @@ import {
 import fetch from 'node-fetch';
 global.fetch = fetch;
 
-let error_count = 0
-
-console.log("====================================");
-console.log("Starting tests...");
-console.log("====================================");
-
-import "./endpoints/catalog.js";
-// Import will call the test
-import "./endpoints/timeseries.js";
-
-// You can also compose styles
-// console.log(chalk.blue.bgYellow.bold('INFO: ') + 'This is an informational message.');
-
-// Use template literals for cleaner code
-// console.log(`${chalk.green('PASS:')} This test case passed!`);
-// console.log(`${chalk.red('FAIL:')} This test case failed.`);
-
