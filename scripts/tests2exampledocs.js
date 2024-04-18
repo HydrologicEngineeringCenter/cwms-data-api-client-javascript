@@ -1,3 +1,8 @@
+// To run
+// npm run examples
+// This script will generate example documentation from the tests in the tests/endpoints directory
+// Notes: 
+// Adding //!ignore anywhere in a file will cause it to get ignored
 const fs = require('fs');
 const path = require('path');
 
@@ -5,24 +10,6 @@ const testDirectory = './tests/endpoints';
 const genDirectory = "./tests/generator"
 const outputDirectory = './docs/examples';
 const templatePath = './scripts/exampletemplate.html'; // Path to your HTML template
-
-async function findTestFiles(dir, fileList = []) {
-    // Look through all files within a base directory and see if they are test files
-    try {
-        const files = await fs.readdir(dir, { withFileTypes: true });
-        for (let file of files) {
-            const res = path.resolve(dir, file.name);
-            if (file.isDirectory()) {
-                await findTestFiles(res, fileList); 
-            } else if (file.name.endsWith('.test.js')) {
-                fileList.push(res); 
-            }
-        }
-    } catch (err) {
-        console.error('Error reading directory:', err);
-    }
-    return fileList;
-}
 
 
 // Ensure the output directory exists
@@ -46,6 +33,10 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
     all_files.forEach(filePath => {
         // const filePath = path.join(testDirectory, file);
         fs.readFile(filePath, 'utf8', (err, content) => {
+            if (content.includes('//!ignore')) {
+                console.log(`\tIgnoring ${path.basename(filePath)}`)
+                return
+            }
             if (err) throw err;
             // Pull the content of the jest test block via regex
             const extractBlock = content.match(/test\(.*?\)\s*=>\s*{([\s\S]*?)},\s*\d+\s*\)/);
@@ -61,7 +52,10 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
                 // Adjust indentation (simple left trim here, more sophisticated methods might be needed)
                 block = block.split('\n').map(line => line.replace(/^ {4}/, '')).join('\n');
 
-                const docName = path.basename(filePath).replace('.test.js', '').replaceAll("-", " ");
+                const docName = path.basename(filePath)
+                .replace('.test.js', '')
+                .replaceAll("-", " ")
+                .replace(".v", " - Version ");
                 // Replace placeholder in template
                 const filledTemplate = template.replaceAll('${docName}', docName)
                     .replaceAll('${pageBody}', `<pre><code class="language-javascript">${escapeHtml(block)}</code></pre>`);
