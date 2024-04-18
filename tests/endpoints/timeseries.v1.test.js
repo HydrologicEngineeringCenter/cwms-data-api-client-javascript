@@ -5,9 +5,7 @@ import fetch from 'node-fetch';
 global.fetch = fetch;
 
 test('Test Timeseries V1', async () => {
-    // Initialize the Timeseries API with the default CDA server
     const ts_api = new TimeSeriesApi();
-    // Attempt to fetch TS data
     await ts_api.getCwmsDataTimeseries({
         "office": "SWT",
         "name": "KEYS.Elev.Inst.1Hour.0.Ccp-Rev",

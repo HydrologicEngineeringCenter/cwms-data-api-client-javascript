@@ -4,7 +4,6 @@ global.fetch = fetch;
 
 test('Test Parameters', async () => {
     const p_api = new ParametersApi()
-    // Attempt to fetch TS data
     await p_api.getCwmsDataParametersRaw({
         "office": "SWT"
     })
@@ -21,7 +20,7 @@ test('Test Parameters', async () => {
                 expect(value?.["description"]).toBeDefined()
             });
 
-        }).catch(async e => { // Wrap the catch block in an async function
+        }).catch(async e => {
             if (e.response) {
                 const error_msg = await e.response.json()
                 e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;

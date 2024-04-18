@@ -18,6 +18,4 @@ test('Test Catalog', async () => {
             expect(value?.name).toBeDefined()
         });
     })
-
-
-})
+}, 10000)

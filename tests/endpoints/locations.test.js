@@ -4,7 +4,6 @@ global.fetch = fetch;
 
 test('Test Locations', async () => {
     const l_api = new LocationsApi()
-    // Attempt to fetch TS data
     await l_api.getCwmsDataLocations({
         "office": "SWT"
     })
@@ -15,7 +14,7 @@ test('Test Locations', async () => {
                 expect(value?.name).toBeDefined()
                 expect(value?.type).toBeDefined()
             });
-        }).catch(async e => { // Wrap the catch block in an async function
+        }).catch(async e => {
             if (e.response) {
                 const error_msg = await e.response.json()
                 e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
@@ -25,5 +24,4 @@ test('Test Locations', async () => {
                 throw e;
             }
         })
-}
-    , 30000)
+}, 30000)

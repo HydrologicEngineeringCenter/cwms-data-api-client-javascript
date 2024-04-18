@@ -27,8 +27,9 @@
   },
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "cd src && babel src -d dist",
+    "build": "cd src && babel src -d dist && npm run docs && npm run examples",
     "docs": "cd src && npx typedoc",
+    "examples": "node ./scripts/tests2exampledocs.js ",
     "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./src -i cwms-swagger.json -c openapi.config.json",
     "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
     "moveDocs": "shx mkdir -p ./dist/docs && shx mv ./src/*.md ./dist/docs/"

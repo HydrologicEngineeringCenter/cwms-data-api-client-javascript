@@ -4,7 +4,6 @@ global.fetch = fetch;
 
 test('Test Offices', async () => {
     const o_api = new OfficesApi()
-    // Attempt to fetch TS data
     await o_api.getCwmsDataOffices()
         .then((data) => {
             expect(data?.offices).toBeDefined()

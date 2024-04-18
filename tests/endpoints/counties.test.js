@@ -12,9 +12,7 @@ const c_config = new Configuration({
 
 })
 test('Test Counties', async () => {
-    // Initialize the Timeseries API with the default CDA server
     const c_api = new CountiesApi();
-    // Attempt to fetch TS data
     await c_api.getCwmsDataCounties()
         .then((data) => {
             console.log(data)
@@ -22,7 +20,7 @@ test('Test Counties', async () => {
             data.forEach((value) => {
                 expect(value?.name).toBeDefined()
             });
-        }).catch(async e => { // Wrap the catch block in an async function
+        }).catch(async e => { 
             if (e.response) {
                 const error_msg = await e.response.json()
                 e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
