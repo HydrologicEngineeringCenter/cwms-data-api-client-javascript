@@ -7,7 +7,7 @@
     <head>
         <meta charSet="utf-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>basins Example</title>
+        <title>Counties Example</title>
         <meta name="description" content="Documentation for cwmsjs" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../assets/style.css" />
@@ -57,25 +57,35 @@
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">cwmsjs</a></li>
                         <li><a href="/docs/examples">Examples</a></li>
-                        <li><a href="/docs/examples/basins.html">basins</a></li>
+                        <li><a href="/docs/examples/Counties.html">Counties</a></li>
                     </ul>
-                    <h1><h1>Example: basins</h1></h1>
+                    <h1><h1>Example: Counties</h1></h1>
                 </div>
                 <section class="tsd-panel tsd-comment">
                     <div class="tsd-comment tsd-typography">
-                        <p>An example for calling the basins endpoint via CDA in JavaScript</p>
+                        <p>An example for calling the Counties endpoint via CDA in JavaScript</p>
                         <p><a href="https://cwms-data.usace.army.mil/cwms-data">Swagger UI</a> for Endpoints</p>
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const b_api = new BasinsApi()
-await b_api.getCwmsDataBasinsRaw({
-    &quot;office&quot;: &quot;LRH&quot;
-}).then(r=&gt;r.raw.json())
+                    <pre><code class="language-javascript">const c_api = new CountiesApi();
+await c_api.getCwmsDataCounties()
     .then((data) =&gt; {
         console.log(data)
-        // console.log(data?.[&quot;primary-stream&quot;])
+        console.log(data)
+        data.forEach((value) =&gt; {
+            console.log(value?.name)
+        });
+    }).catch(async e =&gt; { 
+        if (e.response) {
+            const error_msg = await e.response.json()
+            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
+            console.error(e);
+            throw e; 
+        } else {
+            throw e;
+        }
     })</code></pre>
                 </section>
             </div>

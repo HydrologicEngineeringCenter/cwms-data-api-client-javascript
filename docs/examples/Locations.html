@@ -7,7 +7,7 @@
     <head>
         <meta charSet="utf-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>timeseries.v2 Example</title>
+        <title>Locations Example</title>
         <meta name="description" content="Documentation for cwmsjs" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../assets/style.css" />
@@ -57,26 +57,30 @@
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">cwmsjs</a></li>
                         <li><a href="/docs/examples">Examples</a></li>
-                        <li><a href="/docs/examples/timeseries.v2.html">timeseries.v2</a></li>
+                        <li><a href="/docs/examples/Locations.html">Locations</a></li>
                     </ul>
-                    <h1><h1>Example: timeseries.v2</h1></h1>
+                    <h1><h1>Example: Locations</h1></h1>
                 </div>
                 <section class="tsd-panel tsd-comment">
                     <div class="tsd-comment tsd-typography">
-                        <p>An example for calling the timeseries.v2 endpoint via CDA in JavaScript</p>
+                        <p>An example for calling the Locations endpoint via CDA in JavaScript</p>
                         <p><a href="https://cwms-data.usace.army.mil/cwms-data">Swagger UI</a> for Endpoints</p>
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const ts_api = new TimeSeriesApi(v2_config);
-await ts_api.getCwmsDataTimeseries({
-    &quot;office&quot;: &quot;SWT&quot;,
-    &quot;name&quot;: &quot;KEYS.Elev.Inst.1Hour.0.Ccp-Rev&quot;,
+                    <pre><code class="language-javascript">const l_api = new LocationsApi()
+await l_api.getCwmsDataLocations({
+    &quot;office&quot;: &quot;SWT&quot;
 })
     .then((data) =&gt; {
-        console.log(data?.values)
-    }).catch(async e =&gt; { 
+        console.log(data?.locations)
+        console.log(data?.locations?.locations)
+        Object.entries(data?.locations?.locations).forEach(([key, value]) =&gt; {
+            console.log(value?.name)
+            console.log(value?.type)
+        });
+    }).catch(async e =&gt; {
         if (e.response) {
             const error_msg = await e.response.json()
             e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;

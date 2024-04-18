@@ -29,27 +29,22 @@ async function findTestFiles(dir, fileList = []) {
 if (!fs.existsSync(outputDirectory)) {
     fs.mkdirSync(outputDirectory, { recursive: true });
 }
-async function getFiles() {
+function getFiles(directories) {
+    // Combine all the test files across directories we care about
     let all_files = []
-    await fs.readdir(genDirectory, (err, files) => {
-        console.log("files", files)
-        if (err) throw err
-        all_files.push(files)
+    directories.forEach(d=> {
+        all_files = fs.readdirSync(d)
+            .map(fileName => path.join(d, fileName))
+            .concat(all_files)
     })
-    // Read all files from the test directory
-    await fs.readdir(testDirectory, (err, files) => {
-        if (err) throw err;
-        all_files.push(files)
-    });
-    console.log({ all_files })
     return all_files
 }
 // Read the HTML template
-fs.readFile(templatePath, 'utf8', async (err, template) => {
+fs.readFile(templatePath, 'utf8', (err, template) => {
     if (err) throw err;
-    let all_files = await getFiles()
-    all_files.forEach(file => {
-        const filePath = path.join(testDirectory, file);
+    let all_files = getFiles([genDirectory, testDirectory])
+    all_files.forEach(filePath => {
+        // const filePath = path.join(testDirectory, file);
         fs.readFile(filePath, 'utf8', (err, content) => {
             if (err) throw err;
             // Pull the content of the jest test block via regex
@@ -66,8 +61,7 @@ fs.readFile(templatePath, 'utf8', async (err, template) => {
                 // Adjust indentation (simple left trim here, more sophisticated methods might be needed)
                 block = block.split('\n').map(line => line.replace(/^ {4}/, '')).join('\n');
 
-                const docName = file.replace('.test.js', '');
-
+                const docName = path.basename(filePath).replace('.test.js', '').replaceAll("-", " ");
                 // Replace placeholder in template
                 const filledTemplate = template.replaceAll('${docName}', docName)
                     .replaceAll('${pageBody}', `<pre><code class="language-javascript">${escapeHtml(block)}</code></pre>`);
@@ -78,11 +72,13 @@ fs.readFile(templatePath, 'utf8', async (err, template) => {
                     if (err) throw err;
                     console.log(`Example file created: ${outputFilePath}`);
                 });
+            } else {
+                console.log(`\tNo Source Code found for ${path.basename(filePath)}`)
             }
         });
     });
-    const exampleLinks = '<ul>' + all_files.map(file => {
-        const docName = file.replace('.test.js', '');
+    const exampleLinks = '<ul>' + all_files.map(filePath => {
+        const docName = path.basename(filePath).replace('.test.js', '');
         return `<li><a href="/docs/examples/${docName}.html">${docName}</a></li>`
     }).join('') + "</ul>"
 

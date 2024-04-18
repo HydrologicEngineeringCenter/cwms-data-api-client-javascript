@@ -7,7 +7,7 @@
     <head>
         <meta charSet="utf-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>offices Example</title>
+        <title>Catalog Example</title>
         <meta name="description" content="Documentation for cwmsjs" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../assets/style.css" />
@@ -57,28 +57,32 @@
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">cwmsjs</a></li>
                         <li><a href="/docs/examples">Examples</a></li>
-                        <li><a href="/docs/examples/offices.html">offices</a></li>
+                        <li><a href="/docs/examples/Catalog.html">Catalog</a></li>
                     </ul>
-                    <h1><h1>Example: offices</h1></h1>
+                    <h1><h1>Example: Catalog</h1></h1>
                 </div>
                 <section class="tsd-panel tsd-comment">
                     <div class="tsd-comment tsd-typography">
-                        <p>An example for calling the offices endpoint via CDA in JavaScript</p>
+                        <p>An example for calling the Catalog endpoint via CDA in JavaScript</p>
                         <p><a href="https://cwms-data.usace.army.mil/cwms-data">Swagger UI</a> for Endpoints</p>
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const o_api = new OfficesApi()
-await o_api.getCwmsDataOffices()
-    .then((data) =&gt; {
-        console.log(data?.offices)
-        console.log(data?.offices?.offices)
-        Object.entries(data?.offices?.offices).forEach(([key, value]) =&gt; {
-            console.log(value?.name)
-            console.log(value?.type)
-        });
-    })</code></pre>
+                    <pre><code class="language-javascript">const catalog_api = new CatalogApi()
+await catalog_api.getCwmsDataCatalogWithDataset({
+    office: &quot;SWT&quot;,
+    like: &quot;*Elev.Inst.1Hour.0.Ccp-Rev&quot;,
+    dataset: &quot;TIMESERIES&quot;
+}).then((data) =&gt; {
+    console.log(data?.entries)
+    if (!data?.entries || data?.entries == 0) {
+        throw Error(`No catalog timeseries returned`);
+    }
+    Object.entries(data?.entries).forEach(([key, value]) =&gt; {
+        console.log(value?.name)
+    });
+})</code></pre>
                 </section>
             </div>
             <!-- <div class="col-sidebar">
