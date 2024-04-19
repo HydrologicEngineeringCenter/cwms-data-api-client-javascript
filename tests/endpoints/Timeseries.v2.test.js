@@ -18,15 +18,6 @@ test('Test Timeseries V2', async () => {
     })
         .then((data) => {
             expect(data?.values).toBeDefined()
-        }).catch(async e => { 
-            if (e.response) {
-                const error_msg = await e.response.json()
-                e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
-                console.error(e);
-                throw e;
-            } else {
-                throw e;
-            }
         })
 }, 15000)
 
