@@ -67,7 +67,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
 <h2>React + Vite Example</h2>
 <b>To Install:</b>
 <code "language-shell">npm install cwmsjs --save</code><br>
-<p><em>Bundle available <a href="https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/tree/main/src/src/dist/bundle.js">here</a></em></p>
+<p><em>Bundle available <a href="https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/blob/main/src/dist/bundle.js">here</a></em></p>
 <pre>
 <code class="language-javascript">${combinedImports}\n\n${escapeHtml(block)}</code>
 </pre>
