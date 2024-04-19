@@ -51,10 +51,8 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
                 // Adjust indentation (simple left trim here, more sophisticated methods might be needed)
                 block = block.split('\n').map(line => line.replace(/^ {4}/, '')).join('\n');
 
-                const docName = path.basename(filePath)
-                .replace('.test.js', '')
-                .replaceAll("-", " ")
-                .replace(".v", " - Version ");
+                const docName = path.basename(filePath).replace('.test.js', '')
+                const docFullName = docName.replaceAll("-", " ").replace(".v", " - Version ")
 
                 // Build final documentation content with preserved imports
                 const imports = content.match(/import.*;/g) || [];
@@ -62,7 +60,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
                     .replace(/^\s*import fetch.*\n?/gm, '');
                 // Replace placeholder in template
                 const filledTemplate = template
-                    .replaceAll('${docName}', docName)
+                    .replaceAll('${docName}', docFullName)
                     .replaceAll('${pageBody}', `
 <h2>React + Vite Example</h2>
 <b>To Install:</b>
@@ -96,7 +94,7 @@ ${block.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
     });
     const exampleLinks = '<ul>' + all_files.map(filePath => {
         const docName = path.basename(filePath).replace('.test.js', '');
-        return `<li><a href="/cwms-data-api-client-javascript/examples/${docName}.html">${docName}</a></li>`
+        return `<li><a href="/cwms-data-api-client-javascript/examples/${docName}.html">${docName.replaceAll("-", " ").replace(".v", " - Version ") }</a></li>`
     }).join('') + "</ul>"
 
     // Write the index file for all
