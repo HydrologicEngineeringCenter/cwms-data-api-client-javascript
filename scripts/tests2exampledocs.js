@@ -52,7 +52,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
                 block = block.split('\n').map(line => line.replace(/^ {4}/, '')).join('\n');
 
                 const docName = path.basename(filePath).replace('.test.js', '')
-                const docFullName = docName.replaceAll("-", " ").replace(".v", " - Version ")
+                const docFullName = docName.replace(".v", " - Version ").replaceAll("-", " ")
 
                 // Build final documentation content with preserved imports
                 const imports = content.match(/import.*;/g) || [];
@@ -82,7 +82,7 @@ ${block.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
 `</code>
 </pre>`);
                 // Write to file
-                const outputFilePath = path.join(outputDirectory, `${docName}.html`);
+                const outputFilePath = path.join(outputDirectory, `${docName.replaceAll(" ", "") }.html`);
                 fs.writeFile(outputFilePath, filledTemplate, err => {
                     if (err) throw err;
                     console.log(`Example file created: ${outputFilePath}`);
@@ -93,8 +93,8 @@ ${block.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
         });
     });
     const exampleLinks = '<ul>' + all_files.map(filePath => {
-        const docName = path.basename(filePath).replace('.test.js', '');
-        return `<li><a href="/cwms-data-api-client-javascript/examples/${docName}.html">${docName.replaceAll("-", " ").replace(".v", " - Version ") }</a></li>`
+        const docName = path.basename(filePath).replace('.test.js', '').replaceAll("-", " ");
+        return `<li><a href="/cwms-data-api-client-javascript/examples/${docName.replaceAll(" ", "") }.html">${docName.replace(".v", " - Version ") }</a></li>`
     }).join('') + "</ul>"
 
     // Write the index file for all
