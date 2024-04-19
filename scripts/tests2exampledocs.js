@@ -115,7 +115,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
         if (content.indexOf("Examples") >= 0) return
         const updatedContent = content.replace("</h2>",
             `</h2>
-             <p>Examples</p>
+             <p><a href="/cwms-data-api-client-javascript/examples/">Examples Home</a></p>
              ${exampleLinks}
             `
         );
