@@ -82,6 +82,13 @@ await catalog_api.getCwmsDataCatalogWithDataset({
     Object.entries(data?.entries).forEach(([key, value]) =&gt; {
         console.log(value?.name)
     });
+}).catch(async e =&gt; {
+    if (e.response) {
+        const error_msg = await e.response.json()
+        e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
+        console.error(e);
+    }
+    throw e;
 })</code></pre>
                 </section>
             </div>

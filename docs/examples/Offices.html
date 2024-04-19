@@ -78,6 +78,15 @@ await o_api.getCwmsDataOffices()
             console.log(value?.name)
             console.log(value?.type)
         });
+    }).catch(async e =&gt; {
+        if (e.response) {
+            const error_msg = await e.response.json()
+            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
+            console.error(e);
+            throw e;
+        } else {
+            throw e;
+        }
     })</code></pre>
                 </section>
             </div>

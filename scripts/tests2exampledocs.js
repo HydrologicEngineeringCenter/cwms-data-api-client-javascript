@@ -73,7 +73,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
     });
     const exampleLinks = '<ul>' + all_files.map(filePath => {
         const docName = path.basename(filePath).replace('.test.js', '');
-        return `<li><a href="/docs/examples/${docName}.html">${docName}</a></li>`
+        return `<li><a href="/cwms-data-api-client-javascript/examples/${docName}.html">${docName}</a></li>`
     }).join('') + "</ul>"
 
     // Write the index file for all
@@ -101,7 +101,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
         if (content.indexOf("Examples") >= 0) return
         const updatedContent = content.replace("</h3>",
             `</h3>
-             <h3 class="tsd-index-heading">Examples</h3>
+             <h3 class="tsd-index-heading"><a href="/cwms-data-api-client-javascript/examples/">Examples Home</a></h3>
              ${exampleLinks}
             `
         );

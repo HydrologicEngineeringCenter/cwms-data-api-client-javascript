@@ -72,10 +72,17 @@
                     <pre><code class="language-javascript">const b_api = new BasinsApi()
 await b_api.getCwmsDataBasinsRaw({
     &quot;office&quot;: &quot;LRH&quot;
-}).then(r=&gt;r.raw.json())
+}).then(r =&gt; r.raw.json())
     .then((data) =&gt; {
         console.log(data)
         // console.log(data?.[&quot;primary-stream&quot;])
+    }).catch(async e =&gt; {
+        if (e.response) {
+            const error_msg = await e.response.json()
+            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
+            console.error(e);
+        }
+        throw e;
     })</code></pre>
                 </section>
             </div>
