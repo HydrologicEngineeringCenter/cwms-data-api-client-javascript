@@ -31,9 +31,7 @@ _CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript
     ```
 
 Documentation is available for both developers and new users:
-* New Users : [Getting Started]()
-  * [Examples]()
-* Advanced users :
-[Type Documentation / Developer Docs](https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/blob/main/src/README.md)
+* New Users : [Examples](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/examples/)
+* Advanced users : [Type Documentation / Developer Docs](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/)
 
 

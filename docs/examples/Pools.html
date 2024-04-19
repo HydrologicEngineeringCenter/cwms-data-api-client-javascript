@@ -59,7 +59,7 @@
                         <li><a href="/cwms-data-api-client-javascript/examples">Examples</a></li>
                         <li><a href="/cwms-data-api-client-javascript/examples/Pools.html">Pools</a></li>
                     </ul>
-                    <h1><h1>Example: Pools</h1></h1>
+                    <h1>Example: Pools</h1>
                 </div>
                 <section class="tsd-panel tsd-comment">
                     <div class="tsd-comment tsd-typography">
@@ -69,7 +69,13 @@
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">import { PoolsApi, Configuration} from "cwmsjs";
+                    
+<h2>React + Vite Example</h2>
+<b>To Install:</b>
+<code "language-shell">npm install cwmsjs --save</code><br>
+<p><em>Bundle available <a href="https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/tree/main/src/src/dist/bundle.js">here</a></em></p>
+<pre>
+<code class="language-javascript">import { PoolsApi, Configuration} from "cwmsjs";
 
 
 const config = new Configuration({
@@ -86,7 +92,33 @@ await p_api.getCwmsDataPools({
         //     console.log(category)
         //     console.log(category[&quot;id&quot;])
         // })
-    })</code></pre>
+    })</code>
+</pre>
+<h2>Bundle / Vanilla JS Example</h2>
+<b>To Install:</b><br>
+<p>Download the bundle from <a href="">releases</a></p>
+<pre>
+<code class="language-html">&lt;!-- Include the bundle.js file --&gt;
+&lt;script src=&quot;./path/to/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
+&lt;script&gt;
+const config = new cwmsjs.Configuration({
+    &quot;headers&quot;: {
+        &quot;accept&quot;: &quot;application/json;version=2&quot;,
+    }
+})
+const p_api = new cwmsjs.PoolsApi(config)
+await p_api.getCwmsDataPools({
+    &quot;office&quot;: &quot;SWT&quot;
+}).then((data) =&gt; {
+        console.log(data)
+        // data.forEach((category) =&gt; {
+        //     console.log(category)
+        //     console.log(category[&quot;id&quot;])
+        // })
+    })
+&lt;/script&gt;</code>
+</pre>
                 </section>
             </div>
         </div>

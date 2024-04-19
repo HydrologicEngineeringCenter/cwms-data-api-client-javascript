@@ -59,7 +59,7 @@
                         <li><a href="/cwms-data-api-client-javascript/examples">Examples</a></li>
                         <li><a href="/cwms-data-api-client-javascript/examples/Configuration.html">Configuration</a></li>
                     </ul>
-                    <h1><h1>Example: Configuration</h1></h1>
+                    <h1>Example: Configuration</h1>
                 </div>
                 <section class="tsd-panel tsd-comment">
                     <div class="tsd-comment tsd-typography">
@@ -69,7 +69,13 @@
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">import { TimeSeriesApi, Configuration } from "cwmsjs";
+                    
+<h2>React + Vite Example</h2>
+<b>To Install:</b>
+<code "language-shell">npm install cwmsjs --save</code><br>
+<p><em>Bundle available <a href="https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/tree/main/src/src/dist/bundle.js">here</a></em></p>
+<pre>
+<code class="language-javascript">import { TimeSeriesApi, Configuration } from "cwmsjs";
 
 
 // If you want to change the server or any other base level configuration default items you can use
@@ -96,7 +102,43 @@ await ts_api.getCwmsDataTimeseries({
         } else {
             throw e;
         }
-    })</code></pre>
+    })</code>
+</pre>
+<h2>Bundle / Vanilla JS Example</h2>
+<b>To Install:</b><br>
+<p>Download the bundle from <a href="">releases</a></p>
+<pre>
+<code class="language-html">&lt;!-- Include the bundle.js file --&gt;
+&lt;script src=&quot;./path/to/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
+&lt;script&gt;
+// If you want to change the server or any other base level configuration default items you can use
+// Configuration 
+const v2_config = new cwmsjs.Configuration({
+    &quot;basePath&quot;: &quot;https://water.usace.army.mil/cwms-data&quot;,
+    &quot;headers&quot;: {
+        &quot;accept&quot;: &quot;application/json;version=2&quot;,
+    }
+})
+const ts_api = new cwmsjs.TimeSeriesApi(v2_config);
+await ts_api.getCwmsDataTimeseries({
+    &quot;office&quot;: &quot;SWT&quot;,
+    &quot;name&quot;: &quot;KEYS.Elev.Inst.1Hour.0.Ccp-Rev&quot;,
+    })
+    .then((data) =&gt; {
+        console.log(data?.values)
+    }).catch(async e =&gt; {
+        if (e.response) {
+            const error_msg = await e.response.json()
+            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
+            console.error(e);
+            throw e;
+        } else {
+            throw e;
+        }
+    })
+&lt;/script&gt;</code>
+</pre>
                 </section>
             </div>
         </div>

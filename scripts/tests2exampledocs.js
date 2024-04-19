@@ -61,9 +61,28 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
                 const combinedImports = imports.join('\n')
                     .replace(/^\s*import fetch.*\n?/gm, '');
                 // Replace placeholder in template
-                const filledTemplate = template.replaceAll('${docName}', docName)
-                    .replaceAll('${pageBody}', `<pre><code class="language-javascript">${combinedImports}\n\n${escapeHtml(block)}</code></pre>`);
-
+                const filledTemplate = template
+                    .replaceAll('${docName}', docName)
+                    .replaceAll('${pageBody}', `
+<h2>React + Vite Example</h2>
+<b>To Install:</b>
+<code "language-shell">npm install cwmsjs --save</code><br>
+<p><em>Bundle available <a href="https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/tree/main/src/src/dist/bundle.js">here</a></em></p>
+<pre>
+<code class="language-javascript">${combinedImports}\n\n${escapeHtml(block)}</code>
+</pre>
+<h2>Bundle / Vanilla JS Example</h2>
+<b>To Install:</b><br>
+<p>Download the bundle from <a href="">releases</a></p>
+<pre>
+<code class="language-html">` +
+escapeHtml(`<!-- Include the bundle.js file -->
+<script src="./path/to/bundle.js"></script>
+<!-- Call the cwmsjs after the bundle has loaded -->
+<script>
+${block.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
+`</code>
+</pre>`);
                 // Write to file
                 const outputFilePath = path.join(outputDirectory, `${docName}.html`);
                 fs.writeFile(outputFilePath, filledTemplate, err => {
