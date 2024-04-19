@@ -69,7 +69,10 @@
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const b_api = new BasinsApi()
+                    <pre><code class="language-javascript">import { BasinsApi } from "cwmsjs";
+
+
+const b_api = new BasinsApi()
 await b_api.getCwmsDataBasinsRaw({
     &quot;office&quot;: &quot;LRH&quot;
 }).then(r =&gt; r.raw.json())

@@ -69,7 +69,10 @@
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const catalog_api = new CatalogApi()
+                    <pre><code class="language-javascript">import { CatalogApi } from "cwmsjs";
+
+
+const catalog_api = new CatalogApi()
 await catalog_api.getCwmsDataCatalogWithDataset({
     office: &quot;SWT&quot;,
     like: &quot;*Elev.Inst.1Hour.0.Ccp-Rev&quot;,

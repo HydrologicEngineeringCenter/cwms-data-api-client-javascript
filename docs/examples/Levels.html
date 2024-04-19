@@ -69,7 +69,10 @@
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const l_api = new LevelsApi()
+                    <pre><code class="language-javascript">import { LevelsApi, Configuration } from "cwmsjs";
+
+
+const l_api = new LevelsApi()
 await l_api.getCwmsDataLevels({
     levelIdMask: &quot;*KEYS*&quot;,
     office: &quot;SWT&quot;,

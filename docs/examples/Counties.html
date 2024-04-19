@@ -69,7 +69,10 @@
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const c_api = new CountiesApi();
+                    <pre><code class="language-javascript">import { CountiesApi, Configuration } from "cwmsjs";
+
+
+const c_api = new CountiesApi();
 await c_api.getCwmsDataCounties()
     .then((data) =&gt; {
         console.log(data)

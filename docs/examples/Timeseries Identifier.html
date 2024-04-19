@@ -69,7 +69,10 @@
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const tsi_api = new TimeSeriesIdentifierApi({
+                    <pre><code class="language-javascript">import { TimeSeriesIdentifierApi } from "cwmsjs";
+
+
+const tsi_api = new TimeSeriesIdentifierApi({
     &quot;office&quot;: &quot;SWT&quot;
 });
 await tsi_api.getCwmsDataTimeseriesIdentifierDescriptor()

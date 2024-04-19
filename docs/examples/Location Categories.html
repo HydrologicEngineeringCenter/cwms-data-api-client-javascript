@@ -69,7 +69,10 @@
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const lc_api = new LocationCategoriesApi()
+                    <pre><code class="language-javascript">import { LocationCategoriesApi } from "cwmsjs";
+
+
+const lc_api = new LocationCategoriesApi()
 await lc_api.getCwmsDataLocationCategory({
     &quot;office&quot;: &quot;SWT&quot;
     })

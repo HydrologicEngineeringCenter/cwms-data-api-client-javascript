@@ -69,7 +69,10 @@
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
                 <section class="tsd-panel tsd-hierarchy">
-                    <pre><code class="language-javascript">const o_api = new OfficesApi()
+                    <pre><code class="language-javascript">import { OfficesApi } from "cwmsjs";
+
+
+const o_api = new OfficesApi()
 await o_api.getCwmsDataOffices()
     .then((data) =&gt; {
         console.log(data?.offices)

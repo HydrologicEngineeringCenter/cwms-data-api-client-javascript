@@ -42,10 +42,9 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
             const extractBlock = content.match(/test\(.*?\)\s*=>\s*{([\s\S]*?)},\s*\d+\s*\)/);
             // Ensure there was anything returned / i.e. this was a jest test file
             if (extractBlock && extractBlock[1]) {
+                console.log(extractBlock[0])
                 // Strip out the bits we do not need from the file
                 let block = extractBlock[1]
-                    .replace(/^\s*import fetch.*\n?/gm, '')
-                    .replace(/^\s*global\.fetch.*\n?/gm, '')
                     .replaceAll(/expect\((.*?)\)\.toBeDefined\(\)/g, 'console.log($1)') // Convert expects to logs
                     .trim();
 
@@ -56,9 +55,14 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
                 .replace('.test.js', '')
                 .replaceAll("-", " ")
                 .replace(".v", " - Version ");
+
+                // Build final documentation content with preserved imports
+                const imports = content.match(/import.*;/g) || [];
+                const combinedImports = imports.join('\n')
+                    .replace(/^\s*import fetch.*\n?/gm, '');
                 // Replace placeholder in template
                 const filledTemplate = template.replaceAll('${docName}', docName)
-                    .replaceAll('${pageBody}', `<pre><code class="language-javascript">${escapeHtml(block)}</code></pre>`);
+                    .replaceAll('${pageBody}', `<pre><code class="language-javascript">${combinedImports}\n\n${escapeHtml(block)}</code></pre>`);
 
                 // Write to file
                 const outputFilePath = path.join(outputDirectory, `${docName}.html`);
