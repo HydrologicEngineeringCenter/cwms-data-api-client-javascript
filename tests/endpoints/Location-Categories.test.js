@@ -1,0 +1,26 @@
+import { LocationCategoriesApi } from "cwmsjs";
+import fetch from 'node-fetch';
+global.fetch = fetch;
+
+test('Test Location Category', async () => {
+    const lc_api = new LocationCategoriesApi()
+    await lc_api.getCwmsDataLocationCategory({
+        "office": "SWT"
+        })
+        .then((data) => {
+            console.log(data)
+            data.forEach((category) => {
+                expect(category).toBeDefined()
+            })
+        }).catch(async e => {
+            if (e.response) {
+                const error_msg = await e.response.json()
+                e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
+                console.error(e);
+                throw e;
+            } else {
+                throw e;
+            }
+        })
+
+}, 15000)

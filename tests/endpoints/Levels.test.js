@@ -5,7 +5,6 @@ global.fetch = fetch;
 
 test('Test Levels', async () => {
     const l_api = new LevelsApi()
-
     await l_api.getCwmsDataLevels({
         levelIdMask: "*KEYS*",
         office: "SWT",

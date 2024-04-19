@@ -12,5 +12,14 @@ test('Test Offices', async () => {
                 expect(value?.name).toBeDefined()
                 expect(value?.type).toBeDefined()
             });
+        }).catch(async e => {
+            if (e.response) {
+                const error_msg = await e.response.json()
+                e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
+                console.error(e);
+                throw e;
+            } else {
+                throw e;
+            }
         })
 }, 10000)

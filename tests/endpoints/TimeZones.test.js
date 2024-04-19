@@ -1,5 +1,4 @@
 // Example / test for fetching timeseries from CDA
-//!ignore
 import { TimeZonesApi, Configuration } from "cwmsjs";
 import fetch from 'node-fetch';
 global.fetch = fetch;
