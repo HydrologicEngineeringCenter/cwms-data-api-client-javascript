@@ -1,1 +1,11 @@
 README.md
+src
+node_modules
+examples
+docs
+tests
+.openapi-generator
+webpack.config.js
+typedoc.json
+README.md
+.openapi-generator-ignore

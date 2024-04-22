@@ -5,7 +5,8 @@ _CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript
 
 ## Getting Started
 * Install CWMSjs to your react project with:  
-   `npm install cwmsjs --save` 
+   `npm install cwmsjs --save`  
+   (This will grab the latest)
 
 * Import the API endpoint you wish to use:
   * Avaiable endpoints are here (Classes ending in API): [Endpoints](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/modules.html)

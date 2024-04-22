@@ -1,6 +1,6 @@
 {
   "name": "cwmsjs",
-  "version": "1.12.0",
+  "version": "1.14.0",
   "description": "CWMS Data API Library for JavaScript/TypeScript created with OpenAPI generator in TypeScript for use with browser webapps",
   "author": "USACE,HEC,CWMS,OpenApi Contributors",
   "repository": {
