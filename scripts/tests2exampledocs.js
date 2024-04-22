@@ -52,7 +52,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
                 block = block.split('\n').map(line => line.replace(/^ {4}/, '')).join('\n');
 
                 const docName = path.basename(filePath).replace('.test.js', '')
-                const docFullName = docName.replace(".v", " - Version ").replaceAll("-", " ")
+                const docFullName = docName.replaceAll("-", " ").replace(".v", " - Version ")
 
                 // Build final documentation content with preserved imports
                 const imports = content.match(/import.*;/g) || [];
@@ -71,7 +71,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
 </pre>
 <h2>Bundle / Vanilla JS Example</h2>
 <b>To Install:</b><br>
-<p>Download the bundle from <a href="">releases</a></p>
+<p>Download the bundle from <a href="https://raw.githubusercontent.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/main/src/dist/bundle.js">releases</a></p>
 <pre>
 <code class="language-html">` +
 escapeHtml(`<!-- Include the bundle.js file -->
@@ -82,7 +82,7 @@ ${block.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
 `</code>
 </pre>`);
                 // Write to file
-                const outputFilePath = path.join(outputDirectory, `${docName.replaceAll(" ", "") }.html`);
+                const outputFilePath = path.join(outputDirectory, `${docName.replaceAll("-", "") }.html`);
                 fs.writeFile(outputFilePath, filledTemplate, err => {
                     if (err) throw err;
                     console.log(`Example file created: ${outputFilePath}`);
