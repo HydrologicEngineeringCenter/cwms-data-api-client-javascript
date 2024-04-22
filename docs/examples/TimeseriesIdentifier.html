@@ -7,7 +7,7 @@
     <head>
         <meta charSet="utf-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>Location Groups Example</title>
+        <title>Timeseries Identifier Example</title>
         <meta name="description" content="Documentation for cwmsjs" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../assets/style.css" />
@@ -57,13 +57,13 @@
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">cwmsjs</a></li>
                         <li><a href="/cwms-data-api-client-javascript/examples">Examples</a></li>
-                        <li><a href="/cwms-data-api-client-javascript/examples/Location Groups.html">Location Groups</a></li>
+                        <li><a href="/cwms-data-api-client-javascript/examples/Timeseries Identifier.html">Timeseries Identifier</a></li>
                     </ul>
-                    <h1>Example: Location Groups</h1>
+                    <h1>Example: Timeseries Identifier</h1>
                 </div>
                 <section class="tsd-panel tsd-comment">
                     <div class="tsd-comment tsd-typography">
-                        <p>An example for calling the Location Groups endpoint via CDA in JavaScript</p>
+                        <p>An example for calling the Timeseries Identifier endpoint via CDA in JavaScript</p>
                         <p><a href="https://cwms-data.usace.army.mil/cwms-data">Swagger UI</a> for Endpoints</p>
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
@@ -75,57 +75,33 @@
 <code "language-shell">npm install cwmsjs --save</code><br>
 <p><em>Bundle available <a href="https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/blob/main/src/dist/bundle.js">here</a></em></p>
 <pre>
-<code class="language-javascript">import { LocationGroupsApi } from "cwmsjs";
+<code class="language-javascript">import { TimeSeriesIdentifierApi } from "cwmsjs";
 
 
-const lg_api = new LocationGroupsApi()
-await lg_api.getCwmsDataLocationGroup({
+const tsi_api = new TimeSeriesIdentifierApi({
     &quot;office&quot;: &quot;SWT&quot;
-})
+});
+await tsi_api.getCwmsDataTimeseriesIdentifierDescriptor()
     .then((data) =&gt; {
         console.log(data)
-        data.forEach((category) =&gt; {
-            console.log(category)
-            console.log(category[&quot;id&quot;])
-        })
-    }).catch(async e =&gt; {
-        if (e.response) {
-            const error_msg = await e.response.json()
-            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
-            console.error(e);
-            throw e;
-        } else {
-            throw e;
-        }
+        console.log(data)
     })</code>
 </pre>
 <h2>Bundle / Vanilla JS Example</h2>
 <b>To Install:</b><br>
-<p>Download the bundle from <a href="">releases</a></p>
+<p>Download the bundle from <a href="https://raw.githubusercontent.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/main/src/dist/bundle.js">releases</a></p>
 <pre>
 <code class="language-html">&lt;!-- Include the bundle.js file --&gt;
-&lt;script src=&quot;./path/to/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
 &lt;script&gt;
-const lg_api = new cwmsjs.LocationGroupsApi()
-await lg_api.getCwmsDataLocationGroup({
+const tsi_api = new cwmsjs.TimeSeriesIdentifierApi({
     &quot;office&quot;: &quot;SWT&quot;
-})
+});
+await tsi_api.getCwmsDataTimeseriesIdentifierDescriptor()
     .then((data) =&gt; {
         console.log(data)
-        data.forEach((category) =&gt; {
-            console.log(category)
-            console.log(category[&quot;id&quot;])
-        })
-    }).catch(async e =&gt; {
-        if (e.response) {
-            const error_msg = await e.response.json()
-            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
-            console.error(e);
-            throw e;
-        } else {
-            throw e;
-        }
+        console.log(data)
     })
 &lt;/script&gt;</code>
 </pre>
