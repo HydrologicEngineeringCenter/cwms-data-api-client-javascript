@@ -111,7 +111,7 @@ to download bundle.js to your system</li>
 <code class="language-html">&lt;!-- Include the bundle.js file --&gt;
 &lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
-&lt;script&gt;
+&lt;script type=&quot;module&quot;&gt;
 const c_api = new cwmsjs.CountiesApi();
 await c_api.getCwmsDataCounties()
     .then((data) =&gt; {

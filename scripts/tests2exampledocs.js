@@ -84,7 +84,7 @@ to download bundle.js to your system</li>
 escapeHtml(`<!-- Include the bundle.js file -->
 <script src="./bundle.js"></script>
 <!-- Call the cwmsjs after the bundle has loaded -->
-<script>
+<script type="module">
 ${block.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
 `</code>
 </pre>`);

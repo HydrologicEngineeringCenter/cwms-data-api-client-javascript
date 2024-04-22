@@ -114,7 +114,7 @@ to download bundle.js to your system</li>
 <code class="language-html">&lt;!-- Include the bundle.js file --&gt;
 &lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
-&lt;script&gt;
+&lt;script type=&quot;module&quot;&gt;
 const l_api = new cwmsjs.LevelsApi()
 await l_api.getCwmsDataLevels({
     levelIdMask: &quot;*KEYS*&quot;,
