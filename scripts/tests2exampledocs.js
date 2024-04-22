@@ -64,14 +64,21 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
                     .replaceAll('${pageBody}', `
 <h2>React + Vite Example</h2>
 <b>To Install:</b>
-<code "language-shell">npm install cwmsjs --save</code><br>
+<code class="language-shell">npm install cwmsjs --save</code><br>
 <p><em>Download browser bundle.js <a href="https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/blob/main/src/dist/bundle.js">here</a></em></p>
 <pre>
 <code class="language-javascript">${combinedImports}\n\n${escapeHtml(block)}</code>
 </pre>
 <h2>Bundle / Vanilla JS Example</h2>
 <b>To Install:</b><br>
-<p>Download the bundle from <a href="https://raw.githubusercontent.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/main/src/dist/bundle.js">releases</a></p>
+<p>
+<ol>
+<li>Run <br>
+<code class="language-shell">curl -O "https://raw.githubusercontent.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/main/src/dist/bundle.js"</code><br> 
+to download bundle.js to your system</li>
+<li>Copy bundle.js to your web directory if not in that directory already</li>
+</o>
+</p>
 <pre>
 <code class="language-html">` +
 escapeHtml(`<!-- Include the bundle.js file -->
