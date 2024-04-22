@@ -75,7 +75,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
 <pre>
 <code class="language-html">` +
 escapeHtml(`<!-- Include the bundle.js file -->
-<script src="./path/to/bundle.js"></script>
+<script src="./bundle.js"></script>
 <!-- Call the cwmsjs after the bundle has loaded -->
 <script>
 ${block.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
