@@ -12,7 +12,7 @@ const c_config = new Configuration({
 
 })
 test('Test Counties', async () => {
-    const c_api = new CountiesApi();
+    const c_api = new CountiesApi(c_config);
     await c_api.getCwmsDataCounties()
         .then((data) => {
             console.log(data)

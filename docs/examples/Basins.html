@@ -75,24 +75,27 @@
 <code class="language-shell">npm install cwmsjs --save</code><br>
 <p><em>Download browser bundle.js <a href="https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript/blob/main/src/dist/bundle.js">here</a></em></p>
 <pre>
-<code class="language-javascript">import { BasinsApi } from "cwmsjs";
+<code class="language-javascript">import { BasinsApi, OfficesApi } from "cwmsjs";
 
 
+const o_api = new OfficesApi()
+let offices = await o_api.getCwmsDataOffices().then((d) =&gt; {
+    let _all_o = d?.offices.offices.map((o) =&gt; {
+        if (o.type == &quot;DIS&quot;) return o.name
+    })
+    // Keep only defined offices that are districts
+    return _all_o.filter((o) =&gt; o)
+})
+console.log(offices.length + &quot; Offices&quot;)
 const b_api = new BasinsApi()
-await b_api.getCwmsDataBasinsRaw({
-    &quot;office&quot;: &quot;LRH&quot;
-}).then(r =&gt; r.raw.json())
-    .then((data) =&gt; {
-        console.log(data)
-        // console.log(data?.[&quot;primary-stream&quot;])
-    }).catch(async e =&gt; {
-        if (e.response) {
-            const error_msg = await e.response.json()
-            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
-            console.error(e);
-        }
-        throw e;
-    })</code>
+for (const office of offices.slice(0, 2)) {
+    let o_raw = await b_api.getCwmsDataBasinsRaw({
+        &quot;office&quot;: office
+    })
+    o_raw.raw.json().then((d) =&gt; {
+        console.log(d)
+    })
+}</code>
 </pre>
 <h2>Bundle / Vanilla JS Example</h2>
 <b>To Install:</b><br>
@@ -109,21 +112,24 @@ to download bundle.js to your system</li>
 &lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
 &lt;script type=&quot;module&quot;&gt;
-const b_api = new cwmsjs.BasinsApi()
-await b_api.getCwmsDataBasinsRaw({
-    &quot;office&quot;: &quot;LRH&quot;
-}).then(r =&gt; r.raw.json())
-    .then((data) =&gt; {
-        console.log(data)
-        // console.log(data?.[&quot;primary-stream&quot;])
-    }).catch(async e =&gt; {
-        if (e.response) {
-            const error_msg = await e.response.json()
-            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
-            console.error(e);
-        }
-        throw e;
+const o_api = new cwmsjs.OfficesApi()
+let offices = await o_api.getCwmsDataOffices().then((d) =&gt; {
+    let _all_o = d?.offices.offices.map((o) =&gt; {
+        if (o.type == &quot;DIS&quot;) return o.name
     })
+    // Keep only defined offices that are districts
+    return _all_o.filter((o) =&gt; o)
+})
+console.log(offices.length + &quot; Offices&quot;)
+const b_api = new cwmsjs.BasinsApi()
+for (const office of offices.slice(0, 2)) {
+    let o_raw = await b_api.getCwmsDataBasinsRaw({
+        &quot;office&quot;: office
+    })
+    o_raw.raw.json().then((d) =&gt; {
+        console.log(d)
+    })
+}
 &lt;/script&gt;</code>
 </pre>
                 </section>

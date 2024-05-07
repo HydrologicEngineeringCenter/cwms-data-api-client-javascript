@@ -9,12 +9,10 @@ test('Test Units', async () => {
         "accept": "*/*"
     })
     const u_api = new UnitsApi(config);
-    await u_api.getCwmsDataUnits({
-        "format": "json"
-    })
+    await u_api.getCwmsDataUnits()
         .then((data) => {
-            expect(data).toBeDefined()
             console.log(data)
+            expect(data).toBeDefined()
         })
 }, 15000)
 

@@ -82,9 +82,7 @@ const config = new Configuration({
     &quot;accept&quot;: &quot;*/*&quot;
 })
 const u_api = new UnitsApi(config);
-await u_api.getCwmsDataUnits({
-    &quot;format&quot;: &quot;json&quot;
-})
+await u_api.getCwmsDataUnits()
     .then((data) =&gt; {
         console.log(data)
         console.log(data)
@@ -109,9 +107,7 @@ const config = new cwmsjs.Configuration({
     &quot;accept&quot;: &quot;*/*&quot;
 })
 const u_api = new cwmsjs.UnitsApi(config);
-await u_api.getCwmsDataUnits({
-    &quot;format&quot;: &quot;json&quot;
-})
+await u_api.getCwmsDataUnits()
     .then((data) =&gt; {
         console.log(data)
         console.log(data)
