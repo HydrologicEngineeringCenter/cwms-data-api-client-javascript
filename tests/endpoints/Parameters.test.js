@@ -9,6 +9,7 @@ test('Test Parameters', async () => {
     })
         .then(r => r.raw.json())
         .then(data => {
+            console.log(data.parameters)
             expect(data?.parameters).toBeDefined()
             expect(data?.parameters?.parameters).toBeDefined()
             Object.entries(data?.parameters?.parameters).forEach(([key, value]) => {
@@ -30,5 +31,4 @@ test('Test Parameters', async () => {
                 throw e;
             }
         })
-}
-    , 60000)
+}, 60000)
