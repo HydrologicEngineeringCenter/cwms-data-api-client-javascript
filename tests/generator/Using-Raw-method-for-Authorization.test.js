@@ -28,7 +28,6 @@ test('Test Raw', async () => {
             if (r.raw.ok) return r.raw.json()
             else if (r.raw.status == 401) {
                 // redirect to the login page
-                // window.location.href = 'https://wm.swf.ds.usace.army.mil:8243/CWMSLogin/login'
                 return false
             }
         }).then(d => {
