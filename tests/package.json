@@ -13,6 +13,7 @@
     },
     "scripts": {
         "jest-modules": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+        "link": "cd .. && npm link && cd tests && npm link cwmjs",
         "test": "npm run jest-modules --",
         "coverage": "npm run test --coverage"
     },
@@ -33,7 +34,7 @@
     },
     "dependencies": {
         "chalk": "^5.3.0",
-        "cwmsjs": "^1.14.0",
+        "cwmsjs": "latest",
         "es6-promise": "^4.2.4",
         "jest": "^29.7.0",
         "node-fetch": "^3.3.2",

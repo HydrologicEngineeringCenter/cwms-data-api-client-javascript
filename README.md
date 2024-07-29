@@ -36,3 +36,47 @@ Documentation is available for both developers and new users:
 * Advanced users : [Type Documentation / Developer Docs](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/)
 
 
+## Building CWMSjs from Source
+*CWMSjs dev docs*
+
+### Building the client via OpenAPI Generator
+To build CWMSjs you will need `openapi-generator-cli` which can be acquired with `nodejs` via the command:  
+
+```bash  
+npm install @openapitools/openapi-generator-cli -g
+```  
+Via [openapi-generator docs](https://openapi-generator.tech/docs/installation/)
+
+Once you have it installed you can generate the client library for CWMSjs via the `package.json` script:
+
+```bash
+npm run openapi
+```
+
+Next create the distribution files and documentation with:
+```bash
+npm run build
+```
+
+### Docs Pages
+
+The last step technically ran both of these commands below. You can read about it in the `package.json / "scripts": {}`
+
+But if you have a need to generate the docs and/or the examples individually you can call those commands too!
+
+You need to first create the distribution files
+```bash
+npm run docs
+```
+
+With the docs created, the example pages can created and injected into them with:
+```bash
+npm run examples
+```
+
+### Publishing the library
+
+`npm link` publish's the repo (Update the version #!)  
+__(Requires login and access to NPM repo)__
+
+    
