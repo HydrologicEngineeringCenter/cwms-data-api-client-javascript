@@ -47,7 +47,7 @@
                     <ul class="results">
                         <li class="state loading">Preparing search index...</li>
                         <li class="state failure">The search index is not available</li>
-                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v1.12.0</a>
+                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v3.1.44</a>
                 </div>
             </div>
         </header>
@@ -77,35 +77,39 @@
 <code class="language-javascript">import { RatingsApi } from "cwmsjs";
 
 
-const r_api = new RatingsApi()
-   r_api.getCwmsDataRatings({
-     &quot;office&quot;: &quot;SWT&quot;
-}).then((data) =&gt; {
-     console.log(data)
-   })
-   // Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
-   r_api.getCwmsDataRatingsSpec({
+const r_api = new RatingsApi();
+
+try {
+    const data1 = await r_api.getCwmsDataRatings({
+        &quot;office&quot;: &quot;SWT&quot;
+    });
+    console.log(data1);
+
+    const data2 = await r_api.getCwmsDataRatingsSpec({
         &quot;office&quot;: &quot;SWT&quot;,
         &quot;ratingIdMask&quot;: &quot;KEYS.*&quot;
-    }).then((data) =&gt; {
-        console.log(data?.specs)
-        console.log(data.specs)
-    })
-   // Fetch the CWMS Rating templates for the SPK OFFICE
-   r_api.getCwmsDataRatingsTemplate({
-&quot;office&quot;: &quot;SPK&quot;
-   }).then((data) =&gt; {
-   console.log(data?.templates)
-   console.log(data.templates)
-   })
+    });
+    console.log(data2?.specs);
+    console.log(data2.specs);
 
-   r_api.getCwmsDataRatingsTemplateWithTemplateId({
-&quot;office&quot;: &quot;SWT&quot;, 
- &quot;templateId&quot;: &quot;Elev-Alt;Stor-Alt.Linear&quot;
-   }).then(data=&gt; {
-    console.log(data)
-    console.log(data)
-   })</code>
+    const data3 = await r_api.getCwmsDataRatingsTemplate({
+        &quot;office&quot;: &quot;SPK&quot;
+    });
+    console.log(data3?.templates);
+    console.log(data3.templates);
+
+    const data4 = await r_api.getCwmsDataRatingsTemplateWithTemplateId({
+        &quot;office&quot;: &quot;SWT&quot;,
+        &quot;templateId&quot;: &quot;Elev-Alt;Stor-Alt.Linear&quot;
+    });
+    console.log(data4);
+    console.log(data4);
+} catch (error) {
+    if (error.response &amp;&amp; error.response.status === 403) {
+        throw new Error(&#039;Received a 403 Forbidden error&#039;);
+    }
+    throw error;
+}</code>
 </pre>
 <h2>Bundle / Vanilla JS Example</h2>
 <b>To Install:</b><br>
@@ -122,35 +126,39 @@ to download bundle.js to your system</li>
 &lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
 &lt;script type=&quot;module&quot;&gt;
-const r_api = new cwmsjs.RatingsApi()
-   r_api.getCwmsDataRatings({
-     &quot;office&quot;: &quot;SWT&quot;
-}).then((data) =&gt; {
-     console.log(data)
-   })
-   // Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
-   r_api.getCwmsDataRatingsSpec({
+const r_api = new cwmsjs.RatingsApi();
+
+try {
+    const data1 = await r_api.getCwmsDataRatings({
+        &quot;office&quot;: &quot;SWT&quot;
+    });
+    console.log(data1);
+
+    const data2 = await r_api.getCwmsDataRatingsSpec({
         &quot;office&quot;: &quot;SWT&quot;,
         &quot;ratingIdMask&quot;: &quot;KEYS.*&quot;
-    }).then((data) =&gt; {
-        console.log(data?.specs)
-        console.log(data.specs)
-    })
-   // Fetch the CWMS Rating templates for the SPK OFFICE
-   r_api.getCwmsDataRatingsTemplate({
-&quot;office&quot;: &quot;SPK&quot;
-   }).then((data) =&gt; {
-   console.log(data?.templates)
-   console.log(data.templates)
-   })
+    });
+    console.log(data2?.specs);
+    console.log(data2.specs);
 
-   r_api.getCwmsDataRatingsTemplateWithTemplateId({
-&quot;office&quot;: &quot;SWT&quot;, 
- &quot;templateId&quot;: &quot;Elev-Alt;Stor-Alt.Linear&quot;
-   }).then(data=&gt; {
-    console.log(data)
-    console.log(data)
-   })
+    const data3 = await r_api.getCwmsDataRatingsTemplate({
+        &quot;office&quot;: &quot;SPK&quot;
+    });
+    console.log(data3?.templates);
+    console.log(data3.templates);
+
+    const data4 = await r_api.getCwmsDataRatingsTemplateWithTemplateId({
+        &quot;office&quot;: &quot;SWT&quot;,
+        &quot;templateId&quot;: &quot;Elev-Alt;Stor-Alt.Linear&quot;
+    });
+    console.log(data4);
+    console.log(data4);
+} catch (error) {
+    if (error.response &amp;&amp; error.response.status === 403) {
+        throw new cwmsjs.Error(&#039;Received a 403 Forbidden error&#039;);
+    }
+    throw error;
+}
 &lt;/script&gt;</code>
 </pre>
                 </section>
