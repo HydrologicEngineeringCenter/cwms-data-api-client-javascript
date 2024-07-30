@@ -7,15 +7,22 @@
     },
     "servers": [
         {
-            "url": "https://cwms-data-test.cwbi.us/cwms-data",
-            "description": "CWBI Test"
-        }
-    ],
-    "security": [
+          "url": "https://cwms-data.usace.army.mil/cwms-data",
+          "description": "PRIMARY production server"
+        },
         {
-            "MultipleAccessManager": []
+          "url": "https://water.usace.army.mil/cwms-data",
+          "description": "Alias for the PRIMARY production server"
+        },
+        {
+          "url": "https://cwms.sec.usace.army.mil/cwms-data",
+          "description": "CWBI Production Server"
+        },
+        {
+          "url": "https://cwms-data.usace.army.mil/cwms-data",
+          "description": "PRIMARY production server"
         }
-    ],
+      ],
     "paths": {
         "/cwms-data": {
             "get": {
@@ -3148,27 +3155,27 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/xml;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/xml": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             }
                         }
@@ -3183,7 +3190,7 @@
         "/timeseries/recent": {
             "get": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Get cwmsData timeseries recent",
                 "description": "Returns CWMS Timeseries Groups Data",
@@ -3673,7 +3680,7 @@
         "/timeseries/text": {
             "get": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Retrieve text time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.",
                 "operationId": "getCwmsDataTimeseriesText",
@@ -3681,7 +3688,7 @@
                     {
                         "name": "office",
                         "in": "query",
-                        "description": "Specifies the owning office of the Text TimeSeries whose data is to be included in the response.",
+                        "description": "Specifies the owning office of the Text Timeseries whose data is to be included in the response.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -3779,7 +3786,7 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TextTimeSeries"
+                                    "$ref": "#/components/schemas/TextTimeseries"
                                 }
                             }
                         }
@@ -3789,10 +3796,10 @@
             },
             "post": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Post cwmsData timeseries text",
-                "description": "Create new TextTimeSeries",
+                "description": "Create new TextTimeseries",
                 "operationId": "postCwmsDataTimeseriesText",
                 "parameters": [
                     {
@@ -3808,7 +3815,7 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TextTimeSeries"
+                                "$ref": "#/components/schemas/TextTimeseries"
                             }
                         }
                     },
@@ -3879,7 +3886,7 @@
         "/timeseries/text/{name}": {
             "delete": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Delete cwmsData timeseries text with name",
                 "description": "Deletes requested text timeseries id",
@@ -3914,7 +3921,7 @@
                     {
                         "name": "text-mask",
                         "in": "query",
-                        "description": "The standard text pattern to match. Use glob-style wildcard characters instead of sql-style wildcard characters for pattern matching.  For StandardTextTimeSeries this should be the Standard_Text_Id (such as 'E' for ESTIMATED)",
+                        "description": "The standard text pattern to match. Use glob-style wildcard characters instead of sql-style wildcard characters for pattern matching.  For StandardTextTimeseries this should be the Standard_Text_Id (such as 'E' for ESTIMATED)",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -4018,7 +4025,7 @@
             },
             "patch": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Patch cwmsData timeseries text with name",
                 "description": "Updates a text timeseries",
@@ -4054,7 +4061,7 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TextTimeSeries"
+                                "$ref": "#/components/schemas/TextTimeseries"
                             }
                         }
                     },
@@ -4125,7 +4132,7 @@
         "/timeseries/text/{name}/value": {
             "get": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Get cwmsData timeseries text with name value",
                 "operationId": "getCwmsDataTimeseriesTextWithNameValue",
@@ -4142,7 +4149,7 @@
                     {
                         "name": "office",
                         "in": "query",
-                        "description": "Specifies the owning office of the Text TimeSeries whose data is to be included in the response.",
+                        "description": "Specifies the owning office of the Text Timeseries whose data is to be included in the response.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -4251,7 +4258,7 @@
         "/timeseries/binary": {
             "get": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Retrieve binary time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.",
                 "operationId": "getCwmsDataTimeseriesBinary",
@@ -4259,7 +4266,7 @@
                     {
                         "name": "office",
                         "in": "query",
-                        "description": "Specifies the owning office of the Binary TimeSeries whose data is to be included in the response.",
+                        "description": "Specifies the owning office of the Binary Timeseries whose data is to be included in the response.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -4373,7 +4380,7 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/BinaryTimeSeries"
+                                    "$ref": "#/components/schemas/BinaryTimeseries"
                                 }
                             }
                         }
@@ -4383,10 +4390,10 @@
             },
             "post": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Post cwmsData timeseries binary",
-                "description": "Create new BinaryTimeSeries",
+                "description": "Create new BinaryTimeseries",
                 "operationId": "postCwmsDataTimeseriesBinary",
                 "parameters": [
                     {
@@ -4401,7 +4408,7 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/BinaryTimeSeries"
+                                "$ref": "#/components/schemas/BinaryTimeseries"
                             }
                         }
                     },
@@ -4472,7 +4479,7 @@
         "/timeseries/binary/{name}": {
             "delete": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Delete cwmsData timeseries binary with name",
                 "description": "Deletes requested binary timeseries id",
@@ -4610,7 +4617,7 @@
             },
             "patch": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Patch cwmsData timeseries binary with name",
                 "description": "Updates a binary timeseries",
@@ -4645,7 +4652,7 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/BinaryTimeSeries"
+                                "$ref": "#/components/schemas/BinaryTimeseries"
                             }
                         }
                     },
@@ -4716,7 +4723,7 @@
         "/timeseries/binary/{name}/value": {
             "get": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Get cwmsData timeseries binary with name value",
                 "operationId": "getCwmsDataTimeseriesBinaryWithNameValue",
@@ -4733,7 +4740,7 @@
                     {
                         "name": "office",
                         "in": "query",
-                        "description": "Specifies the owning office of the Binary TimeSeries whose data is to be included in the response.",
+                        "description": "Specifies the owning office of the Binary Timeseries whose data is to be included in the response.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -4843,7 +4850,7 @@
         "/timeseries/category/{category-id}": {
             "get": {
                 "tags": [
-                    "TimeSeries Categories"
+                    "Timeseries Categories"
                 ],
                 "summary": "Get cwmsData timeseries category with categoryId",
                 "description": "Retrieves requested timeseries category",
@@ -4924,7 +4931,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesCategory"
+                                    "$ref": "#/components/schemas/TimeseriesCategory"
                                 }
                             }
                         }
@@ -4937,7 +4944,7 @@
             },
             "delete": {
                 "tags": [
-                    "TimeSeries Categories"
+                    "Timeseries Categories"
                 ],
                 "summary": "Delete cwmsData timeseries category with categoryId",
                 "description": "Deletes requested time series category",
@@ -5035,7 +5042,7 @@
         "/timeseries/category": {
             "get": {
                 "tags": [
-                    "TimeSeries Categories"
+                    "Timeseries Categories"
                 ],
                 "summary": "Get cwmsData timeseries category",
                 "description": "Returns CWMS timeseries category Data",
@@ -5108,7 +5115,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/TimeSeriesCategory"
+                                        "$ref": "#/components/schemas/TimeseriesCategory"
                                     }
                                 }
                             }
@@ -5122,10 +5129,10 @@
             },
             "post": {
                 "tags": [
-                    "TimeSeries Categories"
+                    "Timeseries Categories"
                 ],
                 "summary": "Post cwmsData timeseries category",
-                "description": "Create new TimeSeriesCategory",
+                "description": "Create new TimeseriesCategory",
                 "operationId": "postCwmsDataTimeseriesCategory",
                 "parameters": [
                     {
@@ -5141,7 +5148,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesCategory"
+                                "$ref": "#/components/schemas/TimeseriesCategory"
                             }
                         }
                     },
@@ -5212,7 +5219,7 @@
         "/timeseries/identifier-descriptor/{timeseries-id}": {
             "get": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Get cwmsData timeseries identifierDescriptor with timeseriesId",
                 "description": "Retrieves requested timeseries identifier descriptor",
@@ -5293,7 +5300,7 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
+                                    "$ref": "#/components/schemas/TimeseriesIdentifierDescriptor"
                                 }
                             }
                         }
@@ -5306,7 +5313,7 @@
             },
             "delete": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Delete cwmsData timeseries identifierDescriptor with timeseriesId",
                 "description": "Deletes requested timeseries identifier",
@@ -5403,7 +5410,7 @@
             },
             "patch": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Patch cwmsData timeseries identifierDescriptor with timeseriesId",
                 "operationId": "patchCwmsDataTimeseriesIdentifierDescriptorWithTimeseriesId",
@@ -5535,7 +5542,7 @@
         "/timeseries/identifier-descriptor": {
             "get": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Get cwmsData timeseries identifierDescriptor",
                 "description": "Returns CWMS timeseries identifier descriptorData",
@@ -5631,7 +5638,7 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptors"
+                                    "$ref": "#/components/schemas/TimeseriesIdentifierDescriptors"
                                 }
                             }
                         }
@@ -5644,10 +5651,10 @@
             },
             "post": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Post cwmsData timeseries identifierDescriptor",
-                "description": "Create new TimeSeriesIdentifierDescriptor",
+                "description": "Create new TimeseriesIdentifierDescriptor",
                 "operationId": "postCwmsDataTimeseriesIdentifierDescriptor",
                 "parameters": [
                     {
@@ -5663,12 +5670,12 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
+                                "$ref": "#/components/schemas/TimeseriesIdentifierDescriptor"
                             }
                         },
                         "application/xml;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
+                                "$ref": "#/components/schemas/TimeseriesIdentifierDescriptor"
                             }
                         }
                     },
@@ -5829,7 +5836,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesGroup"
+                                    "$ref": "#/components/schemas/TimeseriesGroup"
                                 }
                             }
                         }
@@ -5939,7 +5946,7 @@
                     "Timeseries Groups"
                 ],
                 "summary": "Patch cwmsData timeseries group with groupId",
-                "description": "Update existing TimeSeriesGroup",
+                "description": "Update existing TimeseriesGroup",
                 "operationId": "patchCwmsDataTimeseriesGroupWithGroupId",
                 "parameters": [
                     {
@@ -5972,7 +5979,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesGroup"
+                                "$ref": "#/components/schemas/TimeseriesGroup"
                             }
                         }
                     },
@@ -6140,7 +6147,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/TimeSeriesGroup"
+                                        "$ref": "#/components/schemas/TimeseriesGroup"
                                     }
                                 }
                             }
@@ -6157,7 +6164,7 @@
                     "Timeseries Groups"
                 ],
                 "summary": "Post cwmsData timeseries group",
-                "description": "Create new TimeSeriesGroup",
+                "description": "Create new TimeseriesGroup",
                 "operationId": "postCwmsDataTimeseriesGroup",
                 "parameters": [
                     {
@@ -6173,7 +6180,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesGroup"
+                                "$ref": "#/components/schemas/TimeseriesGroup"
                             }
                         }
                     },
@@ -6244,7 +6251,7 @@
         "/timeseries": {
             "get": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Get cwmsData timeseries",
                 "operationId": "getCwmsDataTimeseries",
@@ -6404,27 +6411,27 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/xml;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/xml": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             }
                         }
@@ -6437,7 +6444,7 @@
             },
             "post": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Post cwmsData timeseries",
                 "description": "Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds ",
@@ -6480,12 +6487,12 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeries"
+                                "$ref": "#/components/schemas/Timeseries"
                             }
                         },
                         "application/xml;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeries"
+                                "$ref": "#/components/schemas/Timeseries"
                             }
                         }
                     },
@@ -6556,7 +6563,7 @@
         "/timeseries/{timeseries}": {
             "delete": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Delete cwmsData timeseries with timeseries",
                 "operationId": "deleteCwmsDataTimeseriesWithTimeseries",
@@ -6709,10 +6716,10 @@
             },
             "patch": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Patch cwmsData timeseries with timeseries",
-                "description": "Update a TimeSeries with provided values",
+                "description": "Update a Timeseries with provided values",
                 "operationId": "patchCwmsDataTimeseriesWithTimeseries",
                 "parameters": [
                     {
@@ -6761,12 +6768,12 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeries"
+                                "$ref": "#/components/schemas/Timeseries"
                             }
                         },
                         "application/xml;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeries"
+                                "$ref": "#/components/schemas/Timeseries"
                             }
                         }
                     },
@@ -7603,137 +7610,6 @@
                         "OpenIDConnect": []
                     }
                 ]
-            }
-        },
-        "/ratings/metadata": {
-            "get": {
-                "tags": [
-                    "Ratings"
-                ],
-                "summary": "Get cwmsData ratings metadata",
-                "operationId": "getCwmsDataRatingsMetadata",
-                "parameters": [
-                    {
-                        "name": "office",
-                        "in": "query",
-                        "description": "Specifies the owning office of the Rating Specs whose data is to be included in the response. If this field is not specified, matching rating information from all offices shall be returned.",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "rating-id-mask",
-                        "in": "query",
-                        "description": "RegExp that specifies the rating IDs to be included in the response. If this field is not specified, all Rating Specs shall be returned.",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "start",
-                        "in": "query",
-                        "description": "Specifies the start of the time window of the effective dates to be included. If this field is not specified no start time will be used.",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "end",
-                        "in": "query",
-                        "description": "Specifies the end of the time window for effective dates to be included. If this field is not specified no end time will be used.",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "timezone",
-                        "in": "query",
-                        "description": "Specifies the time zone of the values of the begin and end fields (unless otherwise specified). If this field is not specified, the default time zone of UTC shall be used.",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "This end point can return a lot of data, this identifies where in the request you are. This is an opaque value, and can be obtained from the 'next-page' value in the response.",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "page-size",
-                        "in": "query",
-                        "description": "How many entries per page returned. Default 50.",
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    }
-                ],
-                "responses": {
-                    "500": {
-                        "description": "Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CdaError"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CdaError"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CdaError"
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CdaError"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CdaError"
-                                }
-                            }
-                        }
-                    },
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json;version=2": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RatingMetadataList"
-                                }
-                            }
-                        }
-                    }
-                },
-                "security": []
             }
         },
         "/ratings/{rating-id}": {
@@ -14101,7 +13977,7 @@
                     },
                     "constant-value": {
                         "type": "number",
-                        "description": "Single value for this location level. Mutually exclusive with seasonableTimeSeriesId and seasonValues.",
+                        "description": "Single value for this location level. Mutually exclusive with seasonableTimeseriesId and seasonValues.",
                         "format": "double"
                     },
                     "level-units-id": {
@@ -14161,7 +14037,7 @@
                     },
                     "seasonal-values": {
                         "type": "array",
-                        "description": "List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeSeriesId and siParameterUnitsConstantValue",
+                        "description": "List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeseriesId and siParameterUnitsConstantValue",
                         "items": {
                             "$ref": "#/components/schemas/SeasonalValueBean"
                         }
@@ -14183,7 +14059,7 @@
                         "type": "integer"
                     }
                 },
-                "description": "List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeSeriesId and siParameterUnitsConstantValue"
+                "description": "List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeseriesId and siParameterUnitsConstantValue"
             },
             "location-levels": {
                 "type": "object",
@@ -14268,7 +14144,7 @@
                     }
                 }
             },
-            "TimeSeries.Column": {
+            "Timeseries.Column": {
                 "type": "object",
                 "properties": {
                     "name": {
@@ -14284,7 +14160,7 @@
                 },
                 "readOnly": true
             },
-            "TimeSeries.Record": {
+            "Timeseries.Record": {
                 "type": "object",
                 "properties": {
                     "date-time": {
@@ -14438,7 +14314,7 @@
                         "type": "array",
                         "readOnly": true,
                         "items": {
-                            "$ref": "#/components/schemas/TimeSeries.Column"
+                            "$ref": "#/components/schemas/Timeseries.Column"
                         }
                     },
                     "values": {
@@ -14509,7 +14385,7 @@
                     }
                 }
             },
-            "TimeSeries": {
+            "Timeseries": {
                 "required": [
                     "units"
                 ],
@@ -14643,7 +14519,7 @@
                         "type": "array",
                         "readOnly": true,
                         "items": {
-                            "$ref": "#/components/schemas/TimeSeries.Column"
+                            "$ref": "#/components/schemas/Timeseries.Column"
                         }
                     },
                     "values": {
@@ -14785,7 +14661,7 @@
                     "DELETE_DATA"
                 ]
             },
-            "RegularTextTimeSeriesRow": {
+            "RegularTextTimeseriesRow": {
                 "type": "object",
                 "properties": {
                     "date-time": {
@@ -14818,7 +14694,7 @@
                     }
                 }
             },
-            "TextTimeSeries": {
+            "TextTimeseries": {
                 "required": [
                     "office-id"
                 ],
@@ -14855,12 +14731,12 @@
                     "regular-text-values": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/RegularTextTimeSeriesRow"
+                            "$ref": "#/components/schemas/RegularTextTimeseriesRow"
                         }
                     }
                 }
             },
-            "BinaryTimeSeries": {
+            "BinaryTimeseries": {
                 "required": [
                     "office-id"
                 ],
@@ -14897,12 +14773,12 @@
                     "binary-values": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/BinaryTimeSeriesRow"
+                            "$ref": "#/components/schemas/BinaryTimeseriesRow"
                         }
                     }
                 }
             },
-            "BinaryTimeSeriesRow": {
+            "BinaryTimeseriesRow": {
                 "type": "object",
                 "properties": {
                     "date-time": {
@@ -14956,9 +14832,9 @@
                         "type": "string"
                     }
                 },
-                "description": "A representation of a TimeSeries category"
+                "description": "A representation of a Timeseries category"
             },
-            "TimeSeriesCategory": {
+            "TimeseriesCategory": {
                 "required": [
                     "office-id"
                 ],
@@ -14975,9 +14851,9 @@
                         "type": "string"
                     }
                 },
-                "description": "A representation of a TimeSeries category"
+                "description": "A representation of a Timeseries category"
             },
-            "TimeSeriesIdentifierDescriptor": {
+            "TimeseriesIdentifierDescriptor": {
                 "required": [
                     "office-id"
                 ],
@@ -15002,13 +14878,13 @@
                     }
                 }
             },
-            "TimeSeriesIdentifierDescriptors": {
+            "TimeseriesIdentifierDescriptors": {
                 "type": "object",
                 "properties": {
                     "descriptors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
+                            "$ref": "#/components/schemas/TimeseriesIdentifierDescriptor"
                         }
                     },
                     "next-page": {
@@ -15035,7 +14911,7 @@
                     }
                 }
             },
-            "AssignedTimeSeries": {
+            "AssignedTimeseries": {
                 "type": "object",
                 "properties": {
                     "officeId": {
@@ -15087,13 +14963,13 @@
                     "assigned-time-series": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/AssignedTimeSeries"
+                            "$ref": "#/components/schemas/AssignedTimeseries"
                         }
                     }
                 },
                 "description": "A representation of a timeseries group"
             },
-            "TimeSeriesGroup": {
+            "TimeseriesGroup": {
                 "required": [
                     "office-id"
                 ],
@@ -15121,7 +14997,7 @@
                     "assigned-time-series": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/AssignedTimeSeries"
+                            "$ref": "#/components/schemas/AssignedTimeseries"
                         }
                     }
                 },
@@ -15335,220 +15211,8 @@
                     }
                 }
             },
-            "AbstractRatingMetadata": {
-                "type": "object",
-                "properties": {
-                    "office-id": {
-                        "type": "string"
-                    },
-                    "rating-spec-id": {
-                        "type": "string"
-                    },
-                    "units-id": {
-                        "type": "string"
-                    },
-                    "active": {
-                        "type": "boolean"
-                    },
-                    "effective-date": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "create-date": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "transition-date": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "vertical-datum-info": {
-                        "$ref": "#/components/schemas/vertical-datum-info"
-                    },
-                    "rating-type": {
-                        "type": "string"
-                    }
-                },
-                "description": "Rating Metadata",
-                "discriminator": {
-                    "propertyName": "rating-type",
-                    "mapping": {
-                        "table": "#/components/schemas/TableRating",
-                        "transitional": "#/components/schemas/TransitionalRating",
-                        "virtual": "#/components/schemas/VirtualRating",
-                        "expression-rating": "#/components/schemas/ExpressionRating",
-                        "usgs": "#/components/schemas/UsgsStreamRating"
-                    }
-                },
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/TableRating"
-                    },
-                    {
-                        "$ref": "#/components/schemas/TransitionalRating"
-                    },
-                    {
-                        "$ref": "#/components/schemas/VirtualRating"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ExpressionRating"
-                    },
-                    {
-                        "$ref": "#/components/schemas/UsgsStreamRating"
-                    }
-                ]
-            },
-            "ExpressionRating": {
-                "type": "object",
-                "allOf": [
-                    {
-                        "$ref": "#/components/schemas/AbstractRatingMetadata"
-                    },
-                    {
-                        "type": "object",
-                        "properties": {
-                            "expression": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                ]
-            },
-            "RatingMetadata": {
-                "type": "object",
-                "properties": {
-                    "rating-spec": {
-                        "$ref": "#/components/schemas/RatingSpec"
-                    },
-                    "ratings": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AbstractRatingMetadata"
-                        }
-                    }
-                }
-            },
-            "RatingMetadataList": {
-                "type": "object",
-                "properties": {
-                    "next-page": {
-                        "type": "string",
-                        "description": "The cursor to the next page of data; null if there is no more data",
-                        "readOnly": true
-                    },
-                    "page": {
-                        "type": "string",
-                        "description": "The cursor to the current page of data",
-                        "readOnly": true
-                    },
-                    "page-size": {
-                        "type": "integer",
-                        "description": "The number of records fetched per-page; this may be larger than the number of records actually retrieved",
-                        "format": "int32",
-                        "readOnly": true
-                    },
-                    "rating-metadata": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/RatingMetadata"
-                        }
-                    },
-                    "total": {
-                        "type": "integer",
-                        "description": "The total number of records retrieved; null or not present if not supported or unknown",
-                        "format": "int32",
-                        "readOnly": true
-                    }
-                }
-            },
             "SourceRating": {
                 "type": "object"
-            },
-            "TableRating": {
-                "type": "object",
-                "allOf": [
-                    {
-                        "$ref": "#/components/schemas/AbstractRatingMetadata"
-                    },
-                    {
-                        "type": "object",
-                        "properties": {
-                            "in-range-method": {
-                                "type": "string"
-                            },
-                            "out-range-low-method": {
-                                "type": "string"
-                            },
-                            "out-range-high-method": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                ]
-            },
-            "TransitionalRating": {
-                "type": "object",
-                "allOf": [
-                    {
-                        "$ref": "#/components/schemas/AbstractRatingMetadata"
-                    },
-                    {
-                        "type": "object",
-                        "properties": {
-                            "source-ratings": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            },
-                            "conditions": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            },
-                            "evaluations": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    }
-                ]
-            },
-            "UsgsStreamRating": {
-                "type": "object",
-                "allOf": [
-                    {
-                        "$ref": "#/components/schemas/TableRating"
-                    }
-                ]
-            },
-            "VirtualRating": {
-                "type": "object",
-                "allOf": [
-                    {
-                        "$ref": "#/components/schemas/AbstractRatingMetadata"
-                    },
-                    {
-                        "type": "object",
-                        "properties": {
-                            "source-ratings": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/SourceRating"
-                                }
-                            },
-                            "connections": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                ]
             },
             "DatabaseLoadMethod": {
                 "type": "string",
@@ -15763,11 +15427,11 @@
                     },
                     "version-time": {
                         "type": "string",
-                        "description": "TimeSeries version to which this extent information applies",
+                        "description": "Timeseries version to which this extent information applies",
                         "format": "date-time"
                     }
                 },
-                "description": "TimeSeries extent information"
+                "description": "Timeseries extent information"
             },
             "Catalog": {
                 "type": "object",
