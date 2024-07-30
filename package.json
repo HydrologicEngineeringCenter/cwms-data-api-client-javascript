@@ -1,7 +1,7 @@
 {
   "name": "cwmsjs",
   "version": "3.1.44",
-  "description": "CWMS Data API Library for JavaScript/TypeScript created with OpenAPI generator in TypeScript for use with browser webapps",
+  "description": "Corps Water Management System (CWMS) Data API (CDA) client library created with OpenAPI generator that wraps the CDA API in TypeScript for creating web applications with JavaScript, React, TypeScript, Node.js",
   "author": "USACE,HEC,CWMS,OpenApi Contributors",
   "repository": {
     "type": "git",
@@ -27,11 +27,11 @@
   },
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "cd src && babel src -d dist && npm run docs && npm run examples",
+    "build": "cd src && babel src -d dist && cd .. && npm run docs && npm run examples",
     "docs": "cd src && npx typedoc",
     "examples": "node ./scripts/tests2exampledocs.js ",
     "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./src -i cwms-swagger.json -c openapi.config.json",
-    "openapi-test": "openapi-generator-cli generate -g typescript-fetch -o ./src -i cwms-swagger.test.json -c openapi.config.json",
+    "openapi-test": "shx rm -r ./src/src && openapi-generator-cli generate -g typescript-fetch -o ./src -i cwms-swagger.test.json -c openapi.config.json",
     "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
     "moveDocs": "shx mkdir -p ./dist/docs && shx mv ./src/*.md ./dist/docs/"
   },
