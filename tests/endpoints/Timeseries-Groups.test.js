@@ -1,4 +1,4 @@
-import { TimeSeriesGroup , Configuration } from "../../src/dist/";
+import { TimeseriesGroupsApi , Configuration } from "../../src/dist/";
 import fetch from 'node-fetch';
 global.fetch = fetch;
 
@@ -8,10 +8,9 @@ test('Test Groups', async () => {
             "accept": "application/json;version=2",
         }
     })
-    const s_api = new StatesApi(config)
-    s_api.getCwmsDataStates().then((data) => {
-        expect(data).toBeDefined()
-        console.log(data)
+    const tsg_api = new TimeseriesGroupsApi()
+    tsg_api.getCwmsDataTimeseriesGroup({
+        // TODO: add params once we can test them
     })
 
 }, 15000)

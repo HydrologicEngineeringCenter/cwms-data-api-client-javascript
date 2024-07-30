@@ -3,34 +3,37 @@ import fetch from 'node-fetch';
 global.fetch = fetch;
 
 test('Test Ratings', async () => {
-   const r_api = new RatingsApi()
-   r_api.getCwmsDataRatings({
-         "office": "SWT"
-    }).then((data) => {
-         console.log(data)
-   })
-   // Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
-   r_api.getCwmsDataRatingsSpec({
+    const r_api = new RatingsApi();
+
+    try {
+        const data1 = await r_api.getCwmsDataRatings({
+            "office": "SWT"
+        });
+        console.log(data1);
+
+        const data2 = await r_api.getCwmsDataRatingsSpec({
             "office": "SWT",
             "ratingIdMask": "KEYS.*"
-        }).then((data) => {
-            expect(data?.specs).toBeDefined()
-            console.log(data.specs)
-        })
-   // Fetch the CWMS Rating templates for the SPK OFFICE
-   r_api.getCwmsDataRatingsTemplate({
-    "office": "SPK"
-   }).then((data) => {
-       expect(data?.templates).toBeDefined()
-       console.log(data.templates)
-   })
+        });
+        expect(data2?.specs).toBeDefined();
+        console.log(data2.specs);
 
-   r_api.getCwmsDataRatingsTemplateWithTemplateId({
-    "office": "SWT", 
-     "templateId": "Elev-Alt;Stor-Alt.Linear"
-   }).then(data=> {
-        expect(data).toBeDefined()
-        console.log(data)
-   })
+        const data3 = await r_api.getCwmsDataRatingsTemplate({
+            "office": "SPK"
+        });
+        expect(data3?.templates).toBeDefined();
+        console.log(data3.templates);
 
+        const data4 = await r_api.getCwmsDataRatingsTemplateWithTemplateId({
+            "office": "SWT",
+            "templateId": "Elev-Alt;Stor-Alt.Linear"
+        });
+        expect(data4).toBeDefined();
+        console.log(data4);
+    } catch (error) {
+        if (error.response && error.response.status === 403) {
+            throw new Error('Received a 403 Forbidden error');
+        }
+        throw error;
+    }
 }, 15000)

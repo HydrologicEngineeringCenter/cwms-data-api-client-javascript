@@ -10,8 +10,12 @@ const testDirectory = './tests/endpoints';
 const genDirectory = "./tests/generator"
 const outputDirectory = './docs/examples';
 const templatePath = './scripts/exampletemplate.html'; // Path to your HTML template
+const packageJsonPath ='./package.json'
 
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+const version = packageJson.version;
 
+console.log("Generating examples for version " + version)
 // Ensure the output directory exists
 if (!fs.existsSync(outputDirectory)) {
     fs.mkdirSync(outputDirectory, { recursive: true });
@@ -61,6 +65,7 @@ fs.readFile(templatePath, 'utf8', (err, template) => {
                 // Replace placeholder in template
                 const filledTemplate = template
                     .replaceAll('${docName}', docFullName)
+                    .replaceAll('${version}', version)
                     .replaceAll('${pageBody}', `
 <h2>React + Vite Example</h2>
 <b>To Install:</b>
