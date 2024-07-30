@@ -1,6 +1,6 @@
 # CWMSjs
 
-_CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript for use with web browsers._
+_Corps Water Management System (CWMS) Data API (CDA) client library created with OpenAPI generator that wraps the CDA API in TypeScript for creating web applications with JavaScript, React, TypeScript, Node.js_
 
 
 ## Getting Started
