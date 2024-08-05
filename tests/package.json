@@ -1,6 +1,6 @@
 {
     "name": "cwmsjs-tests",
-    "description": "CWMSjs unit tests for all endpoints",
+    "description": "CWMSjs unit tests for endpoints",
     "repository": {
         "type": "git",
         "url": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript"
