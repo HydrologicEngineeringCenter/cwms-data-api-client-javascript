@@ -14,7 +14,7 @@
     "scripts": {
         "jest-modules": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
         "test": "npm run jest-modules -- --runInBand",
-        "test-cicd": "npm run jest-modules -- --runInBand --ci --reporters=default --reporters=jest-junit",
+        "test-cicd": "npm run jest-modules -- --runInBand --ci --detectOpenHandles",
         "coverage": "npm run test --coverage",
         "link": "cd ../src && npm link && cd ../tests && npm link cwmsjs"
     },
