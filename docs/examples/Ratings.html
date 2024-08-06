@@ -47,12 +47,11 @@
                     <ul class="results">
                         <li class="state loading">Preparing search index...</li>
                         <li class="state failure">The search index is not available</li>
-                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v1.12.0</a>
+                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v1.15.0</a>
                 </div>
             </div>
         </header>
-        <div class="container container-main">
-            <div class="col-content">
+        <div style="margin: auto; width: 80%; padding: 10px;">
                 <div class="tsd-page-title">
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">cwmsjs</a></li>
@@ -68,6 +67,20 @@
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
+                <hr />
+                <section>
+                    <h2>Groundwork-Water + React</h2>
+                    <div>Checkout <a href="https://usace-watermanagement.github.io/groundwork-water/#/docs/hooks">Groundwork-Water Hooks</a><br>
+                        <em>The data components library for USACE made in React + Groundwork</em>
+                        <p>
+                            Hooks are made wrapping CWMSjs using code similar to the React example below. <br>
+                            They also provide variables for you to track the state, progress, and data of the request.
+                            <br>
+                            The header on the Groundwork-Water webpage provides a list of currently available hooks. 
+                        </p>
+                    </div>
+                </section>
+                <hr />
                 <section class="tsd-panel tsd-hierarchy">
                     
 <h2>React + Vite Example</h2>
@@ -77,36 +90,44 @@
 <code class="language-javascript">import { RatingsApi } from "cwmsjs";
 
 
-const r_api = new RatingsApi()
-   r_api.getCwmsDataRatings({
-     &quot;office&quot;: &quot;SWT&quot;
-}).then((data) =&gt; {
-     console.log(data)
-   })
-   // Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
-   r_api.getCwmsDataRatingsSpec({
-        &quot;office&quot;: &quot;SWT&quot;,
-        &quot;ratingIdMask&quot;: &quot;KEYS.*&quot;
-    }).then((data) =&gt; {
-        console.log(data?.specs)
-        console.log(data.specs)
+const r_api = new RatingsApi();
+r_api
+    .getCwmsDataRatings({
+        office: 'SWT',
     })
-   // Fetch the CWMS Rating templates for the SPK OFFICE
-   r_api.getCwmsDataRatingsTemplate({
-&quot;office&quot;: &quot;SPK&quot;
-   }).then((data) =&gt; {
-   console.log(data?.templates)
-   console.log(data.templates)
-   })
+    .then((data) => {
+        console.log(data);
+    });
+// Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
+r_api
+    .getCwmsDataRatingsSpec({
+        office: 'SWT',
+        ratingIdMask: 'KEYS.*',
+    })
+    .then((data) => {
+        console.log(data?.specs);
+    });
+// Fetch the CWMS Rating templates for the SPK OFFICE
+r_api
+    .getCwmsDataRatingsTemplate({
+        office: 'SPK',
+    })
+    .then((data) => {
+        console.log(data?.templates);
+    });
 
-   r_api.getCwmsDataRatingsTemplateWithTemplateId({
-&quot;office&quot;: &quot;SWT&quot;, 
- &quot;templateId&quot;: &quot;Elev-Alt;Stor-Alt.Linear&quot;
-   }).then(data=&gt; {
-    console.log(data)
-    console.log(data)
-   })</code>
+r_api
+    .getCwmsDataRatingsTemplateWithTemplateId({
+        office: 'SWT',
+        templateId: 'Elev-Alt;Stor-Alt.Linear',
+    })
+    .then((data) => {
+        console.log(data);
+    });
+</code>
 </pre>
+<br />
+<hr />
 <h2>Bundle / Vanilla JS Example</h2>
 <b>To Install:</b><br>
 <p>
@@ -122,39 +143,44 @@ to download bundle.js to your system</li>
 &lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
 &lt;script type=&quot;module&quot;&gt;
-const r_api = new cwmsjs.RatingsApi()
-   r_api.getCwmsDataRatings({
-     &quot;office&quot;: &quot;SWT&quot;
-}).then((data) =&gt; {
-     console.log(data)
-   })
-   // Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
-   r_api.getCwmsDataRatingsSpec({
-        &quot;office&quot;: &quot;SWT&quot;,
-        &quot;ratingIdMask&quot;: &quot;KEYS.*&quot;
-    }).then((data) =&gt; {
-        console.log(data?.specs)
-        console.log(data.specs)
+const r_api = new cwmsjs.RatingsApi();
+r_api
+    .getCwmsDataRatings({
+        office: &#039;SWT&#039;,
     })
-   // Fetch the CWMS Rating templates for the SPK OFFICE
-   r_api.getCwmsDataRatingsTemplate({
-&quot;office&quot;: &quot;SPK&quot;
-   }).then((data) =&gt; {
-   console.log(data?.templates)
-   console.log(data.templates)
-   })
+    .then((data) =&gt; {
+        console.log(data);
+    });
+// Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
+r_api
+    .getCwmsDataRatingsSpec({
+        office: &#039;SWT&#039;,
+        ratingIdMask: &#039;KEYS.*&#039;,
+    })
+    .then((data) =&gt; {
+        console.log(data?.specs);
+    });
+// Fetch the CWMS Rating templates for the SPK OFFICE
+r_api
+    .getCwmsDataRatingsTemplate({
+        office: &#039;SPK&#039;,
+    })
+    .then((data) =&gt; {
+        console.log(data?.templates);
+    });
 
-   r_api.getCwmsDataRatingsTemplateWithTemplateId({
-&quot;office&quot;: &quot;SWT&quot;, 
- &quot;templateId&quot;: &quot;Elev-Alt;Stor-Alt.Linear&quot;
-   }).then(data=&gt; {
-    console.log(data)
-    console.log(data)
-   })
+r_api
+    .getCwmsDataRatingsTemplateWithTemplateId({
+        office: &#039;SWT&#039;,
+        templateId: &#039;Elev-Alt;Stor-Alt.Linear&#039;,
+    })
+    .then((data) =&gt; {
+        console.log(data);
+    });
+
 &lt;/script&gt;</code>
 </pre>
                 </section>
-            </div>
         </div>
         <footer>
             <p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>

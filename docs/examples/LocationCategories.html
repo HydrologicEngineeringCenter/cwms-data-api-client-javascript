@@ -47,12 +47,11 @@
                     <ul class="results">
                         <li class="state loading">Preparing search index...</li>
                         <li class="state failure">The search index is not available</li>
-                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v1.12.0</a>
+                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v1.15.0</a>
                 </div>
             </div>
         </header>
-        <div class="container container-main">
-            <div class="col-content">
+        <div style="margin: auto; width: 80%; padding: 10px;">
                 <div class="tsd-page-title">
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">cwmsjs</a></li>
@@ -68,6 +67,20 @@
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
+                <hr />
+                <section>
+                    <h2>Groundwork-Water + React</h2>
+                    <div>Checkout <a href="https://usace-watermanagement.github.io/groundwork-water/#/docs/hooks">Groundwork-Water Hooks</a><br>
+                        <em>The data components library for USACE made in React + Groundwork</em>
+                        <p>
+                            Hooks are made wrapping CWMSjs using code similar to the React example below. <br>
+                            They also provide variables for you to track the state, progress, and data of the request.
+                            <br>
+                            The header on the Groundwork-Water webpage provides a list of currently available hooks. 
+                        </p>
+                    </div>
+                </section>
+                <hr />
                 <section class="tsd-panel tsd-hierarchy">
                     
 <h2>React + Vite Example</h2>
@@ -77,26 +90,31 @@
 <code class="language-javascript">import { LocationCategoriesApi } from "cwmsjs";
 
 
-const lc_api = new LocationCategoriesApi()
-await lc_api.getCwmsDataLocationCategory({
-    &quot;office&quot;: &quot;SWT&quot;
+const lc_api = new LocationCategoriesApi();
+lc_api
+    .getCwmsDataLocationCategory({
+        office: 'SWT',
     })
-    .then((data) =&gt; {
-        console.log(data)
-        data.forEach((category) =&gt; {
-            console.log(category)
-        })
-    }).catch(async e =&gt; {
+    .then((data) => {
+        console.log(data);
+        data.forEach((category) => {
+            console.log(category);
+        });
+    })
+    .catch(async (e) => {
         if (e.response) {
-            const error_msg = await e.response.json()
+            const error_msg = e.response.json();
             e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
             console.error(e);
             throw e;
         } else {
             throw e;
         }
-    })</code>
+    });
+</code>
 </pre>
+<br />
+<hr />
 <h2>Bundle / Vanilla JS Example</h2>
 <b>To Install:</b><br>
 <p>
@@ -112,29 +130,31 @@ to download bundle.js to your system</li>
 &lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
 &lt;script type=&quot;module&quot;&gt;
-const lc_api = new cwmsjs.LocationCategoriesApi()
-await lc_api.getCwmsDataLocationCategory({
-    &quot;office&quot;: &quot;SWT&quot;
+const lc_api = new cwmsjs.LocationCategoriesApi();
+lc_api
+    .getCwmsDataLocationCategory({
+        office: &#039;SWT&#039;,
     })
     .then((data) =&gt; {
-        console.log(data)
+        console.log(data);
         data.forEach((category) =&gt; {
-            console.log(category)
-        })
-    }).catch(async e =&gt; {
+            console.log(category);
+        });
+    })
+    .catch(async (e) =&gt; {
         if (e.response) {
-            const error_msg = await e.response.json()
+            const error_msg = e.response.json();
             e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
             console.error(e);
             throw e;
         } else {
             throw e;
         }
-    })
+    });
+
 &lt;/script&gt;</code>
 </pre>
                 </section>
-            </div>
         </div>
         <footer>
             <p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>

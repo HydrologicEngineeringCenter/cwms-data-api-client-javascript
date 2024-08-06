@@ -7,7 +7,7 @@
     <head>
         <meta charSet="utf-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>Basins Example</title>
+        <title>Timeseries Groups Example</title>
         <meta name="description" content="Documentation for cwmsjs" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../assets/style.css" />
@@ -56,13 +56,13 @@
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">cwmsjs</a></li>
                         <li><a href="/cwms-data-api-client-javascript/examples">Examples</a></li>
-                        <li><a href="/cwms-data-api-client-javascript/examples/Basins.html">Basins</a></li>
+                        <li><a href="/cwms-data-api-client-javascript/examples/Timeseries Groups.html">Timeseries Groups</a></li>
                     </ul>
-                    <h1>Example: Basins</h1>
+                    <h1>Example: Timeseries Groups</h1>
                 </div>
                 <section class="tsd-panel tsd-comment">
                     <div class="tsd-comment tsd-typography">
-                        <p>An example for calling the Basins endpoint via CDA in JavaScript</p>
+                        <p>An example for calling the Timeseries Groups endpoint via CDA in JavaScript</p>
                         <p><a href="https://cwms-data.usace.army.mil/cwms-data">Swagger UI</a> for Endpoints</p>
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
@@ -87,17 +87,42 @@
 <b>To Install:</b>
 <code class="language-shell">npm install cwmsjs --save</code><br>
 <pre>
-<code class="language-javascript">import { BasinsApi } from "cwmsjs";
+<code class="language-javascript">import { TimeseriesGroupsApi } from "cwmsjs";
 
 
-const bas_api = new BasinsApi();
-let basins = bas_api.getCwmsDataBasins({
-    office: 'SWT',
+// ⚠️ NOTE!
+// Prior to V 1.14.0 TSGroups was broken and returned empty data for assignedTimeSeries
+// Please update to V 1.15.0 or higher to fix this issue
+// npm uninstall cwmsjs
+// npm install cwmsjs --save
+
+// Initialize the timeseries groups api with the default config
+const tsg_api = new TimeseriesGroupsApi();
+// Fetch ALL timeseries groups for the given office
+tsg_api.getCwmsDataTimeseriesGroup({ office: 'SWT' }).then((data) => {
+    console.log(data[0]);
+    data.forEach((group) => {
+        console.log(group.assignedTimeSeries);
+        const TSIDS = group.assignedTimeSeries.map((ts) => ts.timeseriesId);
+        console.log(TSIDS);
+        console.log(`Fetched ${TSIDS.length} timeseries for group ${group.id}`);
+    });
 });
 
-// If this throws an error,
-// then the basin data is not being returned from the API
-console.log(basins);
+// Fetch a specific timeseries groups given an ID for the given office
+tsg_api
+    .getCwmsDataTimeseriesGroupWithGroupId({
+        groupId: 'USGS TS Data Acquisition',
+        office: 'CWMS',
+        categoryId: 'Data Acquisition',
+    })
+    .then((group) => {
+        console.log(group);
+        console.log(group.assignedTimeSeries);
+        const TSIDS = group.assignedTimeSeries.map((ts) => ts.timeseriesId);
+        console.log(TSIDS);
+        console.log(`Fetched ${TSIDS.length} timeseries for group ${group.id}`);
+    });
 </code>
 </pre>
 <br />
@@ -117,14 +142,39 @@ to download bundle.js to your system</li>
 &lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
 &lt;script type=&quot;module&quot;&gt;
-const bas_api = new cwmsjs.BasinsApi();
-let basins = bas_api.getCwmsDataBasins({
-    office: &#039;SWT&#039;,
+// ⚠️ NOTE!
+// Prior to V 1.14.0 TSGroups was broken and returned empty data for assignedTimeSeries
+// Please update to V 1.15.0 or higher to fix this issue
+// npm uninstall cwmsjs
+// npm install cwmsjs --save
+
+// Initialize the timeseries groups api with the default config
+const tsg_api = new cwmsjs.TimeseriesGroupsApi();
+// Fetch ALL timeseries groups for the given office
+tsg_api.getCwmsDataTimeseriesGroup({ office: &#039;SWT&#039; }).then((data) =&gt; {
+    console.log(data[0]);
+    data.forEach((group) =&gt; {
+        console.log(group.assignedTimeSeries);
+        const TSIDS = group.assignedTimeSeries.map((ts) =&gt; ts.timeseriesId);
+        console.log(TSIDS);
+        console.log(`Fetched ${TSIDS.length} timeseries for group ${group.id}`);
+    });
 });
 
-// If this throws an error,
-// then the basin data is not being returned from the API
-console.log(basins);
+// Fetch a specific timeseries groups given an ID for the given office
+tsg_api
+    .getCwmsDataTimeseriesGroupWithGroupId({
+        groupId: &#039;USGS TS Data Acquisition&#039;,
+        office: &#039;CWMS&#039;,
+        categoryId: &#039;Data Acquisition&#039;,
+    })
+    .then((group) =&gt; {
+        console.log(group);
+        console.log(group.assignedTimeSeries);
+        const TSIDS = group.assignedTimeSeries.map((ts) =&gt; ts.timeseriesId);
+        console.log(TSIDS);
+        console.log(`Fetched ${TSIDS.length} timeseries for group ${group.id}`);
+    });
 
 &lt;/script&gt;</code>
 </pre>

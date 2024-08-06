@@ -47,12 +47,11 @@
                     <ul class="results">
                         <li class="state loading">Preparing search index...</li>
                         <li class="state failure">The search index is not available</li>
-                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v1.12.0</a>
+                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v1.15.0</a>
                 </div>
             </div>
         </header>
-        <div class="container container-main">
-            <div class="col-content">
+        <div style="margin: auto; width: 80%; padding: 10px;">
                 <div class="tsd-page-title">
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">cwmsjs</a></li>
@@ -68,6 +67,20 @@
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
+                <hr />
+                <section>
+                    <h2>Groundwork-Water + React</h2>
+                    <div>Checkout <a href="https://usace-watermanagement.github.io/groundwork-water/#/docs/hooks">Groundwork-Water Hooks</a><br>
+                        <em>The data components library for USACE made in React + Groundwork</em>
+                        <p>
+                            Hooks are made wrapping CWMSjs using code similar to the React example below. <br>
+                            They also provide variables for you to track the state, progress, and data of the request.
+                            <br>
+                            The header on the Groundwork-Water webpage provides a list of currently available hooks. 
+                        </p>
+                    </div>
+                </section>
+                <hr />
                 <section class="tsd-panel tsd-hierarchy">
                     
 <h2>React + Vite Example</h2>
@@ -77,18 +90,18 @@
 <code class="language-javascript">import { Configuration, AuthorizationApi } from "cwmsjs";
 
 
-// There is no public auth setup yet. 
-// The following is for districts to write their data to the their district box. 
+// There is no public auth setup yet.
+// The following is for districts to write their data to the their district box.
 
 // This assumes you have a reverse proxy setup to /district-data from the tomcat port and CDA with auth enabled
 const config = new Configuration({
-    basePath: &quot;https://your-t7-address-for-auth/district-data&quot;,
+    basePath: 'https://your-t7-address-for-auth/district-data',
     headers: {
-        &quot;accept&quot;: &quot;application/json;version=2&quot;,
+        accept: 'application/json;version=2',
     },
-})
+});
 // Tell cwmsjs to use our internal server and version 2 of any endpoints
-const a_api = new AuthorizationApi(config)
+const a_api = new AuthorizationApi(config);
 
 // Every method has another sister method with Raw at the end.
 // These methods return the raw response object from the fetch call.
@@ -98,25 +111,31 @@ const a_api = new AuthorizationApi(config)
 
 async function isLoggedIn() {
     // Utility function that returns if a user is logged in based on if they can get the keys for their user (protected endpoint)
-    return await a_api.getCwmsDataAuthKeysRaw().then(r =&gt; {
-        if (r.raw.ok) return r.raw.json()
-        else if (r.raw.status == 401) {
-            // redirect to the login page
-            return false
-        }
-    }).then(d =&gt; {
-        // Print the response to the console, just so you can see that
-        console.log(d)
-        return true
-    })
+    return a_api
+        .getCwmsDataAuthKeysRaw()
+        .then((r) => {
+            if (r.raw.ok) return r.raw.json();
+            else if (r.raw.status == 401) {
+                // redirect to the login page
+                return false;
+            }
+        })
+        .then((d) => {
+            // Print the response to the console, just so you can see that
+            console.log(d);
+            return true;
+        });
 }
-// You should use a &#039;useState&#039; hook to store the logged_in state and update the UI based on that if using React
+// You should use a 'useState' hook to store the logged_in state and update the UI based on that if using React
 // JS Module means to doing this:
-const logged_in = await isLoggedIn()
-if (!logged_in) alert(&quot;You must login first! 401 Unauthorized&quot;)
-else alert(&quot;You are logged in!&quot;)
-// Then update the state of your app based on if it is logged in</code>
+const logged_in = isLoggedIn();
+if (!logged_in) alert('You must login first! 401 Unauthorized');
+else alert('You are logged in!');
+// Then update the state of your app based on if it is logged in
+</code>
 </pre>
+<br />
+<hr />
 <h2>Bundle / Vanilla JS Example</h2>
 <b>To Install:</b><br>
 <p>
@@ -132,18 +151,18 @@ to download bundle.js to your system</li>
 &lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
 &lt;script type=&quot;module&quot;&gt;
-// There is no public auth setup yet. 
-// The following is for districts to write their data to the their district box. 
+// There is no public auth setup yet.
+// The following is for districts to write their data to the their district box.
 
 // This assumes you have a reverse proxy setup to /district-data from the tomcat port and CDA with auth enabled
 const config = new cwmsjs.Configuration({
-    basePath: &quot;https://your-t7-address-for-auth/district-data&quot;,
+    basePath: &#039;https://your-t7-address-for-auth/district-data&#039;,
     headers: {
-        &quot;accept&quot;: &quot;application/json;version=2&quot;,
+        accept: &#039;application/json;version=2&#039;,
     },
-})
+});
 // Tell cwmsjs to use our internal server and version 2 of any endpoints
-const a_api = new cwmsjs.AuthorizationApi(config)
+const a_api = new cwmsjs.AuthorizationApi(config);
 
 // Every method has another sister method with Raw at the end.
 // These methods return the raw response object from the fetch call.
@@ -153,28 +172,31 @@ const a_api = new cwmsjs.AuthorizationApi(config)
 
 async function isLoggedIn() {
     // Utility function that returns if a user is logged in based on if they can get the keys for their user (protected endpoint)
-    return await a_api.getCwmsDataAuthKeysRaw().then(r =&gt; {
-        if (r.raw.ok) return r.raw.json()
-        else if (r.raw.status == 401) {
-            // redirect to the login page
-            return false
-        }
-    }).then(d =&gt; {
-        // Print the response to the console, just so you can see that
-        console.log(d)
-        return true
-    })
+    return a_api
+        .getCwmsDataAuthKeysRaw()
+        .then((r) =&gt; {
+            if (r.raw.ok) return r.raw.json();
+            else if (r.raw.status == 401) {
+                // redirect to the login page
+                return false;
+            }
+        })
+        .then((d) =&gt; {
+            // Print the response to the console, just so you can see that
+            console.log(d);
+            return true;
+        });
 }
 // You should use a &#039;useState&#039; hook to store the logged_in state and update the UI based on that if using React
 // JS Module means to doing this:
-const logged_in = await isLoggedIn()
-if (!logged_in) alert(&quot;You must login first! 401 Unauthorized&quot;)
-else alert(&quot;You are logged in!&quot;)
+const logged_in = isLoggedIn();
+if (!logged_in) alert(&#039;You must login first! 401 Unauthorized&#039;);
+else alert(&#039;You are logged in!&#039;);
 // Then update the state of your app based on if it is logged in
+
 &lt;/script&gt;</code>
 </pre>
                 </section>
-            </div>
         </div>
         <footer>
             <p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>

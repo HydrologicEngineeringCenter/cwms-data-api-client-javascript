@@ -47,12 +47,11 @@
                     <ul class="results">
                         <li class="state loading">Preparing search index...</li>
                         <li class="state failure">The search index is not available</li>
-                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v1.12.0</a>
+                    </ul><a href="/cwms-data-api-client-javascript/" class="title">HOME - cwmsjs - v1.15.0</a>
                 </div>
             </div>
         </header>
-        <div class="container container-main">
-            <div class="col-content">
+        <div style="margin: auto; width: 80%; padding: 10px;">
                 <div class="tsd-page-title">
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">cwmsjs</a></li>
@@ -68,6 +67,20 @@
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                 </section>
+                <hr />
+                <section>
+                    <h2>Groundwork-Water + React</h2>
+                    <div>Checkout <a href="https://usace-watermanagement.github.io/groundwork-water/#/docs/hooks">Groundwork-Water Hooks</a><br>
+                        <em>The data components library for USACE made in React + Groundwork</em>
+                        <p>
+                            Hooks are made wrapping CWMSjs using code similar to the React example below. <br>
+                            They also provide variables for you to track the state, progress, and data of the request.
+                            <br>
+                            The header on the Groundwork-Water webpage provides a list of currently available hooks. 
+                        </p>
+                    </div>
+                </section>
+                <hr />
                 <section class="tsd-panel tsd-hierarchy">
                     
 <h2>React + Vite Example</h2>
@@ -78,16 +91,18 @@
 
 
 const config = new Configuration({
-    &quot;headers&quot;: {
-        &quot;accept&quot;: &quot;application/json;version=2&quot;,
-    }
-})
-const s_api = new StatesApi(config)
-s_api.getCwmsDataStates().then((data) =&gt; {
-    console.log(data)
-    console.log(data)
-})</code>
+    headers: {
+        accept: 'application/json;version=2',
+    },
+});
+const s_api = new StatesApi(config);
+s_api.getCwmsDataStates().then((data) => {
+    console.log(data);
+});
+</code>
 </pre>
+<br />
+<hr />
 <h2>Bundle / Vanilla JS Example</h2>
 <b>To Install:</b><br>
 <p>
@@ -104,19 +119,18 @@ to download bundle.js to your system</li>
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
 &lt;script type=&quot;module&quot;&gt;
 const config = new cwmsjs.Configuration({
-    &quot;headers&quot;: {
-        &quot;accept&quot;: &quot;application/json;version=2&quot;,
-    }
-})
-const s_api = new cwmsjs.StatesApi(config)
+    headers: {
+        accept: &#039;application/json;version=2&#039;,
+    },
+});
+const s_api = new cwmsjs.StatesApi(config);
 s_api.getCwmsDataStates().then((data) =&gt; {
-    console.log(data)
-    console.log(data)
-})
+    console.log(data);
+});
+
 &lt;/script&gt;</code>
 </pre>
                 </section>
-            </div>
         </div>
         <footer>
             <p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
