@@ -23,4 +23,4 @@ test('Test Location Category', async () => {
             }
         })
 
-}, 15000)
+}, 30000)

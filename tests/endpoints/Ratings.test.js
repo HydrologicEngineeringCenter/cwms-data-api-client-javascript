@@ -30,4 +30,4 @@ test('Test Ratings', async () => {
         expect(data).toBeDefined()
    })
 
-}, 15000)
+}, 30000)

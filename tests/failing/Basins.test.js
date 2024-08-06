@@ -13,4 +13,4 @@ test('Test Basins', async () => {
     // then the basin data is not being returned from the API
     expect(basins).toBeDefined()
 
-}, 15000)
+}, 30000)

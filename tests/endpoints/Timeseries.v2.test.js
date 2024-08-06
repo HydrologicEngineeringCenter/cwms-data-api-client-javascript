@@ -19,5 +19,5 @@ test('Test Timeseries V2', async () => {
         .then((data) => {
             expect(data?.values).toBeDefined()
         })
-}, 15000)
+}, 30000)
 

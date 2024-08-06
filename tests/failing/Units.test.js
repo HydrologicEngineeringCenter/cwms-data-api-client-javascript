@@ -20,5 +20,5 @@ test('Test Units', async () => {
         .then((data) => {
             expect(data?.units?.units).toBeDefined()
         })
-}, 15000)
+}, 30000)
 

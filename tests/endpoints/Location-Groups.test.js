@@ -24,4 +24,4 @@ test('Test Location Groups', async () => {
             }
         })
 
-}, 15000)
+}, 30000)

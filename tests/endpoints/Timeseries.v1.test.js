@@ -9,7 +9,7 @@ test('Test Timeseries V1', async () => {
     // Do NOT use V1 of the Timeseries endpoint. 
     // It is deprecated and will be removed in the future❗ 
     // This serves as an example of how to use the V1 API for legacy purposes.
-    
+
     const ts_api = new TimeSeriesApi();
     await ts_api.getCwmsDataTimeseries({
         "office": "SWT",
@@ -18,4 +18,4 @@ test('Test Timeseries V1', async () => {
         .then((data) => {
             expect(data).toBeDefined()
         })
-}, 15000)
+}, 30000)

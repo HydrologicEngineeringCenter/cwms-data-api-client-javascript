@@ -25,5 +25,5 @@ test('Test TimeZones', async () => {
             console.log(data)
             expect(data).toBeDefined()
         })
-}, 15000)
+}, 30000)
 

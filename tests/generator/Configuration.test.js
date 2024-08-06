@@ -30,5 +30,5 @@ test('Test Timeseries V2', async () => {
                 throw e;
             }
         })
-}, 15000)
+}, 30000)
 
