@@ -94,7 +94,7 @@ const catalog_api = new CatalogApi();
 catalog_api
     .getCwmsDataCatalogWithDataset({
         office: 'SWT',
-        like: '*Elev.Inst.1Hour.0.Ccp-Rev',
+        like: '.*Elev.Inst.1Hour.0.Ccp-Rev',
         dataset: 'TIMESERIES',
     })
     .then((data) => {
@@ -137,7 +137,7 @@ const catalog_api = new cwmsjs.CatalogApi();
 catalog_api
     .getCwmsDataCatalogWithDataset({
         office: &#039;SWT&#039;,
-        like: &#039;*Elev.Inst.1Hour.0.Ccp-Rev&#039;,
+        like: &#039;.*Elev.Inst.1Hour.0.Ccp-Rev&#039;,
         dataset: &#039;TIMESERIES&#039;,
     })
     .then((data) =&gt; {
