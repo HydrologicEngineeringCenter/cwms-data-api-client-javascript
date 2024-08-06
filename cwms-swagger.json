@@ -3,7 +3,7 @@
   "info": {
     "title": "CWMS Data API",
     "description": "CWMS REST API for Data Retrieval",
-    "version": "1.12.0"
+    "version": "1.15.0"
   },
   "servers": [
     {
@@ -9103,24 +9103,14 @@
       "AssignedTimeSeries": {
         "type": "object",
         "properties": {
-          "officeId": {
+          "office-id": {
             "type": "string"
           },
-          "timeseriesId": {
+          "timeseries-id": {
             "type": "string"
           },
-          "tsCode": {
+          "ts-code": {
             "type": "number"
-          },
-          "aliasId": {
-            "type": "string"
-          },
-          "refTsId": {
-            "type": "string"
-          },
-          "attribute": {
-            "type": "integer",
-            "format": "int32"
           }
         }
       },
