@@ -8,7 +8,7 @@ test('Test Catalog', async () => {
     const catalog_api = new CatalogApi()
     await catalog_api.getCwmsDataCatalogWithDataset({
         office: "SWT",
-        like: "*Elev.Inst.1Hour.0.Ccp-Rev",
+        like: ".*Elev.Inst.1Hour.0.Ccp-Rev",
         dataset: "TIMESERIES"
     }).then((data) => {
         expect(data?.entries).toBeDefined()

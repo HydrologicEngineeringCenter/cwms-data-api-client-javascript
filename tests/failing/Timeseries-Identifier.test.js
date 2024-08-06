@@ -1,4 +1,5 @@
 // Example / test for fetching timeseries from CDA
+// !ignore
 
 import { TimeSeriesIdentifierApi } from "cwmsjs";
 import fetch from 'node-fetch';

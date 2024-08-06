@@ -1,3 +1,4 @@
+// !ignore
 // Example / test for fetching timeseries from CDA
 
 import { UnitsApi, Configuration } from "cwmsjs";
@@ -9,9 +10,15 @@ test('Test Units', async () => {
         "accept": "*/*"
     })
     const u_api = new UnitsApi(config);
-    await u_api.getCwmsDataUnits()
+    await u_api.getCwmsDataUnitsRaw({
+        format: "json"
+    })
+        .then(async (r)=> {
+            const data = await r.raw.json()
+            return data
+        })
         .then((data) => {
-            expect(data).toBeDefined()
+            expect(data?.units?.units).toBeDefined()
         })
 }, 15000)
 
