@@ -29,6 +29,10 @@ jobs:
         working-directory: tests
         run: npm install
 
+      - name: Link cwmjs dependency from src to tests
+        working-directory: tests
+        run: npm run link
+
       - name: Run tests
         working-directory: tests
         run: npm test
