@@ -10,7 +10,6 @@ test('Test Units', async () => {
     });
     await tsi_api.getCwmsDataTimeseriesIdentifierDescriptor()
         .then((data) => {
-            console.log(data)
             expect(data).toBeDefined()
         })
 }, 15000)

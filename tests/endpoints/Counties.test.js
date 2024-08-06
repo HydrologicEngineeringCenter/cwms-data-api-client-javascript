@@ -15,7 +15,6 @@ test('Test Counties', async () => {
     const c_api = new CountiesApi(c_config);
     await c_api.getCwmsDataCounties()
         .then((data) => {
-            console.log(data)
             expect(data).toBeDefined()
             data.forEach((value) => {
                 expect(value?.name).toBeDefined()

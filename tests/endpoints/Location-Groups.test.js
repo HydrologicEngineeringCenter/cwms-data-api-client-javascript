@@ -8,7 +8,7 @@ test('Test Location Groups', async () => {
         "office": "SWT"
     })
         .then((data) => {
-            console.log(data)
+            expect(data).toBeDefined()
             data.forEach((category) => {
                 expect(category).toBeDefined()
                 expect(category["id"]).toBeDefined()

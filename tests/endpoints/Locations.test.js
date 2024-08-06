@@ -1,11 +1,20 @@
-import { LocationsApi } from "cwmsjs";
+import { LocationsApi, Configuration } from "cwmsjs";
 import fetch from 'node-fetch';
 global.fetch = fetch;
 
+
 test('Test Locations', async () => {
-    const l_api = new LocationsApi()
-    await l_api.getCwmsDataLocations({
-        "office": "SWT"
+    const MY_PROJECT_ALIAS = "KEYS"
+    const v2_config =new Configuration({
+        "headers": {
+            "accept": "application/json;version=2",
+        }
+    })
+    const loc_api = new LocationsApi(v2_config)
+    await loc_api.getCwmsDataLocations({
+        "office": "SWT",
+        "names": `${MY_PROJECT_ALIAS}.*`,
+
     })
         .then((data) => {
             expect(data?.locations).toBeDefined()

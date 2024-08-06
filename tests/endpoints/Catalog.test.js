@@ -4,6 +4,7 @@ import fetch from 'node-fetch';
 global.fetch = fetch;
 
 test('Test Catalog', async () => {
+
     const catalog_api = new CatalogApi()
     await catalog_api.getCwmsDataCatalogWithDataset({
         office: "SWT",

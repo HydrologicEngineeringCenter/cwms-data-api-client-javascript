@@ -11,7 +11,6 @@ test('Test Units', async () => {
     const u_api = new UnitsApi(config);
     await u_api.getCwmsDataUnits()
         .then((data) => {
-            console.log(data)
             expect(data).toBeDefined()
         })
 }, 15000)

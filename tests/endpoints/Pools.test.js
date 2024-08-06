@@ -12,7 +12,7 @@ test('Test Pools', async () => {
     await p_api.getCwmsDataPools({
         "office": "SWT"
     }).then((data) => {
-            console.log(data)
+            expect(data).toBeDefined()
             // data.forEach((category) => {
             //     expect(category).toBeDefined()
             //     expect(category["id"]).toBeDefined()

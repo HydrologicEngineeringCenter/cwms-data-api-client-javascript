@@ -7,7 +7,7 @@ test('Test Ratings', async () => {
    r_api.getCwmsDataRatings({
          "office": "SWT"
     }).then((data) => {
-         console.log(data)
+        expect(data).toBeDefined()
    })
    // Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
    r_api.getCwmsDataRatingsSpec({
@@ -15,14 +15,12 @@ test('Test Ratings', async () => {
             "ratingIdMask": "KEYS.*"
         }).then((data) => {
             expect(data?.specs).toBeDefined()
-            console.log(data.specs)
         })
    // Fetch the CWMS Rating templates for the SPK OFFICE
    r_api.getCwmsDataRatingsTemplate({
     "office": "SPK"
    }).then((data) => {
        expect(data?.templates).toBeDefined()
-       console.log(data.templates)
    })
 
    r_api.getCwmsDataRatingsTemplateWithTemplateId({
@@ -30,7 +28,6 @@ test('Test Ratings', async () => {
      "templateId": "Elev-Alt;Stor-Alt.Linear"
    }).then(data=> {
         expect(data).toBeDefined()
-        console.log(data)
    })
 
 }, 15000)

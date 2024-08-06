@@ -6,14 +6,14 @@ global.fetch = fetch;
 test('Test TimeZones', async () => {
     const tz_config = new Configuration({
         "headers": {
-            "accept": "*/*",
+            "accept": "application/json;version=2",
         }
     })
     const tz_api = new TimeZonesApi(tz_config);
     await tz_api.getCwmsDataTimezones()
         .then((data) => {
-            // TODO: Create ticket to correct json parsing issue - missing a { in the result
             console.log(data)
+            expect(data).toBeDefined()
         })
 }, 15000)
 

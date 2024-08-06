@@ -11,7 +11,6 @@ test('Test States', async () => {
     const s_api = new StatesApi(config)
     s_api.getCwmsDataStates().then((data) => {
         expect(data).toBeDefined()
-        console.log(data)
     })
 
 }, 15000)
