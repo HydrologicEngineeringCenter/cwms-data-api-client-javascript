@@ -34,7 +34,8 @@
     "examples": "node ./scripts/tests2exampledocs.js ",
     "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./src -i cwms-swagger.3-1-5.RC14.json -c openapi.config.json",
     "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
-    "moveDocs": "shx mkdir -p ./dist/docs && shx mv ./src/*.md ./dist/docs/"
+    "moveDocs": "shx mkdir -p ./dist/docs && shx mv ./src/*.md ./dist/docs/",
+    "link": "cd ./src/dist && npm link && cd ../../tests && npm link cwmsjs"
   },
   "dependencies": {
     "es6-promise": "^4.2.4",
