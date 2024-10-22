@@ -3167,7 +3167,7 @@
                 ],
                 "summary": "Get swtData levels with levelId timeseries",
                 "description": "Retrieves requested Location Level",
-                "operationId": "getSwtDataLevelsWithLevelIdTimeSeries",
+                "operationId": "getSwtDataLevelsWithLevelIdTimeseries",
                 "parameters": [
                     {
                         "name": "level-id",
@@ -3285,27 +3285,27 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/xml;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/xml": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             }
                         }
@@ -3327,11 +3327,11 @@
         "/timeseries/recent": {
             "get": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Get swtData timeseries recent",
-                "description": "Returns CWMS TimeSeries Groups Data",
-                "operationId": "getSwtDataTimeSeriesRecent",
+                "description": "Returns CWMS Timeseries Groups Data",
+                "operationId": "getSwtDataTimeseriesRecent",
                 "parameters": [
                     {
                         "name": "office",
@@ -3838,15 +3838,15 @@
         "/timeseries/text": {
             "get": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Retrieve text time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.",
-                "operationId": "getSwtDataTimeSeriesText",
+                "operationId": "getSwtDataTimeseriesText",
                 "parameters": [
                     {
                         "name": "office",
                         "in": "query",
-                        "description": "Specifies the owning office of the Text TimeSeries whose data is to be included in the response.",
+                        "description": "Specifies the owning office of the Text Timeseries whose data is to be included in the response.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -3944,7 +3944,7 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TextTimeSeries"
+                                    "$ref": "#/components/schemas/TextTimeseries"
                                 }
                             }
                         }
@@ -3961,11 +3961,11 @@
             },
             "post": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Post swtData timeseries text",
-                "description": "Create new TextTimeSeries",
-                "operationId": "postSwtDataTimeSeriesText",
+                "description": "Create new TextTimeseries",
+                "operationId": "postSwtDataTimeseriesText",
                 "parameters": [
                     {
                         "name": "replace-all",
@@ -3980,7 +3980,7 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TextTimeSeries"
+                                "$ref": "#/components/schemas/TextTimeseries"
                             }
                         }
                     },
@@ -4051,11 +4051,11 @@
         "/timeseries/text/{name}": {
             "delete": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Delete swtData timeseries text with name",
                 "description": "Deletes requested text timeseries id",
-                "operationId": "deleteSwtDataTimeSeriesTextWithName",
+                "operationId": "deleteSwtDataTimeseriesTextWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4078,7 +4078,7 @@
                     {
                         "name": "text-mask",
                         "in": "query",
-                        "description": "The standard text pattern to match. Use glob-style wildcard characters instead of sql-style wildcard characters for pattern matching.  For StandardTextTimeSeries this should be the Standard_Text_Id (such as 'E' for ESTIMATED)",
+                        "description": "The standard text pattern to match. Use glob-style wildcard characters instead of sql-style wildcard characters for pattern matching.  For StandardTextTimeseries this should be the Standard_Text_Id (such as 'E' for ESTIMATED)",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -4182,11 +4182,11 @@
             },
             "patch": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Patch swtData timeseries text with name",
                 "description": "Updates a text timeseries",
-                "operationId": "patchSwtDataTimeSeriesTextWithName",
+                "operationId": "patchSwtDataTimeseriesTextWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4210,7 +4210,7 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TextTimeSeries"
+                                "$ref": "#/components/schemas/TextTimeseries"
                             }
                         }
                     },
@@ -4281,10 +4281,10 @@
         "/timeseries/text/{name}/value": {
             "get": {
                 "tags": [
-                    "Text-TimeSeries"
+                    "Text-Timeseries"
                 ],
                 "summary": "Get swtData timeseries text with name value",
-                "operationId": "getSwtDataTimeSeriesTextWithNameValue",
+                "operationId": "getSwtDataTimeseriesTextWithNameValue",
                 "parameters": [
                     {
                         "name": "name",
@@ -4298,7 +4298,7 @@
                     {
                         "name": "office",
                         "in": "query",
-                        "description": "Specifies the owning office of the Text TimeSeries whose data is to be included in the response.",
+                        "description": "Specifies the owning office of the Text Timeseries whose data is to be included in the response.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -4414,15 +4414,15 @@
         "/timeseries/binary": {
             "get": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Retrieve binary time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.",
-                "operationId": "getSwtDataTimeSeriesBinary",
+                "operationId": "getSwtDataTimeseriesBinary",
                 "parameters": [
                     {
                         "name": "office",
                         "in": "query",
-                        "description": "Specifies the owning office of the Binary TimeSeries whose data is to be included in the response.",
+                        "description": "Specifies the owning office of the Binary Timeseries whose data is to be included in the response.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -4536,7 +4536,7 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/BinaryTimeSeries"
+                                    "$ref": "#/components/schemas/BinaryTimeseries"
                                 }
                             }
                         }
@@ -4553,11 +4553,11 @@
             },
             "post": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Post swtData timeseries binary",
-                "description": "Create new BinaryTimeSeries",
-                "operationId": "postSwtDataTimeSeriesBinary",
+                "description": "Create new BinaryTimeseries",
+                "operationId": "postSwtDataTimeseriesBinary",
                 "parameters": [
                     {
                         "name": "replace-all",
@@ -4571,7 +4571,7 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/BinaryTimeSeries"
+                                "$ref": "#/components/schemas/BinaryTimeseries"
                             }
                         }
                     },
@@ -4642,11 +4642,11 @@
         "/timeseries/binary/{name}": {
             "delete": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Delete swtData timeseries binary with name",
                 "description": "Deletes requested binary timeseries id",
-                "operationId": "deleteSwtDataTimeSeriesBinaryWithName",
+                "operationId": "deleteSwtDataTimeseriesBinaryWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4772,11 +4772,11 @@
             },
             "patch": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Patch swtData timeseries binary with name",
                 "description": "Updates a binary timeseries",
-                "operationId": "patchSwtDataTimeSeriesBinaryWithName",
+                "operationId": "patchSwtDataTimeseriesBinaryWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4799,7 +4799,7 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/BinaryTimeSeries"
+                                "$ref": "#/components/schemas/BinaryTimeseries"
                             }
                         }
                     },
@@ -4870,10 +4870,10 @@
         "/timeseries/binary/{name}/value": {
             "get": {
                 "tags": [
-                    "Binary-TimeSeries"
+                    "Binary-Timeseries"
                 ],
                 "summary": "Get swtData timeseries binary with name value",
-                "operationId": "getSwtDataTimeSeriesBinaryWithNameValue",
+                "operationId": "getSwtDataTimeseriesBinaryWithNameValue",
                 "parameters": [
                     {
                         "name": "name",
@@ -4887,7 +4887,7 @@
                     {
                         "name": "office",
                         "in": "query",
-                        "description": "Specifies the owning office of the Binary TimeSeries whose data is to be included in the response.",
+                        "description": "Specifies the owning office of the Binary Timeseries whose data is to be included in the response.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -5004,11 +5004,11 @@
         "/timeseries/category/{category-id}": {
             "get": {
                 "tags": [
-                    "TimeSeries Categories"
+                    "Timeseries Categories"
                 ],
                 "summary": "Get swtData timeseries category with categoryId",
                 "description": "Retrieves requested timeseries category",
-                "operationId": "getSwtDataTimeSeriesCategoryWithCategoryId",
+                "operationId": "getSwtDataTimeseriesCategoryWithCategoryId",
                 "parameters": [
                     {
                         "name": "category-id",
@@ -5085,7 +5085,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesCategory"
+                                    "$ref": "#/components/schemas/TimeseriesCategory"
                                 }
                             }
                         }
@@ -5105,11 +5105,11 @@
             },
             "delete": {
                 "tags": [
-                    "TimeSeries Categories"
+                    "Timeseries Categories"
                 ],
                 "summary": "Delete swtData timeseries category with categoryId",
                 "description": "Deletes requested time series category",
-                "operationId": "deleteSwtDataTimeSeriesCategoryWithCategoryId",
+                "operationId": "deleteSwtDataTimeseriesCategoryWithCategoryId",
                 "parameters": [
                     {
                         "name": "category-id",
@@ -5203,11 +5203,11 @@
         "/timeseries/category": {
             "get": {
                 "tags": [
-                    "TimeSeries Categories"
+                    "Timeseries Categories"
                 ],
                 "summary": "Get swtData timeseries category",
                 "description": "Returns CWMS timeseries category Data",
-                "operationId": "getSwtDataTimeSeriesCategory",
+                "operationId": "getSwtDataTimeseriesCategory",
                 "parameters": [
                     {
                         "name": "office",
@@ -5276,7 +5276,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/TimeSeriesCategory"
+                                        "$ref": "#/components/schemas/TimeseriesCategory"
                                     }
                                 }
                             }
@@ -5297,11 +5297,11 @@
             },
             "post": {
                 "tags": [
-                    "TimeSeries Categories"
+                    "Timeseries Categories"
                 ],
                 "summary": "Post swtData timeseries category",
-                "description": "Create new TimeSeriesCategory",
-                "operationId": "postSwtDataTimeSeriesCategory",
+                "description": "Create new TimeseriesCategory",
+                "operationId": "postSwtDataTimeseriesCategory",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -5316,7 +5316,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesCategory"
+                                "$ref": "#/components/schemas/TimeseriesCategory"
                             }
                         }
                     },
@@ -5387,11 +5387,11 @@
         "/timeseries/identifier-descriptor/{name}": {
             "get": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Get swtData timeseries identifierDescriptor with name",
                 "description": "Retrieves requested timeseries identifier descriptor",
-                "operationId": "getSwtDataTimeSeriesIdentifierDescriptorWithName",
+                "operationId": "getSwtDataTimeseriesIdentifierDescriptorWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -5476,7 +5476,7 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
+                                    "$ref": "#/components/schemas/TimeseriesIdentifierDescriptor"
                                 }
                             }
                         }
@@ -5496,11 +5496,11 @@
             },
             "delete": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Delete swtData timeseries identifierDescriptor with name",
                 "description": "Deletes requested timeseries identifier",
-                "operationId": "deleteSwtDataTimeSeriesIdentifierDescriptorWithName",
+                "operationId": "deleteSwtDataTimeseriesIdentifierDescriptorWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -5601,10 +5601,10 @@
             },
             "patch": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Patch swtData timeseries identifierDescriptor with name",
-                "operationId": "patchSwtDataTimeSeriesIdentifierDescriptorWithName",
+                "operationId": "patchSwtDataTimeseriesIdentifierDescriptorWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -5733,11 +5733,11 @@
         "/timeseries/identifier-descriptor": {
             "get": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Get swtData timeseries identifierDescriptor",
                 "description": "Returns CWMS timeseries identifier descriptorData",
-                "operationId": "getSwtDataTimeSeriesIdentifierDescriptor",
+                "operationId": "getSwtDataTimeseriesIdentifierDescriptor",
                 "parameters": [
                     {
                         "name": "office",
@@ -5829,7 +5829,7 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptors"
+                                    "$ref": "#/components/schemas/TimeseriesIdentifierDescriptors"
                                 }
                             }
                         }
@@ -5849,11 +5849,11 @@
             },
             "post": {
                 "tags": [
-                    "TimeSeries Identifier"
+                    "Timeseries Identifier"
                 ],
                 "summary": "Post swtData timeseries identifierDescriptor",
-                "description": "Create new TimeSeriesIdentifierDescriptor",
-                "operationId": "postSwtDataTimeSeriesIdentifierDescriptor",
+                "description": "Create new TimeseriesIdentifierDescriptor",
+                "operationId": "postSwtDataTimeseriesIdentifierDescriptor",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -5868,12 +5868,12 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
+                                "$ref": "#/components/schemas/TimeseriesIdentifierDescriptor"
                             }
                         },
                         "application/xml;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
+                                "$ref": "#/components/schemas/TimeseriesIdentifierDescriptor"
                             }
                         }
                     },
@@ -5944,11 +5944,11 @@
         "/timeseries/group/{group-id}": {
             "get": {
                 "tags": [
-                    "TimeSeries Groups"
+                    "Timeseries Groups"
                 ],
                 "summary": "Get swtData timeseries group with groupId",
                 "description": "Retrieves requested timeseries group",
-                "operationId": "getSwtDataTimeSeriesGroupWithGroupId",
+                "operationId": "getSwtDataTimeseriesGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -6034,7 +6034,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesGroup"
+                                    "$ref": "#/components/schemas/TimeseriesGroup"
                                 }
                             }
                         }
@@ -6051,11 +6051,11 @@
             },
             "delete": {
                 "tags": [
-                    "TimeSeries Groups"
+                    "Timeseries Groups"
                 ],
                 "summary": "Delete swtData timeseries group with groupId",
                 "description": "Deletes requested time series group",
-                "operationId": "deleteSwtDataTimeSeriesGroupWithGroupId",
+                "operationId": "deleteSwtDataTimeseriesGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -6148,11 +6148,11 @@
             },
             "patch": {
                 "tags": [
-                    "TimeSeries Groups"
+                    "Timeseries Groups"
                 ],
                 "summary": "Patch swtData timeseries group with groupId",
-                "description": "Update existing TimeSeriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.",
-                "operationId": "patchSwtDataTimeSeriesGroupWithGroupId",
+                "description": "Update existing TimeseriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.",
+                "operationId": "patchSwtDataTimeseriesGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -6184,7 +6184,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesGroup"
+                                "$ref": "#/components/schemas/TimeseriesGroup"
                             }
                         }
                     },
@@ -6255,11 +6255,11 @@
         "/timeseries/group": {
             "get": {
                 "tags": [
-                    "TimeSeries Groups"
+                    "Timeseries Groups"
                 ],
                 "summary": "Get swtData timeseries group",
-                "description": "Returns CWMS TimeSeries Groups Data",
-                "operationId": "getSwtDataTimeSeriesGroup",
+                "description": "Returns CWMS Timeseries Groups Data",
+                "operationId": "getSwtDataTimeseriesGroup",
                 "parameters": [
                     {
                         "name": "office",
@@ -6352,7 +6352,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/TimeSeriesGroup"
+                                        "$ref": "#/components/schemas/TimeseriesGroup"
                                     }
                                 }
                             }
@@ -6373,11 +6373,11 @@
             },
             "post": {
                 "tags": [
-                    "TimeSeries Groups"
+                    "Timeseries Groups"
                 ],
                 "summary": "Post swtData timeseries group",
-                "description": "Create new TimeSeriesGroup",
-                "operationId": "postSwtDataTimeSeriesGroup",
+                "description": "Create new TimeseriesGroup",
+                "operationId": "postSwtDataTimeseriesGroup",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -6392,7 +6392,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesGroup"
+                                "$ref": "#/components/schemas/TimeseriesGroup"
                             }
                         }
                     },
@@ -6463,10 +6463,10 @@
         "/timeseries": {
             "get": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Get swtData timeseries",
-                "operationId": "getSwtDataTimeSeries",
+                "operationId": "getSwtDataTimeseries",
                 "parameters": [
                     {
                         "name": "name",
@@ -6623,27 +6623,27 @@
                         "content": {
                             "application/json;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/xml;version=2": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/xml": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             },
                             "": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeries"
+                                    "$ref": "#/components/schemas/Timeseries"
                                 }
                             }
                         }
@@ -6663,11 +6663,11 @@
             },
             "post": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Post swtData timeseries",
                 "description": "Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds ",
-                "operationId": "postSwtDataTimeSeries",
+                "operationId": "postSwtDataTimeseries",
                 "parameters": [
                     {
                         "name": "timezone",
@@ -6706,12 +6706,12 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeries"
+                                "$ref": "#/components/schemas/Timeseries"
                             }
                         },
                         "application/xml;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeries"
+                                "$ref": "#/components/schemas/Timeseries"
                             }
                         }
                     },
@@ -6782,10 +6782,10 @@
         "/timeseries/{timeseries}": {
             "delete": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Delete swtData timeseries with timeseries",
-                "operationId": "deleteSwtDataTimeSeriesWithTimeSeries",
+                "operationId": "deleteSwtDataTimeseriesWithTimeseries",
                 "parameters": [
                     {
                         "name": "timeseries",
@@ -6935,16 +6935,16 @@
             },
             "patch": {
                 "tags": [
-                    "TimeSeries"
+                    "Timeseries"
                 ],
                 "summary": "Patch swtData timeseries with timeseries",
-                "description": "Update a TimeSeries with provided values",
-                "operationId": "patchSwtDataTimeSeriesWithTimeSeries",
+                "description": "Update a Timeseries with provided values",
+                "operationId": "patchSwtDataTimeseriesWithTimeseries",
                 "parameters": [
                     {
                         "name": "timeseries",
                         "in": "path",
-                        "description": "Full CWMS TimeSeries name",
+                        "description": "Full CWMS Timeseries name",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -6987,12 +6987,12 @@
                     "content": {
                         "application/json;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeries"
+                                "$ref": "#/components/schemas/Timeseries"
                             }
                         },
                         "application/xml;version=2": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeries"
+                                "$ref": "#/components/schemas/Timeseries"
                             }
                         }
                     },
@@ -8615,7 +8615,7 @@
                     {
                         "name": "dataset",
                         "in": "path",
-                        "description": "A list of what data? E.g. TimeSeries, Locations, Ratings, etc",
+                        "description": "A list of what data? E.g. Timeseries, Locations, Ratings, etc",
                         "required": true,
                         "schema": {
                             "$ref": "#/components/schemas/CatalogableEndpoint"
@@ -8713,7 +8713,7 @@
                     {
                         "name": "exclude-empty",
                         "in": "query",
-                        "description": "Specifies whether TimeSeries that have empty extents should be excluded from the results.  For purposes of this parameter 'empty' is defined as VERSION_TIME, EARLIEST_TIME, LATEST_TIME and LAST_UPDATE all being null. This parameter does not control whether the extents are returned to the user, only whether matching timeseries are excluded. Only valid for TIMESERIES. Default is true.",
+                        "description": "Specifies whether Timeseries that have empty extents should be excluded from the results.  For purposes of this parameter 'empty' is defined as VERSION_TIME, EARLIEST_TIME, LATEST_TIME and LAST_UPDATE all being null. This parameter does not control whether the extents are returned to the user, only whether matching timeseries are excluded. Only valid for TIMESERIES. Default is true.",
                         "schema": {
                             "type": "boolean"
                         }
@@ -21798,7 +21798,7 @@
                     },
                     "seasonal-time-series-id": {
                         "type": "string",
-                        "description": "TimeSeries ID (e.g. from the times series catalog) to use as the location level. Mutually exclusive with seasonalValues and siParameterUnitsConstantValue"
+                        "description": "Timeseries ID (e.g. from the times series catalog) to use as the location level. Mutually exclusive with seasonalValues and siParameterUnitsConstantValue"
                     },
                     "specified-level-id": {
                         "type": "string",
@@ -21821,7 +21821,7 @@
                     },
                     "constant-value": {
                         "type": "number",
-                        "description": "Single value for this location level. Mutually exclusive with seasonableTimeSeriesId and seasonValues.",
+                        "description": "Single value for this location level. Mutually exclusive with seasonableTimeseriesId and seasonValues.",
                         "format": "double"
                     },
                     "level-units-id": {
@@ -21881,7 +21881,7 @@
                     },
                     "seasonal-values": {
                         "type": "array",
-                        "description": "List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeSeriesId and siParameterUnitsConstantValue",
+                        "description": "List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeseriesId and siParameterUnitsConstantValue",
                         "items": {
                             "$ref": "#/components/schemas/SeasonalValueBean"
                         }
@@ -21903,7 +21903,7 @@
                         "type": "integer"
                     }
                 },
-                "description": "List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeSeriesId and siParameterUnitsConstantValue"
+                "description": "List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeseriesId and siParameterUnitsConstantValue"
             },
             "location-levels": {
                 "type": "object",
@@ -21988,7 +21988,7 @@
                     }
                 }
             },
-            "TimeSeries.Column": {
+            "Timeseries.Column": {
                 "type": "object",
                 "properties": {
                     "name": {
@@ -22004,7 +22004,7 @@
                 },
                 "readOnly": true
             },
-            "TimeSeries.Record": {
+            "Timeseries.Record": {
                 "type": "object",
                 "properties": {
                     "date-time": {
@@ -22158,7 +22158,7 @@
                         "type": "array",
                         "readOnly": true,
                         "items": {
-                            "$ref": "#/components/schemas/TimeSeries.Column"
+                            "$ref": "#/components/schemas/Timeseries.Column"
                         }
                     },
                     "values": {
@@ -22230,7 +22230,7 @@
                     }
                 }
             },
-            "TimeSeries": {
+            "Timeseries": {
                 "required": [
                     "units"
                 ],
@@ -22364,7 +22364,7 @@
                         "type": "array",
                         "readOnly": true,
                         "items": {
-                            "$ref": "#/components/schemas/TimeSeries.Column"
+                            "$ref": "#/components/schemas/Timeseries.Column"
                         }
                     },
                     "values": {
@@ -22507,7 +22507,7 @@
                     "DELETE_DATA"
                 ]
             },
-            "RegularTextTimeSeriesRow": {
+            "RegularTextTimeseriesRow": {
                 "type": "object",
                 "properties": {
                     "date-time": {
@@ -22540,7 +22540,7 @@
                     }
                 }
             },
-            "TextTimeSeries": {
+            "TextTimeseries": {
                 "required": [
                     "office-id"
                 ],
@@ -22577,12 +22577,12 @@
                     "regular-text-values": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/RegularTextTimeSeriesRow"
+                            "$ref": "#/components/schemas/RegularTextTimeseriesRow"
                         }
                     }
                 }
             },
-            "BinaryTimeSeries": {
+            "BinaryTimeseries": {
                 "required": [
                     "office-id"
                 ],
@@ -22619,12 +22619,12 @@
                     "binary-values": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/BinaryTimeSeriesRow"
+                            "$ref": "#/components/schemas/BinaryTimeseriesRow"
                         }
                     }
                 }
             },
-            "BinaryTimeSeriesRow": {
+            "BinaryTimeseriesRow": {
                 "type": "object",
                 "properties": {
                     "date-time": {
@@ -22675,9 +22675,9 @@
                         "type": "string"
                     }
                 },
-                "description": "A representation of a TimeSeries category"
+                "description": "A representation of a Timeseries category"
             },
-            "TimeSeriesCategory": {
+            "TimeseriesCategory": {
                 "required": [
                     "office-id"
                 ],
@@ -22694,9 +22694,9 @@
                         "type": "string"
                     }
                 },
-                "description": "A representation of a TimeSeries category"
+                "description": "A representation of a Timeseries category"
             },
-            "TimeSeriesIdentifierDescriptor": {
+            "TimeseriesIdentifierDescriptor": {
                 "required": [
                     "office-id"
                 ],
@@ -22721,13 +22721,13 @@
                     }
                 }
             },
-            "TimeSeriesIdentifierDescriptors": {
+            "TimeseriesIdentifierDescriptors": {
                 "type": "object",
                 "properties": {
                     "descriptors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/TimeSeriesIdentifierDescriptor"
+                            "$ref": "#/components/schemas/TimeseriesIdentifierDescriptor"
                         }
                     },
                     "next-page": {
@@ -22754,7 +22754,7 @@
                     }
                 }
             },
-            "AssignedTimeSeries": {
+            "AssignedTimeseries": {
                 "type": "object",
                 "properties": {
                     "officeId": {
@@ -22806,13 +22806,13 @@
                     "assigned-time-series": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/AssignedTimeSeries"
+                            "$ref": "#/components/schemas/AssignedTimeseries"
                         }
                     }
                 },
                 "description": "A representation of a timeseries group"
             },
-            "TimeSeriesGroup": {
+            "TimeseriesGroup": {
                 "required": [
                     "office-id"
                 ],
@@ -22840,7 +22840,7 @@
                     "assigned-time-series": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/AssignedTimeSeries"
+                            "$ref": "#/components/schemas/AssignedTimeseries"
                         }
                     }
                 },
@@ -23054,6 +23054,41 @@
                     }
                 }
             },
+            "BaseRatingMetadata": {
+                "type": "object",
+                "properties": {
+                    "office-id": {
+                        "type": "string"
+                    },
+                    "rating-spec-id": {
+                        "type": "string"
+                    },
+                    "units-id": {
+                        "type": "string"
+                    },
+                    "active": {
+                        "type": "boolean"
+                    },
+                    "effective-date": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "create-date": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "transition-date": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "vertical-datum-info": {
+                        "$ref": "#/components/schemas/vertical-datum-info"
+                    }
+                }
+            },
             "AbstractRatingMetadata": {
                 "type": "object",
                 "properties": {
@@ -23124,7 +23159,7 @@
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "#/components/schemas/AbstractRatingMetadata"
+                        "$ref": "#/components/schemas/BaseRatingMetadata"
                     },
                     {
                         "type": "object",
@@ -23145,7 +23180,7 @@
                     "ratings": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/AbstractRatingMetadata"
+                            "$ref": "#/components/schemas/BaseRatingMetadata"
                         }
                     }
                 }
@@ -23190,7 +23225,7 @@
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "#/components/schemas/AbstractRatingMetadata"
+                        "$ref": "#/components/schemas/BaseRatingMetadata"
                     },
                     {
                         "type": "object",
@@ -23212,7 +23247,7 @@
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "#/components/schemas/AbstractRatingMetadata"
+                        "$ref": "#/components/schemas/BaseRatingMetadata"
                     },
                     {
                         "type": "object",
@@ -23251,7 +23286,7 @@
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "#/components/schemas/AbstractRatingMetadata"
+                        "$ref": "#/components/schemas/BaseRatingMetadata"
                     },
                     {
                         "type": "object",
@@ -23297,7 +23332,7 @@
                         "$ref": "#/components/schemas/LocationCatalogEntry"
                     },
                     {
-                        "$ref": "#/components/schemas/TimeSeriesCatalogEntry"
+                        "$ref": "#/components/schemas/TimeseriesCatalogEntry"
                     }
                 ]
             },
@@ -23386,7 +23421,7 @@
                     }
                 }
             },
-            "TimeSeriesCatalogEntry": {
+            "TimeseriesCatalogEntry": {
                 "type": "object",
                 "properties": {
                     "office": {
@@ -23482,11 +23517,11 @@
                     },
                     "version-time": {
                         "type": "string",
-                        "description": "TimeSeries version to which this extent information applies",
+                        "description": "Timeseries version to which this extent information applies",
                         "format": "date-time"
                     }
                 },
-                "description": "TimeSeries extent information"
+                "description": "Timeseries extent information"
             },
             "Catalog": {
                 "type": "object",
