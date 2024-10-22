@@ -9,9 +9,15 @@ test('Test Pools', async () => {
         }
     })
     const p_api = new PoolsApi(config)
-    await p_api.getCwmsDataPools({
+    await p_api.getCwmsDataPoolsRaw({
         "office": "SWT"
-    }).then((data) => {
+    })
+    .then(async (r)=> {
+        const data = await r.raw.json()
+        console.log(data)
+        return data
+    })
+    .then((data) => {
             expect(data).toBeDefined()
             // data.forEach((category) => {
             //     expect(category).toBeDefined()
