@@ -4,17 +4,17 @@
         "title": "CWMS Data API",
         "description": "CWMS REST API for Data Retrieval",
         "version": "2.0.0"
-      },
-      "servers": [
+    },
+    "servers": [
         {
-          "url": "https://cwms-data.usace.army.mil/cwms-data",
-          "description": "PRIMARY production server"
+            "url": "https://cwms-data.usace.army.mil/cwms-data",
+            "description": "PRIMARY production server"
         },
         {
-          "url": "https://water.usace.army.mil/cwms-data",
-          "description": "Alias for the PRIMARY production server"
+            "url": "https://water.usace.army.mil/cwms-data",
+            "description": "Alias for the PRIMARY production server"
         }
-      ],
+    ],
     "security": [
         {
             "MultipleAccessManager": []
@@ -3167,7 +3167,7 @@
                 ],
                 "summary": "Get swtData levels with levelId timeseries",
                 "description": "Retrieves requested Location Level",
-                "operationId": "getSwtDataLevelsWithLevelIdTimeseries",
+                "operationId": "getSwtDataLevelsWithLevelIdTimeSeries",
                 "parameters": [
                     {
                         "name": "level-id",
@@ -3330,8 +3330,8 @@
                     "TimeSeries"
                 ],
                 "summary": "Get swtData timeseries recent",
-                "description": "Returns CWMS Timeseries Groups Data",
-                "operationId": "getSwtDataTimeseriesRecent",
+                "description": "Returns CWMS TimeSeries Groups Data",
+                "operationId": "getSwtDataTimeSeriesRecent",
                 "parameters": [
                     {
                         "name": "office",
@@ -3841,7 +3841,7 @@
                     "Text-TimeSeries"
                 ],
                 "summary": "Retrieve text time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.",
-                "operationId": "getSwtDataTimeseriesText",
+                "operationId": "getSwtDataTimeSeriesText",
                 "parameters": [
                     {
                         "name": "office",
@@ -3965,7 +3965,7 @@
                 ],
                 "summary": "Post swtData timeseries text",
                 "description": "Create new TextTimeSeries",
-                "operationId": "postSwtDataTimeseriesText",
+                "operationId": "postSwtDataTimeSeriesText",
                 "parameters": [
                     {
                         "name": "replace-all",
@@ -4055,7 +4055,7 @@
                 ],
                 "summary": "Delete swtData timeseries text with name",
                 "description": "Deletes requested text timeseries id",
-                "operationId": "deleteSwtDataTimeseriesTextWithName",
+                "operationId": "deleteSwtDataTimeSeriesTextWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4186,7 +4186,7 @@
                 ],
                 "summary": "Patch swtData timeseries text with name",
                 "description": "Updates a text timeseries",
-                "operationId": "patchSwtDataTimeseriesTextWithName",
+                "operationId": "patchSwtDataTimeSeriesTextWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4284,7 +4284,7 @@
                     "Text-TimeSeries"
                 ],
                 "summary": "Get swtData timeseries text with name value",
-                "operationId": "getSwtDataTimeseriesTextWithNameValue",
+                "operationId": "getSwtDataTimeSeriesTextWithNameValue",
                 "parameters": [
                     {
                         "name": "name",
@@ -4417,7 +4417,7 @@
                     "Binary-TimeSeries"
                 ],
                 "summary": "Retrieve binary time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.",
-                "operationId": "getSwtDataTimeseriesBinary",
+                "operationId": "getSwtDataTimeSeriesBinary",
                 "parameters": [
                     {
                         "name": "office",
@@ -4557,7 +4557,7 @@
                 ],
                 "summary": "Post swtData timeseries binary",
                 "description": "Create new BinaryTimeSeries",
-                "operationId": "postSwtDataTimeseriesBinary",
+                "operationId": "postSwtDataTimeSeriesBinary",
                 "parameters": [
                     {
                         "name": "replace-all",
@@ -4646,7 +4646,7 @@
                 ],
                 "summary": "Delete swtData timeseries binary with name",
                 "description": "Deletes requested binary timeseries id",
-                "operationId": "deleteSwtDataTimeseriesBinaryWithName",
+                "operationId": "deleteSwtDataTimeSeriesBinaryWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4776,7 +4776,7 @@
                 ],
                 "summary": "Patch swtData timeseries binary with name",
                 "description": "Updates a binary timeseries",
-                "operationId": "patchSwtDataTimeseriesBinaryWithName",
+                "operationId": "patchSwtDataTimeSeriesBinaryWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4873,7 +4873,7 @@
                     "Binary-TimeSeries"
                 ],
                 "summary": "Get swtData timeseries binary with name value",
-                "operationId": "getSwtDataTimeseriesBinaryWithNameValue",
+                "operationId": "getSwtDataTimeSeriesBinaryWithNameValue",
                 "parameters": [
                     {
                         "name": "name",
@@ -5008,7 +5008,7 @@
                 ],
                 "summary": "Get swtData timeseries category with categoryId",
                 "description": "Retrieves requested timeseries category",
-                "operationId": "getSwtDataTimeseriesCategoryWithCategoryId",
+                "operationId": "getSwtDataTimeSeriesCategoryWithCategoryId",
                 "parameters": [
                     {
                         "name": "category-id",
@@ -5109,7 +5109,7 @@
                 ],
                 "summary": "Delete swtData timeseries category with categoryId",
                 "description": "Deletes requested time series category",
-                "operationId": "deleteSwtDataTimeseriesCategoryWithCategoryId",
+                "operationId": "deleteSwtDataTimeSeriesCategoryWithCategoryId",
                 "parameters": [
                     {
                         "name": "category-id",
@@ -5207,7 +5207,7 @@
                 ],
                 "summary": "Get swtData timeseries category",
                 "description": "Returns CWMS timeseries category Data",
-                "operationId": "getSwtDataTimeseriesCategory",
+                "operationId": "getSwtDataTimeSeriesCategory",
                 "parameters": [
                     {
                         "name": "office",
@@ -5301,7 +5301,7 @@
                 ],
                 "summary": "Post swtData timeseries category",
                 "description": "Create new TimeSeriesCategory",
-                "operationId": "postSwtDataTimeseriesCategory",
+                "operationId": "postSwtDataTimeSeriesCategory",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -5391,7 +5391,7 @@
                 ],
                 "summary": "Get swtData timeseries identifierDescriptor with name",
                 "description": "Retrieves requested timeseries identifier descriptor",
-                "operationId": "getSwtDataTimeseriesIdentifierDescriptorWithName",
+                "operationId": "getSwtDataTimeSeriesIdentifierDescriptorWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -5500,7 +5500,7 @@
                 ],
                 "summary": "Delete swtData timeseries identifierDescriptor with name",
                 "description": "Deletes requested timeseries identifier",
-                "operationId": "deleteSwtDataTimeseriesIdentifierDescriptorWithName",
+                "operationId": "deleteSwtDataTimeSeriesIdentifierDescriptorWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -5604,7 +5604,7 @@
                     "TimeSeries Identifier"
                 ],
                 "summary": "Patch swtData timeseries identifierDescriptor with name",
-                "operationId": "patchSwtDataTimeseriesIdentifierDescriptorWithName",
+                "operationId": "patchSwtDataTimeSeriesIdentifierDescriptorWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -5737,7 +5737,7 @@
                 ],
                 "summary": "Get swtData timeseries identifierDescriptor",
                 "description": "Returns CWMS timeseries identifier descriptorData",
-                "operationId": "getSwtDataTimeseriesIdentifierDescriptor",
+                "operationId": "getSwtDataTimeSeriesIdentifierDescriptor",
                 "parameters": [
                     {
                         "name": "office",
@@ -5853,7 +5853,7 @@
                 ],
                 "summary": "Post swtData timeseries identifierDescriptor",
                 "description": "Create new TimeSeriesIdentifierDescriptor",
-                "operationId": "postSwtDataTimeseriesIdentifierDescriptor",
+                "operationId": "postSwtDataTimeSeriesIdentifierDescriptor",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -5944,11 +5944,11 @@
         "/timeseries/group/{group-id}": {
             "get": {
                 "tags": [
-                    "Timeseries Groups"
+                    "TimeSeries Groups"
                 ],
                 "summary": "Get swtData timeseries group with groupId",
                 "description": "Retrieves requested timeseries group",
-                "operationId": "getSwtDataTimeseriesGroupWithGroupId",
+                "operationId": "getSwtDataTimeSeriesGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -6051,11 +6051,11 @@
             },
             "delete": {
                 "tags": [
-                    "Timeseries Groups"
+                    "TimeSeries Groups"
                 ],
                 "summary": "Delete swtData timeseries group with groupId",
                 "description": "Deletes requested time series group",
-                "operationId": "deleteSwtDataTimeseriesGroupWithGroupId",
+                "operationId": "deleteSwtDataTimeSeriesGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -6148,11 +6148,11 @@
             },
             "patch": {
                 "tags": [
-                    "Timeseries Groups"
+                    "TimeSeries Groups"
                 ],
                 "summary": "Patch swtData timeseries group with groupId",
                 "description": "Update existing TimeSeriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.",
-                "operationId": "patchSwtDataTimeseriesGroupWithGroupId",
+                "operationId": "patchSwtDataTimeSeriesGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -6255,11 +6255,11 @@
         "/timeseries/group": {
             "get": {
                 "tags": [
-                    "Timeseries Groups"
+                    "TimeSeries Groups"
                 ],
                 "summary": "Get swtData timeseries group",
-                "description": "Returns CWMS Timeseries Groups Data",
-                "operationId": "getSwtDataTimeseriesGroup",
+                "description": "Returns CWMS TimeSeries Groups Data",
+                "operationId": "getSwtDataTimeSeriesGroup",
                 "parameters": [
                     {
                         "name": "office",
@@ -6373,11 +6373,11 @@
             },
             "post": {
                 "tags": [
-                    "Timeseries Groups"
+                    "TimeSeries Groups"
                 ],
                 "summary": "Post swtData timeseries group",
                 "description": "Create new TimeSeriesGroup",
-                "operationId": "postSwtDataTimeseriesGroup",
+                "operationId": "postSwtDataTimeSeriesGroup",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -6466,7 +6466,7 @@
                     "TimeSeries"
                 ],
                 "summary": "Get swtData timeseries",
-                "operationId": "getSwtDataTimeseries",
+                "operationId": "getSwtDataTimeSeries",
                 "parameters": [
                     {
                         "name": "name",
@@ -6667,7 +6667,7 @@
                 ],
                 "summary": "Post swtData timeseries",
                 "description": "Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds ",
-                "operationId": "postSwtDataTimeseries",
+                "operationId": "postSwtDataTimeSeries",
                 "parameters": [
                     {
                         "name": "timezone",
@@ -6785,7 +6785,7 @@
                     "TimeSeries"
                 ],
                 "summary": "Delete swtData timeseries with timeseries",
-                "operationId": "deleteSwtDataTimeseriesWithTimeseries",
+                "operationId": "deleteSwtDataTimeSeriesWithTimeSeries",
                 "parameters": [
                     {
                         "name": "timeseries",
@@ -6939,12 +6939,12 @@
                 ],
                 "summary": "Patch swtData timeseries with timeseries",
                 "description": "Update a TimeSeries with provided values",
-                "operationId": "patchSwtDataTimeseriesWithTimeseries",
+                "operationId": "patchSwtDataTimeSeriesWithTimeSeries",
                 "parameters": [
                     {
                         "name": "timeseries",
                         "in": "path",
-                        "description": "Full CWMS Timeseries name",
+                        "description": "Full CWMS TimeSeries name",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -8615,7 +8615,7 @@
                     {
                         "name": "dataset",
                         "in": "path",
-                        "description": "A list of what data? E.g. Timeseries, Locations, Ratings, etc",
+                        "description": "A list of what data? E.g. TimeSeries, Locations, Ratings, etc",
                         "required": true,
                         "schema": {
                             "$ref": "#/components/schemas/CatalogableEndpoint"
@@ -8713,7 +8713,7 @@
                     {
                         "name": "exclude-empty",
                         "in": "query",
-                        "description": "Specifies whether Timeseries that have empty extents should be excluded from the results.  For purposes of this parameter 'empty' is defined as VERSION_TIME, EARLIEST_TIME, LATEST_TIME and LAST_UPDATE all being null. This parameter does not control whether the extents are returned to the user, only whether matching timeseries are excluded. Only valid for TIMESERIES. Default is true.",
+                        "description": "Specifies whether TimeSeries that have empty extents should be excluded from the results.  For purposes of this parameter 'empty' is defined as VERSION_TIME, EARLIEST_TIME, LATEST_TIME and LAST_UPDATE all being null. This parameter does not control whether the extents are returned to the user, only whether matching timeseries are excluded. Only valid for TIMESERIES. Default is true.",
                         "schema": {
                             "type": "boolean"
                         }
@@ -21798,7 +21798,7 @@
                     },
                     "seasonal-time-series-id": {
                         "type": "string",
-                        "description": "Timeseries ID (e.g. from the times series catalog) to use as the location level. Mutually exclusive with seasonalValues and siParameterUnitsConstantValue"
+                        "description": "TimeSeries ID (e.g. from the times series catalog) to use as the location level. Mutually exclusive with seasonalValues and siParameterUnitsConstantValue"
                     },
                     "specified-level-id": {
                         "type": "string",
@@ -23297,7 +23297,7 @@
                         "$ref": "#/components/schemas/LocationCatalogEntry"
                     },
                     {
-                        "$ref": "#/components/schemas/TimeseriesCatalogEntry"
+                        "$ref": "#/components/schemas/TimeSeriesCatalogEntry"
                     }
                 ]
             },
@@ -23386,7 +23386,7 @@
                     }
                 }
             },
-            "TimeseriesCatalogEntry": {
+            "TimeSeriesCatalogEntry": {
                 "type": "object",
                 "properties": {
                     "office": {
