@@ -23,83 +23,77 @@ import {
 /**
  * 
  * @export
- * @interface ExpressionRating
+ * @interface BaseRatingMetadata
  */
-export interface ExpressionRating {
+export interface BaseRatingMetadata {
     /**
      * 
      * @type {string}
-     * @memberof ExpressionRating
+     * @memberof BaseRatingMetadata
      */
     officeId?: string;
     /**
      * 
      * @type {string}
-     * @memberof ExpressionRating
+     * @memberof BaseRatingMetadata
      */
     ratingSpecId?: string;
     /**
      * 
      * @type {string}
-     * @memberof ExpressionRating
+     * @memberof BaseRatingMetadata
      */
     unitsId?: string;
     /**
      * 
      * @type {boolean}
-     * @memberof ExpressionRating
+     * @memberof BaseRatingMetadata
      */
     active?: boolean;
     /**
      * 
      * @type {Date}
-     * @memberof ExpressionRating
+     * @memberof BaseRatingMetadata
      */
     effectiveDate?: Date;
     /**
      * 
      * @type {Date}
-     * @memberof ExpressionRating
+     * @memberof BaseRatingMetadata
      */
     createDate?: Date;
     /**
      * 
      * @type {Date}
-     * @memberof ExpressionRating
+     * @memberof BaseRatingMetadata
      */
     transitionDate?: Date;
     /**
      * 
      * @type {string}
-     * @memberof ExpressionRating
+     * @memberof BaseRatingMetadata
      */
     description?: string;
     /**
      * 
      * @type {VerticalDatumInfo}
-     * @memberof ExpressionRating
+     * @memberof BaseRatingMetadata
      */
     verticalDatumInfo?: VerticalDatumInfo;
-    /**
-     * 
-     * @type {string}
-     * @memberof ExpressionRating
-     */
-    expression?: string;
 }
 
 /**
- * Check if a given object implements the ExpressionRating interface.
+ * Check if a given object implements the BaseRatingMetadata interface.
  */
-export function instanceOfExpressionRating(value: object): boolean {
+export function instanceOfBaseRatingMetadata(value: object): boolean {
     return true;
 }
 
-export function ExpressionRatingFromJSON(json: any): ExpressionRating {
-    return ExpressionRatingFromJSONTyped(json, false);
+export function BaseRatingMetadataFromJSON(json: any): BaseRatingMetadata {
+    return BaseRatingMetadataFromJSONTyped(json, false);
 }
 
-export function ExpressionRatingFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExpressionRating {
+export function BaseRatingMetadataFromJSONTyped(json: any, ignoreDiscriminator: boolean): BaseRatingMetadata {
     if (json == null) {
         return json;
     }
@@ -114,11 +108,10 @@ export function ExpressionRatingFromJSONTyped(json: any, ignoreDiscriminator: bo
         'transitionDate': json['transition-date'] == null ? undefined : (new Date(json['transition-date'])),
         'description': json['description'] == null ? undefined : json['description'],
         'verticalDatumInfo': json['vertical-datum-info'] == null ? undefined : VerticalDatumInfoFromJSON(json['vertical-datum-info']),
-        'expression': json['expression'] == null ? undefined : json['expression'],
     };
 }
 
-export function ExpressionRatingToJSON(value?: ExpressionRating | null): any {
+export function BaseRatingMetadataToJSON(value?: BaseRatingMetadata | null): any {
     if (value == null) {
         return value;
     }
@@ -133,7 +126,6 @@ export function ExpressionRatingToJSON(value?: ExpressionRating | null): any {
         'transition-date': value['transitionDate'] == null ? undefined : ((value['transitionDate']).toISOString()),
         'description': value['description'],
         'vertical-datum-info': VerticalDatumInfoToJSON(value['verticalDatumInfo']),
-        'expression': value['expression'],
     };
 }
 

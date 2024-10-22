@@ -127,10 +127,10 @@ export interface GateChange {
     elevationUnits?: string;
     /**
      * 
-     * @type {Set<GateSetting>}
+     * @type {Array<GateSetting>}
      * @memberof GateChange
      */
-    settings?: Set<GateSetting>;
+    settings?: Array<GateSetting>;
 }
 
 /**
@@ -170,7 +170,7 @@ export function GateChangeFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'dischargeUnits': json['discharge-units'] == null ? undefined : json['discharge-units'],
         'tailwaterElevation': json['tailwater-elevation'] == null ? undefined : json['tailwater-elevation'],
         'elevationUnits': json['elevation-units'] == null ? undefined : json['elevation-units'],
-        'settings': json['settings'] == null ? undefined : new Set((json['settings'] as Array<any>).map(GateSettingFromJSON))),
+        'settings': json['settings'] == null ? undefined : ((json['settings'] as Array<any>).map(GateSettingFromJSON)),
     };
 }
 
@@ -194,7 +194,7 @@ export function GateChangeToJSON(value?: GateChange | null): any {
         'discharge-units': value['dischargeUnits'],
         'tailwater-elevation': value['tailwaterElevation'],
         'elevation-units': value['elevationUnits'],
-        'settings': value['settings'] == null ? undefined : (Array.from(value['settings'] as Set<any>).map(GateSettingToJSON)),
+        'settings': value['settings'] == null ? undefined : ((value['settings'] as Array<any>).map(GateSettingToJSON)),
     };
 }
 

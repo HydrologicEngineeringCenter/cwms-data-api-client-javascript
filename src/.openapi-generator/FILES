@@ -47,6 +47,7 @@ src/models/Alias.ts
 src/models/ApiKey.ts
 src/models/AssignedLocation.ts
 src/models/AssignedTimeseries.ts
+src/models/BaseRatingMetadata.ts
 src/models/Basin.ts
 src/models/BinaryTimeseries.ts
 src/models/BinaryTimeseriesRow.ts
