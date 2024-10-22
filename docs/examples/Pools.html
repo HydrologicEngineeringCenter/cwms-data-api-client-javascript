@@ -97,8 +97,13 @@ const config = new Configuration({
 });
 const p_api = new PoolsApi(config);
 p_api
-    .getCwmsDataPools({
+    .getCwmsDataPoolsRaw({
         office: 'SWT',
+    })
+    .then(async (r) => {
+        const data = r.raw.json();
+        console.log(data);
+        return data;
     })
     .then((data) => {
         console.log(data);
@@ -133,8 +138,13 @@ const config = new cwmsjs.Configuration({
 });
 const p_api = new cwmsjs.PoolsApi(config);
 p_api
-    .getCwmsDataPools({
+    .getCwmsDataPoolsRaw({
         office: &#039;SWT&#039;,
+    })
+    .then(async (r) =&gt; {
+        const data = r.raw.json();
+        console.log(data);
+        return data;
     })
     .then((data) =&gt; {
         console.log(data);

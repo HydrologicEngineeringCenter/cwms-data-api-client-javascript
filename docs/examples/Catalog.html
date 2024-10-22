@@ -94,25 +94,15 @@ const catalog_api = new CatalogApi();
 catalog_api
     .getCwmsDataCatalogWithDataset({
         office: 'SWT',
-        like: '.*Elev.Inst.1Hour.0.Ccp-Rev',
+        like: 'KEYS..*.Inst.1Hour.0.Ccp-Rev',
         dataset: 'TIMESERIES',
     })
     .then((data) => {
         console.log(data?.entries);
-        if (!data?.entries || data?.entries == 0) {
-            throw Error(`No catalog timeseries returned`);
-        }
         Object.entries(data?.entries).forEach(([key, value]) => {
             console.log(value?.name);
         });
-    })
-    .catch(async (e) => {
-        if (e.response) {
-            const error_msg = e.response.json();
-            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
-            console.error(e);
-        }
-        throw e;
+        console.log(`Returned ${data?.entries?.length} timeseries IDs`);
     });
 </code>
 </pre>
@@ -137,25 +127,15 @@ const catalog_api = new cwmsjs.CatalogApi();
 catalog_api
     .getCwmsDataCatalogWithDataset({
         office: &#039;SWT&#039;,
-        like: &#039;.*Elev.Inst.1Hour.0.Ccp-Rev&#039;,
+        like: &#039;KEYS..*.Inst.1Hour.0.Ccp-Rev&#039;,
         dataset: &#039;TIMESERIES&#039;,
     })
     .then((data) =&gt; {
         console.log(data?.entries);
-        if (!data?.entries || data?.entries == 0) {
-            throw Error(`No catalog timeseries returned`);
-        }
         Object.entries(data?.entries).forEach(([key, value]) =&gt; {
             console.log(value?.name);
         });
-    })
-    .catch(async (e) =&gt; {
-        if (e.response) {
-            const error_msg = e.response.json();
-            e.message = `${e.response.url}\n${e.message}\n${JSON.stringify(error_msg, null, 2)}`;
-            console.error(e);
-        }
-        throw e;
+        console.log(`Returned ${data?.entries?.length} timeseries IDs`);
     });
 
 &lt;/script&gt;</code>

@@ -87,10 +87,15 @@
 <b>To Install:</b>
 <code class="language-shell">npm install cwmsjs --save</code><br>
 <pre>
-<code class="language-javascript">import { RatingsApi } from "cwmsjs";
+<code class="language-javascript">import { RatingsApi, Configuration } from "cwmsjs";
 
 
-const r_api = new RatingsApi();
+const config_v2 = new Configuration({
+    headers: {
+        accept: 'application/json;version=2',
+    },
+});
+const r_api = new RatingsApi(config_v2);
 r_api
     .getCwmsDataRatings({
         office: 'SWT',
@@ -98,7 +103,7 @@ r_api
     .then((data) => {
         console.log(data);
     });
-// Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
+//   Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
 r_api
     .getCwmsDataRatingsSpec({
         office: 'SWT',
@@ -107,7 +112,7 @@ r_api
     .then((data) => {
         console.log(data?.specs);
     });
-// Fetch the CWMS Rating templates for the SPK OFFICE
+//   Fetch the CWMS Rating templates for the SPK OFFICE
 r_api
     .getCwmsDataRatingsTemplate({
         office: 'SPK',
@@ -116,14 +121,14 @@ r_api
         console.log(data?.templates);
     });
 
-r_api
-    .getCwmsDataRatingsTemplateWithTemplateId({
-        office: 'SWT',
-        templateId: 'Elev-Alt;Stor-Alt.Linear',
-    })
-    .then((data) => {
-        console.log(data);
-    });
+//   r_api
+//     .getCwmsDataRatingsTemplateWithTemplateId({
+//       office: "SWT",
+//       templateId: "Elev-Alt;Stor-Alt.Linear",
+//     })
+//     .then((data) => {
+//       console.log(data);
+//     });
 </code>
 </pre>
 <br />
@@ -143,7 +148,12 @@ to download bundle.js to your system</li>
 &lt;script src=&quot;./bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Call the cwmsjs after the bundle has loaded --&gt;
 &lt;script type=&quot;module&quot;&gt;
-const r_api = new cwmsjs.RatingsApi();
+const config_v2 = new cwmsjs.Configuration({
+    headers: {
+        accept: &#039;application/json;version=2&#039;,
+    },
+});
+const r_api = new cwmsjs.RatingsApi(config_v2);
 r_api
     .getCwmsDataRatings({
         office: &#039;SWT&#039;,
@@ -151,7 +161,7 @@ r_api
     .then((data) =&gt; {
         console.log(data);
     });
-// Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
+//   Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
 r_api
     .getCwmsDataRatingsSpec({
         office: &#039;SWT&#039;,
@@ -160,7 +170,7 @@ r_api
     .then((data) =&gt; {
         console.log(data?.specs);
     });
-// Fetch the CWMS Rating templates for the SPK OFFICE
+//   Fetch the CWMS Rating templates for the SPK OFFICE
 r_api
     .getCwmsDataRatingsTemplate({
         office: &#039;SPK&#039;,
@@ -169,14 +179,14 @@ r_api
         console.log(data?.templates);
     });
 
-r_api
-    .getCwmsDataRatingsTemplateWithTemplateId({
-        office: &#039;SWT&#039;,
-        templateId: &#039;Elev-Alt;Stor-Alt.Linear&#039;,
-    })
-    .then((data) =&gt; {
-        console.log(data);
-    });
+//   r_api
+//     .getCwmsDataRatingsTemplateWithTemplateId({
+//       office: &quot;SWT&quot;,
+//       templateId: &quot;Elev-Alt;Stor-Alt.Linear&quot;,
+//     })
+//     .then((data) =&gt; {
+//       console.log(data);
+//     });
 
 &lt;/script&gt;</code>
 </pre>
