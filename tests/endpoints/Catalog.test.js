@@ -13,8 +13,9 @@ test('Test Catalog', async () => {
     }).then((data) => {
         expect(data?.entries).toBeDefined()
         Object.entries(data?.entries).forEach(([key, value]) => {
-            console.log(value?.name)
+            expect(value?.name).toBeDefined()
         });
         console.log(`Returned ${data?.entries?.length} timeseries IDs`)
     })
+    
 }, 20000)
