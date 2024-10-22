@@ -13,14 +13,6 @@
     {
       "url": "https://water.usace.army.mil/cwms-data",
       "description": "Alias for the PRIMARY production server"
-    },
-    {
-      "url": "https://cwms.sec.usace.army.mil/cwms-data",
-      "description": "CWBI Production Server"
-    },
-    {
-      "url": "https://cwms-data.usace.army.mil/cwms-data",
-      "description": "PRIMARY production server"
     }
   ],
   "security": [

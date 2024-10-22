@@ -6,7 +6,7 @@
     "framework": "fetch-api",
     "lib": "es6",
     "projectDescription": "CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript for use with web browsers.",
-    "projectVersion": "1.11.0",
+    "projectVersion": "2.0.0",
     "moduleName": "cwmsjs",
     "npmRepository": "https://www.npmjs.com/package/cwmsjs",
     "npmName": "cwmsJS",

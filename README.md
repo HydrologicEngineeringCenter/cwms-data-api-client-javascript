@@ -35,4 +35,11 @@ Documentation is available for both developers and new users:
 * New Users : [Examples](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/examples/)
 * Advanced users : [Type Documentation / Developer Docs](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/)
 
+## Building CWMSjs from source
+* Install openapi-generator-cli with:  
+   `npm install -g @openapitools/openapi-generator-cli`  
+   (This will grab the latest)
 
+* Run the following commands to build the project:  
+   `npm run openapi`  
+   `npm run build`
