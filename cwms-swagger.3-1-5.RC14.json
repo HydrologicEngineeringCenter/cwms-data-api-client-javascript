@@ -24698,7 +24698,6 @@
                         "type": "string"
                     },
                     "settings": {
-                        "uniqueItems": true,
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/TurbineSetting"
@@ -24829,7 +24828,6 @@
                         "type": "string"
                     },
                     "settings": {
-                        "uniqueItems": true,
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/GateSetting"
