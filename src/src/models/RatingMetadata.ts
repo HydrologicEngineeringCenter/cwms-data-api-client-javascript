@@ -13,12 +13,12 @@
  */
 
 import { mapValues } from '../runtime';
-import type { AbstractRatingMetadata } from './AbstractRatingMetadata';
+import type { BaseRatingMetadata } from './BaseRatingMetadata';
 import {
-    AbstractRatingMetadataFromJSON,
-    AbstractRatingMetadataFromJSONTyped,
-    AbstractRatingMetadataToJSON,
-} from './AbstractRatingMetadata';
+    BaseRatingMetadataFromJSON,
+    BaseRatingMetadataFromJSONTyped,
+    BaseRatingMetadataToJSON,
+} from './BaseRatingMetadata';
 import type { RatingSpec } from './RatingSpec';
 import {
     RatingSpecFromJSON,
@@ -40,10 +40,10 @@ export interface RatingMetadata {
     ratingSpec?: RatingSpec;
     /**
      * 
-     * @type {Array<AbstractRatingMetadata>}
+     * @type {Array<BaseRatingMetadata>}
      * @memberof RatingMetadata
      */
-    ratings?: Array<AbstractRatingMetadata>;
+    ratings?: Array<BaseRatingMetadata>;
 }
 
 /**
@@ -64,7 +64,7 @@ export function RatingMetadataFromJSONTyped(json: any, ignoreDiscriminator: bool
     return {
         
         'ratingSpec': json['rating-spec'] == null ? undefined : RatingSpecFromJSON(json['rating-spec']),
-        'ratings': json['ratings'] == null ? undefined : ((json['ratings'] as Array<any>).map(AbstractRatingMetadataFromJSON)),
+        'ratings': json['ratings'] == null ? undefined : ((json['ratings'] as Array<any>).map(BaseRatingMetadataFromJSON)),
     };
 }
 
@@ -75,7 +75,7 @@ export function RatingMetadataToJSON(value?: RatingMetadata | null): any {
     return {
         
         'rating-spec': RatingSpecToJSON(value['ratingSpec']),
-        'ratings': value['ratings'] == null ? undefined : ((value['ratings'] as Array<any>).map(AbstractRatingMetadataToJSON)),
+        'ratings': value['ratings'] == null ? undefined : ((value['ratings'] as Array<any>).map(BaseRatingMetadataToJSON)),
     };
 }
 

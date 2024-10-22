@@ -5,6 +5,7 @@ export * from './Alias';
 export * from './ApiKey';
 export * from './AssignedLocation';
 export * from './AssignedTimeseries';
+export * from './BaseRatingMetadata';
 export * from './Basin';
 export * from './BinaryTimeseries';
 export * from './BinaryTimeseriesRow';

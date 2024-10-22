@@ -13,12 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { AbstractRatingMetadata } from './AbstractRatingMetadata';
-import {
-    AbstractRatingMetadataFromJSON,
-    AbstractRatingMetadataFromJSONTyped,
-    AbstractRatingMetadataToJSON,
-} from './AbstractRatingMetadata';
 import type { VerticalDatumInfo } from './VerticalDatumInfo';
 import {
     VerticalDatumInfoFromJSON,
@@ -31,7 +25,61 @@ import {
  * @export
  * @interface TableRating
  */
-export interface TableRating extends AbstractRatingMetadata {
+export interface TableRating {
+    /**
+     * 
+     * @type {string}
+     * @memberof TableRating
+     */
+    officeId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TableRating
+     */
+    ratingSpecId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TableRating
+     */
+    unitsId?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TableRating
+     */
+    active?: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TableRating
+     */
+    effectiveDate?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TableRating
+     */
+    createDate?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TableRating
+     */
+    transitionDate?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TableRating
+     */
+    description?: string;
+    /**
+     * 
+     * @type {VerticalDatumInfo}
+     * @memberof TableRating
+     */
+    verticalDatumInfo?: VerticalDatumInfo;
     /**
      * 
      * @type {string}
@@ -68,7 +116,16 @@ export function TableRatingFromJSONTyped(json: any, ignoreDiscriminator: boolean
         return json;
     }
     return {
-        ...AbstractRatingMetadataFromJSONTyped(json, ignoreDiscriminator),
+        
+        'officeId': json['office-id'] == null ? undefined : json['office-id'],
+        'ratingSpecId': json['rating-spec-id'] == null ? undefined : json['rating-spec-id'],
+        'unitsId': json['units-id'] == null ? undefined : json['units-id'],
+        'active': json['active'] == null ? undefined : json['active'],
+        'effectiveDate': json['effective-date'] == null ? undefined : (new Date(json['effective-date'])),
+        'createDate': json['create-date'] == null ? undefined : (new Date(json['create-date'])),
+        'transitionDate': json['transition-date'] == null ? undefined : (new Date(json['transition-date'])),
+        'description': json['description'] == null ? undefined : json['description'],
+        'verticalDatumInfo': json['vertical-datum-info'] == null ? undefined : VerticalDatumInfoFromJSON(json['vertical-datum-info']),
         'inRangeMethod': json['in-range-method'] == null ? undefined : json['in-range-method'],
         'outRangeLowMethod': json['out-range-low-method'] == null ? undefined : json['out-range-low-method'],
         'outRangeHighMethod': json['out-range-high-method'] == null ? undefined : json['out-range-high-method'],
@@ -80,7 +137,16 @@ export function TableRatingToJSON(value?: TableRating | null): any {
         return value;
     }
     return {
-        ...AbstractRatingMetadataToJSON(value),
+        
+        'office-id': value['officeId'],
+        'rating-spec-id': value['ratingSpecId'],
+        'units-id': value['unitsId'],
+        'active': value['active'],
+        'effective-date': value['effectiveDate'] == null ? undefined : ((value['effectiveDate']).toISOString()),
+        'create-date': value['createDate'] == null ? undefined : ((value['createDate']).toISOString()),
+        'transition-date': value['transitionDate'] == null ? undefined : ((value['transitionDate']).toISOString()),
+        'description': value['description'],
+        'vertical-datum-info': VerticalDatumInfoToJSON(value['verticalDatumInfo']),
         'in-range-method': value['inRangeMethod'],
         'out-range-low-method': value['outRangeLowMethod'],
         'out-range-high-method': value['outRangeHighMethod'],

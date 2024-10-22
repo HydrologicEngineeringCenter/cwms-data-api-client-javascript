@@ -13,12 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { AbstractRatingMetadata } from './AbstractRatingMetadata';
-import {
-    AbstractRatingMetadataFromJSON,
-    AbstractRatingMetadataFromJSONTyped,
-    AbstractRatingMetadataToJSON,
-} from './AbstractRatingMetadata';
 import type { VerticalDatumInfo } from './VerticalDatumInfo';
 import {
     VerticalDatumInfoFromJSON,
@@ -31,7 +25,61 @@ import {
  * @export
  * @interface TransitionalRating
  */
-export interface TransitionalRating extends AbstractRatingMetadata {
+export interface TransitionalRating {
+    /**
+     * 
+     * @type {string}
+     * @memberof TransitionalRating
+     */
+    officeId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TransitionalRating
+     */
+    ratingSpecId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TransitionalRating
+     */
+    unitsId?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof TransitionalRating
+     */
+    active?: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TransitionalRating
+     */
+    effectiveDate?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TransitionalRating
+     */
+    createDate?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TransitionalRating
+     */
+    transitionDate?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TransitionalRating
+     */
+    description?: string;
+    /**
+     * 
+     * @type {VerticalDatumInfo}
+     * @memberof TransitionalRating
+     */
+    verticalDatumInfo?: VerticalDatumInfo;
     /**
      * 
      * @type {Array<string>}
@@ -68,7 +116,16 @@ export function TransitionalRatingFromJSONTyped(json: any, ignoreDiscriminator: 
         return json;
     }
     return {
-        ...AbstractRatingMetadataFromJSONTyped(json, ignoreDiscriminator),
+        
+        'officeId': json['office-id'] == null ? undefined : json['office-id'],
+        'ratingSpecId': json['rating-spec-id'] == null ? undefined : json['rating-spec-id'],
+        'unitsId': json['units-id'] == null ? undefined : json['units-id'],
+        'active': json['active'] == null ? undefined : json['active'],
+        'effectiveDate': json['effective-date'] == null ? undefined : (new Date(json['effective-date'])),
+        'createDate': json['create-date'] == null ? undefined : (new Date(json['create-date'])),
+        'transitionDate': json['transition-date'] == null ? undefined : (new Date(json['transition-date'])),
+        'description': json['description'] == null ? undefined : json['description'],
+        'verticalDatumInfo': json['vertical-datum-info'] == null ? undefined : VerticalDatumInfoFromJSON(json['vertical-datum-info']),
         'sourceRatings': json['source-ratings'] == null ? undefined : json['source-ratings'],
         'conditions': json['conditions'] == null ? undefined : json['conditions'],
         'evaluations': json['evaluations'] == null ? undefined : json['evaluations'],
@@ -80,7 +137,16 @@ export function TransitionalRatingToJSON(value?: TransitionalRating | null): any
         return value;
     }
     return {
-        ...AbstractRatingMetadataToJSON(value),
+        
+        'office-id': value['officeId'],
+        'rating-spec-id': value['ratingSpecId'],
+        'units-id': value['unitsId'],
+        'active': value['active'],
+        'effective-date': value['effectiveDate'] == null ? undefined : ((value['effectiveDate']).toISOString()),
+        'create-date': value['createDate'] == null ? undefined : ((value['createDate']).toISOString()),
+        'transition-date': value['transitionDate'] == null ? undefined : ((value['transitionDate']).toISOString()),
+        'description': value['description'],
+        'vertical-datum-info': VerticalDatumInfoToJSON(value['verticalDatumInfo']),
         'source-ratings': value['sourceRatings'],
         'conditions': value['conditions'],
         'evaluations': value['evaluations'],

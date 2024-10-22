@@ -106,10 +106,10 @@ export interface TurbineChange {
     elevationUnits?: string;
     /**
      * 
-     * @type {Set<TurbineSetting>}
+     * @type {Array<TurbineSetting>}
      * @memberof TurbineChange
      */
-    settings?: Set<TurbineSetting>;
+    settings?: Array<TurbineSetting>;
     /**
      * 
      * @type {number}
@@ -150,7 +150,7 @@ export function TurbineChangeFromJSONTyped(json: any, ignoreDiscriminator: boole
         'dischargeUnits': json['discharge-units'] == null ? undefined : json['discharge-units'],
         'tailwaterElevation': json['tailwater-elevation'] == null ? undefined : json['tailwater-elevation'],
         'elevationUnits': json['elevation-units'] == null ? undefined : json['elevation-units'],
-        'settings': json['settings'] == null ? undefined : new Set((json['settings'] as Array<any>).map(TurbineSettingFromJSON))),
+        'settings': json['settings'] == null ? undefined : ((json['settings'] as Array<any>).map(TurbineSettingFromJSON)),
         'poolElevation': json['pool-elevation'] == null ? undefined : json['pool-elevation'],
     };
 }
@@ -172,7 +172,7 @@ export function TurbineChangeToJSON(value?: TurbineChange | null): any {
         'discharge-units': value['dischargeUnits'],
         'tailwater-elevation': value['tailwaterElevation'],
         'elevation-units': value['elevationUnits'],
-        'settings': value['settings'] == null ? undefined : (Array.from(value['settings'] as Set<any>).map(TurbineSettingToJSON)),
+        'settings': value['settings'] == null ? undefined : ((value['settings'] as Array<any>).map(TurbineSettingToJSON)),
         'pool-elevation': value['poolElevation'],
     };
 }

@@ -13,12 +13,6 @@
  */
 
 import { mapValues } from '../runtime';
-import type { AbstractRatingMetadata } from './AbstractRatingMetadata';
-import {
-    AbstractRatingMetadataFromJSON,
-    AbstractRatingMetadataFromJSONTyped,
-    AbstractRatingMetadataToJSON,
-} from './AbstractRatingMetadata';
 import type { VerticalDatumInfo } from './VerticalDatumInfo';
 import {
     VerticalDatumInfoFromJSON,
@@ -31,7 +25,61 @@ import {
  * @export
  * @interface VirtualRating
  */
-export interface VirtualRating extends AbstractRatingMetadata {
+export interface VirtualRating {
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualRating
+     */
+    officeId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualRating
+     */
+    ratingSpecId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualRating
+     */
+    unitsId?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof VirtualRating
+     */
+    active?: boolean;
+    /**
+     * 
+     * @type {Date}
+     * @memberof VirtualRating
+     */
+    effectiveDate?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof VirtualRating
+     */
+    createDate?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof VirtualRating
+     */
+    transitionDate?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualRating
+     */
+    description?: string;
+    /**
+     * 
+     * @type {VerticalDatumInfo}
+     * @memberof VirtualRating
+     */
+    verticalDatumInfo?: VerticalDatumInfo;
     /**
      * 
      * @type {Array<object>}
@@ -62,7 +110,16 @@ export function VirtualRatingFromJSONTyped(json: any, ignoreDiscriminator: boole
         return json;
     }
     return {
-        ...AbstractRatingMetadataFromJSONTyped(json, ignoreDiscriminator),
+        
+        'officeId': json['office-id'] == null ? undefined : json['office-id'],
+        'ratingSpecId': json['rating-spec-id'] == null ? undefined : json['rating-spec-id'],
+        'unitsId': json['units-id'] == null ? undefined : json['units-id'],
+        'active': json['active'] == null ? undefined : json['active'],
+        'effectiveDate': json['effective-date'] == null ? undefined : (new Date(json['effective-date'])),
+        'createDate': json['create-date'] == null ? undefined : (new Date(json['create-date'])),
+        'transitionDate': json['transition-date'] == null ? undefined : (new Date(json['transition-date'])),
+        'description': json['description'] == null ? undefined : json['description'],
+        'verticalDatumInfo': json['vertical-datum-info'] == null ? undefined : VerticalDatumInfoFromJSON(json['vertical-datum-info']),
         'sourceRatings': json['source-ratings'] == null ? undefined : json['source-ratings'],
         'connections': json['connections'] == null ? undefined : json['connections'],
     };
@@ -73,7 +130,16 @@ export function VirtualRatingToJSON(value?: VirtualRating | null): any {
         return value;
     }
     return {
-        ...AbstractRatingMetadataToJSON(value),
+        
+        'office-id': value['officeId'],
+        'rating-spec-id': value['ratingSpecId'],
+        'units-id': value['unitsId'],
+        'active': value['active'],
+        'effective-date': value['effectiveDate'] == null ? undefined : ((value['effectiveDate']).toISOString()),
+        'create-date': value['createDate'] == null ? undefined : ((value['createDate']).toISOString()),
+        'transition-date': value['transitionDate'] == null ? undefined : ((value['transitionDate']).toISOString()),
+        'description': value['description'],
+        'vertical-datum-info': VerticalDatumInfoToJSON(value['verticalDatumInfo']),
         'source-ratings': value['sourceRatings'],
         'connections': value['connections'],
     };
