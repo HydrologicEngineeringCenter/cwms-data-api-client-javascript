@@ -21,7 +21,7 @@ _CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript
   - Fetch timeseries data with:
     ```javascript
     await ts_api
-      .getCwmsDataTimeseries({
+      .getTimeseries({
         office: "SWT",
         name: "KEYS.Elev.Inst.1Hour.0.Ccp-Rev",
       })
