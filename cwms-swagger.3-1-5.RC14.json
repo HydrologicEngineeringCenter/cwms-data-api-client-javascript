@@ -22005,24 +22005,27 @@
                 "readOnly": true
             },
             "TimeSeries.Record": {
-                "type": "object",
-                "properties": {
-                    "date-time": {
-                        "type": "integer",
-                        "description": "Milliseconds since 1970-01-01 (Unix Epoch), always UTC",
-                        "format": "int64"
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "date-time": {
+                            "type": "integer",
+                            "description": "Milliseconds since 1970-01-01 (Unix Epoch), always UTC",
+                            "format": "int64"
+                        },
+                        "value": {
+                            "type": "number",
+                            "description": "Requested time-series data value",
+                            "format": "double"
+                        },
+                        "quality-code": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
                     },
-                    "value": {
-                        "type": "number",
-                        "description": "Requested time-series data value",
-                        "format": "double"
-                    },
-                    "quality-code": {
-                        "type": "integer",
-                        "format": "int32"
-                    }
-                },
-                "description": "List of retrieved time-series values"
+                    "description": "List of retrieved time-series values"
+                }
             },
             "timeseries": {
                 "required": [
@@ -22172,26 +22175,13 @@
                                 0
                             ],
                             "items": {
-                                "type": "object",
-                                "properties": {
-                                    "date-time": {
-                                        "type": "integer",
-                                        "description": "Milliseconds since 1970-01-01 (Unix Epoch), always UTC",
-                                        "format": "int64"
-                                    },
-                                    "value": {
-                                        "type": "number",
-                                        "description": "Requested time-series data value",
-                                        "format": "double"
-                                    },
-                                    "quality-code": {
-                                        "type": "integer",
-                                        "format": "int32"
-                                    }
-                                },
-                                "description": "List of retrieved time-series values"
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/TimeSeries.Record"
+                                }
                             }
-                        }
+                        },
+                        "description": "Array of time-series data points. Each entry contains a sub-array representing date-time, value, and quality-code."
                     },
                     "version-date": {
                         "type": "string",
