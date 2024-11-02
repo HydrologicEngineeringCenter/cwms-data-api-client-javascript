@@ -13,12 +13,12 @@
  */
 
 import { mapValues } from '../runtime';
-import type { AssignedTimeseries } from './AssignedTimeseries';
+import type { AssignedTimeSeries } from './AssignedTimeSeries';
 import {
-    AssignedTimeseriesFromJSON,
-    AssignedTimeseriesFromJSONTyped,
-    AssignedTimeseriesToJSON,
-} from './AssignedTimeseries';
+    AssignedTimeSeriesFromJSON,
+    AssignedTimeSeriesFromJSONTyped,
+    AssignedTimeSeriesToJSON,
+} from './AssignedTimeSeries';
 import type { TimeseriesCategory } from './TimeseriesCategory';
 import {
     TimeseriesCategoryFromJSON,
@@ -70,10 +70,10 @@ export interface TimeseriesGroup {
     sharedRefTsId?: string;
     /**
      * 
-     * @type {Array<AssignedTimeseries>}
+     * @type {Array<AssignedTimeSeries>}
      * @memberof TimeseriesGroup
      */
-    assignedTimeSeries?: Array<AssignedTimeseries>;
+    assignedTimeSeries?: Array<AssignedTimeSeries>;
 }
 
 /**
@@ -100,7 +100,7 @@ export function TimeseriesGroupFromJSONTyped(json: any, ignoreDiscriminator: boo
         'description': json['description'] == null ? undefined : json['description'],
         'sharedAliasId': json['shared-alias-id'] == null ? undefined : json['shared-alias-id'],
         'sharedRefTsId': json['shared-ref-ts-id'] == null ? undefined : json['shared-ref-ts-id'],
-        'assignedTimeSeries': json['assigned-time-series'] == null ? undefined : ((json['assigned-time-series'] as Array<any>).map(AssignedTimeseriesFromJSON)),
+        'assignedTimeSeries': json['assigned-time-series'] == null ? undefined : ((json['assigned-time-series'] as Array<any>).map(AssignedTimeSeriesFromJSON)),
     };
 }
 
@@ -116,7 +116,7 @@ export function TimeseriesGroupToJSON(value?: TimeseriesGroup | null): any {
         'description': value['description'],
         'shared-alias-id': value['sharedAliasId'],
         'shared-ref-ts-id': value['sharedRefTsId'],
-        'assigned-time-series': value['assignedTimeSeries'] == null ? undefined : ((value['assignedTimeSeries'] as Array<any>).map(AssignedTimeseriesToJSON)),
+        'assigned-time-series': value['assignedTimeSeries'] == null ? undefined : ((value['assignedTimeSeries'] as Array<any>).map(AssignedTimeSeriesToJSON)),
     };
 }
 

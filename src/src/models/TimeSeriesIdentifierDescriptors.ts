@@ -13,69 +13,69 @@
  */
 
 import { mapValues } from '../runtime';
-import type { TimeseriesIdentifierDescriptor } from './TimeseriesIdentifierDescriptor';
+import type { TimeSeriesIdentifierDescriptor } from './TimeSeriesIdentifierDescriptor';
 import {
-    TimeseriesIdentifierDescriptorFromJSON,
-    TimeseriesIdentifierDescriptorFromJSONTyped,
-    TimeseriesIdentifierDescriptorToJSON,
-} from './TimeseriesIdentifierDescriptor';
+    TimeSeriesIdentifierDescriptorFromJSON,
+    TimeSeriesIdentifierDescriptorFromJSONTyped,
+    TimeSeriesIdentifierDescriptorToJSON,
+} from './TimeSeriesIdentifierDescriptor';
 
 /**
  * 
  * @export
- * @interface TimeseriesIdentifierDescriptors
+ * @interface TimeSeriesIdentifierDescriptors
  */
-export interface TimeseriesIdentifierDescriptors {
+export interface TimeSeriesIdentifierDescriptors {
     /**
      * 
-     * @type {Array<TimeseriesIdentifierDescriptor>}
-     * @memberof TimeseriesIdentifierDescriptors
+     * @type {Array<TimeSeriesIdentifierDescriptor>}
+     * @memberof TimeSeriesIdentifierDescriptors
      */
-    descriptors?: Array<TimeseriesIdentifierDescriptor>;
+    descriptors?: Array<TimeSeriesIdentifierDescriptor>;
     /**
      * The cursor to the next page of data; null if there is no more data
      * @type {string}
-     * @memberof TimeseriesIdentifierDescriptors
+     * @memberof TimeSeriesIdentifierDescriptors
      */
     readonly nextPage?: string;
     /**
      * The cursor to the current page of data
      * @type {string}
-     * @memberof TimeseriesIdentifierDescriptors
+     * @memberof TimeSeriesIdentifierDescriptors
      */
     readonly page?: string;
     /**
      * The number of records fetched per-page; this may be larger than the number of records actually retrieved
      * @type {number}
-     * @memberof TimeseriesIdentifierDescriptors
+     * @memberof TimeSeriesIdentifierDescriptors
      */
     readonly pageSize?: number;
     /**
      * The total number of records retrieved; null or not present if not supported or unknown
      * @type {number}
-     * @memberof TimeseriesIdentifierDescriptors
+     * @memberof TimeSeriesIdentifierDescriptors
      */
     readonly total?: number;
 }
 
 /**
- * Check if a given object implements the TimeseriesIdentifierDescriptors interface.
+ * Check if a given object implements the TimeSeriesIdentifierDescriptors interface.
  */
-export function instanceOfTimeseriesIdentifierDescriptors(value: object): boolean {
+export function instanceOfTimeSeriesIdentifierDescriptors(value: object): boolean {
     return true;
 }
 
-export function TimeseriesIdentifierDescriptorsFromJSON(json: any): TimeseriesIdentifierDescriptors {
-    return TimeseriesIdentifierDescriptorsFromJSONTyped(json, false);
+export function TimeSeriesIdentifierDescriptorsFromJSON(json: any): TimeSeriesIdentifierDescriptors {
+    return TimeSeriesIdentifierDescriptorsFromJSONTyped(json, false);
 }
 
-export function TimeseriesIdentifierDescriptorsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesIdentifierDescriptors {
+export function TimeSeriesIdentifierDescriptorsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesIdentifierDescriptors {
     if (json == null) {
         return json;
     }
     return {
         
-        'descriptors': json['descriptors'] == null ? undefined : ((json['descriptors'] as Array<any>).map(TimeseriesIdentifierDescriptorFromJSON)),
+        'descriptors': json['descriptors'] == null ? undefined : ((json['descriptors'] as Array<any>).map(TimeSeriesIdentifierDescriptorFromJSON)),
         'nextPage': json['next-page'] == null ? undefined : json['next-page'],
         'page': json['page'] == null ? undefined : json['page'],
         'pageSize': json['page-size'] == null ? undefined : json['page-size'],
@@ -83,13 +83,13 @@ export function TimeseriesIdentifierDescriptorsFromJSONTyped(json: any, ignoreDi
     };
 }
 
-export function TimeseriesIdentifierDescriptorsToJSON(value?: TimeseriesIdentifierDescriptors | null): any {
+export function TimeSeriesIdentifierDescriptorsToJSON(value?: TimeSeriesIdentifierDescriptors | null): any {
     if (value == null) {
         return value;
     }
     return {
         
-        'descriptors': value['descriptors'] == null ? undefined : ((value['descriptors'] as Array<any>).map(TimeseriesIdentifierDescriptorToJSON)),
+        'descriptors': value['descriptors'] == null ? undefined : ((value['descriptors'] as Array<any>).map(TimeSeriesIdentifierDescriptorToJSON)),
     };
 }
 

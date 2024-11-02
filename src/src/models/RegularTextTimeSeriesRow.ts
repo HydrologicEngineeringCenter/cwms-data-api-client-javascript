@@ -16,71 +16,71 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface RegularTextTimeseriesRow
+ * @interface RegularTextTimeSeriesRow
  */
-export interface RegularTextTimeseriesRow {
+export interface RegularTextTimeSeriesRow {
     /**
      * 
      * @type {Date}
-     * @memberof RegularTextTimeseriesRow
+     * @memberof RegularTextTimeSeriesRow
      */
     dateTime?: Date;
     /**
      * 
      * @type {Date}
-     * @memberof RegularTextTimeseriesRow
+     * @memberof RegularTextTimeSeriesRow
      */
     dataEntryDate?: Date;
     /**
      * 
      * @type {string}
-     * @memberof RegularTextTimeseriesRow
+     * @memberof RegularTextTimeSeriesRow
      */
     textValue?: string;
     /**
      * 
      * @type {string}
-     * @memberof RegularTextTimeseriesRow
+     * @memberof RegularTextTimeSeriesRow
      */
     filename?: string;
     /**
      * 
      * @type {string}
-     * @memberof RegularTextTimeseriesRow
+     * @memberof RegularTextTimeSeriesRow
      */
     mediaType?: string;
     /**
      * 
      * @type {number}
-     * @memberof RegularTextTimeseriesRow
+     * @memberof RegularTextTimeSeriesRow
      */
     qualityCode?: number;
     /**
      * 
      * @type {number}
-     * @memberof RegularTextTimeseriesRow
+     * @memberof RegularTextTimeSeriesRow
      */
     destFlag?: number;
     /**
      * 
      * @type {string}
-     * @memberof RegularTextTimeseriesRow
+     * @memberof RegularTextTimeSeriesRow
      */
     valueUrl?: string;
 }
 
 /**
- * Check if a given object implements the RegularTextTimeseriesRow interface.
+ * Check if a given object implements the RegularTextTimeSeriesRow interface.
  */
-export function instanceOfRegularTextTimeseriesRow(value: object): boolean {
+export function instanceOfRegularTextTimeSeriesRow(value: object): boolean {
     return true;
 }
 
-export function RegularTextTimeseriesRowFromJSON(json: any): RegularTextTimeseriesRow {
-    return RegularTextTimeseriesRowFromJSONTyped(json, false);
+export function RegularTextTimeSeriesRowFromJSON(json: any): RegularTextTimeSeriesRow {
+    return RegularTextTimeSeriesRowFromJSONTyped(json, false);
 }
 
-export function RegularTextTimeseriesRowFromJSONTyped(json: any, ignoreDiscriminator: boolean): RegularTextTimeseriesRow {
+export function RegularTextTimeSeriesRowFromJSONTyped(json: any, ignoreDiscriminator: boolean): RegularTextTimeSeriesRow {
     if (json == null) {
         return json;
     }
@@ -97,7 +97,7 @@ export function RegularTextTimeseriesRowFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
-export function RegularTextTimeseriesRowToJSON(value?: RegularTextTimeseriesRow | null): any {
+export function RegularTextTimeSeriesRowToJSON(value?: RegularTextTimeSeriesRow | null): any {
     if (value == null) {
         return value;
     }

@@ -19,20 +19,20 @@ import {
     LocationCatalogEntryFromJSONTyped,
     LocationCatalogEntryToJSON,
 } from './LocationCatalogEntry';
-import type { TimeseriesCatalogEntry } from './TimeseriesCatalogEntry';
+import type { TimeSeriesCatalogEntry } from './TimeSeriesCatalogEntry';
 import {
-    instanceOfTimeseriesCatalogEntry,
-    TimeseriesCatalogEntryFromJSON,
-    TimeseriesCatalogEntryFromJSONTyped,
-    TimeseriesCatalogEntryToJSON,
-} from './TimeseriesCatalogEntry';
+    instanceOfTimeSeriesCatalogEntry,
+    TimeSeriesCatalogEntryFromJSON,
+    TimeSeriesCatalogEntryFromJSONTyped,
+    TimeSeriesCatalogEntryToJSON,
+} from './TimeSeriesCatalogEntry';
 
 /**
  * @type CatalogEntry
  * 
  * @export
  */
-export type CatalogEntry = LocationCatalogEntry | TimeseriesCatalogEntry;
+export type CatalogEntry = LocationCatalogEntry | TimeSeriesCatalogEntry;
 
 export function CatalogEntryFromJSON(json: any): CatalogEntry {
     return CatalogEntryFromJSONTyped(json, false);
@@ -42,7 +42,7 @@ export function CatalogEntryFromJSONTyped(json: any, ignoreDiscriminator: boolea
     if (json == null) {
         return json;
     }
-    return { ...LocationCatalogEntryFromJSONTyped(json, true), ...TimeseriesCatalogEntryFromJSONTyped(json, true) };
+    return { ...LocationCatalogEntryFromJSONTyped(json, true), ...TimeSeriesCatalogEntryFromJSONTyped(json, true) };
 }
 
 export function CatalogEntryToJSON(value?: CatalogEntry | null): any {
@@ -53,8 +53,8 @@ export function CatalogEntryToJSON(value?: CatalogEntry | null): any {
     if (instanceOfLocationCatalogEntry(value)) {
         return LocationCatalogEntryToJSON(value as LocationCatalogEntry);
     }
-    if (instanceOfTimeseriesCatalogEntry(value)) {
-        return TimeseriesCatalogEntryToJSON(value as TimeseriesCatalogEntry);
+    if (instanceOfTimeSeriesCatalogEntry(value)) {
+        return TimeSeriesCatalogEntryToJSON(value as TimeSeriesCatalogEntry);
     }
 
     return {};

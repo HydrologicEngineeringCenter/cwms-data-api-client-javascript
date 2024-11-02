@@ -16,41 +16,41 @@ import { mapValues } from '../runtime';
 /**
  * List of retrieved time-series values
  * @export
- * @interface TimeSeriesRecord
+ * @interface TimeSeriesRecordInner
  */
-export interface TimeSeriesRecord {
+export interface TimeSeriesRecordInner {
     /**
      * Milliseconds since 1970-01-01 (Unix Epoch), always UTC
      * @type {number}
-     * @memberof TimeSeriesRecord
+     * @memberof TimeSeriesRecordInner
      */
     dateTime?: number;
     /**
      * Requested time-series data value
      * @type {number}
-     * @memberof TimeSeriesRecord
+     * @memberof TimeSeriesRecordInner
      */
     value?: number;
     /**
      * 
      * @type {number}
-     * @memberof TimeSeriesRecord
+     * @memberof TimeSeriesRecordInner
      */
     qualityCode?: number;
 }
 
 /**
- * Check if a given object implements the TimeSeriesRecord interface.
+ * Check if a given object implements the TimeSeriesRecordInner interface.
  */
-export function instanceOfTimeSeriesRecord(value: object): boolean {
+export function instanceOfTimeSeriesRecordInner(value: object): boolean {
     return true;
 }
 
-export function TimeSeriesRecordFromJSON(json: any): TimeSeriesRecord {
-    return TimeSeriesRecordFromJSONTyped(json, false);
+export function TimeSeriesRecordInnerFromJSON(json: any): TimeSeriesRecordInner {
+    return TimeSeriesRecordInnerFromJSONTyped(json, false);
 }
 
-export function TimeSeriesRecordFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesRecord {
+export function TimeSeriesRecordInnerFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesRecordInner {
     if (json == null) {
         return json;
     }
@@ -62,7 +62,7 @@ export function TimeSeriesRecordFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
-export function TimeSeriesRecordToJSON(value?: TimeSeriesRecord | null): any {
+export function TimeSeriesRecordInnerToJSON(value?: TimeSeriesRecordInner | null): any {
     if (value == null) {
         return value;
     }

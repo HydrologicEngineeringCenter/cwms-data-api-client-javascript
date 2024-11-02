@@ -16,56 +16,56 @@
 import * as runtime from '../runtime';
 import type {
   CdaError,
-  TimeseriesCategory,
+  TimeSeriesCategory,
 } from '../models/index';
 import {
     CdaErrorFromJSON,
     CdaErrorToJSON,
-    TimeseriesCategoryFromJSON,
-    TimeseriesCategoryToJSON,
+    TimeSeriesCategoryFromJSON,
+    TimeSeriesCategoryToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataTimeseriesCategoryWithCategoryIdRequest {
+export interface DeleteSwtDataTimeSeriesCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
     cascadeDelete?: boolean;
 }
 
-export interface GetSwtDataTimeseriesCategoryRequest {
+export interface GetSwtDataTimeSeriesCategoryRequest {
     office?: string;
 }
 
-export interface GetSwtDataTimeseriesCategoryWithCategoryIdRequest {
+export interface GetSwtDataTimeSeriesCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
 }
 
-export interface PostSwtDataTimeseriesCategoryRequest {
-    timeseriesCategory: TimeseriesCategory;
+export interface PostSwtDataTimeSeriesCategoryRequest {
+    timeSeriesCategory: TimeSeriesCategory;
     failIfExists?: boolean;
 }
 
 /**
  * 
  */
-export class TimeseriesCategoriesApi extends runtime.BaseAPI {
+export class TimeSeriesCategoriesApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested time series category
      * Delete swtData timeseries category with categoryId
      */
-    async deleteSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters: DeleteSwtDataTimeseriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteSwtDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters: DeleteSwtDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling deleteSwtDataTimeseriesCategoryWithCategoryId().'
+                'Required parameter "categoryId" was null or undefined when calling deleteSwtDataTimeSeriesCategoryWithCategoryId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeseriesCategoryWithCategoryId().'
+                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeSeriesCategoryWithCategoryId().'
             );
         }
 
@@ -99,15 +99,15 @@ export class TimeseriesCategoriesApi extends runtime.BaseAPI {
      * Deletes requested time series category
      * Delete swtData timeseries category with categoryId
      */
-    async deleteSwtDataTimeseriesCategoryWithCategoryId(requestParameters: DeleteSwtDataTimeseriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+    async deleteSwtDataTimeSeriesCategoryWithCategoryId(requestParameters: DeleteSwtDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteSwtDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns CWMS timeseries category Data
      * Get swtData timeseries category
      */
-    async getSwtDataTimeseriesCategoryRaw(requestParameters: GetSwtDataTimeseriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeseriesCategory>>> {
+    async getSwtDataTimeSeriesCategoryRaw(requestParameters: GetSwtDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeSeriesCategory>>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -127,15 +127,15 @@ export class TimeseriesCategoriesApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(TimeseriesCategoryFromJSON));
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(TimeSeriesCategoryFromJSON));
     }
 
     /**
      * Returns CWMS timeseries category Data
      * Get swtData timeseries category
      */
-    async getSwtDataTimeseriesCategory(requestParameters: GetSwtDataTimeseriesCategoryRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeseriesCategory>> {
-        const response = await this.getSwtDataTimeseriesCategoryRaw(requestParameters, initOverrides);
+    async getSwtDataTimeSeriesCategory(requestParameters: GetSwtDataTimeSeriesCategoryRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeSeriesCategory>> {
+        const response = await this.getSwtDataTimeSeriesCategoryRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -143,18 +143,18 @@ export class TimeseriesCategoriesApi extends runtime.BaseAPI {
      * Retrieves requested timeseries category
      * Get swtData timeseries category with categoryId
      */
-    async getSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters: GetSwtDataTimeseriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesCategory>> {
+    async getSwtDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters: GetSwtDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeriesCategory>> {
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling getSwtDataTimeseriesCategoryWithCategoryId().'
+                'Required parameter "categoryId" was null or undefined when calling getSwtDataTimeSeriesCategoryWithCategoryId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataTimeseriesCategoryWithCategoryId().'
+                'Required parameter "office" was null or undefined when calling getSwtDataTimeSeriesCategoryWithCategoryId().'
             );
         }
 
@@ -177,27 +177,27 @@ export class TimeseriesCategoriesApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TimeseriesCategoryFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => TimeSeriesCategoryFromJSON(jsonValue));
     }
 
     /**
      * Retrieves requested timeseries category
      * Get swtData timeseries category with categoryId
      */
-    async getSwtDataTimeseriesCategoryWithCategoryId(requestParameters: GetSwtDataTimeseriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesCategory> {
-        const response = await this.getSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+    async getSwtDataTimeSeriesCategoryWithCategoryId(requestParameters: GetSwtDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeriesCategory> {
+        const response = await this.getSwtDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Create new TimeseriesCategory
+     * Create new TimeSeriesCategory
      * Post swtData timeseries category
      */
-    async postSwtDataTimeseriesCategoryRaw(requestParameters: PostSwtDataTimeseriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters['timeseriesCategory'] == null) {
+    async postSwtDataTimeSeriesCategoryRaw(requestParameters: PostSwtDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['timeSeriesCategory'] == null) {
             throw new runtime.RequiredError(
-                'timeseriesCategory',
-                'Required parameter "timeseriesCategory" was null or undefined when calling postSwtDataTimeseriesCategory().'
+                'timeSeriesCategory',
+                'Required parameter "timeSeriesCategory" was null or undefined when calling postSwtDataTimeSeriesCategory().'
             );
         }
 
@@ -220,18 +220,18 @@ export class TimeseriesCategoriesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TimeseriesCategoryToJSON(requestParameters['timeseriesCategory']),
+            body: TimeSeriesCategoryToJSON(requestParameters['timeSeriesCategory']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
     }
 
     /**
-     * Create new TimeseriesCategory
+     * Create new TimeSeriesCategory
      * Post swtData timeseries category
      */
-    async postSwtDataTimeseriesCategory(requestParameters: PostSwtDataTimeseriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataTimeseriesCategoryRaw(requestParameters, initOverrides);
+    async postSwtDataTimeSeriesCategory(requestParameters: PostSwtDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postSwtDataTimeSeriesCategoryRaw(requestParameters, initOverrides);
     }
 
 }

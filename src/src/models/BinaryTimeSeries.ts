@@ -13,88 +13,88 @@
  */
 
 import { mapValues } from '../runtime';
-import type { BinaryTimeseriesRow } from './BinaryTimeseriesRow';
+import type { BinaryTimeSeriesRow } from './BinaryTimeSeriesRow';
 import {
-    BinaryTimeseriesRowFromJSON,
-    BinaryTimeseriesRowFromJSONTyped,
-    BinaryTimeseriesRowToJSON,
-} from './BinaryTimeseriesRow';
+    BinaryTimeSeriesRowFromJSON,
+    BinaryTimeSeriesRowFromJSONTyped,
+    BinaryTimeSeriesRowToJSON,
+} from './BinaryTimeSeriesRow';
 
 /**
  * 
  * @export
- * @interface BinaryTimeseries
+ * @interface BinaryTimeSeries
  */
-export interface BinaryTimeseries {
+export interface BinaryTimeSeries {
     /**
      * Owning office of object.
      * @type {string}
-     * @memberof BinaryTimeseries
+     * @memberof BinaryTimeSeries
      */
     officeId: string;
     /**
      * 
      * @type {string}
-     * @memberof BinaryTimeseries
+     * @memberof BinaryTimeSeries
      */
     name?: string;
     /**
      * 
      * @type {number}
-     * @memberof BinaryTimeseries
+     * @memberof BinaryTimeSeries
      */
     intervalOffset?: number;
     /**
      * 
      * @type {string}
-     * @memberof BinaryTimeseries
+     * @memberof BinaryTimeSeries
      */
     timeZone?: string;
     /**
      * Version type specifies the type of timeseries response to be received. Can be max aggregate or single version. Max aggregate cannot be run if version date field is specified.
      * @type {string}
-     * @memberof BinaryTimeseries
+     * @memberof BinaryTimeSeries
      */
-    dateVersionType?: BinaryTimeseriesDateVersionTypeEnum;
+    dateVersionType?: BinaryTimeSeriesDateVersionTypeEnum;
     /**
      * The version date of the time series trace
      * @type {Date}
-     * @memberof BinaryTimeseries
+     * @memberof BinaryTimeSeries
      */
     versionDate?: Date;
     /**
      * 
-     * @type {Array<BinaryTimeseriesRow>}
-     * @memberof BinaryTimeseries
+     * @type {Array<BinaryTimeSeriesRow>}
+     * @memberof BinaryTimeSeries
      */
-    binaryValues?: Array<BinaryTimeseriesRow>;
+    binaryValues?: Array<BinaryTimeSeriesRow>;
 }
 
 
 /**
  * @export
  */
-export const BinaryTimeseriesDateVersionTypeEnum = {
+export const BinaryTimeSeriesDateVersionTypeEnum = {
     MaxAggregate: 'MAX_AGGREGATE',
     SingleVersion: 'SINGLE_VERSION',
     Unversioned: 'UNVERSIONED'
 } as const;
-export type BinaryTimeseriesDateVersionTypeEnum = typeof BinaryTimeseriesDateVersionTypeEnum[keyof typeof BinaryTimeseriesDateVersionTypeEnum];
+export type BinaryTimeSeriesDateVersionTypeEnum = typeof BinaryTimeSeriesDateVersionTypeEnum[keyof typeof BinaryTimeSeriesDateVersionTypeEnum];
 
 
 /**
- * Check if a given object implements the BinaryTimeseries interface.
+ * Check if a given object implements the BinaryTimeSeries interface.
  */
-export function instanceOfBinaryTimeseries(value: object): boolean {
+export function instanceOfBinaryTimeSeries(value: object): boolean {
     if (!('officeId' in value)) return false;
     return true;
 }
 
-export function BinaryTimeseriesFromJSON(json: any): BinaryTimeseries {
-    return BinaryTimeseriesFromJSONTyped(json, false);
+export function BinaryTimeSeriesFromJSON(json: any): BinaryTimeSeries {
+    return BinaryTimeSeriesFromJSONTyped(json, false);
 }
 
-export function BinaryTimeseriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): BinaryTimeseries {
+export function BinaryTimeSeriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): BinaryTimeSeries {
     if (json == null) {
         return json;
     }
@@ -106,11 +106,11 @@ export function BinaryTimeseriesFromJSONTyped(json: any, ignoreDiscriminator: bo
         'timeZone': json['time-zone'] == null ? undefined : json['time-zone'],
         'dateVersionType': json['date-version-type'] == null ? undefined : json['date-version-type'],
         'versionDate': json['version-date'] == null ? undefined : (new Date(json['version-date'])),
-        'binaryValues': json['binary-values'] == null ? undefined : ((json['binary-values'] as Array<any>).map(BinaryTimeseriesRowFromJSON)),
+        'binaryValues': json['binary-values'] == null ? undefined : ((json['binary-values'] as Array<any>).map(BinaryTimeSeriesRowFromJSON)),
     };
 }
 
-export function BinaryTimeseriesToJSON(value?: BinaryTimeseries | null): any {
+export function BinaryTimeSeriesToJSON(value?: BinaryTimeSeries | null): any {
     if (value == null) {
         return value;
     }
@@ -122,7 +122,7 @@ export function BinaryTimeseriesToJSON(value?: BinaryTimeseries | null): any {
         'time-zone': value['timeZone'],
         'date-version-type': value['dateVersionType'],
         'version-date': value['versionDate'] == null ? undefined : ((value['versionDate']).toISOString()),
-        'binary-values': value['binaryValues'] == null ? undefined : ((value['binaryValues'] as Array<any>).map(BinaryTimeseriesRowToJSON)),
+        'binary-values': value['binaryValues'] == null ? undefined : ((value['binaryValues'] as Array<any>).map(BinaryTimeSeriesRowToJSON)),
     };
 }
 

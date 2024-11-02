@@ -14,7 +14,7 @@
 
 import { mapValues } from '../runtime';
 /**
- * Timeseries extent information
+ * TimeSeries extent information
  * @export
  * @interface Extents
  */
@@ -38,7 +38,7 @@ export interface Extents {
      */
     latestTime?: Date;
     /**
-     * Timeseries version to which this extent information applies
+     * TimeSeries version to which this extent information applies
      * @type {Date}
      * @memberof Extents
      */

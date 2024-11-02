@@ -17,41 +17,41 @@ import * as runtime from '../runtime';
 import type {
   CdaError,
   DeleteMethod,
-  TimeseriesIdentifierDescriptor,
-  TimeseriesIdentifierDescriptors,
+  TimeSeriesIdentifierDescriptor,
+  TimeSeriesIdentifierDescriptors,
 } from '../models/index';
 import {
     CdaErrorFromJSON,
     CdaErrorToJSON,
     DeleteMethodFromJSON,
     DeleteMethodToJSON,
-    TimeseriesIdentifierDescriptorFromJSON,
-    TimeseriesIdentifierDescriptorToJSON,
-    TimeseriesIdentifierDescriptorsFromJSON,
-    TimeseriesIdentifierDescriptorsToJSON,
+    TimeSeriesIdentifierDescriptorFromJSON,
+    TimeSeriesIdentifierDescriptorToJSON,
+    TimeSeriesIdentifierDescriptorsFromJSON,
+    TimeSeriesIdentifierDescriptorsToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataTimeseriesIdentifierDescriptorWithNameRequest {
+export interface DeleteSwtDataTimeSeriesIdentifierDescriptorWithNameRequest {
     name: string;
     timeseriesId: string;
     office: string;
     method: DeleteMethod;
 }
 
-export interface GetSwtDataTimeseriesIdentifierDescriptorRequest {
+export interface GetSwtDataTimeSeriesIdentifierDescriptorRequest {
     office?: string;
     timeseriesIdRegex?: string;
     page?: string;
     pageSize?: number;
 }
 
-export interface GetSwtDataTimeseriesIdentifierDescriptorWithNameRequest {
+export interface GetSwtDataTimeSeriesIdentifierDescriptorWithNameRequest {
     name: string;
     timeseriesId: string;
     office: string;
 }
 
-export interface PatchSwtDataTimeseriesIdentifierDescriptorWithNameRequest {
+export interface PatchSwtDataTimeSeriesIdentifierDescriptorWithNameRequest {
     name: string;
     office: string;
     timeseriesId?: string;
@@ -61,46 +61,46 @@ export interface PatchSwtDataTimeseriesIdentifierDescriptorWithNameRequest {
     active?: boolean;
 }
 
-export interface PostSwtDataTimeseriesIdentifierDescriptorRequest {
-    timeseriesIdentifierDescriptor: TimeseriesIdentifierDescriptor;
+export interface PostSwtDataTimeSeriesIdentifierDescriptorRequest {
+    timeSeriesIdentifierDescriptor: TimeSeriesIdentifierDescriptor;
     failIfExists?: boolean;
 }
 
 /**
  * 
  */
-export class TimeseriesIdentifierApi extends runtime.BaseAPI {
+export class TimeSeriesIdentifierApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested timeseries identifier
      * Delete swtData timeseries identifierDescriptor with name
      */
-    async deleteSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters: DeleteSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteSwtDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters: DeleteSwtDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataTimeseriesIdentifierDescriptorWithName().'
+                'Required parameter "name" was null or undefined when calling deleteSwtDataTimeSeriesIdentifierDescriptorWithName().'
             );
         }
 
         if (requestParameters['timeseriesId'] == null) {
             throw new runtime.RequiredError(
                 'timeseriesId',
-                'Required parameter "timeseriesId" was null or undefined when calling deleteSwtDataTimeseriesIdentifierDescriptorWithName().'
+                'Required parameter "timeseriesId" was null or undefined when calling deleteSwtDataTimeSeriesIdentifierDescriptorWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeseriesIdentifierDescriptorWithName().'
+                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeSeriesIdentifierDescriptorWithName().'
             );
         }
 
         if (requestParameters['method'] == null) {
             throw new runtime.RequiredError(
                 'method',
-                'Required parameter "method" was null or undefined when calling deleteSwtDataTimeseriesIdentifierDescriptorWithName().'
+                'Required parameter "method" was null or undefined when calling deleteSwtDataTimeSeriesIdentifierDescriptorWithName().'
             );
         }
 
@@ -134,15 +134,15 @@ export class TimeseriesIdentifierApi extends runtime.BaseAPI {
      * Deletes requested timeseries identifier
      * Delete swtData timeseries identifierDescriptor with name
      */
-    async deleteSwtDataTimeseriesIdentifierDescriptorWithName(requestParameters: DeleteSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
+    async deleteSwtDataTimeSeriesIdentifierDescriptorWithName(requestParameters: DeleteSwtDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteSwtDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns CWMS timeseries identifier descriptorData
      * Get swtData timeseries identifierDescriptor
      */
-    async getSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters: GetSwtDataTimeseriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesIdentifierDescriptors>> {
+    async getSwtDataTimeSeriesIdentifierDescriptorRaw(requestParameters: GetSwtDataTimeSeriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeriesIdentifierDescriptors>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -174,15 +174,15 @@ export class TimeseriesIdentifierApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TimeseriesIdentifierDescriptorsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => TimeSeriesIdentifierDescriptorsFromJSON(jsonValue));
     }
 
     /**
      * Returns CWMS timeseries identifier descriptorData
      * Get swtData timeseries identifierDescriptor
      */
-    async getSwtDataTimeseriesIdentifierDescriptor(requestParameters: GetSwtDataTimeseriesIdentifierDescriptorRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesIdentifierDescriptors> {
-        const response = await this.getSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters, initOverrides);
+    async getSwtDataTimeSeriesIdentifierDescriptor(requestParameters: GetSwtDataTimeSeriesIdentifierDescriptorRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeriesIdentifierDescriptors> {
+        const response = await this.getSwtDataTimeSeriesIdentifierDescriptorRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -190,25 +190,25 @@ export class TimeseriesIdentifierApi extends runtime.BaseAPI {
      * Retrieves requested timeseries identifier descriptor
      * Get swtData timeseries identifierDescriptor with name
      */
-    async getSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters: GetSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesIdentifierDescriptor>> {
+    async getSwtDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters: GetSwtDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeriesIdentifierDescriptor>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataTimeseriesIdentifierDescriptorWithName().'
+                'Required parameter "name" was null or undefined when calling getSwtDataTimeSeriesIdentifierDescriptorWithName().'
             );
         }
 
         if (requestParameters['timeseriesId'] == null) {
             throw new runtime.RequiredError(
                 'timeseriesId',
-                'Required parameter "timeseriesId" was null or undefined when calling getSwtDataTimeseriesIdentifierDescriptorWithName().'
+                'Required parameter "timeseriesId" was null or undefined when calling getSwtDataTimeSeriesIdentifierDescriptorWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataTimeseriesIdentifierDescriptorWithName().'
+                'Required parameter "office" was null or undefined when calling getSwtDataTimeSeriesIdentifierDescriptorWithName().'
             );
         }
 
@@ -231,33 +231,33 @@ export class TimeseriesIdentifierApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TimeseriesIdentifierDescriptorFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => TimeSeriesIdentifierDescriptorFromJSON(jsonValue));
     }
 
     /**
      * Retrieves requested timeseries identifier descriptor
      * Get swtData timeseries identifierDescriptor with name
      */
-    async getSwtDataTimeseriesIdentifierDescriptorWithName(requestParameters: GetSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesIdentifierDescriptor> {
-        const response = await this.getSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
+    async getSwtDataTimeSeriesIdentifierDescriptorWithName(requestParameters: GetSwtDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeriesIdentifierDescriptor> {
+        const response = await this.getSwtDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Patch swtData timeseries identifierDescriptor with name
      */
-    async patchSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters: PatchSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchSwtDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters: PatchSwtDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataTimeseriesIdentifierDescriptorWithName().'
+                'Required parameter "name" was null or undefined when calling patchSwtDataTimeSeriesIdentifierDescriptorWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataTimeseriesIdentifierDescriptorWithName().'
+                'Required parameter "office" was null or undefined when calling patchSwtDataTimeSeriesIdentifierDescriptorWithName().'
             );
         }
 
@@ -306,19 +306,19 @@ export class TimeseriesIdentifierApi extends runtime.BaseAPI {
     /**
      * Patch swtData timeseries identifierDescriptor with name
      */
-    async patchSwtDataTimeseriesIdentifierDescriptorWithName(requestParameters: PatchSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
+    async patchSwtDataTimeSeriesIdentifierDescriptorWithName(requestParameters: PatchSwtDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchSwtDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Create new TimeseriesIdentifierDescriptor
+     * Create new TimeSeriesIdentifierDescriptor
      * Post swtData timeseries identifierDescriptor
      */
-    async postSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters: PostSwtDataTimeseriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters['timeseriesIdentifierDescriptor'] == null) {
+    async postSwtDataTimeSeriesIdentifierDescriptorRaw(requestParameters: PostSwtDataTimeSeriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['timeSeriesIdentifierDescriptor'] == null) {
             throw new runtime.RequiredError(
-                'timeseriesIdentifierDescriptor',
-                'Required parameter "timeseriesIdentifierDescriptor" was null or undefined when calling postSwtDataTimeseriesIdentifierDescriptor().'
+                'timeSeriesIdentifierDescriptor',
+                'Required parameter "timeSeriesIdentifierDescriptor" was null or undefined when calling postSwtDataTimeSeriesIdentifierDescriptor().'
             );
         }
 
@@ -341,18 +341,18 @@ export class TimeseriesIdentifierApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TimeseriesIdentifierDescriptorToJSON(requestParameters['timeseriesIdentifierDescriptor']),
+            body: TimeSeriesIdentifierDescriptorToJSON(requestParameters['timeSeriesIdentifierDescriptor']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
     }
 
     /**
-     * Create new TimeseriesIdentifierDescriptor
+     * Create new TimeSeriesIdentifierDescriptor
      * Post swtData timeseries identifierDescriptor
      */
-    async postSwtDataTimeseriesIdentifierDescriptor(requestParameters: PostSwtDataTimeseriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters, initOverrides);
+    async postSwtDataTimeSeriesIdentifierDescriptor(requestParameters: PostSwtDataTimeSeriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postSwtDataTimeSeriesIdentifierDescriptorRaw(requestParameters, initOverrides);
     }
 
 }

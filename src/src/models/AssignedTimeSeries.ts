@@ -16,59 +16,59 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface AssignedTimeseries
+ * @interface AssignedTimeSeries
  */
-export interface AssignedTimeseries {
+export interface AssignedTimeSeries {
     /**
      * 
      * @type {string}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     officeId?: string;
     /**
      * 
      * @type {string}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     timeseriesId?: string;
     /**
      * 
      * @type {number}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     tsCode?: number;
     /**
      * 
      * @type {string}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     aliasId?: string;
     /**
      * 
      * @type {string}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     refTsId?: string;
     /**
      * 
      * @type {number}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     attribute?: number;
 }
 
 /**
- * Check if a given object implements the AssignedTimeseries interface.
+ * Check if a given object implements the AssignedTimeSeries interface.
  */
-export function instanceOfAssignedTimeseries(value: object): boolean {
+export function instanceOfAssignedTimeSeries(value: object): boolean {
     return true;
 }
 
-export function AssignedTimeseriesFromJSON(json: any): AssignedTimeseries {
-    return AssignedTimeseriesFromJSONTyped(json, false);
+export function AssignedTimeSeriesFromJSON(json: any): AssignedTimeSeries {
+    return AssignedTimeSeriesFromJSONTyped(json, false);
 }
 
-export function AssignedTimeseriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssignedTimeseries {
+export function AssignedTimeSeriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssignedTimeSeries {
     if (json == null) {
         return json;
     }
@@ -83,7 +83,7 @@ export function AssignedTimeseriesFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
-export function AssignedTimeseriesToJSON(value?: AssignedTimeseries | null): any {
+export function AssignedTimeSeriesToJSON(value?: AssignedTimeSeries | null): any {
     if (value == null) {
         return value;
     }

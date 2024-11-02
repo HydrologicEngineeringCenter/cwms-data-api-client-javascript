@@ -13,88 +13,88 @@
  */
 
 import { mapValues } from '../runtime';
-import type { RegularTextTimeseriesRow } from './RegularTextTimeseriesRow';
+import type { RegularTextTimeSeriesRow } from './RegularTextTimeSeriesRow';
 import {
-    RegularTextTimeseriesRowFromJSON,
-    RegularTextTimeseriesRowFromJSONTyped,
-    RegularTextTimeseriesRowToJSON,
-} from './RegularTextTimeseriesRow';
+    RegularTextTimeSeriesRowFromJSON,
+    RegularTextTimeSeriesRowFromJSONTyped,
+    RegularTextTimeSeriesRowToJSON,
+} from './RegularTextTimeSeriesRow';
 
 /**
  * 
  * @export
- * @interface TextTimeseries
+ * @interface TextTimeSeries
  */
-export interface TextTimeseries {
+export interface TextTimeSeries {
     /**
      * Owning office of object.
      * @type {string}
-     * @memberof TextTimeseries
+     * @memberof TextTimeSeries
      */
     officeId: string;
     /**
      * 
      * @type {string}
-     * @memberof TextTimeseries
+     * @memberof TextTimeSeries
      */
     name?: string;
     /**
      * 
      * @type {number}
-     * @memberof TextTimeseries
+     * @memberof TextTimeSeries
      */
     intervalOffset?: number;
     /**
      * 
      * @type {string}
-     * @memberof TextTimeseries
+     * @memberof TextTimeSeries
      */
     timeZone?: string;
     /**
      * Version type specifies the type of timeseries response to be received. Can be max aggregate or single version. Max aggregate cannot be run if version date field is specified.
      * @type {string}
-     * @memberof TextTimeseries
+     * @memberof TextTimeSeries
      */
-    dateVersionType?: TextTimeseriesDateVersionTypeEnum;
+    dateVersionType?: TextTimeSeriesDateVersionTypeEnum;
     /**
      * The version date of the time series trace
      * @type {Date}
-     * @memberof TextTimeseries
+     * @memberof TextTimeSeries
      */
     versionDate?: Date;
     /**
      * 
-     * @type {Array<RegularTextTimeseriesRow>}
-     * @memberof TextTimeseries
+     * @type {Array<RegularTextTimeSeriesRow>}
+     * @memberof TextTimeSeries
      */
-    regularTextValues?: Array<RegularTextTimeseriesRow>;
+    regularTextValues?: Array<RegularTextTimeSeriesRow>;
 }
 
 
 /**
  * @export
  */
-export const TextTimeseriesDateVersionTypeEnum = {
+export const TextTimeSeriesDateVersionTypeEnum = {
     MaxAggregate: 'MAX_AGGREGATE',
     SingleVersion: 'SINGLE_VERSION',
     Unversioned: 'UNVERSIONED'
 } as const;
-export type TextTimeseriesDateVersionTypeEnum = typeof TextTimeseriesDateVersionTypeEnum[keyof typeof TextTimeseriesDateVersionTypeEnum];
+export type TextTimeSeriesDateVersionTypeEnum = typeof TextTimeSeriesDateVersionTypeEnum[keyof typeof TextTimeSeriesDateVersionTypeEnum];
 
 
 /**
- * Check if a given object implements the TextTimeseries interface.
+ * Check if a given object implements the TextTimeSeries interface.
  */
-export function instanceOfTextTimeseries(value: object): boolean {
+export function instanceOfTextTimeSeries(value: object): boolean {
     if (!('officeId' in value)) return false;
     return true;
 }
 
-export function TextTimeseriesFromJSON(json: any): TextTimeseries {
-    return TextTimeseriesFromJSONTyped(json, false);
+export function TextTimeSeriesFromJSON(json: any): TextTimeSeries {
+    return TextTimeSeriesFromJSONTyped(json, false);
 }
 
-export function TextTimeseriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): TextTimeseries {
+export function TextTimeSeriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): TextTimeSeries {
     if (json == null) {
         return json;
     }
@@ -106,11 +106,11 @@ export function TextTimeseriesFromJSONTyped(json: any, ignoreDiscriminator: bool
         'timeZone': json['time-zone'] == null ? undefined : json['time-zone'],
         'dateVersionType': json['date-version-type'] == null ? undefined : json['date-version-type'],
         'versionDate': json['version-date'] == null ? undefined : (new Date(json['version-date'])),
-        'regularTextValues': json['regular-text-values'] == null ? undefined : ((json['regular-text-values'] as Array<any>).map(RegularTextTimeseriesRowFromJSON)),
+        'regularTextValues': json['regular-text-values'] == null ? undefined : ((json['regular-text-values'] as Array<any>).map(RegularTextTimeSeriesRowFromJSON)),
     };
 }
 
-export function TextTimeseriesToJSON(value?: TextTimeseries | null): any {
+export function TextTimeSeriesToJSON(value?: TextTimeSeries | null): any {
     if (value == null) {
         return value;
     }
@@ -122,7 +122,7 @@ export function TextTimeseriesToJSON(value?: TextTimeseries | null): any {
         'time-zone': value['timeZone'],
         'date-version-type': value['dateVersionType'],
         'version-date': value['versionDate'] == null ? undefined : ((value['versionDate']).toISOString()),
-        'regular-text-values': value['regularTextValues'] == null ? undefined : ((value['regularTextValues'] as Array<any>).map(RegularTextTimeseriesRowToJSON)),
+        'regular-text-values': value['regularTextValues'] == null ? undefined : ((value['regularTextValues'] as Array<any>).map(RegularTextTimeSeriesRowToJSON)),
     };
 }
 

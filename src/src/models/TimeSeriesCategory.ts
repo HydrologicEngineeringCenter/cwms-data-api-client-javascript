@@ -14,7 +14,7 @@
 
 import { mapValues } from '../runtime';
 /**
- * A representation of a Timeseries category
+ * A representation of a TimeSeries category
  * @export
  * @interface TimeseriesCategory
  */

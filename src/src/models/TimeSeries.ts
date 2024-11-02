@@ -13,24 +13,24 @@
  */
 
 import { mapValues } from '../runtime';
-import type { TimeseriesColumn } from './TimeseriesColumn';
+import type { TimeSeriesColumn } from './TimeSeriesColumn';
 import {
-    TimeseriesColumnFromJSON,
-    TimeseriesColumnFromJSONTyped,
-    TimeseriesColumnToJSON,
-} from './TimeseriesColumn';
+    TimeSeriesColumnFromJSON,
+    TimeSeriesColumnFromJSONTyped,
+    TimeSeriesColumnToJSON,
+} from './TimeSeriesColumn';
+import type { TimeSeriesRecordInner } from './TimeSeriesRecordInner';
+import {
+    TimeSeriesRecordInnerFromJSON,
+    TimeSeriesRecordInnerFromJSONTyped,
+    TimeSeriesRecordInnerToJSON,
+} from './TimeSeriesRecordInner';
 import type { TimeseriesInterval } from './TimeseriesInterval';
 import {
     TimeseriesIntervalFromJSON,
     TimeseriesIntervalFromJSONTyped,
     TimeseriesIntervalToJSON,
 } from './TimeseriesInterval';
-import type { TimeseriesValuesInnerInner } from './TimeseriesValuesInnerInner';
-import {
-    TimeseriesValuesInnerInnerFromJSON,
-    TimeseriesValuesInnerInnerFromJSONTyped,
-    TimeseriesValuesInnerInnerToJSON,
-} from './TimeseriesValuesInnerInner';
 import type { VerticalDatumInfo } from './VerticalDatumInfo';
 import {
     VerticalDatumInfoFromJSON,
@@ -124,16 +124,16 @@ export interface Timeseries {
     units: string;
     /**
      * 
-     * @type {Array<TimeseriesColumn>}
+     * @type {Array<TimeSeriesColumn>}
      * @memberof Timeseries
      */
-    readonly valueColumns?: Array<TimeseriesColumn>;
+    readonly valueColumns?: Array<TimeSeriesColumn>;
     /**
-     * 
-     * @type {Array<Array<TimeseriesValuesInnerInner>>}
+     * Array of time-series data points. Each entry contains a sub-array representing date-time, value, and quality-code.
+     * @type {Array<Array<Array<Array<TimeSeriesRecordInner>>>>}
      * @memberof Timeseries
      */
-    values?: Array<Array<TimeseriesValuesInnerInner>>;
+    values?: Array<Array<Array<Array<TimeSeriesRecordInner>>>>;
     /**
      * The version date of the time series trace
      * @type {Date}
@@ -191,7 +191,7 @@ export function TimeseriesFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'timeZone': json['time-zone'] == null ? undefined : json['time-zone'],
         'total': json['total'] == null ? undefined : json['total'],
         'units': json['units'],
-        'valueColumns': json['value-columns'] == null ? undefined : ((json['value-columns'] as Array<any>).map(TimeseriesColumnFromJSON)),
+        'valueColumns': json['value-columns'] == null ? undefined : ((json['value-columns'] as Array<any>).map(TimeSeriesColumnFromJSON)),
         'values': json['values'] == null ? undefined : json['values'],
         'versionDate': json['version-date'] == null ? undefined : (new Date(json['version-date'])),
         'verticalDatumInfo': json['vertical-datum-info'] == null ? undefined : VerticalDatumInfoFromJSON(json['vertical-datum-info']),

@@ -16,54 +16,54 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface TimeseriesIdentifierDescriptor
+ * @interface TimeSeriesIdentifierDescriptor
  */
-export interface TimeseriesIdentifierDescriptor {
+export interface TimeSeriesIdentifierDescriptor {
     /**
      * Owning office of object.
      * @type {string}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     officeId: string;
     /**
      * 
      * @type {string}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     timeSeriesId?: string;
     /**
      * 
      * @type {string}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     timezoneName?: string;
     /**
      * 
      * @type {number}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     intervalOffsetMinutes?: number;
     /**
      * 
      * @type {boolean}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     active?: boolean;
 }
 
 /**
- * Check if a given object implements the TimeseriesIdentifierDescriptor interface.
+ * Check if a given object implements the TimeSeriesIdentifierDescriptor interface.
  */
-export function instanceOfTimeseriesIdentifierDescriptor(value: object): boolean {
+export function instanceOfTimeSeriesIdentifierDescriptor(value: object): boolean {
     if (!('officeId' in value)) return false;
     return true;
 }
 
-export function TimeseriesIdentifierDescriptorFromJSON(json: any): TimeseriesIdentifierDescriptor {
-    return TimeseriesIdentifierDescriptorFromJSONTyped(json, false);
+export function TimeSeriesIdentifierDescriptorFromJSON(json: any): TimeSeriesIdentifierDescriptor {
+    return TimeSeriesIdentifierDescriptorFromJSONTyped(json, false);
 }
 
-export function TimeseriesIdentifierDescriptorFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesIdentifierDescriptor {
+export function TimeSeriesIdentifierDescriptorFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesIdentifierDescriptor {
     if (json == null) {
         return json;
     }
@@ -77,7 +77,7 @@ export function TimeseriesIdentifierDescriptorFromJSONTyped(json: any, ignoreDis
     };
 }
 
-export function TimeseriesIdentifierDescriptorToJSON(value?: TimeseriesIdentifierDescriptor | null): any {
+export function TimeSeriesIdentifierDescriptorToJSON(value?: TimeSeriesIdentifierDescriptor | null): any {
     if (value == null) {
         return value;
     }

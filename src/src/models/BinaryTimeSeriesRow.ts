@@ -16,71 +16,71 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface BinaryTimeseriesRow
+ * @interface BinaryTimeSeriesRow
  */
-export interface BinaryTimeseriesRow {
+export interface BinaryTimeSeriesRow {
     /**
      * 
      * @type {Date}
-     * @memberof BinaryTimeseriesRow
+     * @memberof BinaryTimeSeriesRow
      */
     dateTime?: Date;
     /**
      * 
      * @type {Date}
-     * @memberof BinaryTimeseriesRow
+     * @memberof BinaryTimeSeriesRow
      */
     dataEntryDate?: Date;
     /**
      * 
      * @type {string}
-     * @memberof BinaryTimeseriesRow
+     * @memberof BinaryTimeSeriesRow
      */
     mediaType?: string;
     /**
      * 
      * @type {string}
-     * @memberof BinaryTimeseriesRow
+     * @memberof BinaryTimeSeriesRow
      */
     filename?: string;
     /**
      * 
      * @type {number}
-     * @memberof BinaryTimeseriesRow
+     * @memberof BinaryTimeSeriesRow
      */
     destFlag?: number;
     /**
      * 
      * @type {string}
-     * @memberof BinaryTimeseriesRow
+     * @memberof BinaryTimeSeriesRow
      */
     binaryValue?: string;
     /**
      * 
      * @type {string}
-     * @memberof BinaryTimeseriesRow
+     * @memberof BinaryTimeSeriesRow
      */
     valueUrl?: string;
     /**
      * 
      * @type {number}
-     * @memberof BinaryTimeseriesRow
+     * @memberof BinaryTimeSeriesRow
      */
     qualityCode?: number;
 }
 
 /**
- * Check if a given object implements the BinaryTimeseriesRow interface.
+ * Check if a given object implements the BinaryTimeSeriesRow interface.
  */
-export function instanceOfBinaryTimeseriesRow(value: object): boolean {
+export function instanceOfBinaryTimeSeriesRow(value: object): boolean {
     return true;
 }
 
-export function BinaryTimeseriesRowFromJSON(json: any): BinaryTimeseriesRow {
-    return BinaryTimeseriesRowFromJSONTyped(json, false);
+export function BinaryTimeSeriesRowFromJSON(json: any): BinaryTimeSeriesRow {
+    return BinaryTimeSeriesRowFromJSONTyped(json, false);
 }
 
-export function BinaryTimeseriesRowFromJSONTyped(json: any, ignoreDiscriminator: boolean): BinaryTimeseriesRow {
+export function BinaryTimeSeriesRowFromJSONTyped(json: any, ignoreDiscriminator: boolean): BinaryTimeSeriesRow {
     if (json == null) {
         return json;
     }
@@ -97,7 +97,7 @@ export function BinaryTimeseriesRowFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
-export function BinaryTimeseriesRowToJSON(value?: BinaryTimeseriesRow | null): any {
+export function BinaryTimeSeriesRowToJSON(value?: BinaryTimeSeriesRow | null): any {
     if (value == null) {
         return value;
     }

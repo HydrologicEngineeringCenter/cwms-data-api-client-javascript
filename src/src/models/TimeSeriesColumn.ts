@@ -16,41 +16,41 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface TimeseriesColumn
+ * @interface TimeSeriesColumn
  */
-export interface TimeseriesColumn {
+export interface TimeSeriesColumn {
     /**
      * 
      * @type {string}
-     * @memberof TimeseriesColumn
+     * @memberof TimeSeriesColumn
      */
     name?: string;
     /**
      * 
      * @type {number}
-     * @memberof TimeseriesColumn
+     * @memberof TimeSeriesColumn
      */
     ordinal?: number;
     /**
      * 
      * @type {string}
-     * @memberof TimeseriesColumn
+     * @memberof TimeSeriesColumn
      */
     datatype?: string;
 }
 
 /**
- * Check if a given object implements the TimeseriesColumn interface.
+ * Check if a given object implements the TimeSeriesColumn interface.
  */
-export function instanceOfTimeseriesColumn(value: object): boolean {
+export function instanceOfTimeSeriesColumn(value: object): boolean {
     return true;
 }
 
-export function TimeseriesColumnFromJSON(json: any): TimeseriesColumn {
-    return TimeseriesColumnFromJSONTyped(json, false);
+export function TimeSeriesColumnFromJSON(json: any): TimeSeriesColumn {
+    return TimeSeriesColumnFromJSONTyped(json, false);
 }
 
-export function TimeseriesColumnFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesColumn {
+export function TimeSeriesColumnFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesColumn {
     if (json == null) {
         return json;
     }
@@ -62,7 +62,7 @@ export function TimeseriesColumnFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
-export function TimeseriesColumnToJSON(value?: TimeseriesColumn | null): any {
+export function TimeSeriesColumnToJSON(value?: TimeSeriesColumn | null): any {
     if (value == null) {
         return value;
     }

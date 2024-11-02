@@ -16,74 +16,74 @@
 import * as runtime from '../runtime';
 import type {
   CdaError,
-  TimeseriesGroup,
+  TimeSeriesGroup,
 } from '../models/index';
 import {
     CdaErrorFromJSON,
     CdaErrorToJSON,
-    TimeseriesGroupFromJSON,
-    TimeseriesGroupToJSON,
+    TimeSeriesGroupFromJSON,
+    TimeSeriesGroupToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataTimeseriesGroupWithGroupIdRequest {
+export interface DeleteSwtDataTimeSeriesGroupWithGroupIdRequest {
     groupId: string;
     categoryId: string;
     office: string;
 }
 
-export interface GetSwtDataTimeseriesGroupRequest {
+export interface GetSwtDataTimeSeriesGroupRequest {
     office?: string;
     includeAssigned?: boolean;
     timeseriesCategoryLike?: string;
     timeseriesGroupLike?: string;
 }
 
-export interface GetSwtDataTimeseriesGroupWithGroupIdRequest {
+export interface GetSwtDataTimeSeriesGroupWithGroupIdRequest {
     groupId: string;
     office: string;
     categoryId: string;
 }
 
-export interface PatchSwtDataTimeseriesGroupWithGroupIdRequest {
+export interface PatchSwtDataTimeSeriesGroupWithGroupIdRequest {
     groupId: string;
     office: string;
-    timeseriesGroup: TimeseriesGroup;
+    timeSeriesGroup: TimeSeriesGroup;
     replaceAssignedTs?: boolean;
 }
 
-export interface PostSwtDataTimeseriesGroupRequest {
-    timeseriesGroup: TimeseriesGroup;
+export interface PostSwtDataTimeSeriesGroupRequest {
+    timeSeriesGroup: TimeSeriesGroup;
     failIfExists?: boolean;
 }
 
 /**
  * 
  */
-export class TimeseriesGroupsApi extends runtime.BaseAPI {
+export class TimeSeriesGroupsApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested time series group
      * Delete swtData timeseries group with groupId
      */
-    async deleteSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters: DeleteSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteSwtDataTimeSeriesGroupWithGroupIdRaw(requestParameters: DeleteSwtDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['groupId'] == null) {
             throw new runtime.RequiredError(
                 'groupId',
-                'Required parameter "groupId" was null or undefined when calling deleteSwtDataTimeseriesGroupWithGroupId().'
+                'Required parameter "groupId" was null or undefined when calling deleteSwtDataTimeSeriesGroupWithGroupId().'
             );
         }
 
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling deleteSwtDataTimeseriesGroupWithGroupId().'
+                'Required parameter "categoryId" was null or undefined when calling deleteSwtDataTimeSeriesGroupWithGroupId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeseriesGroupWithGroupId().'
+                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeSeriesGroupWithGroupId().'
             );
         }
 
@@ -117,15 +117,15 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
      * Deletes requested time series group
      * Delete swtData timeseries group with groupId
      */
-    async deleteSwtDataTimeseriesGroupWithGroupId(requestParameters: DeleteSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters, initOverrides);
+    async deleteSwtDataTimeSeriesGroupWithGroupId(requestParameters: DeleteSwtDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteSwtDataTimeSeriesGroupWithGroupIdRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Returns CWMS Timeseries Groups Data
+     * Returns CWMS TimeSeries Groups Data
      * Get swtData timeseries group
      */
-    async getSwtDataTimeseriesGroupRaw(requestParameters: GetSwtDataTimeseriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeseriesGroup>>> {
+    async getSwtDataTimeSeriesGroupRaw(requestParameters: GetSwtDataTimeSeriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeSeriesGroup>>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -157,15 +157,15 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(TimeseriesGroupFromJSON));
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(TimeSeriesGroupFromJSON));
     }
 
     /**
-     * Returns CWMS Timeseries Groups Data
+     * Returns CWMS TimeSeries Groups Data
      * Get swtData timeseries group
      */
-    async getSwtDataTimeseriesGroup(requestParameters: GetSwtDataTimeseriesGroupRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeseriesGroup>> {
-        const response = await this.getSwtDataTimeseriesGroupRaw(requestParameters, initOverrides);
+    async getSwtDataTimeSeriesGroup(requestParameters: GetSwtDataTimeSeriesGroupRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeSeriesGroup>> {
+        const response = await this.getSwtDataTimeSeriesGroupRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -173,25 +173,25 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
      * Retrieves requested timeseries group
      * Get swtData timeseries group with groupId
      */
-    async getSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters: GetSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesGroup>> {
+    async getSwtDataTimeSeriesGroupWithGroupIdRaw(requestParameters: GetSwtDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeriesGroup>> {
         if (requestParameters['groupId'] == null) {
             throw new runtime.RequiredError(
                 'groupId',
-                'Required parameter "groupId" was null or undefined when calling getSwtDataTimeseriesGroupWithGroupId().'
+                'Required parameter "groupId" was null or undefined when calling getSwtDataTimeSeriesGroupWithGroupId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataTimeseriesGroupWithGroupId().'
+                'Required parameter "office" was null or undefined when calling getSwtDataTimeSeriesGroupWithGroupId().'
             );
         }
 
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling getSwtDataTimeseriesGroupWithGroupId().'
+                'Required parameter "categoryId" was null or undefined when calling getSwtDataTimeSeriesGroupWithGroupId().'
             );
         }
 
@@ -218,41 +218,41 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TimeseriesGroupFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => TimeSeriesGroupFromJSON(jsonValue));
     }
 
     /**
      * Retrieves requested timeseries group
      * Get swtData timeseries group with groupId
      */
-    async getSwtDataTimeseriesGroupWithGroupId(requestParameters: GetSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesGroup> {
-        const response = await this.getSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters, initOverrides);
+    async getSwtDataTimeSeriesGroupWithGroupId(requestParameters: GetSwtDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeriesGroup> {
+        const response = await this.getSwtDataTimeSeriesGroupWithGroupIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Update existing TimeseriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
+     * Update existing TimeSeriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
      * Patch swtData timeseries group with groupId
      */
-    async patchSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters: PatchSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchSwtDataTimeSeriesGroupWithGroupIdRaw(requestParameters: PatchSwtDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['groupId'] == null) {
             throw new runtime.RequiredError(
                 'groupId',
-                'Required parameter "groupId" was null or undefined when calling patchSwtDataTimeseriesGroupWithGroupId().'
+                'Required parameter "groupId" was null or undefined when calling patchSwtDataTimeSeriesGroupWithGroupId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataTimeseriesGroupWithGroupId().'
+                'Required parameter "office" was null or undefined when calling patchSwtDataTimeSeriesGroupWithGroupId().'
             );
         }
 
-        if (requestParameters['timeseriesGroup'] == null) {
+        if (requestParameters['timeSeriesGroup'] == null) {
             throw new runtime.RequiredError(
-                'timeseriesGroup',
-                'Required parameter "timeseriesGroup" was null or undefined when calling patchSwtDataTimeseriesGroupWithGroupId().'
+                'timeSeriesGroup',
+                'Required parameter "timeSeriesGroup" was null or undefined when calling patchSwtDataTimeSeriesGroupWithGroupId().'
             );
         }
 
@@ -279,29 +279,29 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: TimeseriesGroupToJSON(requestParameters['timeseriesGroup']),
+            body: TimeSeriesGroupToJSON(requestParameters['timeSeriesGroup']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
     }
 
     /**
-     * Update existing TimeseriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
+     * Update existing TimeSeriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
      * Patch swtData timeseries group with groupId
      */
-    async patchSwtDataTimeseriesGroupWithGroupId(requestParameters: PatchSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters, initOverrides);
+    async patchSwtDataTimeSeriesGroupWithGroupId(requestParameters: PatchSwtDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchSwtDataTimeSeriesGroupWithGroupIdRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Create new TimeseriesGroup
+     * Create new TimeSeriesGroup
      * Post swtData timeseries group
      */
-    async postSwtDataTimeseriesGroupRaw(requestParameters: PostSwtDataTimeseriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters['timeseriesGroup'] == null) {
+    async postSwtDataTimeSeriesGroupRaw(requestParameters: PostSwtDataTimeSeriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['timeSeriesGroup'] == null) {
             throw new runtime.RequiredError(
-                'timeseriesGroup',
-                'Required parameter "timeseriesGroup" was null or undefined when calling postSwtDataTimeseriesGroup().'
+                'timeSeriesGroup',
+                'Required parameter "timeSeriesGroup" was null or undefined when calling postSwtDataTimeSeriesGroup().'
             );
         }
 
@@ -324,18 +324,18 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TimeseriesGroupToJSON(requestParameters['timeseriesGroup']),
+            body: TimeSeriesGroupToJSON(requestParameters['timeSeriesGroup']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
     }
 
     /**
-     * Create new TimeseriesGroup
+     * Create new TimeSeriesGroup
      * Post swtData timeseries group
      */
-    async postSwtDataTimeseriesGroup(requestParameters: PostSwtDataTimeseriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataTimeseriesGroupRaw(requestParameters, initOverrides);
+    async postSwtDataTimeSeriesGroup(requestParameters: PostSwtDataTimeSeriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postSwtDataTimeSeriesGroupRaw(requestParameters, initOverrides);
     }
 
 }

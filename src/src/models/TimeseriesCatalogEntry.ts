@@ -23,65 +23,65 @@ import {
 /**
  * 
  * @export
- * @interface TimeseriesCatalogEntry
+ * @interface TimeSeriesCatalogEntry
  */
-export interface TimeseriesCatalogEntry {
+export interface TimeSeriesCatalogEntry {
     /**
      * 
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     office?: string;
     /**
      * 
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     name?: string;
     /**
      * 
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     units?: string;
     /**
      * 
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     interval?: string;
     /**
      * Offset from top of interval
      * @type {number}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     intervalOffset?: number;
     /**
      * Only on 21.1.1 Database. The timezone the Interval Offset is from.
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     timeZone?: string;
     /**
      * 
      * @type {Array<Extents>}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     extents?: Array<Extents>;
 }
 
 /**
- * Check if a given object implements the TimeseriesCatalogEntry interface.
+ * Check if a given object implements the TimeSeriesCatalogEntry interface.
  */
-export function instanceOfTimeseriesCatalogEntry(value: object): boolean {
+export function instanceOfTimeSeriesCatalogEntry(value: object): boolean {
     return true;
 }
 
-export function TimeseriesCatalogEntryFromJSON(json: any): TimeseriesCatalogEntry {
-    return TimeseriesCatalogEntryFromJSONTyped(json, false);
+export function TimeSeriesCatalogEntryFromJSON(json: any): TimeSeriesCatalogEntry {
+    return TimeSeriesCatalogEntryFromJSONTyped(json, false);
 }
 
-export function TimeseriesCatalogEntryFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesCatalogEntry {
+export function TimeSeriesCatalogEntryFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesCatalogEntry {
     if (json == null) {
         return json;
     }
@@ -97,7 +97,7 @@ export function TimeseriesCatalogEntryFromJSONTyped(json: any, ignoreDiscriminat
     };
 }
 
-export function TimeseriesCatalogEntryToJSON(value?: TimeseriesCatalogEntry | null): any {
+export function TimeSeriesCatalogEntryToJSON(value?: TimeSeriesCatalogEntry | null): any {
     if (value == null) {
         return value;
     }

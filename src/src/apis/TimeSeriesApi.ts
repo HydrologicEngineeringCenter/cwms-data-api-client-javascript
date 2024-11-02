@@ -17,7 +17,7 @@ import * as runtime from '../runtime';
 import type {
   CdaError,
   StoreRule,
-  Timeseries,
+  TimeSeries,
   Tsv,
   UnitSystem,
 } from '../models/index';
@@ -26,15 +26,15 @@ import {
     CdaErrorToJSON,
     StoreRuleFromJSON,
     StoreRuleToJSON,
-    TimeseriesFromJSON,
-    TimeseriesToJSON,
+    TimeSeriesFromJSON,
+    TimeSeriesToJSON,
     TsvFromJSON,
     TsvToJSON,
     UnitSystemFromJSON,
     UnitSystemToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataTimeseriesWithTimeseriesRequest {
+export interface DeleteSwtDataTimeSeriesWithTimeSeriesRequest {
     timeseries: string;
     office: string;
     begin: string;
@@ -47,7 +47,7 @@ export interface DeleteSwtDataTimeseriesWithTimeseriesRequest {
     overrideProtection?: boolean;
 }
 
-export interface GetSwtDataTimeseriesRequest {
+export interface GetSwtDataTimeSeriesRequest {
     name: string;
     office?: string;
     unit?: string;
@@ -62,7 +62,7 @@ export interface GetSwtDataTimeseriesRequest {
     pageSize?: number;
 }
 
-export interface GetSwtDataTimeseriesRecentRequest {
+export interface GetSwtDataTimeSeriesRecentRequest {
     office?: string;
     categoryId?: string;
     groupId?: string;
@@ -70,17 +70,17 @@ export interface GetSwtDataTimeseriesRecentRequest {
     unitSystem?: UnitSystem;
 }
 
-export interface PatchSwtDataTimeseriesWithTimeseriesRequest {
+export interface PatchSwtDataTimeSeriesWithTimeSeriesRequest {
     timeseries: string;
-    timeseries2: Timeseries;
+    timeSeries: TimeSeries;
     timezone?: string;
     createAsLrts?: boolean;
     storeRule?: StoreRule;
     overrideProtection?: boolean;
 }
 
-export interface PostSwtDataTimeseriesRequest {
-    timeseries: Timeseries;
+export interface PostSwtDataTimeSeriesRequest {
+    timeSeries: TimeSeries;
     timezone?: string;
     createAsLrts?: boolean;
     storeRule?: StoreRule;
@@ -90,37 +90,37 @@ export interface PostSwtDataTimeseriesRequest {
 /**
  * 
  */
-export class TimeseriesApi extends runtime.BaseAPI {
+export class TimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Delete swtData timeseries with timeseries
      */
-    async deleteSwtDataTimeseriesWithTimeseriesRaw(requestParameters: DeleteSwtDataTimeseriesWithTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteSwtDataTimeSeriesWithTimeSeriesRaw(requestParameters: DeleteSwtDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['timeseries'] == null) {
             throw new runtime.RequiredError(
                 'timeseries',
-                'Required parameter "timeseries" was null or undefined when calling deleteSwtDataTimeseriesWithTimeseries().'
+                'Required parameter "timeseries" was null or undefined when calling deleteSwtDataTimeSeriesWithTimeSeries().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeseriesWithTimeseries().'
+                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeSeriesWithTimeSeries().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling deleteSwtDataTimeseriesWithTimeseries().'
+                'Required parameter "begin" was null or undefined when calling deleteSwtDataTimeSeriesWithTimeSeries().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling deleteSwtDataTimeseriesWithTimeseries().'
+                'Required parameter "end" was null or undefined when calling deleteSwtDataTimeSeriesWithTimeSeries().'
             );
         }
 
@@ -181,18 +181,18 @@ export class TimeseriesApi extends runtime.BaseAPI {
     /**
      * Delete swtData timeseries with timeseries
      */
-    async deleteSwtDataTimeseriesWithTimeseries(requestParameters: DeleteSwtDataTimeseriesWithTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataTimeseriesWithTimeseriesRaw(requestParameters, initOverrides);
+    async deleteSwtDataTimeSeriesWithTimeSeries(requestParameters: DeleteSwtDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteSwtDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides);
     }
 
     /**
      * Get swtData timeseries
      */
-    async getSwtDataTimeseriesRaw(requestParameters: GetSwtDataTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Timeseries>> {
+    async getSwtDataTimeSeriesRaw(requestParameters: GetSwtDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeries>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataTimeseries().'
+                'Required parameter "name" was null or undefined when calling getSwtDataTimeSeries().'
             );
         }
 
@@ -259,22 +259,22 @@ export class TimeseriesApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TimeseriesFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => TimeSeriesFromJSON(jsonValue));
     }
 
     /**
      * Get swtData timeseries
      */
-    async getSwtDataTimeseries(requestParameters: GetSwtDataTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Timeseries> {
-        const response = await this.getSwtDataTimeseriesRaw(requestParameters, initOverrides);
+    async getSwtDataTimeSeries(requestParameters: GetSwtDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeries> {
+        const response = await this.getSwtDataTimeSeriesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Returns CWMS Timeseries Groups Data
+     * Returns CWMS Time Series Groups Data
      * Get swtData timeseries recent
      */
-    async getSwtDataTimeseriesRecentRaw(requestParameters: GetSwtDataTimeseriesRecentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Tsv>>> {
+    async getSwtDataTimeSeriesRecentRaw(requestParameters: GetSwtDataTimeSeriesRecentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Tsv>>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -314,30 +314,30 @@ export class TimeseriesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Returns CWMS Timeseries Groups Data
+     * Returns CWMS Time Series Groups Data
      * Get swtData timeseries recent
      */
-    async getSwtDataTimeseriesRecent(requestParameters: GetSwtDataTimeseriesRecentRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Tsv>> {
-        const response = await this.getSwtDataTimeseriesRecentRaw(requestParameters, initOverrides);
+    async getSwtDataTimeSeriesRecent(requestParameters: GetSwtDataTimeSeriesRecentRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Tsv>> {
+        const response = await this.getSwtDataTimeSeriesRecentRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Update a Timeseries with provided values
+     * Update a TimeSeries with provided values
      * Patch swtData timeseries with timeseries
      */
-    async patchSwtDataTimeseriesWithTimeseriesRaw(requestParameters: PatchSwtDataTimeseriesWithTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchSwtDataTimeSeriesWithTimeSeriesRaw(requestParameters: PatchSwtDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['timeseries'] == null) {
             throw new runtime.RequiredError(
                 'timeseries',
-                'Required parameter "timeseries" was null or undefined when calling patchSwtDataTimeseriesWithTimeseries().'
+                'Required parameter "timeseries" was null or undefined when calling patchSwtDataTimeSeriesWithTimeSeries().'
             );
         }
 
-        if (requestParameters['timeseries2'] == null) {
+        if (requestParameters['timeSeries'] == null) {
             throw new runtime.RequiredError(
-                'timeseries2',
-                'Required parameter "timeseries2" was null or undefined when calling patchSwtDataTimeseriesWithTimeseries().'
+                'timeSeries',
+                'Required parameter "timeSeries" was null or undefined when calling patchSwtDataTimeSeriesWithTimeSeries().'
             );
         }
 
@@ -372,29 +372,29 @@ export class TimeseriesApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: TimeseriesToJSON(requestParameters['timeseries2']),
+            body: TimeSeriesToJSON(requestParameters['timeSeries']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
     }
 
     /**
-     * Update a Timeseries with provided values
+     * Update a TimeSeries with provided values
      * Patch swtData timeseries with timeseries
      */
-    async patchSwtDataTimeseriesWithTimeseries(requestParameters: PatchSwtDataTimeseriesWithTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataTimeseriesWithTimeseriesRaw(requestParameters, initOverrides);
+    async patchSwtDataTimeSeriesWithTimeSeries(requestParameters: PatchSwtDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchSwtDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides);
     }
 
     /**
      * Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds 
      * Post swtData timeseries
      */
-    async postSwtDataTimeseriesRaw(requestParameters: PostSwtDataTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters['timeseries'] == null) {
+    async postSwtDataTimeSeriesRaw(requestParameters: PostSwtDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['timeSeries'] == null) {
             throw new runtime.RequiredError(
-                'timeseries',
-                'Required parameter "timeseries" was null or undefined when calling postSwtDataTimeseries().'
+                'timeSeries',
+                'Required parameter "timeSeries" was null or undefined when calling postSwtDataTimeSeries().'
             );
         }
 
@@ -429,7 +429,7 @@ export class TimeseriesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TimeseriesToJSON(requestParameters['timeseries']),
+            body: TimeSeriesToJSON(requestParameters['timeSeries']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -439,8 +439,8 @@ export class TimeseriesApi extends runtime.BaseAPI {
      * Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds 
      * Post swtData timeseries
      */
-    async postSwtDataTimeseries(requestParameters: PostSwtDataTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataTimeseriesRaw(requestParameters, initOverrides);
+    async postSwtDataTimeSeries(requestParameters: PostSwtDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postSwtDataTimeSeriesRaw(requestParameters, initOverrides);
     }
 
 }

@@ -19,7 +19,7 @@ import type {
   LocationLevel,
   LocationLevels,
   SpecifiedLevel,
-  Timeseries,
+  TimeSeries,
 } from '../models/index';
 import {
     CdaErrorFromJSON,
@@ -30,8 +30,8 @@ import {
     LocationLevelsToJSON,
     SpecifiedLevelFromJSON,
     SpecifiedLevelToJSON,
-    TimeseriesFromJSON,
-    TimeseriesToJSON,
+    TimeSeriesFromJSON,
+    TimeSeriesToJSON,
 } from '../models/index';
 
 export interface DeleteSwtDataLevelsWithLevelIdRequest {
@@ -68,7 +68,7 @@ export interface GetSwtDataLevelsWithLevelIdRequest {
     unit?: string;
 }
 
-export interface GetSwtDataLevelsWithLevelIdTimeseriesRequest {
+export interface GetSwtDataLevelsWithLevelIdTimeSeriesRequest {
     levelId: string;
     office: string;
     unit: string;
@@ -355,25 +355,25 @@ export class LevelsApi extends runtime.BaseAPI {
      * Retrieves requested Location Level
      * Get swtData levels with levelId timeseries
      */
-    async getSwtDataLevelsWithLevelIdTimeseriesRaw(requestParameters: GetSwtDataLevelsWithLevelIdTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Timeseries>> {
+    async getSwtDataLevelsWithLevelIdTimeSeriesRaw(requestParameters: GetSwtDataLevelsWithLevelIdTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeries>> {
         if (requestParameters['levelId'] == null) {
             throw new runtime.RequiredError(
                 'levelId',
-                'Required parameter "levelId" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeseries().'
+                'Required parameter "levelId" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeSeries().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeseries().'
+                'Required parameter "office" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeSeries().'
             );
         }
 
         if (requestParameters['unit'] == null) {
             throw new runtime.RequiredError(
                 'unit',
-                'Required parameter "unit" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeseries().'
+                'Required parameter "unit" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeSeries().'
             );
         }
 
@@ -416,15 +416,15 @@ export class LevelsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TimeseriesFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => TimeSeriesFromJSON(jsonValue));
     }
 
     /**
      * Retrieves requested Location Level
      * Get swtData levels with levelId timeseries
      */
-    async getSwtDataLevelsWithLevelIdTimeseries(requestParameters: GetSwtDataLevelsWithLevelIdTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Timeseries> {
-        const response = await this.getSwtDataLevelsWithLevelIdTimeseriesRaw(requestParameters, initOverrides);
+    async getSwtDataLevelsWithLevelIdTimeSeries(requestParameters: GetSwtDataLevelsWithLevelIdTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeries> {
+        const response = await this.getSwtDataLevelsWithLevelIdTimeSeriesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
