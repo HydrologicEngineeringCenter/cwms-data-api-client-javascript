@@ -23,8 +23,8 @@
     "paths": {
         "/": {
             "get": {
-                "summary": "Get swtData",
-                "operationId": "getSwtData",
+                "summary": "Get CwmsData",
+                "operationId": "get",
                 "responses": {
                     "500": {
                         "description": "Server Error",
@@ -92,9 +92,9 @@
                 "tags": [
                     "Authorization"
                 ],
-                "summary": "Get swtData auth keys with keyName",
+                "summary": "Get CwmsData auth keys with keyName",
                 "description": "View specific key",
-                "operationId": "getSwtDataAuthKeysWithKeyName",
+                "operationId": "getAuthKeysWithKeyName",
                 "parameters": [
                     {
                         "name": "key-name",
@@ -181,9 +181,9 @@
                 "tags": [
                     "Authorization"
                 ],
-                "summary": "Delete swtData auth keys with keyName",
+                "summary": "Delete CwmsData auth keys with keyName",
                 "description": "Delete API key for a user",
-                "operationId": "deleteSwtDataAuthKeysWithKeyName",
+                "operationId": "deleteCwmsDataAuthKeysWithKeyName",
                 "parameters": [
                     {
                         "name": "key-name",
@@ -271,9 +271,9 @@
                 "tags": [
                     "Authorization"
                 ],
-                "summary": "Get swtData auth keys",
+                "summary": "Get CwmsData auth keys",
                 "description": "View all keys for the current user",
-                "operationId": "getSwtDataAuthKeys",
+                "operationId": "getAuthKeys",
                 "responses": {
                     "500": {
                         "description": "Server Error",
@@ -352,9 +352,9 @@
                 "tags": [
                     "Authorization"
                 ],
-                "summary": "Post swtData auth keys",
+                "summary": "Post CwmsData auth keys",
                 "description": "Create a new API Key for user. The randomly generated key is returned to the caller. A provided key will be ignored.",
-                "operationId": "postSwtDataAuthKeys",
+                "operationId": "postCwmsDataAuthKeys",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -441,9 +441,9 @@
                 "tags": [
                     "Location Categories"
                 ],
-                "summary": "Get swtData location category with categoryId",
+                "summary": "Get CwmsData location category with categoryId",
                 "description": "Retrieves requested Location Category",
-                "operationId": "getSwtDataLocationCategoryWithCategoryId",
+                "operationId": "getLocationCategoryWithCategoryId",
                 "parameters": [
                     {
                         "name": "category-id",
@@ -539,9 +539,9 @@
                 "tags": [
                     "Location Categories"
                 ],
-                "summary": "Delete swtData location category with categoryId",
+                "summary": "Delete CwmsData location category with categoryId",
                 "description": "Deletes requested location category",
-                "operationId": "deleteSwtDataLocationCategoryWithCategoryId",
+                "operationId": "deleteCwmsDataLocationCategoryWithCategoryId",
                 "parameters": [
                     {
                         "name": "category-id",
@@ -637,9 +637,9 @@
                 "tags": [
                     "Location Categories"
                 ],
-                "summary": "Get swtData location category",
+                "summary": "Get CwmsData location category",
                 "description": "Returns CWMS Location Category Data",
-                "operationId": "getSwtDataLocationCategory",
+                "operationId": "getLocationCategory",
                 "parameters": [
                     {
                         "name": "office",
@@ -728,9 +728,9 @@
                 "tags": [
                     "Location Categories"
                 ],
-                "summary": "Post swtData location category",
+                "summary": "Post CwmsData location category",
                 "description": "Create new LocationCategory",
-                "operationId": "postSwtDataLocationCategory",
+                "operationId": "postCwmsDataLocationCategory",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -808,9 +808,9 @@
                 "tags": [
                     "Location Groups"
                 ],
-                "summary": "Get swtData location group with groupId",
+                "summary": "Get CwmsData location group with groupId",
                 "description": "Retrieves requested Location Group",
-                "operationId": "getSwtDataLocationGroupWithGroupId",
+                "operationId": "getLocationGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -925,9 +925,9 @@
                 "tags": [
                     "Location Groups"
                 ],
-                "summary": "Delete swtData location group with groupId",
+                "summary": "Delete CwmsData location group with groupId",
                 "description": "Deletes requested location group",
-                "operationId": "deleteSwtDataLocationGroupWithGroupId",
+                "operationId": "deleteCwmsDataLocationGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -1030,9 +1030,9 @@
                 "tags": [
                     "Location Groups"
                 ],
-                "summary": "Patch swtData location group with groupId",
+                "summary": "Patch CwmsData location group with groupId",
                 "description": "Update existing LocationGroup. Allows for renaming group, assigning new locations, and unassigning all locations from the group.",
-                "operationId": "patchSwtDataLocationGroupWithGroupId",
+                "operationId": "patchCwmsDataLocationGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -1137,9 +1137,9 @@
                 "tags": [
                     "Location Groups"
                 ],
-                "summary": "Get swtData location group",
+                "summary": "Get CwmsData location group",
                 "description": "Returns CWMS Location Groups Data",
-                "operationId": "getSwtDataLocationGroup",
+                "operationId": "getLocationGroup",
                 "parameters": [
                     {
                         "name": "office",
@@ -1252,9 +1252,9 @@
                 "tags": [
                     "Location Groups"
                 ],
-                "summary": "Post swtData location group",
+                "summary": "Post CwmsData location group",
                 "description": "Create new LocationGroup",
-                "operationId": "postSwtDataLocationGroup",
+                "operationId": "postCwmsDataLocationGroup",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1332,9 +1332,9 @@
                 "tags": [
                     "Locations"
                 ],
-                "summary": "Get swtData locations with locationId",
+                "summary": "Get CwmsData locations with locationId",
                 "description": "Returns CWMS Location Data",
-                "operationId": "getSwtDataLocationsWithLocationId",
+                "operationId": "getLocationsWithLocationId",
                 "parameters": [
                     {
                         "name": "location-id",
@@ -1442,9 +1442,9 @@
                 "tags": [
                     "Locations"
                 ],
-                "summary": "Delete swtData locations with locationId",
+                "summary": "Delete CwmsData locations with locationId",
                 "description": "Delete CWMS Location",
-                "operationId": "deleteSwtDataLocationsWithLocationId",
+                "operationId": "deleteCwmsDataLocationsWithLocationId",
                 "parameters": [
                     {
                         "name": "location-id",
@@ -1528,9 +1528,9 @@
                 "tags": [
                     "Locations"
                 ],
-                "summary": "Patch swtData locations with locationId",
+                "summary": "Patch CwmsData locations with locationId",
                 "description": "Update CWMS Location",
-                "operationId": "patchSwtDataLocationsWithLocationId",
+                "operationId": "patchCwmsDataLocationsWithLocationId",
                 "parameters": [
                     {
                         "name": "location-id",
@@ -1623,9 +1623,9 @@
                 "tags": [
                     "Locations"
                 ],
-                "summary": "Get swtData locations",
+                "summary": "Get CwmsData locations",
                 "description": "Returns CWMS Location Data.  The Catalog end-point is also capable of retrieving lists of locations and can filter on additional fields.",
-                "operationId": "getSwtDataLocations",
+                "operationId": "getLocations",
                 "parameters": [
                     {
                         "name": "names",
@@ -1781,9 +1781,9 @@
                 "tags": [
                     "Locations"
                 ],
-                "summary": "Post swtData locations",
+                "summary": "Post CwmsData locations",
                 "description": "Create new CWMS Location",
-                "operationId": "postSwtDataLocations",
+                "operationId": "postCwmsDataLocations",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1866,8 +1866,8 @@
                 "tags": [
                     "States"
                 ],
-                "summary": "Get swtData states",
-                "operationId": "getSwtDataStates",
+                "summary": "Get CwmsData states",
+                "operationId": "getStates",
                 "responses": {
                     "500": {
                         "description": "Server Error",
@@ -1948,8 +1948,8 @@
                 "tags": [
                     "Counties"
                 ],
-                "summary": "Get swtData counties",
-                "operationId": "getSwtDataCounties",
+                "summary": "Get CwmsData counties",
+                "operationId": "getCounties",
                 "responses": {
                     "500": {
                         "description": "Server Error",
@@ -2030,8 +2030,8 @@
                 "tags": [
                     "Offices"
                 ],
-                "summary": "Get swtData offices with office",
-                "operationId": "getSwtDataOfficesWithOffice",
+                "summary": "Get CwmsData offices with office",
+                "operationId": "getOfficesWithOffice",
                 "parameters": [
                     {
                         "name": "office",
@@ -2159,8 +2159,8 @@
                 "tags": [
                     "Offices"
                 ],
-                "summary": "Get swtData offices",
-                "operationId": "getSwtDataOffices",
+                "summary": "Get CwmsData offices",
+                "operationId": "getOffices",
                 "parameters": [
                     {
                         "name": "format",
@@ -2281,8 +2281,8 @@
                 "tags": [
                     "Units"
                 ],
-                "summary": "Get swtData units",
-                "operationId": "getSwtDataUnits",
+                "summary": "Get CwmsData units",
+                "operationId": "getUnits",
                 "parameters": [
                     {
                         "name": "format",
@@ -2366,8 +2366,8 @@
                 "tags": [
                     "Parameters"
                 ],
-                "summary": "Get swtData parameters",
-                "operationId": "getSwtDataParameters",
+                "summary": "Get CwmsData parameters",
+                "operationId": "getParameters",
                 "parameters": [
                     {
                         "name": "format",
@@ -2475,8 +2475,8 @@
                 "tags": [
                     "TimeZones"
                 ],
-                "summary": "Get swtData timezones",
-                "operationId": "getSwtDataTimezones",
+                "summary": "Get CwmsData timezones",
+                "operationId": "getTimezones",
                 "parameters": [
                     {
                         "name": "format",
@@ -2572,9 +2572,9 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Get swtData levels with levelId",
+                "summary": "Get CwmsData levels with levelId",
                 "description": "Retrieves requested Location Level",
-                "operationId": "getSwtDataLevelsWithLevelId",
+                "operationId": "getLevelsWithLevelId",
                 "parameters": [
                     {
                         "name": "level-id",
@@ -2695,9 +2695,9 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Delete swtData levels with levelId",
+                "summary": "Delete CwmsData levels with levelId",
                 "description": "Delete CWMS Location Level",
-                "operationId": "deleteSwtDataLevelsWithLevelId",
+                "operationId": "deleteCwmsDataLevelsWithLevelId",
                 "parameters": [
                     {
                         "name": "level-id",
@@ -2806,9 +2806,9 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Patch swtData levels with levelId",
+                "summary": "Patch CwmsData levels with levelId",
                 "description": "Update CWMS Location Level",
-                "operationId": "patchSwtDataLevelsWithLevelId",
+                "operationId": "patchCwmsDataLevelsWithLevelId",
                 "parameters": [
                     {
                         "name": "level-id",
@@ -2910,8 +2910,8 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Get swtData levels",
-                "operationId": "getSwtDataLevels",
+                "summary": "Get CwmsData levels",
+                "operationId": "getLevels",
                 "parameters": [
                     {
                         "name": "level-id-mask",
@@ -3080,9 +3080,9 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Post swtData levels",
+                "summary": "Post CwmsData levels",
                 "description": "Create new CWMS Location Level",
-                "operationId": "postSwtDataLevels",
+                "operationId": "postCwmsDataLevels",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -3165,9 +3165,9 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Get swtData levels with levelId timeseries",
+                "summary": "Get CwmsData levels with levelId timeseries",
                 "description": "Retrieves requested Location Level",
-                "operationId": "getSwtDataLevelsWithLevelIdTimeSeries",
+                "operationId": "getLevelsWithLevelIdTimeSeries",
                 "parameters": [
                     {
                         "name": "level-id",
@@ -3329,9 +3329,9 @@
                 "tags": [
                     "TimeSeries"
                 ],
-                "summary": "Get swtData timeseries recent",
+                "summary": "Get CwmsData timeseries recent",
                 "description": "Returns CWMS Time Series Groups Data",
-                "operationId": "getSwtDataTimeSeriesRecent",
+                "operationId": "getTimeSeriesRecent",
                 "parameters": [
                     {
                         "name": "office",
@@ -3457,9 +3457,9 @@
                 "tags": [
                     "Standard Text"
                 ],
-                "summary": "Get swtData standardTextId with standardTextId",
+                "summary": "Get CwmsData standardTextId with standardTextId",
                 "description": "Retrieve a single Standard Text value",
-                "operationId": "getSwtDataStandardTextIdWithStandardTextId",
+                "operationId": "getStandardTextIdWithStandardTextId",
                 "parameters": [
                     {
                         "name": "standard-text-id",
@@ -3555,9 +3555,9 @@
                 "tags": [
                     "Standard Text"
                 ],
-                "summary": "Delete swtData standardTextId with standardTextId",
+                "summary": "Delete CwmsData standardTextId with standardTextId",
                 "description": "Delete a single Standard Text value",
-                "operationId": "deleteSwtDataStandardTextIdWithStandardTextId",
+                "operationId": "deleteCwmsDataStandardTextIdWithStandardTextId",
                 "parameters": [
                     {
                         "name": "standard-text-id",
@@ -3654,9 +3654,9 @@
                 "tags": [
                     "Standard Text"
                 ],
-                "summary": "Get swtData standardTextId",
+                "summary": "Get CwmsData standardTextId",
                 "description": "Retrieve a Standard Text catalog",
-                "operationId": "getSwtDataStandardTextId",
+                "operationId": "getStandardTextId",
                 "parameters": [
                     {
                         "name": "office-mask",
@@ -3750,9 +3750,9 @@
                 "tags": [
                     "Standard Text"
                 ],
-                "summary": "Post swtData standardTextId",
+                "summary": "Post CwmsData standardTextId",
                 "description": "Create new Standard Text",
-                "operationId": "postSwtDataStandardTextId",
+                "operationId": "postCwmsDataStandardTextId",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -3841,7 +3841,7 @@
                     "Text-TimeSeries"
                 ],
                 "summary": "Retrieve text time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.",
-                "operationId": "getSwtDataTimeSeriesText",
+                "operationId": "getTimeSeriesText",
                 "parameters": [
                     {
                         "name": "office",
@@ -3963,9 +3963,9 @@
                 "tags": [
                     "Text-TimeSeries"
                 ],
-                "summary": "Post swtData timeseries text",
+                "summary": "Post CwmsData timeseries text",
                 "description": "Create new TextTimeSeries",
-                "operationId": "postSwtDataTimeSeriesText",
+                "operationId": "postCwmsDataTimeSeriesText",
                 "parameters": [
                     {
                         "name": "replace-all",
@@ -4053,9 +4053,9 @@
                 "tags": [
                     "Text-TimeSeries"
                 ],
-                "summary": "Delete swtData timeseries text with name",
+                "summary": "Delete CwmsData timeseries text with name",
                 "description": "Deletes requested text timeseries id",
-                "operationId": "deleteSwtDataTimeSeriesTextWithName",
+                "operationId": "deleteCwmsDataTimeSeriesTextWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4184,9 +4184,9 @@
                 "tags": [
                     "Text-TimeSeries"
                 ],
-                "summary": "Patch swtData timeseries text with name",
+                "summary": "Patch CwmsData timeseries text with name",
                 "description": "Updates a text timeseries",
-                "operationId": "patchSwtDataTimeSeriesTextWithName",
+                "operationId": "patchCwmsDataTimeSeriesTextWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4283,8 +4283,8 @@
                 "tags": [
                     "Text-TimeSeries"
                 ],
-                "summary": "Get swtData timeseries text with name value",
-                "operationId": "getSwtDataTimeSeriesTextWithNameValue",
+                "summary": "Get CwmsData timeseries text with name value",
+                "operationId": "getTimeSeriesTextWithNameValue",
                 "parameters": [
                     {
                         "name": "name",
@@ -4417,7 +4417,7 @@
                     "Binary-TimeSeries"
                 ],
                 "summary": "Retrieve binary time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.",
-                "operationId": "getSwtDataTimeSeriesBinary",
+                "operationId": "getTimeSeriesBinary",
                 "parameters": [
                     {
                         "name": "office",
@@ -4555,9 +4555,9 @@
                 "tags": [
                     "Binary-TimeSeries"
                 ],
-                "summary": "Post swtData timeseries binary",
+                "summary": "Post CwmsData timeseries binary",
                 "description": "Create new BinaryTimeSeries",
-                "operationId": "postSwtDataTimeSeriesBinary",
+                "operationId": "postCwmsDataTimeSeriesBinary",
                 "parameters": [
                     {
                         "name": "replace-all",
@@ -4644,9 +4644,9 @@
                 "tags": [
                     "Binary-TimeSeries"
                 ],
-                "summary": "Delete swtData timeseries binary with name",
+                "summary": "Delete CwmsData timeseries binary with name",
                 "description": "Deletes requested binary timeseries id",
-                "operationId": "deleteSwtDataTimeSeriesBinaryWithName",
+                "operationId": "deleteCwmsDataTimeSeriesBinaryWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4774,9 +4774,9 @@
                 "tags": [
                     "Binary-TimeSeries"
                 ],
-                "summary": "Patch swtData timeseries binary with name",
+                "summary": "Patch CwmsData timeseries binary with name",
                 "description": "Updates a binary timeseries",
-                "operationId": "patchSwtDataTimeSeriesBinaryWithName",
+                "operationId": "patchCwmsDataTimeSeriesBinaryWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -4872,8 +4872,8 @@
                 "tags": [
                     "Binary-TimeSeries"
                 ],
-                "summary": "Get swtData timeseries binary with name value",
-                "operationId": "getSwtDataTimeSeriesBinaryWithNameValue",
+                "summary": "Get CwmsData timeseries binary with name value",
+                "operationId": "getTimeSeriesBinaryWithNameValue",
                 "parameters": [
                     {
                         "name": "name",
@@ -5006,9 +5006,9 @@
                 "tags": [
                     "TimeSeries Categories"
                 ],
-                "summary": "Get swtData timeseries category with categoryId",
+                "summary": "Get CwmsData timeseries category with categoryId",
                 "description": "Retrieves requested timeseries category",
-                "operationId": "getSwtDataTimeSeriesCategoryWithCategoryId",
+                "operationId": "getTimeSeriesCategoryWithCategoryId",
                 "parameters": [
                     {
                         "name": "category-id",
@@ -5085,7 +5085,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesCategory"
+                                    "$ref": "#/components/schemas/TimeseriesCategory"
                                 }
                             }
                         }
@@ -5107,9 +5107,9 @@
                 "tags": [
                     "TimeSeries Categories"
                 ],
-                "summary": "Delete swtData timeseries category with categoryId",
+                "summary": "Delete CwmsData timeseries category with categoryId",
                 "description": "Deletes requested time series category",
-                "operationId": "deleteSwtDataTimeSeriesCategoryWithCategoryId",
+                "operationId": "deleteCwmsDataTimeSeriesCategoryWithCategoryId",
                 "parameters": [
                     {
                         "name": "category-id",
@@ -5205,9 +5205,9 @@
                 "tags": [
                     "TimeSeries Categories"
                 ],
-                "summary": "Get swtData timeseries category",
+                "summary": "Get CwmsData timeseries category",
                 "description": "Returns CWMS timeseries category Data",
-                "operationId": "getSwtDataTimeSeriesCategory",
+                "operationId": "getTimeSeriesCategory",
                 "parameters": [
                     {
                         "name": "office",
@@ -5276,7 +5276,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/TimeSeriesCategory"
+                                        "$ref": "#/components/schemas/TimeseriesCategory"
                                     }
                                 }
                             }
@@ -5299,9 +5299,9 @@
                 "tags": [
                     "TimeSeries Categories"
                 ],
-                "summary": "Post swtData timeseries category",
+                "summary": "Post CwmsData timeseries category",
                 "description": "Create new TimeSeriesCategory",
-                "operationId": "postSwtDataTimeSeriesCategory",
+                "operationId": "postCwmsDataTimeSeriesCategory",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -5316,7 +5316,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesCategory"
+                                "$ref": "#/components/schemas/TimeseriesCategory"
                             }
                         }
                     },
@@ -5389,9 +5389,9 @@
                 "tags": [
                     "TimeSeries Identifier"
                 ],
-                "summary": "Get swtData timeseries identifierDescriptor with name",
+                "summary": "Get CwmsData timeseries identifierDescriptor with name",
                 "description": "Retrieves requested timeseries identifier descriptor",
-                "operationId": "getSwtDataTimeSeriesIdentifierDescriptorWithName",
+                "operationId": "getTimeSeriesIdentifierDescriptorWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -5498,9 +5498,9 @@
                 "tags": [
                     "TimeSeries Identifier"
                 ],
-                "summary": "Delete swtData timeseries identifierDescriptor with name",
+                "summary": "Delete CwmsData timeseries identifierDescriptor with name",
                 "description": "Deletes requested timeseries identifier",
-                "operationId": "deleteSwtDataTimeSeriesIdentifierDescriptorWithName",
+                "operationId": "deleteCwmsDataTimeSeriesIdentifierDescriptorWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -5603,8 +5603,8 @@
                 "tags": [
                     "TimeSeries Identifier"
                 ],
-                "summary": "Patch swtData timeseries identifierDescriptor with name",
-                "operationId": "patchSwtDataTimeSeriesIdentifierDescriptorWithName",
+                "summary": "Patch CwmsData timeseries identifierDescriptor with name",
+                "operationId": "patchCwmsDataTimeSeriesIdentifierDescriptorWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -5735,9 +5735,9 @@
                 "tags": [
                     "TimeSeries Identifier"
                 ],
-                "summary": "Get swtData timeseries identifierDescriptor",
+                "summary": "Get CwmsData timeseries identifierDescriptor",
                 "description": "Returns CWMS timeseries identifier descriptorData",
-                "operationId": "getSwtDataTimeSeriesIdentifierDescriptor",
+                "operationId": "getTimeSeriesIdentifierDescriptor",
                 "parameters": [
                     {
                         "name": "office",
@@ -5851,9 +5851,9 @@
                 "tags": [
                     "TimeSeries Identifier"
                 ],
-                "summary": "Post swtData timeseries identifierDescriptor",
+                "summary": "Post CwmsData timeseries identifierDescriptor",
                 "description": "Create new TimeSeriesIdentifierDescriptor",
-                "operationId": "postSwtDataTimeSeriesIdentifierDescriptor",
+                "operationId": "postCwmsDataTimeSeriesIdentifierDescriptor",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -5946,9 +5946,9 @@
                 "tags": [
                     "TimeSeries Groups"
                 ],
-                "summary": "Get swtData timeseries group with groupId",
+                "summary": "Get CwmsData timeseries group with groupId",
                 "description": "Retrieves requested timeseries group",
-                "operationId": "getSwtDataTimeSeriesGroupWithGroupId",
+                "operationId": "getTimeSeriesGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -6034,7 +6034,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/TimeSeriesGroup"
+                                    "$ref": "#/components/schemas/TimeseriesGroup"
                                 }
                             }
                         }
@@ -6053,9 +6053,9 @@
                 "tags": [
                     "TimeSeries Groups"
                 ],
-                "summary": "Delete swtData timeseries group with groupId",
+                "summary": "Delete CwmsData timeseries group with groupId",
                 "description": "Deletes requested time series group",
-                "operationId": "deleteSwtDataTimeSeriesGroupWithGroupId",
+                "operationId": "deleteCwmsDataTimeSeriesGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -6150,9 +6150,9 @@
                 "tags": [
                     "TimeSeries Groups"
                 ],
-                "summary": "Patch swtData timeseries group with groupId",
+                "summary": "Patch CwmsData timeseries group with groupId",
                 "description": "Update existing TimeSeriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.",
-                "operationId": "patchSwtDataTimeSeriesGroupWithGroupId",
+                "operationId": "patchCwmsDataTimeSeriesGroupWithGroupId",
                 "parameters": [
                     {
                         "name": "group-id",
@@ -6184,7 +6184,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesGroup"
+                                "$ref": "#/components/schemas/TimeseriesGroup"
                             }
                         }
                     },
@@ -6257,9 +6257,9 @@
                 "tags": [
                     "TimeSeries Groups"
                 ],
-                "summary": "Get swtData timeseries group",
+                "summary": "Get CwmsData timeseries group",
                 "description": "Returns CWMS TimeSeries Groups Data",
-                "operationId": "getSwtDataTimeSeriesGroup",
+                "operationId": "getTimeSeriesGroup",
                 "parameters": [
                     {
                         "name": "office",
@@ -6352,7 +6352,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/TimeSeriesGroup"
+                                        "$ref": "#/components/schemas/TimeseriesGroup"
                                     }
                                 }
                             }
@@ -6375,9 +6375,9 @@
                 "tags": [
                     "TimeSeries Groups"
                 ],
-                "summary": "Post swtData timeseries group",
+                "summary": "Post CwmsData timeseries group",
                 "description": "Create new TimeSeriesGroup",
-                "operationId": "postSwtDataTimeSeriesGroup",
+                "operationId": "postCwmsDataTimeSeriesGroup",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -6392,7 +6392,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/TimeSeriesGroup"
+                                "$ref": "#/components/schemas/TimeseriesGroup"
                             }
                         }
                     },
@@ -6465,8 +6465,8 @@
                 "tags": [
                     "TimeSeries"
                 ],
-                "summary": "Get swtData timeseries",
-                "operationId": "getSwtDataTimeSeries",
+                "summary": "Get CwmsData timeseries",
+                "operationId": "getTimeSeries",
                 "parameters": [
                     {
                         "name": "name",
@@ -6665,9 +6665,9 @@
                 "tags": [
                     "TimeSeries"
                 ],
-                "summary": "Post swtData timeseries",
+                "summary": "Post CwmsData timeseries",
                 "description": "Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds ",
-                "operationId": "postSwtDataTimeSeries",
+                "operationId": "postCwmsDataTimeSeries",
                 "parameters": [
                     {
                         "name": "timezone",
@@ -6784,8 +6784,8 @@
                 "tags": [
                     "TimeSeries"
                 ],
-                "summary": "Delete swtData timeseries with timeseries",
-                "operationId": "deleteSwtDataTimeSeriesWithTimeSeries",
+                "summary": "Delete CwmsData timeseries with timeseries",
+                "operationId": "deleteCwmsDataTimeSeriesWithTimeSeries",
                 "parameters": [
                     {
                         "name": "timeseries",
@@ -6937,9 +6937,9 @@
                 "tags": [
                     "TimeSeries"
                 ],
-                "summary": "Patch swtData timeseries with timeseries",
+                "summary": "Patch CwmsData timeseries with timeseries",
                 "description": "Update a TimeSeries with provided values",
-                "operationId": "patchSwtDataTimeSeriesWithTimeSeries",
+                "operationId": "patchCwmsDataTimeSeriesWithTimeSeries",
                 "parameters": [
                     {
                         "name": "timeseries",
@@ -7065,8 +7065,8 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Get swtData ratings template with templateId",
-                "operationId": "getSwtDataRatingsTemplateWithTemplateId",
+                "summary": "Get CwmsData ratings template with templateId",
+                "operationId": "getRatingsTemplateWithTemplateId",
                 "parameters": [
                     {
                         "name": "template-id",
@@ -7165,9 +7165,9 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Delete swtData ratings template with templateId",
+                "summary": "Delete CwmsData ratings template with templateId",
                 "description": "Deletes requested rating specification",
-                "operationId": "deleteSwtDataRatingsTemplateWithTemplateId",
+                "operationId": "deleteCwmsDataRatingsTemplateWithTemplateId",
                 "parameters": [
                     {
                         "name": "template-id",
@@ -7264,8 +7264,8 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Get swtData ratings template",
-                "operationId": "getSwtDataRatingsTemplate",
+                "summary": "Get CwmsData ratings template",
+                "operationId": "getRatingsTemplate",
                 "parameters": [
                     {
                         "name": "office",
@@ -7376,9 +7376,9 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Post swtData ratings template",
+                "summary": "Post CwmsData ratings template",
                 "description": "Create new Rating Template",
-                "operationId": "postSwtDataRatingsTemplate",
+                "operationId": "postCwmsDataRatingsTemplate",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -7466,8 +7466,8 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Get swtData ratings spec with ratingId",
-                "operationId": "getSwtDataRatingsSpecWithRatingId",
+                "summary": "Get CwmsData ratings spec with ratingId",
+                "operationId": "getRatingsSpecWithRatingId",
                 "parameters": [
                     {
                         "name": "rating-id",
@@ -7563,9 +7563,9 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Delete swtData ratings spec with ratingId",
+                "summary": "Delete CwmsData ratings spec with ratingId",
                 "description": "Deletes requested rating specification",
-                "operationId": "deleteSwtDataRatingsSpecWithRatingId",
+                "operationId": "deleteCwmsDataRatingsSpecWithRatingId",
                 "parameters": [
                     {
                         "name": "rating-id",
@@ -7662,8 +7662,8 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Get swtData ratings spec",
-                "operationId": "getSwtDataRatingsSpec",
+                "summary": "Get CwmsData ratings spec",
+                "operationId": "getRatingsSpec",
                 "parameters": [
                     {
                         "name": "office",
@@ -7774,9 +7774,9 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Post swtData ratings spec",
+                "summary": "Post CwmsData ratings spec",
                 "description": "Create new Rating Specification",
-                "operationId": "postSwtDataRatingsSpec",
+                "operationId": "postCwmsDataRatingsSpec",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -7864,8 +7864,8 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Get swtData ratings metadata",
-                "operationId": "getSwtDataRatingsMetadata",
+                "summary": "Get CwmsData ratings metadata",
+                "operationId": "getRatingsMetadata",
                 "parameters": [
                     {
                         "name": "office",
@@ -8002,9 +8002,9 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Get swtData ratings with ratingId",
+                "summary": "Get CwmsData ratings with ratingId",
                 "description": "Returns CWMS Rating Data",
-                "operationId": "getSwtDataRatingsWithRatingId",
+                "operationId": "getRatingsWithRatingId",
                 "parameters": [
                     {
                         "name": "rating-id",
@@ -8137,8 +8137,8 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Delete swtData ratings with ratingId",
-                "operationId": "deleteSwtDataRatingsWithRatingId",
+                "summary": "Delete CwmsData ratings with ratingId",
+                "operationId": "deleteCwmsDataRatingsWithRatingId",
                 "parameters": [
                     {
                         "name": "rating-id",
@@ -8250,9 +8250,9 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Patch swtData ratings with ratingId",
+                "summary": "Patch CwmsData ratings with ratingId",
                 "description": "Update a RatingSet",
-                "operationId": "patchSwtDataRatingsWithRatingId",
+                "operationId": "patchCwmsDataRatingsWithRatingId",
                 "parameters": [
                     {
                         "name": "rating-id",
@@ -8353,8 +8353,8 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Get swtData ratings",
-                "operationId": "getSwtDataRatings",
+                "summary": "Get CwmsData ratings",
+                "operationId": "getRatings",
                 "parameters": [
                     {
                         "name": "name",
@@ -8514,9 +8514,9 @@
                 "tags": [
                     "Ratings"
                 ],
-                "summary": "Post swtData ratings",
+                "summary": "Post CwmsData ratings",
                 "description": "Create new RatingSet",
-                "operationId": "postSwtDataRatings",
+                "operationId": "postCwmsDataRatings",
                 "parameters": [
                     {
                         "name": "store-template",
@@ -8609,8 +8609,8 @@
                 "tags": [
                     "Catalog"
                 ],
-                "summary": "Get swtData catalog with dataset",
-                "operationId": "getSwtDataCatalogWithDataset",
+                "summary": "Get CwmsData catalog with dataset",
+                "operationId": "getCatalogWithDataset",
                 "parameters": [
                     {
                         "name": "dataset",
@@ -8817,9 +8817,9 @@
                 "tags": [
                     "Basins"
                 ],
-                "summary": "Get swtData basins with name",
+                "summary": "Get CwmsData basins with name",
                 "description": "Returns CWMS Basin Data",
-                "operationId": "getSwtDataBasinsWithName",
+                "operationId": "getBasinsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -8936,9 +8936,9 @@
                 "tags": [
                     "Basins"
                 ],
-                "summary": "Delete swtData basins with name",
+                "summary": "Delete CwmsData basins with name",
                 "description": "Renames CWMS Basin",
-                "operationId": "deleteSwtDataBasinsWithName",
+                "operationId": "deleteCwmsDataBasinsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -9033,9 +9033,9 @@
                 "tags": [
                     "Basins"
                 ],
-                "summary": "Patch swtData basins with name",
+                "summary": "Patch CwmsData basins with name",
                 "description": "Renames CWMS Basin",
-                "operationId": "patchSwtDataBasinsWithName",
+                "operationId": "patchCwmsDataBasinsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -9134,9 +9134,9 @@
                 "tags": [
                     "Basins"
                 ],
-                "summary": "Get swtData basins",
+                "summary": "Get CwmsData basins",
                 "description": "Returns CWMS Basin Data",
-                "operationId": "getSwtDataBasins",
+                "operationId": "getBasins",
                 "parameters": [
                     {
                         "name": "office",
@@ -9243,9 +9243,9 @@
                 "tags": [
                     "Basins"
                 ],
-                "summary": "Post swtData basins",
+                "summary": "Post CwmsData basins",
                 "description": "Creates CWMS Basin",
-                "operationId": "postSwtDataBasins",
+                "operationId": "postCwmsDataBasins",
                 "responses": {
                     "500": {
                         "description": "Server Error",
@@ -9319,9 +9319,9 @@
                 "tags": [
                     "Streams"
                 ],
-                "summary": "Get swtData streams with name",
+                "summary": "Get CwmsData streams with name",
                 "description": "Returns CWMS Stream Data",
-                "operationId": "getSwtDataStreamsWithName",
+                "operationId": "getStreamsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -9436,9 +9436,9 @@
                 "tags": [
                     "Streams"
                 ],
-                "summary": "Delete swtData streams with name",
+                "summary": "Delete CwmsData streams with name",
                 "description": "Delete CWMS Stream",
-                "operationId": "deleteSwtDataStreamsWithName",
+                "operationId": "deleteCwmsDataStreamsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -9535,9 +9535,9 @@
                 "tags": [
                     "Streams"
                 ],
-                "summary": "Patch swtData streams with name",
+                "summary": "Patch CwmsData streams with name",
                 "description": "Rename CWMS Stream",
-                "operationId": "patchSwtDataStreamsWithName",
+                "operationId": "patchCwmsDataStreamsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -9636,9 +9636,9 @@
                 "tags": [
                     "Streams"
                 ],
-                "summary": "Get swtData streams",
+                "summary": "Get CwmsData streams",
                 "description": "Returns matching CWMS Stream Data for a Reservoir Project.",
-                "operationId": "getSwtDataStreams",
+                "operationId": "getStreams",
                 "parameters": [
                     {
                         "name": "office-mask",
@@ -9767,9 +9767,9 @@
                 "tags": [
                     "Streams"
                 ],
-                "summary": "Post swtData streams",
+                "summary": "Post CwmsData streams",
                 "description": "Create CWMS Stream",
-                "operationId": "postSwtDataStreams",
+                "operationId": "postCwmsDataStreams",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -9860,9 +9860,9 @@
                 "tags": [
                     "StreamLocations"
                 ],
-                "summary": "Get swtData streamLocations with office with name downstreamLocations",
+                "summary": "Get CwmsData streamLocations with office with name downstreamLocations",
                 "description": "Returns matching downstream stream locations.",
-                "operationId": "getSwtDataStreamLocationsWithOfficeWithNameDownstreamLocations",
+                "operationId": "getStreamLocationsWithOfficeWithNameDownstreamLocations",
                 "parameters": [
                     {
                         "name": "office",
@@ -10003,9 +10003,9 @@
                 "tags": [
                     "StreamLocations"
                 ],
-                "summary": "Get swtData streamLocations with office with name upstreamLocations",
+                "summary": "Get CwmsData streamLocations with office with name upstreamLocations",
                 "description": "Returns matching upstream stream locations.",
-                "operationId": "getSwtDataStreamLocationsWithOfficeWithNameUpstreamLocations",
+                "operationId": "getStreamLocationsWithOfficeWithNameUpstreamLocations",
                 "parameters": [
                     {
                         "name": "office",
@@ -10146,9 +10146,9 @@
                 "tags": [
                     "StreamLocations"
                 ],
-                "summary": "Get swtData streamLocations with name",
+                "summary": "Get CwmsData streamLocations with name",
                 "description": "Returns CWMS Stream Location Data",
-                "operationId": "getSwtDataStreamLocationsWithName",
+                "operationId": "getStreamLocationsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -10288,9 +10288,9 @@
                 "tags": [
                     "StreamLocations"
                 ],
-                "summary": "Delete swtData streamLocations with name",
+                "summary": "Delete CwmsData streamLocations with name",
                 "description": "Delete CWMS Stream Location",
-                "operationId": "deleteSwtDataStreamLocationsWithName",
+                "operationId": "deleteCwmsDataStreamLocationsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -10388,9 +10388,9 @@
                 "tags": [
                     "StreamLocations"
                 ],
-                "summary": "Patch swtData streamLocations with name",
+                "summary": "Patch CwmsData streamLocations with name",
                 "description": "Update CWMS Stream Location",
-                "operationId": "patchSwtDataStreamLocationsWithName",
+                "operationId": "patchCwmsDataStreamLocationsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -10481,9 +10481,9 @@
                 "tags": [
                     "StreamLocations"
                 ],
-                "summary": "Get swtData streamLocations",
+                "summary": "Get CwmsData streamLocations",
                 "description": "Returns matching CWMS Stream Location Data for a Reservoir Project.",
-                "operationId": "getSwtDataStreamLocations",
+                "operationId": "getStreamLocations",
                 "parameters": [
                     {
                         "name": "office-mask",
@@ -10620,9 +10620,9 @@
                 "tags": [
                     "StreamLocations"
                 ],
-                "summary": "Post swtData streamLocations",
+                "summary": "Post CwmsData streamLocations",
                 "description": "Create CWMS Stream Location",
-                "operationId": "postSwtDataStreamLocations",
+                "operationId": "postCwmsDataStreamLocations",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -10713,9 +10713,9 @@
                 "tags": [
                     "StreamReaches"
                 ],
-                "summary": "Get swtData streamReaches with name",
+                "summary": "Get CwmsData streamReaches with name",
                 "description": "Returns CWMS Stream Reach Data",
-                "operationId": "getSwtDataStreamReachesWithName",
+                "operationId": "getStreamReachesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -10839,9 +10839,9 @@
                 "tags": [
                     "StreamReaches"
                 ],
-                "summary": "Delete swtData streamReaches with name",
+                "summary": "Delete CwmsData streamReaches with name",
                 "description": "Delete CWMS Stream Reach",
-                "operationId": "deleteSwtDataStreamReachesWithName",
+                "operationId": "deleteCwmsDataStreamReachesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -10930,9 +10930,9 @@
                 "tags": [
                     "StreamReaches"
                 ],
-                "summary": "Patch swtData streamReaches with name",
+                "summary": "Patch CwmsData streamReaches with name",
                 "description": "Rename CWMS Stream Reach",
-                "operationId": "patchSwtDataStreamReachesWithName",
+                "operationId": "patchCwmsDataStreamReachesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -11031,9 +11031,9 @@
                 "tags": [
                     "StreamReaches"
                 ],
-                "summary": "Get swtData streamReaches",
+                "summary": "Get CwmsData streamReaches",
                 "description": "Returns matching CWMS Stream Reach Data for a Reservoir Project.",
-                "operationId": "getSwtDataStreamReaches",
+                "operationId": "getStreamReaches",
                 "parameters": [
                     {
                         "name": "office-mask",
@@ -11162,9 +11162,9 @@
                 "tags": [
                     "StreamReaches"
                 ],
-                "summary": "Post swtData streamReaches",
+                "summary": "Post CwmsData streamReaches",
                 "description": "Create CWMS Stream Reach",
-                "operationId": "postSwtDataStreamReaches",
+                "operationId": "postCwmsDataStreamReaches",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -11255,9 +11255,9 @@
                 "tags": [
                     "Measurements"
                 ],
-                "summary": "Get swtData measurements",
+                "summary": "Get CwmsData measurements",
                 "description": "Returns matching measurement data.",
-                "operationId": "getSwtDataMeasurements",
+                "operationId": "getMeasurements",
                 "parameters": [
                     {
                         "name": "office-mask",
@@ -11458,9 +11458,9 @@
                 "tags": [
                     "Measurements"
                 ],
-                "summary": "Post swtData measurements",
+                "summary": "Post CwmsData measurements",
                 "description": "Create new measurement(s).",
-                "operationId": "postSwtDataMeasurements",
+                "operationId": "postCwmsDataMeasurements",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -11562,9 +11562,9 @@
                 "tags": [
                     "Measurements"
                 ],
-                "summary": "Delete swtData measurements with locationId",
+                "summary": "Delete CwmsData measurements with locationId",
                 "description": "Delete an existing measurement.",
-                "operationId": "deleteSwtDataMeasurementsWithLocationId",
+                "operationId": "deleteCwmsDataMeasurementsWithLocationId",
                 "parameters": [
                     {
                         "name": "location-id",
@@ -11697,8 +11697,8 @@
                 "tags": [
                     "Blob"
                 ],
-                "summary": "Get swtData blobs with blobId",
-                "operationId": "getSwtDataBlobsWithBlobId",
+                "summary": "Get CwmsData blobs with blobId",
+                "operationId": "getBlobsWithBlobId",
                 "parameters": [
                     {
                         "name": "blob-id",
@@ -11784,8 +11784,8 @@
                 "tags": [
                     "Blob"
                 ],
-                "summary": "Get swtData blobs",
-                "operationId": "getSwtDataBlobs",
+                "summary": "Get CwmsData blobs",
+                "operationId": "getBlobs",
                 "parameters": [
                     {
                         "name": "office",
@@ -11901,9 +11901,9 @@
                 "tags": [
                     "Blob"
                 ],
-                "summary": "Post swtData blobs",
+                "summary": "Post CwmsData blobs",
                 "description": "Create new Blob",
-                "operationId": "postSwtDataBlobs",
+                "operationId": "postCwmsDataBlobs",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -11991,9 +11991,9 @@
                 "tags": [
                     "Clob"
                 ],
-                "summary": "Get swtData clobs with clobId",
+                "summary": "Get CwmsData clobs with clobId",
                 "description": "Get a single clob.  If the accept header is set to text/plain, the raw value is returned as the response body. Responses to text/plain requests are streamed and support the Range header.  When the accept header is set to application/json;version=2 the clob will be returned as a serialized Clob object with fields for office-id, id, description and value.",
-                "operationId": "getSwtDataClobsWithClobId",
+                "operationId": "getClobsWithClobId",
                 "parameters": [
                     {
                         "name": "clob-id",
@@ -12100,9 +12100,9 @@
                 "tags": [
                     "Clob"
                 ],
-                "summary": "Delete swtData clobs with clobId",
+                "summary": "Delete CwmsData clobs with clobId",
                 "description": "Delete clob",
-                "operationId": "deleteSwtDataClobsWithClobId",
+                "operationId": "deleteCwmsDataClobsWithClobId",
                 "parameters": [
                     {
                         "name": "clob-id",
@@ -12188,9 +12188,9 @@
                 "tags": [
                     "Clob"
                 ],
-                "summary": "Patch swtData clobs with clobId",
+                "summary": "Patch CwmsData clobs with clobId",
                 "description": "Update clob",
-                "operationId": "patchSwtDataClobsWithClobId",
+                "operationId": "patchCwmsDataClobsWithClobId",
                 "parameters": [
                     {
                         "name": "clob-id",
@@ -12292,8 +12292,8 @@
                 "tags": [
                     "Clob"
                 ],
-                "summary": "Get swtData clobs",
-                "operationId": "getSwtDataClobs",
+                "summary": "Get CwmsData clobs",
+                "operationId": "getClobs",
                 "parameters": [
                     {
                         "name": "office",
@@ -12417,9 +12417,9 @@
                 "tags": [
                     "Clob"
                 ],
-                "summary": "Post swtData clobs",
+                "summary": "Post CwmsData clobs",
                 "description": "Create new Clob",
-                "operationId": "postSwtDataClobs",
+                "operationId": "postCwmsDataClobs",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -12512,9 +12512,9 @@
                 "tags": [
                     "Pools"
                 ],
-                "summary": "Get swtData pools with poolId",
+                "summary": "Get CwmsData pools with poolId",
                 "description": "Retrieves requested Pool",
-                "operationId": "getSwtDataPoolsWithPoolId",
+                "operationId": "getPoolsWithPoolId",
                 "parameters": [
                     {
                         "name": "pool-id",
@@ -12656,9 +12656,9 @@
                 "tags": [
                     "Pools"
                 ],
-                "summary": "Get swtData pools",
+                "summary": "Get CwmsData pools",
                 "description": "Returns Pools Data",
-                "operationId": "getSwtDataPools",
+                "operationId": "getPools",
                 "parameters": [
                     {
                         "name": "office",
@@ -12814,8 +12814,8 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Get swtData specifiedLevels",
-                "operationId": "getSwtDataSpecifiedLevels",
+                "summary": "Get CwmsData specifiedLevels",
+                "operationId": "getSpecifiedLevels",
                 "parameters": [
                     {
                         "name": "office",
@@ -12909,9 +12909,9 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Post swtData specifiedLevels",
+                "summary": "Post CwmsData specifiedLevels",
                 "description": "Create new SpecifiedLevel",
-                "operationId": "postSwtDataSpecifiedLevels",
+                "operationId": "postCwmsDataSpecifiedLevels",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -12999,9 +12999,9 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Delete swtData specifiedLevels with specifiedLevelId",
+                "summary": "Delete CwmsData specifiedLevels with specifiedLevelId",
                 "description": "Deletes requested specified level id",
-                "operationId": "deleteSwtDataSpecifiedLevelsWithSpecifiedLevelId",
+                "operationId": "deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelId",
                 "parameters": [
                     {
                         "name": "specified-level-id",
@@ -13087,9 +13087,9 @@
                 "tags": [
                     "Levels"
                 ],
-                "summary": "Patch swtData specifiedLevels with specifiedLevelId",
+                "summary": "Patch CwmsData specifiedLevels with specifiedLevelId",
                 "description": "Renames the requested specified level id",
-                "operationId": "patchSwtDataSpecifiedLevelsWithSpecifiedLevelId",
+                "operationId": "patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId",
                 "parameters": [
                     {
                         "name": "specified-level-id",
@@ -13185,9 +13185,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Get swtData forecastInstance with name",
+                "summary": "Get CwmsData forecastInstance with name",
                 "description": "Used to get all forecast instances for a given forecast spec",
-                "operationId": "getSwtDataForecastInstanceWithName",
+                "operationId": "getForecastInstanceWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -13313,9 +13313,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Delete swtData forecastInstance with name",
+                "summary": "Delete CwmsData forecastInstance with name",
                 "description": "Used to delete forecast instance data based on unique fields",
-                "operationId": "deleteSwtDataForecastInstanceWithName",
+                "operationId": "deleteCwmsDataForecastInstanceWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -13428,9 +13428,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Patch swtData forecastInstance with name",
+                "summary": "Patch CwmsData forecastInstance with name",
                 "description": "Update a forecast instance with new max age, notes, forecast fileand forecast info key/value pairs.",
-                "operationId": "patchSwtDataForecastInstanceWithName",
+                "operationId": "patchCwmsDataForecastInstanceWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -13519,9 +13519,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Get swtData forecastInstance",
+                "summary": "Get CwmsData forecastInstance",
                 "description": "Used to get all forecast instances for a given forecast spec",
-                "operationId": "getSwtDataForecastInstance",
+                "operationId": "getForecastInstance",
                 "parameters": [
                     {
                         "name": "office",
@@ -13626,9 +13626,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Post swtData forecastInstance",
+                "summary": "Post CwmsData forecastInstance",
                 "description": "Used to create and save a forecast instance",
-                "operationId": "postSwtDataForecastInstance",
+                "operationId": "postCwmsDataForecastInstance",
                 "requestBody": {
                     "content": {
                         "application/json;version=2": {
@@ -13706,9 +13706,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Get swtData forecastSpec with name",
+                "summary": "Get CwmsData forecastSpec with name",
                 "description": "Used to query a single forecast spec record",
-                "operationId": "getSwtDataForecastSpecWithName",
+                "operationId": "getForecastSpecWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -13816,9 +13816,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Delete swtData forecastSpec with name",
+                "summary": "Delete CwmsData forecastSpec with name",
                 "description": "Used to delete forecast spec data based on unique fields",
-                "operationId": "deleteSwtDataForecastSpecWithName",
+                "operationId": "deleteCwmsDataForecastSpecWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -13921,9 +13921,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Patch swtData forecastSpec with name",
+                "summary": "Patch CwmsData forecastSpec with name",
                 "description": "Update a forecast spec with provided values",
-                "operationId": "patchSwtDataForecastSpecWithName",
+                "operationId": "patchCwmsDataForecastSpecWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -14012,9 +14012,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Get swtData forecastSpec",
+                "summary": "Get CwmsData forecastSpec",
                 "description": "Used to query multiple forecast specs",
-                "operationId": "getSwtDataForecastSpec",
+                "operationId": "getForecastSpec",
                 "parameters": [
                     {
                         "name": "office",
@@ -14127,9 +14127,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Post swtData forecastSpec",
+                "summary": "Post CwmsData forecastSpec",
                 "description": "Used to create and save forecast spec data",
-                "operationId": "postSwtDataForecastSpec",
+                "operationId": "postCwmsDataForecastSpec",
                 "requestBody": {
                     "content": {
                         "application/json;version=2": {
@@ -14207,9 +14207,9 @@
                 "tags": [
                     "Forecast"
                 ],
-                "summary": "Get swtData forecastInstance with name fileData",
+                "summary": "Get CwmsData forecastInstance with name fileData",
                 "description": "Used to download forecast file for the given parameters",
-                "operationId": "getSwtDataForecastInstanceWithNameFileData",
+                "operationId": "getForecastInstanceWithNameFileData",
                 "parameters": [
                     {
                         "name": "name",
@@ -14338,9 +14338,9 @@
                 "tags": [
                     "Projects"
                 ],
-                "summary": "Post swtData projects statusUpdate with name",
+                "summary": "Post CwmsData projects statusUpdate with name",
                 "description": "Publishes a message on the office's STATUS queue that a project has been updated for a specified application",
-                "operationId": "postSwtDataProjectsStatusUpdateWithName",
+                "operationId": "postCwmsDataProjectsStatusUpdateWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -14472,9 +14472,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Get swtData projects with office with projectId waterUser with waterUser",
+                "summary": "Get CwmsData projects with office with projectId waterUser with waterUser",
                 "description": "Gets a specified water user.",
-                "operationId": "getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser",
+                "operationId": "getProjectsWithOfficeWithProjectIdWaterUserWithWaterUser",
                 "parameters": [
                     {
                         "name": "office",
@@ -14579,9 +14579,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Delete swtData projects with office with projectId waterUser with waterUser",
+                "summary": "Delete CwmsData projects with office with projectId waterUser with waterUser",
                 "description": "Deletes a water user from CWMS.",
-                "operationId": "deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser",
+                "operationId": "deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser",
                 "parameters": [
                     {
                         "name": "office",
@@ -14684,9 +14684,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Patch swtData projects with office with projectId waterUser with waterUser",
+                "summary": "Patch CwmsData projects with office with projectId waterUser with waterUser",
                 "description": "Updates a water user in CWMS.",
-                "operationId": "patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser",
+                "operationId": "patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser",
                 "parameters": [
                     {
                         "name": "office",
@@ -14808,9 +14808,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Get swtData projects with office with projectId waterUser",
+                "summary": "Get CwmsData projects with office with projectId waterUser",
                 "description": "Gets all water users.",
-                "operationId": "getSwtDataProjectsWithOfficeWithProjectIdWaterUser",
+                "operationId": "getProjectsWithOfficeWithProjectIdWaterUser",
                 "parameters": [
                     {
                         "name": "office",
@@ -14906,9 +14906,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Post swtData projects with office with projectId waterUser",
+                "summary": "Post CwmsData projects with office with projectId waterUser",
                 "description": "Stores a water user to CWMS.",
-                "operationId": "postSwtDataProjectsWithOfficeWithProjectIdWaterUser",
+                "operationId": "postCwmsDataProjectsWithOfficeWithProjectIdWaterUser",
                 "parameters": [
                     {
                         "name": "office",
@@ -15018,9 +15018,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Get swtData projects with office with projectId waterUser with waterUser contracts with contractName",
+                "summary": "Get CwmsData projects with office with projectId waterUser with waterUser contracts with contractName",
                 "description": "Return a specified water contract",
-                "operationId": "getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName",
+                "operationId": "getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName",
                 "parameters": [
                     {
                         "name": "office",
@@ -15142,9 +15142,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Delete swtData projects with office with projectId waterUser with waterUser contracts with contractName",
+                "summary": "Delete CwmsData projects with office with projectId waterUser with waterUser contracts with contractName",
                 "description": "Delete a specified water contract",
-                "operationId": "deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName",
+                "operationId": "deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName",
                 "parameters": [
                     {
                         "name": "office",
@@ -15256,9 +15256,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Patch swtData projects with office with projectId waterUser with waterUser contracts with contractName",
+                "summary": "Patch CwmsData projects with office with projectId waterUser with waterUser contracts with contractName",
                 "description": "Renames a water contract",
-                "operationId": "patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName",
+                "operationId": "patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName",
                 "parameters": [
                     {
                         "name": "office",
@@ -15385,9 +15385,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Get swtData projects with office with projectId waterUser with waterUser contracts",
+                "summary": "Get CwmsData projects with office with projectId waterUser with waterUser contracts",
                 "description": "Return all water contracts",
-                "operationId": "getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts",
+                "operationId": "getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts",
                 "parameters": [
                     {
                         "name": "office",
@@ -15500,9 +15500,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Post swtData projects with office with projectId waterUser with waterUser contracts",
+                "summary": "Post CwmsData projects with office with projectId waterUser with waterUser contracts",
                 "description": "Create a new water contract",
-                "operationId": "postSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts",
+                "operationId": "postCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts",
                 "parameters": [
                     {
                         "name": "office",
@@ -15631,9 +15631,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Delete swtData projects with office with projectId waterUser with waterUser contracts with contractName pumps with name",
+                "summary": "Delete CwmsData projects with office with projectId waterUser with waterUser contracts with contractName pumps with name",
                 "description": "Disassociate a pump from a contract",
-                "operationId": "deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName",
+                "operationId": "deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName",
                 "parameters": [
                     {
                         "name": "office",
@@ -15765,9 +15765,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Get swtData projects with office contractTypes",
+                "summary": "Get CwmsData projects with office contractTypes",
                 "description": "Get all water contract types",
-                "operationId": "getSwtDataProjectsWithOfficeContractTypes",
+                "operationId": "getProjectsWithOfficeContractTypes",
                 "parameters": [
                     {
                         "name": "office",
@@ -15862,9 +15862,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Post swtData projects with office contractTypes",
+                "summary": "Post CwmsData projects with office contractTypes",
                 "description": "Create a new water contract type",
-                "operationId": "postSwtDataProjectsWithOfficeContractTypes",
+                "operationId": "postCwmsDataProjectsWithOfficeContractTypes",
                 "parameters": [
                     {
                         "name": "office",
@@ -15966,9 +15966,9 @@
                 "tags": [
                     "Water Contracts"
                 ],
-                "summary": "Delete swtData projects with office contractTypes with displayValue",
+                "summary": "Delete CwmsData projects with office contractTypes with displayValue",
                 "description": "Delete a water contract type",
-                "operationId": "deleteSwtDataProjectsWithOfficeContractTypesWithDisplayValue",
+                "operationId": "deleteCwmsDataProjectsWithOfficeContractTypesWithDisplayValue",
                 "parameters": [
                     {
                         "name": "office",
@@ -16056,9 +16056,9 @@
                 "tags": [
                     "Embankments"
                 ],
-                "summary": "Get swtData projects embankments with name",
+                "summary": "Get CwmsData projects embankments with name",
                 "description": "Returns CWMS Embankment Data",
-                "operationId": "getSwtDataProjectsEmbankmentsWithName",
+                "operationId": "getProjectsEmbankmentsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -16165,9 +16165,9 @@
                 "tags": [
                     "Embankments"
                 ],
-                "summary": "Delete swtData projects embankments with name",
+                "summary": "Delete CwmsData projects embankments with name",
                 "description": "Delete CWMS Embankment",
-                "operationId": "deleteSwtDataProjectsEmbankmentsWithName",
+                "operationId": "deleteCwmsDataProjectsEmbankmentsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -16264,9 +16264,9 @@
                 "tags": [
                     "Embankments"
                 ],
-                "summary": "Patch swtData projects embankments with name",
+                "summary": "Patch CwmsData projects embankments with name",
                 "description": "Rename CWMS Embankment",
-                "operationId": "patchSwtDataProjectsEmbankmentsWithName",
+                "operationId": "patchCwmsDataProjectsEmbankmentsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -16365,9 +16365,9 @@
                 "tags": [
                     "Embankments"
                 ],
-                "summary": "Get swtData projects embankments",
+                "summary": "Get CwmsData projects embankments",
                 "description": "Returns matching CWMS Embankment Data for a Reservoir Project.",
-                "operationId": "getSwtDataProjectsEmbankments",
+                "operationId": "getProjectsEmbankments",
                 "parameters": [
                     {
                         "name": "office",
@@ -16473,9 +16473,9 @@
                 "tags": [
                     "Embankments"
                 ],
-                "summary": "Post swtData projects embankments",
+                "summary": "Post CwmsData projects embankments",
                 "description": "Create CWMS Embankment",
-                "operationId": "postSwtDataProjectsEmbankments",
+                "operationId": "postCwmsDataProjectsEmbankments",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -16566,9 +16566,9 @@
                 "tags": [
                     "Turbines"
                 ],
-                "summary": "Get swtData projects turbines with name",
+                "summary": "Get CwmsData projects turbines with name",
                 "description": "Returns CWMS Turbine Data",
-                "operationId": "getSwtDataProjectsTurbinesWithName",
+                "operationId": "getProjectsTurbinesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -16669,9 +16669,9 @@
                 "tags": [
                     "Turbines"
                 ],
-                "summary": "Delete swtData projects turbines with name",
+                "summary": "Delete CwmsData projects turbines with name",
                 "description": "Delete CWMS Turbine",
-                "operationId": "deleteSwtDataProjectsTurbinesWithName",
+                "operationId": "deleteCwmsDataProjectsTurbinesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -16768,9 +16768,9 @@
                 "tags": [
                     "Turbines"
                 ],
-                "summary": "Patch swtData projects turbines with name",
+                "summary": "Patch CwmsData projects turbines with name",
                 "description": "Rename CWMS Turbine",
-                "operationId": "patchSwtDataProjectsTurbinesWithName",
+                "operationId": "patchCwmsDataProjectsTurbinesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -16869,9 +16869,9 @@
                 "tags": [
                     "Turbines"
                 ],
-                "summary": "Get swtData projects turbines",
+                "summary": "Get CwmsData projects turbines",
                 "description": "Returns matching CWMS Turbine Data for a Reservoir Project.",
-                "operationId": "getSwtDataProjectsTurbines",
+                "operationId": "getProjectsTurbines",
                 "parameters": [
                     {
                         "name": "office",
@@ -16975,9 +16975,9 @@
                 "tags": [
                     "Turbines"
                 ],
-                "summary": "Post swtData projects turbines",
+                "summary": "Post CwmsData projects turbines",
                 "description": "Create CWMS Turbine",
-                "operationId": "postSwtDataProjectsTurbines",
+                "operationId": "postCwmsDataProjectsTurbines",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -17073,9 +17073,9 @@
                 "tags": [
                     "Turbines"
                 ],
-                "summary": "Get swtData projects with office with name turbineChanges",
+                "summary": "Get CwmsData projects with office with name turbineChanges",
                 "description": "Returns matching CWMS Turbine Change Data for a Reservoir Project.",
-                "operationId": "getSwtDataProjectsWithOfficeWithNameTurbineChanges",
+                "operationId": "getProjectsWithOfficeWithNameTurbineChanges",
                 "parameters": [
                     {
                         "name": "office",
@@ -17225,9 +17225,9 @@
                 "tags": [
                     "Turbines"
                 ],
-                "summary": "Post swtData projects with office with name turbineChanges",
+                "summary": "Post CwmsData projects with office with name turbineChanges",
                 "description": "Create CWMS Turbine Changes",
-                "operationId": "postSwtDataProjectsWithOfficeWithNameTurbineChanges",
+                "operationId": "postCwmsDataProjectsWithOfficeWithNameTurbineChanges",
                 "parameters": [
                     {
                         "name": "office",
@@ -17339,9 +17339,9 @@
                 "tags": [
                     "Turbines"
                 ],
-                "summary": "Delete swtData projects with office with name turbineChanges",
+                "summary": "Delete CwmsData projects with office with name turbineChanges",
                 "description": "Delete CWMS Turbine Changes",
-                "operationId": "deleteSwtDataProjectsWithOfficeWithNameTurbineChanges",
+                "operationId": "deleteCwmsDataProjectsWithOfficeWithNameTurbineChanges",
                 "parameters": [
                     {
                         "name": "office",
@@ -17458,9 +17458,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Get swtData projects outlets with name",
+                "summary": "Get CwmsData projects outlets with name",
                 "description": "Returns CWMS Outlet Data",
-                "operationId": "getSwtDataProjectsOutletsWithName",
+                "operationId": "getProjectsOutletsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -17561,9 +17561,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Delete swtData projects outlets with name",
+                "summary": "Delete CwmsData projects outlets with name",
                 "description": "Delete CWMS Outlet",
-                "operationId": "deleteSwtDataProjectsOutletsWithName",
+                "operationId": "deleteCwmsDataProjectsOutletsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -17660,9 +17660,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Patch swtData projects outlets with name",
+                "summary": "Patch CwmsData projects outlets with name",
                 "description": "Rename CWMS Outlet",
-                "operationId": "patchSwtDataProjectsOutletsWithName",
+                "operationId": "patchCwmsDataProjectsOutletsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -17761,9 +17761,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Get swtData projects outlets",
+                "summary": "Get CwmsData projects outlets",
                 "description": "Returns matching CWMS Outlet Data for a Reservoir Project.",
-                "operationId": "getSwtDataProjectsOutlets",
+                "operationId": "getProjectsOutlets",
                 "parameters": [
                     {
                         "name": "office",
@@ -17870,9 +17870,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Post swtData projects outlets",
+                "summary": "Post CwmsData projects outlets",
                 "description": "Create CWMS Outlet",
-                "operationId": "postSwtDataProjectsOutlets",
+                "operationId": "postCwmsDataProjectsOutlets",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -17968,9 +17968,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Post swtData projects gateChanges",
+                "summary": "Post CwmsData projects gateChanges",
                 "description": "Create CWMS Gate Changes",
-                "operationId": "postSwtDataProjectsGateChanges",
+                "operationId": "postCwmsDataProjectsGateChanges",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -18072,9 +18072,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Get swtData projects with office with projectId gateChanges",
+                "summary": "Get CwmsData projects with office with projectId gateChanges",
                 "description": "Returns matching CWMS gate change data for a Reservoir Project.",
-                "operationId": "getSwtDataProjectsWithOfficeWithProjectIdGateChanges",
+                "operationId": "getProjectsWithOfficeWithProjectIdGateChanges",
                 "parameters": [
                     {
                         "name": "office",
@@ -18232,9 +18232,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Delete swtData projects with office with projectId gateChanges",
+                "summary": "Delete CwmsData projects with office with projectId gateChanges",
                 "description": "Deletes matching CWMS gate change data for a Reservoir Project.",
-                "operationId": "deleteSwtDataProjectsWithOfficeWithProjectIdGateChanges",
+                "operationId": "deleteCwmsDataProjectsWithOfficeWithProjectIdGateChanges",
                 "parameters": [
                     {
                         "name": "office",
@@ -18351,9 +18351,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Get swtData projects with office with projectId virtualOutlets with name",
+                "summary": "Get CwmsData projects with office with projectId virtualOutlets with name",
                 "description": "Returns CWMS Virtual Outlet Data",
-                "operationId": "getSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName",
+                "operationId": "getProjectsWithOfficeWithProjectIdVirtualOutletsWithName",
                 "parameters": [
                     {
                         "name": "office",
@@ -18463,9 +18463,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Delete swtData projects with office with projectId virtualOutlets with name",
+                "summary": "Delete CwmsData projects with office with projectId virtualOutlets with name",
                 "description": "Delete CWMS Virtual Outlet",
-                "operationId": "deleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName",
+                "operationId": "deleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName",
                 "parameters": [
                     {
                         "name": "office",
@@ -18573,9 +18573,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Get swtData projects with office with projectId virtualOutlets",
+                "summary": "Get CwmsData projects with office with projectId virtualOutlets",
                 "description": "Returns matching CWMS Virtual Outlet Data for a Reservoir Project.",
-                "operationId": "getSwtDataProjectsWithOfficeWithProjectIdVirtualOutlets",
+                "operationId": "getProjectsWithOfficeWithProjectIdVirtualOutlets",
                 "parameters": [
                     {
                         "name": "office",
@@ -18684,9 +18684,9 @@
                 "tags": [
                     "Outlets"
                 ],
-                "summary": "Post swtData projects virtualOutlets",
+                "summary": "Post CwmsData projects virtualOutlets",
                 "description": "Create CWMS Virtual Outlet",
-                "operationId": "postSwtDataProjectsVirtualOutlets",
+                "operationId": "postCwmsDataProjectsVirtualOutlets",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -18782,9 +18782,9 @@
                 "tags": [
                     "Projects"
                 ],
-                "summary": "Get swtData projects locations",
+                "summary": "Get CwmsData projects locations",
                 "description": "Get a list of project child locations",
-                "operationId": "getSwtDataProjectsLocations",
+                "operationId": "getProjectsLocations",
                 "parameters": [
                     {
                         "name": "office",
@@ -18891,9 +18891,9 @@
                 "tags": [
                     "Projects"
                 ],
-                "summary": "Get swtData projects with name",
+                "summary": "Get CwmsData projects with name",
                 "description": "Retrieves requested Project",
-                "operationId": "getSwtDataProjectsWithName",
+                "operationId": "getProjectsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -18992,9 +18992,9 @@
                 "tags": [
                     "Projects"
                 ],
-                "summary": "Delete swtData projects with name",
+                "summary": "Delete CwmsData projects with name",
                 "description": "Deletes requested reservoir project",
-                "operationId": "deleteSwtDataProjectsWithName",
+                "operationId": "deleteCwmsDataProjectsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -19088,9 +19088,9 @@
                 "tags": [
                     "Projects"
                 ],
-                "summary": "Patch swtData projects with name",
+                "summary": "Patch CwmsData projects with name",
                 "description": "Rename a project",
-                "operationId": "patchSwtDataProjectsWithName",
+                "operationId": "patchCwmsDataProjectsWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -19200,9 +19200,9 @@
                 "tags": [
                     "Projects"
                 ],
-                "summary": "Get swtData projects",
+                "summary": "Get CwmsData projects",
                 "description": "Returns Projects Data",
-                "operationId": "getSwtDataProjects",
+                "operationId": "getProjects",
                 "parameters": [
                     {
                         "name": "office",
@@ -19316,9 +19316,9 @@
                 "tags": [
                     "Projects"
                 ],
-                "summary": "Post swtData projects",
+                "summary": "Post CwmsData projects",
                 "description": "Create new Project",
-                "operationId": "postSwtDataProjects",
+                "operationId": "postCwmsDataProjects",
                 "parameters": [
                     {
                         "name": "fail-if-exists",
@@ -19411,9 +19411,9 @@
                 "tags": [
                     "Properties"
                 ],
-                "summary": "Get swtData properties with name",
+                "summary": "Get CwmsData properties with name",
                 "description": "Returns CWMS Property Data",
-                "operationId": "getSwtDataPropertiesWithName",
+                "operationId": "getPropertiesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -19526,9 +19526,9 @@
                 "tags": [
                     "Properties"
                 ],
-                "summary": "Delete swtData properties with name",
+                "summary": "Delete CwmsData properties with name",
                 "description": "Delete CWMS Property",
-                "operationId": "deleteSwtDataPropertiesWithName",
+                "operationId": "deleteCwmsDataPropertiesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -19626,9 +19626,9 @@
                 "tags": [
                     "Properties"
                 ],
-                "summary": "Patch swtData properties with name",
+                "summary": "Patch CwmsData properties with name",
                 "description": "Update CWMS Property",
-                "operationId": "patchSwtDataPropertiesWithName",
+                "operationId": "patchCwmsDataPropertiesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -19719,9 +19719,9 @@
                 "tags": [
                     "Properties"
                 ],
-                "summary": "Get swtData properties",
+                "summary": "Get CwmsData properties",
                 "description": "Returns matching CWMS Property Data.",
-                "operationId": "getSwtDataProperties",
+                "operationId": "getProperties",
                 "parameters": [
                     {
                         "name": "office-mask",
@@ -19826,9 +19826,9 @@
                 "tags": [
                     "Properties"
                 ],
-                "summary": "Post swtData properties",
+                "summary": "Post CwmsData properties",
                 "description": "Create CWMS Property",
-                "operationId": "postSwtDataProperties",
+                "operationId": "postCwmsDataProperties",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -19909,9 +19909,9 @@
                 "tags": [
                     "LookupTypes"
                 ],
-                "summary": "Get swtData lookupTypes",
+                "summary": "Get CwmsData lookupTypes",
                 "description": "Returns matching CWMS Lookup Type Data.",
-                "operationId": "getSwtDataLookupTypes",
+                "operationId": "getLookupTypes",
                 "parameters": [
                     {
                         "name": "category",
@@ -20019,9 +20019,9 @@
                 "tags": [
                     "LookupTypes"
                 ],
-                "summary": "Post swtData lookupTypes",
+                "summary": "Post CwmsData lookupTypes",
                 "description": "Create CWMS Lookup Type",
-                "operationId": "postSwtDataLookupTypes",
+                "operationId": "postCwmsDataLookupTypes",
                 "parameters": [
                     {
                         "name": "category",
@@ -20122,9 +20122,9 @@
                 "tags": [
                     "LookupTypes"
                 ],
-                "summary": "Delete swtData lookupTypes with name",
+                "summary": "Delete CwmsData lookupTypes with name",
                 "description": "Delete CWMS Lookup Type",
-                "operationId": "deleteSwtDataLookupTypesWithName",
+                "operationId": "deleteCwmsDataLookupTypesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -20230,9 +20230,9 @@
                 "tags": [
                     "LookupTypes"
                 ],
-                "summary": "Patch swtData lookupTypes with name",
+                "summary": "Patch CwmsData lookupTypes with name",
                 "description": "Update CWMS Lookup Type",
-                "operationId": "patchSwtDataLookupTypesWithName",
+                "operationId": "patchCwmsDataLookupTypesWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -20341,9 +20341,9 @@
                 "tags": [
                     "Project Locks"
                 ],
-                "summary": "Get swtData projectLocks with name",
+                "summary": "Get CwmsData projectLocks with name",
                 "description": "Return a lock if the specified project is locked. Otherwise 404",
-                "operationId": "getSwtDataProjectLocksWithName",
+                "operationId": "getProjectLocksWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -20448,9 +20448,9 @@
                 "tags": [
                     "Project Locks"
                 ],
-                "summary": "Delete swtData projectLocks with name",
+                "summary": "Delete CwmsData projectLocks with name",
                 "description": "Revokes a project lock, if successful the lock is deleted",
-                "operationId": "deleteSwtDataProjectLocksWithName",
+                "operationId": "deleteCwmsDataProjectLocksWithName",
                 "parameters": [
                     {
                         "name": "name",
@@ -20547,9 +20547,9 @@
                 "tags": [
                     "Project Locks"
                 ],
-                "summary": "Get swtData projectLocks",
+                "summary": "Get CwmsData projectLocks",
                 "description": "Get a list of project locks",
-                "operationId": "getSwtDataProjectLocks",
+                "operationId": "getProjectLocks",
                 "parameters": [
                     {
                         "name": "office-mask",
@@ -20652,9 +20652,9 @@
                 "tags": [
                     "Project Locks"
                 ],
-                "summary": "Post swtData projectLocks",
+                "summary": "Post CwmsData projectLocks",
                 "description": "Requests the creation of a new Reservoir Project Lock",
-                "operationId": "postSwtDataProjectLocks",
+                "operationId": "postCwmsDataProjectLocks",
                 "parameters": [
                     {
                         "name": "revoke-existing",
@@ -20762,9 +20762,9 @@
                 "tags": [
                     "Project Locks"
                 ],
-                "summary": "Post swtData projectLocks deny",
+                "summary": "Post CwmsData projectLocks deny",
                 "description": "Deny a Lock revoke request.",
-                "operationId": "postSwtDataProjectLocksDeny",
+                "operationId": "postCwmsDataProjectLocksDeny",
                 "parameters": [
                     {
                         "name": "lock-id",
@@ -20843,9 +20843,9 @@
                 "tags": [
                     "Project Locks"
                 ],
-                "summary": "Post swtData projectLocks release",
+                "summary": "Post CwmsData projectLocks release",
                 "description": "Releases a project lock",
-                "operationId": "postSwtDataProjectLocksRelease",
+                "operationId": "postCwmsDataProjectLocksRelease",
                 "parameters": [
                     {
                         "name": "office",
@@ -20933,9 +20933,9 @@
                 "tags": [
                     "Project Lock Revoker Rights"
                 ],
-                "summary": "Get swtData projectLockRights",
+                "summary": "Get CwmsData projectLockRights",
                 "description": "Get a list of project lock revoker rights ",
-                "operationId": "getSwtDataProjectLockRights",
+                "operationId": "getProjectLockRights",
                 "parameters": [
                     {
                         "name": "office-mask",
@@ -21043,9 +21043,9 @@
                 "tags": [
                     "Project Lock Revoker Rights"
                 ],
-                "summary": "Post swtData projectLockRights removeAll",
+                "summary": "Post CwmsData projectLockRights removeAll",
                 "description": "Revokes a project lock, if successful the lock is deleted",
-                "operationId": "postSwtDataProjectLockRightsRemoveAll",
+                "operationId": "postCwmsDataProjectLockRightsRemoveAll",
                 "parameters": [
                     {
                         "name": "office",
@@ -21142,9 +21142,9 @@
                 "tags": [
                     "Project Lock Revoker Rights"
                 ],
-                "summary": "Post swtData projectLockRights update",
+                "summary": "Post CwmsData projectLockRights update",
                 "description": "Update Lock Revoker Rights.",
-                "operationId": "postSwtDataProjectLockRightsUpdate",
+                "operationId": "postCwmsDataProjectLockRightsUpdate",
                 "parameters": [
                     {
                         "name": "office",
@@ -22027,172 +22027,6 @@
                     "description": "List of retrieved time-series values"
                 }
             },
-            "timeseries": {
-                "required": [
-                    "units"
-                ],
-                "type": "object",
-                "properties": {
-                    "begin": {
-                        "type": "string",
-                        "description": "The requested start time of the data, in ISO-8601 format with offset and timezone ('yyyy-MM-dd'T'HH:mm:ssZ'['VV']'')",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "date-version-type": {
-                        "type": "string",
-                        "description": "Version type specifies the type of timeseries response to be received. Can be max aggregate or single version. Max aggregate cannot be run if version date field is specified.",
-                        "enum": [
-                            "MAX_AGGREGATE",
-                            "SINGLE_VERSION",
-                            "UNVERSIONED"
-                        ]
-                    },
-                    "end": {
-                        "type": "string",
-                        "description": "The requested end time of the data, in ISO-8601 format with offset and timezone ('yyyy-MM-dd'T'HH:mm:ssZ'['VV']'')",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "interval": {
-                        "type": "object",
-                        "properties": {
-                            "seconds": {
-                                "type": "integer",
-                                "format": "int64"
-                            },
-                            "units": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "duration": {
-                                            "type": "object",
-                                            "properties": {
-                                                "seconds": {
-                                                    "type": "integer",
-                                                    "format": "int64"
-                                                },
-                                                "nano": {
-                                                    "type": "integer",
-                                                    "format": "int32"
-                                                },
-                                                "zero": {
-                                                    "type": "boolean"
-                                                },
-                                                "negative": {
-                                                    "type": "boolean"
-                                                }
-                                            }
-                                        },
-                                        "durationEstimated": {
-                                            "type": "boolean"
-                                        },
-                                        "dateBased": {
-                                            "type": "boolean"
-                                        },
-                                        "timeBased": {
-                                            "type": "boolean"
-                                        }
-                                    }
-                                }
-                            },
-                            "nano": {
-                                "type": "integer",
-                                "format": "int32"
-                            },
-                            "zero": {
-                                "type": "boolean"
-                            },
-                            "negative": {
-                                "type": "boolean"
-                            }
-                        },
-                        "description": "The interval of the time-series, in ISO-8601 duration format",
-                        "format": "Java Duration",
-                        "readOnly": true
-                    },
-                    "interval-offset": {
-                        "type": "integer",
-                        "description": "Offset from top of interval",
-                        "format": "int64",
-                        "readOnly": true
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "Time-series name"
-                    },
-                    "next-page": {
-                        "type": "string",
-                        "description": "The cursor to the next page of data; null if there is no more data",
-                        "readOnly": true
-                    },
-                    "office-id": {
-                        "type": "string",
-                        "description": "Office ID that owns the time-series"
-                    },
-                    "page": {
-                        "type": "string",
-                        "description": "The cursor to the current page of data",
-                        "readOnly": true
-                    },
-                    "page-size": {
-                        "type": "integer",
-                        "description": "The number of records fetched per-page; this may be larger than the number of records actually retrieved",
-                        "format": "int32",
-                        "readOnly": true
-                    },
-                    "time-zone": {
-                        "type": "string",
-                        "description": "Only on 21.1.1 Database. The timezone the Interval Offset is from.",
-                        "readOnly": true
-                    },
-                    "total": {
-                        "type": "integer",
-                        "description": "The total number of records retrieved; null or not present if not supported or unknown",
-                        "format": "int32",
-                        "readOnly": true
-                    },
-                    "units": {
-                        "type": "string",
-                        "description": "The units of the time series data"
-                    },
-                    "value-columns": {
-                        "type": "array",
-                        "readOnly": true,
-                        "items": {
-                            "$ref": "#/components/schemas/TimeSeries.Column"
-                        }
-                    },
-                    "values": {
-                        "type": "array",
-                        "items": {
-                            "type": "array",
-                            "description": "Time is Milliseconds since the UNIX Epoch. Value is Double (for missing data you can use null, or -Float.MAX_VALUE (-340282346638528859811704183484516925440), quality is an integer.) If you are using missing data set the quality to 5.Failure to do this may result in silently ignoring that value on not storing a placeholder which can be important in irregular and psuedo regular timeseries.",
-                            "example": [
-                                1509654000000,
-                                54.3,
-                                0
-                            ],
-                            "items": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/TimeSeries.Record"
-                                }
-                            }
-                        },
-                        "description": "Array of time-series data points. Each entry contains a sub-array representing date-time, value, and quality-code."
-                    },
-                    "version-date": {
-                        "type": "string",
-                        "description": "The version date of the time series trace",
-                        "format": "date-time"
-                    },
-                    "vertical-datum-info": {
-                        "$ref": "#/components/schemas/vertical-datum-info"
-                    }
-                }
-            },
             "vertical-datum-info": {
                 "type": "object",
                 "properties": {
@@ -22221,6 +22055,7 @@
                 }
             },
             "TimeSeries": {
+                "title": "TimeSeries",
                 "required": [
                     "units"
                 ],
@@ -22531,6 +22366,7 @@
                 }
             },
             "TextTimeSeries": {
+                "title": "TextTimeSeries",
                 "required": [
                     "office-id"
                 ],
@@ -22573,6 +22409,7 @@
                 }
             },
             "BinaryTimeSeries": {
+                "title": "BinaryTimeSeries",
                 "required": [
                     "office-id"
                 ],
@@ -22615,6 +22452,7 @@
                 }
             },
             "BinaryTimeSeriesRow": {
+                "title": "BinaryTimeSeriesRow",
                 "type": "object",
                 "properties": {
                     "date-time": {
@@ -22667,7 +22505,7 @@
                 },
                 "description": "A representation of a TimeSeries category"
             },
-            "TimeSeriesCategory": {
+            "TimeseriesCategory": {
                 "required": [
                     "office-id"
                 ],
@@ -22687,6 +22525,7 @@
                 "description": "A representation of a TimeSeries category"
             },
             "TimeSeriesIdentifierDescriptor": {
+                "title": "TimeSeriesIdentifierDescriptor",
                 "required": [
                     "office-id"
                 ],
@@ -22712,6 +22551,7 @@
                 }
             },
             "TimeSeriesIdentifierDescriptors": {
+                "title": "TimeSeriesIdentifierDescriptors",
                 "type": "object",
                 "properties": {
                     "descriptors": {
@@ -22745,6 +22585,7 @@
                 }
             },
             "AssignedTimeSeries": {
+                "title": "AssignedTimeSeries",
                 "type": "object",
                 "properties": {
                     "officeId": {
@@ -22802,7 +22643,7 @@
                 },
                 "description": "A representation of a timeseries group"
             },
-            "TimeSeriesGroup": {
+            "TimeseriesGroup": {
                 "required": [
                     "office-id"
                 ],
