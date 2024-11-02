@@ -28,15 +28,15 @@ import { LocationCategoryFromJSON, LocationCategoryToJSON, } from '../models/ind
 export class LocationCategoriesApi extends runtime.BaseAPI {
     /**
      * Deletes requested location category
-     * Delete swtData location category with categoryId
+     * Delete CwmsData location category with categoryId
      */
-    deleteSwtDataLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['categoryId'] == null) {
-                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling deleteSwtDataLocationCategoryWithCategoryId().');
+                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling deleteCwmsDataLocationCategoryWithCategoryId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataLocationCategoryWithCategoryId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataLocationCategoryWithCategoryId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -60,18 +60,18 @@ export class LocationCategoriesApi extends runtime.BaseAPI {
     }
     /**
      * Deletes requested location category
-     * Delete swtData location category with categoryId
+     * Delete CwmsData location category with categoryId
      */
-    deleteSwtDataLocationCategoryWithCategoryId(requestParameters, initOverrides) {
+    deleteCwmsDataLocationCategoryWithCategoryId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Returns CWMS Location Category Data
-     * Get swtData location category
+     * Get CwmsData location category
      */
-    getSwtDataLocationCategoryRaw(requestParameters, initOverrides) {
+    getLocationCategoryRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -92,25 +92,25 @@ export class LocationCategoriesApi extends runtime.BaseAPI {
     }
     /**
      * Returns CWMS Location Category Data
-     * Get swtData location category
+     * Get CwmsData location category
      */
-    getSwtDataLocationCategory(requestParameters = {}, initOverrides) {
+    getLocationCategory(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataLocationCategoryRaw(requestParameters, initOverrides);
+            const response = yield this.getLocationCategoryRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Retrieves requested Location Category
-     * Get swtData location category with categoryId
+     * Get CwmsData location category with categoryId
      */
-    getSwtDataLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides) {
+    getLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['categoryId'] == null) {
-                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling getSwtDataLocationCategoryWithCategoryId().');
+                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling getLocationCategoryWithCategoryId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataLocationCategoryWithCategoryId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getLocationCategoryWithCategoryId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -131,22 +131,22 @@ export class LocationCategoriesApi extends runtime.BaseAPI {
     }
     /**
      * Retrieves requested Location Category
-     * Get swtData location category with categoryId
+     * Get CwmsData location category with categoryId
      */
-    getSwtDataLocationCategoryWithCategoryId(requestParameters, initOverrides) {
+    getLocationCategoryWithCategoryId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+            const response = yield this.getLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Create new LocationCategory
-     * Post swtData location category
+     * Post CwmsData location category
      */
-    postSwtDataLocationCategoryRaw(requestParameters, initOverrides) {
+    postCwmsDataLocationCategoryRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['locationCategory'] == null) {
-                throw new runtime.RequiredError('locationCategory', 'Required parameter "locationCategory" was null or undefined when calling postSwtDataLocationCategory().');
+                throw new runtime.RequiredError('locationCategory', 'Required parameter "locationCategory" was null or undefined when calling postCwmsDataLocationCategory().');
             }
             const queryParameters = {};
             const headerParameters = {};
@@ -166,11 +166,11 @@ export class LocationCategoriesApi extends runtime.BaseAPI {
     }
     /**
      * Create new LocationCategory
-     * Post swtData location category
+     * Post CwmsData location category
      */
-    postSwtDataLocationCategory(requestParameters, initOverrides) {
+    postCwmsDataLocationCategory(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataLocationCategoryRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataLocationCategoryRaw(requestParameters, initOverrides);
         });
     }
 }

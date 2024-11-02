@@ -13,19 +13,19 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AssignedTimeseriesToJSON = exports.AssignedTimeseriesFromJSONTyped = exports.AssignedTimeseriesFromJSON = exports.instanceOfAssignedTimeseries = void 0;
+exports.AssignedTimeSeriesToJSON = exports.AssignedTimeSeriesFromJSONTyped = exports.AssignedTimeSeriesFromJSON = exports.instanceOfAssignedTimeSeries = void 0;
 /**
- * Check if a given object implements the AssignedTimeseries interface.
+ * Check if a given object implements the AssignedTimeSeries interface.
  */
-function instanceOfAssignedTimeseries(value) {
+function instanceOfAssignedTimeSeries(value) {
     return true;
 }
-exports.instanceOfAssignedTimeseries = instanceOfAssignedTimeseries;
-function AssignedTimeseriesFromJSON(json) {
-    return AssignedTimeseriesFromJSONTyped(json, false);
+exports.instanceOfAssignedTimeSeries = instanceOfAssignedTimeSeries;
+function AssignedTimeSeriesFromJSON(json) {
+    return AssignedTimeSeriesFromJSONTyped(json, false);
 }
-exports.AssignedTimeseriesFromJSON = AssignedTimeseriesFromJSON;
-function AssignedTimeseriesFromJSONTyped(json, ignoreDiscriminator) {
+exports.AssignedTimeSeriesFromJSON = AssignedTimeSeriesFromJSON;
+function AssignedTimeSeriesFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -38,8 +38,8 @@ function AssignedTimeseriesFromJSONTyped(json, ignoreDiscriminator) {
         'attribute': json['attribute'] == null ? undefined : json['attribute'],
     };
 }
-exports.AssignedTimeseriesFromJSONTyped = AssignedTimeseriesFromJSONTyped;
-function AssignedTimeseriesToJSON(value) {
+exports.AssignedTimeSeriesFromJSONTyped = AssignedTimeSeriesFromJSONTyped;
+function AssignedTimeSeriesToJSON(value) {
     if (value == null) {
         return value;
     }
@@ -52,4 +52,4 @@ function AssignedTimeseriesToJSON(value) {
         'attribute': value['attribute'],
     };
 }
-exports.AssignedTimeseriesToJSON = AssignedTimeseriesToJSON;
+exports.AssignedTimeSeriesToJSON = AssignedTimeSeriesToJSON;

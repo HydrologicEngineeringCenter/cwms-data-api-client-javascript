@@ -25,19 +25,19 @@ import {
     LockRevokerRightsToJSON,
 } from '../models/index';
 
-export interface GetSwtDataProjectLockRightsRequest {
+export interface GetProjectLockRightsRequest {
     officeMask: string;
     projectMask?: string;
     applicationMask?: string;
 }
 
-export interface PostSwtDataProjectLockRightsRemoveAllRequest {
+export interface PostCwmsDataProjectLockRightsRemoveAllRequest {
     office: string;
     applicationId: string;
     userId: string;
 }
 
-export interface PostSwtDataProjectLockRightsUpdateRequest {
+export interface PostCwmsDataProjectLockRightsUpdateRequest {
     office: string;
     applicationId: string;
     userId: string;
@@ -52,13 +52,13 @@ export class ProjectLockRevokerRightsApi extends runtime.BaseAPI {
 
     /**
      * Get a list of project lock revoker rights 
-     * Get swtData projectLockRights
+     * Get CwmsData projectLockRights
      */
-    async getSwtDataProjectLockRightsRaw(requestParameters: GetSwtDataProjectLockRightsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LockRevokerRights>>> {
+    async getProjectLockRightsRaw(requestParameters: GetProjectLockRightsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LockRevokerRights>>> {
         if (requestParameters['officeMask'] == null) {
             throw new runtime.RequiredError(
                 'officeMask',
-                'Required parameter "officeMask" was null or undefined when calling getSwtDataProjectLockRights().'
+                'Required parameter "officeMask" was null or undefined when calling getProjectLockRights().'
             );
         }
 
@@ -94,36 +94,36 @@ export class ProjectLockRevokerRightsApi extends runtime.BaseAPI {
 
     /**
      * Get a list of project lock revoker rights 
-     * Get swtData projectLockRights
+     * Get CwmsData projectLockRights
      */
-    async getSwtDataProjectLockRights(requestParameters: GetSwtDataProjectLockRightsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LockRevokerRights>> {
-        const response = await this.getSwtDataProjectLockRightsRaw(requestParameters, initOverrides);
+    async getProjectLockRights(requestParameters: GetProjectLockRightsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LockRevokerRights>> {
+        const response = await this.getProjectLockRightsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Revokes a project lock, if successful the lock is deleted
-     * Post swtData projectLockRights removeAll
+     * Post CwmsData projectLockRights removeAll
      */
-    async postSwtDataProjectLockRightsRemoveAllRaw(requestParameters: PostSwtDataProjectLockRightsRemoveAllRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectLockRightsRemoveAllRaw(requestParameters: PostCwmsDataProjectLockRightsRemoveAllRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling postSwtDataProjectLockRightsRemoveAll().'
+                'Required parameter "office" was null or undefined when calling postCwmsDataProjectLockRightsRemoveAll().'
             );
         }
 
         if (requestParameters['applicationId'] == null) {
             throw new runtime.RequiredError(
                 'applicationId',
-                'Required parameter "applicationId" was null or undefined when calling postSwtDataProjectLockRightsRemoveAll().'
+                'Required parameter "applicationId" was null or undefined when calling postCwmsDataProjectLockRightsRemoveAll().'
             );
         }
 
         if (requestParameters['userId'] == null) {
             throw new runtime.RequiredError(
                 'userId',
-                'Required parameter "userId" was null or undefined when calling postSwtDataProjectLockRightsRemoveAll().'
+                'Required parameter "userId" was null or undefined when calling postCwmsDataProjectLockRightsRemoveAll().'
             );
         }
 
@@ -159,42 +159,42 @@ export class ProjectLockRevokerRightsApi extends runtime.BaseAPI {
 
     /**
      * Revokes a project lock, if successful the lock is deleted
-     * Post swtData projectLockRights removeAll
+     * Post CwmsData projectLockRights removeAll
      */
-    async postSwtDataProjectLockRightsRemoveAll(requestParameters: PostSwtDataProjectLockRightsRemoveAllRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectLockRightsRemoveAllRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectLockRightsRemoveAll(requestParameters: PostCwmsDataProjectLockRightsRemoveAllRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectLockRightsRemoveAllRaw(requestParameters, initOverrides);
     }
 
     /**
      * Update Lock Revoker Rights.
-     * Post swtData projectLockRights update
+     * Post CwmsData projectLockRights update
      */
-    async postSwtDataProjectLockRightsUpdateRaw(requestParameters: PostSwtDataProjectLockRightsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectLockRightsUpdateRaw(requestParameters: PostCwmsDataProjectLockRightsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling postSwtDataProjectLockRightsUpdate().'
+                'Required parameter "office" was null or undefined when calling postCwmsDataProjectLockRightsUpdate().'
             );
         }
 
         if (requestParameters['applicationId'] == null) {
             throw new runtime.RequiredError(
                 'applicationId',
-                'Required parameter "applicationId" was null or undefined when calling postSwtDataProjectLockRightsUpdate().'
+                'Required parameter "applicationId" was null or undefined when calling postCwmsDataProjectLockRightsUpdate().'
             );
         }
 
         if (requestParameters['userId'] == null) {
             throw new runtime.RequiredError(
                 'userId',
-                'Required parameter "userId" was null or undefined when calling postSwtDataProjectLockRightsUpdate().'
+                'Required parameter "userId" was null or undefined when calling postCwmsDataProjectLockRightsUpdate().'
             );
         }
 
         if (requestParameters['allow'] == null) {
             throw new runtime.RequiredError(
                 'allow',
-                'Required parameter "allow" was null or undefined when calling postSwtDataProjectLockRightsUpdate().'
+                'Required parameter "allow" was null or undefined when calling postCwmsDataProjectLockRightsUpdate().'
             );
         }
 
@@ -238,10 +238,10 @@ export class ProjectLockRevokerRightsApi extends runtime.BaseAPI {
 
     /**
      * Update Lock Revoker Rights.
-     * Post swtData projectLockRights update
+     * Post CwmsData projectLockRights update
      */
-    async postSwtDataProjectLockRightsUpdate(requestParameters: PostSwtDataProjectLockRightsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectLockRightsUpdateRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectLockRightsUpdate(requestParameters: PostCwmsDataProjectLockRightsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectLockRightsUpdateRaw(requestParameters, initOverrides);
     }
 
 }

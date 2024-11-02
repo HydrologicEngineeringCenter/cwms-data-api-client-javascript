@@ -28,12 +28,12 @@ import {
     OfficeFormatV1ToJSON,
 } from '../models/index';
 
-export interface GetSwtDataOfficesRequest {
+export interface GetOfficesRequest {
     format?: string;
     hasData?: boolean;
 }
 
-export interface GetSwtDataOfficesWithOfficeRequest {
+export interface GetOfficesWithOfficeRequest {
     office: string;
     format?: string;
 }
@@ -44,9 +44,9 @@ export interface GetSwtDataOfficesWithOfficeRequest {
 export class OfficesApi extends runtime.BaseAPI {
 
     /**
-     * Get swtData offices
+     * Get CwmsData offices
      */
-    async getSwtDataOfficesRaw(requestParameters: GetSwtDataOfficesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OfficeFormatV1>> {
+    async getOfficesRaw(requestParameters: GetOfficesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OfficeFormatV1>> {
         const queryParameters: any = {};
 
         if (requestParameters['format'] != null) {
@@ -74,21 +74,21 @@ export class OfficesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData offices
+     * Get CwmsData offices
      */
-    async getSwtDataOffices(requestParameters: GetSwtDataOfficesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OfficeFormatV1> {
-        const response = await this.getSwtDataOfficesRaw(requestParameters, initOverrides);
+    async getOffices(requestParameters: GetOfficesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OfficeFormatV1> {
+        const response = await this.getOfficesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData offices with office
+     * Get CwmsData offices with office
      */
-    async getSwtDataOfficesWithOfficeRaw(requestParameters: GetSwtDataOfficesWithOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OfficeFormatV1>> {
+    async getOfficesWithOfficeRaw(requestParameters: GetOfficesWithOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OfficeFormatV1>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataOfficesWithOffice().'
+                'Required parameter "office" was null or undefined when calling getOfficesWithOffice().'
             );
         }
 
@@ -115,10 +115,10 @@ export class OfficesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData offices with office
+     * Get CwmsData offices with office
      */
-    async getSwtDataOfficesWithOffice(requestParameters: GetSwtDataOfficesWithOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OfficeFormatV1> {
-        const response = await this.getSwtDataOfficesWithOfficeRaw(requestParameters, initOverrides);
+    async getOfficesWithOffice(requestParameters: GetOfficesWithOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OfficeFormatV1> {
+        const response = await this.getOfficesWithOfficeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

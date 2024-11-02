@@ -13,21 +13,21 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeseriesIdentifierDescriptorToJSON = exports.TimeseriesIdentifierDescriptorFromJSONTyped = exports.TimeseriesIdentifierDescriptorFromJSON = exports.instanceOfTimeseriesIdentifierDescriptor = void 0;
+exports.TimeSeriesIdentifierDescriptorToJSON = exports.TimeSeriesIdentifierDescriptorFromJSONTyped = exports.TimeSeriesIdentifierDescriptorFromJSON = exports.instanceOfTimeSeriesIdentifierDescriptor = void 0;
 /**
- * Check if a given object implements the TimeseriesIdentifierDescriptor interface.
+ * Check if a given object implements the TimeSeriesIdentifierDescriptor interface.
  */
-function instanceOfTimeseriesIdentifierDescriptor(value) {
+function instanceOfTimeSeriesIdentifierDescriptor(value) {
     if (!('officeId' in value))
         return false;
     return true;
 }
-exports.instanceOfTimeseriesIdentifierDescriptor = instanceOfTimeseriesIdentifierDescriptor;
-function TimeseriesIdentifierDescriptorFromJSON(json) {
-    return TimeseriesIdentifierDescriptorFromJSONTyped(json, false);
+exports.instanceOfTimeSeriesIdentifierDescriptor = instanceOfTimeSeriesIdentifierDescriptor;
+function TimeSeriesIdentifierDescriptorFromJSON(json) {
+    return TimeSeriesIdentifierDescriptorFromJSONTyped(json, false);
 }
-exports.TimeseriesIdentifierDescriptorFromJSON = TimeseriesIdentifierDescriptorFromJSON;
-function TimeseriesIdentifierDescriptorFromJSONTyped(json, ignoreDiscriminator) {
+exports.TimeSeriesIdentifierDescriptorFromJSON = TimeSeriesIdentifierDescriptorFromJSON;
+function TimeSeriesIdentifierDescriptorFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -39,8 +39,8 @@ function TimeseriesIdentifierDescriptorFromJSONTyped(json, ignoreDiscriminator) 
         'active': json['active'] == null ? undefined : json['active'],
     };
 }
-exports.TimeseriesIdentifierDescriptorFromJSONTyped = TimeseriesIdentifierDescriptorFromJSONTyped;
-function TimeseriesIdentifierDescriptorToJSON(value) {
+exports.TimeSeriesIdentifierDescriptorFromJSONTyped = TimeSeriesIdentifierDescriptorFromJSONTyped;
+function TimeSeriesIdentifierDescriptorToJSON(value) {
     if (value == null) {
         return value;
     }
@@ -52,4 +52,4 @@ function TimeseriesIdentifierDescriptorToJSON(value) {
         'active': value['active'],
     };
 }
-exports.TimeseriesIdentifierDescriptorToJSON = TimeseriesIdentifierDescriptorToJSON;
+exports.TimeSeriesIdentifierDescriptorToJSON = TimeSeriesIdentifierDescriptorToJSON;

@@ -11,33 +11,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { TimeseriesIdentifierDescriptorFromJSON, TimeseriesIdentifierDescriptorToJSON, } from './TimeseriesIdentifierDescriptor';
+import { TimeSeriesIdentifierDescriptorFromJSON, TimeSeriesIdentifierDescriptorToJSON, } from './TimeSeriesIdentifierDescriptor';
 /**
- * Check if a given object implements the TimeseriesIdentifierDescriptors interface.
+ * Check if a given object implements the TimeSeriesIdentifierDescriptors interface.
  */
-export function instanceOfTimeseriesIdentifierDescriptors(value) {
+export function instanceOfTimeSeriesIdentifierDescriptors(value) {
     return true;
 }
-export function TimeseriesIdentifierDescriptorsFromJSON(json) {
-    return TimeseriesIdentifierDescriptorsFromJSONTyped(json, false);
+export function TimeSeriesIdentifierDescriptorsFromJSON(json) {
+    return TimeSeriesIdentifierDescriptorsFromJSONTyped(json, false);
 }
-export function TimeseriesIdentifierDescriptorsFromJSONTyped(json, ignoreDiscriminator) {
+export function TimeSeriesIdentifierDescriptorsFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
-        'descriptors': json['descriptors'] == null ? undefined : (json['descriptors'].map(TimeseriesIdentifierDescriptorFromJSON)),
+        'descriptors': json['descriptors'] == null ? undefined : (json['descriptors'].map(TimeSeriesIdentifierDescriptorFromJSON)),
         'nextPage': json['next-page'] == null ? undefined : json['next-page'],
         'page': json['page'] == null ? undefined : json['page'],
         'pageSize': json['page-size'] == null ? undefined : json['page-size'],
         'total': json['total'] == null ? undefined : json['total'],
     };
 }
-export function TimeseriesIdentifierDescriptorsToJSON(value) {
+export function TimeSeriesIdentifierDescriptorsToJSON(value) {
     if (value == null) {
         return value;
     }
     return {
-        'descriptors': value['descriptors'] == null ? undefined : (value['descriptors'].map(TimeseriesIdentifierDescriptorToJSON)),
+        'descriptors': value['descriptors'] == null ? undefined : (value['descriptors'].map(TimeSeriesIdentifierDescriptorToJSON)),
     };
 }

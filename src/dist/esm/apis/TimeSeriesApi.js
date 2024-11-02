@@ -21,27 +21,27 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import * as runtime from '../runtime';
-import { TimeseriesFromJSON, TimeseriesToJSON, TsvFromJSON, } from '../models/index';
+import { TimeSeriesFromJSON, TimeSeriesToJSON, TsvFromJSON, } from '../models/index';
 /**
  *
  */
-export class TimeseriesApi extends runtime.BaseAPI {
+export class TimeSeriesApi extends runtime.BaseAPI {
     /**
-     * Delete swtData timeseries with timeseries
+     * Delete CwmsData timeseries with timeseries
      */
-    deleteSwtDataTimeseriesWithTimeseriesRaw(requestParameters, initOverrides) {
+    deleteCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['timeseries'] == null) {
-                throw new runtime.RequiredError('timeseries', 'Required parameter "timeseries" was null or undefined when calling deleteSwtDataTimeseriesWithTimeseries().');
+                throw new runtime.RequiredError('timeseries', 'Required parameter "timeseries" was null or undefined when calling deleteCwmsDataTimeSeriesWithTimeSeries().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataTimeseriesWithTimeseries().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataTimeSeriesWithTimeSeries().');
             }
             if (requestParameters['begin'] == null) {
-                throw new runtime.RequiredError('begin', 'Required parameter "begin" was null or undefined when calling deleteSwtDataTimeseriesWithTimeseries().');
+                throw new runtime.RequiredError('begin', 'Required parameter "begin" was null or undefined when calling deleteCwmsDataTimeSeriesWithTimeSeries().');
             }
             if (requestParameters['end'] == null) {
-                throw new runtime.RequiredError('end', 'Required parameter "end" was null or undefined when calling deleteSwtDataTimeseriesWithTimeseries().');
+                throw new runtime.RequiredError('end', 'Required parameter "end" was null or undefined when calling deleteCwmsDataTimeSeriesWithTimeSeries().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -85,20 +85,20 @@ export class TimeseriesApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Delete swtData timeseries with timeseries
+     * Delete CwmsData timeseries with timeseries
      */
-    deleteSwtDataTimeseriesWithTimeseries(requestParameters, initOverrides) {
+    deleteCwmsDataTimeSeriesWithTimeSeries(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataTimeseriesWithTimeseriesRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides);
         });
     }
     /**
-     * Get swtData timeseries
+     * Get CwmsData timeseries
      */
-    getSwtDataTimeseriesRaw(requestParameters, initOverrides) {
+    getTimeSeriesRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['name'] == null) {
-                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling getSwtDataTimeseries().');
+                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling getTimeSeries().');
             }
             const queryParameters = {};
             if (requestParameters['name'] != null) {
@@ -147,23 +147,23 @@ export class TimeseriesApi extends runtime.BaseAPI {
                 headers: headerParameters,
                 query: queryParameters,
             }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => TimeseriesFromJSON(jsonValue));
+            return new runtime.JSONApiResponse(response, (jsonValue) => TimeSeriesFromJSON(jsonValue));
         });
     }
     /**
-     * Get swtData timeseries
+     * Get CwmsData timeseries
      */
-    getSwtDataTimeseries(requestParameters, initOverrides) {
+    getTimeSeries(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataTimeseriesRaw(requestParameters, initOverrides);
+            const response = yield this.getTimeSeriesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Returns CWMS Timeseries Groups Data
-     * Get swtData timeseries recent
+     * Returns CWMS Time Series Groups Data
+     * Get CwmsData timeseries recent
      */
-    getSwtDataTimeseriesRecentRaw(requestParameters, initOverrides) {
+    getTimeSeriesRecentRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -195,26 +195,26 @@ export class TimeseriesApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Returns CWMS Timeseries Groups Data
-     * Get swtData timeseries recent
+     * Returns CWMS Time Series Groups Data
+     * Get CwmsData timeseries recent
      */
-    getSwtDataTimeseriesRecent(requestParameters = {}, initOverrides) {
+    getTimeSeriesRecent(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataTimeseriesRecentRaw(requestParameters, initOverrides);
+            const response = yield this.getTimeSeriesRecentRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Update a Timeseries with provided values
-     * Patch swtData timeseries with timeseries
+     * Update a TimeSeries with provided values
+     * Patch CwmsData timeseries with timeseries
      */
-    patchSwtDataTimeseriesWithTimeseriesRaw(requestParameters, initOverrides) {
+    patchCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['timeseries'] == null) {
-                throw new runtime.RequiredError('timeseries', 'Required parameter "timeseries" was null or undefined when calling patchSwtDataTimeseriesWithTimeseries().');
+                throw new runtime.RequiredError('timeseries', 'Required parameter "timeseries" was null or undefined when calling patchCwmsDataTimeSeriesWithTimeSeries().');
             }
-            if (requestParameters['timeseries2'] == null) {
-                throw new runtime.RequiredError('timeseries2', 'Required parameter "timeseries2" was null or undefined when calling patchSwtDataTimeseriesWithTimeseries().');
+            if (requestParameters['timeSeries'] == null) {
+                throw new runtime.RequiredError('timeSeries', 'Required parameter "timeSeries" was null or undefined when calling patchCwmsDataTimeSeriesWithTimeSeries().');
             }
             const queryParameters = {};
             if (requestParameters['timezone'] != null) {
@@ -239,28 +239,28 @@ export class TimeseriesApi extends runtime.BaseAPI {
                 method: 'PATCH',
                 headers: headerParameters,
                 query: queryParameters,
-                body: TimeseriesToJSON(requestParameters['timeseries2']),
+                body: TimeSeriesToJSON(requestParameters['timeSeries']),
             }, initOverrides);
             return new runtime.VoidApiResponse(response);
         });
     }
     /**
-     * Update a Timeseries with provided values
-     * Patch swtData timeseries with timeseries
+     * Update a TimeSeries with provided values
+     * Patch CwmsData timeseries with timeseries
      */
-    patchSwtDataTimeseriesWithTimeseries(requestParameters, initOverrides) {
+    patchCwmsDataTimeSeriesWithTimeSeries(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataTimeseriesWithTimeseriesRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds
-     * Post swtData timeseries
+     * Post CwmsData timeseries
      */
-    postSwtDataTimeseriesRaw(requestParameters, initOverrides) {
+    postCwmsDataTimeSeriesRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (requestParameters['timeseries'] == null) {
-                throw new runtime.RequiredError('timeseries', 'Required parameter "timeseries" was null or undefined when calling postSwtDataTimeseries().');
+            if (requestParameters['timeSeries'] == null) {
+                throw new runtime.RequiredError('timeSeries', 'Required parameter "timeSeries" was null or undefined when calling postCwmsDataTimeSeries().');
             }
             const queryParameters = {};
             if (requestParameters['timezone'] != null) {
@@ -285,18 +285,18 @@ export class TimeseriesApi extends runtime.BaseAPI {
                 method: 'POST',
                 headers: headerParameters,
                 query: queryParameters,
-                body: TimeseriesToJSON(requestParameters['timeseries']),
+                body: TimeSeriesToJSON(requestParameters['timeSeries']),
             }, initOverrides);
             return new runtime.VoidApiResponse(response);
         });
     }
     /**
      * Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds
-     * Post swtData timeseries
+     * Post CwmsData timeseries
      */
-    postSwtDataTimeseries(requestParameters, initOverrides) {
+    postCwmsDataTimeSeries(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataTimeseriesRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataTimeSeriesRaw(requestParameters, initOverrides);
         });
     }
 }

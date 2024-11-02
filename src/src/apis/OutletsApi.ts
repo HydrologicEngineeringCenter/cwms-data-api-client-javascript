@@ -37,13 +37,13 @@ import {
     VirtualOutletToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataProjectsOutletsWithNameRequest {
+export interface DeleteCwmsDataProjectsOutletsWithNameRequest {
     name: string;
     office: string;
     method?: DeleteMethod;
 }
 
-export interface DeleteSwtDataProjectsWithOfficeWithProjectIdGateChangesRequest {
+export interface DeleteCwmsDataProjectsWithOfficeWithProjectIdGateChangesRequest {
     office: string;
     projectId: string;
     begin: string;
@@ -51,24 +51,24 @@ export interface DeleteSwtDataProjectsWithOfficeWithProjectIdGateChangesRequest 
     overrideProtection?: boolean;
 }
 
-export interface DeleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest {
+export interface DeleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest {
     office: string;
     projectId: string;
     name: string;
     method?: DeleteMethod;
 }
 
-export interface GetSwtDataProjectsOutletsRequest {
+export interface GetProjectsOutletsRequest {
     office: string;
     projectId: string;
 }
 
-export interface GetSwtDataProjectsOutletsWithNameRequest {
+export interface GetProjectsOutletsWithNameRequest {
     name: string;
     office: string;
 }
 
-export interface GetSwtDataProjectsWithOfficeWithProjectIdGateChangesRequest {
+export interface GetProjectsWithOfficeWithProjectIdGateChangesRequest {
     office: string;
     projectId: string;
     begin: string;
@@ -79,34 +79,34 @@ export interface GetSwtDataProjectsWithOfficeWithProjectIdGateChangesRequest {
     pageSize?: number;
 }
 
-export interface GetSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsRequest {
+export interface GetProjectsWithOfficeWithProjectIdVirtualOutletsRequest {
     office: string;
     projectId: string;
 }
 
-export interface GetSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest {
+export interface GetProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest {
     office: string;
     projectId: string;
     name: string;
 }
 
-export interface PatchSwtDataProjectsOutletsWithNameRequest {
+export interface PatchCwmsDataProjectsOutletsWithNameRequest {
     name: string;
     name2: string;
     office: string;
 }
 
-export interface PostSwtDataProjectsGateChangesRequest {
+export interface PostCwmsDataProjectsGateChangesRequest {
     gateChange: Array<GateChange>;
     failIfExists?: boolean;
 }
 
-export interface PostSwtDataProjectsOutletsRequest {
+export interface PostCwmsDataProjectsOutletsRequest {
     outlet: Outlet;
     failIfExists?: boolean;
 }
 
-export interface PostSwtDataProjectsVirtualOutletsRequest {
+export interface PostCwmsDataProjectsVirtualOutletsRequest {
     virtualOutlet: VirtualOutlet;
     failIfExists?: boolean;
 }
@@ -118,20 +118,20 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Outlet
-     * Delete swtData projects outlets with name
+     * Delete CwmsData projects outlets with name
      */
-    async deleteSwtDataProjectsOutletsWithNameRaw(requestParameters: DeleteSwtDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsOutletsWithNameRaw(requestParameters: DeleteCwmsDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataProjectsOutletsWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataProjectsOutletsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsOutletsWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsOutletsWithName().'
             );
         }
 
@@ -163,42 +163,42 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Outlet
-     * Delete swtData projects outlets with name
+     * Delete CwmsData projects outlets with name
      */
-    async deleteSwtDataProjectsOutletsWithName(requestParameters: DeleteSwtDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsOutletsWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsOutletsWithName(requestParameters: DeleteCwmsDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsOutletsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Deletes matching CWMS gate change data for a Reservoir Project.
-     * Delete swtData projects with office with projectId gateChanges
+     * Delete CwmsData projects with office with projectId gateChanges
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdGateChangesRaw(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdGateChangesRaw(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdGateChanges().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdGateChanges().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdGateChanges().'
+                'Required parameter "projectId" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdGateChanges().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdGateChanges().'
+                'Required parameter "begin" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdGateChanges().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdGateChanges().'
+                'Required parameter "end" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdGateChanges().'
             );
         }
 
@@ -234,35 +234,35 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Deletes matching CWMS gate change data for a Reservoir Project.
-     * Delete swtData projects with office with projectId gateChanges
+     * Delete CwmsData projects with office with projectId gateChanges
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdGateChanges(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsWithOfficeWithProjectIdGateChangesRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdGateChanges(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsWithOfficeWithProjectIdGateChangesRaw(requestParameters, initOverrides);
     }
 
     /**
      * Delete CWMS Virtual Outlet
-     * Delete swtData projects with office with projectId virtualOutlets with name
+     * Delete CwmsData projects with office with projectId virtualOutlets with name
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRaw(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRaw(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
+                'Required parameter "projectId" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
             );
         }
 
@@ -290,28 +290,28 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Virtual Outlet
-     * Delete swtData projects with office with projectId virtualOutlets with name
+     * Delete CwmsData projects with office with projectId virtualOutlets with name
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns matching CWMS Outlet Data for a Reservoir Project.
-     * Get swtData projects outlets
+     * Get CwmsData projects outlets
      */
-    async getSwtDataProjectsOutletsRaw(requestParameters: GetSwtDataProjectsOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Outlet>>> {
+    async getProjectsOutletsRaw(requestParameters: GetProjectsOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Outlet>>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsOutlets().'
+                'Required parameter "office" was null or undefined when calling getProjectsOutlets().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsOutlets().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsOutlets().'
             );
         }
 
@@ -343,29 +343,29 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS Outlet Data for a Reservoir Project.
-     * Get swtData projects outlets
+     * Get CwmsData projects outlets
      */
-    async getSwtDataProjectsOutlets(requestParameters: GetSwtDataProjectsOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Outlet>> {
-        const response = await this.getSwtDataProjectsOutletsRaw(requestParameters, initOverrides);
+    async getProjectsOutlets(requestParameters: GetProjectsOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Outlet>> {
+        const response = await this.getProjectsOutletsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Outlet Data
-     * Get swtData projects outlets with name
+     * Get CwmsData projects outlets with name
      */
-    async getSwtDataProjectsOutletsWithNameRaw(requestParameters: GetSwtDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Outlet>> {
+    async getProjectsOutletsWithNameRaw(requestParameters: GetProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Outlet>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataProjectsOutletsWithName().'
+                'Required parameter "name" was null or undefined when calling getProjectsOutletsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsOutletsWithName().'
+                'Required parameter "office" was null or undefined when calling getProjectsOutletsWithName().'
             );
         }
 
@@ -393,43 +393,43 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Outlet Data
-     * Get swtData projects outlets with name
+     * Get CwmsData projects outlets with name
      */
-    async getSwtDataProjectsOutletsWithName(requestParameters: GetSwtDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Outlet> {
-        const response = await this.getSwtDataProjectsOutletsWithNameRaw(requestParameters, initOverrides);
+    async getProjectsOutletsWithName(requestParameters: GetProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Outlet> {
+        const response = await this.getProjectsOutletsWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns matching CWMS gate change data for a Reservoir Project.
-     * Get swtData projects with office with projectId gateChanges
+     * Get CwmsData projects with office with projectId gateChanges
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdGateChangesRaw(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<GateChange>>> {
+    async getProjectsWithOfficeWithProjectIdGateChangesRaw(requestParameters: GetProjectsWithOfficeWithProjectIdGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<GateChange>>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdGateChanges().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithOfficeWithProjectIdGateChanges().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdGateChanges().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsWithOfficeWithProjectIdGateChanges().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdGateChanges().'
+                'Required parameter "begin" was null or undefined when calling getProjectsWithOfficeWithProjectIdGateChanges().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdGateChanges().'
+                'Required parameter "end" was null or undefined when calling getProjectsWithOfficeWithProjectIdGateChanges().'
             );
         }
 
@@ -477,29 +477,29 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS gate change data for a Reservoir Project.
-     * Get swtData projects with office with projectId gateChanges
+     * Get CwmsData projects with office with projectId gateChanges
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdGateChanges(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<GateChange>> {
-        const response = await this.getSwtDataProjectsWithOfficeWithProjectIdGateChangesRaw(requestParameters, initOverrides);
+    async getProjectsWithOfficeWithProjectIdGateChanges(requestParameters: GetProjectsWithOfficeWithProjectIdGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<GateChange>> {
+        const response = await this.getProjectsWithOfficeWithProjectIdGateChangesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns matching CWMS Virtual Outlet Data for a Reservoir Project.
-     * Get swtData projects with office with projectId virtualOutlets
+     * Get CwmsData projects with office with projectId virtualOutlets
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsRaw(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<VirtualOutlet>>> {
+    async getProjectsWithOfficeWithProjectIdVirtualOutletsRaw(requestParameters: GetProjectsWithOfficeWithProjectIdVirtualOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<VirtualOutlet>>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdVirtualOutlets().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithOfficeWithProjectIdVirtualOutlets().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdVirtualOutlets().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsWithOfficeWithProjectIdVirtualOutlets().'
             );
         }
 
@@ -523,36 +523,36 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS Virtual Outlet Data for a Reservoir Project.
-     * Get swtData projects with office with projectId virtualOutlets
+     * Get CwmsData projects with office with projectId virtualOutlets
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdVirtualOutlets(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<VirtualOutlet>> {
-        const response = await this.getSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsRaw(requestParameters, initOverrides);
+    async getProjectsWithOfficeWithProjectIdVirtualOutlets(requestParameters: GetProjectsWithOfficeWithProjectIdVirtualOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<VirtualOutlet>> {
+        const response = await this.getProjectsWithOfficeWithProjectIdVirtualOutletsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Virtual Outlet Data
-     * Get swtData projects with office with projectId virtualOutlets with name
+     * Get CwmsData projects with office with projectId virtualOutlets with name
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRaw(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VirtualOutlet>> {
+    async getProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRaw(requestParameters: GetProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VirtualOutlet>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
+                'Required parameter "name" was null or undefined when calling getProjectsWithOfficeWithProjectIdVirtualOutletsWithName().'
             );
         }
 
@@ -576,36 +576,36 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Virtual Outlet Data
-     * Get swtData projects with office with projectId virtualOutlets with name
+     * Get CwmsData projects with office with projectId virtualOutlets with name
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithName(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VirtualOutlet> {
-        const response = await this.getSwtDataProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRaw(requestParameters, initOverrides);
+    async getProjectsWithOfficeWithProjectIdVirtualOutletsWithName(requestParameters: GetProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VirtualOutlet> {
+        const response = await this.getProjectsWithOfficeWithProjectIdVirtualOutletsWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Rename CWMS Outlet
-     * Patch swtData projects outlets with name
+     * Patch CwmsData projects outlets with name
      */
-    async patchSwtDataProjectsOutletsWithNameRaw(requestParameters: PatchSwtDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataProjectsOutletsWithNameRaw(requestParameters: PatchCwmsDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataProjectsOutletsWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataProjectsOutletsWithName().'
             );
         }
 
         if (requestParameters['name2'] == null) {
             throw new runtime.RequiredError(
                 'name2',
-                'Required parameter "name2" was null or undefined when calling patchSwtDataProjectsOutletsWithName().'
+                'Required parameter "name2" was null or undefined when calling patchCwmsDataProjectsOutletsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataProjectsOutletsWithName().'
+                'Required parameter "office" was null or undefined when calling patchCwmsDataProjectsOutletsWithName().'
             );
         }
 
@@ -637,21 +637,21 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Rename CWMS Outlet
-     * Patch swtData projects outlets with name
+     * Patch CwmsData projects outlets with name
      */
-    async patchSwtDataProjectsOutletsWithName(requestParameters: PatchSwtDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataProjectsOutletsWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataProjectsOutletsWithName(requestParameters: PatchCwmsDataProjectsOutletsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataProjectsOutletsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Gate Changes
-     * Post swtData projects gateChanges
+     * Post CwmsData projects gateChanges
      */
-    async postSwtDataProjectsGateChangesRaw(requestParameters: PostSwtDataProjectsGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsGateChangesRaw(requestParameters: PostCwmsDataProjectsGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['gateChange'] == null) {
             throw new runtime.RequiredError(
                 'gateChange',
-                'Required parameter "gateChange" was null or undefined when calling postSwtDataProjectsGateChanges().'
+                'Required parameter "gateChange" was null or undefined when calling postCwmsDataProjectsGateChanges().'
             );
         }
 
@@ -682,21 +682,21 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Gate Changes
-     * Post swtData projects gateChanges
+     * Post CwmsData projects gateChanges
      */
-    async postSwtDataProjectsGateChanges(requestParameters: PostSwtDataProjectsGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsGateChangesRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsGateChanges(requestParameters: PostCwmsDataProjectsGateChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsGateChangesRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Outlet
-     * Post swtData projects outlets
+     * Post CwmsData projects outlets
      */
-    async postSwtDataProjectsOutletsRaw(requestParameters: PostSwtDataProjectsOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsOutletsRaw(requestParameters: PostCwmsDataProjectsOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['outlet'] == null) {
             throw new runtime.RequiredError(
                 'outlet',
-                'Required parameter "outlet" was null or undefined when calling postSwtDataProjectsOutlets().'
+                'Required parameter "outlet" was null or undefined when calling postCwmsDataProjectsOutlets().'
             );
         }
 
@@ -727,21 +727,21 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Outlet
-     * Post swtData projects outlets
+     * Post CwmsData projects outlets
      */
-    async postSwtDataProjectsOutlets(requestParameters: PostSwtDataProjectsOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsOutletsRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsOutlets(requestParameters: PostCwmsDataProjectsOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsOutletsRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Virtual Outlet
-     * Post swtData projects virtualOutlets
+     * Post CwmsData projects virtualOutlets
      */
-    async postSwtDataProjectsVirtualOutletsRaw(requestParameters: PostSwtDataProjectsVirtualOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsVirtualOutletsRaw(requestParameters: PostCwmsDataProjectsVirtualOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['virtualOutlet'] == null) {
             throw new runtime.RequiredError(
                 'virtualOutlet',
-                'Required parameter "virtualOutlet" was null or undefined when calling postSwtDataProjectsVirtualOutlets().'
+                'Required parameter "virtualOutlet" was null or undefined when calling postCwmsDataProjectsVirtualOutlets().'
             );
         }
 
@@ -772,10 +772,10 @@ export class OutletsApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Virtual Outlet
-     * Post swtData projects virtualOutlets
+     * Post CwmsData projects virtualOutlets
      */
-    async postSwtDataProjectsVirtualOutlets(requestParameters: PostSwtDataProjectsVirtualOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsVirtualOutletsRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsVirtualOutlets(requestParameters: PostCwmsDataProjectsVirtualOutletsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsVirtualOutletsRaw(requestParameters, initOverrides);
     }
 
 }

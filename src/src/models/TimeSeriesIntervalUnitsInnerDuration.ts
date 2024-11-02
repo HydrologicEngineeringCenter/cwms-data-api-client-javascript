@@ -16,47 +16,47 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface TimeseriesIntervalUnitsInnerDuration
+ * @interface TimeSeriesIntervalUnitsInnerDuration
  */
-export interface TimeseriesIntervalUnitsInnerDuration {
+export interface TimeSeriesIntervalUnitsInnerDuration {
     /**
      * 
      * @type {number}
-     * @memberof TimeseriesIntervalUnitsInnerDuration
+     * @memberof TimeSeriesIntervalUnitsInnerDuration
      */
     seconds?: number;
     /**
      * 
      * @type {number}
-     * @memberof TimeseriesIntervalUnitsInnerDuration
+     * @memberof TimeSeriesIntervalUnitsInnerDuration
      */
     nano?: number;
     /**
      * 
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInnerDuration
+     * @memberof TimeSeriesIntervalUnitsInnerDuration
      */
     zero?: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInnerDuration
+     * @memberof TimeSeriesIntervalUnitsInnerDuration
      */
     negative?: boolean;
 }
 
 /**
- * Check if a given object implements the TimeseriesIntervalUnitsInnerDuration interface.
+ * Check if a given object implements the TimeSeriesIntervalUnitsInnerDuration interface.
  */
-export function instanceOfTimeseriesIntervalUnitsInnerDuration(value: object): boolean {
+export function instanceOfTimeSeriesIntervalUnitsInnerDuration(value: object): boolean {
     return true;
 }
 
-export function TimeseriesIntervalUnitsInnerDurationFromJSON(json: any): TimeseriesIntervalUnitsInnerDuration {
-    return TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json, false);
+export function TimeSeriesIntervalUnitsInnerDurationFromJSON(json: any): TimeSeriesIntervalUnitsInnerDuration {
+    return TimeSeriesIntervalUnitsInnerDurationFromJSONTyped(json, false);
 }
 
-export function TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesIntervalUnitsInnerDuration {
+export function TimeSeriesIntervalUnitsInnerDurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesIntervalUnitsInnerDuration {
     if (json == null) {
         return json;
     }
@@ -69,7 +69,7 @@ export function TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json: any, ign
     };
 }
 
-export function TimeseriesIntervalUnitsInnerDurationToJSON(value?: TimeseriesIntervalUnitsInnerDuration | null): any {
+export function TimeSeriesIntervalUnitsInnerDurationToJSON(value?: TimeSeriesIntervalUnitsInnerDuration | null): any {
     if (value == null) {
         return value;
     }

@@ -12,38 +12,38 @@
 /**
  *
  * @export
- * @interface TimeseriesIntervalUnitsInnerDuration
+ * @interface TimeSeriesIntervalUnitsInnerDuration
  */
-export interface TimeseriesIntervalUnitsInnerDuration {
+export interface TimeSeriesIntervalUnitsInnerDuration {
     /**
      *
      * @type {number}
-     * @memberof TimeseriesIntervalUnitsInnerDuration
+     * @memberof TimeSeriesIntervalUnitsInnerDuration
      */
     seconds?: number;
     /**
      *
      * @type {number}
-     * @memberof TimeseriesIntervalUnitsInnerDuration
+     * @memberof TimeSeriesIntervalUnitsInnerDuration
      */
     nano?: number;
     /**
      *
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInnerDuration
+     * @memberof TimeSeriesIntervalUnitsInnerDuration
      */
     zero?: boolean;
     /**
      *
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInnerDuration
+     * @memberof TimeSeriesIntervalUnitsInnerDuration
      */
     negative?: boolean;
 }
 /**
- * Check if a given object implements the TimeseriesIntervalUnitsInnerDuration interface.
+ * Check if a given object implements the TimeSeriesIntervalUnitsInnerDuration interface.
  */
-export declare function instanceOfTimeseriesIntervalUnitsInnerDuration(value: object): boolean;
-export declare function TimeseriesIntervalUnitsInnerDurationFromJSON(json: any): TimeseriesIntervalUnitsInnerDuration;
-export declare function TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesIntervalUnitsInnerDuration;
-export declare function TimeseriesIntervalUnitsInnerDurationToJSON(value?: TimeseriesIntervalUnitsInnerDuration | null): any;
+export declare function instanceOfTimeSeriesIntervalUnitsInnerDuration(value: object): boolean;
+export declare function TimeSeriesIntervalUnitsInnerDurationFromJSON(json: any): TimeSeriesIntervalUnitsInnerDuration;
+export declare function TimeSeriesIntervalUnitsInnerDurationFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesIntervalUnitsInnerDuration;
+export declare function TimeSeriesIntervalUnitsInnerDurationToJSON(value?: TimeSeriesIntervalUnitsInnerDuration | null): any;

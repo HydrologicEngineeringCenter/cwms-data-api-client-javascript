@@ -16,11 +16,11 @@ import type { State } from '../models/index';
  */
 export declare class StatesApi extends runtime.BaseAPI {
     /**
-     * Get swtData states
+     * Get CwmsData states
      */
-    getSwtDataStatesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<State>>>;
+    getStatesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<State>>>;
     /**
-     * Get swtData states
+     * Get CwmsData states
      */
-    getSwtDataStates(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<State>>;
+    getStates(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<State>>;
 }

@@ -28,9 +28,9 @@ import {
 export class DefaultApi extends runtime.BaseAPI {
 
     /**
-     * Get swtData
+     * Get CwmsData
      */
-    async getSwtDataRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async getRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -50,10 +50,10 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData
+     * Get CwmsData
      */
-    async getSwtData(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.getSwtDataRaw(initOverrides);
+    async get(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.getRaw(initOverrides);
     }
 
 }

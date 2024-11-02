@@ -10,25 +10,25 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { DeleteMethod, TimeseriesIdentifierDescriptor, TimeseriesIdentifierDescriptors } from '../models/index';
-export interface DeleteSwtDataTimeseriesIdentifierDescriptorWithNameRequest {
+import type { DeleteMethod, TimeSeriesIdentifierDescriptor, TimeSeriesIdentifierDescriptors } from '../models/index';
+export interface DeleteCwmsDataTimeSeriesIdentifierDescriptorWithNameRequest {
     name: string;
     timeseriesId: string;
     office: string;
     method: DeleteMethod;
 }
-export interface GetSwtDataTimeseriesIdentifierDescriptorRequest {
+export interface GetTimeSeriesIdentifierDescriptorRequest {
     office?: string;
     timeseriesIdRegex?: string;
     page?: string;
     pageSize?: number;
 }
-export interface GetSwtDataTimeseriesIdentifierDescriptorWithNameRequest {
+export interface GetTimeSeriesIdentifierDescriptorWithNameRequest {
     name: string;
     timeseriesId: string;
     office: string;
 }
-export interface PatchSwtDataTimeseriesIdentifierDescriptorWithNameRequest {
+export interface PatchCwmsDataTimeSeriesIdentifierDescriptorWithNameRequest {
     name: string;
     office: string;
     timeseriesId?: string;
@@ -37,60 +37,60 @@ export interface PatchSwtDataTimeseriesIdentifierDescriptorWithNameRequest {
     snapBackward?: number;
     active?: boolean;
 }
-export interface PostSwtDataTimeseriesIdentifierDescriptorRequest {
-    timeseriesIdentifierDescriptor: TimeseriesIdentifierDescriptor;
+export interface PostCwmsDataTimeSeriesIdentifierDescriptorRequest {
+    timeSeriesIdentifierDescriptor: TimeSeriesIdentifierDescriptor;
     failIfExists?: boolean;
 }
 /**
  *
  */
-export declare class TimeseriesIdentifierApi extends runtime.BaseAPI {
+export declare class TimeSeriesIdentifierApi extends runtime.BaseAPI {
     /**
      * Deletes requested timeseries identifier
-     * Delete swtData timeseries identifierDescriptor with name
+     * Delete CwmsData timeseries identifierDescriptor with name
      */
-    deleteSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters: DeleteSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters: DeleteCwmsDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes requested timeseries identifier
-     * Delete swtData timeseries identifierDescriptor with name
+     * Delete CwmsData timeseries identifierDescriptor with name
      */
-    deleteSwtDataTimeseriesIdentifierDescriptorWithName(requestParameters: DeleteSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataTimeSeriesIdentifierDescriptorWithName(requestParameters: DeleteCwmsDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns CWMS timeseries identifier descriptorData
-     * Get swtData timeseries identifierDescriptor
+     * Get CwmsData timeseries identifierDescriptor
      */
-    getSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters: GetSwtDataTimeseriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesIdentifierDescriptors>>;
+    getTimeSeriesIdentifierDescriptorRaw(requestParameters: GetTimeSeriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeriesIdentifierDescriptors>>;
     /**
      * Returns CWMS timeseries identifier descriptorData
-     * Get swtData timeseries identifierDescriptor
+     * Get CwmsData timeseries identifierDescriptor
      */
-    getSwtDataTimeseriesIdentifierDescriptor(requestParameters?: GetSwtDataTimeseriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesIdentifierDescriptors>;
+    getTimeSeriesIdentifierDescriptor(requestParameters?: GetTimeSeriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeriesIdentifierDescriptors>;
     /**
      * Retrieves requested timeseries identifier descriptor
-     * Get swtData timeseries identifierDescriptor with name
+     * Get CwmsData timeseries identifierDescriptor with name
      */
-    getSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters: GetSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesIdentifierDescriptor>>;
+    getTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters: GetTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeriesIdentifierDescriptor>>;
     /**
      * Retrieves requested timeseries identifier descriptor
-     * Get swtData timeseries identifierDescriptor with name
+     * Get CwmsData timeseries identifierDescriptor with name
      */
-    getSwtDataTimeseriesIdentifierDescriptorWithName(requestParameters: GetSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesIdentifierDescriptor>;
+    getTimeSeriesIdentifierDescriptorWithName(requestParameters: GetTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeriesIdentifierDescriptor>;
     /**
-     * Patch swtData timeseries identifierDescriptor with name
+     * Patch CwmsData timeseries identifierDescriptor with name
      */
-    patchSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters: PatchSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters: PatchCwmsDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Patch swtData timeseries identifierDescriptor with name
+     * Patch CwmsData timeseries identifierDescriptor with name
      */
-    patchSwtDataTimeseriesIdentifierDescriptorWithName(requestParameters: PatchSwtDataTimeseriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    patchCwmsDataTimeSeriesIdentifierDescriptorWithName(requestParameters: PatchCwmsDataTimeSeriesIdentifierDescriptorWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Create new TimeseriesIdentifierDescriptor
-     * Post swtData timeseries identifierDescriptor
+     * Create new TimeSeriesIdentifierDescriptor
+     * Post CwmsData timeseries identifierDescriptor
      */
-    postSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters: PostSwtDataTimeseriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataTimeSeriesIdentifierDescriptorRaw(requestParameters: PostCwmsDataTimeSeriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Create new TimeseriesIdentifierDescriptor
-     * Post swtData timeseries identifierDescriptor
+     * Create new TimeSeriesIdentifierDescriptor
+     * Post CwmsData timeseries identifierDescriptor
      */
-    postSwtDataTimeseriesIdentifierDescriptor(requestParameters: PostSwtDataTimeseriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataTimeSeriesIdentifierDescriptor(requestParameters: PostCwmsDataTimeSeriesIdentifierDescriptorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

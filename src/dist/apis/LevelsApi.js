@@ -31,12 +31,12 @@ const index_1 = require("../models/index");
 class LevelsApi extends runtime.BaseAPI {
     /**
      * Delete CWMS Location Level
-     * Delete swtData levels with levelId
+     * Delete CwmsData levels with levelId
      */
-    deleteSwtDataLevelsWithLevelIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataLevelsWithLevelIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['levelId'] == null) {
-                throw new runtime.RequiredError('levelId', 'Required parameter "levelId" was null or undefined when calling deleteSwtDataLevelsWithLevelId().');
+                throw new runtime.RequiredError('levelId', 'Required parameter "levelId" was null or undefined when calling deleteCwmsDataLevelsWithLevelId().');
             }
             const queryParameters = {};
             if (requestParameters['cascadeDelete'] != null) {
@@ -66,24 +66,24 @@ class LevelsApi extends runtime.BaseAPI {
     }
     /**
      * Delete CWMS Location Level
-     * Delete swtData levels with levelId
+     * Delete CwmsData levels with levelId
      */
-    deleteSwtDataLevelsWithLevelId(requestParameters, initOverrides) {
+    deleteCwmsDataLevelsWithLevelId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Deletes requested specified level id
-     * Delete swtData specifiedLevels with specifiedLevelId
+     * Delete CwmsData specifiedLevels with specifiedLevelId
      */
-    deleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['specifiedLevelId'] == null) {
-                throw new runtime.RequiredError('specifiedLevelId', 'Required parameter "specifiedLevelId" was null or undefined when calling deleteSwtDataSpecifiedLevelsWithSpecifiedLevelId().');
+                throw new runtime.RequiredError('specifiedLevelId', 'Required parameter "specifiedLevelId" was null or undefined when calling deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataSpecifiedLevelsWithSpecifiedLevelId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -104,17 +104,17 @@ class LevelsApi extends runtime.BaseAPI {
     }
     /**
      * Deletes requested specified level id
-     * Delete swtData specifiedLevels with specifiedLevelId
+     * Delete CwmsData specifiedLevels with specifiedLevelId
      */
-    deleteSwtDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters, initOverrides) {
+    deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides);
         });
     }
     /**
-     * Get swtData levels
+     * Get CwmsData levels
      */
-    getSwtDataLevelsRaw(requestParameters, initOverrides) {
+    getLevelsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['levelIdMask'] != null) {
@@ -161,28 +161,28 @@ class LevelsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData levels
+     * Get CwmsData levels
      */
-    getSwtDataLevels(requestParameters = {}, initOverrides) {
+    getLevels(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataLevelsRaw(requestParameters, initOverrides);
+            const response = yield this.getLevelsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId
+     * Get CwmsData levels with levelId
      */
-    getSwtDataLevelsWithLevelIdRaw(requestParameters, initOverrides) {
+    getLevelsWithLevelIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['levelId'] == null) {
-                throw new runtime.RequiredError('levelId', 'Required parameter "levelId" was null or undefined when calling getSwtDataLevelsWithLevelId().');
+                throw new runtime.RequiredError('levelId', 'Required parameter "levelId" was null or undefined when calling getLevelsWithLevelId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataLevelsWithLevelId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getLevelsWithLevelId().');
             }
             if (requestParameters['effectiveDate'] == null) {
-                throw new runtime.RequiredError('effectiveDate', 'Required parameter "effectiveDate" was null or undefined when calling getSwtDataLevelsWithLevelId().');
+                throw new runtime.RequiredError('effectiveDate', 'Required parameter "effectiveDate" was null or undefined when calling getLevelsWithLevelId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -212,28 +212,28 @@ class LevelsApi extends runtime.BaseAPI {
     }
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId
+     * Get CwmsData levels with levelId
      */
-    getSwtDataLevelsWithLevelId(requestParameters, initOverrides) {
+    getLevelsWithLevelId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
+            const response = yield this.getLevelsWithLevelIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId timeseries
+     * Get CwmsData levels with levelId timeseries
      */
-    getSwtDataLevelsWithLevelIdTimeseriesRaw(requestParameters, initOverrides) {
+    getLevelsWithLevelIdTimeSeriesRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['levelId'] == null) {
-                throw new runtime.RequiredError('levelId', 'Required parameter "levelId" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeseries().');
+                throw new runtime.RequiredError('levelId', 'Required parameter "levelId" was null or undefined when calling getLevelsWithLevelIdTimeSeries().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeseries().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getLevelsWithLevelIdTimeSeries().');
             }
             if (requestParameters['unit'] == null) {
-                throw new runtime.RequiredError('unit', 'Required parameter "unit" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeseries().');
+                throw new runtime.RequiredError('unit', 'Required parameter "unit" was null or undefined when calling getLevelsWithLevelIdTimeSeries().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -264,23 +264,23 @@ class LevelsApi extends runtime.BaseAPI {
                 headers: headerParameters,
                 query: queryParameters,
             }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.TimeseriesFromJSON)(jsonValue));
+            return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.TimeSeriesFromJSON)(jsonValue));
         });
     }
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId timeseries
+     * Get CwmsData levels with levelId timeseries
      */
-    getSwtDataLevelsWithLevelIdTimeseries(requestParameters, initOverrides) {
+    getLevelsWithLevelIdTimeSeries(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataLevelsWithLevelIdTimeseriesRaw(requestParameters, initOverrides);
+            const response = yield this.getLevelsWithLevelIdTimeSeriesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Get swtData specifiedLevels
+     * Get CwmsData specifiedLevels
      */
-    getSwtDataSpecifiedLevelsRaw(requestParameters, initOverrides) {
+    getSpecifiedLevelsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -303,25 +303,25 @@ class LevelsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData specifiedLevels
+     * Get CwmsData specifiedLevels
      */
-    getSwtDataSpecifiedLevels(requestParameters = {}, initOverrides) {
+    getSpecifiedLevels(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataSpecifiedLevelsRaw(requestParameters, initOverrides);
+            const response = yield this.getSpecifiedLevelsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Update CWMS Location Level
-     * Patch swtData levels with levelId
+     * Patch CwmsData levels with levelId
      */
-    patchSwtDataLevelsWithLevelIdRaw(requestParameters, initOverrides) {
+    patchCwmsDataLevelsWithLevelIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['levelId'] == null) {
-                throw new runtime.RequiredError('levelId', 'Required parameter "levelId" was null or undefined when calling patchSwtDataLevelsWithLevelId().');
+                throw new runtime.RequiredError('levelId', 'Required parameter "levelId" was null or undefined when calling patchCwmsDataLevelsWithLevelId().');
             }
             if (requestParameters['locationLevel'] == null) {
-                throw new runtime.RequiredError('locationLevel', 'Required parameter "locationLevel" was null or undefined when calling patchSwtDataLevelsWithLevelId().');
+                throw new runtime.RequiredError('locationLevel', 'Required parameter "locationLevel" was null or undefined when calling patchCwmsDataLevelsWithLevelId().');
             }
             const queryParameters = {};
             if (requestParameters['effectiveDate'] != null) {
@@ -344,27 +344,27 @@ class LevelsApi extends runtime.BaseAPI {
     }
     /**
      * Update CWMS Location Level
-     * Patch swtData levels with levelId
+     * Patch CwmsData levels with levelId
      */
-    patchSwtDataLevelsWithLevelId(requestParameters, initOverrides) {
+    patchCwmsDataLevelsWithLevelId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Renames the requested specified level id
-     * Patch swtData specifiedLevels with specifiedLevelId
+     * Patch CwmsData specifiedLevels with specifiedLevelId
      */
-    patchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides) {
+    patchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['specifiedLevelId'] == null) {
-                throw new runtime.RequiredError('specifiedLevelId', 'Required parameter "specifiedLevelId" was null or undefined when calling patchSwtDataSpecifiedLevelsWithSpecifiedLevelId().');
+                throw new runtime.RequiredError('specifiedLevelId', 'Required parameter "specifiedLevelId" was null or undefined when calling patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId().');
             }
             if (requestParameters['specifiedLevelId2'] == null) {
-                throw new runtime.RequiredError('specifiedLevelId2', 'Required parameter "specifiedLevelId2" was null or undefined when calling patchSwtDataSpecifiedLevelsWithSpecifiedLevelId().');
+                throw new runtime.RequiredError('specifiedLevelId2', 'Required parameter "specifiedLevelId2" was null or undefined when calling patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchSwtDataSpecifiedLevelsWithSpecifiedLevelId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId().');
             }
             const queryParameters = {};
             if (requestParameters['specifiedLevelId2'] != null) {
@@ -388,21 +388,21 @@ class LevelsApi extends runtime.BaseAPI {
     }
     /**
      * Renames the requested specified level id
-     * Patch swtData specifiedLevels with specifiedLevelId
+     * Patch CwmsData specifiedLevels with specifiedLevelId
      */
-    patchSwtDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters, initOverrides) {
+    patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Create new CWMS Location Level
-     * Post swtData levels
+     * Post CwmsData levels
      */
-    postSwtDataLevelsRaw(requestParameters, initOverrides) {
+    postCwmsDataLevelsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['locationLevel'] == null) {
-                throw new runtime.RequiredError('locationLevel', 'Required parameter "locationLevel" was null or undefined when calling postSwtDataLevels().');
+                throw new runtime.RequiredError('locationLevel', 'Required parameter "locationLevel" was null or undefined when calling postCwmsDataLevels().');
             }
             const queryParameters = {};
             const headerParameters = {};
@@ -422,21 +422,21 @@ class LevelsApi extends runtime.BaseAPI {
     }
     /**
      * Create new CWMS Location Level
-     * Post swtData levels
+     * Post CwmsData levels
      */
-    postSwtDataLevels(requestParameters, initOverrides) {
+    postCwmsDataLevels(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataLevelsRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataLevelsRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Create new SpecifiedLevel
-     * Post swtData specifiedLevels
+     * Post CwmsData specifiedLevels
      */
-    postSwtDataSpecifiedLevelsRaw(requestParameters, initOverrides) {
+    postCwmsDataSpecifiedLevelsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['specifiedLevel'] == null) {
-                throw new runtime.RequiredError('specifiedLevel', 'Required parameter "specifiedLevel" was null or undefined when calling postSwtDataSpecifiedLevels().');
+                throw new runtime.RequiredError('specifiedLevel', 'Required parameter "specifiedLevel" was null or undefined when calling postCwmsDataSpecifiedLevels().');
             }
             const queryParameters = {};
             if (requestParameters['failIfExists'] != null) {
@@ -459,11 +459,11 @@ class LevelsApi extends runtime.BaseAPI {
     }
     /**
      * Create new SpecifiedLevel
-     * Post swtData specifiedLevels
+     * Post CwmsData specifiedLevels
      */
-    postSwtDataSpecifiedLevels(requestParameters, initOverrides) {
+    postCwmsDataSpecifiedLevels(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataSpecifiedLevelsRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataSpecifiedLevelsRaw(requestParameters, initOverrides);
         });
     }
 }

@@ -13,15 +13,15 @@
  */
 import { ExtentsFromJSON, ExtentsToJSON, } from './Extents';
 /**
- * Check if a given object implements the TimeseriesCatalogEntry interface.
+ * Check if a given object implements the TimeSeriesCatalogEntry interface.
  */
-export function instanceOfTimeseriesCatalogEntry(value) {
+export function instanceOfTimeSeriesCatalogEntry(value) {
     return true;
 }
-export function TimeseriesCatalogEntryFromJSON(json) {
-    return TimeseriesCatalogEntryFromJSONTyped(json, false);
+export function TimeSeriesCatalogEntryFromJSON(json) {
+    return TimeSeriesCatalogEntryFromJSONTyped(json, false);
 }
-export function TimeseriesCatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
+export function TimeSeriesCatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,7 +35,7 @@ export function TimeseriesCatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
         'extents': json['extents'] == null ? undefined : (json['extents'].map(ExtentsFromJSON)),
     };
 }
-export function TimeseriesCatalogEntryToJSON(value) {
+export function TimeSeriesCatalogEntryToJSON(value) {
     if (value == null) {
         return value;
     }

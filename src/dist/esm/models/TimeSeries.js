@@ -11,29 +11,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { TimeseriesColumnFromJSON, } from './TimeseriesColumn';
-import { TimeseriesIntervalFromJSON, TimeseriesIntervalToJSON, } from './TimeseriesInterval';
+import { TimeSeriesColumnFromJSON, } from './TimeSeriesColumn';
+import { TimeSeriesIntervalFromJSON, TimeSeriesIntervalToJSON, } from './TimeSeriesInterval';
 import { VerticalDatumInfoFromJSON, VerticalDatumInfoToJSON, } from './VerticalDatumInfo';
 /**
  * @export
  */
-export const TimeseriesDateVersionTypeEnum = {
+export const TimeSeriesDateVersionTypeEnum = {
     MaxAggregate: 'MAX_AGGREGATE',
     SingleVersion: 'SINGLE_VERSION',
     Unversioned: 'UNVERSIONED'
 };
 /**
- * Check if a given object implements the Timeseries interface.
+ * Check if a given object implements the TimeSeries interface.
  */
-export function instanceOfTimeseries(value) {
+export function instanceOfTimeSeries(value) {
     if (!('units' in value))
         return false;
     return true;
 }
-export function TimeseriesFromJSON(json) {
-    return TimeseriesFromJSONTyped(json, false);
+export function TimeSeriesFromJSON(json) {
+    return TimeSeriesFromJSONTyped(json, false);
 }
-export function TimeseriesFromJSONTyped(json, ignoreDiscriminator) {
+export function TimeSeriesFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -41,7 +41,7 @@ export function TimeseriesFromJSONTyped(json, ignoreDiscriminator) {
         'begin': json['begin'] == null ? undefined : (new Date(json['begin'])),
         'dateVersionType': json['date-version-type'] == null ? undefined : json['date-version-type'],
         'end': json['end'] == null ? undefined : (new Date(json['end'])),
-        'interval': json['interval'] == null ? undefined : TimeseriesIntervalFromJSON(json['interval']),
+        'interval': json['interval'] == null ? undefined : TimeSeriesIntervalFromJSON(json['interval']),
         'intervalOffset': json['interval-offset'] == null ? undefined : json['interval-offset'],
         'name': json['name'] == null ? undefined : json['name'],
         'nextPage': json['next-page'] == null ? undefined : json['next-page'],
@@ -51,19 +51,19 @@ export function TimeseriesFromJSONTyped(json, ignoreDiscriminator) {
         'timeZone': json['time-zone'] == null ? undefined : json['time-zone'],
         'total': json['total'] == null ? undefined : json['total'],
         'units': json['units'],
-        'valueColumns': json['value-columns'] == null ? undefined : (json['value-columns'].map(TimeseriesColumnFromJSON)),
+        'valueColumns': json['value-columns'] == null ? undefined : (json['value-columns'].map(TimeSeriesColumnFromJSON)),
         'values': json['values'] == null ? undefined : json['values'],
         'versionDate': json['version-date'] == null ? undefined : (new Date(json['version-date'])),
         'verticalDatumInfo': json['vertical-datum-info'] == null ? undefined : VerticalDatumInfoFromJSON(json['vertical-datum-info']),
     };
 }
-export function TimeseriesToJSON(value) {
+export function TimeSeriesToJSON(value) {
     if (value == null) {
         return value;
     }
     return {
         'date-version-type': value['dateVersionType'],
-        'interval': TimeseriesIntervalToJSON(value['interval']),
+        'interval': TimeSeriesIntervalToJSON(value['interval']),
         'name': value['name'],
         'office-id': value['officeId'],
         'units': value['units'],

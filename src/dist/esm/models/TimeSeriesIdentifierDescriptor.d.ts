@@ -12,44 +12,44 @@
 /**
  *
  * @export
- * @interface TimeseriesIdentifierDescriptor
+ * @interface TimeSeriesIdentifierDescriptor
  */
-export interface TimeseriesIdentifierDescriptor {
+export interface TimeSeriesIdentifierDescriptor {
     /**
      * Owning office of object.
      * @type {string}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     officeId: string;
     /**
      *
      * @type {string}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     timeSeriesId?: string;
     /**
      *
      * @type {string}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     timezoneName?: string;
     /**
      *
      * @type {number}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     intervalOffsetMinutes?: number;
     /**
      *
      * @type {boolean}
-     * @memberof TimeseriesIdentifierDescriptor
+     * @memberof TimeSeriesIdentifierDescriptor
      */
     active?: boolean;
 }
 /**
- * Check if a given object implements the TimeseriesIdentifierDescriptor interface.
+ * Check if a given object implements the TimeSeriesIdentifierDescriptor interface.
  */
-export declare function instanceOfTimeseriesIdentifierDescriptor(value: object): boolean;
-export declare function TimeseriesIdentifierDescriptorFromJSON(json: any): TimeseriesIdentifierDescriptor;
-export declare function TimeseriesIdentifierDescriptorFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesIdentifierDescriptor;
-export declare function TimeseriesIdentifierDescriptorToJSON(value?: TimeseriesIdentifierDescriptor | null): any;
+export declare function instanceOfTimeSeriesIdentifierDescriptor(value: object): boolean;
+export declare function TimeSeriesIdentifierDescriptorFromJSON(json: any): TimeSeriesIdentifierDescriptor;
+export declare function TimeSeriesIdentifierDescriptorFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesIdentifierDescriptor;
+export declare function TimeSeriesIdentifierDescriptorToJSON(value?: TimeSeriesIdentifierDescriptor | null): any;

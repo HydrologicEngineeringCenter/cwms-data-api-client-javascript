@@ -12,15 +12,15 @@
  * Do not edit the class manually.
  */
 /**
- * Check if a given object implements the TimeseriesIntervalUnitsInnerDuration interface.
+ * Check if a given object implements the TimeSeriesIntervalUnitsInnerDuration interface.
  */
-export function instanceOfTimeseriesIntervalUnitsInnerDuration(value) {
+export function instanceOfTimeSeriesIntervalUnitsInnerDuration(value) {
     return true;
 }
-export function TimeseriesIntervalUnitsInnerDurationFromJSON(json) {
-    return TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json, false);
+export function TimeSeriesIntervalUnitsInnerDurationFromJSON(json) {
+    return TimeSeriesIntervalUnitsInnerDurationFromJSONTyped(json, false);
 }
-export function TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json, ignoreDiscriminator) {
+export function TimeSeriesIntervalUnitsInnerDurationFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -31,7 +31,7 @@ export function TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json, ignoreDi
         'negative': json['negative'] == null ? undefined : json['negative'],
     };
 }
-export function TimeseriesIntervalUnitsInnerDurationToJSON(value) {
+export function TimeSeriesIntervalUnitsInnerDurationToJSON(value) {
     if (value == null) {
         return value;
     }

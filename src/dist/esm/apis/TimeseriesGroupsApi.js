@@ -25,21 +25,21 @@ import { TimeseriesGroupFromJSON, TimeseriesGroupToJSON, } from '../models/index
 /**
  *
  */
-export class TimeseriesGroupsApi extends runtime.BaseAPI {
+export class TimeSeriesGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes requested time series group
-     * Delete swtData timeseries group with groupId
+     * Delete CwmsData timeseries group with groupId
      */
-    deleteSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataTimeSeriesGroupWithGroupIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['groupId'] == null) {
-                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling deleteSwtDataTimeseriesGroupWithGroupId().');
+                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling deleteCwmsDataTimeSeriesGroupWithGroupId().');
             }
             if (requestParameters['categoryId'] == null) {
-                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling deleteSwtDataTimeseriesGroupWithGroupId().');
+                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling deleteCwmsDataTimeSeriesGroupWithGroupId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataTimeseriesGroupWithGroupId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataTimeSeriesGroupWithGroupId().');
             }
             const queryParameters = {};
             if (requestParameters['categoryId'] != null) {
@@ -63,18 +63,18 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
     }
     /**
      * Deletes requested time series group
-     * Delete swtData timeseries group with groupId
+     * Delete CwmsData timeseries group with groupId
      */
-    deleteSwtDataTimeseriesGroupWithGroupId(requestParameters, initOverrides) {
+    deleteCwmsDataTimeSeriesGroupWithGroupId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataTimeSeriesGroupWithGroupIdRaw(requestParameters, initOverrides);
         });
     }
     /**
-     * Returns CWMS Timeseries Groups Data
-     * Get swtData timeseries group
+     * Returns CWMS TimeSeries Groups Data
+     * Get CwmsData timeseries group
      */
-    getSwtDataTimeseriesGroupRaw(requestParameters, initOverrides) {
+    getTimeSeriesGroupRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -103,29 +103,29 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Returns CWMS Timeseries Groups Data
-     * Get swtData timeseries group
+     * Returns CWMS TimeSeries Groups Data
+     * Get CwmsData timeseries group
      */
-    getSwtDataTimeseriesGroup(requestParameters = {}, initOverrides) {
+    getTimeSeriesGroup(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataTimeseriesGroupRaw(requestParameters, initOverrides);
+            const response = yield this.getTimeSeriesGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Retrieves requested timeseries group
-     * Get swtData timeseries group with groupId
+     * Get CwmsData timeseries group with groupId
      */
-    getSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters, initOverrides) {
+    getTimeSeriesGroupWithGroupIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['groupId'] == null) {
-                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling getSwtDataTimeseriesGroupWithGroupId().');
+                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling getTimeSeriesGroupWithGroupId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataTimeseriesGroupWithGroupId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getTimeSeriesGroupWithGroupId().');
             }
             if (requestParameters['categoryId'] == null) {
-                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling getSwtDataTimeseriesGroupWithGroupId().');
+                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling getTimeSeriesGroupWithGroupId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -149,28 +149,28 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
     }
     /**
      * Retrieves requested timeseries group
-     * Get swtData timeseries group with groupId
+     * Get CwmsData timeseries group with groupId
      */
-    getSwtDataTimeseriesGroupWithGroupId(requestParameters, initOverrides) {
+    getTimeSeriesGroupWithGroupId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters, initOverrides);
+            const response = yield this.getTimeSeriesGroupWithGroupIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Update existing TimeseriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
-     * Patch swtData timeseries group with groupId
+     * Update existing TimeSeriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
+     * Patch CwmsData timeseries group with groupId
      */
-    patchSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters, initOverrides) {
+    patchCwmsDataTimeSeriesGroupWithGroupIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['groupId'] == null) {
-                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling patchSwtDataTimeseriesGroupWithGroupId().');
+                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling patchCwmsDataTimeSeriesGroupWithGroupId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchSwtDataTimeseriesGroupWithGroupId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchCwmsDataTimeSeriesGroupWithGroupId().');
             }
             if (requestParameters['timeseriesGroup'] == null) {
-                throw new runtime.RequiredError('timeseriesGroup', 'Required parameter "timeseriesGroup" was null or undefined when calling patchSwtDataTimeseriesGroupWithGroupId().');
+                throw new runtime.RequiredError('timeseriesGroup', 'Required parameter "timeseriesGroup" was null or undefined when calling patchCwmsDataTimeSeriesGroupWithGroupId().');
             }
             const queryParameters = {};
             if (requestParameters['replaceAssignedTs'] != null) {
@@ -195,22 +195,22 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Update existing TimeseriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
-     * Patch swtData timeseries group with groupId
+     * Update existing TimeSeriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
+     * Patch CwmsData timeseries group with groupId
      */
-    patchSwtDataTimeseriesGroupWithGroupId(requestParameters, initOverrides) {
+    patchCwmsDataTimeSeriesGroupWithGroupId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataTimeSeriesGroupWithGroupIdRaw(requestParameters, initOverrides);
         });
     }
     /**
-     * Create new TimeseriesGroup
-     * Post swtData timeseries group
+     * Create new TimeSeriesGroup
+     * Post CwmsData timeseries group
      */
-    postSwtDataTimeseriesGroupRaw(requestParameters, initOverrides) {
+    postCwmsDataTimeSeriesGroupRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['timeseriesGroup'] == null) {
-                throw new runtime.RequiredError('timeseriesGroup', 'Required parameter "timeseriesGroup" was null or undefined when calling postSwtDataTimeseriesGroup().');
+                throw new runtime.RequiredError('timeseriesGroup', 'Required parameter "timeseriesGroup" was null or undefined when calling postCwmsDataTimeSeriesGroup().');
             }
             const queryParameters = {};
             if (requestParameters['failIfExists'] != null) {
@@ -232,12 +232,12 @@ export class TimeseriesGroupsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Create new TimeseriesGroup
-     * Post swtData timeseries group
+     * Create new TimeSeriesGroup
+     * Post CwmsData timeseries group
      */
-    postSwtDataTimeseriesGroup(requestParameters, initOverrides) {
+    postCwmsDataTimeSeriesGroup(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataTimeseriesGroupRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataTimeSeriesGroupRaw(requestParameters, initOverrides);
         });
     }
 }

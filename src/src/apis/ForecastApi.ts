@@ -31,7 +31,7 @@ import {
     ForecastSpecToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataForecastInstanceWithNameRequest {
+export interface DeleteCwmsDataForecastInstanceWithNameRequest {
     name: string;
     forecastDate: string;
     issueDate: string;
@@ -39,20 +39,20 @@ export interface DeleteSwtDataForecastInstanceWithNameRequest {
     designator: string;
 }
 
-export interface DeleteSwtDataForecastSpecWithNameRequest {
+export interface DeleteCwmsDataForecastSpecWithNameRequest {
     name: string;
     office: string;
     designator: string;
     method?: DeleteMethod;
 }
 
-export interface GetSwtDataForecastInstanceRequest {
+export interface GetForecastInstanceRequest {
     office?: string;
     name?: string;
     designator?: string;
 }
 
-export interface GetSwtDataForecastInstanceWithNameRequest {
+export interface GetForecastInstanceWithNameRequest {
     name: string;
     forecastDate: string;
     issueDate: string;
@@ -60,7 +60,7 @@ export interface GetSwtDataForecastInstanceWithNameRequest {
     designator: string;
 }
 
-export interface GetSwtDataForecastInstanceWithNameFileDataRequest {
+export interface GetForecastInstanceWithNameFileDataRequest {
     name: string;
     forecastDate: string;
     issueDate: string;
@@ -68,34 +68,34 @@ export interface GetSwtDataForecastInstanceWithNameFileDataRequest {
     designator: string;
 }
 
-export interface GetSwtDataForecastSpecRequest {
+export interface GetForecastSpecRequest {
     office?: string;
     idMask?: string;
     designatorMask?: string;
     sourceEntity?: string;
 }
 
-export interface GetSwtDataForecastSpecWithNameRequest {
+export interface GetForecastSpecWithNameRequest {
     name: string;
     office: string;
     designator: string;
 }
 
-export interface PatchSwtDataForecastInstanceWithNameRequest {
+export interface PatchCwmsDataForecastInstanceWithNameRequest {
     name: string;
     forecastInstance: ForecastInstance;
 }
 
-export interface PatchSwtDataForecastSpecWithNameRequest {
+export interface PatchCwmsDataForecastSpecWithNameRequest {
     name: string;
     forecastSpec: ForecastSpec;
 }
 
-export interface PostSwtDataForecastInstanceRequest {
+export interface PostCwmsDataForecastInstanceRequest {
     forecastInstance: ForecastInstance;
 }
 
-export interface PostSwtDataForecastSpecRequest {
+export interface PostCwmsDataForecastSpecRequest {
     forecastSpec: ForecastSpec;
 }
 
@@ -106,41 +106,41 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to delete forecast instance data based on unique fields
-     * Delete swtData forecastInstance with name
+     * Delete CwmsData forecastInstance with name
      */
-    async deleteSwtDataForecastInstanceWithNameRaw(requestParameters: DeleteSwtDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataForecastInstanceWithNameRaw(requestParameters: DeleteCwmsDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataForecastInstanceWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataForecastInstanceWithName().'
             );
         }
 
         if (requestParameters['forecastDate'] == null) {
             throw new runtime.RequiredError(
                 'forecastDate',
-                'Required parameter "forecastDate" was null or undefined when calling deleteSwtDataForecastInstanceWithName().'
+                'Required parameter "forecastDate" was null or undefined when calling deleteCwmsDataForecastInstanceWithName().'
             );
         }
 
         if (requestParameters['issueDate'] == null) {
             throw new runtime.RequiredError(
                 'issueDate',
-                'Required parameter "issueDate" was null or undefined when calling deleteSwtDataForecastInstanceWithName().'
+                'Required parameter "issueDate" was null or undefined when calling deleteCwmsDataForecastInstanceWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataForecastInstanceWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataForecastInstanceWithName().'
             );
         }
 
         if (requestParameters['designator'] == null) {
             throw new runtime.RequiredError(
                 'designator',
-                'Required parameter "designator" was null or undefined when calling deleteSwtDataForecastInstanceWithName().'
+                'Required parameter "designator" was null or undefined when calling deleteCwmsDataForecastInstanceWithName().'
             );
         }
 
@@ -180,35 +180,35 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to delete forecast instance data based on unique fields
-     * Delete swtData forecastInstance with name
+     * Delete CwmsData forecastInstance with name
      */
-    async deleteSwtDataForecastInstanceWithName(requestParameters: DeleteSwtDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataForecastInstanceWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataForecastInstanceWithName(requestParameters: DeleteCwmsDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataForecastInstanceWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Used to delete forecast spec data based on unique fields
-     * Delete swtData forecastSpec with name
+     * Delete CwmsData forecastSpec with name
      */
-    async deleteSwtDataForecastSpecWithNameRaw(requestParameters: DeleteSwtDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataForecastSpecWithNameRaw(requestParameters: DeleteCwmsDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataForecastSpecWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataForecastSpecWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataForecastSpecWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataForecastSpecWithName().'
             );
         }
 
         if (requestParameters['designator'] == null) {
             throw new runtime.RequiredError(
                 'designator',
-                'Required parameter "designator" was null or undefined when calling deleteSwtDataForecastSpecWithName().'
+                'Required parameter "designator" was null or undefined when calling deleteCwmsDataForecastSpecWithName().'
             );
         }
 
@@ -244,17 +244,17 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to delete forecast spec data based on unique fields
-     * Delete swtData forecastSpec with name
+     * Delete CwmsData forecastSpec with name
      */
-    async deleteSwtDataForecastSpecWithName(requestParameters: DeleteSwtDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataForecastSpecWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataForecastSpecWithName(requestParameters: DeleteCwmsDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataForecastSpecWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Used to get all forecast instances for a given forecast spec
-     * Get swtData forecastInstance
+     * Get CwmsData forecastInstance
      */
-    async getSwtDataForecastInstanceRaw(requestParameters: GetSwtDataForecastInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ForecastInstance>> {
+    async getForecastInstanceRaw(requestParameters: GetForecastInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ForecastInstance>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -287,50 +287,50 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to get all forecast instances for a given forecast spec
-     * Get swtData forecastInstance
+     * Get CwmsData forecastInstance
      */
-    async getSwtDataForecastInstance(requestParameters: GetSwtDataForecastInstanceRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ForecastInstance> {
-        const response = await this.getSwtDataForecastInstanceRaw(requestParameters, initOverrides);
+    async getForecastInstance(requestParameters: GetForecastInstanceRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ForecastInstance> {
+        const response = await this.getForecastInstanceRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Used to get all forecast instances for a given forecast spec
-     * Get swtData forecastInstance with name
+     * Get CwmsData forecastInstance with name
      */
-    async getSwtDataForecastInstanceWithNameRaw(requestParameters: GetSwtDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ForecastInstance>> {
+    async getForecastInstanceWithNameRaw(requestParameters: GetForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ForecastInstance>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataForecastInstanceWithName().'
+                'Required parameter "name" was null or undefined when calling getForecastInstanceWithName().'
             );
         }
 
         if (requestParameters['forecastDate'] == null) {
             throw new runtime.RequiredError(
                 'forecastDate',
-                'Required parameter "forecastDate" was null or undefined when calling getSwtDataForecastInstanceWithName().'
+                'Required parameter "forecastDate" was null or undefined when calling getForecastInstanceWithName().'
             );
         }
 
         if (requestParameters['issueDate'] == null) {
             throw new runtime.RequiredError(
                 'issueDate',
-                'Required parameter "issueDate" was null or undefined when calling getSwtDataForecastInstanceWithName().'
+                'Required parameter "issueDate" was null or undefined when calling getForecastInstanceWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataForecastInstanceWithName().'
+                'Required parameter "office" was null or undefined when calling getForecastInstanceWithName().'
             );
         }
 
         if (requestParameters['designator'] == null) {
             throw new runtime.RequiredError(
                 'designator',
-                'Required parameter "designator" was null or undefined when calling getSwtDataForecastInstanceWithName().'
+                'Required parameter "designator" was null or undefined when calling getForecastInstanceWithName().'
             );
         }
 
@@ -370,50 +370,50 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to get all forecast instances for a given forecast spec
-     * Get swtData forecastInstance with name
+     * Get CwmsData forecastInstance with name
      */
-    async getSwtDataForecastInstanceWithName(requestParameters: GetSwtDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ForecastInstance> {
-        const response = await this.getSwtDataForecastInstanceWithNameRaw(requestParameters, initOverrides);
+    async getForecastInstanceWithName(requestParameters: GetForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ForecastInstance> {
+        const response = await this.getForecastInstanceWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Used to download forecast file for the given parameters
-     * Get swtData forecastInstance with name fileData
+     * Get CwmsData forecastInstance with name fileData
      */
-    async getSwtDataForecastInstanceWithNameFileDataRaw(requestParameters: GetSwtDataForecastInstanceWithNameFileDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>> {
+    async getForecastInstanceWithNameFileDataRaw(requestParameters: GetForecastInstanceWithNameFileDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataForecastInstanceWithNameFileData().'
+                'Required parameter "name" was null or undefined when calling getForecastInstanceWithNameFileData().'
             );
         }
 
         if (requestParameters['forecastDate'] == null) {
             throw new runtime.RequiredError(
                 'forecastDate',
-                'Required parameter "forecastDate" was null or undefined when calling getSwtDataForecastInstanceWithNameFileData().'
+                'Required parameter "forecastDate" was null or undefined when calling getForecastInstanceWithNameFileData().'
             );
         }
 
         if (requestParameters['issueDate'] == null) {
             throw new runtime.RequiredError(
                 'issueDate',
-                'Required parameter "issueDate" was null or undefined when calling getSwtDataForecastInstanceWithNameFileData().'
+                'Required parameter "issueDate" was null or undefined when calling getForecastInstanceWithNameFileData().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataForecastInstanceWithNameFileData().'
+                'Required parameter "office" was null or undefined when calling getForecastInstanceWithNameFileData().'
             );
         }
 
         if (requestParameters['designator'] == null) {
             throw new runtime.RequiredError(
                 'designator',
-                'Required parameter "designator" was null or undefined when calling getSwtDataForecastInstanceWithNameFileData().'
+                'Required parameter "designator" was null or undefined when calling getForecastInstanceWithNameFileData().'
             );
         }
 
@@ -453,18 +453,18 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to download forecast file for the given parameters
-     * Get swtData forecastInstance with name fileData
+     * Get CwmsData forecastInstance with name fileData
      */
-    async getSwtDataForecastInstanceWithNameFileData(requestParameters: GetSwtDataForecastInstanceWithNameFileDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob> {
-        const response = await this.getSwtDataForecastInstanceWithNameFileDataRaw(requestParameters, initOverrides);
+    async getForecastInstanceWithNameFileData(requestParameters: GetForecastInstanceWithNameFileDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob> {
+        const response = await this.getForecastInstanceWithNameFileDataRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Used to query multiple forecast specs
-     * Get swtData forecastSpec
+     * Get CwmsData forecastSpec
      */
-    async getSwtDataForecastSpecRaw(requestParameters: GetSwtDataForecastSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ForecastSpec>> {
+    async getForecastSpecRaw(requestParameters: GetForecastSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ForecastSpec>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -501,36 +501,36 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to query multiple forecast specs
-     * Get swtData forecastSpec
+     * Get CwmsData forecastSpec
      */
-    async getSwtDataForecastSpec(requestParameters: GetSwtDataForecastSpecRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ForecastSpec> {
-        const response = await this.getSwtDataForecastSpecRaw(requestParameters, initOverrides);
+    async getForecastSpec(requestParameters: GetForecastSpecRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ForecastSpec> {
+        const response = await this.getForecastSpecRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Used to query a single forecast spec record
-     * Get swtData forecastSpec with name
+     * Get CwmsData forecastSpec with name
      */
-    async getSwtDataForecastSpecWithNameRaw(requestParameters: GetSwtDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ForecastSpec>> {
+    async getForecastSpecWithNameRaw(requestParameters: GetForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ForecastSpec>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataForecastSpecWithName().'
+                'Required parameter "name" was null or undefined when calling getForecastSpecWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataForecastSpecWithName().'
+                'Required parameter "office" was null or undefined when calling getForecastSpecWithName().'
             );
         }
 
         if (requestParameters['designator'] == null) {
             throw new runtime.RequiredError(
                 'designator',
-                'Required parameter "designator" was null or undefined when calling getSwtDataForecastSpecWithName().'
+                'Required parameter "designator" was null or undefined when calling getForecastSpecWithName().'
             );
         }
 
@@ -562,29 +562,29 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to query a single forecast spec record
-     * Get swtData forecastSpec with name
+     * Get CwmsData forecastSpec with name
      */
-    async getSwtDataForecastSpecWithName(requestParameters: GetSwtDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ForecastSpec> {
-        const response = await this.getSwtDataForecastSpecWithNameRaw(requestParameters, initOverrides);
+    async getForecastSpecWithName(requestParameters: GetForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ForecastSpec> {
+        const response = await this.getForecastSpecWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update a forecast instance with new max age, notes, forecast fileand forecast info key/value pairs.
-     * Patch swtData forecastInstance with name
+     * Patch CwmsData forecastInstance with name
      */
-    async patchSwtDataForecastInstanceWithNameRaw(requestParameters: PatchSwtDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataForecastInstanceWithNameRaw(requestParameters: PatchCwmsDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataForecastInstanceWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataForecastInstanceWithName().'
             );
         }
 
         if (requestParameters['forecastInstance'] == null) {
             throw new runtime.RequiredError(
                 'forecastInstance',
-                'Required parameter "forecastInstance" was null or undefined when calling patchSwtDataForecastInstanceWithName().'
+                'Required parameter "forecastInstance" was null or undefined when calling patchCwmsDataForecastInstanceWithName().'
             );
         }
 
@@ -611,28 +611,28 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Update a forecast instance with new max age, notes, forecast fileand forecast info key/value pairs.
-     * Patch swtData forecastInstance with name
+     * Patch CwmsData forecastInstance with name
      */
-    async patchSwtDataForecastInstanceWithName(requestParameters: PatchSwtDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataForecastInstanceWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataForecastInstanceWithName(requestParameters: PatchCwmsDataForecastInstanceWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataForecastInstanceWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Update a forecast spec with provided values
-     * Patch swtData forecastSpec with name
+     * Patch CwmsData forecastSpec with name
      */
-    async patchSwtDataForecastSpecWithNameRaw(requestParameters: PatchSwtDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataForecastSpecWithNameRaw(requestParameters: PatchCwmsDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataForecastSpecWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataForecastSpecWithName().'
             );
         }
 
         if (requestParameters['forecastSpec'] == null) {
             throw new runtime.RequiredError(
                 'forecastSpec',
-                'Required parameter "forecastSpec" was null or undefined when calling patchSwtDataForecastSpecWithName().'
+                'Required parameter "forecastSpec" was null or undefined when calling patchCwmsDataForecastSpecWithName().'
             );
         }
 
@@ -659,21 +659,21 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Update a forecast spec with provided values
-     * Patch swtData forecastSpec with name
+     * Patch CwmsData forecastSpec with name
      */
-    async patchSwtDataForecastSpecWithName(requestParameters: PatchSwtDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataForecastSpecWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataForecastSpecWithName(requestParameters: PatchCwmsDataForecastSpecWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataForecastSpecWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Used to create and save a forecast instance
-     * Post swtData forecastInstance
+     * Post CwmsData forecastInstance
      */
-    async postSwtDataForecastInstanceRaw(requestParameters: PostSwtDataForecastInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataForecastInstanceRaw(requestParameters: PostCwmsDataForecastInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['forecastInstance'] == null) {
             throw new runtime.RequiredError(
                 'forecastInstance',
-                'Required parameter "forecastInstance" was null or undefined when calling postSwtDataForecastInstance().'
+                'Required parameter "forecastInstance" was null or undefined when calling postCwmsDataForecastInstance().'
             );
         }
 
@@ -700,21 +700,21 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to create and save a forecast instance
-     * Post swtData forecastInstance
+     * Post CwmsData forecastInstance
      */
-    async postSwtDataForecastInstance(requestParameters: PostSwtDataForecastInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataForecastInstanceRaw(requestParameters, initOverrides);
+    async postCwmsDataForecastInstance(requestParameters: PostCwmsDataForecastInstanceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataForecastInstanceRaw(requestParameters, initOverrides);
     }
 
     /**
      * Used to create and save forecast spec data
-     * Post swtData forecastSpec
+     * Post CwmsData forecastSpec
      */
-    async postSwtDataForecastSpecRaw(requestParameters: PostSwtDataForecastSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataForecastSpecRaw(requestParameters: PostCwmsDataForecastSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['forecastSpec'] == null) {
             throw new runtime.RequiredError(
                 'forecastSpec',
-                'Required parameter "forecastSpec" was null or undefined when calling postSwtDataForecastSpec().'
+                'Required parameter "forecastSpec" was null or undefined when calling postCwmsDataForecastSpec().'
             );
         }
 
@@ -741,10 +741,10 @@ export class ForecastApi extends runtime.BaseAPI {
 
     /**
      * Used to create and save forecast spec data
-     * Post swtData forecastSpec
+     * Post CwmsData forecastSpec
      */
-    async postSwtDataForecastSpec(requestParameters: PostSwtDataForecastSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataForecastSpecRaw(requestParameters, initOverrides);
+    async postCwmsDataForecastSpec(requestParameters: PostCwmsDataForecastSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataForecastSpecRaw(requestParameters, initOverrides);
     }
 
 }

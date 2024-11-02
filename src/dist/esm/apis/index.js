@@ -2,7 +2,7 @@
 /* eslint-disable */
 export * from './AuthorizationApi';
 export * from './BasinsApi';
-export * from './BinaryTimeseriesApi';
+export * from './BinaryTimeSeriesApi';
 export * from './BlobApi';
 export * from './CatalogApi';
 export * from './ClobApi';
@@ -30,12 +30,12 @@ export * from './StatesApi';
 export * from './StreamLocationsApi';
 export * from './StreamReachesApi';
 export * from './StreamsApi';
-export * from './TextTimeseriesApi';
+export * from './TextTimeSeriesApi';
+export * from './TimeSeriesApi';
+export * from './TimeSeriesCategoriesApi';
+export * from './TimeSeriesGroupsApi';
+export * from './TimeSeriesIdentifierApi';
 export * from './TimeZonesApi';
-export * from './TimeseriesApi';
-export * from './TimeseriesCategoriesApi';
-export * from './TimeseriesGroupsApi';
-export * from './TimeseriesIdentifierApi';
 export * from './TurbinesApi';
 export * from './UnitsApi';
 export * from './WaterContractsApi';

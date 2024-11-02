@@ -25,22 +25,22 @@ import {
     LocationCategoryToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataLocationCategoryWithCategoryIdRequest {
+export interface DeleteCwmsDataLocationCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
     cascadeDelete?: boolean;
 }
 
-export interface GetSwtDataLocationCategoryRequest {
+export interface GetLocationCategoryRequest {
     office?: string;
 }
 
-export interface GetSwtDataLocationCategoryWithCategoryIdRequest {
+export interface GetLocationCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
 }
 
-export interface PostSwtDataLocationCategoryRequest {
+export interface PostCwmsDataLocationCategoryRequest {
     locationCategory: LocationCategory;
 }
 
@@ -51,20 +51,20 @@ export class LocationCategoriesApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested location category
-     * Delete swtData location category with categoryId
+     * Delete CwmsData location category with categoryId
      */
-    async deleteSwtDataLocationCategoryWithCategoryIdRaw(requestParameters: DeleteSwtDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataLocationCategoryWithCategoryIdRaw(requestParameters: DeleteCwmsDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling deleteSwtDataLocationCategoryWithCategoryId().'
+                'Required parameter "categoryId" was null or undefined when calling deleteCwmsDataLocationCategoryWithCategoryId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataLocationCategoryWithCategoryId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataLocationCategoryWithCategoryId().'
             );
         }
 
@@ -96,17 +96,17 @@ export class LocationCategoriesApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested location category
-     * Delete swtData location category with categoryId
+     * Delete CwmsData location category with categoryId
      */
-    async deleteSwtDataLocationCategoryWithCategoryId(requestParameters: DeleteSwtDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataLocationCategoryWithCategoryId(requestParameters: DeleteCwmsDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns CWMS Location Category Data
-     * Get swtData location category
+     * Get CwmsData location category
      */
-    async getSwtDataLocationCategoryRaw(requestParameters: GetSwtDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LocationCategory>>> {
+    async getLocationCategoryRaw(requestParameters: GetLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LocationCategory>>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -131,29 +131,29 @@ export class LocationCategoriesApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Location Category Data
-     * Get swtData location category
+     * Get CwmsData location category
      */
-    async getSwtDataLocationCategory(requestParameters: GetSwtDataLocationCategoryRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LocationCategory>> {
-        const response = await this.getSwtDataLocationCategoryRaw(requestParameters, initOverrides);
+    async getLocationCategory(requestParameters: GetLocationCategoryRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LocationCategory>> {
+        const response = await this.getLocationCategoryRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Retrieves requested Location Category
-     * Get swtData location category with categoryId
+     * Get CwmsData location category with categoryId
      */
-    async getSwtDataLocationCategoryWithCategoryIdRaw(requestParameters: GetSwtDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationCategory>> {
+    async getLocationCategoryWithCategoryIdRaw(requestParameters: GetLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationCategory>> {
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling getSwtDataLocationCategoryWithCategoryId().'
+                'Required parameter "categoryId" was null or undefined when calling getLocationCategoryWithCategoryId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataLocationCategoryWithCategoryId().'
+                'Required parameter "office" was null or undefined when calling getLocationCategoryWithCategoryId().'
             );
         }
 
@@ -181,22 +181,22 @@ export class LocationCategoriesApi extends runtime.BaseAPI {
 
     /**
      * Retrieves requested Location Category
-     * Get swtData location category with categoryId
+     * Get CwmsData location category with categoryId
      */
-    async getSwtDataLocationCategoryWithCategoryId(requestParameters: GetSwtDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationCategory> {
-        const response = await this.getSwtDataLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+    async getLocationCategoryWithCategoryId(requestParameters: GetLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationCategory> {
+        const response = await this.getLocationCategoryWithCategoryIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Create new LocationCategory
-     * Post swtData location category
+     * Post CwmsData location category
      */
-    async postSwtDataLocationCategoryRaw(requestParameters: PostSwtDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataLocationCategoryRaw(requestParameters: PostCwmsDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['locationCategory'] == null) {
             throw new runtime.RequiredError(
                 'locationCategory',
-                'Required parameter "locationCategory" was null or undefined when calling postSwtDataLocationCategory().'
+                'Required parameter "locationCategory" was null or undefined when calling postCwmsDataLocationCategory().'
             );
         }
 
@@ -223,10 +223,10 @@ export class LocationCategoriesApi extends runtime.BaseAPI {
 
     /**
      * Create new LocationCategory
-     * Post swtData location category
+     * Post CwmsData location category
      */
-    async postSwtDataLocationCategory(requestParameters: PostSwtDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataLocationCategoryRaw(requestParameters, initOverrides);
+    async postCwmsDataLocationCategory(requestParameters: PostCwmsDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataLocationCategoryRaw(requestParameters, initOverrides);
     }
 
 }

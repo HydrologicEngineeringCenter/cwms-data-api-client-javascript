@@ -28,18 +28,18 @@ import { RatingMetadataListFromJSON, RatingSpecFromJSON, RatingSpecToJSON, Ratin
 export class RatingsApi extends runtime.BaseAPI {
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings spec with ratingId
+     * Delete CwmsData ratings spec with ratingId
      */
-    deleteSwtDataRatingsSpecWithRatingIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataRatingsSpecWithRatingIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['ratingId'] == null) {
-                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling deleteSwtDataRatingsSpecWithRatingId().');
+                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling deleteCwmsDataRatingsSpecWithRatingId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataRatingsSpecWithRatingId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataRatingsSpecWithRatingId().');
             }
             if (requestParameters['method'] == null) {
-                throw new runtime.RequiredError('method', 'Required parameter "method" was null or undefined when calling deleteSwtDataRatingsSpecWithRatingId().');
+                throw new runtime.RequiredError('method', 'Required parameter "method" was null or undefined when calling deleteCwmsDataRatingsSpecWithRatingId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -63,27 +63,27 @@ export class RatingsApi extends runtime.BaseAPI {
     }
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings spec with ratingId
+     * Delete CwmsData ratings spec with ratingId
      */
-    deleteSwtDataRatingsSpecWithRatingId(requestParameters, initOverrides) {
+    deleteCwmsDataRatingsSpecWithRatingId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataRatingsSpecWithRatingIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataRatingsSpecWithRatingIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings template with templateId
+     * Delete CwmsData ratings template with templateId
      */
-    deleteSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['templateId'] == null) {
-                throw new runtime.RequiredError('templateId', 'Required parameter "templateId" was null or undefined when calling deleteSwtDataRatingsTemplateWithTemplateId().');
+                throw new runtime.RequiredError('templateId', 'Required parameter "templateId" was null or undefined when calling deleteCwmsDataRatingsTemplateWithTemplateId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataRatingsTemplateWithTemplateId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataRatingsTemplateWithTemplateId().');
             }
             if (requestParameters['method'] == null) {
-                throw new runtime.RequiredError('method', 'Required parameter "method" was null or undefined when calling deleteSwtDataRatingsTemplateWithTemplateId().');
+                throw new runtime.RequiredError('method', 'Required parameter "method" was null or undefined when calling deleteCwmsDataRatingsTemplateWithTemplateId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -107,29 +107,29 @@ export class RatingsApi extends runtime.BaseAPI {
     }
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings template with templateId
+     * Delete CwmsData ratings template with templateId
      */
-    deleteSwtDataRatingsTemplateWithTemplateId(requestParameters, initOverrides) {
+    deleteCwmsDataRatingsTemplateWithTemplateId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides);
         });
     }
     /**
-     * Delete swtData ratings with ratingId
+     * Delete CwmsData ratings with ratingId
      */
-    deleteSwtDataRatingsWithRatingIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataRatingsWithRatingIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['ratingId'] == null) {
-                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling deleteSwtDataRatingsWithRatingId().');
+                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling deleteCwmsDataRatingsWithRatingId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataRatingsWithRatingId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataRatingsWithRatingId().');
             }
             if (requestParameters['begin'] == null) {
-                throw new runtime.RequiredError('begin', 'Required parameter "begin" was null or undefined when calling deleteSwtDataRatingsWithRatingId().');
+                throw new runtime.RequiredError('begin', 'Required parameter "begin" was null or undefined when calling deleteCwmsDataRatingsWithRatingId().');
             }
             if (requestParameters['end'] == null) {
-                throw new runtime.RequiredError('end', 'Required parameter "end" was null or undefined when calling deleteSwtDataRatingsWithRatingId().');
+                throw new runtime.RequiredError('end', 'Required parameter "end" was null or undefined when calling deleteCwmsDataRatingsWithRatingId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -158,17 +158,17 @@ export class RatingsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Delete swtData ratings with ratingId
+     * Delete CwmsData ratings with ratingId
      */
-    deleteSwtDataRatingsWithRatingId(requestParameters, initOverrides) {
+    deleteCwmsDataRatingsWithRatingId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
         });
     }
     /**
-     * Get swtData ratings
+     * Get CwmsData ratings
      */
-    getSwtDataRatingsRaw(requestParameters, initOverrides) {
+    getRatingsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['name'] != null) {
@@ -209,18 +209,18 @@ export class RatingsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData ratings
+     * Get CwmsData ratings
      */
-    getSwtDataRatings(requestParameters = {}, initOverrides) {
+    getRatings(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataRatingsRaw(requestParameters, initOverrides);
+            const response = yield this.getRatingsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Get swtData ratings metadata
+     * Get CwmsData ratings metadata
      */
-    getSwtDataRatingsMetadataRaw(requestParameters, initOverrides) {
+    getRatingsMetadataRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -258,18 +258,18 @@ export class RatingsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData ratings metadata
+     * Get CwmsData ratings metadata
      */
-    getSwtDataRatingsMetadata(requestParameters = {}, initOverrides) {
+    getRatingsMetadata(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataRatingsMetadataRaw(requestParameters, initOverrides);
+            const response = yield this.getRatingsMetadataRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Get swtData ratings spec
+     * Get CwmsData ratings spec
      */
-    getSwtDataRatingsSpecRaw(requestParameters, initOverrides) {
+    getRatingsSpecRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -298,24 +298,24 @@ export class RatingsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData ratings spec
+     * Get CwmsData ratings spec
      */
-    getSwtDataRatingsSpec(requestParameters = {}, initOverrides) {
+    getRatingsSpec(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataRatingsSpecRaw(requestParameters, initOverrides);
+            const response = yield this.getRatingsSpecRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Get swtData ratings spec with ratingId
+     * Get CwmsData ratings spec with ratingId
      */
-    getSwtDataRatingsSpecWithRatingIdRaw(requestParameters, initOverrides) {
+    getRatingsSpecWithRatingIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['ratingId'] == null) {
-                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling getSwtDataRatingsSpecWithRatingId().');
+                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling getRatingsSpecWithRatingId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataRatingsSpecWithRatingId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getRatingsSpecWithRatingId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -335,18 +335,18 @@ export class RatingsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData ratings spec with ratingId
+     * Get CwmsData ratings spec with ratingId
      */
-    getSwtDataRatingsSpecWithRatingId(requestParameters, initOverrides) {
+    getRatingsSpecWithRatingId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataRatingsSpecWithRatingIdRaw(requestParameters, initOverrides);
+            const response = yield this.getRatingsSpecWithRatingIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Get swtData ratings template
+     * Get CwmsData ratings template
      */
-    getSwtDataRatingsTemplateRaw(requestParameters, initOverrides) {
+    getRatingsTemplateRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -375,24 +375,24 @@ export class RatingsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData ratings template
+     * Get CwmsData ratings template
      */
-    getSwtDataRatingsTemplate(requestParameters = {}, initOverrides) {
+    getRatingsTemplate(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataRatingsTemplateRaw(requestParameters, initOverrides);
+            const response = yield this.getRatingsTemplateRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Get swtData ratings template with templateId
+     * Get CwmsData ratings template with templateId
      */
-    getSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides) {
+    getRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['templateId'] == null) {
-                throw new runtime.RequiredError('templateId', 'Required parameter "templateId" was null or undefined when calling getSwtDataRatingsTemplateWithTemplateId().');
+                throw new runtime.RequiredError('templateId', 'Required parameter "templateId" was null or undefined when calling getRatingsTemplateWithTemplateId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataRatingsTemplateWithTemplateId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getRatingsTemplateWithTemplateId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -412,25 +412,25 @@ export class RatingsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData ratings template with templateId
+     * Get CwmsData ratings template with templateId
      */
-    getSwtDataRatingsTemplateWithTemplateId(requestParameters, initOverrides) {
+    getRatingsTemplateWithTemplateId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides);
+            const response = yield this.getRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Returns CWMS Rating Data
-     * Get swtData ratings with ratingId
+     * Get CwmsData ratings with ratingId
      */
-    getSwtDataRatingsWithRatingIdRaw(requestParameters, initOverrides) {
+    getRatingsWithRatingIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['ratingId'] == null) {
-                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling getSwtDataRatingsWithRatingId().');
+                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling getRatingsWithRatingId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataRatingsWithRatingId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getRatingsWithRatingId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -463,25 +463,25 @@ export class RatingsApi extends runtime.BaseAPI {
     }
     /**
      * Returns CWMS Rating Data
-     * Get swtData ratings with ratingId
+     * Get CwmsData ratings with ratingId
      */
-    getSwtDataRatingsWithRatingId(requestParameters, initOverrides) {
+    getRatingsWithRatingId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
+            const response = yield this.getRatingsWithRatingIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Update a RatingSet
-     * Patch swtData ratings with ratingId
+     * Patch CwmsData ratings with ratingId
      */
-    patchSwtDataRatingsWithRatingIdRaw(requestParameters, initOverrides) {
+    patchCwmsDataRatingsWithRatingIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['ratingId'] == null) {
-                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling patchSwtDataRatingsWithRatingId().');
+                throw new runtime.RequiredError('ratingId', 'Required parameter "ratingId" was null or undefined when calling patchCwmsDataRatingsWithRatingId().');
             }
             if (requestParameters['body'] == null) {
-                throw new runtime.RequiredError('body', 'Required parameter "body" was null or undefined when calling patchSwtDataRatingsWithRatingId().');
+                throw new runtime.RequiredError('body', 'Required parameter "body" was null or undefined when calling patchCwmsDataRatingsWithRatingId().');
             }
             const queryParameters = {};
             if (requestParameters['storeTemplate'] != null) {
@@ -504,21 +504,21 @@ export class RatingsApi extends runtime.BaseAPI {
     }
     /**
      * Update a RatingSet
-     * Patch swtData ratings with ratingId
+     * Patch CwmsData ratings with ratingId
      */
-    patchSwtDataRatingsWithRatingId(requestParameters, initOverrides) {
+    patchCwmsDataRatingsWithRatingId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Create new RatingSet
-     * Post swtData ratings
+     * Post CwmsData ratings
      */
-    postSwtDataRatingsRaw(requestParameters, initOverrides) {
+    postCwmsDataRatingsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['body'] == null) {
-                throw new runtime.RequiredError('body', 'Required parameter "body" was null or undefined when calling postSwtDataRatings().');
+                throw new runtime.RequiredError('body', 'Required parameter "body" was null or undefined when calling postCwmsDataRatings().');
             }
             const queryParameters = {};
             if (requestParameters['storeTemplate'] != null) {
@@ -541,21 +541,21 @@ export class RatingsApi extends runtime.BaseAPI {
     }
     /**
      * Create new RatingSet
-     * Post swtData ratings
+     * Post CwmsData ratings
      */
-    postSwtDataRatings(requestParameters, initOverrides) {
+    postCwmsDataRatings(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataRatingsRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataRatingsRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Create new Rating Specification
-     * Post swtData ratings spec
+     * Post CwmsData ratings spec
      */
-    postSwtDataRatingsSpecRaw(requestParameters, initOverrides) {
+    postCwmsDataRatingsSpecRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['ratingSpec'] == null) {
-                throw new runtime.RequiredError('ratingSpec', 'Required parameter "ratingSpec" was null or undefined when calling postSwtDataRatingsSpec().');
+                throw new runtime.RequiredError('ratingSpec', 'Required parameter "ratingSpec" was null or undefined when calling postCwmsDataRatingsSpec().');
             }
             const queryParameters = {};
             if (requestParameters['failIfExists'] != null) {
@@ -578,21 +578,21 @@ export class RatingsApi extends runtime.BaseAPI {
     }
     /**
      * Create new Rating Specification
-     * Post swtData ratings spec
+     * Post CwmsData ratings spec
      */
-    postSwtDataRatingsSpec(requestParameters, initOverrides) {
+    postCwmsDataRatingsSpec(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataRatingsSpecRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataRatingsSpecRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Create new Rating Template
-     * Post swtData ratings template
+     * Post CwmsData ratings template
      */
-    postSwtDataRatingsTemplateRaw(requestParameters, initOverrides) {
+    postCwmsDataRatingsTemplateRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['ratingTemplate'] == null) {
-                throw new runtime.RequiredError('ratingTemplate', 'Required parameter "ratingTemplate" was null or undefined when calling postSwtDataRatingsTemplate().');
+                throw new runtime.RequiredError('ratingTemplate', 'Required parameter "ratingTemplate" was null or undefined when calling postCwmsDataRatingsTemplate().');
             }
             const queryParameters = {};
             if (requestParameters['failIfExists'] != null) {
@@ -615,11 +615,11 @@ export class RatingsApi extends runtime.BaseAPI {
     }
     /**
      * Create new Rating Template
-     * Post swtData ratings template
+     * Post CwmsData ratings template
      */
-    postSwtDataRatingsTemplate(requestParameters, initOverrides) {
+    postCwmsDataRatingsTemplate(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataRatingsTemplateRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataRatingsTemplateRaw(requestParameters, initOverrides);
         });
     }
 }

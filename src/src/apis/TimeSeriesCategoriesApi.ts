@@ -16,32 +16,32 @@
 import * as runtime from '../runtime';
 import type {
   CdaError,
-  TimeSeriesCategory,
+  TimeseriesCategory,
 } from '../models/index';
 import {
     CdaErrorFromJSON,
     CdaErrorToJSON,
-    TimeSeriesCategoryFromJSON,
-    TimeSeriesCategoryToJSON,
+    TimeseriesCategoryFromJSON,
+    TimeseriesCategoryToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataTimeSeriesCategoryWithCategoryIdRequest {
+export interface DeleteCwmsDataTimeSeriesCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
     cascadeDelete?: boolean;
 }
 
-export interface GetSwtDataTimeSeriesCategoryRequest {
+export interface GetTimeSeriesCategoryRequest {
     office?: string;
 }
 
-export interface GetSwtDataTimeSeriesCategoryWithCategoryIdRequest {
+export interface GetTimeSeriesCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
 }
 
-export interface PostSwtDataTimeSeriesCategoryRequest {
-    timeSeriesCategory: TimeSeriesCategory;
+export interface PostCwmsDataTimeSeriesCategoryRequest {
+    timeseriesCategory: TimeseriesCategory;
     failIfExists?: boolean;
 }
 
@@ -52,20 +52,20 @@ export class TimeSeriesCategoriesApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested time series category
-     * Delete swtData timeseries category with categoryId
+     * Delete CwmsData timeseries category with categoryId
      */
-    async deleteSwtDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters: DeleteSwtDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters: DeleteCwmsDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling deleteSwtDataTimeSeriesCategoryWithCategoryId().'
+                'Required parameter "categoryId" was null or undefined when calling deleteCwmsDataTimeSeriesCategoryWithCategoryId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeSeriesCategoryWithCategoryId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataTimeSeriesCategoryWithCategoryId().'
             );
         }
 
@@ -97,17 +97,17 @@ export class TimeSeriesCategoriesApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested time series category
-     * Delete swtData timeseries category with categoryId
+     * Delete CwmsData timeseries category with categoryId
      */
-    async deleteSwtDataTimeSeriesCategoryWithCategoryId(requestParameters: DeleteSwtDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataTimeSeriesCategoryWithCategoryId(requestParameters: DeleteCwmsDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns CWMS timeseries category Data
-     * Get swtData timeseries category
+     * Get CwmsData timeseries category
      */
-    async getSwtDataTimeSeriesCategoryRaw(requestParameters: GetSwtDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeSeriesCategory>>> {
+    async getTimeSeriesCategoryRaw(requestParameters: GetTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeseriesCategory>>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -127,34 +127,34 @@ export class TimeSeriesCategoriesApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(TimeSeriesCategoryFromJSON));
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(TimeseriesCategoryFromJSON));
     }
 
     /**
      * Returns CWMS timeseries category Data
-     * Get swtData timeseries category
+     * Get CwmsData timeseries category
      */
-    async getSwtDataTimeSeriesCategory(requestParameters: GetSwtDataTimeSeriesCategoryRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeSeriesCategory>> {
-        const response = await this.getSwtDataTimeSeriesCategoryRaw(requestParameters, initOverrides);
+    async getTimeSeriesCategory(requestParameters: GetTimeSeriesCategoryRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeseriesCategory>> {
+        const response = await this.getTimeSeriesCategoryRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Retrieves requested timeseries category
-     * Get swtData timeseries category with categoryId
+     * Get CwmsData timeseries category with categoryId
      */
-    async getSwtDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters: GetSwtDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeriesCategory>> {
+    async getTimeSeriesCategoryWithCategoryIdRaw(requestParameters: GetTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesCategory>> {
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling getSwtDataTimeSeriesCategoryWithCategoryId().'
+                'Required parameter "categoryId" was null or undefined when calling getTimeSeriesCategoryWithCategoryId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataTimeSeriesCategoryWithCategoryId().'
+                'Required parameter "office" was null or undefined when calling getTimeSeriesCategoryWithCategoryId().'
             );
         }
 
@@ -177,27 +177,27 @@ export class TimeSeriesCategoriesApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TimeSeriesCategoryFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => TimeseriesCategoryFromJSON(jsonValue));
     }
 
     /**
      * Retrieves requested timeseries category
-     * Get swtData timeseries category with categoryId
+     * Get CwmsData timeseries category with categoryId
      */
-    async getSwtDataTimeSeriesCategoryWithCategoryId(requestParameters: GetSwtDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeriesCategory> {
-        const response = await this.getSwtDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+    async getTimeSeriesCategoryWithCategoryId(requestParameters: GetTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesCategory> {
+        const response = await this.getTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Create new TimeSeriesCategory
-     * Post swtData timeseries category
+     * Post CwmsData timeseries category
      */
-    async postSwtDataTimeSeriesCategoryRaw(requestParameters: PostSwtDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters['timeSeriesCategory'] == null) {
+    async postCwmsDataTimeSeriesCategoryRaw(requestParameters: PostCwmsDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['timeseriesCategory'] == null) {
             throw new runtime.RequiredError(
-                'timeSeriesCategory',
-                'Required parameter "timeSeriesCategory" was null or undefined when calling postSwtDataTimeSeriesCategory().'
+                'timeseriesCategory',
+                'Required parameter "timeseriesCategory" was null or undefined when calling postCwmsDataTimeSeriesCategory().'
             );
         }
 
@@ -220,7 +220,7 @@ export class TimeSeriesCategoriesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TimeSeriesCategoryToJSON(requestParameters['timeSeriesCategory']),
+            body: TimeseriesCategoryToJSON(requestParameters['timeseriesCategory']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -228,10 +228,10 @@ export class TimeSeriesCategoriesApi extends runtime.BaseAPI {
 
     /**
      * Create new TimeSeriesCategory
-     * Post swtData timeseries category
+     * Post CwmsData timeseries category
      */
-    async postSwtDataTimeSeriesCategory(requestParameters: PostSwtDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataTimeSeriesCategoryRaw(requestParameters, initOverrides);
+    async postCwmsDataTimeSeriesCategory(requestParameters: PostCwmsDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataTimeSeriesCategoryRaw(requestParameters, initOverrides);
     }
 
 }

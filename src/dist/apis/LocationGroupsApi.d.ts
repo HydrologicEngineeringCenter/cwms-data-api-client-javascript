@@ -11,29 +11,29 @@
  */
 import * as runtime from '../runtime';
 import type { LocationGroup } from '../models/index';
-export interface DeleteSwtDataLocationGroupWithGroupIdRequest {
+export interface DeleteCwmsDataLocationGroupWithGroupIdRequest {
     groupId: string;
     categoryId: string;
     office: string;
     cascadeDelete?: boolean;
 }
-export interface GetSwtDataLocationGroupRequest {
+export interface GetLocationGroupRequest {
     office?: string;
     includeAssigned?: boolean;
     locationCategoryLike?: string;
 }
-export interface GetSwtDataLocationGroupWithGroupIdRequest {
+export interface GetLocationGroupWithGroupIdRequest {
     groupId: string;
     office: string;
     categoryId: string;
 }
-export interface PatchSwtDataLocationGroupWithGroupIdRequest {
+export interface PatchCwmsDataLocationGroupWithGroupIdRequest {
     groupId: string;
     office: string;
     locationGroup: LocationGroup;
     replaceAssignedLocs?: boolean;
 }
-export interface PostSwtDataLocationGroupRequest {
+export interface PostCwmsDataLocationGroupRequest {
     locationGroup: LocationGroup;
 }
 /**
@@ -42,52 +42,52 @@ export interface PostSwtDataLocationGroupRequest {
 export declare class LocationGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes requested location group
-     * Delete swtData location group with groupId
+     * Delete CwmsData location group with groupId
      */
-    deleteSwtDataLocationGroupWithGroupIdRaw(requestParameters: DeleteSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataLocationGroupWithGroupIdRaw(requestParameters: DeleteCwmsDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes requested location group
-     * Delete swtData location group with groupId
+     * Delete CwmsData location group with groupId
      */
-    deleteSwtDataLocationGroupWithGroupId(requestParameters: DeleteSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataLocationGroupWithGroupId(requestParameters: DeleteCwmsDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns CWMS Location Groups Data
-     * Get swtData location group
+     * Get CwmsData location group
      */
-    getSwtDataLocationGroupRaw(requestParameters: GetSwtDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LocationGroup>>>;
+    getLocationGroupRaw(requestParameters: GetLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LocationGroup>>>;
     /**
      * Returns CWMS Location Groups Data
-     * Get swtData location group
+     * Get CwmsData location group
      */
-    getSwtDataLocationGroup(requestParameters?: GetSwtDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LocationGroup>>;
+    getLocationGroup(requestParameters?: GetLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LocationGroup>>;
     /**
      * Retrieves requested Location Group
-     * Get swtData location group with groupId
+     * Get CwmsData location group with groupId
      */
-    getSwtDataLocationGroupWithGroupIdRaw(requestParameters: GetSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationGroup>>;
+    getLocationGroupWithGroupIdRaw(requestParameters: GetLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationGroup>>;
     /**
      * Retrieves requested Location Group
-     * Get swtData location group with groupId
+     * Get CwmsData location group with groupId
      */
-    getSwtDataLocationGroupWithGroupId(requestParameters: GetSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationGroup>;
+    getLocationGroupWithGroupId(requestParameters: GetLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationGroup>;
     /**
      * Update existing LocationGroup. Allows for renaming group, assigning new locations, and unassigning all locations from the group.
-     * Patch swtData location group with groupId
+     * Patch CwmsData location group with groupId
      */
-    patchSwtDataLocationGroupWithGroupIdRaw(requestParameters: PatchSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataLocationGroupWithGroupIdRaw(requestParameters: PatchCwmsDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Update existing LocationGroup. Allows for renaming group, assigning new locations, and unassigning all locations from the group.
-     * Patch swtData location group with groupId
+     * Patch CwmsData location group with groupId
      */
-    patchSwtDataLocationGroupWithGroupId(requestParameters: PatchSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    patchCwmsDataLocationGroupWithGroupId(requestParameters: PatchCwmsDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Create new LocationGroup
-     * Post swtData location group
+     * Post CwmsData location group
      */
-    postSwtDataLocationGroupRaw(requestParameters: PostSwtDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataLocationGroupRaw(requestParameters: PostCwmsDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Create new LocationGroup
-     * Post swtData location group
+     * Post CwmsData location group
      */
-    postSwtDataLocationGroup(requestParameters: PostSwtDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataLocationGroup(requestParameters: PostCwmsDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

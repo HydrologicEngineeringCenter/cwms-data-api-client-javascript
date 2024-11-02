@@ -34,7 +34,7 @@ import {
     UnitSystemToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataTimeSeriesWithTimeSeriesRequest {
+export interface DeleteCwmsDataTimeSeriesWithTimeSeriesRequest {
     timeseries: string;
     office: string;
     begin: string;
@@ -47,7 +47,7 @@ export interface DeleteSwtDataTimeSeriesWithTimeSeriesRequest {
     overrideProtection?: boolean;
 }
 
-export interface GetSwtDataTimeSeriesRequest {
+export interface GetTimeSeriesRequest {
     name: string;
     office?: string;
     unit?: string;
@@ -62,7 +62,7 @@ export interface GetSwtDataTimeSeriesRequest {
     pageSize?: number;
 }
 
-export interface GetSwtDataTimeSeriesRecentRequest {
+export interface GetTimeSeriesRecentRequest {
     office?: string;
     categoryId?: string;
     groupId?: string;
@@ -70,7 +70,7 @@ export interface GetSwtDataTimeSeriesRecentRequest {
     unitSystem?: UnitSystem;
 }
 
-export interface PatchSwtDataTimeSeriesWithTimeSeriesRequest {
+export interface PatchCwmsDataTimeSeriesWithTimeSeriesRequest {
     timeseries: string;
     timeSeries: TimeSeries;
     timezone?: string;
@@ -79,7 +79,7 @@ export interface PatchSwtDataTimeSeriesWithTimeSeriesRequest {
     overrideProtection?: boolean;
 }
 
-export interface PostSwtDataTimeSeriesRequest {
+export interface PostCwmsDataTimeSeriesRequest {
     timeSeries: TimeSeries;
     timezone?: string;
     createAsLrts?: boolean;
@@ -93,34 +93,34 @@ export interface PostSwtDataTimeSeriesRequest {
 export class TimeSeriesApi extends runtime.BaseAPI {
 
     /**
-     * Delete swtData timeseries with timeseries
+     * Delete CwmsData timeseries with timeseries
      */
-    async deleteSwtDataTimeSeriesWithTimeSeriesRaw(requestParameters: DeleteSwtDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters: DeleteCwmsDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['timeseries'] == null) {
             throw new runtime.RequiredError(
                 'timeseries',
-                'Required parameter "timeseries" was null or undefined when calling deleteSwtDataTimeSeriesWithTimeSeries().'
+                'Required parameter "timeseries" was null or undefined when calling deleteCwmsDataTimeSeriesWithTimeSeries().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeSeriesWithTimeSeries().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataTimeSeriesWithTimeSeries().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling deleteSwtDataTimeSeriesWithTimeSeries().'
+                'Required parameter "begin" was null or undefined when calling deleteCwmsDataTimeSeriesWithTimeSeries().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling deleteSwtDataTimeSeriesWithTimeSeries().'
+                'Required parameter "end" was null or undefined when calling deleteCwmsDataTimeSeriesWithTimeSeries().'
             );
         }
 
@@ -179,20 +179,20 @@ export class TimeSeriesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Delete swtData timeseries with timeseries
+     * Delete CwmsData timeseries with timeseries
      */
-    async deleteSwtDataTimeSeriesWithTimeSeries(requestParameters: DeleteSwtDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides);
+    async deleteCwmsDataTimeSeriesWithTimeSeries(requestParameters: DeleteCwmsDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Get swtData timeseries
+     * Get CwmsData timeseries
      */
-    async getSwtDataTimeSeriesRaw(requestParameters: GetSwtDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeries>> {
+    async getTimeSeriesRaw(requestParameters: GetTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeries>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataTimeSeries().'
+                'Required parameter "name" was null or undefined when calling getTimeSeries().'
             );
         }
 
@@ -263,18 +263,18 @@ export class TimeSeriesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData timeseries
+     * Get CwmsData timeseries
      */
-    async getSwtDataTimeSeries(requestParameters: GetSwtDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeries> {
-        const response = await this.getSwtDataTimeSeriesRaw(requestParameters, initOverrides);
+    async getTimeSeries(requestParameters: GetTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeries> {
+        const response = await this.getTimeSeriesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Time Series Groups Data
-     * Get swtData timeseries recent
+     * Get CwmsData timeseries recent
      */
-    async getSwtDataTimeSeriesRecentRaw(requestParameters: GetSwtDataTimeSeriesRecentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Tsv>>> {
+    async getTimeSeriesRecentRaw(requestParameters: GetTimeSeriesRecentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Tsv>>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -315,29 +315,29 @@ export class TimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Time Series Groups Data
-     * Get swtData timeseries recent
+     * Get CwmsData timeseries recent
      */
-    async getSwtDataTimeSeriesRecent(requestParameters: GetSwtDataTimeSeriesRecentRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Tsv>> {
-        const response = await this.getSwtDataTimeSeriesRecentRaw(requestParameters, initOverrides);
+    async getTimeSeriesRecent(requestParameters: GetTimeSeriesRecentRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Tsv>> {
+        const response = await this.getTimeSeriesRecentRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update a TimeSeries with provided values
-     * Patch swtData timeseries with timeseries
+     * Patch CwmsData timeseries with timeseries
      */
-    async patchSwtDataTimeSeriesWithTimeSeriesRaw(requestParameters: PatchSwtDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters: PatchCwmsDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['timeseries'] == null) {
             throw new runtime.RequiredError(
                 'timeseries',
-                'Required parameter "timeseries" was null or undefined when calling patchSwtDataTimeSeriesWithTimeSeries().'
+                'Required parameter "timeseries" was null or undefined when calling patchCwmsDataTimeSeriesWithTimeSeries().'
             );
         }
 
         if (requestParameters['timeSeries'] == null) {
             throw new runtime.RequiredError(
                 'timeSeries',
-                'Required parameter "timeSeries" was null or undefined when calling patchSwtDataTimeSeriesWithTimeSeries().'
+                'Required parameter "timeSeries" was null or undefined when calling patchCwmsDataTimeSeriesWithTimeSeries().'
             );
         }
 
@@ -380,21 +380,21 @@ export class TimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Update a TimeSeries with provided values
-     * Patch swtData timeseries with timeseries
+     * Patch CwmsData timeseries with timeseries
      */
-    async patchSwtDataTimeSeriesWithTimeSeries(requestParameters: PatchSwtDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides);
+    async patchCwmsDataTimeSeriesWithTimeSeries(requestParameters: PatchCwmsDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters, initOverrides);
     }
 
     /**
      * Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds 
-     * Post swtData timeseries
+     * Post CwmsData timeseries
      */
-    async postSwtDataTimeSeriesRaw(requestParameters: PostSwtDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataTimeSeriesRaw(requestParameters: PostCwmsDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['timeSeries'] == null) {
             throw new runtime.RequiredError(
                 'timeSeries',
-                'Required parameter "timeSeries" was null or undefined when calling postSwtDataTimeSeries().'
+                'Required parameter "timeSeries" was null or undefined when calling postCwmsDataTimeSeries().'
             );
         }
 
@@ -437,10 +437,10 @@ export class TimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds 
-     * Post swtData timeseries
+     * Post CwmsData timeseries
      */
-    async postSwtDataTimeSeries(requestParameters: PostSwtDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataTimeSeriesRaw(requestParameters, initOverrides);
+    async postCwmsDataTimeSeries(requestParameters: PostCwmsDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataTimeSeriesRaw(requestParameters, initOverrides);
     }
 
 }

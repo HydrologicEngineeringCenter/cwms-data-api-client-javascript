@@ -11,24 +11,24 @@
  */
 import * as runtime from '../runtime';
 import type { DatabaseLoadMethod, DeleteMethod, RatingMetadataList, RatingSpec, RatingSpecs, RatingTemplate, RatingTemplates } from '../models/index';
-export interface DeleteSwtDataRatingsSpecWithRatingIdRequest {
+export interface DeleteCwmsDataRatingsSpecWithRatingIdRequest {
     ratingId: string;
     office: string;
     method: DeleteMethod;
 }
-export interface DeleteSwtDataRatingsTemplateWithTemplateIdRequest {
+export interface DeleteCwmsDataRatingsTemplateWithTemplateIdRequest {
     templateId: string;
     office: string;
     method: DeleteMethod;
 }
-export interface DeleteSwtDataRatingsWithRatingIdRequest {
+export interface DeleteCwmsDataRatingsWithRatingIdRequest {
     ratingId: string;
     office: string;
     begin: string;
     end: string;
     timezone?: string;
 }
-export interface GetSwtDataRatingsRequest {
+export interface GetRatingsRequest {
     name?: string;
     office?: string;
     unit?: string;
@@ -38,7 +38,7 @@ export interface GetSwtDataRatingsRequest {
     timezone?: string;
     format?: string;
 }
-export interface GetSwtDataRatingsMetadataRequest {
+export interface GetRatingsMetadataRequest {
     office?: string;
     ratingIdMask?: string;
     start?: string;
@@ -47,27 +47,27 @@ export interface GetSwtDataRatingsMetadataRequest {
     page?: string;
     pageSize?: number;
 }
-export interface GetSwtDataRatingsSpecRequest {
+export interface GetRatingsSpecRequest {
     office?: string;
     ratingIdMask?: string;
     page?: string;
     pageSize?: number;
 }
-export interface GetSwtDataRatingsSpecWithRatingIdRequest {
+export interface GetRatingsSpecWithRatingIdRequest {
     ratingId: string;
     office: string;
 }
-export interface GetSwtDataRatingsTemplateRequest {
+export interface GetRatingsTemplateRequest {
     office?: string;
     templateIdMask?: string;
     page?: string;
     pageSize?: number;
 }
-export interface GetSwtDataRatingsTemplateWithTemplateIdRequest {
+export interface GetRatingsTemplateWithTemplateIdRequest {
     templateId: string;
     office: string;
 }
-export interface GetSwtDataRatingsWithRatingIdRequest {
+export interface GetRatingsWithRatingIdRequest {
     ratingId: string;
     office: string;
     begin?: string;
@@ -75,20 +75,20 @@ export interface GetSwtDataRatingsWithRatingIdRequest {
     timezone?: string;
     method?: DatabaseLoadMethod;
 }
-export interface PatchSwtDataRatingsWithRatingIdRequest {
+export interface PatchCwmsDataRatingsWithRatingIdRequest {
     ratingId: string;
     body: object;
     storeTemplate?: boolean;
 }
-export interface PostSwtDataRatingsRequest {
+export interface PostCwmsDataRatingsRequest {
     body: object;
     storeTemplate?: boolean;
 }
-export interface PostSwtDataRatingsSpecRequest {
+export interface PostCwmsDataRatingsSpecRequest {
     ratingSpec: RatingSpec;
     failIfExists?: boolean;
 }
-export interface PostSwtDataRatingsTemplateRequest {
+export interface PostCwmsDataRatingsTemplateRequest {
     ratingTemplate: RatingTemplate;
     failIfExists?: boolean;
 }
@@ -98,128 +98,128 @@ export interface PostSwtDataRatingsTemplateRequest {
 export declare class RatingsApi extends runtime.BaseAPI {
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings spec with ratingId
+     * Delete CwmsData ratings spec with ratingId
      */
-    deleteSwtDataRatingsSpecWithRatingIdRaw(requestParameters: DeleteSwtDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataRatingsSpecWithRatingIdRaw(requestParameters: DeleteCwmsDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings spec with ratingId
+     * Delete CwmsData ratings spec with ratingId
      */
-    deleteSwtDataRatingsSpecWithRatingId(requestParameters: DeleteSwtDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataRatingsSpecWithRatingId(requestParameters: DeleteCwmsDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings template with templateId
+     * Delete CwmsData ratings template with templateId
      */
-    deleteSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters: DeleteSwtDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataRatingsTemplateWithTemplateIdRaw(requestParameters: DeleteCwmsDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings template with templateId
+     * Delete CwmsData ratings template with templateId
      */
-    deleteSwtDataRatingsTemplateWithTemplateId(requestParameters: DeleteSwtDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataRatingsTemplateWithTemplateId(requestParameters: DeleteCwmsDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Delete swtData ratings with ratingId
+     * Delete CwmsData ratings with ratingId
      */
-    deleteSwtDataRatingsWithRatingIdRaw(requestParameters: DeleteSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataRatingsWithRatingIdRaw(requestParameters: DeleteCwmsDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Delete swtData ratings with ratingId
+     * Delete CwmsData ratings with ratingId
      */
-    deleteSwtDataRatingsWithRatingId(requestParameters: DeleteSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataRatingsWithRatingId(requestParameters: DeleteCwmsDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Get swtData ratings
+     * Get CwmsData ratings
      */
-    getSwtDataRatingsRaw(requestParameters: GetSwtDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    getRatingsRaw(requestParameters: GetRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
-     * Get swtData ratings
+     * Get CwmsData ratings
      */
-    getSwtDataRatings(requestParameters?: GetSwtDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    getRatings(requestParameters?: GetRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
-     * Get swtData ratings metadata
+     * Get CwmsData ratings metadata
      */
-    getSwtDataRatingsMetadataRaw(requestParameters: GetSwtDataRatingsMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingMetadataList>>;
+    getRatingsMetadataRaw(requestParameters: GetRatingsMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingMetadataList>>;
     /**
-     * Get swtData ratings metadata
+     * Get CwmsData ratings metadata
      */
-    getSwtDataRatingsMetadata(requestParameters?: GetSwtDataRatingsMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingMetadataList>;
+    getRatingsMetadata(requestParameters?: GetRatingsMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingMetadataList>;
     /**
-     * Get swtData ratings spec
+     * Get CwmsData ratings spec
      */
-    getSwtDataRatingsSpecRaw(requestParameters: GetSwtDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingSpecs>>;
+    getRatingsSpecRaw(requestParameters: GetRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingSpecs>>;
     /**
-     * Get swtData ratings spec
+     * Get CwmsData ratings spec
      */
-    getSwtDataRatingsSpec(requestParameters?: GetSwtDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingSpecs>;
+    getRatingsSpec(requestParameters?: GetRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingSpecs>;
     /**
-     * Get swtData ratings spec with ratingId
+     * Get CwmsData ratings spec with ratingId
      */
-    getSwtDataRatingsSpecWithRatingIdRaw(requestParameters: GetSwtDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingSpec>>;
+    getRatingsSpecWithRatingIdRaw(requestParameters: GetRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingSpec>>;
     /**
-     * Get swtData ratings spec with ratingId
+     * Get CwmsData ratings spec with ratingId
      */
-    getSwtDataRatingsSpecWithRatingId(requestParameters: GetSwtDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingSpec>;
+    getRatingsSpecWithRatingId(requestParameters: GetRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingSpec>;
     /**
-     * Get swtData ratings template
+     * Get CwmsData ratings template
      */
-    getSwtDataRatingsTemplateRaw(requestParameters: GetSwtDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingTemplates>>;
+    getRatingsTemplateRaw(requestParameters: GetRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingTemplates>>;
     /**
-     * Get swtData ratings template
+     * Get CwmsData ratings template
      */
-    getSwtDataRatingsTemplate(requestParameters?: GetSwtDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingTemplates>;
+    getRatingsTemplate(requestParameters?: GetRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingTemplates>;
     /**
-     * Get swtData ratings template with templateId
+     * Get CwmsData ratings template with templateId
      */
-    getSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters: GetSwtDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<RatingTemplate>>>;
+    getRatingsTemplateWithTemplateIdRaw(requestParameters: GetRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<RatingTemplate>>>;
     /**
-     * Get swtData ratings template with templateId
+     * Get CwmsData ratings template with templateId
      */
-    getSwtDataRatingsTemplateWithTemplateId(requestParameters: GetSwtDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<RatingTemplate>>;
+    getRatingsTemplateWithTemplateId(requestParameters: GetRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<RatingTemplate>>;
     /**
      * Returns CWMS Rating Data
-     * Get swtData ratings with ratingId
+     * Get CwmsData ratings with ratingId
      */
-    getSwtDataRatingsWithRatingIdRaw(requestParameters: GetSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    getRatingsWithRatingIdRaw(requestParameters: GetRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      * Returns CWMS Rating Data
-     * Get swtData ratings with ratingId
+     * Get CwmsData ratings with ratingId
      */
-    getSwtDataRatingsWithRatingId(requestParameters: GetSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    getRatingsWithRatingId(requestParameters: GetRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
      * Update a RatingSet
-     * Patch swtData ratings with ratingId
+     * Patch CwmsData ratings with ratingId
      */
-    patchSwtDataRatingsWithRatingIdRaw(requestParameters: PatchSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataRatingsWithRatingIdRaw(requestParameters: PatchCwmsDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Update a RatingSet
-     * Patch swtData ratings with ratingId
+     * Patch CwmsData ratings with ratingId
      */
-    patchSwtDataRatingsWithRatingId(requestParameters: PatchSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    patchCwmsDataRatingsWithRatingId(requestParameters: PatchCwmsDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Create new RatingSet
-     * Post swtData ratings
+     * Post CwmsData ratings
      */
-    postSwtDataRatingsRaw(requestParameters: PostSwtDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataRatingsRaw(requestParameters: PostCwmsDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Create new RatingSet
-     * Post swtData ratings
+     * Post CwmsData ratings
      */
-    postSwtDataRatings(requestParameters: PostSwtDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataRatings(requestParameters: PostCwmsDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Create new Rating Specification
-     * Post swtData ratings spec
+     * Post CwmsData ratings spec
      */
-    postSwtDataRatingsSpecRaw(requestParameters: PostSwtDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataRatingsSpecRaw(requestParameters: PostCwmsDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Create new Rating Specification
-     * Post swtData ratings spec
+     * Post CwmsData ratings spec
      */
-    postSwtDataRatingsSpec(requestParameters: PostSwtDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataRatingsSpec(requestParameters: PostCwmsDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Create new Rating Template
-     * Post swtData ratings template
+     * Post CwmsData ratings template
      */
-    postSwtDataRatingsTemplateRaw(requestParameters: PostSwtDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataRatingsTemplateRaw(requestParameters: PostCwmsDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Create new Rating Template
-     * Post swtData ratings template
+     * Post CwmsData ratings template
      */
-    postSwtDataRatingsTemplate(requestParameters: PostSwtDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataRatingsTemplate(requestParameters: PostCwmsDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

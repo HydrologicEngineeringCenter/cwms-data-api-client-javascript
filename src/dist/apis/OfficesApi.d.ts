@@ -11,11 +11,11 @@
  */
 import * as runtime from '../runtime';
 import type { OfficeFormatV1 } from '../models/index';
-export interface GetSwtDataOfficesRequest {
+export interface GetOfficesRequest {
     format?: string;
     hasData?: boolean;
 }
-export interface GetSwtDataOfficesWithOfficeRequest {
+export interface GetOfficesWithOfficeRequest {
     office: string;
     format?: string;
 }
@@ -24,19 +24,19 @@ export interface GetSwtDataOfficesWithOfficeRequest {
  */
 export declare class OfficesApi extends runtime.BaseAPI {
     /**
-     * Get swtData offices
+     * Get CwmsData offices
      */
-    getSwtDataOfficesRaw(requestParameters: GetSwtDataOfficesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OfficeFormatV1>>;
+    getOfficesRaw(requestParameters: GetOfficesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OfficeFormatV1>>;
     /**
-     * Get swtData offices
+     * Get CwmsData offices
      */
-    getSwtDataOffices(requestParameters?: GetSwtDataOfficesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OfficeFormatV1>;
+    getOffices(requestParameters?: GetOfficesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OfficeFormatV1>;
     /**
-     * Get swtData offices with office
+     * Get CwmsData offices with office
      */
-    getSwtDataOfficesWithOfficeRaw(requestParameters: GetSwtDataOfficesWithOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OfficeFormatV1>>;
+    getOfficesWithOfficeRaw(requestParameters: GetOfficesWithOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OfficeFormatV1>>;
     /**
-     * Get swtData offices with office
+     * Get CwmsData offices with office
      */
-    getSwtDataOfficesWithOffice(requestParameters: GetSwtDataOfficesWithOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OfficeFormatV1>;
+    getOfficesWithOffice(requestParameters: GetOfficesWithOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OfficeFormatV1>;
 }

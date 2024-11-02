@@ -1,28 +1,28 @@
-import { PoolsApi, Configuration} from "cwmsjs";
-import fetch from 'node-fetch';
+import { PoolsApi, Configuration } from "cwmsjs";
+import fetch from "node-fetch";
 global.fetch = fetch;
 
-test('Test Pools', async () => {
-    const config = new Configuration({
-        "headers": {
-            "accept": "application/json;version=2",
-        }
+test("Test Pools", async () => {
+  const config = new Configuration({
+    headers: {
+      accept: "application/json;version=2",
+    },
+  });
+  const p_api = new PoolsApi(config);
+  await p_api
+    .getPoolsRaw({
+      office: "SWT",
     })
-    const p_api = new PoolsApi(config)
-    await p_api.getCwmsDataPoolsRaw({
-        "office": "SWT"
-    })
-    .then(async (r)=> {
-        const data = await r.raw.json()
-        console.log(data)
-        return data
+    .then(async (r) => {
+      const data = await r.raw.json();
+      console.log(data);
+      return data;
     })
     .then((data) => {
-            expect(data).toBeDefined()
-            // data.forEach((category) => {
-            //     expect(category).toBeDefined()
-            //     expect(category["id"]).toBeDefined()
-            // })
-        })
-
-}, 30000)
+      expect(data).toBeDefined();
+      // data.forEach((category) => {
+      //     expect(category).toBeDefined()
+      //     expect(category["id"]).toBeDefined()
+      // })
+    });
+}, 30000);

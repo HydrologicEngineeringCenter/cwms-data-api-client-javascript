@@ -31,9 +31,9 @@ const index_1 = require("../models/index");
 class PoolsApi extends runtime.BaseAPI {
     /**
      * Returns Pools Data
-     * Get swtData pools
+     * Get CwmsData pools
      */
-    getSwtDataPoolsRaw(requestParameters, initOverrides) {
+    getPoolsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -78,28 +78,28 @@ class PoolsApi extends runtime.BaseAPI {
     }
     /**
      * Returns Pools Data
-     * Get swtData pools
+     * Get CwmsData pools
      */
-    getSwtDataPools(requestParameters = {}, initOverrides) {
+    getPools(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataPoolsRaw(requestParameters, initOverrides);
+            const response = yield this.getPoolsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Retrieves requested Pool
-     * Get swtData pools with poolId
+     * Get CwmsData pools with poolId
      */
-    getSwtDataPoolsWithPoolIdRaw(requestParameters, initOverrides) {
+    getPoolsWithPoolIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['poolId'] == null) {
-                throw new runtime.RequiredError('poolId', 'Required parameter "poolId" was null or undefined when calling getSwtDataPoolsWithPoolId().');
+                throw new runtime.RequiredError('poolId', 'Required parameter "poolId" was null or undefined when calling getPoolsWithPoolId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataPoolsWithPoolId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getPoolsWithPoolId().');
             }
             if (requestParameters['projectId'] == null) {
-                throw new runtime.RequiredError('projectId', 'Required parameter "projectId" was null or undefined when calling getSwtDataPoolsWithPoolId().');
+                throw new runtime.RequiredError('projectId', 'Required parameter "projectId" was null or undefined when calling getPoolsWithPoolId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -135,11 +135,11 @@ class PoolsApi extends runtime.BaseAPI {
     }
     /**
      * Retrieves requested Pool
-     * Get swtData pools with poolId
+     * Get CwmsData pools with poolId
      */
-    getSwtDataPoolsWithPoolId(requestParameters, initOverrides) {
+    getPoolsWithPoolId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataPoolsWithPoolIdRaw(requestParameters, initOverrides);
+            const response = yield this.getPoolsWithPoolIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }

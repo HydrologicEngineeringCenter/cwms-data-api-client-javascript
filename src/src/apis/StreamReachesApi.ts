@@ -25,12 +25,12 @@ import {
     StreamReachToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataStreamReachesWithNameRequest {
+export interface DeleteCwmsDataStreamReachesWithNameRequest {
     name: string;
     office: string;
 }
 
-export interface GetSwtDataStreamReachesRequest {
+export interface GetStreamReachesRequest {
     officeMask?: string;
     streamIdMask?: string;
     reachIdMask?: string;
@@ -38,20 +38,20 @@ export interface GetSwtDataStreamReachesRequest {
     stationUnit?: string;
 }
 
-export interface GetSwtDataStreamReachesWithNameRequest {
+export interface GetStreamReachesWithNameRequest {
     name: string;
     office: string;
     streamId: string;
     stationUnit?: string;
 }
 
-export interface PatchSwtDataStreamReachesWithNameRequest {
+export interface PatchCwmsDataStreamReachesWithNameRequest {
     name: string;
     name2: string;
     office: string;
 }
 
-export interface PostSwtDataStreamReachesRequest {
+export interface PostCwmsDataStreamReachesRequest {
     streamReach: StreamReach;
     failIfExists?: boolean;
 }
@@ -63,20 +63,20 @@ export class StreamReachesApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Stream Reach
-     * Delete swtData streamReaches with name
+     * Delete CwmsData streamReaches with name
      */
-    async deleteSwtDataStreamReachesWithNameRaw(requestParameters: DeleteSwtDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataStreamReachesWithNameRaw(requestParameters: DeleteCwmsDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataStreamReachesWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataStreamReachesWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataStreamReachesWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataStreamReachesWithName().'
             );
         }
 
@@ -104,17 +104,17 @@ export class StreamReachesApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Stream Reach
-     * Delete swtData streamReaches with name
+     * Delete CwmsData streamReaches with name
      */
-    async deleteSwtDataStreamReachesWithName(requestParameters: DeleteSwtDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataStreamReachesWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataStreamReachesWithName(requestParameters: DeleteCwmsDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataStreamReachesWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns matching CWMS Stream Reach Data for a Reservoir Project.
-     * Get swtData streamReaches
+     * Get CwmsData streamReaches
      */
-    async getSwtDataStreamReachesRaw(requestParameters: GetSwtDataStreamReachesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamReach>>> {
+    async getStreamReachesRaw(requestParameters: GetStreamReachesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamReach>>> {
         const queryParameters: any = {};
 
         if (requestParameters['officeMask'] != null) {
@@ -155,36 +155,36 @@ export class StreamReachesApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS Stream Reach Data for a Reservoir Project.
-     * Get swtData streamReaches
+     * Get CwmsData streamReaches
      */
-    async getSwtDataStreamReaches(requestParameters: GetSwtDataStreamReachesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamReach>> {
-        const response = await this.getSwtDataStreamReachesRaw(requestParameters, initOverrides);
+    async getStreamReaches(requestParameters: GetStreamReachesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamReach>> {
+        const response = await this.getStreamReachesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Stream Reach Data
-     * Get swtData streamReaches with name
+     * Get CwmsData streamReaches with name
      */
-    async getSwtDataStreamReachesWithNameRaw(requestParameters: GetSwtDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamReach>>> {
+    async getStreamReachesWithNameRaw(requestParameters: GetStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamReach>>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataStreamReachesWithName().'
+                'Required parameter "name" was null or undefined when calling getStreamReachesWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataStreamReachesWithName().'
+                'Required parameter "office" was null or undefined when calling getStreamReachesWithName().'
             );
         }
 
         if (requestParameters['streamId'] == null) {
             throw new runtime.RequiredError(
                 'streamId',
-                'Required parameter "streamId" was null or undefined when calling getSwtDataStreamReachesWithName().'
+                'Required parameter "streamId" was null or undefined when calling getStreamReachesWithName().'
             );
         }
 
@@ -220,36 +220,36 @@ export class StreamReachesApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Stream Reach Data
-     * Get swtData streamReaches with name
+     * Get CwmsData streamReaches with name
      */
-    async getSwtDataStreamReachesWithName(requestParameters: GetSwtDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamReach>> {
-        const response = await this.getSwtDataStreamReachesWithNameRaw(requestParameters, initOverrides);
+    async getStreamReachesWithName(requestParameters: GetStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamReach>> {
+        const response = await this.getStreamReachesWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Rename CWMS Stream Reach
-     * Patch swtData streamReaches with name
+     * Patch CwmsData streamReaches with name
      */
-    async patchSwtDataStreamReachesWithNameRaw(requestParameters: PatchSwtDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataStreamReachesWithNameRaw(requestParameters: PatchCwmsDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataStreamReachesWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataStreamReachesWithName().'
             );
         }
 
         if (requestParameters['name2'] == null) {
             throw new runtime.RequiredError(
                 'name2',
-                'Required parameter "name2" was null or undefined when calling patchSwtDataStreamReachesWithName().'
+                'Required parameter "name2" was null or undefined when calling patchCwmsDataStreamReachesWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataStreamReachesWithName().'
+                'Required parameter "office" was null or undefined when calling patchCwmsDataStreamReachesWithName().'
             );
         }
 
@@ -281,21 +281,21 @@ export class StreamReachesApi extends runtime.BaseAPI {
 
     /**
      * Rename CWMS Stream Reach
-     * Patch swtData streamReaches with name
+     * Patch CwmsData streamReaches with name
      */
-    async patchSwtDataStreamReachesWithName(requestParameters: PatchSwtDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataStreamReachesWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataStreamReachesWithName(requestParameters: PatchCwmsDataStreamReachesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataStreamReachesWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Stream Reach
-     * Post swtData streamReaches
+     * Post CwmsData streamReaches
      */
-    async postSwtDataStreamReachesRaw(requestParameters: PostSwtDataStreamReachesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataStreamReachesRaw(requestParameters: PostCwmsDataStreamReachesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['streamReach'] == null) {
             throw new runtime.RequiredError(
                 'streamReach',
-                'Required parameter "streamReach" was null or undefined when calling postSwtDataStreamReaches().'
+                'Required parameter "streamReach" was null or undefined when calling postCwmsDataStreamReaches().'
             );
         }
 
@@ -326,10 +326,10 @@ export class StreamReachesApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Stream Reach
-     * Post swtData streamReaches
+     * Post CwmsData streamReaches
      */
-    async postSwtDataStreamReaches(requestParameters: PostSwtDataStreamReachesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataStreamReachesRaw(requestParameters, initOverrides);
+    async postCwmsDataStreamReaches(requestParameters: PostCwmsDataStreamReachesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataStreamReachesRaw(requestParameters, initOverrides);
     }
 
 }

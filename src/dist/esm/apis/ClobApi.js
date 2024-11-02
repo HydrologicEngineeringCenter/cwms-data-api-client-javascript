@@ -28,15 +28,15 @@ import { ClobFromJSON, ClobToJSON, ClobsFromJSON, } from '../models/index';
 export class ClobApi extends runtime.BaseAPI {
     /**
      * Delete clob
-     * Delete swtData clobs with clobId
+     * Delete CwmsData clobs with clobId
      */
-    deleteSwtDataClobsWithClobIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataClobsWithClobIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['clobId'] == null) {
-                throw new runtime.RequiredError('clobId', 'Required parameter "clobId" was null or undefined when calling deleteSwtDataClobsWithClobId().');
+                throw new runtime.RequiredError('clobId', 'Required parameter "clobId" was null or undefined when calling deleteCwmsDataClobsWithClobId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataClobsWithClobId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataClobsWithClobId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -57,17 +57,17 @@ export class ClobApi extends runtime.BaseAPI {
     }
     /**
      * Delete clob
-     * Delete swtData clobs with clobId
+     * Delete CwmsData clobs with clobId
      */
-    deleteSwtDataClobsWithClobId(requestParameters, initOverrides) {
+    deleteCwmsDataClobsWithClobId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataClobsWithClobIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataClobsWithClobIdRaw(requestParameters, initOverrides);
         });
     }
     /**
-     * Get swtData clobs
+     * Get CwmsData clobs
      */
-    getSwtDataClobsRaw(requestParameters, initOverrides) {
+    getClobsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -99,22 +99,22 @@ export class ClobApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData clobs
+     * Get CwmsData clobs
      */
-    getSwtDataClobs(requestParameters = {}, initOverrides) {
+    getClobs(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataClobsRaw(requestParameters, initOverrides);
+            const response = yield this.getClobsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Get a single clob.  If the accept header is set to text/plain, the raw value is returned as the response body. Responses to text/plain requests are streamed and support the Range header.  When the accept header is set to application/json;version=2 the clob will be returned as a serialized Clob object with fields for office-id, id, description and value.
-     * Get swtData clobs with clobId
+     * Get CwmsData clobs with clobId
      */
-    getSwtDataClobsWithClobIdRaw(requestParameters, initOverrides) {
+    getClobsWithClobIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['clobId'] == null) {
-                throw new runtime.RequiredError('clobId', 'Required parameter "clobId" was null or undefined when calling getSwtDataClobsWithClobId().');
+                throw new runtime.RequiredError('clobId', 'Required parameter "clobId" was null or undefined when calling getClobsWithClobId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -138,25 +138,25 @@ export class ClobApi extends runtime.BaseAPI {
     }
     /**
      * Get a single clob.  If the accept header is set to text/plain, the raw value is returned as the response body. Responses to text/plain requests are streamed and support the Range header.  When the accept header is set to application/json;version=2 the clob will be returned as a serialized Clob object with fields for office-id, id, description and value.
-     * Get swtData clobs with clobId
+     * Get CwmsData clobs with clobId
      */
-    getSwtDataClobsWithClobId(requestParameters, initOverrides) {
+    getClobsWithClobId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataClobsWithClobIdRaw(requestParameters, initOverrides);
+            const response = yield this.getClobsWithClobIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Update clob
-     * Patch swtData clobs with clobId
+     * Patch CwmsData clobs with clobId
      */
-    patchSwtDataClobsWithClobIdRaw(requestParameters, initOverrides) {
+    patchCwmsDataClobsWithClobIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['clobId'] == null) {
-                throw new runtime.RequiredError('clobId', 'Required parameter "clobId" was null or undefined when calling patchSwtDataClobsWithClobId().');
+                throw new runtime.RequiredError('clobId', 'Required parameter "clobId" was null or undefined when calling patchCwmsDataClobsWithClobId().');
             }
             if (requestParameters['clob'] == null) {
-                throw new runtime.RequiredError('clob', 'Required parameter "clob" was null or undefined when calling patchSwtDataClobsWithClobId().');
+                throw new runtime.RequiredError('clob', 'Required parameter "clob" was null or undefined when calling patchCwmsDataClobsWithClobId().');
             }
             const queryParameters = {};
             if (requestParameters['ignoreNulls'] != null) {
@@ -179,21 +179,21 @@ export class ClobApi extends runtime.BaseAPI {
     }
     /**
      * Update clob
-     * Patch swtData clobs with clobId
+     * Patch CwmsData clobs with clobId
      */
-    patchSwtDataClobsWithClobId(requestParameters, initOverrides) {
+    patchCwmsDataClobsWithClobId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataClobsWithClobIdRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataClobsWithClobIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Create new Clob
-     * Post swtData clobs
+     * Post CwmsData clobs
      */
-    postSwtDataClobsRaw(requestParameters, initOverrides) {
+    postCwmsDataClobsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['clob'] == null) {
-                throw new runtime.RequiredError('clob', 'Required parameter "clob" was null or undefined when calling postSwtDataClobs().');
+                throw new runtime.RequiredError('clob', 'Required parameter "clob" was null or undefined when calling postCwmsDataClobs().');
             }
             const queryParameters = {};
             if (requestParameters['failIfExists'] != null) {
@@ -216,11 +216,11 @@ export class ClobApi extends runtime.BaseAPI {
     }
     /**
      * Create new Clob
-     * Post swtData clobs
+     * Post CwmsData clobs
      */
-    postSwtDataClobs(requestParameters, initOverrides) {
+    postCwmsDataClobs(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataClobsRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataClobsRaw(requestParameters, initOverrides);
         });
     }
 }

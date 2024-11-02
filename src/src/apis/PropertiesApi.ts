@@ -25,31 +25,31 @@ import {
     PropertyToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataPropertiesWithNameRequest {
+export interface DeleteCwmsDataPropertiesWithNameRequest {
     name: string;
     office: string;
     categoryId: string;
 }
 
-export interface GetSwtDataPropertiesRequest {
+export interface GetPropertiesRequest {
     officeMask?: string;
     categoryId?: string;
     nameMask?: string;
 }
 
-export interface GetSwtDataPropertiesWithNameRequest {
+export interface GetPropertiesWithNameRequest {
     name: string;
     office: string;
     categoryId: string;
     defaultValue?: string;
 }
 
-export interface PatchSwtDataPropertiesWithNameRequest {
+export interface PatchCwmsDataPropertiesWithNameRequest {
     name: string;
     property: Property;
 }
 
-export interface PostSwtDataPropertiesRequest {
+export interface PostCwmsDataPropertiesRequest {
     property: Property;
 }
 
@@ -60,27 +60,27 @@ export class PropertiesApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Property
-     * Delete swtData properties with name
+     * Delete CwmsData properties with name
      */
-    async deleteSwtDataPropertiesWithNameRaw(requestParameters: DeleteSwtDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataPropertiesWithNameRaw(requestParameters: DeleteCwmsDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataPropertiesWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataPropertiesWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataPropertiesWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataPropertiesWithName().'
             );
         }
 
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling deleteSwtDataPropertiesWithName().'
+                'Required parameter "categoryId" was null or undefined when calling deleteCwmsDataPropertiesWithName().'
             );
         }
 
@@ -112,17 +112,17 @@ export class PropertiesApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Property
-     * Delete swtData properties with name
+     * Delete CwmsData properties with name
      */
-    async deleteSwtDataPropertiesWithName(requestParameters: DeleteSwtDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataPropertiesWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataPropertiesWithName(requestParameters: DeleteCwmsDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataPropertiesWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns matching CWMS Property Data.
-     * Get swtData properties
+     * Get CwmsData properties
      */
-    async getSwtDataPropertiesRaw(requestParameters: GetSwtDataPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Property>>> {
+    async getPropertiesRaw(requestParameters: GetPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Property>>> {
         const queryParameters: any = {};
 
         if (requestParameters['officeMask'] != null) {
@@ -155,36 +155,36 @@ export class PropertiesApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS Property Data.
-     * Get swtData properties
+     * Get CwmsData properties
      */
-    async getSwtDataProperties(requestParameters: GetSwtDataPropertiesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Property>> {
-        const response = await this.getSwtDataPropertiesRaw(requestParameters, initOverrides);
+    async getProperties(requestParameters: GetPropertiesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Property>> {
+        const response = await this.getPropertiesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Property Data
-     * Get swtData properties with name
+     * Get CwmsData properties with name
      */
-    async getSwtDataPropertiesWithNameRaw(requestParameters: GetSwtDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Property>> {
+    async getPropertiesWithNameRaw(requestParameters: GetPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Property>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataPropertiesWithName().'
+                'Required parameter "name" was null or undefined when calling getPropertiesWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataPropertiesWithName().'
+                'Required parameter "office" was null or undefined when calling getPropertiesWithName().'
             );
         }
 
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling getSwtDataPropertiesWithName().'
+                'Required parameter "categoryId" was null or undefined when calling getPropertiesWithName().'
             );
         }
 
@@ -220,29 +220,29 @@ export class PropertiesApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Property Data
-     * Get swtData properties with name
+     * Get CwmsData properties with name
      */
-    async getSwtDataPropertiesWithName(requestParameters: GetSwtDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Property> {
-        const response = await this.getSwtDataPropertiesWithNameRaw(requestParameters, initOverrides);
+    async getPropertiesWithName(requestParameters: GetPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Property> {
+        const response = await this.getPropertiesWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update CWMS Property
-     * Patch swtData properties with name
+     * Patch CwmsData properties with name
      */
-    async patchSwtDataPropertiesWithNameRaw(requestParameters: PatchSwtDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataPropertiesWithNameRaw(requestParameters: PatchCwmsDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataPropertiesWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataPropertiesWithName().'
             );
         }
 
         if (requestParameters['property'] == null) {
             throw new runtime.RequiredError(
                 'property',
-                'Required parameter "property" was null or undefined when calling patchSwtDataPropertiesWithName().'
+                'Required parameter "property" was null or undefined when calling patchCwmsDataPropertiesWithName().'
             );
         }
 
@@ -269,21 +269,21 @@ export class PropertiesApi extends runtime.BaseAPI {
 
     /**
      * Update CWMS Property
-     * Patch swtData properties with name
+     * Patch CwmsData properties with name
      */
-    async patchSwtDataPropertiesWithName(requestParameters: PatchSwtDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataPropertiesWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataPropertiesWithName(requestParameters: PatchCwmsDataPropertiesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataPropertiesWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Property
-     * Post swtData properties
+     * Post CwmsData properties
      */
-    async postSwtDataPropertiesRaw(requestParameters: PostSwtDataPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataPropertiesRaw(requestParameters: PostCwmsDataPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['property'] == null) {
             throw new runtime.RequiredError(
                 'property',
-                'Required parameter "property" was null or undefined when calling postSwtDataProperties().'
+                'Required parameter "property" was null or undefined when calling postCwmsDataProperties().'
             );
         }
 
@@ -310,10 +310,10 @@ export class PropertiesApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Property
-     * Post swtData properties
+     * Post CwmsData properties
      */
-    async postSwtDataProperties(requestParameters: PostSwtDataPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataPropertiesRaw(requestParameters, initOverrides);
+    async postCwmsDataProperties(requestParameters: PostCwmsDataPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataPropertiesRaw(requestParameters, initOverrides);
     }
 
 }

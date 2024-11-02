@@ -11,7 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AssignedTimeseriesFromJSON, AssignedTimeseriesToJSON, } from './AssignedTimeseries';
+import { AssignedTimeSeriesFromJSON, AssignedTimeSeriesToJSON, } from './AssignedTimeSeries';
 import { TimeseriesCategoryFromJSON, TimeseriesCategoryToJSON, } from './TimeseriesCategory';
 /**
  * Check if a given object implements the TimeseriesGroup interface.
@@ -35,7 +35,7 @@ export function TimeseriesGroupFromJSONTyped(json, ignoreDiscriminator) {
         'description': json['description'] == null ? undefined : json['description'],
         'sharedAliasId': json['shared-alias-id'] == null ? undefined : json['shared-alias-id'],
         'sharedRefTsId': json['shared-ref-ts-id'] == null ? undefined : json['shared-ref-ts-id'],
-        'assignedTimeSeries': json['assigned-time-series'] == null ? undefined : (json['assigned-time-series'].map(AssignedTimeseriesFromJSON)),
+        'assignedTimeSeries': json['assigned-time-series'] == null ? undefined : (json['assigned-time-series'].map(AssignedTimeSeriesFromJSON)),
     };
 }
 export function TimeseriesGroupToJSON(value) {
@@ -49,6 +49,6 @@ export function TimeseriesGroupToJSON(value) {
         'description': value['description'],
         'shared-alias-id': value['sharedAliasId'],
         'shared-ref-ts-id': value['sharedRefTsId'],
-        'assigned-time-series': value['assignedTimeSeries'] == null ? undefined : (value['assignedTimeSeries'].map(AssignedTimeseriesToJSON)),
+        'assigned-time-series': value['assignedTimeSeries'] == null ? undefined : (value['assignedTimeSeries'].map(AssignedTimeSeriesToJSON)),
     };
 }

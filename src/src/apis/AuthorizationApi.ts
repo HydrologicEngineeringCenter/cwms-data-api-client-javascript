@@ -25,15 +25,15 @@ import {
     CdaErrorToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataAuthKeysWithKeyNameRequest {
+export interface DeleteCwmsDataAuthKeysWithKeyNameRequest {
     keyName: string;
 }
 
-export interface GetSwtDataAuthKeysWithKeyNameRequest {
+export interface GetAuthKeysWithKeyNameRequest {
     keyName: string;
 }
 
-export interface PostSwtDataAuthKeysRequest {
+export interface PostCwmsDataAuthKeysRequest {
     apiKey?: ApiKey;
 }
 
@@ -44,13 +44,13 @@ export class AuthorizationApi extends runtime.BaseAPI {
 
     /**
      * Delete API key for a user
-     * Delete swtData auth keys with keyName
+     * Delete CwmsData auth keys with keyName
      */
-    async deleteSwtDataAuthKeysWithKeyNameRaw(requestParameters: DeleteSwtDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>> {
+    async deleteCwmsDataAuthKeysWithKeyNameRaw(requestParameters: DeleteCwmsDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>> {
         if (requestParameters['keyName'] == null) {
             throw new runtime.RequiredError(
                 'keyName',
-                'Required parameter "keyName" was null or undefined when calling deleteSwtDataAuthKeysWithKeyName().'
+                'Required parameter "keyName" was null or undefined when calling deleteCwmsDataAuthKeysWithKeyName().'
             );
         }
 
@@ -74,18 +74,18 @@ export class AuthorizationApi extends runtime.BaseAPI {
 
     /**
      * Delete API key for a user
-     * Delete swtData auth keys with keyName
+     * Delete CwmsData auth keys with keyName
      */
-    async deleteSwtDataAuthKeysWithKeyName(requestParameters: DeleteSwtDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey> {
-        const response = await this.deleteSwtDataAuthKeysWithKeyNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataAuthKeysWithKeyName(requestParameters: DeleteCwmsDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey> {
+        const response = await this.deleteCwmsDataAuthKeysWithKeyNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * View all keys for the current user
-     * Get swtData auth keys
+     * Get CwmsData auth keys
      */
-    async getSwtDataAuthKeysRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ApiKey>>> {
+    async getAuthKeysRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ApiKey>>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -106,22 +106,22 @@ export class AuthorizationApi extends runtime.BaseAPI {
 
     /**
      * View all keys for the current user
-     * Get swtData auth keys
+     * Get CwmsData auth keys
      */
-    async getSwtDataAuthKeys(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ApiKey>> {
-        const response = await this.getSwtDataAuthKeysRaw(initOverrides);
+    async getAuthKeys(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ApiKey>> {
+        const response = await this.getAuthKeysRaw(initOverrides);
         return await response.value();
     }
 
     /**
      * View specific key
-     * Get swtData auth keys with keyName
+     * Get CwmsData auth keys with keyName
      */
-    async getSwtDataAuthKeysWithKeyNameRaw(requestParameters: GetSwtDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>> {
+    async getAuthKeysWithKeyNameRaw(requestParameters: GetAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>> {
         if (requestParameters['keyName'] == null) {
             throw new runtime.RequiredError(
                 'keyName',
-                'Required parameter "keyName" was null or undefined when calling getSwtDataAuthKeysWithKeyName().'
+                'Required parameter "keyName" was null or undefined when calling getAuthKeysWithKeyName().'
             );
         }
 
@@ -145,18 +145,18 @@ export class AuthorizationApi extends runtime.BaseAPI {
 
     /**
      * View specific key
-     * Get swtData auth keys with keyName
+     * Get CwmsData auth keys with keyName
      */
-    async getSwtDataAuthKeysWithKeyName(requestParameters: GetSwtDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey> {
-        const response = await this.getSwtDataAuthKeysWithKeyNameRaw(requestParameters, initOverrides);
+    async getAuthKeysWithKeyName(requestParameters: GetAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey> {
+        const response = await this.getAuthKeysWithKeyNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Create a new API Key for user. The randomly generated key is returned to the caller. A provided key will be ignored.
-     * Post swtData auth keys
+     * Post CwmsData auth keys
      */
-    async postSwtDataAuthKeysRaw(requestParameters: PostSwtDataAuthKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>> {
+    async postCwmsDataAuthKeysRaw(requestParameters: PostCwmsDataAuthKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -180,10 +180,10 @@ export class AuthorizationApi extends runtime.BaseAPI {
 
     /**
      * Create a new API Key for user. The randomly generated key is returned to the caller. A provided key will be ignored.
-     * Post swtData auth keys
+     * Post CwmsData auth keys
      */
-    async postSwtDataAuthKeys(requestParameters: PostSwtDataAuthKeysRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey> {
-        const response = await this.postSwtDataAuthKeysRaw(requestParameters, initOverrides);
+    async postCwmsDataAuthKeys(requestParameters: PostCwmsDataAuthKeysRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey> {
+        const response = await this.postCwmsDataAuthKeysRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

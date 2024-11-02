@@ -112,7 +112,7 @@ const a_api = new AuthorizationApi(config);
 async function isLoggedIn() {
     // Utility function that returns if a user is logged in based on if they can get the keys for their user (protected endpoint)
     return a_api
-        .getCwmsDataAuthKeysRaw()
+        .getDataAuthKeysRaw()
         .then((r) => {
             if (r.raw.ok) return r.raw.json();
             else if (r.raw.status == 401) {
@@ -173,7 +173,7 @@ const a_api = new cwmsjs.AuthorizationApi(config);
 async function isLoggedIn() {
     // Utility function that returns if a user is logged in based on if they can get the keys for their user (protected endpoint)
     return a_api
-        .getCwmsDataAuthKeysRaw()
+        .getDataAuthKeysRaw()
         .then((r) =&gt; {
             if (r.raw.ok) return r.raw.json();
             else if (r.raw.status == 401) {

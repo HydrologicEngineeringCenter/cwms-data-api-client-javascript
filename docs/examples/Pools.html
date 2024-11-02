@@ -87,7 +87,7 @@
 <b>To Install:</b>
 <code class="language-shell">npm install cwmsjs --save</code><br>
 <pre>
-<code class="language-javascript">import { PoolsApi, Configuration} from "cwmsjs";
+<code class="language-javascript">import { PoolsApi, Configuration } from "cwmsjs";
 
 
 const config = new Configuration({
@@ -97,7 +97,7 @@ const config = new Configuration({
 });
 const p_api = new PoolsApi(config);
 p_api
-    .getCwmsDataPoolsRaw({
+    .getPoolsRaw({
         office: 'SWT',
     })
     .then(async (r) => {
@@ -138,7 +138,7 @@ const config = new cwmsjs.Configuration({
 });
 const p_api = new cwmsjs.PoolsApi(config);
 p_api
-    .getCwmsDataPoolsRaw({
+    .getPoolsRaw({
         office: &#039;SWT&#039;,
     })
     .then(async (r) =&gt; {

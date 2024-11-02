@@ -11,33 +11,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { TimeseriesIntervalUnitsInnerDurationFromJSON, TimeseriesIntervalUnitsInnerDurationToJSON, } from './TimeseriesIntervalUnitsInnerDuration';
+import { TimeSeriesIntervalUnitsInnerDurationFromJSON, TimeSeriesIntervalUnitsInnerDurationToJSON, } from './TimeSeriesIntervalUnitsInnerDuration';
 /**
- * Check if a given object implements the TimeseriesIntervalUnitsInner interface.
+ * Check if a given object implements the TimeSeriesIntervalUnitsInner interface.
  */
-export function instanceOfTimeseriesIntervalUnitsInner(value) {
+export function instanceOfTimeSeriesIntervalUnitsInner(value) {
     return true;
 }
-export function TimeseriesIntervalUnitsInnerFromJSON(json) {
-    return TimeseriesIntervalUnitsInnerFromJSONTyped(json, false);
+export function TimeSeriesIntervalUnitsInnerFromJSON(json) {
+    return TimeSeriesIntervalUnitsInnerFromJSONTyped(json, false);
 }
-export function TimeseriesIntervalUnitsInnerFromJSONTyped(json, ignoreDiscriminator) {
+export function TimeSeriesIntervalUnitsInnerFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
-        'duration': json['duration'] == null ? undefined : TimeseriesIntervalUnitsInnerDurationFromJSON(json['duration']),
+        'duration': json['duration'] == null ? undefined : TimeSeriesIntervalUnitsInnerDurationFromJSON(json['duration']),
         'durationEstimated': json['durationEstimated'] == null ? undefined : json['durationEstimated'],
         'dateBased': json['dateBased'] == null ? undefined : json['dateBased'],
         'timeBased': json['timeBased'] == null ? undefined : json['timeBased'],
     };
 }
-export function TimeseriesIntervalUnitsInnerToJSON(value) {
+export function TimeSeriesIntervalUnitsInnerToJSON(value) {
     if (value == null) {
         return value;
     }
     return {
-        'duration': TimeseriesIntervalUnitsInnerDurationToJSON(value['duration']),
+        'duration': TimeSeriesIntervalUnitsInnerDurationToJSON(value['duration']),
         'durationEstimated': value['durationEstimated'],
         'dateBased': value['dateBased'],
         'timeBased': value['timeBased'],

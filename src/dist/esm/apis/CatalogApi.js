@@ -27,12 +27,12 @@ import { CatalogFromJSON, } from '../models/index';
  */
 export class CatalogApi extends runtime.BaseAPI {
     /**
-     * Get swtData catalog with dataset
+     * Get CwmsData catalog with dataset
      */
-    getSwtDataCatalogWithDatasetRaw(requestParameters, initOverrides) {
+    getCatalogWithDatasetRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['dataset'] == null) {
-                throw new runtime.RequiredError('dataset', 'Required parameter "dataset" was null or undefined when calling getSwtDataCatalogWithDataset().');
+                throw new runtime.RequiredError('dataset', 'Required parameter "dataset" was null or undefined when calling getCatalogWithDataset().');
             }
             const queryParameters = {};
             if (requestParameters['page'] != null) {
@@ -91,11 +91,11 @@ export class CatalogApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData catalog with dataset
+     * Get CwmsData catalog with dataset
      */
-    getSwtDataCatalogWithDataset(requestParameters, initOverrides) {
+    getCatalogWithDataset(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataCatalogWithDatasetRaw(requestParameters, initOverrides);
+            const response = yield this.getCatalogWithDatasetRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }

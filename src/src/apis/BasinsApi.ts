@@ -28,24 +28,24 @@ import {
     DeleteMethodToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataBasinsWithNameRequest {
+export interface DeleteCwmsDataBasinsWithNameRequest {
     name: string;
     office: string;
     method: DeleteMethod;
 }
 
-export interface GetSwtDataBasinsRequest {
+export interface GetBasinsRequest {
     office?: string;
     unit?: string;
 }
 
-export interface GetSwtDataBasinsWithNameRequest {
+export interface GetBasinsWithNameRequest {
     name: string;
     office: string;
     unit?: string;
 }
 
-export interface PatchSwtDataBasinsWithNameRequest {
+export interface PatchCwmsDataBasinsWithNameRequest {
     name: string;
     name2: string;
     office: string;
@@ -58,27 +58,27 @@ export class BasinsApi extends runtime.BaseAPI {
 
     /**
      * Renames CWMS Basin
-     * Delete swtData basins with name
+     * Delete CwmsData basins with name
      */
-    async deleteSwtDataBasinsWithNameRaw(requestParameters: DeleteSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataBasinsWithNameRaw(requestParameters: DeleteCwmsDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataBasinsWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataBasinsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataBasinsWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataBasinsWithName().'
             );
         }
 
         if (requestParameters['method'] == null) {
             throw new runtime.RequiredError(
                 'method',
-                'Required parameter "method" was null or undefined when calling deleteSwtDataBasinsWithName().'
+                'Required parameter "method" was null or undefined when calling deleteCwmsDataBasinsWithName().'
             );
         }
 
@@ -110,17 +110,17 @@ export class BasinsApi extends runtime.BaseAPI {
 
     /**
      * Renames CWMS Basin
-     * Delete swtData basins with name
+     * Delete CwmsData basins with name
      */
-    async deleteSwtDataBasinsWithName(requestParameters: DeleteSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataBasinsWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataBasinsWithName(requestParameters: DeleteCwmsDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataBasinsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins
+     * Get CwmsData basins
      */
-    async getSwtDataBasinsRaw(requestParameters: GetSwtDataBasinsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Basin>> {
+    async getBasinsRaw(requestParameters: GetBasinsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Basin>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -149,29 +149,29 @@ export class BasinsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins
+     * Get CwmsData basins
      */
-    async getSwtDataBasins(requestParameters: GetSwtDataBasinsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Basin> {
-        const response = await this.getSwtDataBasinsRaw(requestParameters, initOverrides);
+    async getBasins(requestParameters: GetBasinsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Basin> {
+        const response = await this.getBasinsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins with name
+     * Get CwmsData basins with name
      */
-    async getSwtDataBasinsWithNameRaw(requestParameters: GetSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Basin>> {
+    async getBasinsWithNameRaw(requestParameters: GetBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Basin>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataBasinsWithName().'
+                'Required parameter "name" was null or undefined when calling getBasinsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataBasinsWithName().'
+                'Required parameter "office" was null or undefined when calling getBasinsWithName().'
             );
         }
 
@@ -203,36 +203,36 @@ export class BasinsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins with name
+     * Get CwmsData basins with name
      */
-    async getSwtDataBasinsWithName(requestParameters: GetSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Basin> {
-        const response = await this.getSwtDataBasinsWithNameRaw(requestParameters, initOverrides);
+    async getBasinsWithName(requestParameters: GetBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Basin> {
+        const response = await this.getBasinsWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Renames CWMS Basin
-     * Patch swtData basins with name
+     * Patch CwmsData basins with name
      */
-    async patchSwtDataBasinsWithNameRaw(requestParameters: PatchSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataBasinsWithNameRaw(requestParameters: PatchCwmsDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataBasinsWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataBasinsWithName().'
             );
         }
 
         if (requestParameters['name2'] == null) {
             throw new runtime.RequiredError(
                 'name2',
-                'Required parameter "name2" was null or undefined when calling patchSwtDataBasinsWithName().'
+                'Required parameter "name2" was null or undefined when calling patchCwmsDataBasinsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataBasinsWithName().'
+                'Required parameter "office" was null or undefined when calling patchCwmsDataBasinsWithName().'
             );
         }
 
@@ -264,17 +264,17 @@ export class BasinsApi extends runtime.BaseAPI {
 
     /**
      * Renames CWMS Basin
-     * Patch swtData basins with name
+     * Patch CwmsData basins with name
      */
-    async patchSwtDataBasinsWithName(requestParameters: PatchSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataBasinsWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataBasinsWithName(requestParameters: PatchCwmsDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataBasinsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Creates CWMS Basin
-     * Post swtData basins
+     * Post CwmsData basins
      */
-    async postSwtDataBasinsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataBasinsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -295,10 +295,10 @@ export class BasinsApi extends runtime.BaseAPI {
 
     /**
      * Creates CWMS Basin
-     * Post swtData basins
+     * Post CwmsData basins
      */
-    async postSwtDataBasins(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataBasinsRaw(initOverrides);
+    async postCwmsDataBasins(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataBasinsRaw(initOverrides);
     }
 
 }

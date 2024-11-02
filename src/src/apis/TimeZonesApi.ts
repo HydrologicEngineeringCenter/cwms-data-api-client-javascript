@@ -25,7 +25,7 @@ import {
     TimeZoneIdsToJSON,
 } from '../models/index';
 
-export interface GetSwtDataTimezonesRequest {
+export interface GetTimezonesRequest {
     format?: string;
 }
 
@@ -35,9 +35,9 @@ export interface GetSwtDataTimezonesRequest {
 export class TimeZonesApi extends runtime.BaseAPI {
 
     /**
-     * Get swtData timezones
+     * Get CwmsData timezones
      */
-    async getSwtDataTimezonesRaw(requestParameters: GetSwtDataTimezonesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeZoneIds>> {
+    async getTimezonesRaw(requestParameters: GetTimezonesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeZoneIds>> {
         const queryParameters: any = {};
 
         if (requestParameters['format'] != null) {
@@ -61,10 +61,10 @@ export class TimeZonesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData timezones
+     * Get CwmsData timezones
      */
-    async getSwtDataTimezones(requestParameters: GetSwtDataTimezonesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeZoneIds> {
-        const response = await this.getSwtDataTimezonesRaw(requestParameters, initOverrides);
+    async getTimezones(requestParameters: GetTimezonesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeZoneIds> {
+        const response = await this.getTimezonesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

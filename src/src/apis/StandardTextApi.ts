@@ -31,23 +31,23 @@ import {
     StandardTextValueToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataStandardTextIdWithStandardTextIdRequest {
+export interface DeleteCwmsDataStandardTextIdWithStandardTextIdRequest {
     standardTextId: string;
     office: string;
     method: DeleteMethod;
 }
 
-export interface GetSwtDataStandardTextIdRequest {
+export interface GetStandardTextIdRequest {
     officeMask?: string;
     standardTextIdMask?: string;
 }
 
-export interface GetSwtDataStandardTextIdWithStandardTextIdRequest {
+export interface GetStandardTextIdWithStandardTextIdRequest {
     standardTextId: string;
     office: string;
 }
 
-export interface PostSwtDataStandardTextIdRequest {
+export interface PostCwmsDataStandardTextIdRequest {
     standardTextValue: StandardTextValue;
     failIfExists?: boolean;
 }
@@ -59,27 +59,27 @@ export class StandardTextApi extends runtime.BaseAPI {
 
     /**
      * Delete a single Standard Text value
-     * Delete swtData standardTextId with standardTextId
+     * Delete CwmsData standardTextId with standardTextId
      */
-    async deleteSwtDataStandardTextIdWithStandardTextIdRaw(requestParameters: DeleteSwtDataStandardTextIdWithStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataStandardTextIdWithStandardTextIdRaw(requestParameters: DeleteCwmsDataStandardTextIdWithStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['standardTextId'] == null) {
             throw new runtime.RequiredError(
                 'standardTextId',
-                'Required parameter "standardTextId" was null or undefined when calling deleteSwtDataStandardTextIdWithStandardTextId().'
+                'Required parameter "standardTextId" was null or undefined when calling deleteCwmsDataStandardTextIdWithStandardTextId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataStandardTextIdWithStandardTextId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataStandardTextIdWithStandardTextId().'
             );
         }
 
         if (requestParameters['method'] == null) {
             throw new runtime.RequiredError(
                 'method',
-                'Required parameter "method" was null or undefined when calling deleteSwtDataStandardTextIdWithStandardTextId().'
+                'Required parameter "method" was null or undefined when calling deleteCwmsDataStandardTextIdWithStandardTextId().'
             );
         }
 
@@ -111,17 +111,17 @@ export class StandardTextApi extends runtime.BaseAPI {
 
     /**
      * Delete a single Standard Text value
-     * Delete swtData standardTextId with standardTextId
+     * Delete CwmsData standardTextId with standardTextId
      */
-    async deleteSwtDataStandardTextIdWithStandardTextId(requestParameters: DeleteSwtDataStandardTextIdWithStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataStandardTextIdWithStandardTextIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataStandardTextIdWithStandardTextId(requestParameters: DeleteCwmsDataStandardTextIdWithStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataStandardTextIdWithStandardTextIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Retrieve a Standard Text catalog
-     * Get swtData standardTextId
+     * Get CwmsData standardTextId
      */
-    async getSwtDataStandardTextIdRaw(requestParameters: GetSwtDataStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardTextCatalog>> {
+    async getStandardTextIdRaw(requestParameters: GetStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardTextCatalog>> {
         const queryParameters: any = {};
 
         if (requestParameters['officeMask'] != null) {
@@ -150,29 +150,29 @@ export class StandardTextApi extends runtime.BaseAPI {
 
     /**
      * Retrieve a Standard Text catalog
-     * Get swtData standardTextId
+     * Get CwmsData standardTextId
      */
-    async getSwtDataStandardTextId(requestParameters: GetSwtDataStandardTextIdRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardTextCatalog> {
-        const response = await this.getSwtDataStandardTextIdRaw(requestParameters, initOverrides);
+    async getStandardTextId(requestParameters: GetStandardTextIdRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardTextCatalog> {
+        const response = await this.getStandardTextIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Retrieve a single Standard Text value
-     * Get swtData standardTextId with standardTextId
+     * Get CwmsData standardTextId with standardTextId
      */
-    async getSwtDataStandardTextIdWithStandardTextIdRaw(requestParameters: GetSwtDataStandardTextIdWithStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardTextValue>> {
+    async getStandardTextIdWithStandardTextIdRaw(requestParameters: GetStandardTextIdWithStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardTextValue>> {
         if (requestParameters['standardTextId'] == null) {
             throw new runtime.RequiredError(
                 'standardTextId',
-                'Required parameter "standardTextId" was null or undefined when calling getSwtDataStandardTextIdWithStandardTextId().'
+                'Required parameter "standardTextId" was null or undefined when calling getStandardTextIdWithStandardTextId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataStandardTextIdWithStandardTextId().'
+                'Required parameter "office" was null or undefined when calling getStandardTextIdWithStandardTextId().'
             );
         }
 
@@ -200,22 +200,22 @@ export class StandardTextApi extends runtime.BaseAPI {
 
     /**
      * Retrieve a single Standard Text value
-     * Get swtData standardTextId with standardTextId
+     * Get CwmsData standardTextId with standardTextId
      */
-    async getSwtDataStandardTextIdWithStandardTextId(requestParameters: GetSwtDataStandardTextIdWithStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardTextValue> {
-        const response = await this.getSwtDataStandardTextIdWithStandardTextIdRaw(requestParameters, initOverrides);
+    async getStandardTextIdWithStandardTextId(requestParameters: GetStandardTextIdWithStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardTextValue> {
+        const response = await this.getStandardTextIdWithStandardTextIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Create new Standard Text
-     * Post swtData standardTextId
+     * Post CwmsData standardTextId
      */
-    async postSwtDataStandardTextIdRaw(requestParameters: PostSwtDataStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataStandardTextIdRaw(requestParameters: PostCwmsDataStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['standardTextValue'] == null) {
             throw new runtime.RequiredError(
                 'standardTextValue',
-                'Required parameter "standardTextValue" was null or undefined when calling postSwtDataStandardTextId().'
+                'Required parameter "standardTextValue" was null or undefined when calling postCwmsDataStandardTextId().'
             );
         }
 
@@ -246,10 +246,10 @@ export class StandardTextApi extends runtime.BaseAPI {
 
     /**
      * Create new Standard Text
-     * Post swtData standardTextId
+     * Post CwmsData standardTextId
      */
-    async postSwtDataStandardTextId(requestParameters: PostSwtDataStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataStandardTextIdRaw(requestParameters, initOverrides);
+    async postCwmsDataStandardTextId(requestParameters: PostCwmsDataStandardTextIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataStandardTextIdRaw(requestParameters, initOverrides);
     }
 
 }

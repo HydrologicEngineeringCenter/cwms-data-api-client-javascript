@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-export interface GetSwtDataUnitsRequest {
+export interface GetUnitsRequest {
     format?: string;
 }
 /**
@@ -18,11 +18,11 @@ export interface GetSwtDataUnitsRequest {
  */
 export declare class UnitsApi extends runtime.BaseAPI {
     /**
-     * Get swtData units
+     * Get CwmsData units
      */
-    getSwtDataUnitsRaw(requestParameters: GetSwtDataUnitsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    getUnitsRaw(requestParameters: GetUnitsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Get swtData units
+     * Get CwmsData units
      */
-    getSwtDataUnits(requestParameters?: GetSwtDataUnitsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    getUnits(requestParameters?: GetUnitsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

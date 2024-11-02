@@ -92,7 +92,7 @@
 
 const p_api = new ParametersApi();
 p_api
-    .getCwmsDataParametersRaw({
+    .getParametersRaw({
         office: 'SWT',
     })
     .then((r) => r.raw.json())
@@ -139,7 +139,7 @@ to download bundle.js to your system</li>
 &lt;script type=&quot;module&quot;&gt;
 const p_api = new cwmsjs.ParametersApi();
 p_api
-    .getCwmsDataParametersRaw({
+    .getParametersRaw({
         office: &#039;SWT&#039;,
     })
     .then((r) =&gt; r.raw.json())

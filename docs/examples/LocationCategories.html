@@ -92,7 +92,7 @@
 
 const lc_api = new LocationCategoriesApi();
 lc_api
-    .getCwmsDataLocationCategory({
+    .getLocationCategory({
         office: 'SWT',
     })
     .then((data) => {
@@ -132,7 +132,7 @@ to download bundle.js to your system</li>
 &lt;script type=&quot;module&quot;&gt;
 const lc_api = new cwmsjs.LocationCategoriesApi();
 lc_api
-    .getCwmsDataLocationCategory({
+    .getLocationCategory({
         office: &#039;SWT&#039;,
     })
     .then((data) =&gt; {

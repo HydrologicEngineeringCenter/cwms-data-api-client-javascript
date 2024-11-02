@@ -13,19 +13,19 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeseriesColumnToJSON = exports.TimeseriesColumnFromJSONTyped = exports.TimeseriesColumnFromJSON = exports.instanceOfTimeseriesColumn = void 0;
+exports.TimeSeriesColumnToJSON = exports.TimeSeriesColumnFromJSONTyped = exports.TimeSeriesColumnFromJSON = exports.instanceOfTimeSeriesColumn = void 0;
 /**
- * Check if a given object implements the TimeseriesColumn interface.
+ * Check if a given object implements the TimeSeriesColumn interface.
  */
-function instanceOfTimeseriesColumn(value) {
+function instanceOfTimeSeriesColumn(value) {
     return true;
 }
-exports.instanceOfTimeseriesColumn = instanceOfTimeseriesColumn;
-function TimeseriesColumnFromJSON(json) {
-    return TimeseriesColumnFromJSONTyped(json, false);
+exports.instanceOfTimeSeriesColumn = instanceOfTimeSeriesColumn;
+function TimeSeriesColumnFromJSON(json) {
+    return TimeSeriesColumnFromJSONTyped(json, false);
 }
-exports.TimeseriesColumnFromJSON = TimeseriesColumnFromJSON;
-function TimeseriesColumnFromJSONTyped(json, ignoreDiscriminator) {
+exports.TimeSeriesColumnFromJSON = TimeSeriesColumnFromJSON;
+function TimeSeriesColumnFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -35,8 +35,8 @@ function TimeseriesColumnFromJSONTyped(json, ignoreDiscriminator) {
         'datatype': json['datatype'] == null ? undefined : json['datatype'],
     };
 }
-exports.TimeseriesColumnFromJSONTyped = TimeseriesColumnFromJSONTyped;
-function TimeseriesColumnToJSON(value) {
+exports.TimeSeriesColumnFromJSONTyped = TimeSeriesColumnFromJSONTyped;
+function TimeSeriesColumnToJSON(value) {
     if (value == null) {
         return value;
     }
@@ -46,4 +46,4 @@ function TimeseriesColumnToJSON(value) {
         'datatype': value['datatype'],
     };
 }
-exports.TimeseriesColumnToJSON = TimeseriesColumnToJSON;
+exports.TimeSeriesColumnToJSON = TimeSeriesColumnToJSON;

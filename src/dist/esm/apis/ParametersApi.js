@@ -27,9 +27,9 @@ import { ParameterFromJSON, } from '../models/index';
  */
 export class ParametersApi extends runtime.BaseAPI {
     /**
-     * Get swtData parameters
+     * Get CwmsData parameters
      */
-    getSwtDataParametersRaw(requestParameters, initOverrides) {
+    getParametersRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['format'] != null) {
@@ -52,11 +52,11 @@ export class ParametersApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData parameters
+     * Get CwmsData parameters
      */
-    getSwtDataParameters(requestParameters = {}, initOverrides) {
+    getParameters(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataParametersRaw(requestParameters, initOverrides);
+            const response = yield this.getParametersRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }

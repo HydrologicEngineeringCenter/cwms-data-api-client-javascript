@@ -25,12 +25,12 @@ import {
     LocationToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataLocationsWithLocationIdRequest {
+export interface DeleteCwmsDataLocationsWithLocationIdRequest {
     locationId: string;
     office?: string;
 }
 
-export interface GetSwtDataLocationsRequest {
+export interface GetLocationsRequest {
     names?: string;
     office?: string;
     unit?: string;
@@ -38,18 +38,18 @@ export interface GetSwtDataLocationsRequest {
     format?: string;
 }
 
-export interface GetSwtDataLocationsWithLocationIdRequest {
+export interface GetLocationsWithLocationIdRequest {
     locationId: string;
     office: string;
     unit?: string;
 }
 
-export interface PatchSwtDataLocationsWithLocationIdRequest {
+export interface PatchCwmsDataLocationsWithLocationIdRequest {
     locationId: string;
     location: Location;
 }
 
-export interface PostSwtDataLocationsRequest {
+export interface PostCwmsDataLocationsRequest {
     location: Location;
 }
 
@@ -60,13 +60,13 @@ export class LocationsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Location
-     * Delete swtData locations with locationId
+     * Delete CwmsData locations with locationId
      */
-    async deleteSwtDataLocationsWithLocationIdRaw(requestParameters: DeleteSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataLocationsWithLocationIdRaw(requestParameters: DeleteCwmsDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['locationId'] == null) {
             throw new runtime.RequiredError(
                 'locationId',
-                'Required parameter "locationId" was null or undefined when calling deleteSwtDataLocationsWithLocationId().'
+                'Required parameter "locationId" was null or undefined when calling deleteCwmsDataLocationsWithLocationId().'
             );
         }
 
@@ -94,17 +94,17 @@ export class LocationsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Location
-     * Delete swtData locations with locationId
+     * Delete CwmsData locations with locationId
      */
-    async deleteSwtDataLocationsWithLocationId(requestParameters: DeleteSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataLocationsWithLocationId(requestParameters: DeleteCwmsDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns CWMS Location Data.  The Catalog end-point is also capable of retrieving lists of locations and can filter on additional fields.
-     * Get swtData locations
+     * Get CwmsData locations
      */
-    async getSwtDataLocationsRaw(requestParameters: GetSwtDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Location>>> {
+    async getLocationsRaw(requestParameters: GetLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Location>>> {
         const queryParameters: any = {};
 
         if (requestParameters['names'] != null) {
@@ -145,29 +145,29 @@ export class LocationsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Location Data.  The Catalog end-point is also capable of retrieving lists of locations and can filter on additional fields.
-     * Get swtData locations
+     * Get CwmsData locations
      */
-    async getSwtDataLocations(requestParameters: GetSwtDataLocationsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Location>> {
-        const response = await this.getSwtDataLocationsRaw(requestParameters, initOverrides);
+    async getLocations(requestParameters: GetLocationsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Location>> {
+        const response = await this.getLocationsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Location Data
-     * Get swtData locations with locationId
+     * Get CwmsData locations with locationId
      */
-    async getSwtDataLocationsWithLocationIdRaw(requestParameters: GetSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Location>> {
+    async getLocationsWithLocationIdRaw(requestParameters: GetLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Location>> {
         if (requestParameters['locationId'] == null) {
             throw new runtime.RequiredError(
                 'locationId',
-                'Required parameter "locationId" was null or undefined when calling getSwtDataLocationsWithLocationId().'
+                'Required parameter "locationId" was null or undefined when calling getLocationsWithLocationId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataLocationsWithLocationId().'
+                'Required parameter "office" was null or undefined when calling getLocationsWithLocationId().'
             );
         }
 
@@ -199,29 +199,29 @@ export class LocationsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Location Data
-     * Get swtData locations with locationId
+     * Get CwmsData locations with locationId
      */
-    async getSwtDataLocationsWithLocationId(requestParameters: GetSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Location> {
-        const response = await this.getSwtDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
+    async getLocationsWithLocationId(requestParameters: GetLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Location> {
+        const response = await this.getLocationsWithLocationIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update CWMS Location
-     * Patch swtData locations with locationId
+     * Patch CwmsData locations with locationId
      */
-    async patchSwtDataLocationsWithLocationIdRaw(requestParameters: PatchSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataLocationsWithLocationIdRaw(requestParameters: PatchCwmsDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['locationId'] == null) {
             throw new runtime.RequiredError(
                 'locationId',
-                'Required parameter "locationId" was null or undefined when calling patchSwtDataLocationsWithLocationId().'
+                'Required parameter "locationId" was null or undefined when calling patchCwmsDataLocationsWithLocationId().'
             );
         }
 
         if (requestParameters['location'] == null) {
             throw new runtime.RequiredError(
                 'location',
-                'Required parameter "location" was null or undefined when calling patchSwtDataLocationsWithLocationId().'
+                'Required parameter "location" was null or undefined when calling patchCwmsDataLocationsWithLocationId().'
             );
         }
 
@@ -248,21 +248,21 @@ export class LocationsApi extends runtime.BaseAPI {
 
     /**
      * Update CWMS Location
-     * Patch swtData locations with locationId
+     * Patch CwmsData locations with locationId
      */
-    async patchSwtDataLocationsWithLocationId(requestParameters: PatchSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
+    async patchCwmsDataLocationsWithLocationId(requestParameters: PatchCwmsDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new CWMS Location
-     * Post swtData locations
+     * Post CwmsData locations
      */
-    async postSwtDataLocationsRaw(requestParameters: PostSwtDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataLocationsRaw(requestParameters: PostCwmsDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['location'] == null) {
             throw new runtime.RequiredError(
                 'location',
-                'Required parameter "location" was null or undefined when calling postSwtDataLocations().'
+                'Required parameter "location" was null or undefined when calling postCwmsDataLocations().'
             );
         }
 
@@ -289,10 +289,10 @@ export class LocationsApi extends runtime.BaseAPI {
 
     /**
      * Create new CWMS Location
-     * Post swtData locations
+     * Post CwmsData locations
      */
-    async postSwtDataLocations(requestParameters: PostSwtDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataLocationsRaw(requestParameters, initOverrides);
+    async postCwmsDataLocations(requestParameters: PostCwmsDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataLocationsRaw(requestParameters, initOverrides);
     }
 
 }

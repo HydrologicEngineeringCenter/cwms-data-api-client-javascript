@@ -19,18 +19,18 @@ import {
     TimeSeriesColumnFromJSONTyped,
     TimeSeriesColumnToJSON,
 } from './TimeSeriesColumn';
+import type { TimeSeriesInterval } from './TimeSeriesInterval';
+import {
+    TimeSeriesIntervalFromJSON,
+    TimeSeriesIntervalFromJSONTyped,
+    TimeSeriesIntervalToJSON,
+} from './TimeSeriesInterval';
 import type { TimeSeriesRecordInner } from './TimeSeriesRecordInner';
 import {
     TimeSeriesRecordInnerFromJSON,
     TimeSeriesRecordInnerFromJSONTyped,
     TimeSeriesRecordInnerToJSON,
 } from './TimeSeriesRecordInner';
-import type { TimeseriesInterval } from './TimeseriesInterval';
-import {
-    TimeseriesIntervalFromJSON,
-    TimeseriesIntervalFromJSONTyped,
-    TimeseriesIntervalToJSON,
-} from './TimeseriesInterval';
 import type { VerticalDatumInfo } from './VerticalDatumInfo';
 import {
     VerticalDatumInfoFromJSON,
@@ -41,109 +41,109 @@ import {
 /**
  * 
  * @export
- * @interface Timeseries
+ * @interface TimeSeries
  */
-export interface Timeseries {
+export interface TimeSeries {
     /**
      * The requested start time of the data, in ISO-8601 format with offset and timezone ('yyyy-MM-dd'T'HH:mm:ssZ'['VV']'')
      * @type {Date}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     readonly begin?: Date;
     /**
      * Version type specifies the type of timeseries response to be received. Can be max aggregate or single version. Max aggregate cannot be run if version date field is specified.
      * @type {string}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
-    dateVersionType?: TimeseriesDateVersionTypeEnum;
+    dateVersionType?: TimeSeriesDateVersionTypeEnum;
     /**
      * The requested end time of the data, in ISO-8601 format with offset and timezone ('yyyy-MM-dd'T'HH:mm:ssZ'['VV']'')
      * @type {Date}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     readonly end?: Date;
     /**
      * 
-     * @type {TimeseriesInterval}
-     * @memberof Timeseries
+     * @type {TimeSeriesInterval}
+     * @memberof TimeSeries
      */
-    interval?: TimeseriesInterval;
+    interval?: TimeSeriesInterval;
     /**
      * Offset from top of interval
      * @type {number}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     readonly intervalOffset?: number;
     /**
      * Time-series name
      * @type {string}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     name?: string;
     /**
      * The cursor to the next page of data; null if there is no more data
      * @type {string}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     readonly nextPage?: string;
     /**
      * Office ID that owns the time-series
      * @type {string}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     officeId?: string;
     /**
      * The cursor to the current page of data
      * @type {string}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     readonly page?: string;
     /**
      * The number of records fetched per-page; this may be larger than the number of records actually retrieved
      * @type {number}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     readonly pageSize?: number;
     /**
      * Only on 21.1.1 Database. The timezone the Interval Offset is from.
      * @type {string}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     readonly timeZone?: string;
     /**
      * The total number of records retrieved; null or not present if not supported or unknown
      * @type {number}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     readonly total?: number;
     /**
      * The units of the time series data
      * @type {string}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     units: string;
     /**
      * 
      * @type {Array<TimeSeriesColumn>}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     readonly valueColumns?: Array<TimeSeriesColumn>;
     /**
-     * Array of time-series data points. Each entry contains a sub-array representing date-time, value, and quality-code.
-     * @type {Array<Array<Array<Array<TimeSeriesRecordInner>>>>}
-     * @memberof Timeseries
+     * 
+     * @type {Array<Array<TimeSeriesRecordInner>>}
+     * @memberof TimeSeries
      */
-    values?: Array<Array<Array<Array<TimeSeriesRecordInner>>>>;
+    values?: Array<Array<TimeSeriesRecordInner>>;
     /**
      * The version date of the time series trace
      * @type {Date}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     versionDate?: Date;
     /**
      * 
      * @type {VerticalDatumInfo}
-     * @memberof Timeseries
+     * @memberof TimeSeries
      */
     verticalDatumInfo?: VerticalDatumInfo;
 }
@@ -152,27 +152,27 @@ export interface Timeseries {
 /**
  * @export
  */
-export const TimeseriesDateVersionTypeEnum = {
+export const TimeSeriesDateVersionTypeEnum = {
     MaxAggregate: 'MAX_AGGREGATE',
     SingleVersion: 'SINGLE_VERSION',
     Unversioned: 'UNVERSIONED'
 } as const;
-export type TimeseriesDateVersionTypeEnum = typeof TimeseriesDateVersionTypeEnum[keyof typeof TimeseriesDateVersionTypeEnum];
+export type TimeSeriesDateVersionTypeEnum = typeof TimeSeriesDateVersionTypeEnum[keyof typeof TimeSeriesDateVersionTypeEnum];
 
 
 /**
- * Check if a given object implements the Timeseries interface.
+ * Check if a given object implements the TimeSeries interface.
  */
-export function instanceOfTimeseries(value: object): boolean {
+export function instanceOfTimeSeries(value: object): boolean {
     if (!('units' in value)) return false;
     return true;
 }
 
-export function TimeseriesFromJSON(json: any): Timeseries {
-    return TimeseriesFromJSONTyped(json, false);
+export function TimeSeriesFromJSON(json: any): TimeSeries {
+    return TimeSeriesFromJSONTyped(json, false);
 }
 
-export function TimeseriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): Timeseries {
+export function TimeSeriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeries {
     if (json == null) {
         return json;
     }
@@ -181,7 +181,7 @@ export function TimeseriesFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'begin': json['begin'] == null ? undefined : (new Date(json['begin'])),
         'dateVersionType': json['date-version-type'] == null ? undefined : json['date-version-type'],
         'end': json['end'] == null ? undefined : (new Date(json['end'])),
-        'interval': json['interval'] == null ? undefined : TimeseriesIntervalFromJSON(json['interval']),
+        'interval': json['interval'] == null ? undefined : TimeSeriesIntervalFromJSON(json['interval']),
         'intervalOffset': json['interval-offset'] == null ? undefined : json['interval-offset'],
         'name': json['name'] == null ? undefined : json['name'],
         'nextPage': json['next-page'] == null ? undefined : json['next-page'],
@@ -198,14 +198,14 @@ export function TimeseriesFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
-export function TimeseriesToJSON(value?: Timeseries | null): any {
+export function TimeSeriesToJSON(value?: TimeSeries | null): any {
     if (value == null) {
         return value;
     }
     return {
         
         'date-version-type': value['dateVersionType'],
-        'interval': TimeseriesIntervalToJSON(value['interval']),
+        'interval': TimeSeriesIntervalToJSON(value['interval']),
         'name': value['name'],
         'office-id': value['officeId'],
         'units': value['units'],

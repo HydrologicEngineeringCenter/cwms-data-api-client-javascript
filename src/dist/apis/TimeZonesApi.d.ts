@@ -11,7 +11,7 @@
  */
 import * as runtime from '../runtime';
 import type { TimeZoneIds } from '../models/index';
-export interface GetSwtDataTimezonesRequest {
+export interface GetTimezonesRequest {
     format?: string;
 }
 /**
@@ -19,11 +19,11 @@ export interface GetSwtDataTimezonesRequest {
  */
 export declare class TimeZonesApi extends runtime.BaseAPI {
     /**
-     * Get swtData timezones
+     * Get CwmsData timezones
      */
-    getSwtDataTimezonesRaw(requestParameters: GetSwtDataTimezonesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeZoneIds>>;
+    getTimezonesRaw(requestParameters: GetTimezonesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeZoneIds>>;
     /**
-     * Get swtData timezones
+     * Get CwmsData timezones
      */
-    getSwtDataTimezones(requestParameters?: GetSwtDataTimezonesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeZoneIds>;
+    getTimezones(requestParameters?: GetTimezonesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeZoneIds>;
 }

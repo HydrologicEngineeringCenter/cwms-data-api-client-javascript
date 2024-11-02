@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 import type { LocationCatalogEntry } from './LocationCatalogEntry';
-import type { TimeseriesCatalogEntry } from './TimeseriesCatalogEntry';
+import type { TimeSeriesCatalogEntry } from './TimeSeriesCatalogEntry';
 /**
  * @type CatalogEntry
  *
  * @export
  */
-export type CatalogEntry = LocationCatalogEntry | TimeseriesCatalogEntry;
+export type CatalogEntry = LocationCatalogEntry | TimeSeriesCatalogEntry;
 export declare function CatalogEntryFromJSON(json: any): CatalogEntry;
 export declare function CatalogEntryFromJSONTyped(json: any, ignoreDiscriminator: boolean): CatalogEntry;
 export declare function CatalogEntryToJSON(value?: CatalogEntry | null): any;

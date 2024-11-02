@@ -25,7 +25,7 @@ import {
     MeasurementToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataMeasurementsWithLocationIdRequest {
+export interface DeleteCwmsDataMeasurementsWithLocationIdRequest {
     locationId: string;
     office: string;
     begin: string;
@@ -35,7 +35,7 @@ export interface DeleteSwtDataMeasurementsWithLocationIdRequest {
     maxNumber?: string;
 }
 
-export interface GetSwtDataMeasurementsRequest {
+export interface GetMeasurementsRequest {
     officeMask?: string;
     idMask?: string;
     minNumber?: string;
@@ -52,7 +52,7 @@ export interface GetSwtDataMeasurementsRequest {
     unitSystem?: string;
 }
 
-export interface PostSwtDataMeasurementsRequest {
+export interface PostCwmsDataMeasurementsRequest {
     measurement: Array<Measurement>;
     failIfExists?: boolean;
 }
@@ -64,34 +64,34 @@ export class MeasurementsApi extends runtime.BaseAPI {
 
     /**
      * Delete an existing measurement.
-     * Delete swtData measurements with locationId
+     * Delete CwmsData measurements with locationId
      */
-    async deleteSwtDataMeasurementsWithLocationIdRaw(requestParameters: DeleteSwtDataMeasurementsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataMeasurementsWithLocationIdRaw(requestParameters: DeleteCwmsDataMeasurementsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['locationId'] == null) {
             throw new runtime.RequiredError(
                 'locationId',
-                'Required parameter "locationId" was null or undefined when calling deleteSwtDataMeasurementsWithLocationId().'
+                'Required parameter "locationId" was null or undefined when calling deleteCwmsDataMeasurementsWithLocationId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataMeasurementsWithLocationId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataMeasurementsWithLocationId().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling deleteSwtDataMeasurementsWithLocationId().'
+                'Required parameter "begin" was null or undefined when calling deleteCwmsDataMeasurementsWithLocationId().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling deleteSwtDataMeasurementsWithLocationId().'
+                'Required parameter "end" was null or undefined when calling deleteCwmsDataMeasurementsWithLocationId().'
             );
         }
 
@@ -139,17 +139,17 @@ export class MeasurementsApi extends runtime.BaseAPI {
 
     /**
      * Delete an existing measurement.
-     * Delete swtData measurements with locationId
+     * Delete CwmsData measurements with locationId
      */
-    async deleteSwtDataMeasurementsWithLocationId(requestParameters: DeleteSwtDataMeasurementsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataMeasurementsWithLocationIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataMeasurementsWithLocationId(requestParameters: DeleteCwmsDataMeasurementsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataMeasurementsWithLocationIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns matching measurement data.
-     * Get swtData measurements
+     * Get CwmsData measurements
      */
-    async getSwtDataMeasurementsRaw(requestParameters: GetSwtDataMeasurementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Measurement>>> {
+    async getMeasurementsRaw(requestParameters: GetMeasurementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Measurement>>> {
         const queryParameters: any = {};
 
         if (requestParameters['officeMask'] != null) {
@@ -226,22 +226,22 @@ export class MeasurementsApi extends runtime.BaseAPI {
 
     /**
      * Returns matching measurement data.
-     * Get swtData measurements
+     * Get CwmsData measurements
      */
-    async getSwtDataMeasurements(requestParameters: GetSwtDataMeasurementsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Measurement>> {
-        const response = await this.getSwtDataMeasurementsRaw(requestParameters, initOverrides);
+    async getMeasurements(requestParameters: GetMeasurementsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Measurement>> {
+        const response = await this.getMeasurementsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Create new measurement(s).
-     * Post swtData measurements
+     * Post CwmsData measurements
      */
-    async postSwtDataMeasurementsRaw(requestParameters: PostSwtDataMeasurementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataMeasurementsRaw(requestParameters: PostCwmsDataMeasurementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['measurement'] == null) {
             throw new runtime.RequiredError(
                 'measurement',
-                'Required parameter "measurement" was null or undefined when calling postSwtDataMeasurements().'
+                'Required parameter "measurement" was null or undefined when calling postCwmsDataMeasurements().'
             );
         }
 
@@ -272,10 +272,10 @@ export class MeasurementsApi extends runtime.BaseAPI {
 
     /**
      * Create new measurement(s).
-     * Post swtData measurements
+     * Post CwmsData measurements
      */
-    async postSwtDataMeasurements(requestParameters: PostSwtDataMeasurementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataMeasurementsRaw(requestParameters, initOverrides);
+    async postCwmsDataMeasurements(requestParameters: PostCwmsDataMeasurementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataMeasurementsRaw(requestParameters, initOverrides);
     }
 
 }

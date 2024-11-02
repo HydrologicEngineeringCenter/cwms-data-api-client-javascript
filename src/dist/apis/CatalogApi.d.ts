@@ -11,7 +11,7 @@
  */
 import * as runtime from '../runtime';
 import type { Catalog, CatalogableEndpoint, UnitSystem } from '../models/index';
-export interface GetSwtDataCatalogWithDatasetRequest {
+export interface GetCatalogWithDatasetRequest {
     dataset: CatalogableEndpoint;
     page?: string;
     pageSize?: number;
@@ -33,11 +33,11 @@ export interface GetSwtDataCatalogWithDatasetRequest {
  */
 export declare class CatalogApi extends runtime.BaseAPI {
     /**
-     * Get swtData catalog with dataset
+     * Get CwmsData catalog with dataset
      */
-    getSwtDataCatalogWithDatasetRaw(requestParameters: GetSwtDataCatalogWithDatasetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Catalog>>;
+    getCatalogWithDatasetRaw(requestParameters: GetCatalogWithDatasetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Catalog>>;
     /**
-     * Get swtData catalog with dataset
+     * Get CwmsData catalog with dataset
      */
-    getSwtDataCatalogWithDataset(requestParameters: GetSwtDataCatalogWithDatasetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Catalog>;
+    getCatalogWithDataset(requestParameters: GetCatalogWithDatasetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Catalog>;
 }

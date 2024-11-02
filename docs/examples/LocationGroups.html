@@ -92,7 +92,7 @@
 
 const lg_api = new LocationGroupsApi();
 lg_api
-    .getCwmsDataLocationGroup({
+    .getLocationGroup({
         office: 'SWT',
     })
     .then((data) => {
@@ -133,7 +133,7 @@ to download bundle.js to your system</li>
 &lt;script type=&quot;module&quot;&gt;
 const lg_api = new cwmsjs.LocationGroupsApi();
 lg_api
-    .getCwmsDataLocationGroup({
+    .getLocationGroup({
         office: &#039;SWT&#039;,
     })
     .then((data) =&gt; {

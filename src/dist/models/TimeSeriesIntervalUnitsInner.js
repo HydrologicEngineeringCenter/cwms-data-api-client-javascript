@@ -13,40 +13,40 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeseriesIntervalUnitsInnerToJSON = exports.TimeseriesIntervalUnitsInnerFromJSONTyped = exports.TimeseriesIntervalUnitsInnerFromJSON = exports.instanceOfTimeseriesIntervalUnitsInner = void 0;
-const TimeseriesIntervalUnitsInnerDuration_1 = require("./TimeseriesIntervalUnitsInnerDuration");
+exports.TimeSeriesIntervalUnitsInnerToJSON = exports.TimeSeriesIntervalUnitsInnerFromJSONTyped = exports.TimeSeriesIntervalUnitsInnerFromJSON = exports.instanceOfTimeSeriesIntervalUnitsInner = void 0;
+const TimeSeriesIntervalUnitsInnerDuration_1 = require("./TimeSeriesIntervalUnitsInnerDuration");
 /**
- * Check if a given object implements the TimeseriesIntervalUnitsInner interface.
+ * Check if a given object implements the TimeSeriesIntervalUnitsInner interface.
  */
-function instanceOfTimeseriesIntervalUnitsInner(value) {
+function instanceOfTimeSeriesIntervalUnitsInner(value) {
     return true;
 }
-exports.instanceOfTimeseriesIntervalUnitsInner = instanceOfTimeseriesIntervalUnitsInner;
-function TimeseriesIntervalUnitsInnerFromJSON(json) {
-    return TimeseriesIntervalUnitsInnerFromJSONTyped(json, false);
+exports.instanceOfTimeSeriesIntervalUnitsInner = instanceOfTimeSeriesIntervalUnitsInner;
+function TimeSeriesIntervalUnitsInnerFromJSON(json) {
+    return TimeSeriesIntervalUnitsInnerFromJSONTyped(json, false);
 }
-exports.TimeseriesIntervalUnitsInnerFromJSON = TimeseriesIntervalUnitsInnerFromJSON;
-function TimeseriesIntervalUnitsInnerFromJSONTyped(json, ignoreDiscriminator) {
+exports.TimeSeriesIntervalUnitsInnerFromJSON = TimeSeriesIntervalUnitsInnerFromJSON;
+function TimeSeriesIntervalUnitsInnerFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
-        'duration': json['duration'] == null ? undefined : (0, TimeseriesIntervalUnitsInnerDuration_1.TimeseriesIntervalUnitsInnerDurationFromJSON)(json['duration']),
+        'duration': json['duration'] == null ? undefined : (0, TimeSeriesIntervalUnitsInnerDuration_1.TimeSeriesIntervalUnitsInnerDurationFromJSON)(json['duration']),
         'durationEstimated': json['durationEstimated'] == null ? undefined : json['durationEstimated'],
         'dateBased': json['dateBased'] == null ? undefined : json['dateBased'],
         'timeBased': json['timeBased'] == null ? undefined : json['timeBased'],
     };
 }
-exports.TimeseriesIntervalUnitsInnerFromJSONTyped = TimeseriesIntervalUnitsInnerFromJSONTyped;
-function TimeseriesIntervalUnitsInnerToJSON(value) {
+exports.TimeSeriesIntervalUnitsInnerFromJSONTyped = TimeSeriesIntervalUnitsInnerFromJSONTyped;
+function TimeSeriesIntervalUnitsInnerToJSON(value) {
     if (value == null) {
         return value;
     }
     return {
-        'duration': (0, TimeseriesIntervalUnitsInnerDuration_1.TimeseriesIntervalUnitsInnerDurationToJSON)(value['duration']),
+        'duration': (0, TimeSeriesIntervalUnitsInnerDuration_1.TimeSeriesIntervalUnitsInnerDurationToJSON)(value['duration']),
         'durationEstimated': value['durationEstimated'],
         'dateBased': value['dateBased'],
         'timeBased': value['timeBased'],
     };
 }
-exports.TimeseriesIntervalUnitsInnerToJSON = TimeseriesIntervalUnitsInnerToJSON;
+exports.TimeSeriesIntervalUnitsInnerToJSON = TimeSeriesIntervalUnitsInnerToJSON;

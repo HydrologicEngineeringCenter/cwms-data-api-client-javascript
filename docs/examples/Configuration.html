@@ -100,7 +100,7 @@ const v2_config = new Configuration({
 });
 const ts_api = new TimeSeriesApi(v2_config);
 ts_api
-    .getCwmsDataTimeseries({
+    .getDataTimeseries({
         office: 'SWT',
         name: 'KEYS.Elev.Inst.1Hour.0.Ccp-Rev',
     })
@@ -146,7 +146,7 @@ const v2_config = new cwmsjs.Configuration({
 });
 const ts_api = new cwmsjs.TimeSeriesApi(v2_config);
 ts_api
-    .getCwmsDataTimeseries({
+    .getDataTimeseries({
         office: &#039;SWT&#039;,
         name: &#039;KEYS.Elev.Inst.1Hour.0.Ccp-Rev&#039;,
     })

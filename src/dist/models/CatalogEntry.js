@@ -15,7 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CatalogEntryToJSON = exports.CatalogEntryFromJSONTyped = exports.CatalogEntryFromJSON = void 0;
 const LocationCatalogEntry_1 = require("./LocationCatalogEntry");
-const TimeseriesCatalogEntry_1 = require("./TimeseriesCatalogEntry");
+const TimeSeriesCatalogEntry_1 = require("./TimeSeriesCatalogEntry");
 function CatalogEntryFromJSON(json) {
     return CatalogEntryFromJSONTyped(json, false);
 }
@@ -24,7 +24,7 @@ function CatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
-    return Object.assign(Object.assign({}, (0, LocationCatalogEntry_1.LocationCatalogEntryFromJSONTyped)(json, true)), (0, TimeseriesCatalogEntry_1.TimeseriesCatalogEntryFromJSONTyped)(json, true));
+    return Object.assign(Object.assign({}, (0, LocationCatalogEntry_1.LocationCatalogEntryFromJSONTyped)(json, true)), (0, TimeSeriesCatalogEntry_1.TimeSeriesCatalogEntryFromJSONTyped)(json, true));
 }
 exports.CatalogEntryFromJSONTyped = CatalogEntryFromJSONTyped;
 function CatalogEntryToJSON(value) {
@@ -34,8 +34,8 @@ function CatalogEntryToJSON(value) {
     if ((0, LocationCatalogEntry_1.instanceOfLocationCatalogEntry)(value)) {
         return (0, LocationCatalogEntry_1.LocationCatalogEntryToJSON)(value);
     }
-    if ((0, TimeseriesCatalogEntry_1.instanceOfTimeseriesCatalogEntry)(value)) {
-        return (0, TimeseriesCatalogEntry_1.TimeseriesCatalogEntryToJSON)(value);
+    if ((0, TimeSeriesCatalogEntry_1.instanceOfTimeSeriesCatalogEntry)(value)) {
+        return (0, TimeSeriesCatalogEntry_1.TimeSeriesCatalogEntryToJSON)(value);
     }
     return {};
 }

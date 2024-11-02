@@ -25,7 +25,7 @@ import {
     CdaErrorToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataTimeSeriesBinaryWithNameRequest {
+export interface DeleteCwmsDataTimeSeriesBinaryWithNameRequest {
     name: string;
     office: string;
     begin: string;
@@ -35,7 +35,7 @@ export interface DeleteSwtDataTimeSeriesBinaryWithNameRequest {
     versionDate?: string;
 }
 
-export interface GetSwtDataTimeSeriesBinaryRequest {
+export interface GetTimeSeriesBinaryRequest {
     office: string;
     name: string;
     begin: string;
@@ -45,7 +45,7 @@ export interface GetSwtDataTimeSeriesBinaryRequest {
     versionDate?: string;
 }
 
-export interface GetSwtDataTimeSeriesBinaryWithNameValueRequest {
+export interface GetTimeSeriesBinaryWithNameValueRequest {
     name: string;
     office: string;
     date: string;
@@ -54,13 +54,13 @@ export interface GetSwtDataTimeSeriesBinaryWithNameValueRequest {
     blobId?: string;
 }
 
-export interface PatchSwtDataTimeSeriesBinaryWithNameRequest {
+export interface PatchCwmsDataTimeSeriesBinaryWithNameRequest {
     name: string;
     binaryTimeSeries: BinaryTimeSeries;
     replaceAll?: boolean;
 }
 
-export interface PostSwtDataTimeSeriesBinaryRequest {
+export interface PostCwmsDataTimeSeriesBinaryRequest {
     binaryTimeSeries: BinaryTimeSeries;
     replaceAll?: boolean;
 }
@@ -72,34 +72,34 @@ export class BinaryTimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested binary timeseries id
-     * Delete swtData timeseries binary with name
+     * Delete CwmsData timeseries binary with name
      */
-    async deleteSwtDataTimeSeriesBinaryWithNameRaw(requestParameters: DeleteSwtDataTimeSeriesBinaryWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataTimeSeriesBinaryWithNameRaw(requestParameters: DeleteCwmsDataTimeSeriesBinaryWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataTimeSeriesBinaryWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataTimeSeriesBinaryWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeSeriesBinaryWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataTimeSeriesBinaryWithName().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling deleteSwtDataTimeSeriesBinaryWithName().'
+                'Required parameter "begin" was null or undefined when calling deleteCwmsDataTimeSeriesBinaryWithName().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling deleteSwtDataTimeSeriesBinaryWithName().'
+                'Required parameter "end" was null or undefined when calling deleteCwmsDataTimeSeriesBinaryWithName().'
             );
         }
 
@@ -147,41 +147,41 @@ export class BinaryTimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested binary timeseries id
-     * Delete swtData timeseries binary with name
+     * Delete CwmsData timeseries binary with name
      */
-    async deleteSwtDataTimeSeriesBinaryWithName(requestParameters: DeleteSwtDataTimeSeriesBinaryWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataTimeSeriesBinaryWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataTimeSeriesBinaryWithName(requestParameters: DeleteCwmsDataTimeSeriesBinaryWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataTimeSeriesBinaryWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Retrieve binary time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.
      */
-    async getSwtDataTimeSeriesBinaryRaw(requestParameters: GetSwtDataTimeSeriesBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BinaryTimeSeries>> {
+    async getTimeSeriesBinaryRaw(requestParameters: GetTimeSeriesBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BinaryTimeSeries>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataTimeSeriesBinary().'
+                'Required parameter "office" was null or undefined when calling getTimeSeriesBinary().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataTimeSeriesBinary().'
+                'Required parameter "name" was null or undefined when calling getTimeSeriesBinary().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling getSwtDataTimeSeriesBinary().'
+                'Required parameter "begin" was null or undefined when calling getTimeSeriesBinary().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling getSwtDataTimeSeriesBinary().'
+                'Required parameter "end" was null or undefined when calling getTimeSeriesBinary().'
             );
         }
 
@@ -234,33 +234,33 @@ export class BinaryTimeSeriesApi extends runtime.BaseAPI {
     /**
      * Retrieve binary time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.
      */
-    async getSwtDataTimeSeriesBinary(requestParameters: GetSwtDataTimeSeriesBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BinaryTimeSeries> {
-        const response = await this.getSwtDataTimeSeriesBinaryRaw(requestParameters, initOverrides);
+    async getTimeSeriesBinary(requestParameters: GetTimeSeriesBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BinaryTimeSeries> {
+        const response = await this.getTimeSeriesBinaryRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData timeseries binary with name value
+     * Get CwmsData timeseries binary with name value
      */
-    async getSwtDataTimeSeriesBinaryWithNameValueRaw(requestParameters: GetSwtDataTimeSeriesBinaryWithNameValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>> {
+    async getTimeSeriesBinaryWithNameValueRaw(requestParameters: GetTimeSeriesBinaryWithNameValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataTimeSeriesBinaryWithNameValue().'
+                'Required parameter "name" was null or undefined when calling getTimeSeriesBinaryWithNameValue().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataTimeSeriesBinaryWithNameValue().'
+                'Required parameter "office" was null or undefined when calling getTimeSeriesBinaryWithNameValue().'
             );
         }
 
         if (requestParameters['date'] == null) {
             throw new runtime.RequiredError(
                 'date',
-                'Required parameter "date" was null or undefined when calling getSwtDataTimeSeriesBinaryWithNameValue().'
+                'Required parameter "date" was null or undefined when calling getTimeSeriesBinaryWithNameValue().'
             );
         }
 
@@ -303,29 +303,29 @@ export class BinaryTimeSeriesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData timeseries binary with name value
+     * Get CwmsData timeseries binary with name value
      */
-    async getSwtDataTimeSeriesBinaryWithNameValue(requestParameters: GetSwtDataTimeSeriesBinaryWithNameValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob> {
-        const response = await this.getSwtDataTimeSeriesBinaryWithNameValueRaw(requestParameters, initOverrides);
+    async getTimeSeriesBinaryWithNameValue(requestParameters: GetTimeSeriesBinaryWithNameValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob> {
+        const response = await this.getTimeSeriesBinaryWithNameValueRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Updates a binary timeseries
-     * Patch swtData timeseries binary with name
+     * Patch CwmsData timeseries binary with name
      */
-    async patchSwtDataTimeSeriesBinaryWithNameRaw(requestParameters: PatchSwtDataTimeSeriesBinaryWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataTimeSeriesBinaryWithNameRaw(requestParameters: PatchCwmsDataTimeSeriesBinaryWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataTimeSeriesBinaryWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataTimeSeriesBinaryWithName().'
             );
         }
 
         if (requestParameters['binaryTimeSeries'] == null) {
             throw new runtime.RequiredError(
                 'binaryTimeSeries',
-                'Required parameter "binaryTimeSeries" was null or undefined when calling patchSwtDataTimeSeriesBinaryWithName().'
+                'Required parameter "binaryTimeSeries" was null or undefined when calling patchCwmsDataTimeSeriesBinaryWithName().'
             );
         }
 
@@ -356,21 +356,21 @@ export class BinaryTimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Updates a binary timeseries
-     * Patch swtData timeseries binary with name
+     * Patch CwmsData timeseries binary with name
      */
-    async patchSwtDataTimeSeriesBinaryWithName(requestParameters: PatchSwtDataTimeSeriesBinaryWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataTimeSeriesBinaryWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataTimeSeriesBinaryWithName(requestParameters: PatchCwmsDataTimeSeriesBinaryWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataTimeSeriesBinaryWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new BinaryTimeSeries
-     * Post swtData timeseries binary
+     * Post CwmsData timeseries binary
      */
-    async postSwtDataTimeSeriesBinaryRaw(requestParameters: PostSwtDataTimeSeriesBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataTimeSeriesBinaryRaw(requestParameters: PostCwmsDataTimeSeriesBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['binaryTimeSeries'] == null) {
             throw new runtime.RequiredError(
                 'binaryTimeSeries',
-                'Required parameter "binaryTimeSeries" was null or undefined when calling postSwtDataTimeSeriesBinary().'
+                'Required parameter "binaryTimeSeries" was null or undefined when calling postCwmsDataTimeSeriesBinary().'
             );
         }
 
@@ -401,10 +401,10 @@ export class BinaryTimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Create new BinaryTimeSeries
-     * Post swtData timeseries binary
+     * Post CwmsData timeseries binary
      */
-    async postSwtDataTimeSeriesBinary(requestParameters: PostSwtDataTimeSeriesBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataTimeSeriesBinaryRaw(requestParameters, initOverrides);
+    async postCwmsDataTimeSeriesBinary(requestParameters: PostCwmsDataTimeSeriesBinaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataTimeSeriesBinaryRaw(requestParameters, initOverrides);
     }
 
 }

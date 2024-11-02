@@ -28,19 +28,19 @@ import {
     CdaErrorToJSON,
 } from '../models/index';
 
-export interface GetSwtDataBlobsRequest {
+export interface GetBlobsRequest {
     office?: string;
     page?: string;
     pageSize?: number;
     like?: string;
 }
 
-export interface GetSwtDataBlobsWithBlobIdRequest {
+export interface GetBlobsWithBlobIdRequest {
     blobId: string;
     office?: string;
 }
 
-export interface PostSwtDataBlobsRequest {
+export interface PostCwmsDataBlobsRequest {
     blob: Blob;
     failIfExists?: boolean;
 }
@@ -51,9 +51,9 @@ export interface PostSwtDataBlobsRequest {
 export class BlobApi extends runtime.BaseAPI {
 
     /**
-     * Get swtData blobs
+     * Get CwmsData blobs
      */
-    async getSwtDataBlobsRaw(requestParameters: GetSwtDataBlobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blobs>> {
+    async getBlobsRaw(requestParameters: GetBlobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blobs>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -89,21 +89,21 @@ export class BlobApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData blobs
+     * Get CwmsData blobs
      */
-    async getSwtDataBlobs(requestParameters: GetSwtDataBlobsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blobs> {
-        const response = await this.getSwtDataBlobsRaw(requestParameters, initOverrides);
+    async getBlobs(requestParameters: GetBlobsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blobs> {
+        const response = await this.getBlobsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData blobs with blobId
+     * Get CwmsData blobs with blobId
      */
-    async getSwtDataBlobsWithBlobIdRaw(requestParameters: GetSwtDataBlobsWithBlobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async getBlobsWithBlobIdRaw(requestParameters: GetBlobsWithBlobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['blobId'] == null) {
             throw new runtime.RequiredError(
                 'blobId',
-                'Required parameter "blobId" was null or undefined when calling getSwtDataBlobsWithBlobId().'
+                'Required parameter "blobId" was null or undefined when calling getBlobsWithBlobId().'
             );
         }
 
@@ -130,21 +130,21 @@ export class BlobApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData blobs with blobId
+     * Get CwmsData blobs with blobId
      */
-    async getSwtDataBlobsWithBlobId(requestParameters: GetSwtDataBlobsWithBlobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.getSwtDataBlobsWithBlobIdRaw(requestParameters, initOverrides);
+    async getBlobsWithBlobId(requestParameters: GetBlobsWithBlobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.getBlobsWithBlobIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new Blob
-     * Post swtData blobs
+     * Post CwmsData blobs
      */
-    async postSwtDataBlobsRaw(requestParameters: PostSwtDataBlobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataBlobsRaw(requestParameters: PostCwmsDataBlobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['blob'] == null) {
             throw new runtime.RequiredError(
                 'blob',
-                'Required parameter "blob" was null or undefined when calling postSwtDataBlobs().'
+                'Required parameter "blob" was null or undefined when calling postCwmsDataBlobs().'
             );
         }
 
@@ -175,10 +175,10 @@ export class BlobApi extends runtime.BaseAPI {
 
     /**
      * Create new Blob
-     * Post swtData blobs
+     * Post CwmsData blobs
      */
-    async postSwtDataBlobs(requestParameters: PostSwtDataBlobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataBlobsRaw(requestParameters, initOverrides);
+    async postCwmsDataBlobs(requestParameters: PostCwmsDataBlobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataBlobsRaw(requestParameters, initOverrides);
     }
 
 }

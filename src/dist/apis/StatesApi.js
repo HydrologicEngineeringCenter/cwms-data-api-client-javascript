@@ -30,9 +30,9 @@ const index_1 = require("../models/index");
  */
 class StatesApi extends runtime.BaseAPI {
     /**
-     * Get swtData states
+     * Get CwmsData states
      */
-    getSwtDataStatesRaw(initOverrides) {
+    getStatesRaw(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             const headerParameters = {};
@@ -49,11 +49,11 @@ class StatesApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData states
+     * Get CwmsData states
      */
-    getSwtDataStates(initOverrides) {
+    getStates(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataStatesRaw(initOverrides);
+            const response = yield this.getStatesRaw(initOverrides);
             return yield response.value();
         });
     }

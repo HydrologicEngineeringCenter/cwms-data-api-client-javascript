@@ -11,35 +11,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { TimeseriesIntervalUnitsInnerFromJSON, TimeseriesIntervalUnitsInnerToJSON, } from './TimeseriesIntervalUnitsInner';
+import { TimeSeriesIntervalUnitsInnerFromJSON, TimeSeriesIntervalUnitsInnerToJSON, } from './TimeSeriesIntervalUnitsInner';
 /**
- * Check if a given object implements the TimeseriesInterval interface.
+ * Check if a given object implements the TimeSeriesInterval interface.
  */
-export function instanceOfTimeseriesInterval(value) {
+export function instanceOfTimeSeriesInterval(value) {
     return true;
 }
-export function TimeseriesIntervalFromJSON(json) {
-    return TimeseriesIntervalFromJSONTyped(json, false);
+export function TimeSeriesIntervalFromJSON(json) {
+    return TimeSeriesIntervalFromJSONTyped(json, false);
 }
-export function TimeseriesIntervalFromJSONTyped(json, ignoreDiscriminator) {
+export function TimeSeriesIntervalFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
         'seconds': json['seconds'] == null ? undefined : json['seconds'],
-        'units': json['units'] == null ? undefined : (json['units'].map(TimeseriesIntervalUnitsInnerFromJSON)),
+        'units': json['units'] == null ? undefined : (json['units'].map(TimeSeriesIntervalUnitsInnerFromJSON)),
         'nano': json['nano'] == null ? undefined : json['nano'],
         'zero': json['zero'] == null ? undefined : json['zero'],
         'negative': json['negative'] == null ? undefined : json['negative'],
     };
 }
-export function TimeseriesIntervalToJSON(value) {
+export function TimeSeriesIntervalToJSON(value) {
     if (value == null) {
         return value;
     }
     return {
         'seconds': value['seconds'],
-        'units': value['units'] == null ? undefined : (value['units'].map(TimeseriesIntervalUnitsInnerToJSON)),
+        'units': value['units'] == null ? undefined : (value['units'].map(TimeSeriesIntervalUnitsInnerToJSON)),
         'nano': value['nano'],
         'zero': value['zero'],
         'negative': value['negative'],

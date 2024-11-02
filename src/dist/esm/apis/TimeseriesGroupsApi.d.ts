@@ -11,84 +11,84 @@
  */
 import * as runtime from '../runtime';
 import type { TimeseriesGroup } from '../models/index';
-export interface DeleteSwtDataTimeseriesGroupWithGroupIdRequest {
+export interface DeleteCwmsDataTimeSeriesGroupWithGroupIdRequest {
     groupId: string;
     categoryId: string;
     office: string;
 }
-export interface GetSwtDataTimeseriesGroupRequest {
+export interface GetTimeSeriesGroupRequest {
     office?: string;
     includeAssigned?: boolean;
     timeseriesCategoryLike?: string;
     timeseriesGroupLike?: string;
 }
-export interface GetSwtDataTimeseriesGroupWithGroupIdRequest {
+export interface GetTimeSeriesGroupWithGroupIdRequest {
     groupId: string;
     office: string;
     categoryId: string;
 }
-export interface PatchSwtDataTimeseriesGroupWithGroupIdRequest {
+export interface PatchCwmsDataTimeSeriesGroupWithGroupIdRequest {
     groupId: string;
     office: string;
     timeseriesGroup: TimeseriesGroup;
     replaceAssignedTs?: boolean;
 }
-export interface PostSwtDataTimeseriesGroupRequest {
+export interface PostCwmsDataTimeSeriesGroupRequest {
     timeseriesGroup: TimeseriesGroup;
     failIfExists?: boolean;
 }
 /**
  *
  */
-export declare class TimeseriesGroupsApi extends runtime.BaseAPI {
+export declare class TimeSeriesGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes requested time series group
-     * Delete swtData timeseries group with groupId
+     * Delete CwmsData timeseries group with groupId
      */
-    deleteSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters: DeleteSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataTimeSeriesGroupWithGroupIdRaw(requestParameters: DeleteCwmsDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes requested time series group
-     * Delete swtData timeseries group with groupId
+     * Delete CwmsData timeseries group with groupId
      */
-    deleteSwtDataTimeseriesGroupWithGroupId(requestParameters: DeleteSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataTimeSeriesGroupWithGroupId(requestParameters: DeleteCwmsDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Returns CWMS Timeseries Groups Data
-     * Get swtData timeseries group
+     * Returns CWMS TimeSeries Groups Data
+     * Get CwmsData timeseries group
      */
-    getSwtDataTimeseriesGroupRaw(requestParameters: GetSwtDataTimeseriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeseriesGroup>>>;
+    getTimeSeriesGroupRaw(requestParameters: GetTimeSeriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeseriesGroup>>>;
     /**
-     * Returns CWMS Timeseries Groups Data
-     * Get swtData timeseries group
+     * Returns CWMS TimeSeries Groups Data
+     * Get CwmsData timeseries group
      */
-    getSwtDataTimeseriesGroup(requestParameters?: GetSwtDataTimeseriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeseriesGroup>>;
-    /**
-     * Retrieves requested timeseries group
-     * Get swtData timeseries group with groupId
-     */
-    getSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters: GetSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesGroup>>;
+    getTimeSeriesGroup(requestParameters?: GetTimeSeriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeseriesGroup>>;
     /**
      * Retrieves requested timeseries group
-     * Get swtData timeseries group with groupId
+     * Get CwmsData timeseries group with groupId
      */
-    getSwtDataTimeseriesGroupWithGroupId(requestParameters: GetSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesGroup>;
+    getTimeSeriesGroupWithGroupIdRaw(requestParameters: GetTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesGroup>>;
     /**
-     * Update existing TimeseriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
-     * Patch swtData timeseries group with groupId
+     * Retrieves requested timeseries group
+     * Get CwmsData timeseries group with groupId
      */
-    patchSwtDataTimeseriesGroupWithGroupIdRaw(requestParameters: PatchSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    getTimeSeriesGroupWithGroupId(requestParameters: GetTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesGroup>;
     /**
-     * Update existing TimeseriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
-     * Patch swtData timeseries group with groupId
+     * Update existing TimeSeriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
+     * Patch CwmsData timeseries group with groupId
      */
-    patchSwtDataTimeseriesGroupWithGroupId(requestParameters: PatchSwtDataTimeseriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    patchCwmsDataTimeSeriesGroupWithGroupIdRaw(requestParameters: PatchCwmsDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Create new TimeseriesGroup
-     * Post swtData timeseries group
+     * Update existing TimeSeriesGroup. Allows for renaming of the group, assigning new time series, and unassigning all time series from the group.
+     * Patch CwmsData timeseries group with groupId
      */
-    postSwtDataTimeseriesGroupRaw(requestParameters: PostSwtDataTimeseriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataTimeSeriesGroupWithGroupId(requestParameters: PatchCwmsDataTimeSeriesGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Create new TimeseriesGroup
-     * Post swtData timeseries group
+     * Create new TimeSeriesGroup
+     * Post CwmsData timeseries group
      */
-    postSwtDataTimeseriesGroup(requestParameters: PostSwtDataTimeseriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataTimeSeriesGroupRaw(requestParameters: PostCwmsDataTimeSeriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Create new TimeSeriesGroup
+     * Post CwmsData timeseries group
+     */
+    postCwmsDataTimeSeriesGroup(requestParameters: PostCwmsDataTimeSeriesGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

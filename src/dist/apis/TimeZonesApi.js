@@ -30,9 +30,9 @@ const index_1 = require("../models/index");
  */
 class TimeZonesApi extends runtime.BaseAPI {
     /**
-     * Get swtData timezones
+     * Get CwmsData timezones
      */
-    getSwtDataTimezonesRaw(requestParameters, initOverrides) {
+    getTimezonesRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['format'] != null) {
@@ -52,11 +52,11 @@ class TimeZonesApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData timezones
+     * Get CwmsData timezones
      */
-    getSwtDataTimezones(requestParameters = {}, initOverrides) {
+    getTimezones(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataTimezonesRaw(requestParameters, initOverrides);
+            const response = yield this.getTimezonesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }

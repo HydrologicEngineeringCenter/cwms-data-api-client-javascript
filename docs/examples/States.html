@@ -96,7 +96,7 @@ const config = new Configuration({
     },
 });
 const s_api = new StatesApi(config);
-s_api.getCwmsDataStates().then((data) => {
+s_api.getStates().then((data) => {
     console.log(data);
 });
 </code>
@@ -124,7 +124,7 @@ const config = new cwmsjs.Configuration({
     },
 });
 const s_api = new cwmsjs.StatesApi(config);
-s_api.getCwmsDataStates().then((data) =&gt; {
+s_api.getStates().then((data) =&gt; {
     console.log(data);
 });
 

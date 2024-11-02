@@ -27,9 +27,9 @@ import { BlobToJSON, BlobsFromJSON, } from '../models/index';
  */
 export class BlobApi extends runtime.BaseAPI {
     /**
-     * Get swtData blobs
+     * Get CwmsData blobs
      */
-    getSwtDataBlobsRaw(requestParameters, initOverrides) {
+    getBlobsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -58,21 +58,21 @@ export class BlobApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData blobs
+     * Get CwmsData blobs
      */
-    getSwtDataBlobs(requestParameters = {}, initOverrides) {
+    getBlobs(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataBlobsRaw(requestParameters, initOverrides);
+            const response = yield this.getBlobsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Get swtData blobs with blobId
+     * Get CwmsData blobs with blobId
      */
-    getSwtDataBlobsWithBlobIdRaw(requestParameters, initOverrides) {
+    getBlobsWithBlobIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['blobId'] == null) {
-                throw new runtime.RequiredError('blobId', 'Required parameter "blobId" was null or undefined when calling getSwtDataBlobsWithBlobId().');
+                throw new runtime.RequiredError('blobId', 'Required parameter "blobId" was null or undefined when calling getBlobsWithBlobId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -92,21 +92,21 @@ export class BlobApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData blobs with blobId
+     * Get CwmsData blobs with blobId
      */
-    getSwtDataBlobsWithBlobId(requestParameters, initOverrides) {
+    getBlobsWithBlobId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.getSwtDataBlobsWithBlobIdRaw(requestParameters, initOverrides);
+            yield this.getBlobsWithBlobIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Create new Blob
-     * Post swtData blobs
+     * Post CwmsData blobs
      */
-    postSwtDataBlobsRaw(requestParameters, initOverrides) {
+    postCwmsDataBlobsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['blob'] == null) {
-                throw new runtime.RequiredError('blob', 'Required parameter "blob" was null or undefined when calling postSwtDataBlobs().');
+                throw new runtime.RequiredError('blob', 'Required parameter "blob" was null or undefined when calling postCwmsDataBlobs().');
             }
             const queryParameters = {};
             if (requestParameters['failIfExists'] != null) {
@@ -129,11 +129,11 @@ export class BlobApi extends runtime.BaseAPI {
     }
     /**
      * Create new Blob
-     * Post swtData blobs
+     * Post CwmsData blobs
      */
-    postSwtDataBlobs(requestParameters, initOverrides) {
+    postCwmsDataBlobs(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataBlobsRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataBlobsRaw(requestParameters, initOverrides);
         });
     }
 }

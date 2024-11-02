@@ -10,19 +10,19 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { LocationLevel, SpecifiedLevel, Timeseries } from '../models/index';
-export interface DeleteSwtDataLevelsWithLevelIdRequest {
+import type { LocationLevel, SpecifiedLevel, TimeSeries } from '../models/index';
+export interface DeleteCwmsDataLevelsWithLevelIdRequest {
     levelId: string;
     cascadeDelete?: boolean;
     office?: string;
     effectiveDate?: string;
     timezone?: string;
 }
-export interface DeleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest {
+export interface DeleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest {
     specifiedLevelId: string;
     office: string;
 }
-export interface GetSwtDataLevelsRequest {
+export interface GetLevelsRequest {
     levelIdMask?: string;
     office?: string;
     unit?: string;
@@ -34,14 +34,14 @@ export interface GetSwtDataLevelsRequest {
     page?: string;
     pageSize?: number;
 }
-export interface GetSwtDataLevelsWithLevelIdRequest {
+export interface GetLevelsWithLevelIdRequest {
     levelId: string;
     office: string;
     effectiveDate: string;
     timezone?: string;
     unit?: string;
 }
-export interface GetSwtDataLevelsWithLevelIdTimeseriesRequest {
+export interface GetLevelsWithLevelIdTimeSeriesRequest {
     levelId: string;
     office: string;
     unit: string;
@@ -50,24 +50,24 @@ export interface GetSwtDataLevelsWithLevelIdTimeseriesRequest {
     end?: string;
     timezone?: string;
 }
-export interface GetSwtDataSpecifiedLevelsRequest {
+export interface GetSpecifiedLevelsRequest {
     office?: string;
     templateIdMask?: string;
 }
-export interface PatchSwtDataLevelsWithLevelIdRequest {
+export interface PatchCwmsDataLevelsWithLevelIdRequest {
     levelId: string;
     locationLevel: LocationLevel;
     effectiveDate?: string;
 }
-export interface PatchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest {
+export interface PatchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest {
     specifiedLevelId: string;
     specifiedLevelId2: string;
     office: string;
 }
-export interface PostSwtDataLevelsRequest {
+export interface PostCwmsDataLevelsRequest {
     locationLevel: LocationLevel;
 }
-export interface PostSwtDataSpecifiedLevelsRequest {
+export interface PostCwmsDataSpecifiedLevelsRequest {
     specifiedLevel: SpecifiedLevel;
     failIfExists?: boolean;
 }
@@ -77,98 +77,98 @@ export interface PostSwtDataSpecifiedLevelsRequest {
 export declare class LevelsApi extends runtime.BaseAPI {
     /**
      * Delete CWMS Location Level
-     * Delete swtData levels with levelId
+     * Delete CwmsData levels with levelId
      */
-    deleteSwtDataLevelsWithLevelIdRaw(requestParameters: DeleteSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataLevelsWithLevelIdRaw(requestParameters: DeleteCwmsDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete CWMS Location Level
-     * Delete swtData levels with levelId
+     * Delete CwmsData levels with levelId
      */
-    deleteSwtDataLevelsWithLevelId(requestParameters: DeleteSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataLevelsWithLevelId(requestParameters: DeleteCwmsDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Deletes requested specified level id
-     * Delete swtData specifiedLevels with specifiedLevelId
+     * Delete CwmsData specifiedLevels with specifiedLevelId
      */
-    deleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters: DeleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters: DeleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes requested specified level id
-     * Delete swtData specifiedLevels with specifiedLevelId
+     * Delete CwmsData specifiedLevels with specifiedLevelId
      */
-    deleteSwtDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters: DeleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters: DeleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Get swtData levels
+     * Get CwmsData levels
      */
-    getSwtDataLevelsRaw(requestParameters: GetSwtDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    getLevelsRaw(requestParameters: GetLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
-     * Get swtData levels
+     * Get CwmsData levels
      */
-    getSwtDataLevels(requestParameters?: GetSwtDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
-    /**
-     * Retrieves requested Location Level
-     * Get swtData levels with levelId
-     */
-    getSwtDataLevelsWithLevelIdRaw(requestParameters: GetSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationLevel>>;
+    getLevels(requestParameters?: GetLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId
+     * Get CwmsData levels with levelId
      */
-    getSwtDataLevelsWithLevelId(requestParameters: GetSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationLevel>;
+    getLevelsWithLevelIdRaw(requestParameters: GetLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationLevel>>;
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId timeseries
+     * Get CwmsData levels with levelId
      */
-    getSwtDataLevelsWithLevelIdTimeseriesRaw(requestParameters: GetSwtDataLevelsWithLevelIdTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Timeseries>>;
+    getLevelsWithLevelId(requestParameters: GetLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationLevel>;
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId timeseries
+     * Get CwmsData levels with levelId timeseries
      */
-    getSwtDataLevelsWithLevelIdTimeseries(requestParameters: GetSwtDataLevelsWithLevelIdTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Timeseries>;
+    getLevelsWithLevelIdTimeSeriesRaw(requestParameters: GetLevelsWithLevelIdTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeries>>;
     /**
-     * Get swtData specifiedLevels
+     * Retrieves requested Location Level
+     * Get CwmsData levels with levelId timeseries
      */
-    getSwtDataSpecifiedLevelsRaw(requestParameters: GetSwtDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SpecifiedLevel>>;
+    getLevelsWithLevelIdTimeSeries(requestParameters: GetLevelsWithLevelIdTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeries>;
     /**
-     * Get swtData specifiedLevels
+     * Get CwmsData specifiedLevels
      */
-    getSwtDataSpecifiedLevels(requestParameters?: GetSwtDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SpecifiedLevel>;
+    getSpecifiedLevelsRaw(requestParameters: GetSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SpecifiedLevel>>;
+    /**
+     * Get CwmsData specifiedLevels
+     */
+    getSpecifiedLevels(requestParameters?: GetSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SpecifiedLevel>;
     /**
      * Update CWMS Location Level
-     * Patch swtData levels with levelId
+     * Patch CwmsData levels with levelId
      */
-    patchSwtDataLevelsWithLevelIdRaw(requestParameters: PatchSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataLevelsWithLevelIdRaw(requestParameters: PatchCwmsDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Update CWMS Location Level
-     * Patch swtData levels with levelId
+     * Patch CwmsData levels with levelId
      */
-    patchSwtDataLevelsWithLevelId(requestParameters: PatchSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    patchCwmsDataLevelsWithLevelId(requestParameters: PatchCwmsDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Renames the requested specified level id
-     * Patch swtData specifiedLevels with specifiedLevelId
+     * Patch CwmsData specifiedLevels with specifiedLevelId
      */
-    patchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters: PatchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters: PatchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Renames the requested specified level id
-     * Patch swtData specifiedLevels with specifiedLevelId
+     * Patch CwmsData specifiedLevels with specifiedLevelId
      */
-    patchSwtDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters: PatchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters: PatchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Create new CWMS Location Level
-     * Post swtData levels
+     * Post CwmsData levels
      */
-    postSwtDataLevelsRaw(requestParameters: PostSwtDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataLevelsRaw(requestParameters: PostCwmsDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Create new CWMS Location Level
-     * Post swtData levels
+     * Post CwmsData levels
      */
-    postSwtDataLevels(requestParameters: PostSwtDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataLevels(requestParameters: PostCwmsDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Create new SpecifiedLevel
-     * Post swtData specifiedLevels
+     * Post CwmsData specifiedLevels
      */
-    postSwtDataSpecifiedLevelsRaw(requestParameters: PostSwtDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataSpecifiedLevelsRaw(requestParameters: PostCwmsDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Create new SpecifiedLevel
-     * Post swtData specifiedLevels
+     * Post CwmsData specifiedLevels
      */
-    postSwtDataSpecifiedLevels(requestParameters: PostSwtDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataSpecifiedLevels(requestParameters: PostCwmsDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

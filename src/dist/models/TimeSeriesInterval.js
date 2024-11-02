@@ -13,42 +13,42 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeseriesIntervalToJSON = exports.TimeseriesIntervalFromJSONTyped = exports.TimeseriesIntervalFromJSON = exports.instanceOfTimeseriesInterval = void 0;
-const TimeseriesIntervalUnitsInner_1 = require("./TimeseriesIntervalUnitsInner");
+exports.TimeSeriesIntervalToJSON = exports.TimeSeriesIntervalFromJSONTyped = exports.TimeSeriesIntervalFromJSON = exports.instanceOfTimeSeriesInterval = void 0;
+const TimeSeriesIntervalUnitsInner_1 = require("./TimeSeriesIntervalUnitsInner");
 /**
- * Check if a given object implements the TimeseriesInterval interface.
+ * Check if a given object implements the TimeSeriesInterval interface.
  */
-function instanceOfTimeseriesInterval(value) {
+function instanceOfTimeSeriesInterval(value) {
     return true;
 }
-exports.instanceOfTimeseriesInterval = instanceOfTimeseriesInterval;
-function TimeseriesIntervalFromJSON(json) {
-    return TimeseriesIntervalFromJSONTyped(json, false);
+exports.instanceOfTimeSeriesInterval = instanceOfTimeSeriesInterval;
+function TimeSeriesIntervalFromJSON(json) {
+    return TimeSeriesIntervalFromJSONTyped(json, false);
 }
-exports.TimeseriesIntervalFromJSON = TimeseriesIntervalFromJSON;
-function TimeseriesIntervalFromJSONTyped(json, ignoreDiscriminator) {
+exports.TimeSeriesIntervalFromJSON = TimeSeriesIntervalFromJSON;
+function TimeSeriesIntervalFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
         'seconds': json['seconds'] == null ? undefined : json['seconds'],
-        'units': json['units'] == null ? undefined : (json['units'].map(TimeseriesIntervalUnitsInner_1.TimeseriesIntervalUnitsInnerFromJSON)),
+        'units': json['units'] == null ? undefined : (json['units'].map(TimeSeriesIntervalUnitsInner_1.TimeSeriesIntervalUnitsInnerFromJSON)),
         'nano': json['nano'] == null ? undefined : json['nano'],
         'zero': json['zero'] == null ? undefined : json['zero'],
         'negative': json['negative'] == null ? undefined : json['negative'],
     };
 }
-exports.TimeseriesIntervalFromJSONTyped = TimeseriesIntervalFromJSONTyped;
-function TimeseriesIntervalToJSON(value) {
+exports.TimeSeriesIntervalFromJSONTyped = TimeSeriesIntervalFromJSONTyped;
+function TimeSeriesIntervalToJSON(value) {
     if (value == null) {
         return value;
     }
     return {
         'seconds': value['seconds'],
-        'units': value['units'] == null ? undefined : (value['units'].map(TimeseriesIntervalUnitsInner_1.TimeseriesIntervalUnitsInnerToJSON)),
+        'units': value['units'] == null ? undefined : (value['units'].map(TimeSeriesIntervalUnitsInner_1.TimeSeriesIntervalUnitsInnerToJSON)),
         'nano': value['nano'],
         'zero': value['zero'],
         'negative': value['negative'],
     };
 }
-exports.TimeseriesIntervalToJSON = TimeseriesIntervalToJSON;
+exports.TimeSeriesIntervalToJSON = TimeSeriesIntervalToJSON;

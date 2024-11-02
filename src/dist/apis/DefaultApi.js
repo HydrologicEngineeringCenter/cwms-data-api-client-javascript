@@ -29,9 +29,9 @@ const runtime = require("../runtime");
  */
 class DefaultApi extends runtime.BaseAPI {
     /**
-     * Get swtData
+     * Get CwmsData
      */
-    getSwtDataRaw(initOverrides) {
+    getRaw(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             const headerParameters = {};
@@ -48,11 +48,11 @@ class DefaultApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData
+     * Get CwmsData
      */
-    getSwtData(initOverrides) {
+    get(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.getSwtDataRaw(initOverrides);
+            yield this.getRaw(initOverrides);
         });
     }
 }

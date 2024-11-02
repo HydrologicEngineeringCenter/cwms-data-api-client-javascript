@@ -11,27 +11,27 @@
  */
 import * as runtime from '../runtime';
 import type { Location } from '../models/index';
-export interface DeleteSwtDataLocationsWithLocationIdRequest {
+export interface DeleteCwmsDataLocationsWithLocationIdRequest {
     locationId: string;
     office?: string;
 }
-export interface GetSwtDataLocationsRequest {
+export interface GetLocationsRequest {
     names?: string;
     office?: string;
     unit?: string;
     datum?: string;
     format?: string;
 }
-export interface GetSwtDataLocationsWithLocationIdRequest {
+export interface GetLocationsWithLocationIdRequest {
     locationId: string;
     office: string;
     unit?: string;
 }
-export interface PatchSwtDataLocationsWithLocationIdRequest {
+export interface PatchCwmsDataLocationsWithLocationIdRequest {
     locationId: string;
     location: Location;
 }
-export interface PostSwtDataLocationsRequest {
+export interface PostCwmsDataLocationsRequest {
     location: Location;
 }
 /**
@@ -40,52 +40,52 @@ export interface PostSwtDataLocationsRequest {
 export declare class LocationsApi extends runtime.BaseAPI {
     /**
      * Delete CWMS Location
-     * Delete swtData locations with locationId
+     * Delete CwmsData locations with locationId
      */
-    deleteSwtDataLocationsWithLocationIdRaw(requestParameters: DeleteSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataLocationsWithLocationIdRaw(requestParameters: DeleteCwmsDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete CWMS Location
-     * Delete swtData locations with locationId
+     * Delete CwmsData locations with locationId
      */
-    deleteSwtDataLocationsWithLocationId(requestParameters: DeleteSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataLocationsWithLocationId(requestParameters: DeleteCwmsDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns CWMS Location Data.  The Catalog end-point is also capable of retrieving lists of locations and can filter on additional fields.
-     * Get swtData locations
+     * Get CwmsData locations
      */
-    getSwtDataLocationsRaw(requestParameters: GetSwtDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Location>>>;
+    getLocationsRaw(requestParameters: GetLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Location>>>;
     /**
      * Returns CWMS Location Data.  The Catalog end-point is also capable of retrieving lists of locations and can filter on additional fields.
-     * Get swtData locations
+     * Get CwmsData locations
      */
-    getSwtDataLocations(requestParameters?: GetSwtDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Location>>;
+    getLocations(requestParameters?: GetLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Location>>;
     /**
      * Returns CWMS Location Data
-     * Get swtData locations with locationId
+     * Get CwmsData locations with locationId
      */
-    getSwtDataLocationsWithLocationIdRaw(requestParameters: GetSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Location>>;
+    getLocationsWithLocationIdRaw(requestParameters: GetLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Location>>;
     /**
      * Returns CWMS Location Data
-     * Get swtData locations with locationId
+     * Get CwmsData locations with locationId
      */
-    getSwtDataLocationsWithLocationId(requestParameters: GetSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Location>;
+    getLocationsWithLocationId(requestParameters: GetLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Location>;
     /**
      * Update CWMS Location
-     * Patch swtData locations with locationId
+     * Patch CwmsData locations with locationId
      */
-    patchSwtDataLocationsWithLocationIdRaw(requestParameters: PatchSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataLocationsWithLocationIdRaw(requestParameters: PatchCwmsDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Update CWMS Location
-     * Patch swtData locations with locationId
+     * Patch CwmsData locations with locationId
      */
-    patchSwtDataLocationsWithLocationId(requestParameters: PatchSwtDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    patchCwmsDataLocationsWithLocationId(requestParameters: PatchCwmsDataLocationsWithLocationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Create new CWMS Location
-     * Post swtData locations
+     * Post CwmsData locations
      */
-    postSwtDataLocationsRaw(requestParameters: PostSwtDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataLocationsRaw(requestParameters: PostCwmsDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Create new CWMS Location
-     * Post swtData locations
+     * Post CwmsData locations
      */
-    postSwtDataLocations(requestParameters: PostSwtDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataLocations(requestParameters: PostCwmsDataLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

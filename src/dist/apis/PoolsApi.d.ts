@@ -11,7 +11,7 @@
  */
 import * as runtime from '../runtime';
 import type { Pool, Pools } from '../models/index';
-export interface GetSwtDataPoolsRequest {
+export interface GetPoolsRequest {
     office?: string;
     idMask?: string;
     nameMask?: string;
@@ -22,7 +22,7 @@ export interface GetSwtDataPoolsRequest {
     page?: string;
     pageSize?: number;
 }
-export interface GetSwtDataPoolsWithPoolIdRequest {
+export interface GetPoolsWithPoolIdRequest {
     poolId: string;
     office: string;
     projectId: string;
@@ -37,22 +37,22 @@ export interface GetSwtDataPoolsWithPoolIdRequest {
 export declare class PoolsApi extends runtime.BaseAPI {
     /**
      * Returns Pools Data
-     * Get swtData pools
+     * Get CwmsData pools
      */
-    getSwtDataPoolsRaw(requestParameters: GetSwtDataPoolsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Pools>>;
+    getPoolsRaw(requestParameters: GetPoolsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Pools>>;
     /**
      * Returns Pools Data
-     * Get swtData pools
+     * Get CwmsData pools
      */
-    getSwtDataPools(requestParameters?: GetSwtDataPoolsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Pools>;
+    getPools(requestParameters?: GetPoolsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Pools>;
     /**
      * Retrieves requested Pool
-     * Get swtData pools with poolId
+     * Get CwmsData pools with poolId
      */
-    getSwtDataPoolsWithPoolIdRaw(requestParameters: GetSwtDataPoolsWithPoolIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Pool>>;
+    getPoolsWithPoolIdRaw(requestParameters: GetPoolsWithPoolIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Pool>>;
     /**
      * Retrieves requested Pool
-     * Get swtData pools with poolId
+     * Get CwmsData pools with poolId
      */
-    getSwtDataPoolsWithPoolId(requestParameters: GetSwtDataPoolsWithPoolIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Pool>;
+    getPoolsWithPoolId(requestParameters: GetPoolsWithPoolIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Pool>;
 }

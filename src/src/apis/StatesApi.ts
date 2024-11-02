@@ -31,9 +31,9 @@ import {
 export class StatesApi extends runtime.BaseAPI {
 
     /**
-     * Get swtData states
+     * Get CwmsData states
      */
-    async getSwtDataStatesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<State>>> {
+    async getStatesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<State>>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -53,10 +53,10 @@ export class StatesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData states
+     * Get CwmsData states
      */
-    async getSwtDataStates(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<State>> {
-        const response = await this.getSwtDataStatesRaw(initOverrides);
+    async getStates(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<State>> {
+        const response = await this.getStatesRaw(initOverrides);
         return await response.value();
     }
 

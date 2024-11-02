@@ -13,32 +13,32 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeseriesToJSON = exports.TimeseriesFromJSONTyped = exports.TimeseriesFromJSON = exports.instanceOfTimeseries = exports.TimeseriesDateVersionTypeEnum = void 0;
-const TimeseriesColumn_1 = require("./TimeseriesColumn");
-const TimeseriesInterval_1 = require("./TimeseriesInterval");
+exports.TimeSeriesToJSON = exports.TimeSeriesFromJSONTyped = exports.TimeSeriesFromJSON = exports.instanceOfTimeSeries = exports.TimeSeriesDateVersionTypeEnum = void 0;
+const TimeSeriesColumn_1 = require("./TimeSeriesColumn");
+const TimeSeriesInterval_1 = require("./TimeSeriesInterval");
 const VerticalDatumInfo_1 = require("./VerticalDatumInfo");
 /**
  * @export
  */
-exports.TimeseriesDateVersionTypeEnum = {
+exports.TimeSeriesDateVersionTypeEnum = {
     MaxAggregate: 'MAX_AGGREGATE',
     SingleVersion: 'SINGLE_VERSION',
     Unversioned: 'UNVERSIONED'
 };
 /**
- * Check if a given object implements the Timeseries interface.
+ * Check if a given object implements the TimeSeries interface.
  */
-function instanceOfTimeseries(value) {
+function instanceOfTimeSeries(value) {
     if (!('units' in value))
         return false;
     return true;
 }
-exports.instanceOfTimeseries = instanceOfTimeseries;
-function TimeseriesFromJSON(json) {
-    return TimeseriesFromJSONTyped(json, false);
+exports.instanceOfTimeSeries = instanceOfTimeSeries;
+function TimeSeriesFromJSON(json) {
+    return TimeSeriesFromJSONTyped(json, false);
 }
-exports.TimeseriesFromJSON = TimeseriesFromJSON;
-function TimeseriesFromJSONTyped(json, ignoreDiscriminator) {
+exports.TimeSeriesFromJSON = TimeSeriesFromJSON;
+function TimeSeriesFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -46,7 +46,7 @@ function TimeseriesFromJSONTyped(json, ignoreDiscriminator) {
         'begin': json['begin'] == null ? undefined : (new Date(json['begin'])),
         'dateVersionType': json['date-version-type'] == null ? undefined : json['date-version-type'],
         'end': json['end'] == null ? undefined : (new Date(json['end'])),
-        'interval': json['interval'] == null ? undefined : (0, TimeseriesInterval_1.TimeseriesIntervalFromJSON)(json['interval']),
+        'interval': json['interval'] == null ? undefined : (0, TimeSeriesInterval_1.TimeSeriesIntervalFromJSON)(json['interval']),
         'intervalOffset': json['interval-offset'] == null ? undefined : json['interval-offset'],
         'name': json['name'] == null ? undefined : json['name'],
         'nextPage': json['next-page'] == null ? undefined : json['next-page'],
@@ -56,20 +56,20 @@ function TimeseriesFromJSONTyped(json, ignoreDiscriminator) {
         'timeZone': json['time-zone'] == null ? undefined : json['time-zone'],
         'total': json['total'] == null ? undefined : json['total'],
         'units': json['units'],
-        'valueColumns': json['value-columns'] == null ? undefined : (json['value-columns'].map(TimeseriesColumn_1.TimeseriesColumnFromJSON)),
+        'valueColumns': json['value-columns'] == null ? undefined : (json['value-columns'].map(TimeSeriesColumn_1.TimeSeriesColumnFromJSON)),
         'values': json['values'] == null ? undefined : json['values'],
         'versionDate': json['version-date'] == null ? undefined : (new Date(json['version-date'])),
         'verticalDatumInfo': json['vertical-datum-info'] == null ? undefined : (0, VerticalDatumInfo_1.VerticalDatumInfoFromJSON)(json['vertical-datum-info']),
     };
 }
-exports.TimeseriesFromJSONTyped = TimeseriesFromJSONTyped;
-function TimeseriesToJSON(value) {
+exports.TimeSeriesFromJSONTyped = TimeSeriesFromJSONTyped;
+function TimeSeriesToJSON(value) {
     if (value == null) {
         return value;
     }
     return {
         'date-version-type': value['dateVersionType'],
-        'interval': (0, TimeseriesInterval_1.TimeseriesIntervalToJSON)(value['interval']),
+        'interval': (0, TimeSeriesInterval_1.TimeSeriesIntervalToJSON)(value['interval']),
         'name': value['name'],
         'office-id': value['officeId'],
         'units': value['units'],
@@ -78,4 +78,4 @@ function TimeseriesToJSON(value) {
         'vertical-datum-info': (0, VerticalDatumInfo_1.VerticalDatumInfoToJSON)(value['verticalDatumInfo']),
     };
 }
-exports.TimeseriesToJSON = TimeseriesToJSON;
+exports.TimeSeriesToJSON = TimeSeriesToJSON;

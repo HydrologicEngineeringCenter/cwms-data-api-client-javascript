@@ -12,7 +12,7 @@ test("Test Timeseries V2", async () => {
   });
   const ts_api = new TimeSeriesApi(v2_config);
   await ts_api
-    .getCwmsDataTimeseries({
+    .getTimeSeries({
       office: "SWT",
       name: "KEYS.Elev.Inst.1Hour.0.Ccp-Rev",
     })

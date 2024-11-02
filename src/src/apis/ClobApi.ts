@@ -28,12 +28,12 @@ import {
     ClobsToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataClobsWithClobIdRequest {
+export interface DeleteCwmsDataClobsWithClobIdRequest {
     clobId: string;
     office: string;
 }
 
-export interface GetSwtDataClobsRequest {
+export interface GetClobsRequest {
     office?: string;
     page?: string;
     pageSize?: number;
@@ -41,19 +41,19 @@ export interface GetSwtDataClobsRequest {
     like?: string;
 }
 
-export interface GetSwtDataClobsWithClobIdRequest {
+export interface GetClobsWithClobIdRequest {
     clobId: string;
     office?: string;
     clobId2?: string;
 }
 
-export interface PatchSwtDataClobsWithClobIdRequest {
+export interface PatchCwmsDataClobsWithClobIdRequest {
     clobId: string;
     clob: Clob;
     ignoreNulls?: boolean;
 }
 
-export interface PostSwtDataClobsRequest {
+export interface PostCwmsDataClobsRequest {
     clob: Clob;
     failIfExists?: boolean;
 }
@@ -65,20 +65,20 @@ export class ClobApi extends runtime.BaseAPI {
 
     /**
      * Delete clob
-     * Delete swtData clobs with clobId
+     * Delete CwmsData clobs with clobId
      */
-    async deleteSwtDataClobsWithClobIdRaw(requestParameters: DeleteSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataClobsWithClobIdRaw(requestParameters: DeleteCwmsDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['clobId'] == null) {
             throw new runtime.RequiredError(
                 'clobId',
-                'Required parameter "clobId" was null or undefined when calling deleteSwtDataClobsWithClobId().'
+                'Required parameter "clobId" was null or undefined when calling deleteCwmsDataClobsWithClobId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataClobsWithClobId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataClobsWithClobId().'
             );
         }
 
@@ -106,16 +106,16 @@ export class ClobApi extends runtime.BaseAPI {
 
     /**
      * Delete clob
-     * Delete swtData clobs with clobId
+     * Delete CwmsData clobs with clobId
      */
-    async deleteSwtDataClobsWithClobId(requestParameters: DeleteSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataClobsWithClobIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataClobsWithClobId(requestParameters: DeleteCwmsDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataClobsWithClobIdRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Get swtData clobs
+     * Get CwmsData clobs
      */
-    async getSwtDataClobsRaw(requestParameters: GetSwtDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Clobs>> {
+    async getClobsRaw(requestParameters: GetClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Clobs>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -155,22 +155,22 @@ export class ClobApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData clobs
+     * Get CwmsData clobs
      */
-    async getSwtDataClobs(requestParameters: GetSwtDataClobsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Clobs> {
-        const response = await this.getSwtDataClobsRaw(requestParameters, initOverrides);
+    async getClobs(requestParameters: GetClobsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Clobs> {
+        const response = await this.getClobsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Get a single clob.  If the accept header is set to text/plain, the raw value is returned as the response body. Responses to text/plain requests are streamed and support the Range header.  When the accept header is set to application/json;version=2 the clob will be returned as a serialized Clob object with fields for office-id, id, description and value.
-     * Get swtData clobs with clobId
+     * Get CwmsData clobs with clobId
      */
-    async getSwtDataClobsWithClobIdRaw(requestParameters: GetSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Clob>> {
+    async getClobsWithClobIdRaw(requestParameters: GetClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Clob>> {
         if (requestParameters['clobId'] == null) {
             throw new runtime.RequiredError(
                 'clobId',
-                'Required parameter "clobId" was null or undefined when calling getSwtDataClobsWithClobId().'
+                'Required parameter "clobId" was null or undefined when calling getClobsWithClobId().'
             );
         }
 
@@ -202,29 +202,29 @@ export class ClobApi extends runtime.BaseAPI {
 
     /**
      * Get a single clob.  If the accept header is set to text/plain, the raw value is returned as the response body. Responses to text/plain requests are streamed and support the Range header.  When the accept header is set to application/json;version=2 the clob will be returned as a serialized Clob object with fields for office-id, id, description and value.
-     * Get swtData clobs with clobId
+     * Get CwmsData clobs with clobId
      */
-    async getSwtDataClobsWithClobId(requestParameters: GetSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Clob> {
-        const response = await this.getSwtDataClobsWithClobIdRaw(requestParameters, initOverrides);
+    async getClobsWithClobId(requestParameters: GetClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Clob> {
+        const response = await this.getClobsWithClobIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update clob
-     * Patch swtData clobs with clobId
+     * Patch CwmsData clobs with clobId
      */
-    async patchSwtDataClobsWithClobIdRaw(requestParameters: PatchSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataClobsWithClobIdRaw(requestParameters: PatchCwmsDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['clobId'] == null) {
             throw new runtime.RequiredError(
                 'clobId',
-                'Required parameter "clobId" was null or undefined when calling patchSwtDataClobsWithClobId().'
+                'Required parameter "clobId" was null or undefined when calling patchCwmsDataClobsWithClobId().'
             );
         }
 
         if (requestParameters['clob'] == null) {
             throw new runtime.RequiredError(
                 'clob',
-                'Required parameter "clob" was null or undefined when calling patchSwtDataClobsWithClobId().'
+                'Required parameter "clob" was null or undefined when calling patchCwmsDataClobsWithClobId().'
             );
         }
 
@@ -255,21 +255,21 @@ export class ClobApi extends runtime.BaseAPI {
 
     /**
      * Update clob
-     * Patch swtData clobs with clobId
+     * Patch CwmsData clobs with clobId
      */
-    async patchSwtDataClobsWithClobId(requestParameters: PatchSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataClobsWithClobIdRaw(requestParameters, initOverrides);
+    async patchCwmsDataClobsWithClobId(requestParameters: PatchCwmsDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataClobsWithClobIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new Clob
-     * Post swtData clobs
+     * Post CwmsData clobs
      */
-    async postSwtDataClobsRaw(requestParameters: PostSwtDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataClobsRaw(requestParameters: PostCwmsDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['clob'] == null) {
             throw new runtime.RequiredError(
                 'clob',
-                'Required parameter "clob" was null or undefined when calling postSwtDataClobs().'
+                'Required parameter "clob" was null or undefined when calling postCwmsDataClobs().'
             );
         }
 
@@ -300,10 +300,10 @@ export class ClobApi extends runtime.BaseAPI {
 
     /**
      * Create new Clob
-     * Post swtData clobs
+     * Post CwmsData clobs
      */
-    async postSwtDataClobs(requestParameters: PostSwtDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataClobsRaw(requestParameters, initOverrides);
+    async postCwmsDataClobs(requestParameters: PostCwmsDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataClobsRaw(requestParameters, initOverrides);
     }
 
 }

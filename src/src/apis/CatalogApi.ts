@@ -31,7 +31,7 @@ import {
     UnitSystemToJSON,
 } from '../models/index';
 
-export interface GetSwtDataCatalogWithDatasetRequest {
+export interface GetCatalogWithDatasetRequest {
     dataset: CatalogableEndpoint;
     page?: string;
     pageSize?: number;
@@ -55,13 +55,13 @@ export interface GetSwtDataCatalogWithDatasetRequest {
 export class CatalogApi extends runtime.BaseAPI {
 
     /**
-     * Get swtData catalog with dataset
+     * Get CwmsData catalog with dataset
      */
-    async getSwtDataCatalogWithDatasetRaw(requestParameters: GetSwtDataCatalogWithDatasetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Catalog>> {
+    async getCatalogWithDatasetRaw(requestParameters: GetCatalogWithDatasetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Catalog>> {
         if (requestParameters['dataset'] == null) {
             throw new runtime.RequiredError(
                 'dataset',
-                'Required parameter "dataset" was null or undefined when calling getSwtDataCatalogWithDataset().'
+                'Required parameter "dataset" was null or undefined when calling getCatalogWithDataset().'
             );
         }
 
@@ -140,10 +140,10 @@ export class CatalogApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData catalog with dataset
+     * Get CwmsData catalog with dataset
      */
-    async getSwtDataCatalogWithDataset(requestParameters: GetSwtDataCatalogWithDatasetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Catalog> {
-        const response = await this.getSwtDataCatalogWithDatasetRaw(requestParameters, initOverrides);
+    async getCatalogWithDataset(requestParameters: GetCatalogWithDatasetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Catalog> {
+        const response = await this.getCatalogWithDatasetRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

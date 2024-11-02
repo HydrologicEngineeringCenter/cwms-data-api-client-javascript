@@ -27,9 +27,9 @@ import { CountyFromJSON, } from '../models/index';
  */
 export class CountiesApi extends runtime.BaseAPI {
     /**
-     * Get swtData counties
+     * Get CwmsData counties
      */
-    getSwtDataCountiesRaw(initOverrides) {
+    getCountiesRaw(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             const headerParameters = {};
@@ -46,11 +46,11 @@ export class CountiesApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData counties
+     * Get CwmsData counties
      */
-    getSwtDataCounties(initOverrides) {
+    getCounties(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataCountiesRaw(initOverrides);
+            const response = yield this.getCountiesRaw(initOverrides);
             return yield response.value();
         });
     }

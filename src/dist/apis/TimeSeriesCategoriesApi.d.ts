@@ -11,64 +11,64 @@
  */
 import * as runtime from '../runtime';
 import type { TimeseriesCategory } from '../models/index';
-export interface DeleteSwtDataTimeseriesCategoryWithCategoryIdRequest {
+export interface DeleteCwmsDataTimeSeriesCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
     cascadeDelete?: boolean;
 }
-export interface GetSwtDataTimeseriesCategoryRequest {
+export interface GetTimeSeriesCategoryRequest {
     office?: string;
 }
-export interface GetSwtDataTimeseriesCategoryWithCategoryIdRequest {
+export interface GetTimeSeriesCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
 }
-export interface PostSwtDataTimeseriesCategoryRequest {
+export interface PostCwmsDataTimeSeriesCategoryRequest {
     timeseriesCategory: TimeseriesCategory;
     failIfExists?: boolean;
 }
 /**
  *
  */
-export declare class TimeseriesCategoriesApi extends runtime.BaseAPI {
+export declare class TimeSeriesCategoriesApi extends runtime.BaseAPI {
     /**
      * Deletes requested time series category
-     * Delete swtData timeseries category with categoryId
+     * Delete CwmsData timeseries category with categoryId
      */
-    deleteSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters: DeleteSwtDataTimeseriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters: DeleteCwmsDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes requested time series category
-     * Delete swtData timeseries category with categoryId
+     * Delete CwmsData timeseries category with categoryId
      */
-    deleteSwtDataTimeseriesCategoryWithCategoryId(requestParameters: DeleteSwtDataTimeseriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataTimeSeriesCategoryWithCategoryId(requestParameters: DeleteCwmsDataTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns CWMS timeseries category Data
-     * Get swtData timeseries category
+     * Get CwmsData timeseries category
      */
-    getSwtDataTimeseriesCategoryRaw(requestParameters: GetSwtDataTimeseriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeseriesCategory>>>;
+    getTimeSeriesCategoryRaw(requestParameters: GetTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TimeseriesCategory>>>;
     /**
      * Returns CWMS timeseries category Data
-     * Get swtData timeseries category
+     * Get CwmsData timeseries category
      */
-    getSwtDataTimeseriesCategory(requestParameters?: GetSwtDataTimeseriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeseriesCategory>>;
+    getTimeSeriesCategory(requestParameters?: GetTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TimeseriesCategory>>;
     /**
      * Retrieves requested timeseries category
-     * Get swtData timeseries category with categoryId
+     * Get CwmsData timeseries category with categoryId
      */
-    getSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters: GetSwtDataTimeseriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesCategory>>;
+    getTimeSeriesCategoryWithCategoryIdRaw(requestParameters: GetTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeseriesCategory>>;
     /**
      * Retrieves requested timeseries category
-     * Get swtData timeseries category with categoryId
+     * Get CwmsData timeseries category with categoryId
      */
-    getSwtDataTimeseriesCategoryWithCategoryId(requestParameters: GetSwtDataTimeseriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesCategory>;
+    getTimeSeriesCategoryWithCategoryId(requestParameters: GetTimeSeriesCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeseriesCategory>;
     /**
-     * Create new TimeseriesCategory
-     * Post swtData timeseries category
+     * Create new TimeSeriesCategory
+     * Post CwmsData timeseries category
      */
-    postSwtDataTimeseriesCategoryRaw(requestParameters: PostSwtDataTimeseriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataTimeSeriesCategoryRaw(requestParameters: PostCwmsDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Create new TimeseriesCategory
-     * Post swtData timeseries category
+     * Create new TimeSeriesCategory
+     * Post CwmsData timeseries category
      */
-    postSwtDataTimeseriesCategory(requestParameters: PostSwtDataTimeseriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataTimeSeriesCategory(requestParameters: PostCwmsDataTimeSeriesCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

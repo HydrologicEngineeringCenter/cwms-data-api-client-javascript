@@ -92,7 +92,7 @@
 
 const c_api = new CountiesApi(c_config);
 c_api
-    .getCwmsDataCounties()
+    .getCounties()
     .then((data) => {
         console.log(data);
         data.forEach((value) => {
@@ -130,7 +130,7 @@ to download bundle.js to your system</li>
 &lt;script type=&quot;module&quot;&gt;
 const c_api = new cwmsjs.CountiesApi(c_config);
 c_api
-    .getCwmsDataCounties()
+    .getCounties()
     .then((data) =&gt; {
         console.log(data);
         data.forEach((value) =&gt; {

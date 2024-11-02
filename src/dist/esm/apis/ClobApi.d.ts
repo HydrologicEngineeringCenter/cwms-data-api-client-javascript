@@ -11,28 +11,28 @@
  */
 import * as runtime from '../runtime';
 import type { Clob, Clobs } from '../models/index';
-export interface DeleteSwtDataClobsWithClobIdRequest {
+export interface DeleteCwmsDataClobsWithClobIdRequest {
     clobId: string;
     office: string;
 }
-export interface GetSwtDataClobsRequest {
+export interface GetClobsRequest {
     office?: string;
     page?: string;
     pageSize?: number;
     includeValues?: boolean;
     like?: string;
 }
-export interface GetSwtDataClobsWithClobIdRequest {
+export interface GetClobsWithClobIdRequest {
     clobId: string;
     office?: string;
     clobId2?: string;
 }
-export interface PatchSwtDataClobsWithClobIdRequest {
+export interface PatchCwmsDataClobsWithClobIdRequest {
     clobId: string;
     clob: Clob;
     ignoreNulls?: boolean;
 }
-export interface PostSwtDataClobsRequest {
+export interface PostCwmsDataClobsRequest {
     clob: Clob;
     failIfExists?: boolean;
 }
@@ -42,50 +42,50 @@ export interface PostSwtDataClobsRequest {
 export declare class ClobApi extends runtime.BaseAPI {
     /**
      * Delete clob
-     * Delete swtData clobs with clobId
+     * Delete CwmsData clobs with clobId
      */
-    deleteSwtDataClobsWithClobIdRaw(requestParameters: DeleteSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataClobsWithClobIdRaw(requestParameters: DeleteCwmsDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete clob
-     * Delete swtData clobs with clobId
+     * Delete CwmsData clobs with clobId
      */
-    deleteSwtDataClobsWithClobId(requestParameters: DeleteSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataClobsWithClobId(requestParameters: DeleteCwmsDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Get swtData clobs
+     * Get CwmsData clobs
      */
-    getSwtDataClobsRaw(requestParameters: GetSwtDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Clobs>>;
+    getClobsRaw(requestParameters: GetClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Clobs>>;
     /**
-     * Get swtData clobs
+     * Get CwmsData clobs
      */
-    getSwtDataClobs(requestParameters?: GetSwtDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Clobs>;
-    /**
-     * Get a single clob.  If the accept header is set to text/plain, the raw value is returned as the response body. Responses to text/plain requests are streamed and support the Range header.  When the accept header is set to application/json;version=2 the clob will be returned as a serialized Clob object with fields for office-id, id, description and value.
-     * Get swtData clobs with clobId
-     */
-    getSwtDataClobsWithClobIdRaw(requestParameters: GetSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Clob>>;
+    getClobs(requestParameters?: GetClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Clobs>;
     /**
      * Get a single clob.  If the accept header is set to text/plain, the raw value is returned as the response body. Responses to text/plain requests are streamed and support the Range header.  When the accept header is set to application/json;version=2 the clob will be returned as a serialized Clob object with fields for office-id, id, description and value.
-     * Get swtData clobs with clobId
+     * Get CwmsData clobs with clobId
      */
-    getSwtDataClobsWithClobId(requestParameters: GetSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Clob>;
+    getClobsWithClobIdRaw(requestParameters: GetClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Clob>>;
+    /**
+     * Get a single clob.  If the accept header is set to text/plain, the raw value is returned as the response body. Responses to text/plain requests are streamed and support the Range header.  When the accept header is set to application/json;version=2 the clob will be returned as a serialized Clob object with fields for office-id, id, description and value.
+     * Get CwmsData clobs with clobId
+     */
+    getClobsWithClobId(requestParameters: GetClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Clob>;
     /**
      * Update clob
-     * Patch swtData clobs with clobId
+     * Patch CwmsData clobs with clobId
      */
-    patchSwtDataClobsWithClobIdRaw(requestParameters: PatchSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataClobsWithClobIdRaw(requestParameters: PatchCwmsDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Update clob
-     * Patch swtData clobs with clobId
+     * Patch CwmsData clobs with clobId
      */
-    patchSwtDataClobsWithClobId(requestParameters: PatchSwtDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    patchCwmsDataClobsWithClobId(requestParameters: PatchCwmsDataClobsWithClobIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Create new Clob
-     * Post swtData clobs
+     * Post CwmsData clobs
      */
-    postSwtDataClobsRaw(requestParameters: PostSwtDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataClobsRaw(requestParameters: PostCwmsDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Create new Clob
-     * Post swtData clobs
+     * Post CwmsData clobs
      */
-    postSwtDataClobs(requestParameters: PostSwtDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataClobs(requestParameters: PostCwmsDataClobsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

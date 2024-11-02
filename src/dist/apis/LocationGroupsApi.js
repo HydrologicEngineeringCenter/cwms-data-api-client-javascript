@@ -31,18 +31,18 @@ const index_1 = require("../models/index");
 class LocationGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes requested location group
-     * Delete swtData location group with groupId
+     * Delete CwmsData location group with groupId
      */
-    deleteSwtDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['groupId'] == null) {
-                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling deleteSwtDataLocationGroupWithGroupId().');
+                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling deleteCwmsDataLocationGroupWithGroupId().');
             }
             if (requestParameters['categoryId'] == null) {
-                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling deleteSwtDataLocationGroupWithGroupId().');
+                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling deleteCwmsDataLocationGroupWithGroupId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataLocationGroupWithGroupId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataLocationGroupWithGroupId().');
             }
             const queryParameters = {};
             if (requestParameters['categoryId'] != null) {
@@ -69,18 +69,18 @@ class LocationGroupsApi extends runtime.BaseAPI {
     }
     /**
      * Deletes requested location group
-     * Delete swtData location group with groupId
+     * Delete CwmsData location group with groupId
      */
-    deleteSwtDataLocationGroupWithGroupId(requestParameters, initOverrides) {
+    deleteCwmsDataLocationGroupWithGroupId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Returns CWMS Location Groups Data
-     * Get swtData location group
+     * Get CwmsData location group
      */
-    getSwtDataLocationGroupRaw(requestParameters, initOverrides) {
+    getLocationGroupRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -107,28 +107,28 @@ class LocationGroupsApi extends runtime.BaseAPI {
     }
     /**
      * Returns CWMS Location Groups Data
-     * Get swtData location group
+     * Get CwmsData location group
      */
-    getSwtDataLocationGroup(requestParameters = {}, initOverrides) {
+    getLocationGroup(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataLocationGroupRaw(requestParameters, initOverrides);
+            const response = yield this.getLocationGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Retrieves requested Location Group
-     * Get swtData location group with groupId
+     * Get CwmsData location group with groupId
      */
-    getSwtDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides) {
+    getLocationGroupWithGroupIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['groupId'] == null) {
-                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling getSwtDataLocationGroupWithGroupId().');
+                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling getLocationGroupWithGroupId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataLocationGroupWithGroupId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getLocationGroupWithGroupId().');
             }
             if (requestParameters['categoryId'] == null) {
-                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling getSwtDataLocationGroupWithGroupId().');
+                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling getLocationGroupWithGroupId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -152,28 +152,28 @@ class LocationGroupsApi extends runtime.BaseAPI {
     }
     /**
      * Retrieves requested Location Group
-     * Get swtData location group with groupId
+     * Get CwmsData location group with groupId
      */
-    getSwtDataLocationGroupWithGroupId(requestParameters, initOverrides) {
+    getLocationGroupWithGroupId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
+            const response = yield this.getLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Update existing LocationGroup. Allows for renaming group, assigning new locations, and unassigning all locations from the group.
-     * Patch swtData location group with groupId
+     * Patch CwmsData location group with groupId
      */
-    patchSwtDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides) {
+    patchCwmsDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['groupId'] == null) {
-                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling patchSwtDataLocationGroupWithGroupId().');
+                throw new runtime.RequiredError('groupId', 'Required parameter "groupId" was null or undefined when calling patchCwmsDataLocationGroupWithGroupId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchSwtDataLocationGroupWithGroupId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchCwmsDataLocationGroupWithGroupId().');
             }
             if (requestParameters['locationGroup'] == null) {
-                throw new runtime.RequiredError('locationGroup', 'Required parameter "locationGroup" was null or undefined when calling patchSwtDataLocationGroupWithGroupId().');
+                throw new runtime.RequiredError('locationGroup', 'Required parameter "locationGroup" was null or undefined when calling patchCwmsDataLocationGroupWithGroupId().');
             }
             const queryParameters = {};
             if (requestParameters['replaceAssignedLocs'] != null) {
@@ -199,21 +199,21 @@ class LocationGroupsApi extends runtime.BaseAPI {
     }
     /**
      * Update existing LocationGroup. Allows for renaming group, assigning new locations, and unassigning all locations from the group.
-     * Patch swtData location group with groupId
+     * Patch CwmsData location group with groupId
      */
-    patchSwtDataLocationGroupWithGroupId(requestParameters, initOverrides) {
+    patchCwmsDataLocationGroupWithGroupId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Create new LocationGroup
-     * Post swtData location group
+     * Post CwmsData location group
      */
-    postSwtDataLocationGroupRaw(requestParameters, initOverrides) {
+    postCwmsDataLocationGroupRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['locationGroup'] == null) {
-                throw new runtime.RequiredError('locationGroup', 'Required parameter "locationGroup" was null or undefined when calling postSwtDataLocationGroup().');
+                throw new runtime.RequiredError('locationGroup', 'Required parameter "locationGroup" was null or undefined when calling postCwmsDataLocationGroup().');
             }
             const queryParameters = {};
             const headerParameters = {};
@@ -233,11 +233,11 @@ class LocationGroupsApi extends runtime.BaseAPI {
     }
     /**
      * Create new LocationGroup
-     * Post swtData location group
+     * Post CwmsData location group
      */
-    postSwtDataLocationGroup(requestParameters, initOverrides) {
+    postCwmsDataLocationGroup(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataLocationGroupRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataLocationGroupRaw(requestParameters, initOverrides);
         });
     }
 }

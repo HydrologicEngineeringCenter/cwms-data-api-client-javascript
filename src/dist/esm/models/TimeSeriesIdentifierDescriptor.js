@@ -12,17 +12,17 @@
  * Do not edit the class manually.
  */
 /**
- * Check if a given object implements the TimeseriesIdentifierDescriptor interface.
+ * Check if a given object implements the TimeSeriesIdentifierDescriptor interface.
  */
-export function instanceOfTimeseriesIdentifierDescriptor(value) {
+export function instanceOfTimeSeriesIdentifierDescriptor(value) {
     if (!('officeId' in value))
         return false;
     return true;
 }
-export function TimeseriesIdentifierDescriptorFromJSON(json) {
-    return TimeseriesIdentifierDescriptorFromJSONTyped(json, false);
+export function TimeSeriesIdentifierDescriptorFromJSON(json) {
+    return TimeSeriesIdentifierDescriptorFromJSONTyped(json, false);
 }
-export function TimeseriesIdentifierDescriptorFromJSONTyped(json, ignoreDiscriminator) {
+export function TimeSeriesIdentifierDescriptorFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -34,7 +34,7 @@ export function TimeseriesIdentifierDescriptorFromJSONTyped(json, ignoreDiscrimi
         'active': json['active'] == null ? undefined : json['active'],
     };
 }
-export function TimeseriesIdentifierDescriptorToJSON(value) {
+export function TimeSeriesIdentifierDescriptorToJSON(value) {
     if (value == null) {
         return value;
     }

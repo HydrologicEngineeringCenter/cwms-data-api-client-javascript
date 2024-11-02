@@ -22,30 +22,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeseriesIdentifierApi = void 0;
+exports.TimeSeriesIdentifierApi = void 0;
 const runtime = require("../runtime");
 const index_1 = require("../models/index");
 /**
  *
  */
-class TimeseriesIdentifierApi extends runtime.BaseAPI {
+class TimeSeriesIdentifierApi extends runtime.BaseAPI {
     /**
      * Deletes requested timeseries identifier
-     * Delete swtData timeseries identifierDescriptor with name
+     * Delete CwmsData timeseries identifierDescriptor with name
      */
-    deleteSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides) {
+    deleteCwmsDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['name'] == null) {
-                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling deleteSwtDataTimeseriesIdentifierDescriptorWithName().');
+                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling deleteCwmsDataTimeSeriesIdentifierDescriptorWithName().');
             }
             if (requestParameters['timeseriesId'] == null) {
-                throw new runtime.RequiredError('timeseriesId', 'Required parameter "timeseriesId" was null or undefined when calling deleteSwtDataTimeseriesIdentifierDescriptorWithName().');
+                throw new runtime.RequiredError('timeseriesId', 'Required parameter "timeseriesId" was null or undefined when calling deleteCwmsDataTimeSeriesIdentifierDescriptorWithName().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataTimeseriesIdentifierDescriptorWithName().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataTimeSeriesIdentifierDescriptorWithName().');
             }
             if (requestParameters['method'] == null) {
-                throw new runtime.RequiredError('method', 'Required parameter "method" was null or undefined when calling deleteSwtDataTimeseriesIdentifierDescriptorWithName().');
+                throw new runtime.RequiredError('method', 'Required parameter "method" was null or undefined when calling deleteCwmsDataTimeSeriesIdentifierDescriptorWithName().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -69,18 +69,18 @@ class TimeseriesIdentifierApi extends runtime.BaseAPI {
     }
     /**
      * Deletes requested timeseries identifier
-     * Delete swtData timeseries identifierDescriptor with name
+     * Delete CwmsData timeseries identifierDescriptor with name
      */
-    deleteSwtDataTimeseriesIdentifierDescriptorWithName(requestParameters, initOverrides) {
+    deleteCwmsDataTimeSeriesIdentifierDescriptorWithName(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Returns CWMS timeseries identifier descriptorData
-     * Get swtData timeseries identifierDescriptor
+     * Get CwmsData timeseries identifierDescriptor
      */
-    getSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters, initOverrides) {
+    getTimeSeriesIdentifierDescriptorRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -105,33 +105,33 @@ class TimeseriesIdentifierApi extends runtime.BaseAPI {
                 headers: headerParameters,
                 query: queryParameters,
             }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.TimeseriesIdentifierDescriptorsFromJSON)(jsonValue));
+            return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.TimeSeriesIdentifierDescriptorsFromJSON)(jsonValue));
         });
     }
     /**
      * Returns CWMS timeseries identifier descriptorData
-     * Get swtData timeseries identifierDescriptor
+     * Get CwmsData timeseries identifierDescriptor
      */
-    getSwtDataTimeseriesIdentifierDescriptor(requestParameters = {}, initOverrides) {
+    getTimeSeriesIdentifierDescriptor(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters, initOverrides);
+            const response = yield this.getTimeSeriesIdentifierDescriptorRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Retrieves requested timeseries identifier descriptor
-     * Get swtData timeseries identifierDescriptor with name
+     * Get CwmsData timeseries identifierDescriptor with name
      */
-    getSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides) {
+    getTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['name'] == null) {
-                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling getSwtDataTimeseriesIdentifierDescriptorWithName().');
+                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling getTimeSeriesIdentifierDescriptorWithName().');
             }
             if (requestParameters['timeseriesId'] == null) {
-                throw new runtime.RequiredError('timeseriesId', 'Required parameter "timeseriesId" was null or undefined when calling getSwtDataTimeseriesIdentifierDescriptorWithName().');
+                throw new runtime.RequiredError('timeseriesId', 'Required parameter "timeseriesId" was null or undefined when calling getTimeSeriesIdentifierDescriptorWithName().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataTimeseriesIdentifierDescriptorWithName().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getTimeSeriesIdentifierDescriptorWithName().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -147,29 +147,29 @@ class TimeseriesIdentifierApi extends runtime.BaseAPI {
                 headers: headerParameters,
                 query: queryParameters,
             }, initOverrides);
-            return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.TimeseriesIdentifierDescriptorFromJSON)(jsonValue));
+            return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.TimeSeriesIdentifierDescriptorFromJSON)(jsonValue));
         });
     }
     /**
      * Retrieves requested timeseries identifier descriptor
-     * Get swtData timeseries identifierDescriptor with name
+     * Get CwmsData timeseries identifierDescriptor with name
      */
-    getSwtDataTimeseriesIdentifierDescriptorWithName(requestParameters, initOverrides) {
+    getTimeSeriesIdentifierDescriptorWithName(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
+            const response = yield this.getTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Patch swtData timeseries identifierDescriptor with name
+     * Patch CwmsData timeseries identifierDescriptor with name
      */
-    patchSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides) {
+    patchCwmsDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['name'] == null) {
-                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling patchSwtDataTimeseriesIdentifierDescriptorWithName().');
+                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling patchCwmsDataTimeSeriesIdentifierDescriptorWithName().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchSwtDataTimeseriesIdentifierDescriptorWithName().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchCwmsDataTimeSeriesIdentifierDescriptorWithName().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -204,21 +204,21 @@ class TimeseriesIdentifierApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Patch swtData timeseries identifierDescriptor with name
+     * Patch CwmsData timeseries identifierDescriptor with name
      */
-    patchSwtDataTimeseriesIdentifierDescriptorWithName(requestParameters, initOverrides) {
+    patchCwmsDataTimeSeriesIdentifierDescriptorWithName(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataTimeseriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataTimeSeriesIdentifierDescriptorWithNameRaw(requestParameters, initOverrides);
         });
     }
     /**
-     * Create new TimeseriesIdentifierDescriptor
-     * Post swtData timeseries identifierDescriptor
+     * Create new TimeSeriesIdentifierDescriptor
+     * Post CwmsData timeseries identifierDescriptor
      */
-    postSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters, initOverrides) {
+    postCwmsDataTimeSeriesIdentifierDescriptorRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (requestParameters['timeseriesIdentifierDescriptor'] == null) {
-                throw new runtime.RequiredError('timeseriesIdentifierDescriptor', 'Required parameter "timeseriesIdentifierDescriptor" was null or undefined when calling postSwtDataTimeseriesIdentifierDescriptor().');
+            if (requestParameters['timeSeriesIdentifierDescriptor'] == null) {
+                throw new runtime.RequiredError('timeSeriesIdentifierDescriptor', 'Required parameter "timeSeriesIdentifierDescriptor" was null or undefined when calling postCwmsDataTimeSeriesIdentifierDescriptor().');
             }
             const queryParameters = {};
             if (requestParameters['failIfExists'] != null) {
@@ -234,19 +234,19 @@ class TimeseriesIdentifierApi extends runtime.BaseAPI {
                 method: 'POST',
                 headers: headerParameters,
                 query: queryParameters,
-                body: (0, index_1.TimeseriesIdentifierDescriptorToJSON)(requestParameters['timeseriesIdentifierDescriptor']),
+                body: (0, index_1.TimeSeriesIdentifierDescriptorToJSON)(requestParameters['timeSeriesIdentifierDescriptor']),
             }, initOverrides);
             return new runtime.VoidApiResponse(response);
         });
     }
     /**
-     * Create new TimeseriesIdentifierDescriptor
-     * Post swtData timeseries identifierDescriptor
+     * Create new TimeSeriesIdentifierDescriptor
+     * Post CwmsData timeseries identifierDescriptor
      */
-    postSwtDataTimeseriesIdentifierDescriptor(requestParameters, initOverrides) {
+    postCwmsDataTimeSeriesIdentifierDescriptor(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataTimeseriesIdentifierDescriptorRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataTimeSeriesIdentifierDescriptorRaw(requestParameters, initOverrides);
         });
     }
 }
-exports.TimeseriesIdentifierApi = TimeseriesIdentifierApi;
+exports.TimeSeriesIdentifierApi = TimeSeriesIdentifierApi;

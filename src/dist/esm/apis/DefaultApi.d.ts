@@ -15,11 +15,11 @@ import * as runtime from '../runtime';
  */
 export declare class DefaultApi extends runtime.BaseAPI {
     /**
-     * Get swtData
+     * Get CwmsData
      */
-    getSwtDataRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    getRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Get swtData
+     * Get CwmsData
      */
-    getSwtData(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    get(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

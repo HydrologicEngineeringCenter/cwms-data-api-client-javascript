@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { instanceOfLocationCatalogEntry, LocationCatalogEntryFromJSONTyped, LocationCatalogEntryToJSON, } from './LocationCatalogEntry';
-import { instanceOfTimeseriesCatalogEntry, TimeseriesCatalogEntryFromJSONTyped, TimeseriesCatalogEntryToJSON, } from './TimeseriesCatalogEntry';
+import { instanceOfTimeSeriesCatalogEntry, TimeSeriesCatalogEntryFromJSONTyped, TimeSeriesCatalogEntryToJSON, } from './TimeSeriesCatalogEntry';
 export function CatalogEntryFromJSON(json) {
     return CatalogEntryFromJSONTyped(json, false);
 }
@@ -20,7 +20,7 @@ export function CatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
-    return Object.assign(Object.assign({}, LocationCatalogEntryFromJSONTyped(json, true)), TimeseriesCatalogEntryFromJSONTyped(json, true));
+    return Object.assign(Object.assign({}, LocationCatalogEntryFromJSONTyped(json, true)), TimeSeriesCatalogEntryFromJSONTyped(json, true));
 }
 export function CatalogEntryToJSON(value) {
     if (value == null) {
@@ -29,8 +29,8 @@ export function CatalogEntryToJSON(value) {
     if (instanceOfLocationCatalogEntry(value)) {
         return LocationCatalogEntryToJSON(value);
     }
-    if (instanceOfTimeseriesCatalogEntry(value)) {
-        return TimeseriesCatalogEntryToJSON(value);
+    if (instanceOfTimeSeriesCatalogEntry(value)) {
+        return TimeSeriesCatalogEntryToJSON(value);
     }
     return {};
 }

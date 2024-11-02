@@ -16,7 +16,7 @@ const config = new Configuration({
 test("Test Parameters", async () => {
   const tb_api = new TurbinesApi(config);
   await tb_api
-    .getSwtDataProjectsTurbines({
+    .getProjectsTurbines({
       projectId: "KEYS",
       office: "SWT",
     })

@@ -25,33 +25,33 @@ import {
     LocationGroupToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataLocationGroupWithGroupIdRequest {
+export interface DeleteCwmsDataLocationGroupWithGroupIdRequest {
     groupId: string;
     categoryId: string;
     office: string;
     cascadeDelete?: boolean;
 }
 
-export interface GetSwtDataLocationGroupRequest {
+export interface GetLocationGroupRequest {
     office?: string;
     includeAssigned?: boolean;
     locationCategoryLike?: string;
 }
 
-export interface GetSwtDataLocationGroupWithGroupIdRequest {
+export interface GetLocationGroupWithGroupIdRequest {
     groupId: string;
     office: string;
     categoryId: string;
 }
 
-export interface PatchSwtDataLocationGroupWithGroupIdRequest {
+export interface PatchCwmsDataLocationGroupWithGroupIdRequest {
     groupId: string;
     office: string;
     locationGroup: LocationGroup;
     replaceAssignedLocs?: boolean;
 }
 
-export interface PostSwtDataLocationGroupRequest {
+export interface PostCwmsDataLocationGroupRequest {
     locationGroup: LocationGroup;
 }
 
@@ -62,27 +62,27 @@ export class LocationGroupsApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested location group
-     * Delete swtData location group with groupId
+     * Delete CwmsData location group with groupId
      */
-    async deleteSwtDataLocationGroupWithGroupIdRaw(requestParameters: DeleteSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataLocationGroupWithGroupIdRaw(requestParameters: DeleteCwmsDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['groupId'] == null) {
             throw new runtime.RequiredError(
                 'groupId',
-                'Required parameter "groupId" was null or undefined when calling deleteSwtDataLocationGroupWithGroupId().'
+                'Required parameter "groupId" was null or undefined when calling deleteCwmsDataLocationGroupWithGroupId().'
             );
         }
 
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling deleteSwtDataLocationGroupWithGroupId().'
+                'Required parameter "categoryId" was null or undefined when calling deleteCwmsDataLocationGroupWithGroupId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataLocationGroupWithGroupId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataLocationGroupWithGroupId().'
             );
         }
 
@@ -118,17 +118,17 @@ export class LocationGroupsApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested location group
-     * Delete swtData location group with groupId
+     * Delete CwmsData location group with groupId
      */
-    async deleteSwtDataLocationGroupWithGroupId(requestParameters: DeleteSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataLocationGroupWithGroupId(requestParameters: DeleteCwmsDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns CWMS Location Groups Data
-     * Get swtData location group
+     * Get CwmsData location group
      */
-    async getSwtDataLocationGroupRaw(requestParameters: GetSwtDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LocationGroup>>> {
+    async getLocationGroupRaw(requestParameters: GetLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LocationGroup>>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -161,36 +161,36 @@ export class LocationGroupsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Location Groups Data
-     * Get swtData location group
+     * Get CwmsData location group
      */
-    async getSwtDataLocationGroup(requestParameters: GetSwtDataLocationGroupRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LocationGroup>> {
-        const response = await this.getSwtDataLocationGroupRaw(requestParameters, initOverrides);
+    async getLocationGroup(requestParameters: GetLocationGroupRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LocationGroup>> {
+        const response = await this.getLocationGroupRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Retrieves requested Location Group
-     * Get swtData location group with groupId
+     * Get CwmsData location group with groupId
      */
-    async getSwtDataLocationGroupWithGroupIdRaw(requestParameters: GetSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationGroup>> {
+    async getLocationGroupWithGroupIdRaw(requestParameters: GetLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationGroup>> {
         if (requestParameters['groupId'] == null) {
             throw new runtime.RequiredError(
                 'groupId',
-                'Required parameter "groupId" was null or undefined when calling getSwtDataLocationGroupWithGroupId().'
+                'Required parameter "groupId" was null or undefined when calling getLocationGroupWithGroupId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataLocationGroupWithGroupId().'
+                'Required parameter "office" was null or undefined when calling getLocationGroupWithGroupId().'
             );
         }
 
         if (requestParameters['categoryId'] == null) {
             throw new runtime.RequiredError(
                 'categoryId',
-                'Required parameter "categoryId" was null or undefined when calling getSwtDataLocationGroupWithGroupId().'
+                'Required parameter "categoryId" was null or undefined when calling getLocationGroupWithGroupId().'
             );
         }
 
@@ -222,36 +222,36 @@ export class LocationGroupsApi extends runtime.BaseAPI {
 
     /**
      * Retrieves requested Location Group
-     * Get swtData location group with groupId
+     * Get CwmsData location group with groupId
      */
-    async getSwtDataLocationGroupWithGroupId(requestParameters: GetSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationGroup> {
-        const response = await this.getSwtDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
+    async getLocationGroupWithGroupId(requestParameters: GetLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationGroup> {
+        const response = await this.getLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update existing LocationGroup. Allows for renaming group, assigning new locations, and unassigning all locations from the group.
-     * Patch swtData location group with groupId
+     * Patch CwmsData location group with groupId
      */
-    async patchSwtDataLocationGroupWithGroupIdRaw(requestParameters: PatchSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataLocationGroupWithGroupIdRaw(requestParameters: PatchCwmsDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['groupId'] == null) {
             throw new runtime.RequiredError(
                 'groupId',
-                'Required parameter "groupId" was null or undefined when calling patchSwtDataLocationGroupWithGroupId().'
+                'Required parameter "groupId" was null or undefined when calling patchCwmsDataLocationGroupWithGroupId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataLocationGroupWithGroupId().'
+                'Required parameter "office" was null or undefined when calling patchCwmsDataLocationGroupWithGroupId().'
             );
         }
 
         if (requestParameters['locationGroup'] == null) {
             throw new runtime.RequiredError(
                 'locationGroup',
-                'Required parameter "locationGroup" was null or undefined when calling patchSwtDataLocationGroupWithGroupId().'
+                'Required parameter "locationGroup" was null or undefined when calling patchCwmsDataLocationGroupWithGroupId().'
             );
         }
 
@@ -286,21 +286,21 @@ export class LocationGroupsApi extends runtime.BaseAPI {
 
     /**
      * Update existing LocationGroup. Allows for renaming group, assigning new locations, and unassigning all locations from the group.
-     * Patch swtData location group with groupId
+     * Patch CwmsData location group with groupId
      */
-    async patchSwtDataLocationGroupWithGroupId(requestParameters: PatchSwtDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
+    async patchCwmsDataLocationGroupWithGroupId(requestParameters: PatchCwmsDataLocationGroupWithGroupIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataLocationGroupWithGroupIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new LocationGroup
-     * Post swtData location group
+     * Post CwmsData location group
      */
-    async postSwtDataLocationGroupRaw(requestParameters: PostSwtDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataLocationGroupRaw(requestParameters: PostCwmsDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['locationGroup'] == null) {
             throw new runtime.RequiredError(
                 'locationGroup',
-                'Required parameter "locationGroup" was null or undefined when calling postSwtDataLocationGroup().'
+                'Required parameter "locationGroup" was null or undefined when calling postCwmsDataLocationGroup().'
             );
         }
 
@@ -327,10 +327,10 @@ export class LocationGroupsApi extends runtime.BaseAPI {
 
     /**
      * Create new LocationGroup
-     * Post swtData location group
+     * Post CwmsData location group
      */
-    async postSwtDataLocationGroup(requestParameters: PostSwtDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataLocationGroupRaw(requestParameters, initOverrides);
+    async postCwmsDataLocationGroup(requestParameters: PostCwmsDataLocationGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataLocationGroupRaw(requestParameters, initOverrides);
     }
 
 }

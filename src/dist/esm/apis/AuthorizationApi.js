@@ -28,12 +28,12 @@ import { ApiKeyFromJSON, ApiKeyToJSON, } from '../models/index';
 export class AuthorizationApi extends runtime.BaseAPI {
     /**
      * Delete API key for a user
-     * Delete swtData auth keys with keyName
+     * Delete CwmsData auth keys with keyName
      */
-    deleteSwtDataAuthKeysWithKeyNameRaw(requestParameters, initOverrides) {
+    deleteCwmsDataAuthKeysWithKeyNameRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['keyName'] == null) {
-                throw new runtime.RequiredError('keyName', 'Required parameter "keyName" was null or undefined when calling deleteSwtDataAuthKeysWithKeyName().');
+                throw new runtime.RequiredError('keyName', 'Required parameter "keyName" was null or undefined when calling deleteCwmsDataAuthKeysWithKeyName().');
             }
             const queryParameters = {};
             const headerParameters = {};
@@ -51,19 +51,19 @@ export class AuthorizationApi extends runtime.BaseAPI {
     }
     /**
      * Delete API key for a user
-     * Delete swtData auth keys with keyName
+     * Delete CwmsData auth keys with keyName
      */
-    deleteSwtDataAuthKeysWithKeyName(requestParameters, initOverrides) {
+    deleteCwmsDataAuthKeysWithKeyName(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.deleteSwtDataAuthKeysWithKeyNameRaw(requestParameters, initOverrides);
+            const response = yield this.deleteCwmsDataAuthKeysWithKeyNameRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * View all keys for the current user
-     * Get swtData auth keys
+     * Get CwmsData auth keys
      */
-    getSwtDataAuthKeysRaw(initOverrides) {
+    getAuthKeysRaw(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             const headerParameters = {};
@@ -81,22 +81,22 @@ export class AuthorizationApi extends runtime.BaseAPI {
     }
     /**
      * View all keys for the current user
-     * Get swtData auth keys
+     * Get CwmsData auth keys
      */
-    getSwtDataAuthKeys(initOverrides) {
+    getAuthKeys(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataAuthKeysRaw(initOverrides);
+            const response = yield this.getAuthKeysRaw(initOverrides);
             return yield response.value();
         });
     }
     /**
      * View specific key
-     * Get swtData auth keys with keyName
+     * Get CwmsData auth keys with keyName
      */
-    getSwtDataAuthKeysWithKeyNameRaw(requestParameters, initOverrides) {
+    getAuthKeysWithKeyNameRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['keyName'] == null) {
-                throw new runtime.RequiredError('keyName', 'Required parameter "keyName" was null or undefined when calling getSwtDataAuthKeysWithKeyName().');
+                throw new runtime.RequiredError('keyName', 'Required parameter "keyName" was null or undefined when calling getAuthKeysWithKeyName().');
             }
             const queryParameters = {};
             const headerParameters = {};
@@ -114,19 +114,19 @@ export class AuthorizationApi extends runtime.BaseAPI {
     }
     /**
      * View specific key
-     * Get swtData auth keys with keyName
+     * Get CwmsData auth keys with keyName
      */
-    getSwtDataAuthKeysWithKeyName(requestParameters, initOverrides) {
+    getAuthKeysWithKeyName(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataAuthKeysWithKeyNameRaw(requestParameters, initOverrides);
+            const response = yield this.getAuthKeysWithKeyNameRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Create a new API Key for user. The randomly generated key is returned to the caller. A provided key will be ignored.
-     * Post swtData auth keys
+     * Post CwmsData auth keys
      */
-    postSwtDataAuthKeysRaw(requestParameters, initOverrides) {
+    postCwmsDataAuthKeysRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             const headerParameters = {};
@@ -146,11 +146,11 @@ export class AuthorizationApi extends runtime.BaseAPI {
     }
     /**
      * Create a new API Key for user. The randomly generated key is returned to the caller. A provided key will be ignored.
-     * Post swtData auth keys
+     * Post CwmsData auth keys
      */
-    postSwtDataAuthKeys(requestParameters = {}, initOverrides) {
+    postCwmsDataAuthKeys(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.postSwtDataAuthKeysRaw(requestParameters, initOverrides);
+            const response = yield this.postCwmsDataAuthKeysRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }

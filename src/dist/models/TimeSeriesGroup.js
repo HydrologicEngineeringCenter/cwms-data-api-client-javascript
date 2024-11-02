@@ -14,7 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TimeseriesGroupToJSON = exports.TimeseriesGroupFromJSONTyped = exports.TimeseriesGroupFromJSON = exports.instanceOfTimeseriesGroup = void 0;
-const AssignedTimeseries_1 = require("./AssignedTimeseries");
+const AssignedTimeSeries_1 = require("./AssignedTimeSeries");
 const TimeseriesCategory_1 = require("./TimeseriesCategory");
 /**
  * Check if a given object implements the TimeseriesGroup interface.
@@ -40,7 +40,7 @@ function TimeseriesGroupFromJSONTyped(json, ignoreDiscriminator) {
         'description': json['description'] == null ? undefined : json['description'],
         'sharedAliasId': json['shared-alias-id'] == null ? undefined : json['shared-alias-id'],
         'sharedRefTsId': json['shared-ref-ts-id'] == null ? undefined : json['shared-ref-ts-id'],
-        'assignedTimeSeries': json['assigned-time-series'] == null ? undefined : (json['assigned-time-series'].map(AssignedTimeseries_1.AssignedTimeseriesFromJSON)),
+        'assignedTimeSeries': json['assigned-time-series'] == null ? undefined : (json['assigned-time-series'].map(AssignedTimeSeries_1.AssignedTimeSeriesFromJSON)),
     };
 }
 exports.TimeseriesGroupFromJSONTyped = TimeseriesGroupFromJSONTyped;
@@ -55,7 +55,7 @@ function TimeseriesGroupToJSON(value) {
         'description': value['description'],
         'shared-alias-id': value['sharedAliasId'],
         'shared-ref-ts-id': value['sharedRefTsId'],
-        'assigned-time-series': value['assignedTimeSeries'] == null ? undefined : (value['assignedTimeSeries'].map(AssignedTimeseries_1.AssignedTimeseriesToJSON)),
+        'assigned-time-series': value['assignedTimeSeries'] == null ? undefined : (value['assignedTimeSeries'].map(AssignedTimeSeries_1.AssignedTimeSeriesToJSON)),
     };
 }
 exports.TimeseriesGroupToJSON = TimeseriesGroupToJSON;

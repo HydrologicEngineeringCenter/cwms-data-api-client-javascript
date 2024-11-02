@@ -37,19 +37,19 @@ import {
     WaterUserContractToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataProjectsWithOfficeContractTypesWithDisplayValueRequest {
+export interface DeleteCwmsDataProjectsWithOfficeContractTypesWithDisplayValueRequest {
     office: string;
     displayValue: string;
 }
 
-export interface DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest {
+export interface DeleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest {
     office: string;
     projectId: string;
     waterUser: string;
     method?: DeleteMethod;
 }
 
-export interface DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest {
+export interface DeleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest {
     office: string;
     projectId: string;
     waterUser: string;
@@ -57,7 +57,7 @@ export interface DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterU
     method?: DeleteMethod;
 }
 
-export interface DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRequest {
+export interface DeleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRequest {
     office: string;
     projectId: string;
     waterUser: string;
@@ -67,35 +67,35 @@ export interface DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterU
     deleteAccounting?: boolean;
 }
 
-export interface GetSwtDataProjectsWithOfficeContractTypesRequest {
+export interface GetProjectsWithOfficeContractTypesRequest {
     office: string;
 }
 
-export interface GetSwtDataProjectsWithOfficeWithProjectIdWaterUserRequest {
-    office: string;
-    projectId: string;
-}
-
-export interface GetSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest {
+export interface GetProjectsWithOfficeWithProjectIdWaterUserRequest {
     office: string;
     projectId: string;
-    waterUser: string;
 }
 
-export interface GetSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest {
+export interface GetProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest {
     office: string;
     projectId: string;
     waterUser: string;
 }
 
-export interface GetSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest {
+export interface GetProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest {
+    office: string;
+    projectId: string;
+    waterUser: string;
+}
+
+export interface GetProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest {
     office: string;
     projectId: string;
     waterUser: string;
     contractName: string;
 }
 
-export interface PatchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest {
+export interface PatchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest {
     office: string;
     projectId: string;
     waterUser: string;
@@ -103,7 +103,7 @@ export interface PatchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUs
     waterUser2: WaterUser;
 }
 
-export interface PatchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest {
+export interface PatchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest {
     office: string;
     projectId: string;
     waterUser: string;
@@ -112,20 +112,20 @@ export interface PatchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUs
     waterUserContract: WaterUserContract;
 }
 
-export interface PostSwtDataProjectsWithOfficeContractTypesRequest {
+export interface PostCwmsDataProjectsWithOfficeContractTypesRequest {
     office: string;
     lookupType: LookupType;
     failIfExists?: boolean;
 }
 
-export interface PostSwtDataProjectsWithOfficeWithProjectIdWaterUserRequest {
+export interface PostCwmsDataProjectsWithOfficeWithProjectIdWaterUserRequest {
     office: string;
     projectId: string;
     waterUser: WaterUser;
     failIfExists?: boolean;
 }
 
-export interface PostSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest {
+export interface PostCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest {
     office: string;
     projectId: string;
     waterUser: string;
@@ -141,20 +141,20 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Delete a water contract type
-     * Delete swtData projects with office contractTypes with displayValue
+     * Delete CwmsData projects with office contractTypes with displayValue
      */
-    async deleteSwtDataProjectsWithOfficeContractTypesWithDisplayValueRaw(requestParameters: DeleteSwtDataProjectsWithOfficeContractTypesWithDisplayValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsWithOfficeContractTypesWithDisplayValueRaw(requestParameters: DeleteCwmsDataProjectsWithOfficeContractTypesWithDisplayValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsWithOfficeContractTypesWithDisplayValue().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsWithOfficeContractTypesWithDisplayValue().'
             );
         }
 
         if (requestParameters['displayValue'] == null) {
             throw new runtime.RequiredError(
                 'displayValue',
-                'Required parameter "displayValue" was null or undefined when calling deleteSwtDataProjectsWithOfficeContractTypesWithDisplayValue().'
+                'Required parameter "displayValue" was null or undefined when calling deleteCwmsDataProjectsWithOfficeContractTypesWithDisplayValue().'
             );
         }
 
@@ -178,35 +178,35 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Delete a water contract type
-     * Delete swtData projects with office contractTypes with displayValue
+     * Delete CwmsData projects with office contractTypes with displayValue
      */
-    async deleteSwtDataProjectsWithOfficeContractTypesWithDisplayValue(requestParameters: DeleteSwtDataProjectsWithOfficeContractTypesWithDisplayValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsWithOfficeContractTypesWithDisplayValueRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsWithOfficeContractTypesWithDisplayValue(requestParameters: DeleteCwmsDataProjectsWithOfficeContractTypesWithDisplayValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsWithOfficeContractTypesWithDisplayValueRaw(requestParameters, initOverrides);
     }
 
     /**
      * Deletes a water user from CWMS.
-     * Delete swtData projects with office with projectId waterUser with waterUser
+     * Delete CwmsData projects with office with projectId waterUser with waterUser
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "projectId" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "waterUser" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
@@ -234,42 +234,42 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Deletes a water user from CWMS.
-     * Delete swtData projects with office with projectId waterUser with waterUser
+     * Delete CwmsData projects with office with projectId waterUser with waterUser
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters, initOverrides);
     }
 
     /**
      * Delete a specified water contract
-     * Delete swtData projects with office with projectId waterUser with waterUser contracts with contractName
+     * Delete CwmsData projects with office with projectId waterUser with waterUser contracts with contractName
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "projectId" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "waterUser" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['contractName'] == null) {
             throw new runtime.RequiredError(
                 'contractName',
-                'Required parameter "contractName" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "contractName" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
@@ -297,56 +297,56 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Delete a specified water contract
-     * Delete swtData projects with office with projectId waterUser with waterUser contracts with contractName
+     * Delete CwmsData projects with office with projectId waterUser with waterUser contracts with contractName
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Disassociate a pump from a contract
-     * Delete swtData projects with office with projectId waterUser with waterUser contracts with contractName pumps with name
+     * Delete CwmsData projects with office with projectId waterUser with waterUser contracts with contractName pumps with name
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRaw(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRaw(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
+                'Required parameter "projectId" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
+                'Required parameter "waterUser" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
             );
         }
 
         if (requestParameters['contractName'] == null) {
             throw new runtime.RequiredError(
                 'contractName',
-                'Required parameter "contractName" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
+                'Required parameter "contractName" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
             );
         }
 
         if (requestParameters['pumpType'] == null) {
             throw new runtime.RequiredError(
                 'pumpType',
-                'Required parameter "pumpType" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
+                'Required parameter "pumpType" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName().'
             );
         }
 
@@ -378,21 +378,21 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Disassociate a pump from a contract
-     * Delete swtData projects with office with projectId waterUser with waterUser contracts with contractName pumps with name
+     * Delete CwmsData projects with office with projectId waterUser with waterUser contracts with contractName pumps with name
      */
-    async deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName(requestParameters: DeleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithName(requestParameters: DeleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNamePumpsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Get all water contract types
-     * Get swtData projects with office contractTypes
+     * Get CwmsData projects with office contractTypes
      */
-    async getSwtDataProjectsWithOfficeContractTypesRaw(requestParameters: GetSwtDataProjectsWithOfficeContractTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LookupType>> {
+    async getProjectsWithOfficeContractTypesRaw(requestParameters: GetProjectsWithOfficeContractTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LookupType>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithOfficeContractTypes().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithOfficeContractTypes().'
             );
         }
 
@@ -416,29 +416,29 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Get all water contract types
-     * Get swtData projects with office contractTypes
+     * Get CwmsData projects with office contractTypes
      */
-    async getSwtDataProjectsWithOfficeContractTypes(requestParameters: GetSwtDataProjectsWithOfficeContractTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LookupType> {
-        const response = await this.getSwtDataProjectsWithOfficeContractTypesRaw(requestParameters, initOverrides);
+    async getProjectsWithOfficeContractTypes(requestParameters: GetProjectsWithOfficeContractTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LookupType> {
+        const response = await this.getProjectsWithOfficeContractTypesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Gets all water users.
-     * Get swtData projects with office with projectId waterUser
+     * Get CwmsData projects with office with projectId waterUser
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdWaterUserRaw(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WaterUser>> {
+    async getProjectsWithOfficeWithProjectIdWaterUserRaw(requestParameters: GetProjectsWithOfficeWithProjectIdWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WaterUser>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUser().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUser().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUser().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUser().'
             );
         }
 
@@ -462,36 +462,36 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Gets all water users.
-     * Get swtData projects with office with projectId waterUser
+     * Get CwmsData projects with office with projectId waterUser
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdWaterUser(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WaterUser> {
-        const response = await this.getSwtDataProjectsWithOfficeWithProjectIdWaterUserRaw(requestParameters, initOverrides);
+    async getProjectsWithOfficeWithProjectIdWaterUser(requestParameters: GetProjectsWithOfficeWithProjectIdWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WaterUser> {
+        const response = await this.getProjectsWithOfficeWithProjectIdWaterUserRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Gets a specified water user.
-     * Get swtData projects with office with projectId waterUser with waterUser
+     * Get CwmsData projects with office with projectId waterUser with waterUser
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WaterUserContract>> {
+    async getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters: GetProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WaterUserContract>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "waterUser" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
@@ -515,36 +515,36 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Gets a specified water user.
-     * Get swtData projects with office with projectId waterUser with waterUser
+     * Get CwmsData projects with office with projectId waterUser with waterUser
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WaterUserContract> {
-        const response = await this.getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters, initOverrides);
+    async getProjectsWithOfficeWithProjectIdWaterUserWithWaterUser(requestParameters: GetProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WaterUserContract> {
+        const response = await this.getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Return all water contracts
-     * Get swtData projects with office with projectId waterUser with waterUser contracts
+     * Get CwmsData projects with office with projectId waterUser with waterUser contracts
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRaw(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WaterUserContract>> {
+    async getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRaw(requestParameters: GetProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WaterUserContract>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
+                'Required parameter "waterUser" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
             );
         }
 
@@ -568,43 +568,43 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Return all water contracts
-     * Get swtData projects with office with projectId waterUser with waterUser contracts
+     * Get CwmsData projects with office with projectId waterUser with waterUser contracts
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WaterUserContract> {
-        const response = await this.getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRaw(requestParameters, initOverrides);
+    async getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts(requestParameters: GetProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WaterUserContract> {
+        const response = await this.getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Return a specified water contract
-     * Get swtData projects with office with projectId waterUser with waterUser contracts with contractName
+     * Get CwmsData projects with office with projectId waterUser with waterUser contracts with contractName
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WaterUserContract>> {
+    async getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters: GetProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WaterUserContract>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "waterUser" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['contractName'] == null) {
             throw new runtime.RequiredError(
                 'contractName',
-                'Required parameter "contractName" was null or undefined when calling getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "contractName" was null or undefined when calling getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
@@ -628,50 +628,50 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Return a specified water contract
-     * Get swtData projects with office with projectId waterUser with waterUser contracts with contractName
+     * Get CwmsData projects with office with projectId waterUser with waterUser contracts with contractName
      */
-    async getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName(requestParameters: GetSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WaterUserContract> {
-        const response = await this.getSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters, initOverrides);
+    async getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName(requestParameters: GetProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WaterUserContract> {
+        const response = await this.getProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Updates a water user in CWMS.
-     * Patch swtData projects with office with projectId waterUser with waterUser
+     * Patch CwmsData projects with office with projectId waterUser with waterUser
      */
-    async patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters: PatchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters: PatchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "office" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "projectId" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "waterUser" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
         if (requestParameters['waterUser2'] == null) {
             throw new runtime.RequiredError(
                 'waterUser2',
-                'Required parameter "waterUser2" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
+                'Required parameter "waterUser2" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser().'
             );
         }
 
@@ -702,56 +702,56 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Updates a water user in CWMS.
-     * Patch swtData projects with office with projectId waterUser with waterUser
+     * Patch CwmsData projects with office with projectId waterUser with waterUser
      */
-    async patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser(requestParameters: PatchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters, initOverrides);
+    async patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUser(requestParameters: PatchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserRaw(requestParameters, initOverrides);
     }
 
     /**
      * Renames a water contract
-     * Patch swtData projects with office with projectId waterUser with waterUser contracts with contractName
+     * Patch CwmsData projects with office with projectId waterUser with waterUser contracts with contractName
      */
-    async patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters: PatchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters: PatchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "office" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "projectId" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "waterUser" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['contractName'] == null) {
             throw new runtime.RequiredError(
                 'contractName',
-                'Required parameter "contractName" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "contractName" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['contractName2'] == null) {
             throw new runtime.RequiredError(
                 'contractName2',
-                'Required parameter "contractName2" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "contractName2" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
         if (requestParameters['waterUserContract'] == null) {
             throw new runtime.RequiredError(
                 'waterUserContract',
-                'Required parameter "waterUserContract" was null or undefined when calling patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
+                'Required parameter "waterUserContract" was null or undefined when calling patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName().'
             );
         }
 
@@ -782,28 +782,28 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Renames a water contract
-     * Patch swtData projects with office with projectId waterUser with waterUser contracts with contractName
+     * Patch CwmsData projects with office with projectId waterUser with waterUser contracts with contractName
      */
-    async patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName(requestParameters: PatchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractName(requestParameters: PatchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsWithContractNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create a new water contract type
-     * Post swtData projects with office contractTypes
+     * Post CwmsData projects with office contractTypes
      */
-    async postSwtDataProjectsWithOfficeContractTypesRaw(requestParameters: PostSwtDataProjectsWithOfficeContractTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsWithOfficeContractTypesRaw(requestParameters: PostCwmsDataProjectsWithOfficeContractTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling postSwtDataProjectsWithOfficeContractTypes().'
+                'Required parameter "office" was null or undefined when calling postCwmsDataProjectsWithOfficeContractTypes().'
             );
         }
 
         if (requestParameters['lookupType'] == null) {
             throw new runtime.RequiredError(
                 'lookupType',
-                'Required parameter "lookupType" was null or undefined when calling postSwtDataProjectsWithOfficeContractTypes().'
+                'Required parameter "lookupType" was null or undefined when calling postCwmsDataProjectsWithOfficeContractTypes().'
             );
         }
 
@@ -834,35 +834,35 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Create a new water contract type
-     * Post swtData projects with office contractTypes
+     * Post CwmsData projects with office contractTypes
      */
-    async postSwtDataProjectsWithOfficeContractTypes(requestParameters: PostSwtDataProjectsWithOfficeContractTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsWithOfficeContractTypesRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsWithOfficeContractTypes(requestParameters: PostCwmsDataProjectsWithOfficeContractTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsWithOfficeContractTypesRaw(requestParameters, initOverrides);
     }
 
     /**
      * Stores a water user to CWMS.
-     * Post swtData projects with office with projectId waterUser
+     * Post CwmsData projects with office with projectId waterUser
      */
-    async postSwtDataProjectsWithOfficeWithProjectIdWaterUserRaw(requestParameters: PostSwtDataProjectsWithOfficeWithProjectIdWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsWithOfficeWithProjectIdWaterUserRaw(requestParameters: PostCwmsDataProjectsWithOfficeWithProjectIdWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling postSwtDataProjectsWithOfficeWithProjectIdWaterUser().'
+                'Required parameter "office" was null or undefined when calling postCwmsDataProjectsWithOfficeWithProjectIdWaterUser().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling postSwtDataProjectsWithOfficeWithProjectIdWaterUser().'
+                'Required parameter "projectId" was null or undefined when calling postCwmsDataProjectsWithOfficeWithProjectIdWaterUser().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling postSwtDataProjectsWithOfficeWithProjectIdWaterUser().'
+                'Required parameter "waterUser" was null or undefined when calling postCwmsDataProjectsWithOfficeWithProjectIdWaterUser().'
             );
         }
 
@@ -893,42 +893,42 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Stores a water user to CWMS.
-     * Post swtData projects with office with projectId waterUser
+     * Post CwmsData projects with office with projectId waterUser
      */
-    async postSwtDataProjectsWithOfficeWithProjectIdWaterUser(requestParameters: PostSwtDataProjectsWithOfficeWithProjectIdWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsWithOfficeWithProjectIdWaterUserRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsWithOfficeWithProjectIdWaterUser(requestParameters: PostCwmsDataProjectsWithOfficeWithProjectIdWaterUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsWithOfficeWithProjectIdWaterUserRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create a new water contract
-     * Post swtData projects with office with projectId waterUser with waterUser contracts
+     * Post CwmsData projects with office with projectId waterUser with waterUser contracts
      */
-    async postSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRaw(requestParameters: PostSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRaw(requestParameters: PostCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling postSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
+                'Required parameter "office" was null or undefined when calling postCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling postSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
+                'Required parameter "projectId" was null or undefined when calling postCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
             );
         }
 
         if (requestParameters['waterUser'] == null) {
             throw new runtime.RequiredError(
                 'waterUser',
-                'Required parameter "waterUser" was null or undefined when calling postSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
+                'Required parameter "waterUser" was null or undefined when calling postCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
             );
         }
 
         if (requestParameters['waterUserContract'] == null) {
             throw new runtime.RequiredError(
                 'waterUserContract',
-                'Required parameter "waterUserContract" was null or undefined when calling postSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
+                'Required parameter "waterUserContract" was null or undefined when calling postCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts().'
             );
         }
 
@@ -963,10 +963,10 @@ export class WaterContractsApi extends runtime.BaseAPI {
 
     /**
      * Create a new water contract
-     * Post swtData projects with office with projectId waterUser with waterUser contracts
+     * Post CwmsData projects with office with projectId waterUser with waterUser contracts
      */
-    async postSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts(requestParameters: PostSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContracts(requestParameters: PostCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsWithOfficeWithProjectIdWaterUserWithWaterUserContractsRaw(requestParameters, initOverrides);
     }
 
 }

@@ -13,20 +13,20 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeseriesCatalogEntryToJSON = exports.TimeseriesCatalogEntryFromJSONTyped = exports.TimeseriesCatalogEntryFromJSON = exports.instanceOfTimeseriesCatalogEntry = void 0;
+exports.TimeSeriesCatalogEntryToJSON = exports.TimeSeriesCatalogEntryFromJSONTyped = exports.TimeSeriesCatalogEntryFromJSON = exports.instanceOfTimeSeriesCatalogEntry = void 0;
 const Extents_1 = require("./Extents");
 /**
- * Check if a given object implements the TimeseriesCatalogEntry interface.
+ * Check if a given object implements the TimeSeriesCatalogEntry interface.
  */
-function instanceOfTimeseriesCatalogEntry(value) {
+function instanceOfTimeSeriesCatalogEntry(value) {
     return true;
 }
-exports.instanceOfTimeseriesCatalogEntry = instanceOfTimeseriesCatalogEntry;
-function TimeseriesCatalogEntryFromJSON(json) {
-    return TimeseriesCatalogEntryFromJSONTyped(json, false);
+exports.instanceOfTimeSeriesCatalogEntry = instanceOfTimeSeriesCatalogEntry;
+function TimeSeriesCatalogEntryFromJSON(json) {
+    return TimeSeriesCatalogEntryFromJSONTyped(json, false);
 }
-exports.TimeseriesCatalogEntryFromJSON = TimeseriesCatalogEntryFromJSON;
-function TimeseriesCatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
+exports.TimeSeriesCatalogEntryFromJSON = TimeSeriesCatalogEntryFromJSON;
+function TimeSeriesCatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -40,8 +40,8 @@ function TimeseriesCatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
         'extents': json['extents'] == null ? undefined : (json['extents'].map(Extents_1.ExtentsFromJSON)),
     };
 }
-exports.TimeseriesCatalogEntryFromJSONTyped = TimeseriesCatalogEntryFromJSONTyped;
-function TimeseriesCatalogEntryToJSON(value) {
+exports.TimeSeriesCatalogEntryFromJSONTyped = TimeSeriesCatalogEntryFromJSONTyped;
+function TimeSeriesCatalogEntryToJSON(value) {
     if (value == null) {
         return value;
     }
@@ -55,4 +55,4 @@ function TimeseriesCatalogEntryToJSON(value) {
         'extents': value['extents'] == null ? undefined : (value['extents'].map(Extents_1.ExtentsToJSON)),
     };
 }
-exports.TimeseriesCatalogEntryToJSON = TimeseriesCatalogEntryToJSON;
+exports.TimeSeriesCatalogEntryToJSON = TimeSeriesCatalogEntryToJSON;

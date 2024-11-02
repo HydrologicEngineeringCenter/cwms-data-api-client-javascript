@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { StoreRule, Timeseries, Tsv, UnitSystem } from '../models/index';
-export interface DeleteSwtDataTimeseriesWithTimeseriesRequest {
+import type { StoreRule, TimeSeries, Tsv, UnitSystem } from '../models/index';
+export interface DeleteCwmsDataTimeSeriesWithTimeSeriesRequest {
     timeseries: string;
     office: string;
     begin: string;
@@ -23,7 +23,7 @@ export interface DeleteSwtDataTimeseriesWithTimeseriesRequest {
     maxVersion?: boolean;
     overrideProtection?: boolean;
 }
-export interface GetSwtDataTimeseriesRequest {
+export interface GetTimeSeriesRequest {
     name: string;
     office?: string;
     unit?: string;
@@ -37,23 +37,23 @@ export interface GetSwtDataTimeseriesRequest {
     page?: string;
     pageSize?: number;
 }
-export interface GetSwtDataTimeseriesRecentRequest {
+export interface GetTimeSeriesRecentRequest {
     office?: string;
     categoryId?: string;
     groupId?: string;
     tsIds?: string;
     unitSystem?: UnitSystem;
 }
-export interface PatchSwtDataTimeseriesWithTimeseriesRequest {
+export interface PatchCwmsDataTimeSeriesWithTimeSeriesRequest {
     timeseries: string;
-    timeseries2: Timeseries;
+    timeSeries: TimeSeries;
     timezone?: string;
     createAsLrts?: boolean;
     storeRule?: StoreRule;
     overrideProtection?: boolean;
 }
-export interface PostSwtDataTimeseriesRequest {
-    timeseries: Timeseries;
+export interface PostCwmsDataTimeSeriesRequest {
+    timeSeries: TimeSeries;
     timezone?: string;
     createAsLrts?: boolean;
     storeRule?: StoreRule;
@@ -62,51 +62,51 @@ export interface PostSwtDataTimeseriesRequest {
 /**
  *
  */
-export declare class TimeseriesApi extends runtime.BaseAPI {
+export declare class TimeSeriesApi extends runtime.BaseAPI {
     /**
-     * Delete swtData timeseries with timeseries
+     * Delete CwmsData timeseries with timeseries
      */
-    deleteSwtDataTimeseriesWithTimeseriesRaw(requestParameters: DeleteSwtDataTimeseriesWithTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters: DeleteCwmsDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Delete swtData timeseries with timeseries
+     * Delete CwmsData timeseries with timeseries
      */
-    deleteSwtDataTimeseriesWithTimeseries(requestParameters: DeleteSwtDataTimeseriesWithTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataTimeSeriesWithTimeSeries(requestParameters: DeleteCwmsDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Get swtData timeseries
+     * Get CwmsData timeseries
      */
-    getSwtDataTimeseriesRaw(requestParameters: GetSwtDataTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Timeseries>>;
+    getTimeSeriesRaw(requestParameters: GetTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeries>>;
     /**
-     * Get swtData timeseries
+     * Get CwmsData timeseries
      */
-    getSwtDataTimeseries(requestParameters: GetSwtDataTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Timeseries>;
+    getTimeSeries(requestParameters: GetTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeries>;
     /**
-     * Returns CWMS Timeseries Groups Data
-     * Get swtData timeseries recent
+     * Returns CWMS Time Series Groups Data
+     * Get CwmsData timeseries recent
      */
-    getSwtDataTimeseriesRecentRaw(requestParameters: GetSwtDataTimeseriesRecentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Tsv>>>;
+    getTimeSeriesRecentRaw(requestParameters: GetTimeSeriesRecentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Tsv>>>;
     /**
-     * Returns CWMS Timeseries Groups Data
-     * Get swtData timeseries recent
+     * Returns CWMS Time Series Groups Data
+     * Get CwmsData timeseries recent
      */
-    getSwtDataTimeseriesRecent(requestParameters?: GetSwtDataTimeseriesRecentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Tsv>>;
+    getTimeSeriesRecent(requestParameters?: GetTimeSeriesRecentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Tsv>>;
     /**
-     * Update a Timeseries with provided values
-     * Patch swtData timeseries with timeseries
+     * Update a TimeSeries with provided values
+     * Patch CwmsData timeseries with timeseries
      */
-    patchSwtDataTimeseriesWithTimeseriesRaw(requestParameters: PatchSwtDataTimeseriesWithTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataTimeSeriesWithTimeSeriesRaw(requestParameters: PatchCwmsDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
-     * Update a Timeseries with provided values
-     * Patch swtData timeseries with timeseries
+     * Update a TimeSeries with provided values
+     * Patch CwmsData timeseries with timeseries
      */
-    patchSwtDataTimeseriesWithTimeseries(requestParameters: PatchSwtDataTimeseriesWithTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     * Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds
-     * Post swtData timeseries
-     */
-    postSwtDataTimeseriesRaw(requestParameters: PostSwtDataTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataTimeSeriesWithTimeSeries(requestParameters: PatchCwmsDataTimeSeriesWithTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds
-     * Post swtData timeseries
+     * Post CwmsData timeseries
      */
-    postSwtDataTimeseries(requestParameters: PostSwtDataTimeseriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataTimeSeriesRaw(requestParameters: PostCwmsDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Used to create and save time-series data. Data to be stored must have time stamps in UTC represented as epoch milliseconds
+     * Post CwmsData timeseries
+     */
+    postCwmsDataTimeSeries(requestParameters: PostCwmsDataTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

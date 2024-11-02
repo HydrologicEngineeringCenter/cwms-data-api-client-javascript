@@ -13,76 +13,76 @@
  */
 
 import { mapValues } from '../runtime';
-import type { TimeseriesIntervalUnitsInnerDuration } from './TimeseriesIntervalUnitsInnerDuration';
+import type { TimeSeriesIntervalUnitsInnerDuration } from './TimeSeriesIntervalUnitsInnerDuration';
 import {
-    TimeseriesIntervalUnitsInnerDurationFromJSON,
-    TimeseriesIntervalUnitsInnerDurationFromJSONTyped,
-    TimeseriesIntervalUnitsInnerDurationToJSON,
-} from './TimeseriesIntervalUnitsInnerDuration';
+    TimeSeriesIntervalUnitsInnerDurationFromJSON,
+    TimeSeriesIntervalUnitsInnerDurationFromJSONTyped,
+    TimeSeriesIntervalUnitsInnerDurationToJSON,
+} from './TimeSeriesIntervalUnitsInnerDuration';
 
 /**
  * 
  * @export
- * @interface TimeseriesIntervalUnitsInner
+ * @interface TimeSeriesIntervalUnitsInner
  */
-export interface TimeseriesIntervalUnitsInner {
+export interface TimeSeriesIntervalUnitsInner {
     /**
      * 
-     * @type {TimeseriesIntervalUnitsInnerDuration}
-     * @memberof TimeseriesIntervalUnitsInner
+     * @type {TimeSeriesIntervalUnitsInnerDuration}
+     * @memberof TimeSeriesIntervalUnitsInner
      */
-    duration?: TimeseriesIntervalUnitsInnerDuration;
+    duration?: TimeSeriesIntervalUnitsInnerDuration;
     /**
      * 
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInner
+     * @memberof TimeSeriesIntervalUnitsInner
      */
     durationEstimated?: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInner
+     * @memberof TimeSeriesIntervalUnitsInner
      */
     dateBased?: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInner
+     * @memberof TimeSeriesIntervalUnitsInner
      */
     timeBased?: boolean;
 }
 
 /**
- * Check if a given object implements the TimeseriesIntervalUnitsInner interface.
+ * Check if a given object implements the TimeSeriesIntervalUnitsInner interface.
  */
-export function instanceOfTimeseriesIntervalUnitsInner(value: object): boolean {
+export function instanceOfTimeSeriesIntervalUnitsInner(value: object): boolean {
     return true;
 }
 
-export function TimeseriesIntervalUnitsInnerFromJSON(json: any): TimeseriesIntervalUnitsInner {
-    return TimeseriesIntervalUnitsInnerFromJSONTyped(json, false);
+export function TimeSeriesIntervalUnitsInnerFromJSON(json: any): TimeSeriesIntervalUnitsInner {
+    return TimeSeriesIntervalUnitsInnerFromJSONTyped(json, false);
 }
 
-export function TimeseriesIntervalUnitsInnerFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesIntervalUnitsInner {
+export function TimeSeriesIntervalUnitsInnerFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesIntervalUnitsInner {
     if (json == null) {
         return json;
     }
     return {
         
-        'duration': json['duration'] == null ? undefined : TimeseriesIntervalUnitsInnerDurationFromJSON(json['duration']),
+        'duration': json['duration'] == null ? undefined : TimeSeriesIntervalUnitsInnerDurationFromJSON(json['duration']),
         'durationEstimated': json['durationEstimated'] == null ? undefined : json['durationEstimated'],
         'dateBased': json['dateBased'] == null ? undefined : json['dateBased'],
         'timeBased': json['timeBased'] == null ? undefined : json['timeBased'],
     };
 }
 
-export function TimeseriesIntervalUnitsInnerToJSON(value?: TimeseriesIntervalUnitsInner | null): any {
+export function TimeSeriesIntervalUnitsInnerToJSON(value?: TimeSeriesIntervalUnitsInner | null): any {
     if (value == null) {
         return value;
     }
     return {
         
-        'duration': TimeseriesIntervalUnitsInnerDurationToJSON(value['duration']),
+        'duration': TimeSeriesIntervalUnitsInnerDurationToJSON(value['duration']),
         'durationEstimated': value['durationEstimated'],
         'dateBased': value['dateBased'],
         'timeBased': value['timeBased'],

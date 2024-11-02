@@ -13,84 +13,84 @@
  */
 
 import { mapValues } from '../runtime';
-import type { TimeseriesIntervalUnitsInner } from './TimeseriesIntervalUnitsInner';
+import type { TimeSeriesIntervalUnitsInner } from './TimeSeriesIntervalUnitsInner';
 import {
-    TimeseriesIntervalUnitsInnerFromJSON,
-    TimeseriesIntervalUnitsInnerFromJSONTyped,
-    TimeseriesIntervalUnitsInnerToJSON,
-} from './TimeseriesIntervalUnitsInner';
+    TimeSeriesIntervalUnitsInnerFromJSON,
+    TimeSeriesIntervalUnitsInnerFromJSONTyped,
+    TimeSeriesIntervalUnitsInnerToJSON,
+} from './TimeSeriesIntervalUnitsInner';
 
 /**
  * The interval of the time-series, in ISO-8601 duration format
  * @export
- * @interface TimeseriesInterval
+ * @interface TimeSeriesInterval
  */
-export interface TimeseriesInterval {
+export interface TimeSeriesInterval {
     /**
      * 
      * @type {number}
-     * @memberof TimeseriesInterval
+     * @memberof TimeSeriesInterval
      */
     seconds?: number;
     /**
      * 
-     * @type {Array<TimeseriesIntervalUnitsInner>}
-     * @memberof TimeseriesInterval
+     * @type {Array<TimeSeriesIntervalUnitsInner>}
+     * @memberof TimeSeriesInterval
      */
-    units?: Array<TimeseriesIntervalUnitsInner>;
+    units?: Array<TimeSeriesIntervalUnitsInner>;
     /**
      * 
      * @type {number}
-     * @memberof TimeseriesInterval
+     * @memberof TimeSeriesInterval
      */
     nano?: number;
     /**
      * 
      * @type {boolean}
-     * @memberof TimeseriesInterval
+     * @memberof TimeSeriesInterval
      */
     zero?: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof TimeseriesInterval
+     * @memberof TimeSeriesInterval
      */
     negative?: boolean;
 }
 
 /**
- * Check if a given object implements the TimeseriesInterval interface.
+ * Check if a given object implements the TimeSeriesInterval interface.
  */
-export function instanceOfTimeseriesInterval(value: object): boolean {
+export function instanceOfTimeSeriesInterval(value: object): boolean {
     return true;
 }
 
-export function TimeseriesIntervalFromJSON(json: any): TimeseriesInterval {
-    return TimeseriesIntervalFromJSONTyped(json, false);
+export function TimeSeriesIntervalFromJSON(json: any): TimeSeriesInterval {
+    return TimeSeriesIntervalFromJSONTyped(json, false);
 }
 
-export function TimeseriesIntervalFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesInterval {
+export function TimeSeriesIntervalFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesInterval {
     if (json == null) {
         return json;
     }
     return {
         
         'seconds': json['seconds'] == null ? undefined : json['seconds'],
-        'units': json['units'] == null ? undefined : ((json['units'] as Array<any>).map(TimeseriesIntervalUnitsInnerFromJSON)),
+        'units': json['units'] == null ? undefined : ((json['units'] as Array<any>).map(TimeSeriesIntervalUnitsInnerFromJSON)),
         'nano': json['nano'] == null ? undefined : json['nano'],
         'zero': json['zero'] == null ? undefined : json['zero'],
         'negative': json['negative'] == null ? undefined : json['negative'],
     };
 }
 
-export function TimeseriesIntervalToJSON(value?: TimeseriesInterval | null): any {
+export function TimeSeriesIntervalToJSON(value?: TimeSeriesInterval | null): any {
     if (value == null) {
         return value;
     }
     return {
         
         'seconds': value['seconds'],
-        'units': value['units'] == null ? undefined : ((value['units'] as Array<any>).map(TimeseriesIntervalUnitsInnerToJSON)),
+        'units': value['units'] == null ? undefined : ((value['units'] as Array<any>).map(TimeSeriesIntervalUnitsInnerToJSON)),
         'nano': value['nano'],
         'zero': value['zero'],
         'negative': value['negative'],

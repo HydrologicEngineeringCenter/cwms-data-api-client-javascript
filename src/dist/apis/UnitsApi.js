@@ -29,9 +29,9 @@ const runtime = require("../runtime");
  */
 class UnitsApi extends runtime.BaseAPI {
     /**
-     * Get swtData units
+     * Get CwmsData units
      */
-    getSwtDataUnitsRaw(requestParameters, initOverrides) {
+    getUnitsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['format'] != null) {
@@ -51,11 +51,11 @@ class UnitsApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData units
+     * Get CwmsData units
      */
-    getSwtDataUnits(requestParameters = {}, initOverrides) {
+    getUnits(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.getSwtDataUnitsRaw(requestParameters, initOverrides);
+            yield this.getUnitsRaw(requestParameters, initOverrides);
         });
     }
 }

@@ -22,7 +22,7 @@ import {
     CdaErrorToJSON,
 } from '../models/index';
 
-export interface GetSwtDataUnitsRequest {
+export interface GetUnitsRequest {
     format?: string;
 }
 
@@ -32,9 +32,9 @@ export interface GetSwtDataUnitsRequest {
 export class UnitsApi extends runtime.BaseAPI {
 
     /**
-     * Get swtData units
+     * Get CwmsData units
      */
-    async getSwtDataUnitsRaw(requestParameters: GetSwtDataUnitsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async getUnitsRaw(requestParameters: GetUnitsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const queryParameters: any = {};
 
         if (requestParameters['format'] != null) {
@@ -58,10 +58,10 @@ export class UnitsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData units
+     * Get CwmsData units
      */
-    async getSwtDataUnits(requestParameters: GetSwtDataUnitsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.getSwtDataUnitsRaw(requestParameters, initOverrides);
+    async getUnits(requestParameters: GetUnitsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.getUnitsRaw(requestParameters, initOverrides);
     }
 
 }

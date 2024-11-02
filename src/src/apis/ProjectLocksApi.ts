@@ -28,35 +28,35 @@ import {
     ProjectLockIdToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataProjectLocksWithNameRequest {
+export interface DeleteCwmsDataProjectLocksWithNameRequest {
     name: string;
     office: string;
     revokeTimeout?: number;
 }
 
-export interface GetSwtDataProjectLocksRequest {
+export interface GetProjectLocksRequest {
     officeMask: string;
     projectMask?: string;
     applicationMask?: string;
 }
 
-export interface GetSwtDataProjectLocksWithNameRequest {
+export interface GetProjectLocksWithNameRequest {
     name: string;
     office: string;
     applicationId: string;
 }
 
-export interface PostSwtDataProjectLocksRequest {
+export interface PostCwmsDataProjectLocksRequest {
     projectLock: ProjectLock;
     revokeExisting?: boolean;
     revokeTimeout?: number;
 }
 
-export interface PostSwtDataProjectLocksDenyRequest {
+export interface PostCwmsDataProjectLocksDenyRequest {
     lockId: string;
 }
 
-export interface PostSwtDataProjectLocksReleaseRequest {
+export interface PostCwmsDataProjectLocksReleaseRequest {
     office: string;
     lockId: string;
 }
@@ -68,20 +68,20 @@ export class ProjectLocksApi extends runtime.BaseAPI {
 
     /**
      * Revokes a project lock, if successful the lock is deleted
-     * Delete swtData projectLocks with name
+     * Delete CwmsData projectLocks with name
      */
-    async deleteSwtDataProjectLocksWithNameRaw(requestParameters: DeleteSwtDataProjectLocksWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectLocksWithNameRaw(requestParameters: DeleteCwmsDataProjectLocksWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataProjectLocksWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataProjectLocksWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectLocksWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectLocksWithName().'
             );
         }
 
@@ -113,21 +113,21 @@ export class ProjectLocksApi extends runtime.BaseAPI {
 
     /**
      * Revokes a project lock, if successful the lock is deleted
-     * Delete swtData projectLocks with name
+     * Delete CwmsData projectLocks with name
      */
-    async deleteSwtDataProjectLocksWithName(requestParameters: DeleteSwtDataProjectLocksWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectLocksWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectLocksWithName(requestParameters: DeleteCwmsDataProjectLocksWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectLocksWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Get a list of project locks
-     * Get swtData projectLocks
+     * Get CwmsData projectLocks
      */
-    async getSwtDataProjectLocksRaw(requestParameters: GetSwtDataProjectLocksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProjectLock>> {
+    async getProjectLocksRaw(requestParameters: GetProjectLocksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProjectLock>> {
         if (requestParameters['officeMask'] == null) {
             throw new runtime.RequiredError(
                 'officeMask',
-                'Required parameter "officeMask" was null or undefined when calling getSwtDataProjectLocks().'
+                'Required parameter "officeMask" was null or undefined when calling getProjectLocks().'
             );
         }
 
@@ -163,36 +163,36 @@ export class ProjectLocksApi extends runtime.BaseAPI {
 
     /**
      * Get a list of project locks
-     * Get swtData projectLocks
+     * Get CwmsData projectLocks
      */
-    async getSwtDataProjectLocks(requestParameters: GetSwtDataProjectLocksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProjectLock> {
-        const response = await this.getSwtDataProjectLocksRaw(requestParameters, initOverrides);
+    async getProjectLocks(requestParameters: GetProjectLocksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProjectLock> {
+        const response = await this.getProjectLocksRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Return a lock if the specified project is locked. Otherwise 404
-     * Get swtData projectLocks with name
+     * Get CwmsData projectLocks with name
      */
-    async getSwtDataProjectLocksWithNameRaw(requestParameters: GetSwtDataProjectLocksWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProjectLock>> {
+    async getProjectLocksWithNameRaw(requestParameters: GetProjectLocksWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProjectLock>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataProjectLocksWithName().'
+                'Required parameter "name" was null or undefined when calling getProjectLocksWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectLocksWithName().'
+                'Required parameter "office" was null or undefined when calling getProjectLocksWithName().'
             );
         }
 
         if (requestParameters['applicationId'] == null) {
             throw new runtime.RequiredError(
                 'applicationId',
-                'Required parameter "applicationId" was null or undefined when calling getSwtDataProjectLocksWithName().'
+                'Required parameter "applicationId" was null or undefined when calling getProjectLocksWithName().'
             );
         }
 
@@ -224,22 +224,22 @@ export class ProjectLocksApi extends runtime.BaseAPI {
 
     /**
      * Return a lock if the specified project is locked. Otherwise 404
-     * Get swtData projectLocks with name
+     * Get CwmsData projectLocks with name
      */
-    async getSwtDataProjectLocksWithName(requestParameters: GetSwtDataProjectLocksWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProjectLock> {
-        const response = await this.getSwtDataProjectLocksWithNameRaw(requestParameters, initOverrides);
+    async getProjectLocksWithName(requestParameters: GetProjectLocksWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProjectLock> {
+        const response = await this.getProjectLocksWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Requests the creation of a new Reservoir Project Lock
-     * Post swtData projectLocks
+     * Post CwmsData projectLocks
      */
-    async postSwtDataProjectLocksRaw(requestParameters: PostSwtDataProjectLocksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProjectLockId>> {
+    async postCwmsDataProjectLocksRaw(requestParameters: PostCwmsDataProjectLocksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProjectLockId>> {
         if (requestParameters['projectLock'] == null) {
             throw new runtime.RequiredError(
                 'projectLock',
-                'Required parameter "projectLock" was null or undefined when calling postSwtDataProjectLocks().'
+                'Required parameter "projectLock" was null or undefined when calling postCwmsDataProjectLocks().'
             );
         }
 
@@ -274,22 +274,22 @@ export class ProjectLocksApi extends runtime.BaseAPI {
 
     /**
      * Requests the creation of a new Reservoir Project Lock
-     * Post swtData projectLocks
+     * Post CwmsData projectLocks
      */
-    async postSwtDataProjectLocks(requestParameters: PostSwtDataProjectLocksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProjectLockId> {
-        const response = await this.postSwtDataProjectLocksRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectLocks(requestParameters: PostCwmsDataProjectLocksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProjectLockId> {
+        const response = await this.postCwmsDataProjectLocksRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Deny a Lock revoke request.
-     * Post swtData projectLocks deny
+     * Post CwmsData projectLocks deny
      */
-    async postSwtDataProjectLocksDenyRaw(requestParameters: PostSwtDataProjectLocksDenyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectLocksDenyRaw(requestParameters: PostCwmsDataProjectLocksDenyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['lockId'] == null) {
             throw new runtime.RequiredError(
                 'lockId',
-                'Required parameter "lockId" was null or undefined when calling postSwtDataProjectLocksDeny().'
+                'Required parameter "lockId" was null or undefined when calling postCwmsDataProjectLocksDeny().'
             );
         }
 
@@ -317,28 +317,28 @@ export class ProjectLocksApi extends runtime.BaseAPI {
 
     /**
      * Deny a Lock revoke request.
-     * Post swtData projectLocks deny
+     * Post CwmsData projectLocks deny
      */
-    async postSwtDataProjectLocksDeny(requestParameters: PostSwtDataProjectLocksDenyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectLocksDenyRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectLocksDeny(requestParameters: PostCwmsDataProjectLocksDenyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectLocksDenyRaw(requestParameters, initOverrides);
     }
 
     /**
      * Releases a project lock
-     * Post swtData projectLocks release
+     * Post CwmsData projectLocks release
      */
-    async postSwtDataProjectLocksReleaseRaw(requestParameters: PostSwtDataProjectLocksReleaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectLocksReleaseRaw(requestParameters: PostCwmsDataProjectLocksReleaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling postSwtDataProjectLocksRelease().'
+                'Required parameter "office" was null or undefined when calling postCwmsDataProjectLocksRelease().'
             );
         }
 
         if (requestParameters['lockId'] == null) {
             throw new runtime.RequiredError(
                 'lockId',
-                'Required parameter "lockId" was null or undefined when calling postSwtDataProjectLocksRelease().'
+                'Required parameter "lockId" was null or undefined when calling postCwmsDataProjectLocksRelease().'
             );
         }
 
@@ -370,10 +370,10 @@ export class ProjectLocksApi extends runtime.BaseAPI {
 
     /**
      * Releases a project lock
-     * Post swtData projectLocks release
+     * Post CwmsData projectLocks release
      */
-    async postSwtDataProjectLocksRelease(requestParameters: PostSwtDataProjectLocksReleaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectLocksReleaseRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectLocksRelease(requestParameters: PostCwmsDataProjectLocksReleaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectLocksReleaseRaw(requestParameters, initOverrides);
     }
 
 }

@@ -34,43 +34,43 @@ import {
     ProjectsToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataProjectsWithNameRequest {
+export interface DeleteCwmsDataProjectsWithNameRequest {
     name: string;
     office: string;
     method?: DeleteMethod;
 }
 
-export interface GetSwtDataProjectsRequest {
+export interface GetProjectsRequest {
     office?: string;
     idMask?: string;
     page?: string;
     pageSize?: number;
 }
 
-export interface GetSwtDataProjectsLocationsRequest {
+export interface GetProjectsLocationsRequest {
     office: string;
     projectLike?: string;
     locationKindLike?: string;
 }
 
-export interface GetSwtDataProjectsWithNameRequest {
+export interface GetProjectsWithNameRequest {
     name: string;
     office: string;
 }
 
-export interface PatchSwtDataProjectsWithNameRequest {
+export interface PatchCwmsDataProjectsWithNameRequest {
     name: string;
     name2: string;
     project: Project;
     office?: string;
 }
 
-export interface PostSwtDataProjectsRequest {
+export interface PostCwmsDataProjectsRequest {
     project: Project;
     failIfExists?: boolean;
 }
 
-export interface PostSwtDataProjectsStatusUpdateWithNameRequest {
+export interface PostCwmsDataProjectsStatusUpdateWithNameRequest {
     name: string;
     office: string;
     applicationId: string;
@@ -87,20 +87,20 @@ export class ProjectsApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested reservoir project
-     * Delete swtData projects with name
+     * Delete CwmsData projects with name
      */
-    async deleteSwtDataProjectsWithNameRaw(requestParameters: DeleteSwtDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsWithNameRaw(requestParameters: DeleteCwmsDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataProjectsWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataProjectsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsWithName().'
             );
         }
 
@@ -132,17 +132,17 @@ export class ProjectsApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested reservoir project
-     * Delete swtData projects with name
+     * Delete CwmsData projects with name
      */
-    async deleteSwtDataProjectsWithName(requestParameters: DeleteSwtDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsWithName(requestParameters: DeleteCwmsDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns Projects Data
-     * Get swtData projects
+     * Get CwmsData projects
      */
-    async getSwtDataProjectsRaw(requestParameters: GetSwtDataProjectsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Projects>> {
+    async getProjectsRaw(requestParameters: GetProjectsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Projects>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -179,22 +179,22 @@ export class ProjectsApi extends runtime.BaseAPI {
 
     /**
      * Returns Projects Data
-     * Get swtData projects
+     * Get CwmsData projects
      */
-    async getSwtDataProjects(requestParameters: GetSwtDataProjectsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Projects> {
-        const response = await this.getSwtDataProjectsRaw(requestParameters, initOverrides);
+    async getProjects(requestParameters: GetProjectsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Projects> {
+        const response = await this.getProjectsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Get a list of project child locations
-     * Get swtData projects locations
+     * Get CwmsData projects locations
      */
-    async getSwtDataProjectsLocationsRaw(requestParameters: GetSwtDataProjectsLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ProjectChildLocations>>> {
+    async getProjectsLocationsRaw(requestParameters: GetProjectsLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ProjectChildLocations>>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsLocations().'
+                'Required parameter "office" was null or undefined when calling getProjectsLocations().'
             );
         }
 
@@ -230,29 +230,29 @@ export class ProjectsApi extends runtime.BaseAPI {
 
     /**
      * Get a list of project child locations
-     * Get swtData projects locations
+     * Get CwmsData projects locations
      */
-    async getSwtDataProjectsLocations(requestParameters: GetSwtDataProjectsLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ProjectChildLocations>> {
-        const response = await this.getSwtDataProjectsLocationsRaw(requestParameters, initOverrides);
+    async getProjectsLocations(requestParameters: GetProjectsLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ProjectChildLocations>> {
+        const response = await this.getProjectsLocationsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Retrieves requested Project
-     * Get swtData projects with name
+     * Get CwmsData projects with name
      */
-    async getSwtDataProjectsWithNameRaw(requestParameters: GetSwtDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Project>> {
+    async getProjectsWithNameRaw(requestParameters: GetProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Project>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataProjectsWithName().'
+                'Required parameter "name" was null or undefined when calling getProjectsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithName().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithName().'
             );
         }
 
@@ -280,36 +280,36 @@ export class ProjectsApi extends runtime.BaseAPI {
 
     /**
      * Retrieves requested Project
-     * Get swtData projects with name
+     * Get CwmsData projects with name
      */
-    async getSwtDataProjectsWithName(requestParameters: GetSwtDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Project> {
-        const response = await this.getSwtDataProjectsWithNameRaw(requestParameters, initOverrides);
+    async getProjectsWithName(requestParameters: GetProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Project> {
+        const response = await this.getProjectsWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Rename a project
-     * Patch swtData projects with name
+     * Patch CwmsData projects with name
      */
-    async patchSwtDataProjectsWithNameRaw(requestParameters: PatchSwtDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataProjectsWithNameRaw(requestParameters: PatchCwmsDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataProjectsWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataProjectsWithName().'
             );
         }
 
         if (requestParameters['name2'] == null) {
             throw new runtime.RequiredError(
                 'name2',
-                'Required parameter "name2" was null or undefined when calling patchSwtDataProjectsWithName().'
+                'Required parameter "name2" was null or undefined when calling patchCwmsDataProjectsWithName().'
             );
         }
 
         if (requestParameters['project'] == null) {
             throw new runtime.RequiredError(
                 'project',
-                'Required parameter "project" was null or undefined when calling patchSwtDataProjectsWithName().'
+                'Required parameter "project" was null or undefined when calling patchCwmsDataProjectsWithName().'
             );
         }
 
@@ -344,21 +344,21 @@ export class ProjectsApi extends runtime.BaseAPI {
 
     /**
      * Rename a project
-     * Patch swtData projects with name
+     * Patch CwmsData projects with name
      */
-    async patchSwtDataProjectsWithName(requestParameters: PatchSwtDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataProjectsWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataProjectsWithName(requestParameters: PatchCwmsDataProjectsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataProjectsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new Project
-     * Post swtData projects
+     * Post CwmsData projects
      */
-    async postSwtDataProjectsRaw(requestParameters: PostSwtDataProjectsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsRaw(requestParameters: PostCwmsDataProjectsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['project'] == null) {
             throw new runtime.RequiredError(
                 'project',
-                'Required parameter "project" was null or undefined when calling postSwtDataProjects().'
+                'Required parameter "project" was null or undefined when calling postCwmsDataProjects().'
             );
         }
 
@@ -389,35 +389,35 @@ export class ProjectsApi extends runtime.BaseAPI {
 
     /**
      * Create new Project
-     * Post swtData projects
+     * Post CwmsData projects
      */
-    async postSwtDataProjects(requestParameters: PostSwtDataProjectsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsRaw(requestParameters, initOverrides);
+    async postCwmsDataProjects(requestParameters: PostCwmsDataProjectsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsRaw(requestParameters, initOverrides);
     }
 
     /**
      * Publishes a message on the office\'s STATUS queue that a project has been updated for a specified application
-     * Post swtData projects statusUpdate with name
+     * Post CwmsData projects statusUpdate with name
      */
-    async postSwtDataProjectsStatusUpdateWithNameRaw(requestParameters: PostSwtDataProjectsStatusUpdateWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsStatusUpdateWithNameRaw(requestParameters: PostCwmsDataProjectsStatusUpdateWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling postSwtDataProjectsStatusUpdateWithName().'
+                'Required parameter "name" was null or undefined when calling postCwmsDataProjectsStatusUpdateWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling postSwtDataProjectsStatusUpdateWithName().'
+                'Required parameter "office" was null or undefined when calling postCwmsDataProjectsStatusUpdateWithName().'
             );
         }
 
         if (requestParameters['applicationId'] == null) {
             throw new runtime.RequiredError(
                 'applicationId',
-                'Required parameter "applicationId" was null or undefined when calling postSwtDataProjectsStatusUpdateWithName().'
+                'Required parameter "applicationId" was null or undefined when calling postCwmsDataProjectsStatusUpdateWithName().'
             );
         }
 
@@ -465,10 +465,10 @@ export class ProjectsApi extends runtime.BaseAPI {
 
     /**
      * Publishes a message on the office\'s STATUS queue that a project has been updated for a specified application
-     * Post swtData projects statusUpdate with name
+     * Post CwmsData projects statusUpdate with name
      */
-    async postSwtDataProjectsStatusUpdateWithName(requestParameters: PostSwtDataProjectsStatusUpdateWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsStatusUpdateWithNameRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsStatusUpdateWithName(requestParameters: PostCwmsDataProjectsStatusUpdateWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsStatusUpdateWithNameRaw(requestParameters, initOverrides);
     }
 
 }

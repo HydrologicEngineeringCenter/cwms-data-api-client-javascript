@@ -11,13 +11,13 @@
  */
 import * as runtime from '../runtime';
 import type { ApiKey } from '../models/index';
-export interface DeleteSwtDataAuthKeysWithKeyNameRequest {
+export interface DeleteCwmsDataAuthKeysWithKeyNameRequest {
     keyName: string;
 }
-export interface GetSwtDataAuthKeysWithKeyNameRequest {
+export interface GetAuthKeysWithKeyNameRequest {
     keyName: string;
 }
-export interface PostSwtDataAuthKeysRequest {
+export interface PostCwmsDataAuthKeysRequest {
     apiKey?: ApiKey;
 }
 /**
@@ -26,42 +26,42 @@ export interface PostSwtDataAuthKeysRequest {
 export declare class AuthorizationApi extends runtime.BaseAPI {
     /**
      * Delete API key for a user
-     * Delete swtData auth keys with keyName
+     * Delete CwmsData auth keys with keyName
      */
-    deleteSwtDataAuthKeysWithKeyNameRaw(requestParameters: DeleteSwtDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>>;
+    deleteCwmsDataAuthKeysWithKeyNameRaw(requestParameters: DeleteCwmsDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>>;
     /**
      * Delete API key for a user
-     * Delete swtData auth keys with keyName
+     * Delete CwmsData auth keys with keyName
      */
-    deleteSwtDataAuthKeysWithKeyName(requestParameters: DeleteSwtDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey>;
+    deleteCwmsDataAuthKeysWithKeyName(requestParameters: DeleteCwmsDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey>;
     /**
      * View all keys for the current user
-     * Get swtData auth keys
+     * Get CwmsData auth keys
      */
-    getSwtDataAuthKeysRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ApiKey>>>;
+    getAuthKeysRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ApiKey>>>;
     /**
      * View all keys for the current user
-     * Get swtData auth keys
+     * Get CwmsData auth keys
      */
-    getSwtDataAuthKeys(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ApiKey>>;
+    getAuthKeys(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ApiKey>>;
     /**
      * View specific key
-     * Get swtData auth keys with keyName
+     * Get CwmsData auth keys with keyName
      */
-    getSwtDataAuthKeysWithKeyNameRaw(requestParameters: GetSwtDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>>;
+    getAuthKeysWithKeyNameRaw(requestParameters: GetAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>>;
     /**
      * View specific key
-     * Get swtData auth keys with keyName
+     * Get CwmsData auth keys with keyName
      */
-    getSwtDataAuthKeysWithKeyName(requestParameters: GetSwtDataAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey>;
+    getAuthKeysWithKeyName(requestParameters: GetAuthKeysWithKeyNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey>;
     /**
      * Create a new API Key for user. The randomly generated key is returned to the caller. A provided key will be ignored.
-     * Post swtData auth keys
+     * Post CwmsData auth keys
      */
-    postSwtDataAuthKeysRaw(requestParameters: PostSwtDataAuthKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>>;
+    postCwmsDataAuthKeysRaw(requestParameters: PostCwmsDataAuthKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiKey>>;
     /**
      * Create a new API Key for user. The randomly generated key is returned to the caller. A provided key will be ignored.
-     * Post swtData auth keys
+     * Post CwmsData auth keys
      */
-    postSwtDataAuthKeys(requestParameters?: PostSwtDataAuthKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey>;
+    postCwmsDataAuthKeys(requestParameters?: PostCwmsDataAuthKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiKey>;
 }

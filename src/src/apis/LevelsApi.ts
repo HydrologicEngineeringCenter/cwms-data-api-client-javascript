@@ -34,7 +34,7 @@ import {
     TimeSeriesToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataLevelsWithLevelIdRequest {
+export interface DeleteCwmsDataLevelsWithLevelIdRequest {
     levelId: string;
     cascadeDelete?: boolean;
     office?: string;
@@ -42,12 +42,12 @@ export interface DeleteSwtDataLevelsWithLevelIdRequest {
     timezone?: string;
 }
 
-export interface DeleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest {
+export interface DeleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest {
     specifiedLevelId: string;
     office: string;
 }
 
-export interface GetSwtDataLevelsRequest {
+export interface GetLevelsRequest {
     levelIdMask?: string;
     office?: string;
     unit?: string;
@@ -60,7 +60,7 @@ export interface GetSwtDataLevelsRequest {
     pageSize?: number;
 }
 
-export interface GetSwtDataLevelsWithLevelIdRequest {
+export interface GetLevelsWithLevelIdRequest {
     levelId: string;
     office: string;
     effectiveDate: string;
@@ -68,7 +68,7 @@ export interface GetSwtDataLevelsWithLevelIdRequest {
     unit?: string;
 }
 
-export interface GetSwtDataLevelsWithLevelIdTimeSeriesRequest {
+export interface GetLevelsWithLevelIdTimeSeriesRequest {
     levelId: string;
     office: string;
     unit: string;
@@ -78,28 +78,28 @@ export interface GetSwtDataLevelsWithLevelIdTimeSeriesRequest {
     timezone?: string;
 }
 
-export interface GetSwtDataSpecifiedLevelsRequest {
+export interface GetSpecifiedLevelsRequest {
     office?: string;
     templateIdMask?: string;
 }
 
-export interface PatchSwtDataLevelsWithLevelIdRequest {
+export interface PatchCwmsDataLevelsWithLevelIdRequest {
     levelId: string;
     locationLevel: LocationLevel;
     effectiveDate?: string;
 }
 
-export interface PatchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest {
+export interface PatchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest {
     specifiedLevelId: string;
     specifiedLevelId2: string;
     office: string;
 }
 
-export interface PostSwtDataLevelsRequest {
+export interface PostCwmsDataLevelsRequest {
     locationLevel: LocationLevel;
 }
 
-export interface PostSwtDataSpecifiedLevelsRequest {
+export interface PostCwmsDataSpecifiedLevelsRequest {
     specifiedLevel: SpecifiedLevel;
     failIfExists?: boolean;
 }
@@ -111,13 +111,13 @@ export class LevelsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Location Level
-     * Delete swtData levels with levelId
+     * Delete CwmsData levels with levelId
      */
-    async deleteSwtDataLevelsWithLevelIdRaw(requestParameters: DeleteSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataLevelsWithLevelIdRaw(requestParameters: DeleteCwmsDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['levelId'] == null) {
             throw new runtime.RequiredError(
                 'levelId',
-                'Required parameter "levelId" was null or undefined when calling deleteSwtDataLevelsWithLevelId().'
+                'Required parameter "levelId" was null or undefined when calling deleteCwmsDataLevelsWithLevelId().'
             );
         }
 
@@ -157,28 +157,28 @@ export class LevelsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Location Level
-     * Delete swtData levels with levelId
+     * Delete CwmsData levels with levelId
      */
-    async deleteSwtDataLevelsWithLevelId(requestParameters: DeleteSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataLevelsWithLevelId(requestParameters: DeleteCwmsDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Deletes requested specified level id
-     * Delete swtData specifiedLevels with specifiedLevelId
+     * Delete CwmsData specifiedLevels with specifiedLevelId
      */
-    async deleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters: DeleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters: DeleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['specifiedLevelId'] == null) {
             throw new runtime.RequiredError(
                 'specifiedLevelId',
-                'Required parameter "specifiedLevelId" was null or undefined when calling deleteSwtDataSpecifiedLevelsWithSpecifiedLevelId().'
+                'Required parameter "specifiedLevelId" was null or undefined when calling deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataSpecifiedLevelsWithSpecifiedLevelId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelId().'
             );
         }
 
@@ -206,16 +206,16 @@ export class LevelsApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested specified level id
-     * Delete swtData specifiedLevels with specifiedLevelId
+     * Delete CwmsData specifiedLevels with specifiedLevelId
      */
-    async deleteSwtDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters: DeleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters: DeleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Get swtData levels
+     * Get CwmsData levels
      */
-    async getSwtDataLevelsRaw(requestParameters: GetSwtDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async getLevelsRaw(requestParameters: GetLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         const queryParameters: any = {};
 
         if (requestParameters['levelIdMask'] != null) {
@@ -275,36 +275,36 @@ export class LevelsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData levels
+     * Get CwmsData levels
      */
-    async getSwtDataLevels(requestParameters: GetSwtDataLevelsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
-        const response = await this.getSwtDataLevelsRaw(requestParameters, initOverrides);
+    async getLevels(requestParameters: GetLevelsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.getLevelsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId
+     * Get CwmsData levels with levelId
      */
-    async getSwtDataLevelsWithLevelIdRaw(requestParameters: GetSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationLevel>> {
+    async getLevelsWithLevelIdRaw(requestParameters: GetLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationLevel>> {
         if (requestParameters['levelId'] == null) {
             throw new runtime.RequiredError(
                 'levelId',
-                'Required parameter "levelId" was null or undefined when calling getSwtDataLevelsWithLevelId().'
+                'Required parameter "levelId" was null or undefined when calling getLevelsWithLevelId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataLevelsWithLevelId().'
+                'Required parameter "office" was null or undefined when calling getLevelsWithLevelId().'
             );
         }
 
         if (requestParameters['effectiveDate'] == null) {
             throw new runtime.RequiredError(
                 'effectiveDate',
-                'Required parameter "effectiveDate" was null or undefined when calling getSwtDataLevelsWithLevelId().'
+                'Required parameter "effectiveDate" was null or undefined when calling getLevelsWithLevelId().'
             );
         }
 
@@ -344,36 +344,36 @@ export class LevelsApi extends runtime.BaseAPI {
 
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId
+     * Get CwmsData levels with levelId
      */
-    async getSwtDataLevelsWithLevelId(requestParameters: GetSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationLevel> {
-        const response = await this.getSwtDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
+    async getLevelsWithLevelId(requestParameters: GetLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationLevel> {
+        const response = await this.getLevelsWithLevelIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId timeseries
+     * Get CwmsData levels with levelId timeseries
      */
-    async getSwtDataLevelsWithLevelIdTimeSeriesRaw(requestParameters: GetSwtDataLevelsWithLevelIdTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeries>> {
+    async getLevelsWithLevelIdTimeSeriesRaw(requestParameters: GetLevelsWithLevelIdTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeries>> {
         if (requestParameters['levelId'] == null) {
             throw new runtime.RequiredError(
                 'levelId',
-                'Required parameter "levelId" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeSeries().'
+                'Required parameter "levelId" was null or undefined when calling getLevelsWithLevelIdTimeSeries().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeSeries().'
+                'Required parameter "office" was null or undefined when calling getLevelsWithLevelIdTimeSeries().'
             );
         }
 
         if (requestParameters['unit'] == null) {
             throw new runtime.RequiredError(
                 'unit',
-                'Required parameter "unit" was null or undefined when calling getSwtDataLevelsWithLevelIdTimeSeries().'
+                'Required parameter "unit" was null or undefined when calling getLevelsWithLevelIdTimeSeries().'
             );
         }
 
@@ -421,17 +421,17 @@ export class LevelsApi extends runtime.BaseAPI {
 
     /**
      * Retrieves requested Location Level
-     * Get swtData levels with levelId timeseries
+     * Get CwmsData levels with levelId timeseries
      */
-    async getSwtDataLevelsWithLevelIdTimeSeries(requestParameters: GetSwtDataLevelsWithLevelIdTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeries> {
-        const response = await this.getSwtDataLevelsWithLevelIdTimeSeriesRaw(requestParameters, initOverrides);
+    async getLevelsWithLevelIdTimeSeries(requestParameters: GetLevelsWithLevelIdTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TimeSeries> {
+        const response = await this.getLevelsWithLevelIdTimeSeriesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData specifiedLevels
+     * Get CwmsData specifiedLevels
      */
-    async getSwtDataSpecifiedLevelsRaw(requestParameters: GetSwtDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SpecifiedLevel>> {
+    async getSpecifiedLevelsRaw(requestParameters: GetSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SpecifiedLevel>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -459,29 +459,29 @@ export class LevelsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData specifiedLevels
+     * Get CwmsData specifiedLevels
      */
-    async getSwtDataSpecifiedLevels(requestParameters: GetSwtDataSpecifiedLevelsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SpecifiedLevel> {
-        const response = await this.getSwtDataSpecifiedLevelsRaw(requestParameters, initOverrides);
+    async getSpecifiedLevels(requestParameters: GetSpecifiedLevelsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SpecifiedLevel> {
+        const response = await this.getSpecifiedLevelsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update CWMS Location Level
-     * Patch swtData levels with levelId
+     * Patch CwmsData levels with levelId
      */
-    async patchSwtDataLevelsWithLevelIdRaw(requestParameters: PatchSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataLevelsWithLevelIdRaw(requestParameters: PatchCwmsDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['levelId'] == null) {
             throw new runtime.RequiredError(
                 'levelId',
-                'Required parameter "levelId" was null or undefined when calling patchSwtDataLevelsWithLevelId().'
+                'Required parameter "levelId" was null or undefined when calling patchCwmsDataLevelsWithLevelId().'
             );
         }
 
         if (requestParameters['locationLevel'] == null) {
             throw new runtime.RequiredError(
                 'locationLevel',
-                'Required parameter "locationLevel" was null or undefined when calling patchSwtDataLevelsWithLevelId().'
+                'Required parameter "locationLevel" was null or undefined when calling patchCwmsDataLevelsWithLevelId().'
             );
         }
 
@@ -512,35 +512,35 @@ export class LevelsApi extends runtime.BaseAPI {
 
     /**
      * Update CWMS Location Level
-     * Patch swtData levels with levelId
+     * Patch CwmsData levels with levelId
      */
-    async patchSwtDataLevelsWithLevelId(requestParameters: PatchSwtDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
+    async patchCwmsDataLevelsWithLevelId(requestParameters: PatchCwmsDataLevelsWithLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataLevelsWithLevelIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Renames the requested specified level id
-     * Patch swtData specifiedLevels with specifiedLevelId
+     * Patch CwmsData specifiedLevels with specifiedLevelId
      */
-    async patchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters: PatchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters: PatchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['specifiedLevelId'] == null) {
             throw new runtime.RequiredError(
                 'specifiedLevelId',
-                'Required parameter "specifiedLevelId" was null or undefined when calling patchSwtDataSpecifiedLevelsWithSpecifiedLevelId().'
+                'Required parameter "specifiedLevelId" was null or undefined when calling patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId().'
             );
         }
 
         if (requestParameters['specifiedLevelId2'] == null) {
             throw new runtime.RequiredError(
                 'specifiedLevelId2',
-                'Required parameter "specifiedLevelId2" was null or undefined when calling patchSwtDataSpecifiedLevelsWithSpecifiedLevelId().'
+                'Required parameter "specifiedLevelId2" was null or undefined when calling patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataSpecifiedLevelsWithSpecifiedLevelId().'
+                'Required parameter "office" was null or undefined when calling patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId().'
             );
         }
 
@@ -572,21 +572,21 @@ export class LevelsApi extends runtime.BaseAPI {
 
     /**
      * Renames the requested specified level id
-     * Patch swtData specifiedLevels with specifiedLevelId
+     * Patch CwmsData specifiedLevels with specifiedLevelId
      */
-    async patchSwtDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters: PatchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides);
+    async patchCwmsDataSpecifiedLevelsWithSpecifiedLevelId(requestParameters: PatchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataSpecifiedLevelsWithSpecifiedLevelIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new CWMS Location Level
-     * Post swtData levels
+     * Post CwmsData levels
      */
-    async postSwtDataLevelsRaw(requestParameters: PostSwtDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataLevelsRaw(requestParameters: PostCwmsDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['locationLevel'] == null) {
             throw new runtime.RequiredError(
                 'locationLevel',
-                'Required parameter "locationLevel" was null or undefined when calling postSwtDataLevels().'
+                'Required parameter "locationLevel" was null or undefined when calling postCwmsDataLevels().'
             );
         }
 
@@ -613,21 +613,21 @@ export class LevelsApi extends runtime.BaseAPI {
 
     /**
      * Create new CWMS Location Level
-     * Post swtData levels
+     * Post CwmsData levels
      */
-    async postSwtDataLevels(requestParameters: PostSwtDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataLevelsRaw(requestParameters, initOverrides);
+    async postCwmsDataLevels(requestParameters: PostCwmsDataLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataLevelsRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new SpecifiedLevel
-     * Post swtData specifiedLevels
+     * Post CwmsData specifiedLevels
      */
-    async postSwtDataSpecifiedLevelsRaw(requestParameters: PostSwtDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataSpecifiedLevelsRaw(requestParameters: PostCwmsDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['specifiedLevel'] == null) {
             throw new runtime.RequiredError(
                 'specifiedLevel',
-                'Required parameter "specifiedLevel" was null or undefined when calling postSwtDataSpecifiedLevels().'
+                'Required parameter "specifiedLevel" was null or undefined when calling postCwmsDataSpecifiedLevels().'
             );
         }
 
@@ -658,10 +658,10 @@ export class LevelsApi extends runtime.BaseAPI {
 
     /**
      * Create new SpecifiedLevel
-     * Post swtData specifiedLevels
+     * Post CwmsData specifiedLevels
      */
-    async postSwtDataSpecifiedLevels(requestParameters: PostSwtDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataSpecifiedLevelsRaw(requestParameters, initOverrides);
+    async postCwmsDataSpecifiedLevels(requestParameters: PostCwmsDataSpecifiedLevelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataSpecifiedLevelsRaw(requestParameters, initOverrides);
     }
 
 }

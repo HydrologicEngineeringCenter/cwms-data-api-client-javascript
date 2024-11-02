@@ -95,7 +95,7 @@ const OFFICE = 'SWT';
 // Initialize the timeseries groups api with the default config
 const tsc_api = new TimeSeriesCategoriesApi();
 // Fetch ALL timeseries groups for the given office
-tsc_api.getCwmsDataTimeseriesCategory({ office: OFFICE }).then((data) => {
+tsc_api.getTimeSeriesCategory({ office: OFFICE }).then((data) => {
     console.log(data[0]);
     const CATEGORIES = data.map((cat) => cat.id);
     data.forEach((category) => {
@@ -127,7 +127,7 @@ const OFFICE = &#039;SWT&#039;;
 // Initialize the timeseries groups api with the default config
 const tsc_api = new cwmsjs.TimeSeriesCategoriesApi();
 // Fetch ALL timeseries groups for the given office
-tsc_api.getCwmsDataTimeseriesCategory({ office: OFFICE }).then((data) =&gt; {
+tsc_api.getTimeSeriesCategory({ office: OFFICE }).then((data) =&gt; {
     console.log(data[0]);
     const CATEGORIES = data.map((cat) =&gt; cat.id);
     data.forEach((category) =&gt; {

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeseriesId and siParameterUnitsConstantValue
+ * List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeSeriesId and siParameterUnitsConstantValue
  * @export
  * @interface SeasonalValueBean
  */

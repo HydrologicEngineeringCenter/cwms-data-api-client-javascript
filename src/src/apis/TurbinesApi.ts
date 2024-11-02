@@ -34,13 +34,13 @@ import {
     UnitSystemToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataProjectsTurbinesWithNameRequest {
+export interface DeleteCwmsDataProjectsTurbinesWithNameRequest {
     name: string;
     office: string;
     method?: DeleteMethod;
 }
 
-export interface DeleteSwtDataProjectsWithOfficeWithNameTurbineChangesRequest {
+export interface DeleteCwmsDataProjectsWithOfficeWithNameTurbineChangesRequest {
     office: string;
     name: string;
     begin: string;
@@ -48,17 +48,17 @@ export interface DeleteSwtDataProjectsWithOfficeWithNameTurbineChangesRequest {
     overrideProtection?: boolean;
 }
 
-export interface GetSwtDataProjectsTurbinesRequest {
+export interface GetProjectsTurbinesRequest {
     office: string;
     projectId: string;
 }
 
-export interface GetSwtDataProjectsTurbinesWithNameRequest {
+export interface GetProjectsTurbinesWithNameRequest {
     name: string;
     office: string;
 }
 
-export interface GetSwtDataProjectsWithOfficeWithNameTurbineChangesRequest {
+export interface GetProjectsWithOfficeWithNameTurbineChangesRequest {
     office: string;
     name: string;
     begin: string;
@@ -69,18 +69,18 @@ export interface GetSwtDataProjectsWithOfficeWithNameTurbineChangesRequest {
     pageSize?: number;
 }
 
-export interface PatchSwtDataProjectsTurbinesWithNameRequest {
+export interface PatchCwmsDataProjectsTurbinesWithNameRequest {
     name: string;
     name2: string;
     office: string;
 }
 
-export interface PostSwtDataProjectsTurbinesRequest {
+export interface PostCwmsDataProjectsTurbinesRequest {
     turbine: Turbine;
     failIfExists?: boolean;
 }
 
-export interface PostSwtDataProjectsWithOfficeWithNameTurbineChangesRequest {
+export interface PostCwmsDataProjectsWithOfficeWithNameTurbineChangesRequest {
     office: string;
     name: string;
     turbineChange: TurbineChange;
@@ -94,20 +94,20 @@ export class TurbinesApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Turbine
-     * Delete swtData projects turbines with name
+     * Delete CwmsData projects turbines with name
      */
-    async deleteSwtDataProjectsTurbinesWithNameRaw(requestParameters: DeleteSwtDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsTurbinesWithNameRaw(requestParameters: DeleteCwmsDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataProjectsTurbinesWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataProjectsTurbinesWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsTurbinesWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsTurbinesWithName().'
             );
         }
 
@@ -139,42 +139,42 @@ export class TurbinesApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Turbine
-     * Delete swtData projects turbines with name
+     * Delete CwmsData projects turbines with name
      */
-    async deleteSwtDataProjectsTurbinesWithName(requestParameters: DeleteSwtDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsTurbinesWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsTurbinesWithName(requestParameters: DeleteCwmsDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsTurbinesWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Delete CWMS Turbine Changes
-     * Delete swtData projects with office with name turbineChanges
+     * Delete CwmsData projects with office with name turbineChanges
      */
-    async deleteSwtDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters: DeleteSwtDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters: DeleteCwmsDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "begin" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling deleteSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "end" was null or undefined when calling deleteCwmsDataProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
@@ -210,28 +210,28 @@ export class TurbinesApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Turbine Changes
-     * Delete swtData projects with office with name turbineChanges
+     * Delete CwmsData projects with office with name turbineChanges
      */
-    async deleteSwtDataProjectsWithOfficeWithNameTurbineChanges(requestParameters: DeleteSwtDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsWithOfficeWithNameTurbineChanges(requestParameters: DeleteCwmsDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns matching CWMS Turbine Data for a Reservoir Project.
-     * Get swtData projects turbines
+     * Get CwmsData projects turbines
      */
-    async getSwtDataProjectsTurbinesRaw(requestParameters: GetSwtDataProjectsTurbinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Turbine>>> {
+    async getProjectsTurbinesRaw(requestParameters: GetProjectsTurbinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Turbine>>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsTurbines().'
+                'Required parameter "office" was null or undefined when calling getProjectsTurbines().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsTurbines().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsTurbines().'
             );
         }
 
@@ -263,29 +263,29 @@ export class TurbinesApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS Turbine Data for a Reservoir Project.
-     * Get swtData projects turbines
+     * Get CwmsData projects turbines
      */
-    async getSwtDataProjectsTurbines(requestParameters: GetSwtDataProjectsTurbinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Turbine>> {
-        const response = await this.getSwtDataProjectsTurbinesRaw(requestParameters, initOverrides);
+    async getProjectsTurbines(requestParameters: GetProjectsTurbinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Turbine>> {
+        const response = await this.getProjectsTurbinesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Turbine Data
-     * Get swtData projects turbines with name
+     * Get CwmsData projects turbines with name
      */
-    async getSwtDataProjectsTurbinesWithNameRaw(requestParameters: GetSwtDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Turbine>> {
+    async getProjectsTurbinesWithNameRaw(requestParameters: GetProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Turbine>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataProjectsTurbinesWithName().'
+                'Required parameter "name" was null or undefined when calling getProjectsTurbinesWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsTurbinesWithName().'
+                'Required parameter "office" was null or undefined when calling getProjectsTurbinesWithName().'
             );
         }
 
@@ -313,43 +313,43 @@ export class TurbinesApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Turbine Data
-     * Get swtData projects turbines with name
+     * Get CwmsData projects turbines with name
      */
-    async getSwtDataProjectsTurbinesWithName(requestParameters: GetSwtDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Turbine> {
-        const response = await this.getSwtDataProjectsTurbinesWithNameRaw(requestParameters, initOverrides);
+    async getProjectsTurbinesWithName(requestParameters: GetProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Turbine> {
+        const response = await this.getProjectsTurbinesWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns matching CWMS Turbine Change Data for a Reservoir Project.
-     * Get swtData projects with office with name turbineChanges
+     * Get CwmsData projects with office with name turbineChanges
      */
-    async getSwtDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters: GetSwtDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TurbineChange>>> {
+    async getProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters: GetProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TurbineChange>>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "office" was null or undefined when calling getProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "name" was null or undefined when calling getProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling getSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "begin" was null or undefined when calling getProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling getSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "end" was null or undefined when calling getProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
@@ -397,36 +397,36 @@ export class TurbinesApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS Turbine Change Data for a Reservoir Project.
-     * Get swtData projects with office with name turbineChanges
+     * Get CwmsData projects with office with name turbineChanges
      */
-    async getSwtDataProjectsWithOfficeWithNameTurbineChanges(requestParameters: GetSwtDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TurbineChange>> {
-        const response = await this.getSwtDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters, initOverrides);
+    async getProjectsWithOfficeWithNameTurbineChanges(requestParameters: GetProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TurbineChange>> {
+        const response = await this.getProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Rename CWMS Turbine
-     * Patch swtData projects turbines with name
+     * Patch CwmsData projects turbines with name
      */
-    async patchSwtDataProjectsTurbinesWithNameRaw(requestParameters: PatchSwtDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataProjectsTurbinesWithNameRaw(requestParameters: PatchCwmsDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataProjectsTurbinesWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataProjectsTurbinesWithName().'
             );
         }
 
         if (requestParameters['name2'] == null) {
             throw new runtime.RequiredError(
                 'name2',
-                'Required parameter "name2" was null or undefined when calling patchSwtDataProjectsTurbinesWithName().'
+                'Required parameter "name2" was null or undefined when calling patchCwmsDataProjectsTurbinesWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataProjectsTurbinesWithName().'
+                'Required parameter "office" was null or undefined when calling patchCwmsDataProjectsTurbinesWithName().'
             );
         }
 
@@ -458,21 +458,21 @@ export class TurbinesApi extends runtime.BaseAPI {
 
     /**
      * Rename CWMS Turbine
-     * Patch swtData projects turbines with name
+     * Patch CwmsData projects turbines with name
      */
-    async patchSwtDataProjectsTurbinesWithName(requestParameters: PatchSwtDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataProjectsTurbinesWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataProjectsTurbinesWithName(requestParameters: PatchCwmsDataProjectsTurbinesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataProjectsTurbinesWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Turbine
-     * Post swtData projects turbines
+     * Post CwmsData projects turbines
      */
-    async postSwtDataProjectsTurbinesRaw(requestParameters: PostSwtDataProjectsTurbinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsTurbinesRaw(requestParameters: PostCwmsDataProjectsTurbinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['turbine'] == null) {
             throw new runtime.RequiredError(
                 'turbine',
-                'Required parameter "turbine" was null or undefined when calling postSwtDataProjectsTurbines().'
+                'Required parameter "turbine" was null or undefined when calling postCwmsDataProjectsTurbines().'
             );
         }
 
@@ -503,35 +503,35 @@ export class TurbinesApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Turbine
-     * Post swtData projects turbines
+     * Post CwmsData projects turbines
      */
-    async postSwtDataProjectsTurbines(requestParameters: PostSwtDataProjectsTurbinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsTurbinesRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsTurbines(requestParameters: PostCwmsDataProjectsTurbinesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsTurbinesRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Turbine Changes
-     * Post swtData projects with office with name turbineChanges
+     * Post CwmsData projects with office with name turbineChanges
      */
-    async postSwtDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters: PostSwtDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters: PostCwmsDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling postSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "office" was null or undefined when calling postCwmsDataProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling postSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "name" was null or undefined when calling postCwmsDataProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
         if (requestParameters['turbineChange'] == null) {
             throw new runtime.RequiredError(
                 'turbineChange',
-                'Required parameter "turbineChange" was null or undefined when calling postSwtDataProjectsWithOfficeWithNameTurbineChanges().'
+                'Required parameter "turbineChange" was null or undefined when calling postCwmsDataProjectsWithOfficeWithNameTurbineChanges().'
             );
         }
 
@@ -562,10 +562,10 @@ export class TurbinesApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Turbine Changes
-     * Post swtData projects with office with name turbineChanges
+     * Post CwmsData projects with office with name turbineChanges
      */
-    async postSwtDataProjectsWithOfficeWithNameTurbineChanges(requestParameters: PostSwtDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsWithOfficeWithNameTurbineChanges(requestParameters: PostCwmsDataProjectsWithOfficeWithNameTurbineChangesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsWithOfficeWithNameTurbineChangesRaw(requestParameters, initOverrides);
     }
 
 }

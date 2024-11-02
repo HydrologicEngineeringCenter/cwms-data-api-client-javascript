@@ -12,15 +12,15 @@
  * Do not edit the class manually.
  */
 /**
- * Check if a given object implements the AssignedTimeseries interface.
+ * Check if a given object implements the AssignedTimeSeries interface.
  */
-export function instanceOfAssignedTimeseries(value) {
+export function instanceOfAssignedTimeSeries(value) {
     return true;
 }
-export function AssignedTimeseriesFromJSON(json) {
-    return AssignedTimeseriesFromJSONTyped(json, false);
+export function AssignedTimeSeriesFromJSON(json) {
+    return AssignedTimeSeriesFromJSONTyped(json, false);
 }
-export function AssignedTimeseriesFromJSONTyped(json, ignoreDiscriminator) {
+export function AssignedTimeSeriesFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -33,7 +33,7 @@ export function AssignedTimeseriesFromJSONTyped(json, ignoreDiscriminator) {
         'attribute': json['attribute'] == null ? undefined : json['attribute'],
     };
 }
-export function AssignedTimeseriesToJSON(value) {
+export function AssignedTimeSeriesToJSON(value) {
     if (value == null) {
         return value;
     }

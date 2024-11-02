@@ -25,7 +25,7 @@ import {
     TextTimeSeriesToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataTimeSeriesTextWithNameRequest {
+export interface DeleteCwmsDataTimeSeriesTextWithNameRequest {
     name: string;
     office: string;
     textMask: string;
@@ -35,7 +35,7 @@ export interface DeleteSwtDataTimeSeriesTextWithNameRequest {
     versionDate?: string;
 }
 
-export interface GetSwtDataTimeSeriesTextRequest {
+export interface GetTimeSeriesTextRequest {
     office: string;
     name: string;
     begin: string;
@@ -43,7 +43,7 @@ export interface GetSwtDataTimeSeriesTextRequest {
     timezone?: string;
 }
 
-export interface GetSwtDataTimeSeriesTextWithNameValueRequest {
+export interface GetTimeSeriesTextWithNameValueRequest {
     name: string;
     office: string;
     date: string;
@@ -52,13 +52,13 @@ export interface GetSwtDataTimeSeriesTextWithNameValueRequest {
     clobId?: string;
 }
 
-export interface PatchSwtDataTimeSeriesTextWithNameRequest {
+export interface PatchCwmsDataTimeSeriesTextWithNameRequest {
     name: string;
     textTimeSeries: TextTimeSeries;
     replaceAll?: boolean;
 }
 
-export interface PostSwtDataTimeSeriesTextRequest {
+export interface PostCwmsDataTimeSeriesTextRequest {
     textTimeSeries: TextTimeSeries;
     replaceAll?: boolean;
 }
@@ -70,41 +70,41 @@ export class TextTimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested text timeseries id
-     * Delete swtData timeseries text with name
+     * Delete CwmsData timeseries text with name
      */
-    async deleteSwtDataTimeSeriesTextWithNameRaw(requestParameters: DeleteSwtDataTimeSeriesTextWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataTimeSeriesTextWithNameRaw(requestParameters: DeleteCwmsDataTimeSeriesTextWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataTimeSeriesTextWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataTimeSeriesTextWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataTimeSeriesTextWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataTimeSeriesTextWithName().'
             );
         }
 
         if (requestParameters['textMask'] == null) {
             throw new runtime.RequiredError(
                 'textMask',
-                'Required parameter "textMask" was null or undefined when calling deleteSwtDataTimeSeriesTextWithName().'
+                'Required parameter "textMask" was null or undefined when calling deleteCwmsDataTimeSeriesTextWithName().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling deleteSwtDataTimeSeriesTextWithName().'
+                'Required parameter "begin" was null or undefined when calling deleteCwmsDataTimeSeriesTextWithName().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling deleteSwtDataTimeSeriesTextWithName().'
+                'Required parameter "end" was null or undefined when calling deleteCwmsDataTimeSeriesTextWithName().'
             );
         }
 
@@ -152,41 +152,41 @@ export class TextTimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested text timeseries id
-     * Delete swtData timeseries text with name
+     * Delete CwmsData timeseries text with name
      */
-    async deleteSwtDataTimeSeriesTextWithName(requestParameters: DeleteSwtDataTimeSeriesTextWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataTimeSeriesTextWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataTimeSeriesTextWithName(requestParameters: DeleteCwmsDataTimeSeriesTextWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataTimeSeriesTextWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Retrieve text time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.
      */
-    async getSwtDataTimeSeriesTextRaw(requestParameters: GetSwtDataTimeSeriesTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TextTimeSeries>> {
+    async getTimeSeriesTextRaw(requestParameters: GetTimeSeriesTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TextTimeSeries>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataTimeSeriesText().'
+                'Required parameter "office" was null or undefined when calling getTimeSeriesText().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataTimeSeriesText().'
+                'Required parameter "name" was null or undefined when calling getTimeSeriesText().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling getSwtDataTimeSeriesText().'
+                'Required parameter "begin" was null or undefined when calling getTimeSeriesText().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling getSwtDataTimeSeriesText().'
+                'Required parameter "end" was null or undefined when calling getTimeSeriesText().'
             );
         }
 
@@ -231,33 +231,33 @@ export class TextTimeSeriesApi extends runtime.BaseAPI {
     /**
      * Retrieve text time series values for a provided time window and date version.If individual values exceed 64 kilobytes, a URL to a separate download is provided instead of being included in the returned payload from this request.
      */
-    async getSwtDataTimeSeriesText(requestParameters: GetSwtDataTimeSeriesTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TextTimeSeries> {
-        const response = await this.getSwtDataTimeSeriesTextRaw(requestParameters, initOverrides);
+    async getTimeSeriesText(requestParameters: GetTimeSeriesTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TextTimeSeries> {
+        const response = await this.getTimeSeriesTextRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData timeseries text with name value
+     * Get CwmsData timeseries text with name value
      */
-    async getSwtDataTimeSeriesTextWithNameValueRaw(requestParameters: GetSwtDataTimeSeriesTextWithNameValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async getTimeSeriesTextWithNameValueRaw(requestParameters: GetTimeSeriesTextWithNameValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataTimeSeriesTextWithNameValue().'
+                'Required parameter "name" was null or undefined when calling getTimeSeriesTextWithNameValue().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataTimeSeriesTextWithNameValue().'
+                'Required parameter "office" was null or undefined when calling getTimeSeriesTextWithNameValue().'
             );
         }
 
         if (requestParameters['date'] == null) {
             throw new runtime.RequiredError(
                 'date',
-                'Required parameter "date" was null or undefined when calling getSwtDataTimeSeriesTextWithNameValue().'
+                'Required parameter "date" was null or undefined when calling getTimeSeriesTextWithNameValue().'
             );
         }
 
@@ -304,29 +304,29 @@ export class TextTimeSeriesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData timeseries text with name value
+     * Get CwmsData timeseries text with name value
      */
-    async getSwtDataTimeSeriesTextWithNameValue(requestParameters: GetSwtDataTimeSeriesTextWithNameValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
-        const response = await this.getSwtDataTimeSeriesTextWithNameValueRaw(requestParameters, initOverrides);
+    async getTimeSeriesTextWithNameValue(requestParameters: GetTimeSeriesTextWithNameValueRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+        const response = await this.getTimeSeriesTextWithNameValueRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Updates a text timeseries
-     * Patch swtData timeseries text with name
+     * Patch CwmsData timeseries text with name
      */
-    async patchSwtDataTimeSeriesTextWithNameRaw(requestParameters: PatchSwtDataTimeSeriesTextWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataTimeSeriesTextWithNameRaw(requestParameters: PatchCwmsDataTimeSeriesTextWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataTimeSeriesTextWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataTimeSeriesTextWithName().'
             );
         }
 
         if (requestParameters['textTimeSeries'] == null) {
             throw new runtime.RequiredError(
                 'textTimeSeries',
-                'Required parameter "textTimeSeries" was null or undefined when calling patchSwtDataTimeSeriesTextWithName().'
+                'Required parameter "textTimeSeries" was null or undefined when calling patchCwmsDataTimeSeriesTextWithName().'
             );
         }
 
@@ -357,21 +357,21 @@ export class TextTimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Updates a text timeseries
-     * Patch swtData timeseries text with name
+     * Patch CwmsData timeseries text with name
      */
-    async patchSwtDataTimeSeriesTextWithName(requestParameters: PatchSwtDataTimeSeriesTextWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataTimeSeriesTextWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataTimeSeriesTextWithName(requestParameters: PatchCwmsDataTimeSeriesTextWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataTimeSeriesTextWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new TextTimeSeries
-     * Post swtData timeseries text
+     * Post CwmsData timeseries text
      */
-    async postSwtDataTimeSeriesTextRaw(requestParameters: PostSwtDataTimeSeriesTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataTimeSeriesTextRaw(requestParameters: PostCwmsDataTimeSeriesTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['textTimeSeries'] == null) {
             throw new runtime.RequiredError(
                 'textTimeSeries',
-                'Required parameter "textTimeSeries" was null or undefined when calling postSwtDataTimeSeriesText().'
+                'Required parameter "textTimeSeries" was null or undefined when calling postCwmsDataTimeSeriesText().'
             );
         }
 
@@ -402,10 +402,10 @@ export class TextTimeSeriesApi extends runtime.BaseAPI {
 
     /**
      * Create new TextTimeSeries
-     * Post swtData timeseries text
+     * Post CwmsData timeseries text
      */
-    async postSwtDataTimeSeriesText(requestParameters: PostSwtDataTimeSeriesTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataTimeSeriesTextRaw(requestParameters, initOverrides);
+    async postCwmsDataTimeSeriesText(requestParameters: PostCwmsDataTimeSeriesTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataTimeSeriesTextRaw(requestParameters, initOverrides);
     }
 
 }

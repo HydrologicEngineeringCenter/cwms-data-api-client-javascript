@@ -25,27 +25,27 @@ import {
     LookupTypeToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataLookupTypesWithNameRequest {
+export interface DeleteCwmsDataLookupTypesWithNameRequest {
     name: string;
     category: string;
     prefix: string;
     office: string;
 }
 
-export interface GetSwtDataLookupTypesRequest {
+export interface GetLookupTypesRequest {
     category: string;
     prefix: string;
     office: string;
 }
 
-export interface PatchSwtDataLookupTypesWithNameRequest {
+export interface PatchCwmsDataLookupTypesWithNameRequest {
     name: string;
     category: string;
     prefix: string;
     lookupType: LookupType;
 }
 
-export interface PostSwtDataLookupTypesRequest {
+export interface PostCwmsDataLookupTypesRequest {
     category: string;
     prefix: string;
     lookupType: LookupType;
@@ -58,34 +58,34 @@ export class LookupTypesApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Lookup Type
-     * Delete swtData lookupTypes with name
+     * Delete CwmsData lookupTypes with name
      */
-    async deleteSwtDataLookupTypesWithNameRaw(requestParameters: DeleteSwtDataLookupTypesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataLookupTypesWithNameRaw(requestParameters: DeleteCwmsDataLookupTypesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataLookupTypesWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataLookupTypesWithName().'
             );
         }
 
         if (requestParameters['category'] == null) {
             throw new runtime.RequiredError(
                 'category',
-                'Required parameter "category" was null or undefined when calling deleteSwtDataLookupTypesWithName().'
+                'Required parameter "category" was null or undefined when calling deleteCwmsDataLookupTypesWithName().'
             );
         }
 
         if (requestParameters['prefix'] == null) {
             throw new runtime.RequiredError(
                 'prefix',
-                'Required parameter "prefix" was null or undefined when calling deleteSwtDataLookupTypesWithName().'
+                'Required parameter "prefix" was null or undefined when calling deleteCwmsDataLookupTypesWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataLookupTypesWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataLookupTypesWithName().'
             );
         }
 
@@ -121,35 +121,35 @@ export class LookupTypesApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Lookup Type
-     * Delete swtData lookupTypes with name
+     * Delete CwmsData lookupTypes with name
      */
-    async deleteSwtDataLookupTypesWithName(requestParameters: DeleteSwtDataLookupTypesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataLookupTypesWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataLookupTypesWithName(requestParameters: DeleteCwmsDataLookupTypesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataLookupTypesWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns matching CWMS Lookup Type Data.
-     * Get swtData lookupTypes
+     * Get CwmsData lookupTypes
      */
-    async getSwtDataLookupTypesRaw(requestParameters: GetSwtDataLookupTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LookupType>>> {
+    async getLookupTypesRaw(requestParameters: GetLookupTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LookupType>>> {
         if (requestParameters['category'] == null) {
             throw new runtime.RequiredError(
                 'category',
-                'Required parameter "category" was null or undefined when calling getSwtDataLookupTypes().'
+                'Required parameter "category" was null or undefined when calling getLookupTypes().'
             );
         }
 
         if (requestParameters['prefix'] == null) {
             throw new runtime.RequiredError(
                 'prefix',
-                'Required parameter "prefix" was null or undefined when calling getSwtDataLookupTypes().'
+                'Required parameter "prefix" was null or undefined when calling getLookupTypes().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataLookupTypes().'
+                'Required parameter "office" was null or undefined when calling getLookupTypes().'
             );
         }
 
@@ -185,43 +185,43 @@ export class LookupTypesApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS Lookup Type Data.
-     * Get swtData lookupTypes
+     * Get CwmsData lookupTypes
      */
-    async getSwtDataLookupTypes(requestParameters: GetSwtDataLookupTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LookupType>> {
-        const response = await this.getSwtDataLookupTypesRaw(requestParameters, initOverrides);
+    async getLookupTypes(requestParameters: GetLookupTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LookupType>> {
+        const response = await this.getLookupTypesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update CWMS Lookup Type
-     * Patch swtData lookupTypes with name
+     * Patch CwmsData lookupTypes with name
      */
-    async patchSwtDataLookupTypesWithNameRaw(requestParameters: PatchSwtDataLookupTypesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataLookupTypesWithNameRaw(requestParameters: PatchCwmsDataLookupTypesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataLookupTypesWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataLookupTypesWithName().'
             );
         }
 
         if (requestParameters['category'] == null) {
             throw new runtime.RequiredError(
                 'category',
-                'Required parameter "category" was null or undefined when calling patchSwtDataLookupTypesWithName().'
+                'Required parameter "category" was null or undefined when calling patchCwmsDataLookupTypesWithName().'
             );
         }
 
         if (requestParameters['prefix'] == null) {
             throw new runtime.RequiredError(
                 'prefix',
-                'Required parameter "prefix" was null or undefined when calling patchSwtDataLookupTypesWithName().'
+                'Required parameter "prefix" was null or undefined when calling patchCwmsDataLookupTypesWithName().'
             );
         }
 
         if (requestParameters['lookupType'] == null) {
             throw new runtime.RequiredError(
                 'lookupType',
-                'Required parameter "lookupType" was null or undefined when calling patchSwtDataLookupTypesWithName().'
+                'Required parameter "lookupType" was null or undefined when calling patchCwmsDataLookupTypesWithName().'
             );
         }
 
@@ -256,35 +256,35 @@ export class LookupTypesApi extends runtime.BaseAPI {
 
     /**
      * Update CWMS Lookup Type
-     * Patch swtData lookupTypes with name
+     * Patch CwmsData lookupTypes with name
      */
-    async patchSwtDataLookupTypesWithName(requestParameters: PatchSwtDataLookupTypesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataLookupTypesWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataLookupTypesWithName(requestParameters: PatchCwmsDataLookupTypesWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataLookupTypesWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Lookup Type
-     * Post swtData lookupTypes
+     * Post CwmsData lookupTypes
      */
-    async postSwtDataLookupTypesRaw(requestParameters: PostSwtDataLookupTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataLookupTypesRaw(requestParameters: PostCwmsDataLookupTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['category'] == null) {
             throw new runtime.RequiredError(
                 'category',
-                'Required parameter "category" was null or undefined when calling postSwtDataLookupTypes().'
+                'Required parameter "category" was null or undefined when calling postCwmsDataLookupTypes().'
             );
         }
 
         if (requestParameters['prefix'] == null) {
             throw new runtime.RequiredError(
                 'prefix',
-                'Required parameter "prefix" was null or undefined when calling postSwtDataLookupTypes().'
+                'Required parameter "prefix" was null or undefined when calling postCwmsDataLookupTypes().'
             );
         }
 
         if (requestParameters['lookupType'] == null) {
             throw new runtime.RequiredError(
                 'lookupType',
-                'Required parameter "lookupType" was null or undefined when calling postSwtDataLookupTypes().'
+                'Required parameter "lookupType" was null or undefined when calling postCwmsDataLookupTypes().'
             );
         }
 
@@ -319,10 +319,10 @@ export class LookupTypesApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Lookup Type
-     * Post swtData lookupTypes
+     * Post CwmsData lookupTypes
      */
-    async postSwtDataLookupTypes(requestParameters: PostSwtDataLookupTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataLookupTypesRaw(requestParameters, initOverrides);
+    async postCwmsDataLookupTypes(requestParameters: PostCwmsDataLookupTypesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataLookupTypesRaw(requestParameters, initOverrides);
     }
 
 }

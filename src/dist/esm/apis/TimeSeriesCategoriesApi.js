@@ -25,18 +25,18 @@ import { TimeseriesCategoryFromJSON, TimeseriesCategoryToJSON, } from '../models
 /**
  *
  */
-export class TimeseriesCategoriesApi extends runtime.BaseAPI {
+export class TimeSeriesCategoriesApi extends runtime.BaseAPI {
     /**
      * Deletes requested time series category
-     * Delete swtData timeseries category with categoryId
+     * Delete CwmsData timeseries category with categoryId
      */
-    deleteSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['categoryId'] == null) {
-                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling deleteSwtDataTimeseriesCategoryWithCategoryId().');
+                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling deleteCwmsDataTimeSeriesCategoryWithCategoryId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataTimeseriesCategoryWithCategoryId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataTimeSeriesCategoryWithCategoryId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -60,18 +60,18 @@ export class TimeseriesCategoriesApi extends runtime.BaseAPI {
     }
     /**
      * Deletes requested time series category
-     * Delete swtData timeseries category with categoryId
+     * Delete CwmsData timeseries category with categoryId
      */
-    deleteSwtDataTimeseriesCategoryWithCategoryId(requestParameters, initOverrides) {
+    deleteCwmsDataTimeSeriesCategoryWithCategoryId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Returns CWMS timeseries category Data
-     * Get swtData timeseries category
+     * Get CwmsData timeseries category
      */
-    getSwtDataTimeseriesCategoryRaw(requestParameters, initOverrides) {
+    getTimeSeriesCategoryRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -92,25 +92,25 @@ export class TimeseriesCategoriesApi extends runtime.BaseAPI {
     }
     /**
      * Returns CWMS timeseries category Data
-     * Get swtData timeseries category
+     * Get CwmsData timeseries category
      */
-    getSwtDataTimeseriesCategory(requestParameters = {}, initOverrides) {
+    getTimeSeriesCategory(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataTimeseriesCategoryRaw(requestParameters, initOverrides);
+            const response = yield this.getTimeSeriesCategoryRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Retrieves requested timeseries category
-     * Get swtData timeseries category with categoryId
+     * Get CwmsData timeseries category with categoryId
      */
-    getSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters, initOverrides) {
+    getTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['categoryId'] == null) {
-                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling getSwtDataTimeseriesCategoryWithCategoryId().');
+                throw new runtime.RequiredError('categoryId', 'Required parameter "categoryId" was null or undefined when calling getTimeSeriesCategoryWithCategoryId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataTimeseriesCategoryWithCategoryId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getTimeSeriesCategoryWithCategoryId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -131,22 +131,22 @@ export class TimeseriesCategoriesApi extends runtime.BaseAPI {
     }
     /**
      * Retrieves requested timeseries category
-     * Get swtData timeseries category with categoryId
+     * Get CwmsData timeseries category with categoryId
      */
-    getSwtDataTimeseriesCategoryWithCategoryId(requestParameters, initOverrides) {
+    getTimeSeriesCategoryWithCategoryId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataTimeseriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
+            const response = yield this.getTimeSeriesCategoryWithCategoryIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Create new TimeseriesCategory
-     * Post swtData timeseries category
+     * Create new TimeSeriesCategory
+     * Post CwmsData timeseries category
      */
-    postSwtDataTimeseriesCategoryRaw(requestParameters, initOverrides) {
+    postCwmsDataTimeSeriesCategoryRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['timeseriesCategory'] == null) {
-                throw new runtime.RequiredError('timeseriesCategory', 'Required parameter "timeseriesCategory" was null or undefined when calling postSwtDataTimeseriesCategory().');
+                throw new runtime.RequiredError('timeseriesCategory', 'Required parameter "timeseriesCategory" was null or undefined when calling postCwmsDataTimeSeriesCategory().');
             }
             const queryParameters = {};
             if (requestParameters['failIfExists'] != null) {
@@ -168,12 +168,12 @@ export class TimeseriesCategoriesApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Create new TimeseriesCategory
-     * Post swtData timeseries category
+     * Create new TimeSeriesCategory
+     * Post CwmsData timeseries category
      */
-    postSwtDataTimeseriesCategory(requestParameters, initOverrides) {
+    postCwmsDataTimeSeriesCategory(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataTimeseriesCategoryRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataTimeSeriesCategoryRaw(requestParameters, initOverrides);
         });
     }
 }

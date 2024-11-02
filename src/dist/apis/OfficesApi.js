@@ -30,9 +30,9 @@ const index_1 = require("../models/index");
  */
 class OfficesApi extends runtime.BaseAPI {
     /**
-     * Get swtData offices
+     * Get CwmsData offices
      */
-    getSwtDataOfficesRaw(requestParameters, initOverrides) {
+    getOfficesRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['format'] != null) {
@@ -55,21 +55,21 @@ class OfficesApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData offices
+     * Get CwmsData offices
      */
-    getSwtDataOffices(requestParameters = {}, initOverrides) {
+    getOffices(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataOfficesRaw(requestParameters, initOverrides);
+            const response = yield this.getOfficesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
-     * Get swtData offices with office
+     * Get CwmsData offices with office
      */
-    getSwtDataOfficesWithOfficeRaw(requestParameters, initOverrides) {
+    getOfficesWithOfficeRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataOfficesWithOffice().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getOfficesWithOffice().');
             }
             const queryParameters = {};
             if (requestParameters['format'] != null) {
@@ -89,11 +89,11 @@ class OfficesApi extends runtime.BaseAPI {
         });
     }
     /**
-     * Get swtData offices with office
+     * Get CwmsData offices with office
      */
-    getSwtDataOfficesWithOffice(requestParameters, initOverrides) {
+    getOfficesWithOffice(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataOfficesWithOfficeRaw(requestParameters, initOverrides);
+            const response = yield this.getOfficesWithOfficeRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }

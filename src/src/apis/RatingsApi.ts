@@ -43,19 +43,19 @@ import {
     RatingTemplatesToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataRatingsSpecWithRatingIdRequest {
+export interface DeleteCwmsDataRatingsSpecWithRatingIdRequest {
     ratingId: string;
     office: string;
     method: DeleteMethod;
 }
 
-export interface DeleteSwtDataRatingsTemplateWithTemplateIdRequest {
+export interface DeleteCwmsDataRatingsTemplateWithTemplateIdRequest {
     templateId: string;
     office: string;
     method: DeleteMethod;
 }
 
-export interface DeleteSwtDataRatingsWithRatingIdRequest {
+export interface DeleteCwmsDataRatingsWithRatingIdRequest {
     ratingId: string;
     office: string;
     begin: string;
@@ -63,7 +63,7 @@ export interface DeleteSwtDataRatingsWithRatingIdRequest {
     timezone?: string;
 }
 
-export interface GetSwtDataRatingsRequest {
+export interface GetRatingsRequest {
     name?: string;
     office?: string;
     unit?: string;
@@ -74,7 +74,7 @@ export interface GetSwtDataRatingsRequest {
     format?: string;
 }
 
-export interface GetSwtDataRatingsMetadataRequest {
+export interface GetRatingsMetadataRequest {
     office?: string;
     ratingIdMask?: string;
     start?: string;
@@ -84,31 +84,31 @@ export interface GetSwtDataRatingsMetadataRequest {
     pageSize?: number;
 }
 
-export interface GetSwtDataRatingsSpecRequest {
+export interface GetRatingsSpecRequest {
     office?: string;
     ratingIdMask?: string;
     page?: string;
     pageSize?: number;
 }
 
-export interface GetSwtDataRatingsSpecWithRatingIdRequest {
+export interface GetRatingsSpecWithRatingIdRequest {
     ratingId: string;
     office: string;
 }
 
-export interface GetSwtDataRatingsTemplateRequest {
+export interface GetRatingsTemplateRequest {
     office?: string;
     templateIdMask?: string;
     page?: string;
     pageSize?: number;
 }
 
-export interface GetSwtDataRatingsTemplateWithTemplateIdRequest {
+export interface GetRatingsTemplateWithTemplateIdRequest {
     templateId: string;
     office: string;
 }
 
-export interface GetSwtDataRatingsWithRatingIdRequest {
+export interface GetRatingsWithRatingIdRequest {
     ratingId: string;
     office: string;
     begin?: string;
@@ -117,23 +117,23 @@ export interface GetSwtDataRatingsWithRatingIdRequest {
     method?: DatabaseLoadMethod;
 }
 
-export interface PatchSwtDataRatingsWithRatingIdRequest {
+export interface PatchCwmsDataRatingsWithRatingIdRequest {
     ratingId: string;
     body: object;
     storeTemplate?: boolean;
 }
 
-export interface PostSwtDataRatingsRequest {
+export interface PostCwmsDataRatingsRequest {
     body: object;
     storeTemplate?: boolean;
 }
 
-export interface PostSwtDataRatingsSpecRequest {
+export interface PostCwmsDataRatingsSpecRequest {
     ratingSpec: RatingSpec;
     failIfExists?: boolean;
 }
 
-export interface PostSwtDataRatingsTemplateRequest {
+export interface PostCwmsDataRatingsTemplateRequest {
     ratingTemplate: RatingTemplate;
     failIfExists?: boolean;
 }
@@ -145,27 +145,27 @@ export class RatingsApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings spec with ratingId
+     * Delete CwmsData ratings spec with ratingId
      */
-    async deleteSwtDataRatingsSpecWithRatingIdRaw(requestParameters: DeleteSwtDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataRatingsSpecWithRatingIdRaw(requestParameters: DeleteCwmsDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['ratingId'] == null) {
             throw new runtime.RequiredError(
                 'ratingId',
-                'Required parameter "ratingId" was null or undefined when calling deleteSwtDataRatingsSpecWithRatingId().'
+                'Required parameter "ratingId" was null or undefined when calling deleteCwmsDataRatingsSpecWithRatingId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataRatingsSpecWithRatingId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataRatingsSpecWithRatingId().'
             );
         }
 
         if (requestParameters['method'] == null) {
             throw new runtime.RequiredError(
                 'method',
-                'Required parameter "method" was null or undefined when calling deleteSwtDataRatingsSpecWithRatingId().'
+                'Required parameter "method" was null or undefined when calling deleteCwmsDataRatingsSpecWithRatingId().'
             );
         }
 
@@ -197,35 +197,35 @@ export class RatingsApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings spec with ratingId
+     * Delete CwmsData ratings spec with ratingId
      */
-    async deleteSwtDataRatingsSpecWithRatingId(requestParameters: DeleteSwtDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataRatingsSpecWithRatingIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataRatingsSpecWithRatingId(requestParameters: DeleteCwmsDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataRatingsSpecWithRatingIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings template with templateId
+     * Delete CwmsData ratings template with templateId
      */
-    async deleteSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters: DeleteSwtDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataRatingsTemplateWithTemplateIdRaw(requestParameters: DeleteCwmsDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['templateId'] == null) {
             throw new runtime.RequiredError(
                 'templateId',
-                'Required parameter "templateId" was null or undefined when calling deleteSwtDataRatingsTemplateWithTemplateId().'
+                'Required parameter "templateId" was null or undefined when calling deleteCwmsDataRatingsTemplateWithTemplateId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataRatingsTemplateWithTemplateId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataRatingsTemplateWithTemplateId().'
             );
         }
 
         if (requestParameters['method'] == null) {
             throw new runtime.RequiredError(
                 'method',
-                'Required parameter "method" was null or undefined when calling deleteSwtDataRatingsTemplateWithTemplateId().'
+                'Required parameter "method" was null or undefined when calling deleteCwmsDataRatingsTemplateWithTemplateId().'
             );
         }
 
@@ -257,41 +257,41 @@ export class RatingsApi extends runtime.BaseAPI {
 
     /**
      * Deletes requested rating specification
-     * Delete swtData ratings template with templateId
+     * Delete CwmsData ratings template with templateId
      */
-    async deleteSwtDataRatingsTemplateWithTemplateId(requestParameters: DeleteSwtDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataRatingsTemplateWithTemplateId(requestParameters: DeleteCwmsDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Delete swtData ratings with ratingId
+     * Delete CwmsData ratings with ratingId
      */
-    async deleteSwtDataRatingsWithRatingIdRaw(requestParameters: DeleteSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataRatingsWithRatingIdRaw(requestParameters: DeleteCwmsDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['ratingId'] == null) {
             throw new runtime.RequiredError(
                 'ratingId',
-                'Required parameter "ratingId" was null or undefined when calling deleteSwtDataRatingsWithRatingId().'
+                'Required parameter "ratingId" was null or undefined when calling deleteCwmsDataRatingsWithRatingId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataRatingsWithRatingId().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataRatingsWithRatingId().'
             );
         }
 
         if (requestParameters['begin'] == null) {
             throw new runtime.RequiredError(
                 'begin',
-                'Required parameter "begin" was null or undefined when calling deleteSwtDataRatingsWithRatingId().'
+                'Required parameter "begin" was null or undefined when calling deleteCwmsDataRatingsWithRatingId().'
             );
         }
 
         if (requestParameters['end'] == null) {
             throw new runtime.RequiredError(
                 'end',
-                'Required parameter "end" was null or undefined when calling deleteSwtDataRatingsWithRatingId().'
+                'Required parameter "end" was null or undefined when calling deleteCwmsDataRatingsWithRatingId().'
             );
         }
 
@@ -330,16 +330,16 @@ export class RatingsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Delete swtData ratings with ratingId
+     * Delete CwmsData ratings with ratingId
      */
-    async deleteSwtDataRatingsWithRatingId(requestParameters: DeleteSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
+    async deleteCwmsDataRatingsWithRatingId(requestParameters: DeleteCwmsDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Get swtData ratings
+     * Get CwmsData ratings
      */
-    async getSwtDataRatingsRaw(requestParameters: GetSwtDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async getRatingsRaw(requestParameters: GetRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         const queryParameters: any = {};
 
         if (requestParameters['name'] != null) {
@@ -391,17 +391,17 @@ export class RatingsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData ratings
+     * Get CwmsData ratings
      */
-    async getSwtDataRatings(requestParameters: GetSwtDataRatingsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
-        const response = await this.getSwtDataRatingsRaw(requestParameters, initOverrides);
+    async getRatings(requestParameters: GetRatingsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.getRatingsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData ratings metadata
+     * Get CwmsData ratings metadata
      */
-    async getSwtDataRatingsMetadataRaw(requestParameters: GetSwtDataRatingsMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingMetadataList>> {
+    async getRatingsMetadataRaw(requestParameters: GetRatingsMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingMetadataList>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -449,17 +449,17 @@ export class RatingsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData ratings metadata
+     * Get CwmsData ratings metadata
      */
-    async getSwtDataRatingsMetadata(requestParameters: GetSwtDataRatingsMetadataRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingMetadataList> {
-        const response = await this.getSwtDataRatingsMetadataRaw(requestParameters, initOverrides);
+    async getRatingsMetadata(requestParameters: GetRatingsMetadataRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingMetadataList> {
+        const response = await this.getRatingsMetadataRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData ratings spec
+     * Get CwmsData ratings spec
      */
-    async getSwtDataRatingsSpecRaw(requestParameters: GetSwtDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingSpecs>> {
+    async getRatingsSpecRaw(requestParameters: GetRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingSpecs>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -495,28 +495,28 @@ export class RatingsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData ratings spec
+     * Get CwmsData ratings spec
      */
-    async getSwtDataRatingsSpec(requestParameters: GetSwtDataRatingsSpecRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingSpecs> {
-        const response = await this.getSwtDataRatingsSpecRaw(requestParameters, initOverrides);
+    async getRatingsSpec(requestParameters: GetRatingsSpecRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingSpecs> {
+        const response = await this.getRatingsSpecRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData ratings spec with ratingId
+     * Get CwmsData ratings spec with ratingId
      */
-    async getSwtDataRatingsSpecWithRatingIdRaw(requestParameters: GetSwtDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingSpec>> {
+    async getRatingsSpecWithRatingIdRaw(requestParameters: GetRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingSpec>> {
         if (requestParameters['ratingId'] == null) {
             throw new runtime.RequiredError(
                 'ratingId',
-                'Required parameter "ratingId" was null or undefined when calling getSwtDataRatingsSpecWithRatingId().'
+                'Required parameter "ratingId" was null or undefined when calling getRatingsSpecWithRatingId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataRatingsSpecWithRatingId().'
+                'Required parameter "office" was null or undefined when calling getRatingsSpecWithRatingId().'
             );
         }
 
@@ -543,17 +543,17 @@ export class RatingsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData ratings spec with ratingId
+     * Get CwmsData ratings spec with ratingId
      */
-    async getSwtDataRatingsSpecWithRatingId(requestParameters: GetSwtDataRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingSpec> {
-        const response = await this.getSwtDataRatingsSpecWithRatingIdRaw(requestParameters, initOverrides);
+    async getRatingsSpecWithRatingId(requestParameters: GetRatingsSpecWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingSpec> {
+        const response = await this.getRatingsSpecWithRatingIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData ratings template
+     * Get CwmsData ratings template
      */
-    async getSwtDataRatingsTemplateRaw(requestParameters: GetSwtDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingTemplates>> {
+    async getRatingsTemplateRaw(requestParameters: GetRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RatingTemplates>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -589,28 +589,28 @@ export class RatingsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData ratings template
+     * Get CwmsData ratings template
      */
-    async getSwtDataRatingsTemplate(requestParameters: GetSwtDataRatingsTemplateRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingTemplates> {
-        const response = await this.getSwtDataRatingsTemplateRaw(requestParameters, initOverrides);
+    async getRatingsTemplate(requestParameters: GetRatingsTemplateRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RatingTemplates> {
+        const response = await this.getRatingsTemplateRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Get swtData ratings template with templateId
+     * Get CwmsData ratings template with templateId
      */
-    async getSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters: GetSwtDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<RatingTemplate>>> {
+    async getRatingsTemplateWithTemplateIdRaw(requestParameters: GetRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<RatingTemplate>>> {
         if (requestParameters['templateId'] == null) {
             throw new runtime.RequiredError(
                 'templateId',
-                'Required parameter "templateId" was null or undefined when calling getSwtDataRatingsTemplateWithTemplateId().'
+                'Required parameter "templateId" was null or undefined when calling getRatingsTemplateWithTemplateId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataRatingsTemplateWithTemplateId().'
+                'Required parameter "office" was null or undefined when calling getRatingsTemplateWithTemplateId().'
             );
         }
 
@@ -637,29 +637,29 @@ export class RatingsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData ratings template with templateId
+     * Get CwmsData ratings template with templateId
      */
-    async getSwtDataRatingsTemplateWithTemplateId(requestParameters: GetSwtDataRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<RatingTemplate>> {
-        const response = await this.getSwtDataRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides);
+    async getRatingsTemplateWithTemplateId(requestParameters: GetRatingsTemplateWithTemplateIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<RatingTemplate>> {
+        const response = await this.getRatingsTemplateWithTemplateIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Rating Data
-     * Get swtData ratings with ratingId
+     * Get CwmsData ratings with ratingId
      */
-    async getSwtDataRatingsWithRatingIdRaw(requestParameters: GetSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async getRatingsWithRatingIdRaw(requestParameters: GetRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters['ratingId'] == null) {
             throw new runtime.RequiredError(
                 'ratingId',
-                'Required parameter "ratingId" was null or undefined when calling getSwtDataRatingsWithRatingId().'
+                'Required parameter "ratingId" was null or undefined when calling getRatingsWithRatingId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataRatingsWithRatingId().'
+                'Required parameter "office" was null or undefined when calling getRatingsWithRatingId().'
             );
         }
 
@@ -703,29 +703,29 @@ export class RatingsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Rating Data
-     * Get swtData ratings with ratingId
+     * Get CwmsData ratings with ratingId
      */
-    async getSwtDataRatingsWithRatingId(requestParameters: GetSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
-        const response = await this.getSwtDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
+    async getRatingsWithRatingId(requestParameters: GetRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.getRatingsWithRatingIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update a RatingSet
-     * Patch swtData ratings with ratingId
+     * Patch CwmsData ratings with ratingId
      */
-    async patchSwtDataRatingsWithRatingIdRaw(requestParameters: PatchSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataRatingsWithRatingIdRaw(requestParameters: PatchCwmsDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['ratingId'] == null) {
             throw new runtime.RequiredError(
                 'ratingId',
-                'Required parameter "ratingId" was null or undefined when calling patchSwtDataRatingsWithRatingId().'
+                'Required parameter "ratingId" was null or undefined when calling patchCwmsDataRatingsWithRatingId().'
             );
         }
 
         if (requestParameters['body'] == null) {
             throw new runtime.RequiredError(
                 'body',
-                'Required parameter "body" was null or undefined when calling patchSwtDataRatingsWithRatingId().'
+                'Required parameter "body" was null or undefined when calling patchCwmsDataRatingsWithRatingId().'
             );
         }
 
@@ -756,21 +756,21 @@ export class RatingsApi extends runtime.BaseAPI {
 
     /**
      * Update a RatingSet
-     * Patch swtData ratings with ratingId
+     * Patch CwmsData ratings with ratingId
      */
-    async patchSwtDataRatingsWithRatingId(requestParameters: PatchSwtDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
+    async patchCwmsDataRatingsWithRatingId(requestParameters: PatchCwmsDataRatingsWithRatingIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataRatingsWithRatingIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new RatingSet
-     * Post swtData ratings
+     * Post CwmsData ratings
      */
-    async postSwtDataRatingsRaw(requestParameters: PostSwtDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataRatingsRaw(requestParameters: PostCwmsDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['body'] == null) {
             throw new runtime.RequiredError(
                 'body',
-                'Required parameter "body" was null or undefined when calling postSwtDataRatings().'
+                'Required parameter "body" was null or undefined when calling postCwmsDataRatings().'
             );
         }
 
@@ -801,21 +801,21 @@ export class RatingsApi extends runtime.BaseAPI {
 
     /**
      * Create new RatingSet
-     * Post swtData ratings
+     * Post CwmsData ratings
      */
-    async postSwtDataRatings(requestParameters: PostSwtDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataRatingsRaw(requestParameters, initOverrides);
+    async postCwmsDataRatings(requestParameters: PostCwmsDataRatingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataRatingsRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new Rating Specification
-     * Post swtData ratings spec
+     * Post CwmsData ratings spec
      */
-    async postSwtDataRatingsSpecRaw(requestParameters: PostSwtDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataRatingsSpecRaw(requestParameters: PostCwmsDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['ratingSpec'] == null) {
             throw new runtime.RequiredError(
                 'ratingSpec',
-                'Required parameter "ratingSpec" was null or undefined when calling postSwtDataRatingsSpec().'
+                'Required parameter "ratingSpec" was null or undefined when calling postCwmsDataRatingsSpec().'
             );
         }
 
@@ -846,21 +846,21 @@ export class RatingsApi extends runtime.BaseAPI {
 
     /**
      * Create new Rating Specification
-     * Post swtData ratings spec
+     * Post CwmsData ratings spec
      */
-    async postSwtDataRatingsSpec(requestParameters: PostSwtDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataRatingsSpecRaw(requestParameters, initOverrides);
+    async postCwmsDataRatingsSpec(requestParameters: PostCwmsDataRatingsSpecRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataRatingsSpecRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create new Rating Template
-     * Post swtData ratings template
+     * Post CwmsData ratings template
      */
-    async postSwtDataRatingsTemplateRaw(requestParameters: PostSwtDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataRatingsTemplateRaw(requestParameters: PostCwmsDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['ratingTemplate'] == null) {
             throw new runtime.RequiredError(
                 'ratingTemplate',
-                'Required parameter "ratingTemplate" was null or undefined when calling postSwtDataRatingsTemplate().'
+                'Required parameter "ratingTemplate" was null or undefined when calling postCwmsDataRatingsTemplate().'
             );
         }
 
@@ -891,10 +891,10 @@ export class RatingsApi extends runtime.BaseAPI {
 
     /**
      * Create new Rating Template
-     * Post swtData ratings template
+     * Post CwmsData ratings template
      */
-    async postSwtDataRatingsTemplate(requestParameters: PostSwtDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataRatingsTemplateRaw(requestParameters, initOverrides);
+    async postCwmsDataRatingsTemplate(requestParameters: PostCwmsDataRatingsTemplateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataRatingsTemplateRaw(requestParameters, initOverrides);
     }
 
 }

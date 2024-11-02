@@ -28,7 +28,7 @@ import {
     PoolsToJSON,
 } from '../models/index';
 
-export interface GetSwtDataPoolsRequest {
+export interface GetPoolsRequest {
     office?: string;
     idMask?: string;
     nameMask?: string;
@@ -40,7 +40,7 @@ export interface GetSwtDataPoolsRequest {
     pageSize?: number;
 }
 
-export interface GetSwtDataPoolsWithPoolIdRequest {
+export interface GetPoolsWithPoolIdRequest {
     poolId: string;
     office: string;
     projectId: string;
@@ -57,9 +57,9 @@ export class PoolsApi extends runtime.BaseAPI {
 
     /**
      * Returns Pools Data
-     * Get swtData pools
+     * Get CwmsData pools
      */
-    async getSwtDataPoolsRaw(requestParameters: GetSwtDataPoolsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Pools>> {
+    async getPoolsRaw(requestParameters: GetPoolsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Pools>> {
         const queryParameters: any = {};
 
         if (requestParameters['office'] != null) {
@@ -116,36 +116,36 @@ export class PoolsApi extends runtime.BaseAPI {
 
     /**
      * Returns Pools Data
-     * Get swtData pools
+     * Get CwmsData pools
      */
-    async getSwtDataPools(requestParameters: GetSwtDataPoolsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Pools> {
-        const response = await this.getSwtDataPoolsRaw(requestParameters, initOverrides);
+    async getPools(requestParameters: GetPoolsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Pools> {
+        const response = await this.getPoolsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Retrieves requested Pool
-     * Get swtData pools with poolId
+     * Get CwmsData pools with poolId
      */
-    async getSwtDataPoolsWithPoolIdRaw(requestParameters: GetSwtDataPoolsWithPoolIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Pool>> {
+    async getPoolsWithPoolIdRaw(requestParameters: GetPoolsWithPoolIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Pool>> {
         if (requestParameters['poolId'] == null) {
             throw new runtime.RequiredError(
                 'poolId',
-                'Required parameter "poolId" was null or undefined when calling getSwtDataPoolsWithPoolId().'
+                'Required parameter "poolId" was null or undefined when calling getPoolsWithPoolId().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataPoolsWithPoolId().'
+                'Required parameter "office" was null or undefined when calling getPoolsWithPoolId().'
             );
         }
 
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataPoolsWithPoolId().'
+                'Required parameter "projectId" was null or undefined when calling getPoolsWithPoolId().'
             );
         }
 
@@ -193,10 +193,10 @@ export class PoolsApi extends runtime.BaseAPI {
 
     /**
      * Retrieves requested Pool
-     * Get swtData pools with poolId
+     * Get CwmsData pools with poolId
      */
-    async getSwtDataPoolsWithPoolId(requestParameters: GetSwtDataPoolsWithPoolIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Pool> {
-        const response = await this.getSwtDataPoolsWithPoolIdRaw(requestParameters, initOverrides);
+    async getPoolsWithPoolId(requestParameters: GetPoolsWithPoolIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Pool> {
+        const response = await this.getPoolsWithPoolIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

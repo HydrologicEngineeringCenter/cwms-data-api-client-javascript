@@ -28,29 +28,29 @@ import {
     EmbankmentToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataProjectsEmbankmentsWithNameRequest {
+export interface DeleteCwmsDataProjectsEmbankmentsWithNameRequest {
     name: string;
     office: string;
     method?: DeleteMethod;
 }
 
-export interface GetSwtDataProjectsEmbankmentsRequest {
+export interface GetProjectsEmbankmentsRequest {
     projectId: string;
     office?: string;
 }
 
-export interface GetSwtDataProjectsEmbankmentsWithNameRequest {
+export interface GetProjectsEmbankmentsWithNameRequest {
     name: string;
     office: string;
 }
 
-export interface PatchSwtDataProjectsEmbankmentsWithNameRequest {
+export interface PatchCwmsDataProjectsEmbankmentsWithNameRequest {
     name: string;
     name2: string;
     office: string;
 }
 
-export interface PostSwtDataProjectsEmbankmentsRequest {
+export interface PostCwmsDataProjectsEmbankmentsRequest {
     embankment: Embankment;
     failIfExists?: boolean;
 }
@@ -62,20 +62,20 @@ export class EmbankmentsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Embankment
-     * Delete swtData projects embankments with name
+     * Delete CwmsData projects embankments with name
      */
-    async deleteSwtDataProjectsEmbankmentsWithNameRaw(requestParameters: DeleteSwtDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataProjectsEmbankmentsWithNameRaw(requestParameters: DeleteCwmsDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataProjectsEmbankmentsWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataProjectsEmbankmentsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataProjectsEmbankmentsWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataProjectsEmbankmentsWithName().'
             );
         }
 
@@ -107,21 +107,21 @@ export class EmbankmentsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Embankment
-     * Delete swtData projects embankments with name
+     * Delete CwmsData projects embankments with name
      */
-    async deleteSwtDataProjectsEmbankmentsWithName(requestParameters: DeleteSwtDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataProjectsEmbankmentsWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataProjectsEmbankmentsWithName(requestParameters: DeleteCwmsDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataProjectsEmbankmentsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns matching CWMS Embankment Data for a Reservoir Project.
-     * Get swtData projects embankments
+     * Get CwmsData projects embankments
      */
-    async getSwtDataProjectsEmbankmentsRaw(requestParameters: GetSwtDataProjectsEmbankmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Embankment>>> {
+    async getProjectsEmbankmentsRaw(requestParameters: GetProjectsEmbankmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Embankment>>> {
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
-                'Required parameter "projectId" was null or undefined when calling getSwtDataProjectsEmbankments().'
+                'Required parameter "projectId" was null or undefined when calling getProjectsEmbankments().'
             );
         }
 
@@ -153,29 +153,29 @@ export class EmbankmentsApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS Embankment Data for a Reservoir Project.
-     * Get swtData projects embankments
+     * Get CwmsData projects embankments
      */
-    async getSwtDataProjectsEmbankments(requestParameters: GetSwtDataProjectsEmbankmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Embankment>> {
-        const response = await this.getSwtDataProjectsEmbankmentsRaw(requestParameters, initOverrides);
+    async getProjectsEmbankments(requestParameters: GetProjectsEmbankmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Embankment>> {
+        const response = await this.getProjectsEmbankmentsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Embankment Data
-     * Get swtData projects embankments with name
+     * Get CwmsData projects embankments with name
      */
-    async getSwtDataProjectsEmbankmentsWithNameRaw(requestParameters: GetSwtDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Embankment>>> {
+    async getProjectsEmbankmentsWithNameRaw(requestParameters: GetProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Embankment>>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataProjectsEmbankmentsWithName().'
+                'Required parameter "name" was null or undefined when calling getProjectsEmbankmentsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataProjectsEmbankmentsWithName().'
+                'Required parameter "office" was null or undefined when calling getProjectsEmbankmentsWithName().'
             );
         }
 
@@ -203,36 +203,36 @@ export class EmbankmentsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Embankment Data
-     * Get swtData projects embankments with name
+     * Get CwmsData projects embankments with name
      */
-    async getSwtDataProjectsEmbankmentsWithName(requestParameters: GetSwtDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Embankment>> {
-        const response = await this.getSwtDataProjectsEmbankmentsWithNameRaw(requestParameters, initOverrides);
+    async getProjectsEmbankmentsWithName(requestParameters: GetProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Embankment>> {
+        const response = await this.getProjectsEmbankmentsWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Rename CWMS Embankment
-     * Patch swtData projects embankments with name
+     * Patch CwmsData projects embankments with name
      */
-    async patchSwtDataProjectsEmbankmentsWithNameRaw(requestParameters: PatchSwtDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataProjectsEmbankmentsWithNameRaw(requestParameters: PatchCwmsDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataProjectsEmbankmentsWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataProjectsEmbankmentsWithName().'
             );
         }
 
         if (requestParameters['name2'] == null) {
             throw new runtime.RequiredError(
                 'name2',
-                'Required parameter "name2" was null or undefined when calling patchSwtDataProjectsEmbankmentsWithName().'
+                'Required parameter "name2" was null or undefined when calling patchCwmsDataProjectsEmbankmentsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling patchSwtDataProjectsEmbankmentsWithName().'
+                'Required parameter "office" was null or undefined when calling patchCwmsDataProjectsEmbankmentsWithName().'
             );
         }
 
@@ -264,21 +264,21 @@ export class EmbankmentsApi extends runtime.BaseAPI {
 
     /**
      * Rename CWMS Embankment
-     * Patch swtData projects embankments with name
+     * Patch CwmsData projects embankments with name
      */
-    async patchSwtDataProjectsEmbankmentsWithName(requestParameters: PatchSwtDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataProjectsEmbankmentsWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataProjectsEmbankmentsWithName(requestParameters: PatchCwmsDataProjectsEmbankmentsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataProjectsEmbankmentsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Embankment
-     * Post swtData projects embankments
+     * Post CwmsData projects embankments
      */
-    async postSwtDataProjectsEmbankmentsRaw(requestParameters: PostSwtDataProjectsEmbankmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataProjectsEmbankmentsRaw(requestParameters: PostCwmsDataProjectsEmbankmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['embankment'] == null) {
             throw new runtime.RequiredError(
                 'embankment',
-                'Required parameter "embankment" was null or undefined when calling postSwtDataProjectsEmbankments().'
+                'Required parameter "embankment" was null or undefined when calling postCwmsDataProjectsEmbankments().'
             );
         }
 
@@ -309,10 +309,10 @@ export class EmbankmentsApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Embankment
-     * Post swtData projects embankments
+     * Post CwmsData projects embankments
      */
-    async postSwtDataProjectsEmbankments(requestParameters: PostSwtDataProjectsEmbankmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataProjectsEmbankmentsRaw(requestParameters, initOverrides);
+    async postCwmsDataProjectsEmbankments(requestParameters: PostCwmsDataProjectsEmbankmentsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataProjectsEmbankmentsRaw(requestParameters, initOverrides);
     }
 
 }

@@ -16,11 +16,11 @@ import type { County } from '../models/index';
  */
 export declare class CountiesApi extends runtime.BaseAPI {
     /**
-     * Get swtData counties
+     * Get CwmsData counties
      */
-    getSwtDataCountiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<County>>>;
+    getCountiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<County>>>;
     /**
-     * Get swtData counties
+     * Get CwmsData counties
      */
-    getSwtDataCounties(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<County>>;
+    getCounties(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<County>>;
 }

@@ -13,19 +13,19 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeseriesIntervalUnitsInnerDurationToJSON = exports.TimeseriesIntervalUnitsInnerDurationFromJSONTyped = exports.TimeseriesIntervalUnitsInnerDurationFromJSON = exports.instanceOfTimeseriesIntervalUnitsInnerDuration = void 0;
+exports.TimeSeriesIntervalUnitsInnerDurationToJSON = exports.TimeSeriesIntervalUnitsInnerDurationFromJSONTyped = exports.TimeSeriesIntervalUnitsInnerDurationFromJSON = exports.instanceOfTimeSeriesIntervalUnitsInnerDuration = void 0;
 /**
- * Check if a given object implements the TimeseriesIntervalUnitsInnerDuration interface.
+ * Check if a given object implements the TimeSeriesIntervalUnitsInnerDuration interface.
  */
-function instanceOfTimeseriesIntervalUnitsInnerDuration(value) {
+function instanceOfTimeSeriesIntervalUnitsInnerDuration(value) {
     return true;
 }
-exports.instanceOfTimeseriesIntervalUnitsInnerDuration = instanceOfTimeseriesIntervalUnitsInnerDuration;
-function TimeseriesIntervalUnitsInnerDurationFromJSON(json) {
-    return TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json, false);
+exports.instanceOfTimeSeriesIntervalUnitsInnerDuration = instanceOfTimeSeriesIntervalUnitsInnerDuration;
+function TimeSeriesIntervalUnitsInnerDurationFromJSON(json) {
+    return TimeSeriesIntervalUnitsInnerDurationFromJSONTyped(json, false);
 }
-exports.TimeseriesIntervalUnitsInnerDurationFromJSON = TimeseriesIntervalUnitsInnerDurationFromJSON;
-function TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json, ignoreDiscriminator) {
+exports.TimeSeriesIntervalUnitsInnerDurationFromJSON = TimeSeriesIntervalUnitsInnerDurationFromJSON;
+function TimeSeriesIntervalUnitsInnerDurationFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -36,8 +36,8 @@ function TimeseriesIntervalUnitsInnerDurationFromJSONTyped(json, ignoreDiscrimin
         'negative': json['negative'] == null ? undefined : json['negative'],
     };
 }
-exports.TimeseriesIntervalUnitsInnerDurationFromJSONTyped = TimeseriesIntervalUnitsInnerDurationFromJSONTyped;
-function TimeseriesIntervalUnitsInnerDurationToJSON(value) {
+exports.TimeSeriesIntervalUnitsInnerDurationFromJSONTyped = TimeSeriesIntervalUnitsInnerDurationFromJSONTyped;
+function TimeSeriesIntervalUnitsInnerDurationToJSON(value) {
     if (value == null) {
         return value;
     }
@@ -48,4 +48,4 @@ function TimeseriesIntervalUnitsInnerDurationToJSON(value) {
         'negative': value['negative'],
     };
 }
-exports.TimeseriesIntervalUnitsInnerDurationToJSON = TimeseriesIntervalUnitsInnerDurationToJSON;
+exports.TimeSeriesIntervalUnitsInnerDurationToJSON = TimeSeriesIntervalUnitsInnerDurationToJSON;

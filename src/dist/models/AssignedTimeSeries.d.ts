@@ -12,50 +12,50 @@
 /**
  *
  * @export
- * @interface AssignedTimeseries
+ * @interface AssignedTimeSeries
  */
-export interface AssignedTimeseries {
+export interface AssignedTimeSeries {
     /**
      *
      * @type {string}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     officeId?: string;
     /**
      *
      * @type {string}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     timeseriesId?: string;
     /**
      *
      * @type {number}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     tsCode?: number;
     /**
      *
      * @type {string}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     aliasId?: string;
     /**
      *
      * @type {string}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     refTsId?: string;
     /**
      *
      * @type {number}
-     * @memberof AssignedTimeseries
+     * @memberof AssignedTimeSeries
      */
     attribute?: number;
 }
 /**
- * Check if a given object implements the AssignedTimeseries interface.
+ * Check if a given object implements the AssignedTimeSeries interface.
  */
-export declare function instanceOfAssignedTimeseries(value: object): boolean;
-export declare function AssignedTimeseriesFromJSON(json: any): AssignedTimeseries;
-export declare function AssignedTimeseriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssignedTimeseries;
-export declare function AssignedTimeseriesToJSON(value?: AssignedTimeseries | null): any;
+export declare function instanceOfAssignedTimeSeries(value: object): boolean;
+export declare function AssignedTimeSeriesFromJSON(json: any): AssignedTimeSeries;
+export declare function AssignedTimeSeriesFromJSONTyped(json: any, ignoreDiscriminator: boolean): AssignedTimeSeries;
+export declare function AssignedTimeSeriesToJSON(value?: AssignedTimeSeries | null): any;

@@ -12,32 +12,32 @@
 /**
  *
  * @export
- * @interface TimeseriesColumn
+ * @interface TimeSeriesColumn
  */
-export interface TimeseriesColumn {
+export interface TimeSeriesColumn {
     /**
      *
      * @type {string}
-     * @memberof TimeseriesColumn
+     * @memberof TimeSeriesColumn
      */
     name?: string;
     /**
      *
      * @type {number}
-     * @memberof TimeseriesColumn
+     * @memberof TimeSeriesColumn
      */
     ordinal?: number;
     /**
      *
      * @type {string}
-     * @memberof TimeseriesColumn
+     * @memberof TimeSeriesColumn
      */
     datatype?: string;
 }
 /**
- * Check if a given object implements the TimeseriesColumn interface.
+ * Check if a given object implements the TimeSeriesColumn interface.
  */
-export declare function instanceOfTimeseriesColumn(value: object): boolean;
-export declare function TimeseriesColumnFromJSON(json: any): TimeseriesColumn;
-export declare function TimeseriesColumnFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesColumn;
-export declare function TimeseriesColumnToJSON(value?: TimeseriesColumn | null): any;
+export declare function instanceOfTimeSeriesColumn(value: object): boolean;
+export declare function TimeSeriesColumnFromJSON(json: any): TimeSeriesColumn;
+export declare function TimeSeriesColumnFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesColumn;
+export declare function TimeSeriesColumnToJSON(value?: TimeSeriesColumn | null): any;

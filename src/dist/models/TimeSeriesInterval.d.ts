@@ -9,48 +9,48 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { TimeseriesIntervalUnitsInner } from './TimeseriesIntervalUnitsInner';
+import type { TimeSeriesIntervalUnitsInner } from './TimeSeriesIntervalUnitsInner';
 /**
  * The interval of the time-series, in ISO-8601 duration format
  * @export
- * @interface TimeseriesInterval
+ * @interface TimeSeriesInterval
  */
-export interface TimeseriesInterval {
+export interface TimeSeriesInterval {
     /**
      *
      * @type {number}
-     * @memberof TimeseriesInterval
+     * @memberof TimeSeriesInterval
      */
     seconds?: number;
     /**
      *
-     * @type {Array<TimeseriesIntervalUnitsInner>}
-     * @memberof TimeseriesInterval
+     * @type {Array<TimeSeriesIntervalUnitsInner>}
+     * @memberof TimeSeriesInterval
      */
-    units?: Array<TimeseriesIntervalUnitsInner>;
+    units?: Array<TimeSeriesIntervalUnitsInner>;
     /**
      *
      * @type {number}
-     * @memberof TimeseriesInterval
+     * @memberof TimeSeriesInterval
      */
     nano?: number;
     /**
      *
      * @type {boolean}
-     * @memberof TimeseriesInterval
+     * @memberof TimeSeriesInterval
      */
     zero?: boolean;
     /**
      *
      * @type {boolean}
-     * @memberof TimeseriesInterval
+     * @memberof TimeSeriesInterval
      */
     negative?: boolean;
 }
 /**
- * Check if a given object implements the TimeseriesInterval interface.
+ * Check if a given object implements the TimeSeriesInterval interface.
  */
-export declare function instanceOfTimeseriesInterval(value: object): boolean;
-export declare function TimeseriesIntervalFromJSON(json: any): TimeseriesInterval;
-export declare function TimeseriesIntervalFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesInterval;
-export declare function TimeseriesIntervalToJSON(value?: TimeseriesInterval | null): any;
+export declare function instanceOfTimeSeriesInterval(value: object): boolean;
+export declare function TimeSeriesIntervalFromJSON(json: any): TimeSeriesInterval;
+export declare function TimeSeriesIntervalFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesInterval;
+export declare function TimeSeriesIntervalToJSON(value?: TimeSeriesInterval | null): any;

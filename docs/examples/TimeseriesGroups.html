@@ -87,7 +87,7 @@
 <b>To Install:</b>
 <code class="language-shell">npm install cwmsjs --save</code><br>
 <pre>
-<code class="language-javascript">import { TimeseriesGroupsApi } from "cwmsjs";
+<code class="language-javascript">import { TimeSeriesGroupsApi } from "cwmsjs";
 
 
 // ⚠️ NOTE!
@@ -97,9 +97,9 @@
 // npm install cwmsjs --save
 
 // Initialize the timeseries groups api with the default config
-const tsg_api = new TimeseriesGroupsApi();
+const tsg_api = new TimeSeriesGroupsApi();
 // Fetch ALL timeseries groups for the given office
-tsg_api.getCwmsDataTimeseriesGroup({ office: 'SWT' }).then((data) => {
+tsg_api.getTimeSeriesGroup({ office: 'SWT' }).then((data) => {
     console.log(data[0]);
     data.forEach((group) => {
         console.log(group.assignedTimeSeries);
@@ -111,7 +111,7 @@ tsg_api.getCwmsDataTimeseriesGroup({ office: 'SWT' }).then((data) => {
 
 // Fetch a specific timeseries groups given an ID for the given office
 tsg_api
-    .getCwmsDataTimeseriesGroupWithGroupId({
+    .getTimeSeriesGroupWithGroupId({
         groupId: 'USGS TS Data Acquisition',
         office: 'CWMS',
         categoryId: 'Data Acquisition',
@@ -149,9 +149,9 @@ to download bundle.js to your system</li>
 // npm install cwmsjs --save
 
 // Initialize the timeseries groups api with the default config
-const tsg_api = new cwmsjs.TimeseriesGroupsApi();
+const tsg_api = new cwmsjs.TimeSeriesGroupsApi();
 // Fetch ALL timeseries groups for the given office
-tsg_api.getCwmsDataTimeseriesGroup({ office: &#039;SWT&#039; }).then((data) =&gt; {
+tsg_api.getTimeSeriesGroup({ office: &#039;SWT&#039; }).then((data) =&gt; {
     console.log(data[0]);
     data.forEach((group) =&gt; {
         console.log(group.assignedTimeSeries);
@@ -163,7 +163,7 @@ tsg_api.getCwmsDataTimeseriesGroup({ office: &#039;SWT&#039; }).then((data) =&gt
 
 // Fetch a specific timeseries groups given an ID for the given office
 tsg_api
-    .getCwmsDataTimeseriesGroupWithGroupId({
+    .getTimeSeriesGroupWithGroupId({
         groupId: &#039;USGS TS Data Acquisition&#039;,
         office: &#039;CWMS&#039;,
         categoryId: &#039;Data Acquisition&#039;,

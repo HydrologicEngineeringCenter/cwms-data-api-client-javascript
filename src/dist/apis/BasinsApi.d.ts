@@ -11,21 +11,21 @@
  */
 import * as runtime from '../runtime';
 import type { Basin, DeleteMethod } from '../models/index';
-export interface DeleteSwtDataBasinsWithNameRequest {
+export interface DeleteCwmsDataBasinsWithNameRequest {
     name: string;
     office: string;
     method: DeleteMethod;
 }
-export interface GetSwtDataBasinsRequest {
+export interface GetBasinsRequest {
     office?: string;
     unit?: string;
 }
-export interface GetSwtDataBasinsWithNameRequest {
+export interface GetBasinsWithNameRequest {
     name: string;
     office: string;
     unit?: string;
 }
-export interface PatchSwtDataBasinsWithNameRequest {
+export interface PatchCwmsDataBasinsWithNameRequest {
     name: string;
     name2: string;
     office: string;
@@ -36,52 +36,52 @@ export interface PatchSwtDataBasinsWithNameRequest {
 export declare class BasinsApi extends runtime.BaseAPI {
     /**
      * Renames CWMS Basin
-     * Delete swtData basins with name
+     * Delete CwmsData basins with name
      */
-    deleteSwtDataBasinsWithNameRaw(requestParameters: DeleteSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataBasinsWithNameRaw(requestParameters: DeleteCwmsDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Renames CWMS Basin
-     * Delete swtData basins with name
+     * Delete CwmsData basins with name
      */
-    deleteSwtDataBasinsWithName(requestParameters: DeleteSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataBasinsWithName(requestParameters: DeleteCwmsDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins
+     * Get CwmsData basins
      */
-    getSwtDataBasinsRaw(requestParameters: GetSwtDataBasinsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Basin>>;
+    getBasinsRaw(requestParameters: GetBasinsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Basin>>;
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins
+     * Get CwmsData basins
      */
-    getSwtDataBasins(requestParameters?: GetSwtDataBasinsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Basin>;
+    getBasins(requestParameters?: GetBasinsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Basin>;
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins with name
+     * Get CwmsData basins with name
      */
-    getSwtDataBasinsWithNameRaw(requestParameters: GetSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Basin>>;
+    getBasinsWithNameRaw(requestParameters: GetBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Basin>>;
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins with name
+     * Get CwmsData basins with name
      */
-    getSwtDataBasinsWithName(requestParameters: GetSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Basin>;
+    getBasinsWithName(requestParameters: GetBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Basin>;
     /**
      * Renames CWMS Basin
-     * Patch swtData basins with name
+     * Patch CwmsData basins with name
      */
-    patchSwtDataBasinsWithNameRaw(requestParameters: PatchSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    patchCwmsDataBasinsWithNameRaw(requestParameters: PatchCwmsDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Renames CWMS Basin
-     * Patch swtData basins with name
+     * Patch CwmsData basins with name
      */
-    patchSwtDataBasinsWithName(requestParameters: PatchSwtDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    patchCwmsDataBasinsWithName(requestParameters: PatchCwmsDataBasinsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Creates CWMS Basin
-     * Post swtData basins
+     * Post CwmsData basins
      */
-    postSwtDataBasinsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataBasinsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Creates CWMS Basin
-     * Post swtData basins
+     * Post CwmsData basins
      */
-    postSwtDataBasins(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataBasins(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

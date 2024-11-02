@@ -9,42 +9,42 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { TimeseriesIntervalUnitsInnerDuration } from './TimeseriesIntervalUnitsInnerDuration';
+import type { TimeSeriesIntervalUnitsInnerDuration } from './TimeSeriesIntervalUnitsInnerDuration';
 /**
  *
  * @export
- * @interface TimeseriesIntervalUnitsInner
+ * @interface TimeSeriesIntervalUnitsInner
  */
-export interface TimeseriesIntervalUnitsInner {
+export interface TimeSeriesIntervalUnitsInner {
     /**
      *
-     * @type {TimeseriesIntervalUnitsInnerDuration}
-     * @memberof TimeseriesIntervalUnitsInner
+     * @type {TimeSeriesIntervalUnitsInnerDuration}
+     * @memberof TimeSeriesIntervalUnitsInner
      */
-    duration?: TimeseriesIntervalUnitsInnerDuration;
+    duration?: TimeSeriesIntervalUnitsInnerDuration;
     /**
      *
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInner
+     * @memberof TimeSeriesIntervalUnitsInner
      */
     durationEstimated?: boolean;
     /**
      *
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInner
+     * @memberof TimeSeriesIntervalUnitsInner
      */
     dateBased?: boolean;
     /**
      *
      * @type {boolean}
-     * @memberof TimeseriesIntervalUnitsInner
+     * @memberof TimeSeriesIntervalUnitsInner
      */
     timeBased?: boolean;
 }
 /**
- * Check if a given object implements the TimeseriesIntervalUnitsInner interface.
+ * Check if a given object implements the TimeSeriesIntervalUnitsInner interface.
  */
-export declare function instanceOfTimeseriesIntervalUnitsInner(value: object): boolean;
-export declare function TimeseriesIntervalUnitsInnerFromJSON(json: any): TimeseriesIntervalUnitsInner;
-export declare function TimeseriesIntervalUnitsInnerFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesIntervalUnitsInner;
-export declare function TimeseriesIntervalUnitsInnerToJSON(value?: TimeseriesIntervalUnitsInner | null): any;
+export declare function instanceOfTimeSeriesIntervalUnitsInner(value: object): boolean;
+export declare function TimeSeriesIntervalUnitsInnerFromJSON(json: any): TimeSeriesIntervalUnitsInner;
+export declare function TimeSeriesIntervalUnitsInnerFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesIntervalUnitsInner;
+export declare function TimeSeriesIntervalUnitsInnerToJSON(value?: TimeSeriesIntervalUnitsInner | null): any;

@@ -12,15 +12,15 @@
  * Do not edit the class manually.
  */
 /**
- * Check if a given object implements the TimeseriesColumn interface.
+ * Check if a given object implements the TimeSeriesColumn interface.
  */
-export function instanceOfTimeseriesColumn(value) {
+export function instanceOfTimeSeriesColumn(value) {
     return true;
 }
-export function TimeseriesColumnFromJSON(json) {
-    return TimeseriesColumnFromJSONTyped(json, false);
+export function TimeSeriesColumnFromJSON(json) {
+    return TimeSeriesColumnFromJSONTyped(json, false);
 }
-export function TimeseriesColumnFromJSONTyped(json, ignoreDiscriminator) {
+export function TimeSeriesColumnFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
@@ -30,7 +30,7 @@ export function TimeseriesColumnFromJSONTyped(json, ignoreDiscriminator) {
         'datatype': json['datatype'] == null ? undefined : json['datatype'],
     };
 }
-export function TimeseriesColumnToJSON(value) {
+export function TimeSeriesColumnToJSON(value) {
     if (value == null) {
         return value;
     }

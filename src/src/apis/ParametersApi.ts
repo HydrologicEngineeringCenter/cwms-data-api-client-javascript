@@ -25,7 +25,7 @@ import {
     ParameterToJSON,
 } from '../models/index';
 
-export interface GetSwtDataParametersRequest {
+export interface GetParametersRequest {
     format?: string;
     office?: string;
 }
@@ -36,9 +36,9 @@ export interface GetSwtDataParametersRequest {
 export class ParametersApi extends runtime.BaseAPI {
 
     /**
-     * Get swtData parameters
+     * Get CwmsData parameters
      */
-    async getSwtDataParametersRaw(requestParameters: GetSwtDataParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Parameter>>> {
+    async getParametersRaw(requestParameters: GetParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Parameter>>> {
         const queryParameters: any = {};
 
         if (requestParameters['format'] != null) {
@@ -66,10 +66,10 @@ export class ParametersApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData parameters
+     * Get CwmsData parameters
      */
-    async getSwtDataParameters(requestParameters: GetSwtDataParametersRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Parameter>> {
-        const response = await this.getSwtDataParametersRaw(requestParameters, initOverrides);
+    async getParameters(requestParameters: GetParametersRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Parameter>> {
+        const response = await this.getParametersRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

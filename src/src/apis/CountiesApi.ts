@@ -31,9 +31,9 @@ import {
 export class CountiesApi extends runtime.BaseAPI {
 
     /**
-     * Get swtData counties
+     * Get CwmsData counties
      */
-    async getSwtDataCountiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<County>>> {
+    async getCountiesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<County>>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -53,10 +53,10 @@ export class CountiesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Get swtData counties
+     * Get CwmsData counties
      */
-    async getSwtDataCounties(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<County>> {
-        const response = await this.getSwtDataCountiesRaw(initOverrides);
+    async getCounties(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<County>> {
+        const response = await this.getCountiesRaw(initOverrides);
         return await response.value();
     }
 

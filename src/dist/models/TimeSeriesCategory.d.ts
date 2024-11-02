@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
- * A representation of a Timeseries category
+ * A representation of a TimeSeries category
  * @export
  * @interface TimeseriesCategory
  */

@@ -97,7 +97,7 @@ const config_v2 = new Configuration({
 });
 const r_api = new RatingsApi(config_v2);
 r_api
-    .getCwmsDataRatings({
+    .getRatings({
         office: 'SWT',
     })
     .then((data) => {
@@ -105,7 +105,7 @@ r_api
     });
 //   Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
 r_api
-    .getCwmsDataRatingsSpec({
+    .getRatingsSpec({
         office: 'SWT',
         ratingIdMask: 'KEYS.*',
     })
@@ -114,7 +114,7 @@ r_api
     });
 //   Fetch the CWMS Rating templates for the SPK OFFICE
 r_api
-    .getCwmsDataRatingsTemplate({
+    .getRatingsTemplate({
         office: 'SPK',
     })
     .then((data) => {
@@ -122,7 +122,7 @@ r_api
     });
 
 //   r_api
-//     .getCwmsDataRatingsTemplateWithTemplateId({
+//     .getRatingsTemplateWithTemplateId({
 //       office: "SWT",
 //       templateId: "Elev-Alt;Stor-Alt.Linear",
 //     })
@@ -155,7 +155,7 @@ const config_v2 = new cwmsjs.Configuration({
 });
 const r_api = new cwmsjs.RatingsApi(config_v2);
 r_api
-    .getCwmsDataRatings({
+    .getRatings({
         office: &#039;SWT&#039;,
     })
     .then((data) =&gt; {
@@ -163,7 +163,7 @@ r_api
     });
 //   Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
 r_api
-    .getCwmsDataRatingsSpec({
+    .getRatingsSpec({
         office: &#039;SWT&#039;,
         ratingIdMask: &#039;KEYS.*&#039;,
     })
@@ -172,7 +172,7 @@ r_api
     });
 //   Fetch the CWMS Rating templates for the SPK OFFICE
 r_api
-    .getCwmsDataRatingsTemplate({
+    .getRatingsTemplate({
         office: &#039;SPK&#039;,
     })
     .then((data) =&gt; {
@@ -180,7 +180,7 @@ r_api
     });
 
 //   r_api
-//     .getCwmsDataRatingsTemplateWithTemplateId({
+//     .getRatingsTemplateWithTemplateId({
 //       office: &quot;SWT&quot;,
 //       templateId: &quot;Elev-Alt;Stor-Alt.Linear&quot;,
 //     })

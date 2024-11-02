@@ -92,7 +92,7 @@
 
 const o_api = new OfficesApi();
 o_api
-    .getCwmsDataOffices()
+    .getOffices()
     .then((data) => {
         console.log(data?.offices);
         console.log(data?.offices?.offices);
@@ -132,7 +132,7 @@ to download bundle.js to your system</li>
 &lt;script type=&quot;module&quot;&gt;
 const o_api = new cwmsjs.OfficesApi();
 o_api
-    .getCwmsDataOffices()
+    .getOffices()
     .then((data) =&gt; {
         console.log(data?.offices);
         console.log(data?.offices?.offices);

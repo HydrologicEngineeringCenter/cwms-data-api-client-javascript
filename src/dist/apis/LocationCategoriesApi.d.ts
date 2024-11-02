@@ -11,19 +11,19 @@
  */
 import * as runtime from '../runtime';
 import type { LocationCategory } from '../models/index';
-export interface DeleteSwtDataLocationCategoryWithCategoryIdRequest {
+export interface DeleteCwmsDataLocationCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
     cascadeDelete?: boolean;
 }
-export interface GetSwtDataLocationCategoryRequest {
+export interface GetLocationCategoryRequest {
     office?: string;
 }
-export interface GetSwtDataLocationCategoryWithCategoryIdRequest {
+export interface GetLocationCategoryWithCategoryIdRequest {
     categoryId: string;
     office: string;
 }
-export interface PostSwtDataLocationCategoryRequest {
+export interface PostCwmsDataLocationCategoryRequest {
     locationCategory: LocationCategory;
 }
 /**
@@ -32,42 +32,42 @@ export interface PostSwtDataLocationCategoryRequest {
 export declare class LocationCategoriesApi extends runtime.BaseAPI {
     /**
      * Deletes requested location category
-     * Delete swtData location category with categoryId
+     * Delete CwmsData location category with categoryId
      */
-    deleteSwtDataLocationCategoryWithCategoryIdRaw(requestParameters: DeleteSwtDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    deleteCwmsDataLocationCategoryWithCategoryIdRaw(requestParameters: DeleteCwmsDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes requested location category
-     * Delete swtData location category with categoryId
+     * Delete CwmsData location category with categoryId
      */
-    deleteSwtDataLocationCategoryWithCategoryId(requestParameters: DeleteSwtDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    deleteCwmsDataLocationCategoryWithCategoryId(requestParameters: DeleteCwmsDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns CWMS Location Category Data
-     * Get swtData location category
+     * Get CwmsData location category
      */
-    getSwtDataLocationCategoryRaw(requestParameters: GetSwtDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LocationCategory>>>;
+    getLocationCategoryRaw(requestParameters: GetLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LocationCategory>>>;
     /**
      * Returns CWMS Location Category Data
-     * Get swtData location category
+     * Get CwmsData location category
      */
-    getSwtDataLocationCategory(requestParameters?: GetSwtDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LocationCategory>>;
+    getLocationCategory(requestParameters?: GetLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LocationCategory>>;
     /**
      * Retrieves requested Location Category
-     * Get swtData location category with categoryId
+     * Get CwmsData location category with categoryId
      */
-    getSwtDataLocationCategoryWithCategoryIdRaw(requestParameters: GetSwtDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationCategory>>;
+    getLocationCategoryWithCategoryIdRaw(requestParameters: GetLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LocationCategory>>;
     /**
      * Retrieves requested Location Category
-     * Get swtData location category with categoryId
+     * Get CwmsData location category with categoryId
      */
-    getSwtDataLocationCategoryWithCategoryId(requestParameters: GetSwtDataLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationCategory>;
+    getLocationCategoryWithCategoryId(requestParameters: GetLocationCategoryWithCategoryIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LocationCategory>;
     /**
      * Create new LocationCategory
-     * Post swtData location category
+     * Post CwmsData location category
      */
-    postSwtDataLocationCategoryRaw(requestParameters: PostSwtDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    postCwmsDataLocationCategoryRaw(requestParameters: PostCwmsDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Create new LocationCategory
-     * Post swtData location category
+     * Post CwmsData location category
      */
-    postSwtDataLocationCategory(requestParameters: PostSwtDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    postCwmsDataLocationCategory(requestParameters: PostCwmsDataLocationCategoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

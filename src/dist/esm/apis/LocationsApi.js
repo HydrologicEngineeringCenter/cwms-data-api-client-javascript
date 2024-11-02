@@ -28,12 +28,12 @@ import { LocationFromJSON, LocationToJSON, } from '../models/index';
 export class LocationsApi extends runtime.BaseAPI {
     /**
      * Delete CWMS Location
-     * Delete swtData locations with locationId
+     * Delete CwmsData locations with locationId
      */
-    deleteSwtDataLocationsWithLocationIdRaw(requestParameters, initOverrides) {
+    deleteCwmsDataLocationsWithLocationIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['locationId'] == null) {
-                throw new runtime.RequiredError('locationId', 'Required parameter "locationId" was null or undefined when calling deleteSwtDataLocationsWithLocationId().');
+                throw new runtime.RequiredError('locationId', 'Required parameter "locationId" was null or undefined when calling deleteCwmsDataLocationsWithLocationId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -54,18 +54,18 @@ export class LocationsApi extends runtime.BaseAPI {
     }
     /**
      * Delete CWMS Location
-     * Delete swtData locations with locationId
+     * Delete CwmsData locations with locationId
      */
-    deleteSwtDataLocationsWithLocationId(requestParameters, initOverrides) {
+    deleteCwmsDataLocationsWithLocationId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Returns CWMS Location Data.  The Catalog end-point is also capable of retrieving lists of locations and can filter on additional fields.
-     * Get swtData locations
+     * Get CwmsData locations
      */
-    getSwtDataLocationsRaw(requestParameters, initOverrides) {
+    getLocationsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['names'] != null) {
@@ -98,25 +98,25 @@ export class LocationsApi extends runtime.BaseAPI {
     }
     /**
      * Returns CWMS Location Data.  The Catalog end-point is also capable of retrieving lists of locations and can filter on additional fields.
-     * Get swtData locations
+     * Get CwmsData locations
      */
-    getSwtDataLocations(requestParameters = {}, initOverrides) {
+    getLocations(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataLocationsRaw(requestParameters, initOverrides);
+            const response = yield this.getLocationsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Returns CWMS Location Data
-     * Get swtData locations with locationId
+     * Get CwmsData locations with locationId
      */
-    getSwtDataLocationsWithLocationIdRaw(requestParameters, initOverrides) {
+    getLocationsWithLocationIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['locationId'] == null) {
-                throw new runtime.RequiredError('locationId', 'Required parameter "locationId" was null or undefined when calling getSwtDataLocationsWithLocationId().');
+                throw new runtime.RequiredError('locationId', 'Required parameter "locationId" was null or undefined when calling getLocationsWithLocationId().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataLocationsWithLocationId().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getLocationsWithLocationId().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -140,25 +140,25 @@ export class LocationsApi extends runtime.BaseAPI {
     }
     /**
      * Returns CWMS Location Data
-     * Get swtData locations with locationId
+     * Get CwmsData locations with locationId
      */
-    getSwtDataLocationsWithLocationId(requestParameters, initOverrides) {
+    getLocationsWithLocationId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
+            const response = yield this.getLocationsWithLocationIdRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Update CWMS Location
-     * Patch swtData locations with locationId
+     * Patch CwmsData locations with locationId
      */
-    patchSwtDataLocationsWithLocationIdRaw(requestParameters, initOverrides) {
+    patchCwmsDataLocationsWithLocationIdRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['locationId'] == null) {
-                throw new runtime.RequiredError('locationId', 'Required parameter "locationId" was null or undefined when calling patchSwtDataLocationsWithLocationId().');
+                throw new runtime.RequiredError('locationId', 'Required parameter "locationId" was null or undefined when calling patchCwmsDataLocationsWithLocationId().');
             }
             if (requestParameters['location'] == null) {
-                throw new runtime.RequiredError('location', 'Required parameter "location" was null or undefined when calling patchSwtDataLocationsWithLocationId().');
+                throw new runtime.RequiredError('location', 'Required parameter "location" was null or undefined when calling patchCwmsDataLocationsWithLocationId().');
             }
             const queryParameters = {};
             const headerParameters = {};
@@ -178,21 +178,21 @@ export class LocationsApi extends runtime.BaseAPI {
     }
     /**
      * Update CWMS Location
-     * Patch swtData locations with locationId
+     * Patch CwmsData locations with locationId
      */
-    patchSwtDataLocationsWithLocationId(requestParameters, initOverrides) {
+    patchCwmsDataLocationsWithLocationId(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataLocationsWithLocationIdRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Create new CWMS Location
-     * Post swtData locations
+     * Post CwmsData locations
      */
-    postSwtDataLocationsRaw(requestParameters, initOverrides) {
+    postCwmsDataLocationsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['location'] == null) {
-                throw new runtime.RequiredError('location', 'Required parameter "location" was null or undefined when calling postSwtDataLocations().');
+                throw new runtime.RequiredError('location', 'Required parameter "location" was null or undefined when calling postCwmsDataLocations().');
             }
             const queryParameters = {};
             const headerParameters = {};
@@ -212,11 +212,11 @@ export class LocationsApi extends runtime.BaseAPI {
     }
     /**
      * Create new CWMS Location
-     * Post swtData locations
+     * Post CwmsData locations
      */
-    postSwtDataLocations(requestParameters, initOverrides) {
+    postCwmsDataLocations(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataLocationsRaw(requestParameters, initOverrides);
+            yield this.postCwmsDataLocationsRaw(requestParameters, initOverrides);
         });
     }
 }

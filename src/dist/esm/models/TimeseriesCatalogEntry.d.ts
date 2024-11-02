@@ -13,56 +13,56 @@ import type { Extents } from './Extents';
 /**
  *
  * @export
- * @interface TimeseriesCatalogEntry
+ * @interface TimeSeriesCatalogEntry
  */
-export interface TimeseriesCatalogEntry {
+export interface TimeSeriesCatalogEntry {
     /**
      *
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     office?: string;
     /**
      *
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     name?: string;
     /**
      *
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     units?: string;
     /**
      *
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     interval?: string;
     /**
      * Offset from top of interval
      * @type {number}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     intervalOffset?: number;
     /**
      * Only on 21.1.1 Database. The timezone the Interval Offset is from.
      * @type {string}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     timeZone?: string;
     /**
      *
      * @type {Array<Extents>}
-     * @memberof TimeseriesCatalogEntry
+     * @memberof TimeSeriesCatalogEntry
      */
     extents?: Array<Extents>;
 }
 /**
- * Check if a given object implements the TimeseriesCatalogEntry interface.
+ * Check if a given object implements the TimeSeriesCatalogEntry interface.
  */
-export declare function instanceOfTimeseriesCatalogEntry(value: object): boolean;
-export declare function TimeseriesCatalogEntryFromJSON(json: any): TimeseriesCatalogEntry;
-export declare function TimeseriesCatalogEntryFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeseriesCatalogEntry;
-export declare function TimeseriesCatalogEntryToJSON(value?: TimeseriesCatalogEntry | null): any;
+export declare function instanceOfTimeSeriesCatalogEntry(value: object): boolean;
+export declare function TimeSeriesCatalogEntryFromJSON(json: any): TimeSeriesCatalogEntry;
+export declare function TimeSeriesCatalogEntryFromJSONTyped(json: any, ignoreDiscriminator: boolean): TimeSeriesCatalogEntry;
+export declare function TimeSeriesCatalogEntryToJSON(value?: TimeSeriesCatalogEntry | null): any;

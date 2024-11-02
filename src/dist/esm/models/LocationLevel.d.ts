@@ -29,7 +29,7 @@ export interface LocationLevel {
      */
     locationLevelId: string;
     /**
-     * Timeseries ID (e.g. from the times series catalog) to use as the location level. Mutually exclusive with seasonalValues and siParameterUnitsConstantValue
+     * TimeSeries ID (e.g. from the times series catalog) to use as the location level. Mutually exclusive with seasonalValues and siParameterUnitsConstantValue
      * @type {string}
      * @memberof LocationLevel
      */
@@ -53,7 +53,7 @@ export interface LocationLevel {
      */
     parameterId?: string;
     /**
-     * Single value for this location level. Mutually exclusive with seasonableTimeseriesId and seasonValues.
+     * Single value for this location level. Mutually exclusive with seasonableTimeSeriesId and seasonValues.
      * @type {number}
      * @memberof LocationLevel
      */
@@ -143,7 +143,7 @@ export interface LocationLevel {
      */
     attributeComment?: string;
     /**
-     * List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeseriesId and siParameterUnitsConstantValue
+     * List of Repeating seasonal values. The values repeater after the specified interval. A yearly interval seasonable could have 12 different values, one for each month for example. Mutually exclusive with seasonalTimeSeriesId and siParameterUnitsConstantValue
      * @type {Array<SeasonalValueBean>}
      * @memberof LocationLevel
      */

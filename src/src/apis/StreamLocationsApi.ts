@@ -25,13 +25,13 @@ import {
     StreamLocationToJSON,
 } from '../models/index';
 
-export interface DeleteSwtDataStreamLocationsWithNameRequest {
+export interface DeleteCwmsDataStreamLocationsWithNameRequest {
     name: string;
     office: string;
     streamId: string;
 }
 
-export interface GetSwtDataStreamLocationsRequest {
+export interface GetStreamLocationsRequest {
     officeMask?: string;
     streamIdMask?: string;
     nameMask?: string;
@@ -40,7 +40,7 @@ export interface GetSwtDataStreamLocationsRequest {
     areaUnit?: string;
 }
 
-export interface GetSwtDataStreamLocationsWithNameRequest {
+export interface GetStreamLocationsWithNameRequest {
     name: string;
     office: string;
     streamId: string;
@@ -49,7 +49,7 @@ export interface GetSwtDataStreamLocationsWithNameRequest {
     areaUnit?: string;
 }
 
-export interface GetSwtDataStreamLocationsWithOfficeWithNameDownstreamLocationsRequest {
+export interface GetStreamLocationsWithOfficeWithNameDownstreamLocationsRequest {
     office: string;
     name: string;
     allDownstream?: boolean;
@@ -59,7 +59,7 @@ export interface GetSwtDataStreamLocationsWithOfficeWithNameDownstreamLocationsR
     areaUnit?: string;
 }
 
-export interface GetSwtDataStreamLocationsWithOfficeWithNameUpstreamLocationsRequest {
+export interface GetStreamLocationsWithOfficeWithNameUpstreamLocationsRequest {
     office: string;
     name: string;
     allUpstream?: boolean;
@@ -69,12 +69,12 @@ export interface GetSwtDataStreamLocationsWithOfficeWithNameUpstreamLocationsReq
     areaUnit?: string;
 }
 
-export interface PatchSwtDataStreamLocationsWithNameRequest {
+export interface PatchCwmsDataStreamLocationsWithNameRequest {
     name: string;
     streamLocation: StreamLocation;
 }
 
-export interface PostSwtDataStreamLocationsRequest {
+export interface PostCwmsDataStreamLocationsRequest {
     streamLocation: StreamLocation;
     failIfExists?: boolean;
 }
@@ -86,27 +86,27 @@ export class StreamLocationsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Stream Location
-     * Delete swtData streamLocations with name
+     * Delete CwmsData streamLocations with name
      */
-    async deleteSwtDataStreamLocationsWithNameRaw(requestParameters: DeleteSwtDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async deleteCwmsDataStreamLocationsWithNameRaw(requestParameters: DeleteCwmsDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling deleteSwtDataStreamLocationsWithName().'
+                'Required parameter "name" was null or undefined when calling deleteCwmsDataStreamLocationsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling deleteSwtDataStreamLocationsWithName().'
+                'Required parameter "office" was null or undefined when calling deleteCwmsDataStreamLocationsWithName().'
             );
         }
 
         if (requestParameters['streamId'] == null) {
             throw new runtime.RequiredError(
                 'streamId',
-                'Required parameter "streamId" was null or undefined when calling deleteSwtDataStreamLocationsWithName().'
+                'Required parameter "streamId" was null or undefined when calling deleteCwmsDataStreamLocationsWithName().'
             );
         }
 
@@ -138,17 +138,17 @@ export class StreamLocationsApi extends runtime.BaseAPI {
 
     /**
      * Delete CWMS Stream Location
-     * Delete swtData streamLocations with name
+     * Delete CwmsData streamLocations with name
      */
-    async deleteSwtDataStreamLocationsWithName(requestParameters: DeleteSwtDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.deleteSwtDataStreamLocationsWithNameRaw(requestParameters, initOverrides);
+    async deleteCwmsDataStreamLocationsWithName(requestParameters: DeleteCwmsDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCwmsDataStreamLocationsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns matching CWMS Stream Location Data for a Reservoir Project.
-     * Get swtData streamLocations
+     * Get CwmsData streamLocations
      */
-    async getSwtDataStreamLocationsRaw(requestParameters: GetSwtDataStreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamLocation>>> {
+    async getStreamLocationsRaw(requestParameters: GetStreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamLocation>>> {
         const queryParameters: any = {};
 
         if (requestParameters['officeMask'] != null) {
@@ -193,36 +193,36 @@ export class StreamLocationsApi extends runtime.BaseAPI {
 
     /**
      * Returns matching CWMS Stream Location Data for a Reservoir Project.
-     * Get swtData streamLocations
+     * Get CwmsData streamLocations
      */
-    async getSwtDataStreamLocations(requestParameters: GetSwtDataStreamLocationsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamLocation>> {
-        const response = await this.getSwtDataStreamLocationsRaw(requestParameters, initOverrides);
+    async getStreamLocations(requestParameters: GetStreamLocationsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamLocation>> {
+        const response = await this.getStreamLocationsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns CWMS Stream Location Data
-     * Get swtData streamLocations with name
+     * Get CwmsData streamLocations with name
      */
-    async getSwtDataStreamLocationsWithNameRaw(requestParameters: GetSwtDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamLocation>>> {
+    async getStreamLocationsWithNameRaw(requestParameters: GetStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamLocation>>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataStreamLocationsWithName().'
+                'Required parameter "name" was null or undefined when calling getStreamLocationsWithName().'
             );
         }
 
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataStreamLocationsWithName().'
+                'Required parameter "office" was null or undefined when calling getStreamLocationsWithName().'
             );
         }
 
         if (requestParameters['streamId'] == null) {
             throw new runtime.RequiredError(
                 'streamId',
-                'Required parameter "streamId" was null or undefined when calling getSwtDataStreamLocationsWithName().'
+                'Required parameter "streamId" was null or undefined when calling getStreamLocationsWithName().'
             );
         }
 
@@ -266,29 +266,29 @@ export class StreamLocationsApi extends runtime.BaseAPI {
 
     /**
      * Returns CWMS Stream Location Data
-     * Get swtData streamLocations with name
+     * Get CwmsData streamLocations with name
      */
-    async getSwtDataStreamLocationsWithName(requestParameters: GetSwtDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamLocation>> {
-        const response = await this.getSwtDataStreamLocationsWithNameRaw(requestParameters, initOverrides);
+    async getStreamLocationsWithName(requestParameters: GetStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamLocation>> {
+        const response = await this.getStreamLocationsWithNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns matching downstream stream locations.
-     * Get swtData streamLocations with office with name downstreamLocations
+     * Get CwmsData streamLocations with office with name downstreamLocations
      */
-    async getSwtDataStreamLocationsWithOfficeWithNameDownstreamLocationsRaw(requestParameters: GetSwtDataStreamLocationsWithOfficeWithNameDownstreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamLocation>>> {
+    async getStreamLocationsWithOfficeWithNameDownstreamLocationsRaw(requestParameters: GetStreamLocationsWithOfficeWithNameDownstreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamLocation>>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataStreamLocationsWithOfficeWithNameDownstreamLocations().'
+                'Required parameter "office" was null or undefined when calling getStreamLocationsWithOfficeWithNameDownstreamLocations().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataStreamLocationsWithOfficeWithNameDownstreamLocations().'
+                'Required parameter "name" was null or undefined when calling getStreamLocationsWithOfficeWithNameDownstreamLocations().'
             );
         }
 
@@ -332,29 +332,29 @@ export class StreamLocationsApi extends runtime.BaseAPI {
 
     /**
      * Returns matching downstream stream locations.
-     * Get swtData streamLocations with office with name downstreamLocations
+     * Get CwmsData streamLocations with office with name downstreamLocations
      */
-    async getSwtDataStreamLocationsWithOfficeWithNameDownstreamLocations(requestParameters: GetSwtDataStreamLocationsWithOfficeWithNameDownstreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamLocation>> {
-        const response = await this.getSwtDataStreamLocationsWithOfficeWithNameDownstreamLocationsRaw(requestParameters, initOverrides);
+    async getStreamLocationsWithOfficeWithNameDownstreamLocations(requestParameters: GetStreamLocationsWithOfficeWithNameDownstreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamLocation>> {
+        const response = await this.getStreamLocationsWithOfficeWithNameDownstreamLocationsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Returns matching upstream stream locations.
-     * Get swtData streamLocations with office with name upstreamLocations
+     * Get CwmsData streamLocations with office with name upstreamLocations
      */
-    async getSwtDataStreamLocationsWithOfficeWithNameUpstreamLocationsRaw(requestParameters: GetSwtDataStreamLocationsWithOfficeWithNameUpstreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamLocation>>> {
+    async getStreamLocationsWithOfficeWithNameUpstreamLocationsRaw(requestParameters: GetStreamLocationsWithOfficeWithNameUpstreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StreamLocation>>> {
         if (requestParameters['office'] == null) {
             throw new runtime.RequiredError(
                 'office',
-                'Required parameter "office" was null or undefined when calling getSwtDataStreamLocationsWithOfficeWithNameUpstreamLocations().'
+                'Required parameter "office" was null or undefined when calling getStreamLocationsWithOfficeWithNameUpstreamLocations().'
             );
         }
 
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling getSwtDataStreamLocationsWithOfficeWithNameUpstreamLocations().'
+                'Required parameter "name" was null or undefined when calling getStreamLocationsWithOfficeWithNameUpstreamLocations().'
             );
         }
 
@@ -398,29 +398,29 @@ export class StreamLocationsApi extends runtime.BaseAPI {
 
     /**
      * Returns matching upstream stream locations.
-     * Get swtData streamLocations with office with name upstreamLocations
+     * Get CwmsData streamLocations with office with name upstreamLocations
      */
-    async getSwtDataStreamLocationsWithOfficeWithNameUpstreamLocations(requestParameters: GetSwtDataStreamLocationsWithOfficeWithNameUpstreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamLocation>> {
-        const response = await this.getSwtDataStreamLocationsWithOfficeWithNameUpstreamLocationsRaw(requestParameters, initOverrides);
+    async getStreamLocationsWithOfficeWithNameUpstreamLocations(requestParameters: GetStreamLocationsWithOfficeWithNameUpstreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StreamLocation>> {
+        const response = await this.getStreamLocationsWithOfficeWithNameUpstreamLocationsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Update CWMS Stream Location
-     * Patch swtData streamLocations with name
+     * Patch CwmsData streamLocations with name
      */
-    async patchSwtDataStreamLocationsWithNameRaw(requestParameters: PatchSwtDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async patchCwmsDataStreamLocationsWithNameRaw(requestParameters: PatchCwmsDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling patchSwtDataStreamLocationsWithName().'
+                'Required parameter "name" was null or undefined when calling patchCwmsDataStreamLocationsWithName().'
             );
         }
 
         if (requestParameters['streamLocation'] == null) {
             throw new runtime.RequiredError(
                 'streamLocation',
-                'Required parameter "streamLocation" was null or undefined when calling patchSwtDataStreamLocationsWithName().'
+                'Required parameter "streamLocation" was null or undefined when calling patchCwmsDataStreamLocationsWithName().'
             );
         }
 
@@ -447,21 +447,21 @@ export class StreamLocationsApi extends runtime.BaseAPI {
 
     /**
      * Update CWMS Stream Location
-     * Patch swtData streamLocations with name
+     * Patch CwmsData streamLocations with name
      */
-    async patchSwtDataStreamLocationsWithName(requestParameters: PatchSwtDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.patchSwtDataStreamLocationsWithNameRaw(requestParameters, initOverrides);
+    async patchCwmsDataStreamLocationsWithName(requestParameters: PatchCwmsDataStreamLocationsWithNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.patchCwmsDataStreamLocationsWithNameRaw(requestParameters, initOverrides);
     }
 
     /**
      * Create CWMS Stream Location
-     * Post swtData streamLocations
+     * Post CwmsData streamLocations
      */
-    async postSwtDataStreamLocationsRaw(requestParameters: PostSwtDataStreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async postCwmsDataStreamLocationsRaw(requestParameters: PostCwmsDataStreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters['streamLocation'] == null) {
             throw new runtime.RequiredError(
                 'streamLocation',
-                'Required parameter "streamLocation" was null or undefined when calling postSwtDataStreamLocations().'
+                'Required parameter "streamLocation" was null or undefined when calling postCwmsDataStreamLocations().'
             );
         }
 
@@ -492,10 +492,10 @@ export class StreamLocationsApi extends runtime.BaseAPI {
 
     /**
      * Create CWMS Stream Location
-     * Post swtData streamLocations
+     * Post CwmsData streamLocations
      */
-    async postSwtDataStreamLocations(requestParameters: PostSwtDataStreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.postSwtDataStreamLocationsRaw(requestParameters, initOverrides);
+    async postCwmsDataStreamLocations(requestParameters: PostCwmsDataStreamLocationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.postCwmsDataStreamLocationsRaw(requestParameters, initOverrides);
     }
 
 }

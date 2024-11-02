@@ -10,36 +10,36 @@ test("Test Ratings", async () => {
   });
   const r_api = new RatingsApi(config_v2);
   await r_api
-    .getCwmsDataRatings({
+    .getRatings({
       office: "SWT",
     })
     .then((data) => {
       expect(data).toBeDefined();
     });
-//   Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
+  //   Fetch the CWMS Rating specification for the SWT OFFICE given a rating mask for keystone lake
   await r_api
-    .getCwmsDataRatingsSpec({
+    .getRatingsSpec({
       office: "SWT",
       ratingIdMask: "KEYS.*",
     })
     .then((data) => {
       expect(data?.specs).toBeDefined();
     });
-//   Fetch the CWMS Rating templates for the SPK OFFICE
+  //   Fetch the CWMS Rating templates for the SPK OFFICE
   await r_api
-    .getCwmsDataRatingsTemplate({
+    .getRatingsTemplate({
       office: "SPK",
     })
     .then((data) => {
       expect(data?.templates).toBeDefined();
     });
 
-//   await r_api
-//     .getCwmsDataRatingsTemplateWithTemplateId({
-//       office: "SWT",
-//       templateId: "Elev-Alt;Stor-Alt.Linear",
-//     })
-//     .then((data) => {
-//       expect(data).toBeDefined();
-//     });
+  //   await r_api
+  //     .getRatingsTemplateWithTemplateId({
+  //       office: "SWT",
+  //       templateId: "Elev-Alt;Stor-Alt.Linear",
+  //     })
+  //     .then((data) => {
+  //       expect(data).toBeDefined();
+  //     });
 }, 30000);

@@ -13,38 +13,38 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimeseriesIdentifierDescriptorsToJSON = exports.TimeseriesIdentifierDescriptorsFromJSONTyped = exports.TimeseriesIdentifierDescriptorsFromJSON = exports.instanceOfTimeseriesIdentifierDescriptors = void 0;
-const TimeseriesIdentifierDescriptor_1 = require("./TimeseriesIdentifierDescriptor");
+exports.TimeSeriesIdentifierDescriptorsToJSON = exports.TimeSeriesIdentifierDescriptorsFromJSONTyped = exports.TimeSeriesIdentifierDescriptorsFromJSON = exports.instanceOfTimeSeriesIdentifierDescriptors = void 0;
+const TimeSeriesIdentifierDescriptor_1 = require("./TimeSeriesIdentifierDescriptor");
 /**
- * Check if a given object implements the TimeseriesIdentifierDescriptors interface.
+ * Check if a given object implements the TimeSeriesIdentifierDescriptors interface.
  */
-function instanceOfTimeseriesIdentifierDescriptors(value) {
+function instanceOfTimeSeriesIdentifierDescriptors(value) {
     return true;
 }
-exports.instanceOfTimeseriesIdentifierDescriptors = instanceOfTimeseriesIdentifierDescriptors;
-function TimeseriesIdentifierDescriptorsFromJSON(json) {
-    return TimeseriesIdentifierDescriptorsFromJSONTyped(json, false);
+exports.instanceOfTimeSeriesIdentifierDescriptors = instanceOfTimeSeriesIdentifierDescriptors;
+function TimeSeriesIdentifierDescriptorsFromJSON(json) {
+    return TimeSeriesIdentifierDescriptorsFromJSONTyped(json, false);
 }
-exports.TimeseriesIdentifierDescriptorsFromJSON = TimeseriesIdentifierDescriptorsFromJSON;
-function TimeseriesIdentifierDescriptorsFromJSONTyped(json, ignoreDiscriminator) {
+exports.TimeSeriesIdentifierDescriptorsFromJSON = TimeSeriesIdentifierDescriptorsFromJSON;
+function TimeSeriesIdentifierDescriptorsFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
-        'descriptors': json['descriptors'] == null ? undefined : (json['descriptors'].map(TimeseriesIdentifierDescriptor_1.TimeseriesIdentifierDescriptorFromJSON)),
+        'descriptors': json['descriptors'] == null ? undefined : (json['descriptors'].map(TimeSeriesIdentifierDescriptor_1.TimeSeriesIdentifierDescriptorFromJSON)),
         'nextPage': json['next-page'] == null ? undefined : json['next-page'],
         'page': json['page'] == null ? undefined : json['page'],
         'pageSize': json['page-size'] == null ? undefined : json['page-size'],
         'total': json['total'] == null ? undefined : json['total'],
     };
 }
-exports.TimeseriesIdentifierDescriptorsFromJSONTyped = TimeseriesIdentifierDescriptorsFromJSONTyped;
-function TimeseriesIdentifierDescriptorsToJSON(value) {
+exports.TimeSeriesIdentifierDescriptorsFromJSONTyped = TimeSeriesIdentifierDescriptorsFromJSONTyped;
+function TimeSeriesIdentifierDescriptorsToJSON(value) {
     if (value == null) {
         return value;
     }
     return {
-        'descriptors': value['descriptors'] == null ? undefined : (value['descriptors'].map(TimeseriesIdentifierDescriptor_1.TimeseriesIdentifierDescriptorToJSON)),
+        'descriptors': value['descriptors'] == null ? undefined : (value['descriptors'].map(TimeSeriesIdentifierDescriptor_1.TimeSeriesIdentifierDescriptorToJSON)),
     };
 }
-exports.TimeseriesIdentifierDescriptorsToJSON = TimeseriesIdentifierDescriptorsToJSON;
+exports.TimeSeriesIdentifierDescriptorsToJSON = TimeSeriesIdentifierDescriptorsToJSON;

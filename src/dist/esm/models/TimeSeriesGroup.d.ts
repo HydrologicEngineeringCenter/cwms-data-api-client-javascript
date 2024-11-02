@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { AssignedTimeseries } from './AssignedTimeseries';
+import type { AssignedTimeSeries } from './AssignedTimeSeries';
 import type { TimeseriesCategory } from './TimeseriesCategory';
 /**
  * A representation of a timeseries group
@@ -55,10 +55,10 @@ export interface TimeseriesGroup {
     sharedRefTsId?: string;
     /**
      *
-     * @type {Array<AssignedTimeseries>}
+     * @type {Array<AssignedTimeSeries>}
      * @memberof TimeseriesGroup
      */
-    assignedTimeSeries?: Array<AssignedTimeseries>;
+    assignedTimeSeries?: Array<AssignedTimeSeries>;
 }
 /**
  * Check if a given object implements the TimeseriesGroup interface.

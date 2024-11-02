@@ -28,18 +28,18 @@ import { BasinFromJSON, } from '../models/index';
 export class BasinsApi extends runtime.BaseAPI {
     /**
      * Renames CWMS Basin
-     * Delete swtData basins with name
+     * Delete CwmsData basins with name
      */
-    deleteSwtDataBasinsWithNameRaw(requestParameters, initOverrides) {
+    deleteCwmsDataBasinsWithNameRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['name'] == null) {
-                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling deleteSwtDataBasinsWithName().');
+                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling deleteCwmsDataBasinsWithName().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteSwtDataBasinsWithName().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling deleteCwmsDataBasinsWithName().');
             }
             if (requestParameters['method'] == null) {
-                throw new runtime.RequiredError('method', 'Required parameter "method" was null or undefined when calling deleteSwtDataBasinsWithName().');
+                throw new runtime.RequiredError('method', 'Required parameter "method" was null or undefined when calling deleteCwmsDataBasinsWithName().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -63,18 +63,18 @@ export class BasinsApi extends runtime.BaseAPI {
     }
     /**
      * Renames CWMS Basin
-     * Delete swtData basins with name
+     * Delete CwmsData basins with name
      */
-    deleteSwtDataBasinsWithName(requestParameters, initOverrides) {
+    deleteCwmsDataBasinsWithName(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteSwtDataBasinsWithNameRaw(requestParameters, initOverrides);
+            yield this.deleteCwmsDataBasinsWithNameRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins
+     * Get CwmsData basins
      */
-    getSwtDataBasinsRaw(requestParameters, initOverrides) {
+    getBasinsRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -98,25 +98,25 @@ export class BasinsApi extends runtime.BaseAPI {
     }
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins
+     * Get CwmsData basins
      */
-    getSwtDataBasins(requestParameters = {}, initOverrides) {
+    getBasins(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataBasinsRaw(requestParameters, initOverrides);
+            const response = yield this.getBasinsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins with name
+     * Get CwmsData basins with name
      */
-    getSwtDataBasinsWithNameRaw(requestParameters, initOverrides) {
+    getBasinsWithNameRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['name'] == null) {
-                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling getSwtDataBasinsWithName().');
+                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling getBasinsWithName().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getSwtDataBasinsWithName().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling getBasinsWithName().');
             }
             const queryParameters = {};
             if (requestParameters['office'] != null) {
@@ -140,28 +140,28 @@ export class BasinsApi extends runtime.BaseAPI {
     }
     /**
      * Returns CWMS Basin Data
-     * Get swtData basins with name
+     * Get CwmsData basins with name
      */
-    getSwtDataBasinsWithName(requestParameters, initOverrides) {
+    getBasinsWithName(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.getSwtDataBasinsWithNameRaw(requestParameters, initOverrides);
+            const response = yield this.getBasinsWithNameRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
     /**
      * Renames CWMS Basin
-     * Patch swtData basins with name
+     * Patch CwmsData basins with name
      */
-    patchSwtDataBasinsWithNameRaw(requestParameters, initOverrides) {
+    patchCwmsDataBasinsWithNameRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             if (requestParameters['name'] == null) {
-                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling patchSwtDataBasinsWithName().');
+                throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling patchCwmsDataBasinsWithName().');
             }
             if (requestParameters['name2'] == null) {
-                throw new runtime.RequiredError('name2', 'Required parameter "name2" was null or undefined when calling patchSwtDataBasinsWithName().');
+                throw new runtime.RequiredError('name2', 'Required parameter "name2" was null or undefined when calling patchCwmsDataBasinsWithName().');
             }
             if (requestParameters['office'] == null) {
-                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchSwtDataBasinsWithName().');
+                throw new runtime.RequiredError('office', 'Required parameter "office" was null or undefined when calling patchCwmsDataBasinsWithName().');
             }
             const queryParameters = {};
             if (requestParameters['name2'] != null) {
@@ -185,18 +185,18 @@ export class BasinsApi extends runtime.BaseAPI {
     }
     /**
      * Renames CWMS Basin
-     * Patch swtData basins with name
+     * Patch CwmsData basins with name
      */
-    patchSwtDataBasinsWithName(requestParameters, initOverrides) {
+    patchCwmsDataBasinsWithName(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.patchSwtDataBasinsWithNameRaw(requestParameters, initOverrides);
+            yield this.patchCwmsDataBasinsWithNameRaw(requestParameters, initOverrides);
         });
     }
     /**
      * Creates CWMS Basin
-     * Post swtData basins
+     * Post CwmsData basins
      */
-    postSwtDataBasinsRaw(initOverrides) {
+    postCwmsDataBasinsRaw(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
             const headerParameters = {};
@@ -214,11 +214,11 @@ export class BasinsApi extends runtime.BaseAPI {
     }
     /**
      * Creates CWMS Basin
-     * Post swtData basins
+     * Post CwmsData basins
      */
-    postSwtDataBasins(initOverrides) {
+    postCwmsDataBasins(initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.postSwtDataBasinsRaw(initOverrides);
+            yield this.postCwmsDataBasinsRaw(initOverrides);
         });
     }
 }

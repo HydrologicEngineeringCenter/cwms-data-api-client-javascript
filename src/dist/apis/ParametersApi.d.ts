@@ -11,7 +11,7 @@
  */
 import * as runtime from '../runtime';
 import type { Parameter } from '../models/index';
-export interface GetSwtDataParametersRequest {
+export interface GetParametersRequest {
     format?: string;
     office?: string;
 }
@@ -20,11 +20,11 @@ export interface GetSwtDataParametersRequest {
  */
 export declare class ParametersApi extends runtime.BaseAPI {
     /**
-     * Get swtData parameters
+     * Get CwmsData parameters
      */
-    getSwtDataParametersRaw(requestParameters: GetSwtDataParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Parameter>>>;
+    getParametersRaw(requestParameters: GetParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<Parameter>>>;
     /**
-     * Get swtData parameters
+     * Get CwmsData parameters
      */
-    getSwtDataParameters(requestParameters?: GetSwtDataParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Parameter>>;
+    getParameters(requestParameters?: GetParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<Parameter>>;
 }
