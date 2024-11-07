@@ -47,6 +47,7 @@
   "devDependencies": {
     "@types/url-parse": "1.4.4",
     "babel-cli": "^6.26.0",
+    "node-jq": "^6.0.1",
     "prettier": "^3.3.3",
     "typedoc": "^0.25.13",
     "typescript": "^4.9.5"
