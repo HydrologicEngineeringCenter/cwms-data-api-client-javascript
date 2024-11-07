@@ -33,7 +33,7 @@
     "buildAll": "npm run buildSpec && npm run openapi && npm run build && cd src && npm run build && cd ..",
     "buildSpec": "npm run getSpec && npm run modSpec",
     "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
-    "docs": "cd src && npx typedoc",
+    "docs": "cd src && npx typedoc src/index.ts",
     "examples": "node ./scripts/tests2exampledocs.js ",
     "getSpec": "wget https://cwms-data.usace.army.mil/cwms-data/swagger-docs -O cwms-swagger-raw.json",
     "modSpec": "./swagger-updates/modSpec.sh",
