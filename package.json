@@ -29,8 +29,8 @@
   },
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "cd src && babel src -d dist && cd .. && npm run docs && npm run examples",
-    "buildAll": "npm run buildSpec && npm run openapi && npm run build && cd src && npm run build && cd ..",
+    "build": "cd src && npx tsc --outDir dist && cd .. && npm run docs && npm run examples",
+    "buildApi": "npm run buildSpec && npm run openapi && cd src && npm run build",
     "buildSpec": "npm run getSpec && npm run modSpec",
     "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
     "docs": "cd src && npx typedoc src/index.ts",
