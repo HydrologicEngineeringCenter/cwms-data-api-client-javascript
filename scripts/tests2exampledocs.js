@@ -16,7 +16,7 @@ const prettierOptions = {
 
 const testDirectory = "./tests/endpoints";
 const genDirectory = "./tests/generator";
-const outputDirectory = "./src/docs/examples";
+const outputDirectory = "./cwmsjs/docs/examples";
 const templatePath = "./scripts/exampletemplate.html"; // Path to your HTML template
 
 // Ensure the output directory exists
@@ -161,8 +161,8 @@ ${formattedBlock.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
   });
 
   // Update the modules file and index file to have links to the examples
-  const indexPath = "./src/docs/index.html";
-  const modulesPath = "./src/docs/modules.html";
+  const indexPath = "./cwmsjs/docs/index.html";
+  const modulesPath = "./cwmsjs/docs/modules.html";
   fs.readFile(modulesPath, "utf8", (err, content) => {
     if (err) throw err;
     if (content.indexOf("Examples") >= 0) return;
