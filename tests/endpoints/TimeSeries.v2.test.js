@@ -4,7 +4,7 @@ import { TimeSeriesApi, Configuration } from "cwmsjs";
 import fetch from "node-fetch";
 global.fetch = fetch;
 
-test("Test Timeseries V2", async () => {
+test("Test TimeSeries V2", async () => {
   const v2_config = new Configuration({
     headers: {
       accept: "application/json;version=2",

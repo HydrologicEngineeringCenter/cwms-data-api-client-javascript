@@ -13,5 +13,11 @@ npx node-jq --slurpfile tsItems scripts/spec-updates/tsArrayItems.json '.compone
 # Remove "CwmsData" from method names
 sed -r 's/"(get|post|patch|put|delete)CwmsData(\w*)"/"\1\2"/g' |
 
+# Standardize the casing of TimeSeries in method names
+sed -r 's/"(get|post|patch|put|delete)Timeseries(\w*)"/"\1TimeSeries\2"/g' |
+
+# Fix casing of "Timeseries Groups"
+sed -r 's/"Timeseries Groups"/"TimeSeries Groups"/g' |
+
 # Write to file
 cat > cwms-swagger-mod.json
