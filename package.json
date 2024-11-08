@@ -31,6 +31,7 @@
   "scripts": {
     "build": "cd src && npx tsc --outDir dist && cd .. && npm run docs && npm run examples",
     "buildApi": "npm run buildSpec && npm run openapi && cd src && npm run build",
+    "buildDocs": "npm run docs && npm run examples",
     "buildSpec": "npm run getSpec && npm run modSpec",
     "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
     "docs": "cd src && npx typedoc src/index.ts",
@@ -38,7 +39,6 @@
     "getSpec": "wget https://cwms-data.usace.army.mil/cwms-data/swagger-docs -O cwms-swagger-raw.json",
     "modSpec": "./swagger-updates/modSpec.sh",
     "link": "cd ./src/dist && npm link && cd ../../tests && npm link cwmsjs",
-    "moveDocs": "shx mkdir -p ./dist/docs && shx mv ./src/*.md ./dist/docs/",
     "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./src -i cwms-swagger-mod.json -c openapi.config.json"
   },
   "dependencies": {
