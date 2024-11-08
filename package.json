@@ -33,7 +33,7 @@
     "buildApi": "npm run buildSpec && npm run openapi && npm run modPackage && cd cwmsjs && npm run build",
     "buildDocs": "npm run docs && npm run examples",
     "buildSpec": "npm run getSpec && npm run modSpec",
-    "clean": "shx mkdir -p ./cwmsjs && shx rm -r ./cwmsjs && shx mkdir -p ./cwmsjs/docs && shx rm -r ./cwmsjs/docs",
+    "clean": "shx mkdir -p ./cwmsjs && shx rm -r ./cwmsjs",
     "docs": "cd cwmsjs && npx typedoc src/index.ts",
     "examples": "node ./scripts/tests2exampledocs.js ",
     "getSpec": "wget https://cwms-data.usace.army.mil/cwms-data/swagger-docs -O cwms-swagger-raw.json",
