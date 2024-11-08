@@ -15,7 +15,6 @@ test("Test Pools", async () => {
     })
     .then(async (r) => {
       const data = await r.raw.json();
-      console.log(data);
       return data;
     })
     .then((data) => {
