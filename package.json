@@ -39,7 +39,7 @@
     "getSpec": "wget https://cwms-data.usace.army.mil/cwms-data/swagger-docs -O cwms-swagger-raw.json",
     "modPackage": "./scripts/package-updates/modPackage.sh",
     "modSpec": "./scripts/spec-updates/modSpec.sh",
-    "link": "cd ./cwmsjs/dist && npm link && cd ../../tests && npm link cwmsjs",
+    "link": "cd cwmsjs && npm link && cd ../tests && npm link cwmsjs",
     "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./cwmsjs -i cwms-swagger-mod.json -c openapi.config.json"
   },
   "dependencies": {
