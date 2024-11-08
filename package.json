@@ -29,7 +29,7 @@
   },
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "cd src && npx tsc --outDir dist && cd .. && npm run docs && npm run examples",
+    "build": "npm run buildApi && npm run buildDocs",
     "buildApi": "npm run buildSpec && npm run openapi && cd src && npm run build",
     "buildDocs": "npm run docs && npm run examples",
     "buildSpec": "npm run getSpec && npm run modSpec",
