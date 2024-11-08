@@ -1,17 +1,5 @@
 {
-    "projectName": "cwmsjs",
-    "packageName": "cwmsjs",
-    "emitJSDoc": true,
-    "platform": "browser",
-    "framework": "fetch-api",
-    "lib": "es6",
-    "projectDescription": "CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript for use with web browsers.",
-    "projectVersion": "2.0.0",
-    "moduleName": "cwmsjs",
-    "npmRepository": "https://www.npmjs.com/package/cwmsjs",
-    "npmName": "cwmsJS",
-    "supportsES6": true,
-    "docsFolder": "docs",
-    "usePromises": true,
-    "repoUrl": "https://github.com/HydrologicEngineeringCenter/cwms-data-api-client-javascript"
+  "npmName": "cwmsJS",
+  "npmRepository": "https://www.npmjs.com/package/cwmsjs",
+  "supportsES6": true
 }
