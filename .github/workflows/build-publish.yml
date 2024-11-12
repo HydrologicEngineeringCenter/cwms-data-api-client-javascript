@@ -40,10 +40,10 @@ jobs:
 
       - name: Publish to npm
         if: success()
-        working-directory: cwmsjs
-        run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: cwmsjs
+        run: npm publish --provenance --access public
 
       - name: Build docs
         if: success()
