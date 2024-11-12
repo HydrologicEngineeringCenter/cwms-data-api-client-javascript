@@ -1,6 +1,6 @@
 {
   "name": "cwmsjs-generator",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "OpenAPI generator for building the cwmsjs JavaScript/TypeScript library for CWMS Data API",
   "author": "USACE,HEC,CWMS,OpenApi Contributors",
   "repository": {
