@@ -1,7 +1,7 @@
 {
-  "name": "cwmsjs",
+  "name": "cwmsjs-generator",
   "version": "2.0.0",
-  "description": "CWMS Data API Library for JavaScript/TypeScript created with OpenAPI generator in TypeScript for use with browser webapps",
+  "description": "OpenAPI generator for building the cwmsjs JavaScript/TypeScript library for CWMS Data API",
   "author": "USACE,HEC,CWMS,OpenApi Contributors",
   "repository": {
     "type": "git",
@@ -29,14 +29,18 @@
   },
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "cd src && babel src -d dist && cd .. && npm run docs && npm run examples",
-    "docs": "cd src && npx typedoc",
+    "build": "npm run buildApi && npm run buildDocs",
+    "buildApi": "npm run buildSpec && npm run openapi && npm run modPackage && cd cwmsjs && npm run build",
+    "buildDocs": "npm run docs && npm run examples",
+    "buildSpec": "npm run getSpec && npm run modSpec",
+    "clean": "shx mkdir -p ./cwmsjs && shx rm -r ./cwmsjs",
+    "docs": "cd cwmsjs && npx typedoc src/index.ts",
     "examples": "node ./scripts/tests2exampledocs.js ",
-    "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./src -i cwms-swagger.3-1-5.RC14.json -c openapi.config.json",
-    "clean": "shx mkdir -p ./src && shx rm -r ./src && shx mkdir -p ./src/docs && shx rm -r ./src/docs",
-    "moveDocs": "shx mkdir -p ./dist/docs && shx mv ./src/*.md ./dist/docs/",
-    "link": "cd ./src/dist && npm link && cd ../../tests && npm link cwmsjs",
-    "build-all": "npm run openapi && npm run build && cd src && npm run build && cd .."
+    "getSpec": "wget https://cwms-data.usace.army.mil/cwms-data/swagger-docs -O cwms-swagger-raw.json",
+    "modPackage": "./scripts/package-updates/modPackage.sh",
+    "modSpec": "./scripts/spec-updates/modSpec.sh",
+    "link": "cd cwmsjs && npm link && cd ../tests && npm link cwmsjs",
+    "openapi": "openapi-generator-cli generate -g typescript-fetch -o ./cwmsjs -i cwms-swagger-mod.json -c openapi.config.json"
   },
   "dependencies": {
     "es6-promise": "^4.2.4",
@@ -47,6 +51,7 @@
   "devDependencies": {
     "@types/url-parse": "1.4.4",
     "babel-cli": "^6.26.0",
+    "node-jq": "^6.0.1",
     "prettier": "^3.3.3",
     "typedoc": "^0.25.13",
     "typescript": "^4.9.5"
