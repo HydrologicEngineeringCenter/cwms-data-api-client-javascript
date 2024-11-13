@@ -42,7 +42,7 @@ jobs:
         working-directory: cwmsjs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-        run: echo "https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
 
       - name: Publish to npm
         if: success()
