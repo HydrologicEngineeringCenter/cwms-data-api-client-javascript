@@ -38,12 +38,6 @@ jobs:
         working-directory: tests
         run: npm run test --ci
 
-      - name: Configure npm auth in library dir
-        working-directory: cwmsjs
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
-
       - name: Publish to npm
         if: success()
         working-directory: cwmsjs
