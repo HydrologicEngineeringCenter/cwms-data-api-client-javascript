@@ -43,7 +43,7 @@ jobs:
         working-directory: cwmsjs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public
+        run: npm publish --access public --loglevel verbose
 
       - name: Build docs
         if: success()
