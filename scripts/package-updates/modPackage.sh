@@ -14,6 +14,9 @@ npx node-jq --slurpfile root package.json \
 # This will be used until CDA itself exposes an official CalVer version
 npx node-jq --arg date "$date" --slurpfile root package.json '. * {version: ($root[0].version + "-" + $date)}' |
 
+# Remove erroneous publishConfig entry
+npx node-jq 'del(.publishConfig)' |
+
 # Write to file
 cat > temp.json
 mv temp.json cwmsjs/package.json
