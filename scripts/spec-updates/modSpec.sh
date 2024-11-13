@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+# Set date variable for use in version
+printf -v date '%(%Y.%m.%d)T'
+
 # Add default servers to spec
 npx node-jq '.servers = inputs.servers' cwms-swagger-raw.json scripts/spec-updates/servers.json |
+
+# Write version as genVer-todaysDate
+# This will be used until CDA itself exposes an official CalVer version
+npx node-jq --arg date "$date" --slurpfile root package.json '.info.version = ($root[0].version + "-" + $date)' |
 
 # Add BaseRatingMetadata to fix typing issues
 npx node-jq --slurpfile base scripts/spec-updates/BaseRatingMetadata.json '.components.schemas.BaseRatingMetadata = $base[0].BaseRatingMetadata' |
