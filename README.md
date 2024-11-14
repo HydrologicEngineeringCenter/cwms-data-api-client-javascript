@@ -12,16 +12,16 @@ _CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript
   - Avaiable endpoints are here (Classes ending in API): [Endpoints](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/modules.html)
   - At the top of your js/jsx/file type:
     ```javascript
-    import { TimeseriesAPI } from "cwmsjs";
+    import { TimeSeriesAPI } from "cwmsjs";
     ```
-  - Then initialize the TimeseriesAPI with:
+  - Then initialize the TimeSeriesAPI with:
     ```javascript
-    const tsa = new TimeseriesAPI();
+    const tsa = new TimeSeriesAPI();
     ```
-  - Fetch timeseries data with:
+  - Fetch time series data with:
     ```javascript
     await ts_api
-      .getTimeseries({
+      .getTimeSeries({
         office: "SWT",
         name: "KEYS.Elev.Inst.1Hour.0.Ccp-Rev",
       })
