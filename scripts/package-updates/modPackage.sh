@@ -20,3 +20,6 @@ npx node-jq 'del(.publishConfig)' |
 # Write to file
 cat > temp.json
 mv temp.json cwmsjs/package.json
+
+# Copy custom README.md to generated package
+cp README.md cwmsjs/README.md
