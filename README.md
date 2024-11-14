@@ -45,6 +45,11 @@ In order to accommodate changes both to the generator and to CDA itself, cwmsjs 
 
 CDA is expected to at some point expose a CalVer for the latest update.  When this is available, the generation date will be replaced with the current CDA CalVer.
 
+### Publishing
+Contributors with authorization can publish a new version of cwmsjs by manually running the "Build, Test, and Publish" GitHub Action.
+
+The workflow will build an updated cwmsjs library using the current generator and national CDA instance OpenAPI spec.  If all tests pass, the library will be published to npm and updated documentation will be deployed to GitHub Pages.
+
 ## Building CWMSjs from source
 
 - Clone this repository
