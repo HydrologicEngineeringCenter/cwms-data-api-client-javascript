@@ -38,6 +38,13 @@ Documentation is available for both developers and new users:
 - New Users : [Examples](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/examples/)
 - Advanced users : [Type Documentation / Developer Docs](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/)
 
+## Developers
+### Versioning
+In order to accommodate changes both to the generator and to CDA itself, cwmsjs is versioned in the following format:
+`[generator SemVer]-[generation date]`
+
+CDA is expected to at some point expose a CalVer for the latest update.  When this is available, the generation date will be replaced with the current CDA CalVer.
+
 ## Building CWMSjs from source
 
 - Clone this repository
