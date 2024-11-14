@@ -16,7 +16,7 @@ _CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript
     ```
   - Then initialize the TimeSeriesAPI with:
     ```javascript
-    const tsa = new TimeSeriesAPI();
+    const ts_api = new TimeSeriesAPI();
     ```
   - Fetch time series data with:
     ```javascript
