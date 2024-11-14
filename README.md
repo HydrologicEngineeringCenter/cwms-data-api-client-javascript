@@ -5,23 +5,23 @@ _CWMS Data API (CDA) client library created with OpenAPI generator in TypeScript
 ## Getting Started
 
 - Install CWMSjs to your react project with:  
-   `npm install cwmsjs --save`  
+   `npm install cwmsjs`  
    (This will grab the latest)
 
 - Import the API endpoint you wish to use:
   - Avaiable endpoints are here (Classes ending in API): [Endpoints](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/modules.html)
   - At the top of your js/jsx/file type:
     ```javascript
-    import { TimeseriesAPI } from "cwmsjs";
+    import { TimeSeriesAPI } from "cwmsjs";
     ```
-  - Then initialize the TimeseriesAPI with:
+  - Then initialize the TimeSeriesAPI with:
     ```javascript
-    const tsa = new TimeseriesAPI();
+    const ts_api = new TimeSeriesAPI();
     ```
-  - Fetch timeseries data with:
+  - Fetch time series data with:
     ```javascript
     await ts_api
-      .getTimeseries({
+      .getTimeSeries({
         office: "SWT",
         name: "KEYS.Elev.Inst.1Hour.0.Ccp-Rev",
       })
@@ -38,15 +38,23 @@ Documentation is available for both developers and new users:
 - New Users : [Examples](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/examples/)
 - Advanced users : [Type Documentation / Developer Docs](https://hydrologicengineeringcenter.github.io/cwms-data-api-client-javascript/)
 
+## Developers
+### Versioning
+In order to accommodate changes both to the generator and to CDA itself, cwmsjs is versioned in the following format:
+`[generator SemVer]-[generation date]`
+
+CDA is expected to at some point expose a CalVer for the latest update.  When this is available, the generation date will be replaced with the current CDA CalVer.
+
+### Publishing
+Contributors with authorization can publish a new version of cwmsjs by manually running the "Build, Test, and Publish" GitHub Action.
+
+The workflow will build an updated cwmsjs library using the current generator and national CDA instance OpenAPI spec.  If all tests pass, the library will be published to npm and updated documentation will be deployed to GitHub Pages.
+
 ## Building CWMSjs from source
 
-- Install openapi-generator-cli with:  
-   `npm install -g @openapitools/openapi-generator-cli`  
-   (This will grab the latest)
-
-### Run the following commands to build the project:
-
+- Clone this repository
+- Install dependencies with: `npm install`
 - Run the generator with:
-  `npm run openapi`
-- Transpile the typescript
   `npm run build`
+
+All generated files (source, library, and docs) will be in `[repo]/cwmsjs`
