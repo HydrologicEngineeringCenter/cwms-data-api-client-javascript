@@ -40,13 +40,9 @@ Documentation is available for both developers and new users:
 
 ## Building CWMSjs from source
 
-- Install openapi-generator-cli with:  
-   `npm install -g @openapitools/openapi-generator-cli`  
-   (This will grab the latest)
-
-### Run the following commands to build the project:
-
+- Clone this repository
+- Install dependencies with: `npm install`
 - Run the generator with:
-  `npm run openapi`
-- Transpile the typescript
   `npm run build`
+
+All generated files (source, library, and docs) will be in `[repo]/cwmsjs`
