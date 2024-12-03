@@ -17,6 +17,9 @@ sed 's/"\$ref": "#\/components\/schemas\/AbstractRatingMetadata"/"\$ref": "#\/co
 # Fix typing of TimeSeries response values
 npx node-jq --slurpfile tsItems scripts/spec-updates/tsArrayItems.json '.components.schemas.TimeSeries.properties.values.items.items = $tsItems[0].items' |
 
+# Remove uniqueItems designations (is bugged in generator)
+npx node-jq 'del(.. | .uniqueItems?)' |
+
 # Remove "CwmsData" from method names
 sed -r 's/"(get|post|patch|put|delete)CwmsData(\w*)"/"\1\2"/g' |
 
