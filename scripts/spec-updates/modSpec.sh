@@ -20,6 +20,9 @@ npx node-jq --slurpfile tsItems scripts/spec-updates/tsArrayItems.json '.compone
 # Remove uniqueItems designations (is bugged in generator)
 npx node-jq 'del(.. | .uniqueItems?)' |
 
+# Fix Office typing
+npx node-jq '.paths.["/cwms-data/offices"].get.responses.["200"].content.[""] = .paths.["/cwms-data/offices"].get.responses.["200"].content.["application/json"]' |
+
 # Change timeseries to time-series within schemas
 npx node-jq '
     .components.schemas |= with_entries(
