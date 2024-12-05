@@ -20,6 +20,19 @@ npx node-jq --slurpfile tsItems scripts/spec-updates/tsArrayItems.json '.compone
 # Remove uniqueItems designations (is bugged in generator)
 npx node-jq 'del(.. | .uniqueItems?)' |
 
+# Change timeseries to time-series within schemas
+npx node-jq '
+    .components.schemas |= with_entries(
+        .key |= gsub("timeseries"; "time-series") | 
+        .value |= 
+            if type == "string" then gsub("timeseries"; "time-series")
+            elif type == "object" then walk(
+                if type == "string" then gsub("timeseries"; "time-series") else . end
+            )
+        else . end
+        )
+    ' |
+
 # Remove "CwmsData" from method names
 sed -r 's/"(get|post|patch|put|delete)CwmsData(\w*)"/"\1\2"/g' |
 
