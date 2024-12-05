@@ -5,20 +5,18 @@ global.fetch = fetch;
 test("Test Parameters", async () => {
   const p_api = new ParametersApi();
   await p_api
-    .getParametersRaw({
+    .getParameters({
       office: "SWT",
     })
-    .then((r) => r.raw.json())
     .then((data) => {
-      expect(data?.parameters).toBeDefined();
-      expect(data?.parameters?.parameters).toBeDefined();
-      Object.entries(data?.parameters?.parameters).forEach(([key, value]) => {
-        expect(value?.["abstract-param"]).toBeDefined();
-        expect(value?.["office"]).toBeDefined();
-        expect(value?.["default-english-unit"]).toBeDefined();
-        expect(value?.["default-si-unit"]).toBeDefined();
-        expect(value?.["long-name"]).toBeDefined();
-        expect(value?.["description"]).toBeDefined();
+      expect(data).toBeDefined();
+      data.forEach((parameter) => {
+        expect(parameter.officeId).toBeDefined();
+        expect(parameter.name).toBeDefined();
+        expect(parameter.baseParameter).toBeDefined();
+        expect(parameter.dbUnitId).toBeDefined();
+        expect(parameter.unitLongName).toBeDefined();
+        expect(parameter.unitDescription).toBeDefined();
       });
     })
     .catch(async (e) => {
