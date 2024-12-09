@@ -17,14 +17,30 @@ sed 's/"\$ref": "#\/components\/schemas\/AbstractRatingMetadata"/"\$ref": "#\/co
 # Fix typing of TimeSeries response values
 npx node-jq --slurpfile tsItems scripts/spec-updates/tsArrayItems.json '.components.schemas.TimeSeries.properties.values.items.items = $tsItems[0].items' |
 
+# Remove uniqueItems designations (is bugged in generator)
+npx node-jq 'del(.. | .uniqueItems?)' |
+
+# Fix Office typing
+npx node-jq '.paths.["/cwms-data/offices"].get.responses.["200"].content.[""] = .paths.["/cwms-data/offices"].get.responses.["200"].content.["application/json"]' |
+
+# Change timeseries to time-series within schemas
+npx node-jq '
+    .components.schemas |= with_entries(
+        .key |= gsub("timeseries"; "time-series") | 
+        .value |= 
+            if type == "string" then gsub("timeseries"; "time-series")
+            elif type == "object" then walk(
+                if type == "string" then gsub("timeseries"; "time-series") else . end
+            )
+        else . end
+        )
+    ' |
+
 # Remove "CwmsData" from method names
 sed -r 's/"(get|post|patch|put|delete)CwmsData(\w*)"/"\1\2"/g' |
 
-# Standardize the casing of TimeSeries in method names
-sed -r 's/"(get|post|patch|put|delete)Timeseries(\w*)"/"\1TimeSeries\2"/g' |
-
-# Fix casing of "Timeseries Groups"
-sed -r 's/"Timeseries Groups"/"TimeSeries Groups"/g' |
+# Change casing of "Timeseries" to "TimeSeries"
+sed -r 's/Timeseries/TimeSeries/g' |
 
 # Write to file
 cat > cwms-swagger-mod.json

@@ -7,11 +7,10 @@ test("Test Offices", async () => {
   await o_api
     .getOffices()
     .then((data) => {
-      expect(data?.offices).toBeDefined();
-      expect(data?.offices?.offices).toBeDefined();
-      Object.entries(data?.offices?.offices).forEach(([key, value]) => {
-        expect(value?.name).toBeDefined();
-        expect(value?.type).toBeDefined();
+      expect(data).toBeDefined();
+      data.forEach((office) => {
+        expect(office.name).toBeDefined();
+        expect(office.type).toBeDefined();
       });
     })
     .catch(async (e) => {
