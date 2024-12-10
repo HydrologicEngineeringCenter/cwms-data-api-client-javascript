@@ -42,5 +42,10 @@ sed -r 's/"(get|post|patch|put|delete)CwmsData(\w*)"/"\1\2"/g' |
 # Change casing of "Timeseries" to "TimeSeries"
 sed -r 's/Timeseries/TimeSeries/g' |
 
+# Remove the /cwms-data base path on all endpoints so user can use their own
+sed -r 's|"/cwms-data|"/|g' |
+# Remove extra slashes
+sed -r 's|"//|"/|g'  > cwms-swagger-mod.json |
+
 # Write to file
 cat > cwms-swagger-mod.json
