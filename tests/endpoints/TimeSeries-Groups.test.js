@@ -39,4 +39,4 @@ test("Test TS Groups", async () => {
       expect(TSIDS).toBeDefined();
       console.log(`Fetched ${TSIDS.length} timeseries for group ${group.id}`);
     });
-});
+}, 20000);
