@@ -11,16 +11,19 @@ test("Test TS Groups", async () => {
 
   // Initialize the timeseries groups api with the default config
   const tsg_api = new TimeSeriesGroupsApi();
+
+  const testOffice = "SWT";
+
   // Fetch ALL timeseries groups for the given office
-  await tsg_api.getTimeSeriesGroup({ office: "SWT" }).then((data) => {
-    expect(data[0]).toBeDefined();
-    data.forEach((group) => {
-      expect(group.assignedTimeSeries).toBeDefined();
-      const TSIDS = group.assignedTimeSeries.map((ts) => ts.timeseriesId);
-      expect(TSIDS).toBeDefined();
-      console.log(`Fetched ${TSIDS.length} timeseries for group ${group.id}`);
+  await tsg_api
+    .getTimeSeriesGroup({ office: testOffice, includeAssigned: false })
+    .then((data) => {
+      expect(data[0]).toBeDefined();
+      data.forEach((group) => {
+        expect(group.officeId).toBeDefined();
+      });
+      console.log(`Fetched ${data.length} groups for office ${testOffice}`);
     });
-  });
 
   // Fetch a specific timeseries groups given an ID for the given office
   await tsg_api
@@ -36,4 +39,4 @@ test("Test TS Groups", async () => {
       expect(TSIDS).toBeDefined();
       console.log(`Fetched ${TSIDS.length} timeseries for group ${group.id}`);
     });
-}, 20000);
+});
