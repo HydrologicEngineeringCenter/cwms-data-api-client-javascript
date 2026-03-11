@@ -29,10 +29,11 @@ function getFiles(directories) {
   directories.forEach((d) => {
     all_files = fs
       .readdirSync(d)
+      .filter((fileName) => fileName.endsWith(".test.js"))
       .map((fileName) => path.join(d, fileName))
       .concat(all_files);
   });
-  return all_files;
+  return all_files.sort();
 }
 // Read the HTML template
 fs.readFile(templatePath, "utf8", (err, template) => {
@@ -163,36 +164,40 @@ ${formattedBlock.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
   // Update the modules file and index file to have links to the examples
   const indexPath = "./cwmsjs/docs/index.html";
   const modulesPath = "./cwmsjs/docs/modules.html";
-  fs.readFile(modulesPath, "utf8", (err, content) => {
-    if (err) throw err;
-    if (content.indexOf("Examples") >= 0) return;
-    const updatedContent = content.replace(
-      "</h3>",
-      `</h3>
+  if (fs.existsSync(modulesPath)) {
+    fs.readFile(modulesPath, "utf8", (err, content) => {
+      if (err) throw err;
+      if (content.indexOf("Examples") >= 0) return;
+      const updatedContent = content.replace(
+        "</h3>",
+        `</h3>
              <h3 class="tsd-index-heading"><a href="/cwms-data-api-client-javascript/examples/">Examples Home</a></h3>
              ${exampleLinks}
             `
-    );
-    fs.writeFile(modulesPath, updatedContent, (err) => {
-      if (err) throw err;
-      console.log(`Updated modules file: ${modulesPath}`);
+      );
+      fs.writeFile(modulesPath, updatedContent, (err) => {
+        if (err) throw err;
+        console.log(`Updated modules file: ${modulesPath}`);
+      });
     });
-  });
-  fs.readFile(indexPath, "utf8", (err, content) => {
-    if (err) throw err;
-    if (content.indexOf("Examples") >= 0) return;
-    const updatedContent = content.replace(
-      "</h2>",
-      `</h2>
+  }
+  if (fs.existsSync(indexPath)) {
+    fs.readFile(indexPath, "utf8", (err, content) => {
+      if (err) throw err;
+      if (content.indexOf("Examples") >= 0) return;
+      const updatedContent = content.replace(
+        "</h2>",
+        `</h2>
              <p><a href="/cwms-data-api-client-javascript/examples/">Examples Home</a></p>
              ${exampleLinks}
             `
-    );
-    fs.writeFile(indexPath, updatedContent, (err) => {
-      if (err) throw err;
-      console.log(`Updated modules file: ${indexPath}`);
+      );
+      fs.writeFile(indexPath, updatedContent, (err) => {
+        if (err) throw err;
+        console.log(`Updated modules file: ${indexPath}`);
+      });
     });
-  });
+  }
 });
 
 function escapeHtml(unsafe) {
