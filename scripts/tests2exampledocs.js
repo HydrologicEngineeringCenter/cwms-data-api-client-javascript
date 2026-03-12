@@ -18,6 +18,9 @@ const testDirectory = "./tests/endpoints";
 const genDirectory = "./tests/generator";
 const outputDirectory = "./cwmsjs/docs/examples";
 const templatePath = "./scripts/exampletemplate.html"; // Path to your HTML template
+const packageVersion = JSON.parse(
+  fs.readFileSync("./cwmsjs/package.json", "utf8")
+).version;
 
 // Ensure the output directory exists
 if (!fs.existsSync(outputDirectory)) {
@@ -83,6 +86,7 @@ fs.readFile(templatePath, "utf8", (err, template) => {
           // Replace placeholder in template
           const filledTemplate = template
             .replaceAll("${docName}", docFullName)
+            .replaceAll("${packageVersion}", packageVersion)
             .replaceAll(
               "${pageBody}",
               `
@@ -149,6 +153,7 @@ ${formattedBlock.replaceAll("new ", "new cwmsjs.")}\n</script>`) +
     .replaceAll("Example:", "")
     // .replaceAll(":", "")
     .replaceAll("${docName}", "Home")
+    .replaceAll("${packageVersion}", packageVersion)
     .replaceAll("    ", "")
     .replaceAll(
       "${pageBody}",
