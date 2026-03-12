@@ -2,6 +2,9 @@ name: Build, Test, and Publish
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types:
+      - cda-prod-release
 
 permissions:
   pages: write
@@ -14,6 +17,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Show trigger context
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "Release tag: ${{ github.event.client_payload.release_tag || 'manual' }}"
+          echo "Source repository: ${{ github.event.client_payload.source_repository || github.repository }}"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
