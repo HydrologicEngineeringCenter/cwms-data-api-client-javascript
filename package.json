@@ -34,7 +34,7 @@
     "buildDocs": "npm run docs && npm run examples",
     "buildSpec": "npm run getSpec && npm run modSpec",
     "clean": "shx mkdir -p ./cwmsjs && shx rm -r ./cwmsjs",
-    "docs": "cd cwmsjs && npx typedoc src/index.ts",
+    "docs": "node ./scripts/buildTypedoc.js",
     "examples": "node ./scripts/tests2exampledocs.js ",
     "getSpec": "node ./scripts/getSpec.js",
     "modPackage": "node ./scripts/package-updates/modPackage.js",
