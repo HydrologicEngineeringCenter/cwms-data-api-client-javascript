@@ -19,6 +19,18 @@ function replaceInFile(relativePath, replacements) {
   fs.writeFileSync(fullPath, content, "utf8");
 }
 
+function patchTsConfig(relativePath) {
+  const fullPath = path.join(rootDir, relativePath);
+  if (!fs.existsSync(fullPath)) {
+    return;
+  }
+
+  const tsconfig = JSON.parse(fs.readFileSync(fullPath, "utf8"));
+  tsconfig.compilerOptions ??= {};
+  tsconfig.compilerOptions.lib = ["es2018", "dom"];
+  fs.writeFileSync(fullPath, `${JSON.stringify(tsconfig, null, 2)}\n`, "utf8");
+}
+
 replaceInFile("cwmsjs/src/models/AbstractRatingMetadata.ts", [
   [
     "            return TransitionalRatingToJSON(value);",
@@ -40,3 +52,9 @@ replaceInFile("cwmsjs/src/models/LocationLevel.ts", [
     "    return { ...ConstantLocationLevelToJSON(value as any), ...SeasonalLocationLevelToJSON(value as any), ...TimeSeriesLocationLevelToJSON(value as any), ...VirtualLocationLevelToJSON(value as any) };",
   ],
 ]);
+
+replaceInFile("cwmsjs/src/runtime.ts", [
+  ["export type FetchAPI = GlobalFetch['fetch'];", "export type FetchAPI = typeof fetch;"],
+]);
+
+patchTsConfig("cwmsjs/tsconfig.json");
