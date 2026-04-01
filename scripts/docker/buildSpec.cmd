@@ -1,2 +1,2 @@
-@REM Run scripts from windows
-docker run --rm -v %cd%:/scripts -w /scripts node:lts bash -c "npm install -g node-jq && npm run buildSpec"
+@REM Build the live spec from Windows without docker
+npm.cmd run buildSpec

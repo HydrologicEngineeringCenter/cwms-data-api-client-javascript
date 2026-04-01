@@ -50,9 +50,9 @@ Throughout CDA, "time series" is arbitrarily referred to in both a one-word ("ti
 ## Developers
 ### Versioning
 In order to accommodate changes both to the generator and to CDA itself, cwmsjs is versioned in the following format:
-`[generator SemVer]-[generation date]`
+`[generator SemVer]-[CDA schema version]`
 
-CDA is expected to at some point expose a CalVer for the latest update.  When this is available, the generation date will be replaced with the current CDA CalVer.
+The generator now uses the live OpenAPI `info.version` published by CDA. If that field is unavailable, it falls back to the current date.
 
 ### Publishing
 Contributors with authorization can publish a new version of cwmsjs by manually running the "Build, Test, and Publish" GitHub Action.
@@ -63,6 +63,7 @@ The workflow will build an updated cwmsjs library using the current generator an
 
 - Clone this repository
 - Install dependencies with: `npm install`
+- Optionally set `CWMS_SCHEMA_URL` if you need to build from a non-default CDA schema endpoint
 - Run the generator with:
   `npm run build`
 
