@@ -17,7 +17,16 @@ function writeJson(relativePath, value) {
 
 function getVersionSuffix() {
   const rawSpec = readJson("cwms-swagger-raw.json");
-  return rawSpec?.info?.version || new Date().toISOString().slice(0, 10).replace(/-/g, ".");
+  return normalizeVersionSuffix(
+    rawSpec?.info?.version || new Date().toISOString().slice(0, 10).replace(/-/g, "."),
+  );
+}
+
+function normalizeVersionSuffix(version) {
+  return String(version)
+    .split(".")
+    .map((identifier) => (/^\d+$/.test(identifier) ? String(Number(identifier)) : identifier))
+    .join(".");
 }
 
 function main() {

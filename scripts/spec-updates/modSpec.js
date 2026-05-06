@@ -16,7 +16,16 @@ function writeJson(relativePath, value) {
 }
 
 function getVersionSuffix(rawSpec) {
-  return rawSpec?.info?.version || new Date().toISOString().slice(0, 10).replace(/-/g, ".");
+  return normalizeVersionSuffix(
+    rawSpec?.info?.version || new Date().toISOString().slice(0, 10).replace(/-/g, "."),
+  );
+}
+
+function normalizeVersionSuffix(version) {
+  return String(version)
+    .split(".")
+    .map((identifier) => (/^\d+$/.test(identifier) ? String(Number(identifier)) : identifier))
+    .join(".");
 }
 
 function removeUniqueItems(value) {

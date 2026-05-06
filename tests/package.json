@@ -14,7 +14,9 @@
     "scripts": {
         "jest-modules": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
         "test": "npm run jest-modules --",
-        "test-cicd": "npm run jest-modules -- --runInBand --ci --detectOpenHandles",
+        "test-cicd": "npm run smoke",
+        "test:prod": "npm run jest-modules -- --runInBand --detectOpenHandles",
+        "test:prod:ci": "npm run jest-modules -- --runInBand --ci --detectOpenHandles",
         "coverage": "npm run test --coverage",
         "docs": "node ../scripts/tests2exampledocs.js",
         "smoke": "node smoke.js",

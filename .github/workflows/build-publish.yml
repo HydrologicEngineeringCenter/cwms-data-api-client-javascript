@@ -45,12 +45,12 @@ jobs:
 
       - name: Run tests
         working-directory: tests
-        run: npm run test-cicd
+        run: npm run smoke
 
       - name: Publish to npm
         if: success()
         working-directory: cwmsjs
-        run: npm publish --provenance --access public
+        run: npm publish --provenance --access public --tag latest
 
       - name: Build docs
         if: success()
