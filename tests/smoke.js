@@ -1,14 +1,7 @@
 import { readFile } from "node:fs/promises";
-import {
-  CatalogApi,
-  Configuration,
-  OfficesApi,
-  ProjectsApi,
-} from "../cwmsjs/dist/index.js";
+import { Configuration, TimeSeriesApi } from "../cwmsjs/dist/index.js";
 
-if (!global.fetch) {
-  throw new Error("This smoke test expects a Node.js runtime with native fetch support.");
-}
+const DEFAULT_BASE_PATH = "https://cwms-data.usace.army.mil/cwms-data";
 
 async function runStep(name, fn) {
   process.stdout.write(`${name}... `);
@@ -17,74 +10,61 @@ async function runStep(name, fn) {
   return result;
 }
 
-async function main() {
-  const packageJson = JSON.parse(
-    await readFile(new URL("../cwmsjs/package.json", import.meta.url), "utf8")
-  );
-  const rootPackageJson = JSON.parse(
-    await readFile(new URL("../package.json", import.meta.url), "utf8")
-  );
-
-  let expectedVersion = process.env.EXPECTED_CWMSJS_VERSION;
-  try {
-    const rawSpec = JSON.parse(
-      await readFile(new URL("../cwms-swagger-raw.json", import.meta.url), "utf8")
-    );
-    expectedVersion = `${rootPackageJson.version}-${rawSpec?.info?.version}`;
-  } catch {}
-
-  if (!expectedVersion) {
-    throw new Error(
-      "Unable to determine expected cwmsjs version. Run buildApi first or set EXPECTED_CWMSJS_VERSION."
-    );
-  }
-
-  if (packageJson.version !== expectedVersion) {
-    throw new Error(
-      `cwmsjs version mismatch. Expected ${expectedVersion}, found ${packageJson.version}.`
-    );
-  }
-
-  console.log(`cwmsjs version: ${packageJson.version}`);
-
-  const config = new Configuration({
-    basePath: "https://cwms-data.usace.army.mil/cwms-data",
-  });
-  const officesApi = new OfficesApi(config);
-  const catalogApi = new CatalogApi(config);
-  const projectsApi = new ProjectsApi(config);
-
-  await runStep("offices", async () => {
-    const offices = await officesApi.getOffices();
-    console.log(`  offices returned: ${offices?.offices?.length ?? offices?.length ?? 0}`);
-  });
-
-  await runStep("catalog", async () => {
-    const catalog = await catalogApi.getCatalogWithDataset({
-      office: "SWT",
-      like: "KEYS..*.Inst.1Hour.0.Ccp-Rev",
-      dataset: "TIMESERIES",
-    });
-    console.log(`  catalog entries returned: ${catalog?.entries?.length ?? 0}`);
-  });
-
-  await runStep("projects", async () => {
-    const projects = await projectsApi.getProjects({
-      office: "SWT",
-      idMask: "KEYS*",
-      pageSize: 5,
-    });
-    console.log(`  projects returned: ${projects?.projects?.length ?? 0}`);
-  });
+async function readJson(path) {
+  return JSON.parse(await readFile(new URL(path, import.meta.url), "utf8"));
 }
 
-main().catch(async (error) => {
-  if (error?.response) {
-    const body = await error.response.text();
-    console.error(error.response.url);
-    console.error(body);
-  } else {
-    console.error(error);
-  }
+async function main() {
+  const packageJson = await readJson("../cwmsjs/package.json");
+  const rootPackageJson = await readJson("../package.json");
+  const rawSpec = await readJson("../cwms-swagger-raw.json");
+  const expectedVersion = `${rootPackageJson.version}-${rawSpec?.info?.version}`;
+
+  await runStep("package version", async () => {
+    if (packageJson.version !== expectedVersion) {
+      throw new Error(
+        `cwmsjs version mismatch. Expected ${expectedVersion}, found ${packageJson.version}.`,
+      );
+    }
+  });
+
+  const requests = [];
+  const config = new Configuration({
+    fetchApi: async (url, init) => {
+      requests.push({ url, init });
+      return new Response(JSON.stringify({ values: [] }), {
+        status: 200,
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+    },
+  });
+
+  await runStep("default production base path", async () => {
+    const api = new TimeSeriesApi(config);
+    const response = await api.getTimeSeriesRaw({
+      office: "SWT",
+      name: "KEYS.Elev.Inst.1Hour.0.Ccp-Rev",
+    });
+
+    if (!response.raw.ok) {
+      throw new Error(`Expected mocked response to be ok, got ${response.raw.status}.`);
+    }
+
+    const request = requests.at(-1);
+    const expectedUrl =
+      `${DEFAULT_BASE_PATH}/timeseries?name=KEYS.Elev.Inst.1Hour.0.Ccp-Rev&office=SWT`;
+
+    if (request?.url !== expectedUrl) {
+      throw new Error(`Expected ${expectedUrl}, got ${request?.url}.`);
+    }
+  });
+
+  console.log(`cwmsjs version: ${packageJson.version}`);
+}
+
+main().catch((error) => {
+  console.error(error);
   process.exit(1);
 });

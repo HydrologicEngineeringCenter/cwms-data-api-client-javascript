@@ -40,6 +40,8 @@
     "modPackage": "node ./scripts/package-updates/modPackage.js",
     "modSpec": "node ./scripts/spec-updates/modSpec.js",
     "postGenerate": "node ./scripts/postGenerate.js",
+    "test:smoke": "cd tests && npm run smoke",
+    "test:prod": "cd tests && npm run test:prod",
     "link": "cd cwmsjs && npm link && cd ../tests && npm link cwmsjs",
     "openapi": "npx @openapitools/openapi-generator-cli generate -g typescript-fetch -o ./cwmsjs -i cwms-swagger-mod.json -c openapi.config.json"
   },
