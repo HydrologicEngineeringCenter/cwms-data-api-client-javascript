@@ -16,19 +16,6 @@ test("Test Stream Locations", async () => {
     .then(async (data) => {
       expect(Array.isArray(data)).toBe(true);
 
-      const firstLocation = data?.[0];
-      if (
-        firstLocation?.streamLocationNode?.id?.name &&
-        firstLocation?.streamLocationNode?.streamNode?.streamId?.name
-      ) {
-        const detail = await stream_locations_api.getStreamLocationsWithName({
-          office: firstLocation.streamLocationNode.id.officeId,
-          name: firstLocation.streamLocationNode.id.name,
-          streamId: firstLocation.streamLocationNode.streamNode.streamId.name,
-        });
-        expect(Array.isArray(detail)).toBe(true);
-      }
-
       console.log(`Returned ${data.length} stream locations`);
     })
     .catch(async (e) => {

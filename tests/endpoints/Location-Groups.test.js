@@ -7,6 +7,8 @@ test("Test Location Groups", async () => {
   await lg_api
     .getLocationGroup({
       office: "SWT",
+      categoryOfficeId: "SWT",
+      locationOfficeId: "SWT",
     })
     .then((data) => {
       expect(data).toBeDefined();

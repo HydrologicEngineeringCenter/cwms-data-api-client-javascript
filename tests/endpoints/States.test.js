@@ -9,7 +9,7 @@ test("Test States", async () => {
     },
   });
   const s_api = new StatesApi(config);
-  s_api.getStates().then((data) => {
+  await s_api.getStates().then((data) => {
     expect(data).toBeDefined();
   });
 }, 30000);
