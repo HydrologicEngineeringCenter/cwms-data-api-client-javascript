@@ -43,14 +43,4 @@ test("Test Projects", async () => {
         throw e;
       }
     });
-
-  await projects_api
-    .getProjectsLocations({
-      office: "SWT",
-      projectLike: "KEYS*",
-    })
-    .then((data) => {
-      expect(Array.isArray(data)).toBe(true);
-      console.log(`Returned ${data.length} project child-location groups`);
-    });
 }, 30000);

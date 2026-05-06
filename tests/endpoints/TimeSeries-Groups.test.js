@@ -30,6 +30,8 @@ test("Test TS Groups", async () => {
     .getTimeSeriesGroupWithGroupId({
       groupId: "USGS TS Data Acquisition",
       office: "CWMS",
+      categoryOfficeId: "CWMS",
+      groupOfficeId: "CWMS",
       categoryId: "Data Acquisition",
     })
     .then((group) => {

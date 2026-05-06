@@ -6,6 +6,12 @@ const rootDir = path.resolve(__dirname, "..");
 const cwmsjsDir = path.join(rootDir, "cwmsjs");
 const docsDir = path.join(cwmsjsDir, "docs");
 const tempDocsDir = path.join(cwmsjsDir, "docs-typedoc");
+const typedocBin = path.join(
+  rootDir,
+  "node_modules",
+  ".bin",
+  process.platform === "win32" ? "typedoc.cmd" : "typedoc",
+);
 const packageJson = JSON.parse(
   fs.readFileSync(path.join(cwmsjsDir, "package.json"), "utf8"),
 );
@@ -13,7 +19,7 @@ const packageJson = JSON.parse(
 removePath(tempDocsDir, { strict: true });
 
 const result = spawnSync(
-  `npx typedoc src/index.ts --name "cwmsjs v${packageJson.version}" --out docs-typedoc`,
+  `"${typedocBin}" src/index.ts --name "cwmsjs v${packageJson.version}" --out docs-typedoc`,
   {
     cwd: cwmsjsDir,
     stdio: "inherit",

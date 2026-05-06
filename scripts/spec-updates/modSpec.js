@@ -40,7 +40,6 @@ function removeUniqueItems(value) {
 
 function replaceInString(value) {
   return value
-    .replaceAll("timeseries", "time-series")
     .replaceAll("Timeseries", "TimeSeries")
     .replaceAll(
       "#/components/schemas/AbstractRatingMetadata",
@@ -65,6 +64,42 @@ function normalizeStrings(value) {
   return typeof value === "string" ? replaceInString(value) : value;
 }
 
+function normalizeTimeSeriesSchemaNames(spec) {
+  const schemas = spec.components?.schemas;
+  if (!schemas) {
+    return;
+  }
+
+  for (const schemaName of Object.keys(schemas)) {
+    const normalizedSchemaName = schemaName.replaceAll("timeseries", "time-series");
+    if (normalizedSchemaName !== schemaName) {
+      schemas[normalizedSchemaName] = schemas[schemaName];
+      delete schemas[schemaName];
+    }
+  }
+
+  const normalizeSchemaRefs = (value) => {
+    if (Array.isArray(value)) {
+      return value.map(normalizeSchemaRefs);
+    }
+
+    if (value && typeof value === "object") {
+      return Object.fromEntries(
+        Object.entries(value).map(([key, childValue]) => [
+          key,
+          key === "$ref" && typeof childValue === "string"
+            ? childValue.replaceAll("timeseries", "time-series")
+            : normalizeSchemaRefs(childValue),
+        ]),
+      );
+    }
+
+    return value;
+  };
+
+  Object.assign(spec, normalizeSchemaRefs(spec));
+}
+
 function stripCwmsDataPrefix(spec) {
   const paths = {};
   for (const [route, routeConfig] of Object.entries(spec.paths || {})) {
@@ -72,10 +107,6 @@ function stripCwmsDataPrefix(spec) {
     paths[normalizedRoute] = routeConfig;
   }
   spec.paths = paths;
-  spec.servers = (spec.servers || []).map((server) => ({
-    ...server,
-    url: server.url.replace(/\/cwms-data\/?$/, ""),
-  }));
 }
 
 function normalizeOperationIds(spec) {
@@ -127,6 +158,7 @@ function main() {
 
   const cleaned = removeUniqueItems(spec);
   const normalized = normalizeStrings(cleaned);
+  normalizeTimeSeriesSchemaNames(normalized);
   normalizeOperationIds(normalized);
   stripCwmsDataPrefix(normalized);
 
