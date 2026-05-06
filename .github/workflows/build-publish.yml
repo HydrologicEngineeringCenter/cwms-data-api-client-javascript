@@ -50,7 +50,7 @@ jobs:
       - name: Publish to npm
         if: success()
         working-directory: cwmsjs
-        run: npm publish --provenance --access public
+        run: npm publish --provenance --access public --tag latest
 
       - name: Build docs
         if: success()

@@ -14,11 +14,18 @@ async function readJson(path) {
   return JSON.parse(await readFile(new URL(path, import.meta.url), "utf8"));
 }
 
+function normalizeVersionSuffix(version) {
+  return String(version)
+    .split(".")
+    .map((identifier) => (/^\d+$/.test(identifier) ? String(Number(identifier)) : identifier))
+    .join(".");
+}
+
 async function main() {
   const packageJson = await readJson("../cwmsjs/package.json");
   const rootPackageJson = await readJson("../package.json");
   const rawSpec = await readJson("../cwms-swagger-raw.json");
-  const expectedVersion = `${rootPackageJson.version}-${rawSpec?.info?.version}`;
+  const expectedVersion = `${rootPackageJson.version}-${normalizeVersionSuffix(rawSpec?.info?.version)}`;
 
   await runStep("package version", async () => {
     if (packageJson.version !== expectedVersion) {
